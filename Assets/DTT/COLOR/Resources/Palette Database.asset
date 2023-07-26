@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6ebd78e93a468aaa5c369c8d3ec0f8, type: 3}
+  m_Name: Palette Database
+  m_EditorClassIdentifier: 
+  _palettes:
+  - _colors:
+    - _color: {r: 0.21960786, g: 0.2509804, b: 0.3137255, a: 1}
+      _name: Grey
+      _guid: 324aa293-fa28-40fb-bf8f-87ecf9fc347f
+    - _color: {r: 0.2901961, g: 0.33333334, b: 0.4156863, a: 1}
+      _name: Light Grey
+      _guid: 4975fe0b-3571-4eb8-82af-2c7b606803bc
+    - _color: {r: 0.90196085, g: 0.33333334, b: 0.2509804, a: 1}
+      _name: Red
+      _guid: 3fc9ac1c-a89f-4634-8b72-bb89be8db7c5
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White
+      _guid: 5f74a74f-05ff-4397-91a0-348e55380e64
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White 2
+      _guid: 5bae2776-e0cd-43bb-be71-fa8021fb7d59
+    _name: Demo 1 Default
+    _guid: 735a1d03-cbcf-40d3-b19f-786c9bb1328f
+  - _colors:
+    - _color: {r: 0.87843144, g: 0.21176472, b: 0.38823533, a: 1}
+      _name: Pink
+      _guid: 84f3bd39-e2d7-4873-bc72-2d39131887c0
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White 2
+      _guid: abeb97da-9839-49be-8746-78a1a4a4f170
+    - _color: {r: 0.21960786, g: 0.2509804, b: 0.3137255, a: 1}
+      _name: Grey
+      _guid: 9f66a10d-f9be-4aab-950d-ca42e0a4221a
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White
+      _guid: 0bd5367e-d552-4d08-8617-5b6df76994bf
+    - _color: {r: 0.21960786, g: 0.2509804, b: 0.3137255, a: 1}
+      _name: Grey 2
+      _guid: c411e9fb-50ca-43b8-8fc6-9ebeb93f0d83
+    _name: Demo 1 Pink Variant
+    _guid: 9ce34e94-f9b5-4546-a4b8-d9980aa05d0e
+  - _colors:
+    - _color: {r: 1, g: 0.8608516, b: 0, a: 1}
+      _name: Yellow
+      _guid: 32218ec9-1e77-4b83-9808-dc44abc53b72
+    - _color: {r: 1, g: 0.95294124, b: 0.8235295, a: 1}
+      _name: Beige
+      _guid: 39d28978-b389-4f20-b56b-bd750a0aa980
+    - _color: {r: 0.20784315, g: 0.16862746, b: 0.54901963, a: 1}
+      _name: Blue
+      _guid: 61fea711-b05e-48a5-ab3a-f66581e26c99
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White
+      _guid: 4bba5c0d-0ddd-42a5-8d7f-af4aa7cabc21
+    - _color: {r: 0.21960786, g: 0.2509804, b: 0.3137255, a: 1}
+      _name: Grey
+      _guid: 4ccade95-cb2d-4953-ae3f-26b9f4cdfa31
+    _name: Demo 1 Yellow Variant
+    _guid: d605b798-2647-4077-983d-926a76639f20
+  - _colors:
+    - _color: {r: 0.8941177, g: 1, b: 0.9686275, a: 1}
+      _name: Light Blue
+      _guid: aa938472-7ace-4a63-a761-f6b4441e102e
+    - _color: {r: 0.74509805, g: 0.9215687, b: 0.9803922, a: 1}
+      _name: Blue
+      _guid: 5dd22b08-09d0-4f4a-abb6-e9a300bf7388
+    - _color: {r: 0.3803922, g: 0.72156864, b: 0.44705886, a: 1}
+      _name: Light Green
+      _guid: 34df88a5-2ca6-4286-bfda-bdfdc95709e1
+    - _color: {r: 0.13725491, g: 0.63529414, b: 0.3019608, a: 1}
+      _name: Darker Green
+      _guid: f259c987-bc12-4411-907f-c7ac6b7ae81b
+    - _color: {r: 0.6745098, g: 0.43921572, b: 0.38823533, a: 1}
+      _name: Brown
+      _guid: e71a564c-d0d2-42ea-8be4-cc8a1a1364c7
+    - _color: {r: 0.5176471, g: 0.6392157, b: 0.89019614, a: 1}
+      _name: Dark Blue
+      _guid: e1c3b2db-ddd5-4cc6-a16f-7f6b3bed7a6e
+    - _color: {r: 0.4666667, g: 0.8431373, b: 0.5411765, a: 1}
+      _name: Light Green 1
+      _guid: fa9c1a10-88a7-4d31-9d19-4156fae67ec5
+    _name: Demo 2 Summer
+    _guid: 5b6ce2e4-07e1-4dd7-b871-43d2b1378a59
+  - _colors:
+    - _color: {r: 1, g: 0.9803922, b: 0.96470594, a: 1}
+      _name: White
+      _guid: e3ac6187-65bf-4f12-98f5-77b145fe1c13
+    - _color: {r: 1, g: 0.8815514, b: 0.4669811, a: 1}
+      _name: Light Yellow
+      _guid: ab546899-f261-46c9-a8ad-6aa5e7d9b16b
+    - _color: {r: 1, g: 0.63058513, b: 0.1462264, a: 1}
+      _name: Yellow
+      _guid: 604bb5e6-22c6-4d1f-9ac5-30623c0a12b6
+    - _color: {r: 1, g: 0.68794703, b: 0.2971698, a: 1}
+      _name: Orange
+      _guid: ece76292-fd19-4388-9070-f9e646c7aa74
+    - _color: {r: 0.74509805, g: 0.48627454, b: 0.427451, a: 1}
+      _name: Brown
+      _guid: 4983c947-50b7-4f8c-920b-26c7ed4bccc1
+    - _color: {r: 0.67058825, g: 0.5176471, b: 0.89019614, a: 1}
+      _name: Purple
+      _guid: 3d8fe226-48ef-4e4c-8042-e77a060d5113
+    - _color: {r: 0.8352942, g: 0.58431375, b: 0.44705886, a: 1}
+      _name: Light Brown
+      _guid: 3a0075dd-0310-4f5b-be49-6f3ac0ec2112
+    _name: Demo 2 Autumn
+    _guid: 79443431-98ce-4e11-b37b-f7a685286fdb
+  - _colors:
+    - _color: {r: 0.8941177, g: 1, b: 0.9686275, a: 1}
+      _name: Light Blue
+      _guid: 0376bceb-6c4a-45ef-b686-4fdbd788ea82
+    - _color: {r: 0.74509805, g: 0.9215687, b: 0.9803922, a: 1}
+      _name: Darker Blue
+      _guid: 37490479-61e7-418b-827f-f2dd1b9c9f9f
+    - _color: {r: 1, g: 1, b: 1, a: 0}
+      _name: Transparent
+      _guid: a0d35da8-e428-49af-b4ef-f41e20deb9d2
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White
+      _guid: 376d1bc2-ad41-4bd1-b2e8-2d05dca6409c
+    - _color: {r: 0.74509805, g: 0.48627454, b: 0.427451, a: 1}
+      _name: Brown
+      _guid: e3788112-7be8-4a80-ba4c-34163e8cfa69
+    - _color: {r: 0.49411768, g: 0.49411768, b: 0.49411768, a: 1}
+      _name: Grey
+      _guid: 625ad80f-caa8-4343-b0e7-d8ae78a02030
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White2
+      _guid: caf7a4c4-d6d8-46b3-930e-6ecf7e93ea98
+    - _color: {r: 0, g: 0.5803922, b: 0.86666673, a: 1}
+      _name: Dark Blue
+      _guid: fa4f2190-d669-43c2-ae60-5764c70af4d1
+    _name: Demo 2 Winter
+    _guid: 03516c0d-be0a-4105-9e9c-f8c1ea91c4c1
+  - _colors:
+    - _color: {r: 1, g: 1, b: 1, a: 1}
+      _name: White
+      _guid: 7f9a0441-0b5d-4ca9-9632-20aedcfd706a
+    - _color: {r: 1, g: 0.69803923, b: 0.83921576, a: 1}
+      _name: Light Pink
+      _guid: 45bf1762-8135-447c-a1db-22626cad8dff
+    - _color: {r: 1, g: 0.69803923, b: 0.83921576, a: 1}
+      _name: Light Pink 2
+      _guid: 08923026-7b41-4dd3-868c-6b4c86fc7f60
+    - _color: {r: 0.9921569, g: 0.59607846, b: 0.7803922, a: 1}
+      _name: Pink
+      _guid: 27b6bc52-4b3a-4f3c-abc3-93c699bcfa31
+    - _color: {r: 0.74509805, g: 0.48627454, b: 0.427451, a: 1}
+      _name: Brown
+      _guid: aa354e9d-3664-47a8-8a72-e9096768c01a
+    - _color: {r: 0.8235295, g: 0.8980393, b: 0.4666667, a: 1}
+      _name: Green
+      _guid: 5154b75a-1a36-41a2-aed8-ebaf588c348a
+    - _color: {r: 1, g: 0.77647066, b: 0.882353, a: 1}
+      _name: Pink 2
+      _guid: 5a8b67d0-86ac-4b30-a632-6853f779dea7
+    - _color: {r: 0.67058825, g: 0.3803922, b: 0.8431373, a: 1}
+      _name: Purple
+      _guid: 7442d5a3-1828-4d00-b88e-872c7f33d6c0
+    _name: Demo 2 Spring
+    _guid: 34853d3e-d2f3-449e-af48-36ff7cd29b13

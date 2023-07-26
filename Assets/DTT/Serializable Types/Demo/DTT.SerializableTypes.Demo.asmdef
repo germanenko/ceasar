@@ -1,0 +1,15 @@
+{
+    "name": "DTT.SerializableTypes.Demo",
+    "references": [
+        "GUID:84d58b651dfa3ac4aacf5abf63520ced"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

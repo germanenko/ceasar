@@ -1,0 +1,15 @@
+{
+    "name": "DTT.KeyboardRaiser.Demo",
+    "references": [
+        "GUID:1711cb30f577ba1498364a78a6873854"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,11 @@
+﻿{
+  "title": "Mobile Keyboard Raiser: get started quickly",
+  "text": "[Getting started with the DTT Mobile Keyboard Raiser asset is as easy as adding the UI Keyboard Raiser component to your desired RectTransform gameobject and adjusting the settings to how you see fit.][Want to dive deeper? Take a look at our documentation:][l]",
+  "links": [
+    {
+      "text": "Open documentation",
+      "url": "Documentation.pdf",
+      "inline": false
+    }
+  ]
+}

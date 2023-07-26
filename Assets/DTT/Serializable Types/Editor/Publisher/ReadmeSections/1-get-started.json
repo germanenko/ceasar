@@ -1,0 +1,14 @@
+{
+    "title": "Serializable Types: get started quickly",
+    "text": "[Getting started with the Serializable Types asset is very easy. All you have to do is import the DTT.Utils.EditorUtilities.Serializables namespace into your project. Now you can start using the public serializable classes.][Want to dive deeper? Take a look at our documentation:][l]",
+    "links": [
+        {
+            "text": "Open documentation",
+            "url": "Documentation.pdf",
+            "inline": false
+        }
+    ],
+    "imageUrls": [
+        "singleton_display.png"
+    ]
+}

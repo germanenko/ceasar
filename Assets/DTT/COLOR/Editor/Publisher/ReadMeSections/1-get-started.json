@@ -1,0 +1,11 @@
+﻿{
+  "title": "COLOR: get started quickly",
+  "text": "[DTT COLOR helps the developer by allowing them to categorize and name their colors and palettes. This enables you to consistently make use of colors in your project, and making changes to said colors will then be applied everywhere in the project.][Want to dive deeper? Take a look at our documentation:][l]",
+  "links": [
+    {
+      "text": "Open documentation",
+      "url": "Documentation.pdf",
+      "inline": false
+    }
+  ]
+}

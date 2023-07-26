@@ -1,0 +1,20 @@
+{
+    "name": "DTT.KeyboardRaiser.Editor",
+    "references": [
+        "DTT.KeyboardRaiser.Runtime",
+        "DTT.RuntimeUtilities.Runtime",
+        "DTT.EditorUtilities.Editor",
+        "DTT.PublishingTools.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
