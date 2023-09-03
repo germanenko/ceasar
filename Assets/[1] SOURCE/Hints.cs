@@ -70,7 +70,11 @@ namespace Germanenko.Source
         public void MoveToEndOfLine()
         {
 
-            var inputField = transform.parent.GetComponentInChildren<TMP_InputField>();
+            //var inputField = transform.parent.GetComponentInChildren<TMP_InputField>();
+
+            _taskName.Select();
+            _taskName.MoveToEndOfLine(false, false);
+
             //inputField?.MoveToEndOfLine(false, false);
             //inputField?.ActivateInputField();
 

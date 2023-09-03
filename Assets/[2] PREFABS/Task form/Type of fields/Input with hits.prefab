@@ -1034,7 +1034,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 30
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -1418,7 +1418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 326.4, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4661629566052917468
@@ -1623,7 +1623,6 @@ GameObject:
   - component: {fileID: 4661629566194235295}
   - component: {fileID: 4661629566194235292}
   - component: {fileID: 4661629566194235293}
-  - component: {fileID: 7483797489544763533}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -1650,7 +1649,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 332.4, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4661629566194235294
 CanvasRenderer:
@@ -1769,10 +1768,34 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8441427862639515535}
+        m_TargetAssemblyTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser, DTT.KeyboardRaiser.Runtime
+        m_MethodName: SetOpeningField
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8441427862639515535}
+        m_TargetAssemblyTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser, DTT.KeyboardRaiser.Runtime
+        m_MethodName: SetOpeningField
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTextSelection:
     m_PersistentCalls:
       m_Calls: []
@@ -1892,20 +1915,6 @@ MonoBehaviour:
         Impact: 1
   paddingSizers:
     items: []
---- !u!114 &7483797489544763533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4661629566194235283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0bdd2d12512ffe4182a6d5fac92ea18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _padding: 200
-  _isSmooth: 1
 --- !u!1 &4661629566327398865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2177,7 @@ GameObject:
   - component: {fileID: 4661629566350027509}
   - component: {fileID: 4661629566350027498}
   - component: {fileID: 1401902962483651930}
+  - component: {fileID: 8441427862639515535}
   m_Layer: 5
   m_Name: Input with hits
   m_TagString: Untagged
@@ -2260,3 +2270,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bd18c5cfaca59498b309275364ed87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8441427862639515535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661629566350027496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bdd2d12512ffe4182a6d5fac92ea18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _padding: 0
+  _isSmooth: 1

@@ -3,9 +3,7 @@ using DTT.Utils.Extensions;
 using UnityEngine;
 using Doozy.Runtime.Signals;
 using UnityEngine.UI;
-
-
-
+using TMPro;
 namespace DTT.KeyboardRaiser
 {
 
@@ -68,10 +66,8 @@ namespace DTT.KeyboardRaiser
         private LayoutElement _myLayoutElement;
 
 
-
         private void Start()
         {
-
             _originalPosition = transform.position;
             _originalRect = _rectTransform.GetWorldRect();
 
@@ -101,10 +97,7 @@ namespace DTT.KeyboardRaiser
 
             _keyboardState.Raised += OnKeyboardRaised;
             _keyboardState.Lowered += OnKeyboardLowered;
-
         }
-
-
 
         private void OnDisable()
         {
@@ -112,7 +105,13 @@ namespace DTT.KeyboardRaiser
             _keyboardState.Lowered -= OnKeyboardLowered;
         }
 
-
+        public void SetOpeningField(bool set)
+        {
+            if (set)
+                KeyboardStateManager.openingField = this;
+            else
+                KeyboardStateManager.openingField = null;
+        }
 
         private void OnKeyboardRaised()
         {
@@ -134,7 +133,7 @@ namespace DTT.KeyboardRaiser
         private void OnKeyboardLowered()
         {
             _timeOfLastLowering = Time.time;
-
+            
             if (KeyboardStateManager.openingField != this) return;
 
             _myLayoutElement.ignoreLayout = false;
@@ -148,7 +147,6 @@ namespace DTT.KeyboardRaiser
         {
             if (Time.time - _timeOfLastLowering > TIMEOUT_DURATION && !_keyboardState.IsRaised)
                 return;
-
 
             if (KeyboardStateManager.openingField != this) return;
 
