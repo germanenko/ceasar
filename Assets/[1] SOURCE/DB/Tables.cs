@@ -16,9 +16,9 @@ namespace Germanenko.Source
 
 		public void Init()
 		{
-			Debug.Log("inint "  + ConstantSingleton.Instance.DbManager);
+			Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
-			Debug.Log("end inint");
+			Debug.Log("end init");
 			//CreateTableText();
 		}
 
@@ -31,7 +31,7 @@ namespace Germanenko.Source
 			var taskType = ((TypeOfTasks)ConstantSingleton.Instance.TaskFormManager.Task.Type).ToString();
 			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
 
-			ConstantSingleton.Instance.DbManager.Execute("INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
+			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
 				taskName == null ? "" : taskName,
 				"", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
 				taskColor == null ? "ffffffff" : taskColor);

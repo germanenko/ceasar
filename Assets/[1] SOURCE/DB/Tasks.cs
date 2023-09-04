@@ -1,7 +1,6 @@
 using UnityEngine;
 using SimpleSQL;
-
-
+using System.Collections.Generic;
 
 namespace Germanenko.Source
 {
@@ -30,7 +29,6 @@ namespace Germanenko.Source
 
         [MaxLength(9), Default("'ffffffff'"), NotNull]
         public string Color { get; set; }
-
     }
     public class TaskBase
     {
