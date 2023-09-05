@@ -187,6 +187,8 @@ namespace DTT.KeyboardRaiser.Editor
                 {
                     KeyboardStateManager.openingField = _keyboardRaiser;
 
+                    Debug.Log($"openingF {KeyboardStateManager.openingField}");
+
                     if (newOption == 0)
                         EditorKeyboard.Open(KeyboardRaiserAssetDatabase.Config.AmountOccupied);
                     else if (newOption == 1)

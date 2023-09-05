@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-
+using UnityEngine.Events;
 
 namespace Germanenko.Source
 {
@@ -12,37 +11,46 @@ namespace Germanenko.Source
     public class TaskFormFields : ScriptableObject
     {
 
-        [SerializeField] private GameObject _dropDown;
-        [SerializeField] private GameObject _inputField;
+        [SerializeField] private Dropdown _dropDown;
+        [SerializeField] private InputFieldWithHits _inputField;
 
-        private List<GameObject> _listOfObjects = new();
+        [SerializeField] private List<Dropdown> _listOfDropdown = new();
+        [SerializeField] private List<InputFieldWithHits> _listOfInputFields = new();
 
+        public List<Dropdown> ListOfDropdown => _listOfDropdown;
+        public List<InputFieldWithHits> ListOfInputFields => _listOfInputFields;
 
+        [SerializeField] private List<GameObject> _listOfObjects = new();
+
+        public UnityEvent AllInputsSpawned;
 
         public async void CreateFields(Transform parentTransform)
         {
 
-            GameObject newField;
+            InputFieldWithHits newInputField;
+            Dropdown newDropdown;
+
             ClearFields();
 
 
             for (int i = 0; i < 10; i++)
             {
 
-                newField = Instantiate(_inputField, parentTransform);
-                _listOfObjects.Add(newField);
-
+                newInputField = Instantiate(_inputField, parentTransform);
+                _listOfInputFields.Add(newInputField);
+                _listOfObjects.Add(newInputField.gameObject);
             }
 
 
             for (int i = 0; i < 10; i++)
             {
 
-                newField = Instantiate(_dropDown, parentTransform);
-                _listOfObjects.Add(newField);
-
+                newDropdown = Instantiate(_dropDown, parentTransform);
+                _listOfDropdown.Add(newDropdown);
+                _listOfObjects.Add(newDropdown.gameObject);
             }
 
+            AllInputsSpawned?.Invoke();
 
             await System.Threading.Tasks.Task.Delay(300);
 
@@ -56,6 +64,9 @@ namespace Germanenko.Source
         {
             foreach (var item in _listOfObjects) Destroy(item);
             _listOfObjects.Clear();
+
+            _listOfInputFields.Clear();
+            _listOfDropdown.Clear();
         }
 
 

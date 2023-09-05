@@ -32,7 +32,6 @@ namespace Germanenko.Source
 
 			itemPosition = Screen.height / 3;
 			Framework.Signals.Add(this);
-
 		}
 
 
