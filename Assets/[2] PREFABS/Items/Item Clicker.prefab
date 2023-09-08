@@ -148,8 +148,9 @@ GameObject:
   - component: {fileID: 4647382915475560607}
   - component: {fileID: 4163757017099438646}
   - component: {fileID: 6246794538568945623}
-  - component: {fileID: 7705899265105476598}
   - component: {fileID: 2198998019816252562}
+  - component: {fileID: 855135796479445530}
+  - component: {fileID: 5325020892522615660}
   m_Layer: 0
   m_Name: Item Clicker
   m_TagString: Untagged
@@ -255,36 +256,6 @@ MonoBehaviour:
   Title: {fileID: 4647382917082150323}
   Times: {fileID: 4647382915907067976}
   TaskColor: {fileID: 4647382915475560607}
---- !u!114 &7705899265105476598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647382915475560605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1d5557bbc345f2a77244ad0486a89a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProviderCurrentState: 10
-  SignalCooldown: 0
-  SignalTimescale: 0
-  OnTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2198998019816252562}
-        m_TargetAssemblyTypeName: PlayMakerFSM, PlayMaker
-        m_MethodName: SendEvent
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DoubleClick
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2198998019816252562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +263,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647382915475560605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
@@ -371,12 +342,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.DebugLog
+        - HutongGames.PlayMaker.Actions.CallMethod
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 9c59e501
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 9c59e501ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -393,8 +366,45 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: DC
-        fsmObjectParams: []
-        fsmVarParams: []
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SendSignal
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: Doozy.Runtime.Signals.SignalSender
+          value: {fileID: 855135796479445530}
+        fsmVarParams:
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
@@ -406,18 +416,25 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000000001
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 00000000010000
+        arrayParamSizes: 00000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 070000001200000001000000
+        paramDataType: 07000000120000000100000018000000120000000c000000270000000100000001000000
         paramName:
         - logLevel
         - text
         - sendToUnityLog
-        paramDataPos: 000000000000000004000000
-        paramByteDataSize: 040000000000000001000000
+        - behaviour
+        - methodName
+        - parameters
+        - storeResult
+        - everyFrame
+        - manualUI
+        paramDataPos: 000000000000000004000000000000000100000000000000000000000500000006000000
+        paramByteDataSize: 040000000000000001000000000000000000000000000000000000000100000001000000
     events:
     - name: DoubleClick
       isSystemEvent: 0
@@ -501,6 +518,66 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 1
+--- !u!114 &855135796479445530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f003aa0ad0a4c469338c205df004d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Payload:
+    StreamId:
+      Category: TaskControl
+      Name: EditTask
+      Custom: 0
+    SignalValueType: 2
+    IntegerValue: 0
+    BooleanValue: 1
+    FloatValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+  SendOnStart: 0
+  SendOnEnable: 0
+  SendOnDisable: 0
+  SendOnDestroy: 0
+--- !u!114 &5325020892522615660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1d5557bbc345f2a77244ad0486a89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProviderCurrentState: 10
+  SignalCooldown: 0
+  SignalTimescale: 0
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 855135796479445530}
+        m_TargetAssemblyTypeName: Doozy.Runtime.Signals.SignalSender, DoozyRuntime
+        m_MethodName: SendSignal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4647382915654071261
 GameObject:
   m_ObjectHideFlags: 0

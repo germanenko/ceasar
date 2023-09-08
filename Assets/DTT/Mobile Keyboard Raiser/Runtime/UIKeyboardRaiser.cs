@@ -4,12 +4,12 @@ using UnityEngine;
 using Doozy.Runtime.Signals;
 using UnityEngine.UI;
 using TMPro;
+
 namespace DTT.KeyboardRaiser
 {
 
     public class UIKeyboardRaiser : MonoBehaviour
     {
-        
         public bool IsSmooth
         {
             get => _isSmooth;

@@ -19,6 +19,8 @@ MonoBehaviour:
     - Category: Menu
       Name: NewTask
     - Category: Menu
+      Name: SelectTask
+    - Category: Menu
       Name: TopMenu
     - Category: None
       Name: None

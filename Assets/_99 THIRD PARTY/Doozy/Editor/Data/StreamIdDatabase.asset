@@ -36,3 +36,5 @@ MonoBehaviour:
       Name: Up
     - Category: TaskControl
       Name: CloseTask
+    - Category: TaskControl
+      Name: EditTask

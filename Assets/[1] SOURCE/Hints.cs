@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Germanenko.Framework;
 using TMPro;
+using DTT.KeyboardRaiser;
 
 namespace Germanenko.Source
 {
@@ -16,11 +17,8 @@ namespace Germanenko.Source
 
         private List<HintItem> listOfHints = new();
 
-
-
         public void Start()
         {
-
             var parsedHint = _hintTitle.Split(' ');
             HintItem hintItem = null;
 
@@ -40,9 +38,37 @@ namespace Germanenko.Source
 
             }
 
+            //foreach (var hint in listOfHints)
+            //{
+            //    hint.gameObject.SetActive(false);
+            //}
         }
 
+        //private void OnEnable()
+        //{
+        //    KeyboardStateManager.Current.Raised += OnRaised;
+        //    KeyboardStateManager.Current.Lowered += OnLowered;
+        //}
 
+        //public void OnRaised()
+        //{
+        //    SetActiveHints(true);
+        //    _taskName = KeyboardStateManager.openingField.GetComponent<TMP_InputField>();
+
+        //}
+        //public void OnLowered()
+        //{
+        //    SetActiveHints(false);
+        //    _taskName = null;
+        //}
+
+        //private void SetActiveHints(bool active)
+        //{
+        //    foreach (var hint in listOfHints)
+        //    {
+        //        hint.gameObject.SetActive(active);
+        //    }
+        //}
 
         public void AddHints(HintItem selectedItem)
         {

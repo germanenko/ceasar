@@ -175,6 +175,71 @@ MonoBehaviour:
     Mode: 0
   OnEnterHideAllViews: 0
   OnExitHideAllViews: 0
+--- !u!114 &-341060328461344726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c01f9a7d07f5c04a9f277379e94a10b, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  FlowGraphId: 927acd98-ae1c-4cc7-b851-fd874243fa2e
+  NodeId: 23cbbf10-b739-41b7-a364-d57596990146
+  NodeType: 0
+  NodeName: EditTask
+  NodeDescription: 
+  InputPorts:
+  - NodeId: 23cbbf10-b739-41b7-a364-d57596990146
+    PortId: 62054650-5def-4077-9046-48b9c69932af
+    Direction: 0
+    Capacity: 1
+    Connections:
+    - 16818081-e393-4505-bbbd-5c0a28f8f00d
+    Value: '{"CanGoBack":false}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
+      DoozyRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  OutputPorts:
+  - NodeId: 23cbbf10-b739-41b7-a364-d57596990146
+    PortId: ebc2dfd3-6144-48cf-a2c9-34422d58a3bf
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - bbc55e0e-3afc-4a56-b57f-1bf8f61912ae
+    Value: '{"Trigger":1,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"TaskControl","Name":"CloseTask","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"None","Name":"None","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      DoozyRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  RunUpdate: 0
+  RunFixedUpdate: 0
+  RunLateUpdate: 0
+  NodeState: 0
+  CanBeDeleted: 1
+  Passthrough: 0
+  ClearGraphHistory: 0
+  Position: {x: 750, y: 285}
+  OnEnterShowViews:
+  - Id:
+      Category: MainMenu
+      Name: NewTask
+      Custom: 0
+    Mode: 0
+  OnEnterHideViews: []
+  OnExitShowViews: []
+  OnExitHideViews:
+  - Id:
+      Category: MainMenu
+      Name: NewTask
+      Custom: 0
+    Mode: 0
+  OnEnterHideAllViews: 0
+  OnExitHideAllViews: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: Top menu Graph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: -174, y: 105, z: 0}
+  EditorPosition: {x: -452, y: 26, z: 0}
   EditorScale: {x: 1, y: 1, z: 1}
   Id: 927acd98-ae1c-4cc7-b851-fd874243fa2e
   GraphName: Top menu Graph
@@ -207,6 +272,7 @@ MonoBehaviour:
   - {fileID: 7085014146530120292}
   - {fileID: 8281949476898159195}
   - {fileID: -7026377281375764970}
+  - {fileID: -341060328461344726}
   RootNode: {fileID: -9211756566437462090}
   ActiveNode: {fileID: 0}
 --- !u!114 &4240510730728553130
@@ -257,7 +323,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 779.34, y: 257.3875}
+  Position: {x: 750, y: 169}
   OnEnterShowViews:
   - Id:
       Category: MainMenu
@@ -346,6 +412,7 @@ MonoBehaviour:
     Capacity: 1
     Connections:
     - e3f4c7c3-19ab-450c-b214-2b6b8b2133b5
+    - ebc2dfd3-6144-48cf-a2c9-34422d58a3bf
     Value: 
     ValueTypeQualifiedName: 
     CanBeDeleted: 0
@@ -528,6 +595,27 @@ MonoBehaviour:
     Connections:
     - 8561d84c-3606-40f4-a7bb-0028220e84c2
     Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Menu","Name":"NewTask","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      DoozyRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 1
+    CanBeReordered: 1
+  - NodeId: 5389776f-4942-4903-8a15-75a5c6acf962
+    PortId: c69297f1-d187-4f33-bb84-05672c2cad97
+    Direction: 1
+    Capacity: 0
+    Connections: []
+    Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Menu","Name":"SelectTask","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      DoozyRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 1
+    CanBeReordered: 1
+  - NodeId: 5389776f-4942-4903-8a15-75a5c6acf962
+    PortId: 16818081-e393-4505-bbbd-5c0a28f8f00d
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - 62054650-5def-4077-9046-48b9c69932af
+    Value: '{"Trigger":1,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"TaskControl","Name":"EditTask","Custom":false},"SignalValueType":2,"IntegerValue":0,"BooleanValue":true,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"None","Name":"None","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
       DoozyRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     CanBeDeleted: 1

@@ -7,8 +7,7 @@ using UnityEngine.UI;
 using System;
 using Doozy.Runtime.Signals;
 using DG.Tweening;
-
-
+using UnityEngine.Events;
 
 namespace Germanenko.Source
 {
@@ -25,7 +24,10 @@ namespace Germanenko.Source
 		private Tasks task = new Tasks();
 		public Tasks Task { get => task; set => task = value; }
 
+		[SerializeField] private bool _editTask;
+		public bool EditTask => _editTask;
 
+		public UnityEvent OnShowTask;
 
         public void Start()
         {
@@ -124,13 +126,20 @@ namespace Germanenko.Source
 		public void OnShow()
 		{
 			_fields.CreateFields(itemParent);
+			OnShowTask?.Invoke();
+        }
+
+		public void SetEditTask(bool edit)
+		{
+			_editTask = edit;
 		}
-
-
 
 		public void OnHidden()
 		{
 			_fields.ClearFields();
+
+			if(_editTask)
+				_editTask = false;
 		}
 
 
