@@ -1338,7 +1338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 332.4, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4661629566052917468
@@ -1569,7 +1569,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 332.4, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4661629566194235294
 CanvasRenderer:
@@ -1708,6 +1708,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser, DTT.KeyboardRaiser.Runtime
         m_MethodName: SetOpeningField
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8441427862639515535}
+        m_TargetAssemblyTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser, DTT.KeyboardRaiser.Runtime
+        m_MethodName: SendKeyboardSignal
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1401902962483651930}
+        m_TargetAssemblyTypeName: Germanenko.Source.SignalSender, Assembly-CSharp
+        m_MethodName: SendSignalEndInput
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
