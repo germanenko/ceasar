@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad4ceb00f34d1a4696cacc23e3bb8e9, type: 3}
   m_Name: KeyboardRaiserConfig
   m_EditorClassIdentifier: 
-  _enablePaddingArrow: 1
-  _enableTresholdArea: 1
+  _enablePaddingArrow: 0
+  _enableTresholdArea: 0
   _amountOccupied: 0.5
