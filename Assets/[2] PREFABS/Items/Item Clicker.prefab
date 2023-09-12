@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40de3f41a27cf3743bb9d94406901151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   ID: {fileID: 4647382915654071263}
   Title: {fileID: 4647382917082150323}
   Times: {fileID: 4647382915907067976}
@@ -616,14 +617,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetIntValue
         - HutongGames.PlayMaker.Actions.SetFloatValue
         - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.CallMethod
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000006000000
-        actionHashCodes: 603dd9059845b305ca51e900
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000003000000060000000c000000
+        actionHashCodes: 603dd9059845b305ca51e900ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -639,8 +642,21 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: SendID
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: SendSignal
         fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: Germanenko.Source.ItemOfList
+          value: {fileID: 6246794538568945623}
         - useVariable: 0
           name: 
           tooltip: 
@@ -649,6 +665,30 @@ MonoBehaviour:
           typeName: Doozy.Runtime.Signals.SignalSender
           value: {fileID: 855135796479445530}
         fsmVarParams:
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         - variableName: 
           objectType: 
           useVariable: 0
@@ -708,13 +748,14 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00000000
-        arrayParamSizes: 00000000
+        byteData: 000000000000
+        arrayParamSizes: 0000000000000000
         arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1000000010000000010000000f0000000f0000000100000018000000120000000c000000270000000100000001000000
+        paramDataType: 1000000010000000010000000f0000000f0000000100000018000000120000000c00000027000000010000000100000018000000120000000c000000270000000100000001000000
         paramName:
         - intVariable
         - intValue
@@ -728,8 +769,14 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000000000000200000003000000
-        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000000000000000000000100000001000000
+        - behaviour
+        - methodName
+        - parameters
+        - storeResult
+        - everyFrame
+        - manualUI
+        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000000000000200000003000000010000000100000001000000010000000400000005000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000000000000000000000100000001000000000000000000000000000000000000000100000001000000
     - name: CheckClicks
       description: 
       colorIndex: 0

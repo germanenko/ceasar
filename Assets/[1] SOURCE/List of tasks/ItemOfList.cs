@@ -10,6 +10,7 @@ namespace Germanenko.Source
 
     public class ItemOfList : MonoBehaviour
     {
+        [SerializeField] private int _id;
 
         [SerializeField] private TextMeshProUGUI ID;
         [SerializeField] private TextMeshProUGUI Title;
@@ -25,8 +26,17 @@ namespace Germanenko.Source
             ColorUtility.TryParseHtmlString("#" + _data.Color, out currentColor);
             //TaskColor.color =  currentColor;
 
+            _id = _data.ID;
             ID.text = _data.ID.ToString();
             Title.text = _data.Name;
+        }
+
+
+
+        public void SendID()
+        {
+            var receiver = FindObjectOfType<TaskForm>();
+            receiver.SetTaskID(_id);
         }
 
     }

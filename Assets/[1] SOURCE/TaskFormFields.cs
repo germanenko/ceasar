@@ -33,7 +33,7 @@ namespace Germanenko.Source
             ClearFields();
 
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 10; i++)
             {
 
                 newInputField = Instantiate(_inputField, parentTransform);

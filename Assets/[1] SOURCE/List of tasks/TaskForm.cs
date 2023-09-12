@@ -18,6 +18,10 @@ namespace Germanenko.Source
 		[SerializeField] private TaskFormFields _fields;
 		[SerializeField] private Transform itemParent;
 
+		[SerializeField] private int _id;
+		[SerializeField] private TMP_InputField _idField;
+		[SerializeField] private TMP_InputField _nameField;
+		[SerializeField] private TMP_InputField _colorField;
 
 		private int itemPosition;
 
@@ -35,6 +39,13 @@ namespace Germanenko.Source
 			itemPosition = Screen.height / 3;
 			Framework.Signals.Add(this);
 		}
+
+
+
+		public void SetTaskID(int id)
+		{
+			_id = id;
+        }
 
 
 
@@ -125,7 +136,24 @@ namespace Germanenko.Source
 		public void OnShow()
 		{
 			_fields.CreateFields(itemParent);
-			OnShowTask?.Invoke();
+
+			if (_editTask)
+				SetFields();
+
+            OnShowTask?.Invoke();
+        }
+
+
+
+		private void SetFields()
+		{
+			string sql = $"SELECT * FROM Tasks WHERE ID = {_id}";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+			_idField.text = taskList[0].ID.ToString();
+			_nameField.text = taskList[0].Name;
+			_colorField.text = taskList[0].Color;
         }
 
 
@@ -141,7 +169,11 @@ namespace Germanenko.Source
 		{
 			_fields.ClearFields();
 
-			if(_editTask)
+            _idField.text = "";
+            _nameField.text = "";
+            _colorField.text = "";
+
+            if (_editTask)
 				_editTask = false;
 		}
 
