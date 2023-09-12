@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
-
+using Doozy.Runtime.UIManager.Components;
 
 namespace Germanenko.Source
 {
@@ -27,7 +26,7 @@ namespace Germanenko.Source
             //TaskColor.color =  currentColor;
 
             ID.text = _data.ID.ToString();
-            Title.text = _data.Name; 
+            Title.text = _data.Name;
         }
 
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 using Doozy.Runtime.Signals;
 using UnityEngine.UI;
 using TMPro;
+
 namespace DTT.KeyboardRaiser
 {
 
     public class UIKeyboardRaiser : MonoBehaviour
     {
-        
         public bool IsSmooth
         {
             get => _isSmooth;
@@ -122,9 +122,9 @@ namespace DTT.KeyboardRaiser
 
                 if (KeyboardStateManager.openingField != this) return;
 
-                _myLayoutElement.ignoreLayout = true;
-                _myCanvas.overrideSorting = true;
-                Signal.Send("BG", "KeyboardTask", true);
+                SendKeyboardSignal(true);
+
+                print($"KBOpened");
             }
         }
         
@@ -136,12 +136,17 @@ namespace DTT.KeyboardRaiser
             
             if (KeyboardStateManager.openingField != this) return;
 
-            _myLayoutElement.ignoreLayout = false;
-            _myCanvas.overrideSorting = false;
-            Signal.Send("BG", "KeyboardTask", false);
+            SendKeyboardSignal(false);
+
+            print($"KBClosed");
         }
 
-
+        public void SendKeyboardSignal(bool opened)
+        {
+            _myLayoutElement.ignoreLayout = opened;
+            _myCanvas.overrideSorting = opened;
+            Signal.Send("BG", "KeyboardTask", opened);           
+        }
 
         private void Update()
         {

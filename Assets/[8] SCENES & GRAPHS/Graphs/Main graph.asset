@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: Main graph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: 380, y: 497.5, z: 0}
-  EditorScale: {x: 1.15, y: 1.15, z: 1}
+  EditorPosition: {x: 46, y: 187, z: 0}
+  EditorScale: {x: 1, y: 1, z: 1}
   Id: de289473-6165-4bd1-b831-581e6d2a428a
   GraphName: Main Graph
   GraphDescription: 

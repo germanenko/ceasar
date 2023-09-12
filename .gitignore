@@ -10,8 +10,13 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Ss]erialized[Bb]uild[Ii]nfo/
+<<<<<<< HEAD
 /[Aa]ssets/_99 THIRD PARTY/
 
+=======
+/SerializedBuildInfo/
+/_99 third party/
+>>>>>>> 041c466d2f906635d9ab7d2332facaf8eed4ef5b
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
