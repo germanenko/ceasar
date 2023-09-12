@@ -66,6 +66,7 @@ namespace DTT.KeyboardRaiser
         private LayoutElement _myLayoutElement;
 
 
+
         private void Start()
         {
             _originalPosition = transform.position;
@@ -99,11 +100,15 @@ namespace DTT.KeyboardRaiser
             _keyboardState.Lowered += OnKeyboardLowered;
         }
 
+
+
         private void OnDisable()
         {
             _keyboardState.Raised -= OnKeyboardRaised;
             _keyboardState.Lowered -= OnKeyboardLowered;
         }
+
+
 
         public void SetOpeningField(bool set)
         {
@@ -112,6 +117,8 @@ namespace DTT.KeyboardRaiser
             else
                 KeyboardStateManager.openingField = null;
         }
+
+
 
         private void OnKeyboardRaised()
         {
@@ -141,12 +148,16 @@ namespace DTT.KeyboardRaiser
             print($"KBClosed");
         }
 
+
+
         public void SendKeyboardSignal(bool opened)
         {
             _myLayoutElement.ignoreLayout = opened;
             _myCanvas.overrideSorting = opened;
             Signal.Send("BG", "KeyboardTask", opened);           
         }
+
+
 
         private void Update()
         {

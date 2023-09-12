@@ -92,8 +92,7 @@ namespace Germanenko.Source
         }
 
 
-
-
+			
 		private void SetName(string data)
         {
 			task.Name = data;
@@ -129,10 +128,14 @@ namespace Germanenko.Source
 			OnShowTask?.Invoke();
         }
 
+
+
 		public void SetEditTask(bool edit)
 		{
 			_editTask = edit;
 		}
+
+
 
 		public void OnHidden()
 		{
@@ -141,6 +144,7 @@ namespace Germanenko.Source
 			if(_editTask)
 				_editTask = false;
 		}
+
 
 
         private void OnDestroy()
