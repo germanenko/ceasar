@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 6246794538568945623}
   - component: {fileID: 2198998019816252562}
   - component: {fileID: 855135796479445530}
-  - component: {fileID: 5325020892522615660}
   m_Layer: 0
   m_Name: Item Clicker
   m_TagString: Untagged
@@ -263,7 +262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647382915475560605}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
@@ -272,15 +271,15 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: State 1
+    startState: state
     states:
-    - name: State 1
+    - name: state
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 50
-        y: 100
+        y: 116
         width: 100
         height: 16
       isBreakpoint: 0
@@ -326,13 +325,200 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    - name: DC
+    - name: FirstClick
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 212
-        y: 99
+        x: 346.39062
+        y: 118.328125
+        width: 139
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: CheckClicks
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntAdd
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 603dd905
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: ClickCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 100000001000000001000000
+        paramName:
+        - intVariable
+        - add
+        - everyFrame
+        paramDataPos: 000000000100000000000000
+        paramByteDataSize: 000000000000000001000000
+    - name: SecondClick
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 359.6875
+        y: 262.96094
+        width: 102
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.FloatSubtract
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 2a6e8a001bcdca04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: WaitForSecondClick
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
+          name: WaitForSecondClick
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - FINISHED
+        - 
+        byteData: 010101
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000000f00000001000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramName:
+        - floatVariable
+        - subtract
+        - everyFrame
+        - perSecond
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 0000000001000000000000000100000002000000030000000400000000000000010000000200000002000000
+        paramByteDataSize: 0000000000000000010000000100000000000000000000000000000000000000000000000000000001000000
+    - name: Idle
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 571.3125
+        y: 279.21094
         width: 100
         height: 16
       isBreakpoint: 0
@@ -341,15 +527,103 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.DebugLog
-        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.SetIntValue
+        - HutongGames.PlayMaker.Actions.SetFloatValue
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
         actionStartIndex: 0000000003000000
-        actionHashCodes: 9c59e501ca51e900
+        actionHashCodes: 603dd9059845b305
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: WaitForSecondClick
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        fsmIntParams:
+        - useVariable: 1
+          name: ClickCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1000000010000000010000000f0000000f00000001000000
+        paramName:
+        - intVariable
+        - intValue
+        - everyFrame
+        - floatVariable
+        - floatValue
+        - everyFrame
+        paramDataPos: 000000000100000000000000000000000100000001000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000
+    - name: Action
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 361.58594
+        y: 322.53906
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetIntValue
+        - HutongGames.PlayMaker.Actions.SetFloatValue
+        - HutongGames.PlayMaker.Actions.CallMethod
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000006000000
+        actionHashCodes: 603dd9059845b305ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -360,12 +634,6 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: DC
         - useVariable: 0
           name: 
           tooltip: 
@@ -407,8 +675,32 @@ MonoBehaviour:
             objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: WaitForSecondClick
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
+        fsmIntParams:
+        - useVariable: 1
+          name: ClickCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -416,42 +708,171 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00000000010000
+        byteData: 00000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 07000000120000000100000018000000120000000c000000270000000100000001000000
+        paramDataType: 1000000010000000010000000f0000000f0000000100000018000000120000000c000000270000000100000001000000
         paramName:
-        - logLevel
-        - text
-        - sendToUnityLog
+        - intVariable
+        - intValue
+        - everyFrame
+        - floatVariable
+        - floatValue
+        - everyFrame
         - behaviour
         - methodName
         - parameters
         - storeResult
         - everyFrame
         - manualUI
-        paramDataPos: 000000000000000004000000000000000100000000000000000000000500000006000000
-        paramByteDataSize: 040000000000000001000000000000000000000000000000000000000100000001000000
+        paramDataPos: 000000000100000000000000000000000100000001000000000000000000000000000000000000000200000003000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000000000000000000000100000001000000
+    - name: CheckClicks
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 359.6875
+        y: 187.16406
+        width: 103
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Action
+        linkStyle: 0
+        linkConstraint: 1
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: WaitClick
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SecondClick
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntCompare
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 09faa102
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: ClickCount
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        - WaitClick
+        - 
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 100000001000000017000000170000001700000001000000
+        paramName:
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 000000000100000000000000010000000200000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000
     events:
-    - name: DoubleClick
+    - name: UI CLICK
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: WaitClick
       isSystemEvent: 0
-      isGlobal: 1
+      isGlobal: 0
+    - name: UI POINTER CLICK
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: UI POINTER DOWN
+      isSystemEvent: 1
+      isGlobal: 0
     globalTransitions:
     - fsmEvent:
-        name: DoubleClick
-        isSystemEvent: 0
-        isGlobal: 1
-      toState: DC
+        name: UI CLICK
+        isSystemEvent: 1
+        isGlobal: 0
+      toState: FirstClick
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: UI POINTER DOWN
+        isSystemEvent: 1
+        isGlobal: 0
+      toState: FirstClick
       linkStyle: 0
       linkConstraint: 0
       linkTarget: 0
       colorIndex: 0
     variables:
-      floatVariables: []
-      intVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: WaitForSecondClick
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0.3
+      intVariables:
+      - useVariable: 1
+        name: ClickCount
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -467,7 +888,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -478,11 +899,8 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
-    ExposedEvents:
-    - name: DoubleClick
-      isSystemEvent: 0
-      isGlobal: 1
+    preprocessed: 0
+    ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
     ResetVariablesOnEnable: 0
@@ -534,7 +952,7 @@ MonoBehaviour:
     StreamId:
       Category: TaskControl
       Name: EditTask
-      Custom: 0
+      Custom: 1
     SignalValueType: 2
     IntegerValue: 0
     BooleanValue: 1
@@ -548,36 +966,6 @@ MonoBehaviour:
   SendOnEnable: 0
   SendOnDisable: 0
   SendOnDestroy: 0
---- !u!114 &5325020892522615660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647382915475560605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1d5557bbc345f2a77244ad0486a89a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProviderCurrentState: 10
-  SignalCooldown: 0
-  SignalTimescale: 0
-  OnTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 855135796479445530}
-        m_TargetAssemblyTypeName: Doozy.Runtime.Signals.SignalSender, DoozyRuntime
-        m_MethodName: SendSignal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4647382915654071261
 GameObject:
   m_ObjectHideFlags: 0

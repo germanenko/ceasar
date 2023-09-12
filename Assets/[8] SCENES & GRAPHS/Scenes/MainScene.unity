@@ -1058,9 +1058,9 @@ MonoBehaviour:
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
   source: {fileID: 963194229}
-  vibrancy: 1.43
-  brightness: -0.1
-  flatten: 0.5
+  vibrancy: 1.38
+  brightness: -0.141
+  flatten: 0.47
   m_spriteBlending: 0.404
 --- !u!114 &96059315
 MonoBehaviour:
