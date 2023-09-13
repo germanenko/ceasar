@@ -20,7 +20,8 @@ namespace Germanenko.Source
         [SerializeField] private GameObject itemPrefab;
         [SerializeField] private int itemPosition;
 
-
+        [SerializeField] public DDItem _selectedItem;
+        [SerializeField] private Image _selectedItemView;
 
         void Start()
         {
@@ -46,11 +47,8 @@ namespace Germanenko.Source
         {
 
             var newDDItem = Pooler.Instance.Spawn(PoolType.Entities, itemPrefab, default, default, listFolder);
-            var img = newDDItem.GetComponent<Image>();
 
-            img.sprite = item.sprite;
-            img.color = item.color;
-
+            newDDItem.GetComponent<DropDownItem>().Init(item.name, item.color, item.sprite);
         }
 
 
@@ -67,7 +65,25 @@ namespace Germanenko.Source
 
         }
 
+
+
+        public void SelectDDItem(string name)
+        {
+            _selectedItem.name = name;
+            foreach (var item in listOfItems)
+            {
+                if(item.name == name)
+                {
+                    _selectedItem.color = item.color;
+                    _selectedItem.sprite = item.sprite;
+
+                    _selectedItemView.color = item.color;
+                    _selectedItemView.sprite = item.sprite;
+                }    
+            }
+        }
     }
+
 
 
     [System.Serializable]

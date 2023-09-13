@@ -42,6 +42,7 @@ namespace Germanenko.Source
             }
 
 
+
             for (int i = 0; i < 10; i++)
             {
 
@@ -49,6 +50,8 @@ namespace Germanenko.Source
                 _listOfDropdown.Add(newDropdown);
                 _listOfObjects.Add(newDropdown.gameObject);
             }
+
+
 
             AllInputsSpawned?.Invoke();
 

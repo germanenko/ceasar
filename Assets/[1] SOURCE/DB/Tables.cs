@@ -24,7 +24,7 @@ namespace Germanenko.Source
 
 
 
-		public void AddTask()
+		public void AddTask(string name, string color)
 		{
 
 			var taskName = ConstantSingleton.Instance.TaskFormManager.Task.Name;
@@ -32,11 +32,18 @@ namespace Germanenko.Source
 			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
 
 			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
-				taskName == null ? "" : taskName,
+                name == null ? "" : name,
 				"", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-				taskColor == null ? "ffffffff" : taskColor);
+                color == null ? "ffffffff" : color);
 
 		}
+
+
+
+		public void EditTask(string name, string color, int id)
+		{
+            ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Name = \"{name}\", Color = \"{color}\" WHERE ID = {id}");
+        }
 
 
 
