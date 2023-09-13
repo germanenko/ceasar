@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 1226919238944006845}
   - component: {fileID: 1226919238944006844}
   m_Layer: 5
-  m_Name: DropDown
+  m_Name: DropDown color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1603,10 +1603,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfItems:
-  - sprite: {fileID: 21300000, guid: 75b7fd397d96d2b46be55ed328cb553c, type: 3}
+  - sprite: {fileID: 21300000, guid: 4612dab1665968d4e975213cba2acdc1, type: 3}
     color: {r: 0.4433962, g: 0.26143643, b: 0.26143643, a: 1}
     name: Name
-  - sprite: {fileID: 21300000, guid: ad5c6e376f3f6814eacf8936d17ec863, type: 3}
+  - sprite: {fileID: 21300000, guid: 4612dab1665968d4e975213cba2acdc1, type: 3}
     color: {r: 0.042052336, g: 0.3301887, b: 0.042052336, a: 1}
     name: nan
   - sprite: {fileID: 21300000, guid: 5a65add135902214499357f5495868e1, type: 3}
