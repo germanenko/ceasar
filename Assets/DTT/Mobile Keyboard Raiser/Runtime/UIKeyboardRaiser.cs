@@ -127,6 +127,8 @@ namespace DTT.KeyboardRaiser
                 _originalPosition = transform.position;
                 _originalRect = _rectTransform.GetWorldRect();
 
+                Signal.Send("BG", "KeyboardTask", true);
+
                 if (KeyboardStateManager.openingField != this) return;
 
                 SendKeyboardSignal(true);
@@ -140,9 +142,11 @@ namespace DTT.KeyboardRaiser
         private void OnKeyboardLowered()
         {
             _timeOfLastLowering = Time.time;
-            
-            if (KeyboardStateManager.openingField != this) return;
 
+            Signal.Send("BG", "KeyboardTask", false);
+
+            if (KeyboardStateManager.openingField != this) return;
+            
             SendKeyboardSignal(false);
 
             print($"KBClosed");
@@ -153,8 +157,7 @@ namespace DTT.KeyboardRaiser
         public void SendKeyboardSignal(bool opened)
         {
             _myLayoutElement.ignoreLayout = opened;
-            _myCanvas.overrideSorting = opened;
-            Signal.Send("BG", "KeyboardTask", opened);           
+            _myCanvas.overrideSorting = opened;         
         }
 
 
@@ -176,7 +179,9 @@ namespace DTT.KeyboardRaiser
             }
 
             _targetPos = _originalPosition + Vector3.up * delta;
-            transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
+
+            if(_keyboardState.ProportionalHeight >= .3f)
+                transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
         
         }
 

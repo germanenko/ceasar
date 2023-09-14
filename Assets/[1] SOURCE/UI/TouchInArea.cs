@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DigitalRubyShared;
 using Doozy.Runtime.Signals;
-
-
+using UnityEngine.EventSystems;
 
 namespace Germanenko.Source
 {
