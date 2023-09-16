@@ -18,6 +18,7 @@ namespace Germanenko.Source
 		{
 			Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
+			ConstantSingleton.Instance.DbManager.CreateTable<TaskDraft>();
 			Debug.Log("end init");
 			//CreateTableText();
 		}

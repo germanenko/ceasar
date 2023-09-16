@@ -77,6 +77,13 @@ namespace Germanenko.Source
         }
 
 
+
+		public void Save()
+		{
+
+		}
+
+
 		
 		public void CloseTask()
 		{
@@ -159,6 +166,13 @@ namespace Germanenko.Source
 			_nameField.text = taskList[0].Name;
 			_colorField.SelectDDItem(taskList[0].Color);
         }
+
+
+
+		public void LoadDraftFields()
+		{
+
+		}
 
 
 

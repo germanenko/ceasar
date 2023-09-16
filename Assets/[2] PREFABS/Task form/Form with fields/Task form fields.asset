@@ -14,49 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dropDown: {fileID: 1226919238944006844, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
   _inputField: {fileID: -2510848741046415774, guid: 8c68a09c7b4cb9f44b7fb0618c248109, type: 3}
-  _listOfDropdown:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _listOfInputFields:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _listOfObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _listOfDropdown: []
+  _listOfInputFields: []
+  _listOfObjects: []
   AllInputsSpawned:
     m_PersistentCalls:
       m_Calls: []

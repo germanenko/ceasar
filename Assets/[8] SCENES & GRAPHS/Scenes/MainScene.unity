@@ -1372,6 +1372,7 @@ RectTransform:
   - {fileID: 1958783156}
   - {fileID: 840377924}
   - {fileID: 1773530915}
+  - {fileID: 1953013792}
   m_Father: {fileID: 335552477}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5809,7 +5810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &542931651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8044,7 +8045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441427862639515535, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: _padding
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
@@ -8201,7 +8202,38 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   Behaviours:
-    Behaviours: []
+    Behaviours:
+    - EventName: PointerClick
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1953013794}
+            m_TargetAssemblyTypeName: Germanenko.Source.Question, Assembly-CSharp
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      BehaviourName: 4
+      Receiver:
+        ConnectionMode: 1
+        SignalProviderId:
+          Type: 0
+          Category: Pointer
+          Name: Click
+        ProviderReference: {fileID: 0}
+        StreamId:
+          Category: None
+          Name: None
+          Custom: 0
+      Cooldown: 0
+      Selectable: {fileID: 1126588033}
     SignalSource: {fileID: 1126588031}
     Selectable: {fileID: 1126588033}
   Id:
@@ -17066,6 +17098,147 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887397583}
   m_CullTransparentMesh: 0
+--- !u!1 &1953013791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953013792}
+  - component: {fileID: 1953013794}
+  - component: {fileID: 1953013793}
+  m_Layer: 5
+  m_Name: Question
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1953013792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953013791}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 139988979}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 622.32996, y: 3703.8608}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1953013793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953013791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9165204be2a249fb929bebd898180d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UITooltipName: MyTooltip
+  ShowOnPointerEnter: 0
+  HideOnPointerExit: 0
+  ShowOnPointerClick: 0
+  HideOnPointerClick: 0
+  OverrideParentMode: 1
+  ParentMode: 0
+  OverrideTrackingMode: 0
+  TrackingMode: 0
+  OverridePositionMode: 1
+  PositionMode: 2
+  ParentTag:
+    Category: None
+    Name: None
+    Custom: 0
+  FollowTag:
+    Category: None
+    Name: None
+    Custom: 0
+  OverridePositionOffset: 0
+  PositionOffset: {x: 0, y: 0, z: 0}
+  OverrideMaximumWidth: 0
+  MaximumWidth: 0
+  ShowDelay: 0.1
+  Texts:
+  - Tasks have been moved to the trash. You can restore them within week.
+  - Task are deleted
+  Sprites:
+  - {fileID: 0}
+  Events: []
+  OnShowCallback:
+    EventName: Unnamed
+    Runners: []
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  OnHideCallback:
+    EventName: Unnamed
+    Runners: []
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1953013794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953013791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c67edb57b6cba49ace548c7a8a5980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionName: MyQuestion
+  message: Use data from draft?
+  buttonOkName: OK
+  buttonOkIcon: {fileID: 0}
+  buttonOkEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 96059304}
+        m_TargetAssemblyTypeName: Germanenko.Source.TopMenu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1953013793}
+        m_TargetAssemblyTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger,
+          DoozyRuntime
+        m_MethodName: ShowTooltip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonCancelName: New task
+  buttonCancelIcon: {fileID: 0}
+  buttonCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1953488831
 GameObject:
   m_ObjectHideFlags: 0
@@ -17627,7 +17800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchorMax.x
@@ -24882,8 +25055,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 819.6875
-        y: 587.2344
+        x: 807.6875
+        y: 629.2344
         width: 100
         height: 16
       isBreakpoint: 0
