@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enablePaddingArrow: 0
   _enableTresholdArea: 0
-  _amountOccupied: 0.5
+  _amountOccupied: 0.385

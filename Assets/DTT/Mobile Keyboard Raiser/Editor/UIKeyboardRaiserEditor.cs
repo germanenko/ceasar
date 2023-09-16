@@ -185,17 +185,29 @@ namespace DTT.KeyboardRaiser.Editor
                 int newOption = GUILayout.Toolbar(Application.isPlaying ? _selectedEditorKeyboardOption : -1, new[] { "Open", "Close" });
                 if (_selectedEditorKeyboardOption != newOption)
                 {
-                    KeyboardStateManager.openingField = _keyboardRaiser;
+                    KeyboardStateManager.openingField.Add(_keyboardRaiser);
 
                     Debug.Log($"openingF {KeyboardStateManager.openingField}");
 
                     if (newOption == 0)
-                        EditorKeyboard.Open(KeyboardRaiserAssetDatabase.Config.AmountOccupied);
+                    {
+                        EditorKeyboard.Open(KeyboardRaiserAssetDatabase.Config.AmountOccupied);                       
+                    }     
                     else if (newOption == 1)
+                    {
                         EditorKeyboard.Close();
+                    }
+                        
                 }
 
                 _selectedEditorKeyboardOption = newOption;
+
+                if(_selectedEditorKeyboardOption == 1)
+                {
+                    KeyboardStateManager.openingField.Remove(_keyboardRaiser);
+                    KeyboardStateManager.openingField.RemoveAll(item => item == null);
+                }
+
             }
             EditorGUI.EndDisabledGroup();
 

@@ -1133,6 +1133,10 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4661629566327398877, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
+      propertyPath: m_text
+      value: "\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027496, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_Name
       value: IDField
@@ -1278,7 +1282,6 @@ MonoBehaviour:
   isDebugging: 0
   touchArea: {fileID: 1953488831}
   streamCategory: SwipeTop
-  EventSystem: {fileID: 1808117037}
 --- !u!224 &109277983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5806,7 +5809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &542931651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5887,7 +5890,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5000
   m_TargetDisplay: 0
 --- !u!1 &561317382
 GameObject:
@@ -7947,6 +7950,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4661629566327398877, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
+      propertyPath: m_text
+      value: "\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027496, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_Name
       value: NameField
@@ -8034,6 +8041,10 @@ PrefabInstance:
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441427862639515535, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
+      propertyPath: _padding
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
@@ -15287,7 +15298,6 @@ MonoBehaviour:
   isDebugging: 0
   touchArea: {fileID: 1374665996}
   streamCategory: Swipe
-  EventSystem: {fileID: 1808117037}
 --- !u!1 &1683070979
 GameObject:
   m_ObjectHideFlags: 0
@@ -17617,11 +17627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchorMax.y
@@ -17629,7 +17639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchorMin.y
@@ -17641,7 +17651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17661,23 +17671,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 156
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17694,6 +17704,22 @@ PrefabInstance:
     - target: {fileID: 441042198232982829, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: m_Name
       value: HintsElements
+      objectReference: {fileID: 0}
+    - target: {fileID: 441042198232982829, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 441042198232982830, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321495614633134596, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+      propertyPath: _isHints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321495614633134596, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+      propertyPath: _padding
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}

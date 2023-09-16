@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bdd2d12512ffe4182a6d5fac92ea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _padding: 20
+  _padding: 40
   _isSmooth: 1
 --- !u!114 &-2510848741046415774
 MonoBehaviour:

@@ -18,7 +18,7 @@ namespace Germanenko.Source
         [SerializeField] private TextMeshProUGUI _text;
         
         private Dictionary<Image, Color> _OldColors = new();
-        private Hints parentScript;
+        [SerializeField] private Hints parentScript;
 
 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -14,7 +15,7 @@ namespace DTT.KeyboardRaiser
         /// The keyboard state that is used by this platform.
         /// </summary>
         public static IKeyboardState Current { get; }
-        public static UIKeyboardRaiser openingField;
+        public static List<UIKeyboardRaiser> openingField = new List<UIKeyboardRaiser>();
 
         /// <summary>
         /// Initializes the keyboard state to be used.
