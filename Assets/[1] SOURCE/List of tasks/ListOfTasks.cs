@@ -42,8 +42,7 @@ namespace Germanenko.Source
 
 			List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
-
-			GameObject prefab;
+            GameObject prefab;
 			foreach (Tasks task in taskList)
 			{
 
@@ -61,20 +60,23 @@ namespace Germanenko.Source
 						prefab = ConstantSingleton.Instance.ItemTimer;
 						break;
 
-					default:
+                    default:
 						continue;
                 }
 
 				var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                Debug.Log("добавлен таск");
 
-				var itemMan = newItem.GetComponent<ItemOfList>();
+                var itemMan = newItem.GetComponent<ItemOfList>();
+
+				if(task.Draft == true)
+					itemMan.SetDraft(true);
+
 				itemMan.Init(task);
 
 				_tasks.Add(itemMan);
-
 			}
-
-		}
+        }
 
 
 
@@ -88,6 +90,21 @@ namespace Germanenko.Source
 
 			_tasks.Clear();
 
+        }
+
+
+
+        public int CountOfDrafts()
+        {
+            int draftCount = 0;
+
+            foreach (var task in _tasks)
+            {
+                if(task.IsDraft)
+                    draftCount++;
+            }
+
+            return draftCount;
         }
 
 
