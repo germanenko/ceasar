@@ -53,7 +53,7 @@ namespace Germanenko.Source
 
         public void EditTask(string name, string color, int id)
 		{
-            ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Name = \"{name}\", Color = \"{color}\" WHERE ID = {id}");
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id); ;
         }
 
 
