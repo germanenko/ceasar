@@ -38,6 +38,8 @@ namespace Germanenko.Source
 
             }
 
+            //KeyboardStateManager.openingField.Add(GetComponent<UIKeyboardRaiser>());
+
             //foreach (var hint in listOfHints)
             //{
             //    hint.gameObject.SetActive(false);
@@ -53,7 +55,7 @@ namespace Germanenko.Source
         //public void OnRaised()
         //{
         //    SetActiveHints(true);
-        //    _taskName = KeyboardStateManager.openingField.GetComponent<TMP_InputField>();
+        //    _taskName = KeyboardStateManager.openingField[1].GetComponent<InputFieldWithHits>().InputField;
 
         //}
         //public void OnLowered()

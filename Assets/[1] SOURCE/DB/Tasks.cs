@@ -29,6 +29,9 @@ namespace Germanenko.Source
 
         [MaxLength(9), Default("'ffffffff'"), NotNull]
         public string Color { get; set; }
+
+        [MaxLength(9), Default(0), NotNull]
+        public bool Draft { get; set; }
     }
     public class TaskBase
     {
@@ -47,5 +50,4 @@ namespace Germanenko.Source
         public string Color { get; set; }
 
     }
-
 }

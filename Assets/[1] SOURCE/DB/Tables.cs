@@ -40,14 +40,25 @@ namespace Germanenko.Source
 
 
 
-		public void EditTask(string name, string color, int id)
-		{
-            ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Name = \"{name}\", Color = \"{color}\" WHERE ID = {id}");
+        public void AddDraft(string name, string color)
+        {
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Draft) VALUES (?, ?, ?, ?)",
+                name == null ? "" : name,
+                "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
+                color == null ? "ffffffff" : color, true);
+
         }
 
 
 
-		public void CreateTableText()
+        public void EditTask(string name, string color, int id)
+		{
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id); ;
+        }
+
+
+
+        public void CreateTableText()
 		{
 			string sql;
 
@@ -83,6 +94,20 @@ namespace Germanenko.Source
 
 		}
 
-	}
+        public void DropDraft()
+        {
+            string dropDraft;
+            dropDraft = "DELETE FROM Tasks WHERE Draft = 1";
+
+            try
+            {
+                ConstantSingleton.Instance.DbManager.Execute(dropDraft);
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+    }
 
 }

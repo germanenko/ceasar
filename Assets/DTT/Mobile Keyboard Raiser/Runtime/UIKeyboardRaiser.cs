@@ -132,12 +132,6 @@ namespace DTT.KeyboardRaiser
                 _originalRect = _rectTransform.GetWorldRect();
 
                 Signal.Send("BG", "KeyboardTask", true);
-
-                if (!KeyboardStateManager.openingField.Contains(this)) return;
-
-                SendKeyboardSignal(true);
-
-                print($"KBOpened");
             }
         }
         
@@ -145,15 +139,13 @@ namespace DTT.KeyboardRaiser
 
         private void OnKeyboardLowered()
         {
+            
             _timeOfLastLowering = Time.time;
 
             Signal.Send("BG", "KeyboardTask", false);
 
-            if (!KeyboardStateManager.openingField.Contains(this)) return;
-            
             SendKeyboardSignal(false);
-
-            print($"KBClosed");
+            SetOpeningField(false);
         }
 
 
@@ -171,9 +163,8 @@ namespace DTT.KeyboardRaiser
             if (Time.time - _timeOfLastLowering > TIMEOUT_DURATION && !_keyboardState.IsRaised)
                 return;
 
-            print(KeyboardStateManager.openingField.Count);
-
-            if (!KeyboardStateManager.openingField.Contains(this)) return;
+            if (!KeyboardStateManager.openingField.Contains(this))  return;      
+                
 
 
             float delta = 0;
@@ -185,8 +176,6 @@ namespace DTT.KeyboardRaiser
             }
 
             _targetPos = _originalPosition + Vector3.up * delta;
-
-            print($"{delta} {gameObject.name}");
 
             if(delta != 0)
             {

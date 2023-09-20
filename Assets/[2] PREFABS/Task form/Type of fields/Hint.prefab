@@ -161,6 +161,7 @@ MonoBehaviour:
   previousItem: {fileID: 0}
   img: {fileID: 1606229194}
   _text: {fileID: 4569389380151952752}
+  parentScript: {fileID: 0}
 --- !u!114 &1965500010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,9 +477,9 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 418.11838
-        y: 257.49127
-        width: 135.7143
+        x: 381.1172
+        y: 252.54688
+        width: 136
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -589,6 +590,9 @@ MonoBehaviour:
       isSystemEvent: 1
       isGlobal: 0
     - name: UI POINTER CLICK
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: UI POINTER UP
       isSystemEvent: 1
       isGlobal: 0
     globalTransitions:

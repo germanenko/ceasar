@@ -8,6 +8,7 @@ using System;
 using Doozy.Runtime.Signals;
 using DG.Tweening;
 using UnityEngine.Events;
+using Doozy.Runtime.UIManager.Containers;
 
 namespace Germanenko.Source
 {
@@ -31,20 +32,37 @@ namespace Germanenko.Source
 		[SerializeField] private bool _editTask;
 		public bool EditTask => _editTask;
 
-		public UnityEvent OnShowTask;
+		public bool isDraft;
+		[SerializeField] private Question _draftPopup;
+
+        public UnityEvent OnShowTask;
 
         public void Start()
         {
-
-			itemPosition = Screen.height / 3;
+            itemPosition = Screen.height / 3;
 			Framework.Signals.Add(this);
 		}
 
 
 
-		public void SetTaskID(int id)
+		public void CreateTask()
+		{
+			if(Toolbox.Get<ListOfTasks>().CountOfDrafts() > 0)
+			{
+				_draftPopup.Show();
+            }
+			else
+			{
+                Signal.Send("TaskControl", "OpenTask");
+            }
+		}
+
+
+
+		public void SetTaskID(int id, bool draft)
 		{
 			_id = id;
+			isDraft = draft;
         }
 
 
@@ -67,7 +85,12 @@ namespace Germanenko.Source
 		public void SaveTask()
         {
 			if (_editTask)
+			{
+				print($"{_nameField.text}");
+				print($"{_colorField._selectedItem.name}");
+				print($"{_id}");
                 Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
+            }
 			else
 				Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
 
@@ -77,11 +100,45 @@ namespace Germanenko.Source
         }
 
 
-		
+
 		public void CloseTask()
 		{
 			Signal.Send("TaskControl", "CloseTask");
-		}
+        }
+
+
+
+		public int DraftCount()
+		{
+			return Toolbox.Get<ListOfTasks>().CountOfDrafts();
+        }
+
+
+
+		public void ReplaceDraftNewTask()
+		{
+            Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
+			Toolbox.Get<Tables>().DropDraft();
+
+            Toolbox.Get<ListOfTasks>().ReloadList();
+        }
+
+
+
+		public void SaveDraft()
+		{
+            if (Toolbox.Get<ListOfTasks>().CountOfDrafts() == 0)
+            {
+                Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField._selectedItem.name);
+            }
+
+            if (isDraft)
+            {
+                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
+            }
+
+            Toolbox.Get<ListOfTasks>().ReloadList();
+        }
 
 
 
@@ -139,10 +196,14 @@ namespace Germanenko.Source
 
 		public void OnShow()
 		{
+
 			_fields.CreateFields(itemParent);
 
 			if (_editTask)
 				SetFields();
+
+			if (isDraft)
+				SetDraftFields();
 
             OnShowTask?.Invoke();
         }
@@ -162,14 +223,35 @@ namespace Germanenko.Source
 
 
 
-		public void SetEditTask(bool edit)
+        private void SetDraftFields()
+        {
+            string sql = $"SELECT * FROM Tasks WHERE Draft = 1";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+			SetTaskID(taskList[0].ID, true);
+            _idField.text = taskList[0].ID.ToString();
+            _nameField.text = taskList[0].Name;
+            _colorField.SelectDDItem(taskList[0].Color);
+        }
+
+
+
+        public void SetEditTask(bool edit)
 		{
 			_editTask = edit;
 		}
 
 
 
-		public void OnHidden()
+        public void SetDraftTask(bool draft)
+        {
+            isDraft = draft;
+        }
+
+
+
+        public void OnHidden()
 		{
 			_fields.ClearFields();
 
@@ -179,7 +261,9 @@ namespace Germanenko.Source
 
             if (_editTask)
 				_editTask = false;
-		}
+
+            isDraft = false;
+        }
 
 
 
