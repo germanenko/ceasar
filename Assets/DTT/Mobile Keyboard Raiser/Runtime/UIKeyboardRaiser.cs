@@ -65,8 +65,6 @@ namespace DTT.KeyboardRaiser
         private Canvas _myCanvas;
         private LayoutElement _myLayoutElement;
 
-
-
         private void Start()
         {
             _originalPosition = transform.position;
@@ -113,9 +111,15 @@ namespace DTT.KeyboardRaiser
         public void SetOpeningField(bool set)
         {
             if (set)
-                KeyboardStateManager.openingField = this;
+            {
+                KeyboardStateManager.openingField.Add(this);
+            }
             else
-                KeyboardStateManager.openingField = null;
+            {
+                KeyboardStateManager.openingField.Remove(this);
+                KeyboardStateManager.openingField.RemoveAll(item => item == null);
+            }
+                
         }
 
 
@@ -127,7 +131,9 @@ namespace DTT.KeyboardRaiser
                 _originalPosition = transform.position;
                 _originalRect = _rectTransform.GetWorldRect();
 
-                if (KeyboardStateManager.openingField != this) return;
+                Signal.Send("BG", "KeyboardTask", true);
+
+                if (!KeyboardStateManager.openingField.Contains(this)) return;
 
                 SendKeyboardSignal(true);
 
@@ -140,9 +146,11 @@ namespace DTT.KeyboardRaiser
         private void OnKeyboardLowered()
         {
             _timeOfLastLowering = Time.time;
-            
-            if (KeyboardStateManager.openingField != this) return;
 
+            Signal.Send("BG", "KeyboardTask", false);
+
+            if (!KeyboardStateManager.openingField.Contains(this)) return;
+            
             SendKeyboardSignal(false);
 
             print($"KBClosed");
@@ -153,8 +161,7 @@ namespace DTT.KeyboardRaiser
         public void SendKeyboardSignal(bool opened)
         {
             _myLayoutElement.ignoreLayout = opened;
-            _myCanvas.overrideSorting = opened;
-            Signal.Send("BG", "KeyboardTask", opened);           
+            _myCanvas.overrideSorting = opened;         
         }
 
 
@@ -164,7 +171,9 @@ namespace DTT.KeyboardRaiser
             if (Time.time - _timeOfLastLowering > TIMEOUT_DURATION && !_keyboardState.IsRaised)
                 return;
 
-            if (KeyboardStateManager.openingField != this) return;
+            print(KeyboardStateManager.openingField.Count);
+
+            if (!KeyboardStateManager.openingField.Contains(this)) return;
 
 
             float delta = 0;
@@ -176,8 +185,18 @@ namespace DTT.KeyboardRaiser
             }
 
             _targetPos = _originalPosition + Vector3.up * delta;
-            transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
-        
+
+            print($"{delta} {gameObject.name}");
+
+            if(delta != 0)
+            {
+                if (_keyboardState.ProportionalHeight >= .3f)
+                    transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
+            }  
         }
 
     }

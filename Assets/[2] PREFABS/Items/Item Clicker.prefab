@@ -150,6 +150,8 @@ GameObject:
   - component: {fileID: 6246794538568945623}
   - component: {fileID: 2198998019816252562}
   - component: {fileID: 855135796479445530}
+  - component: {fileID: 8436132448293693380}
+  - component: {fileID: 2360786132807485860}
   m_Layer: 0
   m_Name: Item Clicker
   m_TagString: Untagged
@@ -280,7 +282,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 50
-        y: 116
+        y: 100
         width: 100
         height: 16
       isBreakpoint: 0
@@ -331,8 +333,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 346.39062
-        y: 118.328125
+        x: 338.39062
+        y: 106.328125
         width: 139
         height: 32
       isBreakpoint: 0
@@ -410,8 +412,8 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 359.6875
-        y: 262.96094
-        width: 102
+        y: 246.96094
+        width: 103
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -430,13 +432,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.FloatSubtract
         - HutongGames.PlayMaker.Actions.FloatCompare
+        - HutongGames.PlayMaker.Actions.DebugFloat
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: 2a6e8a001bcdca04
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000040000000b000000
+        actionHashCodes: 2a6e8a001bcdca04ec7e3f03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -482,6 +486,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: WaitForSecondClick
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.3
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -493,12 +503,12 @@ MonoBehaviour:
         - 
         - FINISHED
         - 
-        byteData: 010101
+        byteData: 0101010000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f00000001000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 0f0000000f00000001000000010000000f0000000f0000000f00000017000000170000001700000001000000070000000f00000001000000
         paramName:
         - floatVariable
         - subtract
@@ -511,15 +521,18 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 0000000001000000000000000100000002000000030000000400000000000000010000000200000002000000
-        paramByteDataSize: 0000000000000000010000000100000000000000000000000000000000000000000000000000000001000000
+        - logLevel
+        - floatVariable
+        - sendToUnityLog
+        paramDataPos: 0000000001000000000000000100000002000000030000000400000000000000010000000200000002000000030000000500000007000000
+        paramByteDataSize: 0000000000000000010000000100000000000000000000000000000000000000000000000000000001000000040000000000000001000000
     - name: Idle
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 571.3125
-        y: 279.21094
+        y: 263.21094
         width: 100
         height: 16
       isBreakpoint: 0
@@ -605,7 +618,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 361.58594
-        y: 322.53906
+        y: 306.53906
         width: 100
         height: 16
       isBreakpoint: 0
@@ -783,7 +796,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 359.6875
-        y: 187.16406
+        y: 171.16406
         width: 103
         height: 48
       isBreakpoint: 0
@@ -887,15 +900,6 @@ MonoBehaviour:
       isSystemEvent: 1
       isGlobal: 0
     globalTransitions:
-    - fsmEvent:
-        name: UI CLICK
-        isSystemEvent: 1
-        isGlobal: 0
-      toState: FirstClick
-      linkStyle: 0
-      linkConstraint: 0
-      linkTarget: 0
-      colorIndex: 0
     - fsmEvent:
         name: UI POINTER DOWN
         isSystemEvent: 1
@@ -1013,6 +1017,35 @@ MonoBehaviour:
   SendOnEnable: 0
   SendOnDisable: 0
   SendOnDestroy: 0
+--- !u!114 &8436132448293693380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e95858e6f8c0844ad340be6bba1f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2198998019816252562}
+  button: {fileID: 0}
+--- !u!114 &2360786132807485860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2198998019816252562}
 --- !u!1 &4647382915654071261
 GameObject:
   m_ObjectHideFlags: 0
