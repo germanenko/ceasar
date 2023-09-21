@@ -86,9 +86,6 @@ namespace Germanenko.Source
         {
 			if (_editTask)
 			{
-				print($"{_nameField.text}");
-				print($"{_colorField._selectedItem.name}");
-				print($"{_id}");
                 Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
             }
 			else

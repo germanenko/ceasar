@@ -13,24 +13,26 @@ namespace Germanenko.Source
     public class ItemOfList : MonoBehaviour
     {
         [SerializeField] private int _id;
+        [SerializeField] private int _priority;
 
         [SerializeField] private TextMeshProUGUI ID;
         [SerializeField] private TextMeshProUGUI Title;
         [SerializeField] private TextMeshProUGUI Times;
+        [SerializeField] private TextMeshProUGUI Priority;
 
         [SerializeField] private Image TaskColor;
-
         [SerializeField] private Image _icon;
+
         public bool IsDraft;
+        public bool isDragging;
 
         [SerializeField] private TaskForm _taskForm;
 
-        public bool isDragging;
         [SerializeField] private Transform _taskToReplace;
 
         [SerializeField] private LayoutElement _layoutElement;
 
-        public void Init(Tasks _data)
+        public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
 
@@ -41,6 +43,10 @@ namespace Germanenko.Source
             _id = _data.ID;
             ID.text = _data.ID.ToString();
             Title.text = _data.Name;
+            _priority = priority;
+            Priority.text = _priority.ToString();
+
+
 
             if (IsDraft)
                 _icon.gameObject.SetActive(true);
