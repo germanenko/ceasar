@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Doozy.Runtime.UIManager.Components;
+using UnityEngine.EventSystems;
+using HutongGames.PlayMaker;
 
 namespace Germanenko.Source
 {
@@ -22,6 +24,11 @@ namespace Germanenko.Source
         public bool IsDraft;
 
         [SerializeField] private TaskForm _taskForm;
+
+        public bool isDragging;
+        [SerializeField] private Transform _taskToReplace;
+
+        [SerializeField] private LayoutElement _layoutElement;
 
         public void Init(Tasks _data)
         {
@@ -63,6 +70,37 @@ namespace Germanenko.Source
             print("отключен");
             SetDraft(false);
         }
+
+
+
+        public void OnTriggerEnter2D(Collider2D col)
+        {
+            print("enter");
+            if(TryGetComponent(out ItemOfList iol))
+            {
+                if (!col.GetComponent<ItemOfList>().isDragging)
+                {
+                    _taskToReplace = col.transform;
+                }
+            }
+        }
+
+
+
+        public void OnTriggerExit2D(Collider2D col)
+        {
+            print("exit");
+            _taskToReplace = null;
+        }
+
+
+
+        public void ReplaceTask()
+        {
+            if (_taskToReplace)
+                transform.SetSiblingIndex(_taskToReplace.GetSiblingIndex());
+        }
+
     }
 
 }

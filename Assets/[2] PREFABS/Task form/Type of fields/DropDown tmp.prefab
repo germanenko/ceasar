@@ -6204,6 +6204,13 @@ MonoBehaviour:
   listFolder: {fileID: 3352877066152455877}
   itemPrefab: {fileID: 3352877064436713060}
   itemPosition: 0
+  _selectedItem:
+    sprite: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    name: 
+  _selectedItemView: {fileID: 0}
+  _fsm: {fileID: 0}
+  _button: {fileID: 0}
 --- !u!1 &3352877065880212049
 GameObject:
   m_ObjectHideFlags: 0
