@@ -42,40 +42,83 @@ namespace Germanenko.Source
 
 			List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
+            string sqlPriority = $"SELECT * FROM Priority";
+
+            List<Priority> taskPriority = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
+
             GameObject prefab;
-			foreach (Tasks task in taskList)
+			//foreach (Tasks task in taskList)
+			//{
+
+			//	switch (task.Type)
+   //             {
+			//		case (int) TypeOfTasks.Clicker:
+			//			prefab = ConstantSingleton.Instance.ItemClicker;
+			//			break;
+
+			//		case (int) TypeOfTasks.Task:
+			//			prefab = ConstantSingleton.Instance.ItemTask;
+			//			break;
+
+			//		case (int) TypeOfTasks.Timer:
+			//			prefab = ConstantSingleton.Instance.ItemTimer;
+			//			break;
+
+   //                 default:
+			//			continue;
+   //             }
+
+			//	var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+   //             Debug.Log("добавлен таск");
+
+   //             var itemMan = newItem.GetComponent<ItemOfList>();
+
+			//	if(task.Draft == true)
+			//		itemMan.SetDraft(true);
+
+			//	int priority = taskPriority[taskList]
+
+			//	itemMan.Init(task);
+
+			//	_tasks.Add(itemMan);
+			//}
+
+
+
+			for (int i = 0; i < taskList.Count; i++)
 			{
-
-				switch (task.Type)
+                switch (taskList[i].Type)
                 {
-					case (int) TypeOfTasks.Clicker:
-						prefab = ConstantSingleton.Instance.ItemClicker;
-						break;
+                    case (int)TypeOfTasks.Clicker:
+                        prefab = ConstantSingleton.Instance.ItemClicker;
+                        break;
 
-					case (int) TypeOfTasks.Task:
-						prefab = ConstantSingleton.Instance.ItemTask;
-						break;
+                    case (int)TypeOfTasks.Task:
+                        prefab = ConstantSingleton.Instance.ItemTask;
+                        break;
 
-					case (int) TypeOfTasks.Timer:
-						prefab = ConstantSingleton.Instance.ItemTimer;
-						break;
+                    case (int)TypeOfTasks.Timer:
+                        prefab = ConstantSingleton.Instance.ItemTimer;
+                        break;
 
                     default:
-						continue;
+                        continue;
                 }
 
-				var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
                 Debug.Log("добавлен таск");
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
-				if(task.Draft == true)
-					itemMan.SetDraft(true);
+                if (taskList[i].Draft == true)
+                    itemMan.SetDraft(true);
 
-				itemMan.Init(task);
+                int priority = taskPriority[i].PriorityValue;
 
-				_tasks.Add(itemMan);
-			}
+                itemMan.Init(taskList[i], priority);
+
+                _tasks.Add(itemMan);
+            }
         }
 
 

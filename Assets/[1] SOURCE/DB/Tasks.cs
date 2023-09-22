@@ -50,4 +50,13 @@ namespace Germanenko.Source
         public string Color { get; set; }
 
     }
+    public class Priority
+    {
+
+        [PrimaryKey, AutoIncrement]
+        public int PriorityValue { get; set; }
+
+        [Default(0), NotNull]
+        public int TaskID { get; set; }
+    }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Doozy.Runtime.UIManager.Components;
+using UnityEngine.EventSystems;
+using HutongGames.PlayMaker;
 
 namespace Germanenko.Source
 {
@@ -11,19 +13,26 @@ namespace Germanenko.Source
     public class ItemOfList : MonoBehaviour
     {
         [SerializeField] private int _id;
+        [SerializeField] private int _priority;
 
         [SerializeField] private TextMeshProUGUI ID;
         [SerializeField] private TextMeshProUGUI Title;
         [SerializeField] private TextMeshProUGUI Times;
+        [SerializeField] private TextMeshProUGUI Priority;
 
         [SerializeField] private Image TaskColor;
-
         [SerializeField] private Image _icon;
+
         public bool IsDraft;
+        public bool isDragging;
 
         [SerializeField] private TaskForm _taskForm;
 
-        public void Init(Tasks _data)
+        [SerializeField] private Transform _taskToReplace;
+
+        [SerializeField] private LayoutElement _layoutElement;
+
+        public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
 
@@ -34,6 +43,10 @@ namespace Germanenko.Source
             _id = _data.ID;
             ID.text = _data.ID.ToString();
             Title.text = _data.Name;
+            _priority = priority;
+            Priority.text = _priority.ToString();
+
+
 
             if (IsDraft)
                 _icon.gameObject.SetActive(true);
@@ -63,6 +76,37 @@ namespace Germanenko.Source
             print("отключен");
             SetDraft(false);
         }
+
+
+
+        public void OnTriggerEnter2D(Collider2D col)
+        {
+            print("enter");
+            if(TryGetComponent(out ItemOfList iol))
+            {
+                if (!col.GetComponent<ItemOfList>().isDragging)
+                {
+                    _taskToReplace = col.transform;
+                }
+            }
+        }
+
+
+
+        public void OnTriggerExit2D(Collider2D col)
+        {
+            print("exit");
+            _taskToReplace = null;
+        }
+
+
+
+        public void ReplaceTask()
+        {
+            if (_taskToReplace)
+                transform.SetSiblingIndex(_taskToReplace.GetSiblingIndex());
+        }
+
     }
 
 }

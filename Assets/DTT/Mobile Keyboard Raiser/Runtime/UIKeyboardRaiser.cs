@@ -150,9 +150,21 @@ namespace DTT.KeyboardRaiser
 
 
 
+        public void SendKeyboardTask(bool open)
+        {
+            if(open)
+                Signal.Send("BG", "KeyboardTask", true);
+            else
+                Signal.Send("BG", "KeyboardTask", false);
+        }
+
+
+
         public void SendKeyboardSignal(bool opened)
         {
-            _myLayoutElement.ignoreLayout = opened;
+
+            _myLayoutElement.preferredHeight = opened ? 1 : 0;
+
             _myCanvas.overrideSorting = opened;         
         }
 

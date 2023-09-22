@@ -1,13 +1,12 @@
-// (c) Copyright HutongGames, LLC 2010-2013. All rights reserved.
+// (c) Copyright HutongGames, LLC 2010-2021. All rights reserved.  
+// License: Attribution 4.0 International(CC BY 4.0) 
 
 using UnityEngine;
-
 
 namespace HutongGames.PlayMaker.Actions
 {
 	public abstract class FsmStateActionAdvanced : FsmStateAction
 	{
-		
 		public enum FrameUpdateSelector {OnUpdate,OnLateUpdate,OnFixedUpdate};
 
 		[ActionSection("Update type")]
@@ -24,14 +23,22 @@ namespace HutongGames.PlayMaker.Actions
 			everyFrame = false;
 			updateType = FrameUpdateSelector.OnUpdate;
 		}
-		
-		public override void Awake()
+
+		public override void OnPreprocess()
 		{
 			if (updateType == FrameUpdateSelector.OnFixedUpdate)
 			{
-				   Fsm.HandleFixedUpdate = true;
+				Fsm.HandleFixedUpdate = true;
 			}
+
+			#if PLAYMAKER_1_8_5_OR_NEWER
+			if (updateType == FrameUpdateSelector.OnLateUpdate)
+			{
+				Fsm.HandleLateUpdate = true;
+			}
+			#endif
 		}
+
 		
 		public override void OnUpdate()
 		{

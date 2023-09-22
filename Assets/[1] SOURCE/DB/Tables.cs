@@ -18,6 +18,7 @@ namespace Germanenko.Source
 		{
 			Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
+			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
 			Debug.Log("end init");
 			//CreateTableText();
 		}
@@ -36,7 +37,8 @@ namespace Germanenko.Source
 				"", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
                 color == null ? "ffffffff" : color);
 
-		}
+            SetPriority();
+        }
 
 
 
@@ -47,6 +49,22 @@ namespace Germanenko.Source
                 "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
                 color == null ? "ffffffff" : color, true);
 
+            SetPriority();
+
+        }
+
+
+
+        private void SetPriority()
+        {
+            string sql = $"SELECT * FROM Tasks";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            Tasks lastTask = taskList[taskList.Count - 1];
+
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Priority (TaskID) VALUES (?)",
+                lastTask.ID);
         }
 
 
@@ -84,9 +102,13 @@ namespace Germanenko.Source
 			string sql;
 			sql = "DROP TABLE \"Tasks\"";
 
+            string sqlPriority;
+            sqlPriority = "DROP TABLE \"Priority\"";
+
             try
             {
 				ConstantSingleton.Instance.DbManager.Execute(sql);
+				ConstantSingleton.Instance.DbManager.Execute(sqlPriority);
 			}
 			catch (Exception)
             {

@@ -1632,6 +1632,8 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     name: 
   _selectedItemView: {fileID: 0}
+  _fsm: {fileID: 0}
+  _button: {fileID: 0}
 --- !u!1 &1226919239076534382
 GameObject:
   m_ObjectHideFlags: 0

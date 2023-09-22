@@ -1,4 +1,6 @@
 using DG.Tweening;
+using Doozy._Examples.Common.Runtime;
+using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,10 +25,23 @@ namespace Germanenko.Source
         [SerializeField] public DDItem _selectedItem;
         [SerializeField] private Image _selectedItemView;
 
+        [SerializeField] private PlayMakerFSM _fsm;
+        [SerializeField] private UIButton _button;
+
         void Start()
         {
             FillDD();
             itemPosition = Screen.height / 3;
+
+
+            _button.onDeselectedEvent.AddListener(CloseDropdown);
+        }
+
+
+
+        private void CloseDropdown()
+        {
+            _fsm.SendEvent("ClickOut");
         }
 
 
