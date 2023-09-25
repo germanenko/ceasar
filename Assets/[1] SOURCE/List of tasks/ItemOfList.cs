@@ -37,6 +37,10 @@ namespace Germanenko.Source
         [SerializeField] private Vector3 _defaultScale;
         [SerializeField] private Vector3 _replaceScale;
 
+        [SerializeField] private GameObject _taskEmpty;
+        [SerializeField] private GameObject _spawnedBaseTaskEmpty;
+        [SerializeField] private GameObject _spawnedReplaceTaskEmpty;
+
         public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
@@ -86,24 +90,54 @@ namespace Germanenko.Source
 
 
 
-        public void OnTriggerEnter2D(Collider2D col)
+        public void OnTriggerStay2D(Collider2D col)
         {
-            if(TryGetComponent(out ItemOfList iol))
+            if(col.TryGetComponent(out ItemOfList iol))
             {
-                if (!col.GetComponent<ItemOfList>().isDragging)
+                if (!col.GetComponent<ItemOfList>().isDragging && isDragging == true)
                 {
-                    _tasksToReplace.Add(col.transform);
-                    col.transform.localScale = _replaceScale;
+                    if(!_spawnedReplaceTaskEmpty)
+                    {
+                        _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                        _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
+                    }
+                    //_spawnedTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                    //_spawnedTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
+                    //_tasksToReplace.Add(col.transform);
+                    //col.transform.localScale = _replaceScale;
                 }
             }
-        }
+        }   
 
 
 
         public void OnTriggerExit2D(Collider2D col)
         {
-            _tasksToReplace.Remove(col.transform);
-            col.transform.localScale = _defaultScale;
+            //Destroy(_spawnedTaskEmpty);
+            if(col.gameObject == _spawnedReplaceTaskEmpty)
+            {
+                print("delete");
+                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
+                _spawnedReplaceTaskEmpty = null;
+            }
+
+            //_tasksToReplace.Remove(col.transform);
+            //col.transform.localScale = _defaultScale;
+        }
+
+
+
+        public void OnBeginDrag()
+        {
+            _spawnedBaseTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            _spawnedBaseTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
+        }
+
+
+
+        public void OnEndDrag()
+        {
+            Pooler.Instance.Despawn(PoolType.Entities, _spawnedBaseTaskEmpty);
         }
 
 
