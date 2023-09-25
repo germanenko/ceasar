@@ -274,6 +274,17 @@ namespace Germanenko.Source
 
         }
 
+        private void OnEnable()
+        {
+            swipeGesture.StateUpdated += SwipeGestureCallback;
+            FingersScript.Instance.AddGesture(swipeGesture);
+        }
+        private void OnDisable()
+        {
+            swipeGesture.StateUpdated -= SwipeGestureCallback;
+            FingersScript.Instance.RemoveGesture(swipeGesture);
+        }
+
         #endregion
 
 
@@ -285,7 +296,7 @@ namespace Germanenko.Source
 
 
 
-        private void Start()
+        private void Awake()
         {
 
             if(isTripleTapGesture) CreateTripleTapGesture();

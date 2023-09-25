@@ -7573,7 +7573,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &840377930
 MonoBehaviour:
@@ -11843,7 +11843,7 @@ MonoBehaviour:
   NormalState:
     StateType: 0
     StateEvent:
-      EventName: Unnamed
+      EventName: Normal State
       Runners: []
       Event:
         m_PersistentCalls:
@@ -11851,7 +11851,7 @@ MonoBehaviour:
   HighlightedState:
     StateType: 1
     StateEvent:
-      EventName: Unnamed
+      EventName: Highlighted State
       Runners: []
       Event:
         m_PersistentCalls:
@@ -11859,7 +11859,7 @@ MonoBehaviour:
   PressedState:
     StateType: 2
     StateEvent:
-      EventName: Unnamed
+      EventName: Pressed State
       Runners: []
       Event:
         m_PersistentCalls:
@@ -11867,7 +11867,7 @@ MonoBehaviour:
   SelectedState:
     StateType: 3
     StateEvent:
-      EventName: Unnamed
+      EventName: Selected State
       Runners: []
       Event:
         m_PersistentCalls:
@@ -11875,7 +11875,7 @@ MonoBehaviour:
   DisabledState:
     StateType: 4
     StateEvent:
-      EventName: Unnamed
+      EventName: Disabled State
       Runners: []
       Event:
         m_PersistentCalls:
@@ -15307,7 +15307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657956512
 Transform:
   m_ObjectHideFlags: 0

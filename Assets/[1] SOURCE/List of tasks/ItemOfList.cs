@@ -30,13 +30,19 @@ namespace Germanenko.Source
 
         [SerializeField] private TaskForm _taskForm;
 
-        [SerializeField] private Transform _taskToReplace;
+        [SerializeField] private List<Transform> _tasksToReplace;
 
         [SerializeField] private LayoutElement _layoutElement;
+
+        [SerializeField] private Vector3 _defaultScale;
+        [SerializeField] private Vector3 _replaceScale;
 
         public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
+
+            _defaultScale = transform.localScale;
+            _replaceScale = _defaultScale * 1.1f;
 
             Color currentColor;
             ColorUtility.TryParseHtmlString("#" + _data.Color, out currentColor);
@@ -86,7 +92,8 @@ namespace Germanenko.Source
             {
                 if (!col.GetComponent<ItemOfList>().isDragging)
                 {
-                    _taskToReplace = col.transform;
+                    _tasksToReplace.Add(col.transform);
+                    col.transform.localScale = _replaceScale;
                 }
             }
         }
@@ -95,16 +102,18 @@ namespace Germanenko.Source
 
         public void OnTriggerExit2D(Collider2D col)
         {
-            _taskToReplace = null;
+            _tasksToReplace.Remove(col.transform);
+            col.transform.localScale = _defaultScale;
         }
 
 
 
         public void ReplaceTask()
         {
-            if (_taskToReplace)
+            if (_tasksToReplace.Count > 0)
             {
-                transform.SetSiblingIndex(_taskToReplace.GetSiblingIndex());
+                print("replace");
+                transform.SetSiblingIndex(_tasksToReplace[0].GetSiblingIndex());
                 Toolbox.Get<Tables>().UpdatePriority();
             }
         }

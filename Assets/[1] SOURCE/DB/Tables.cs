@@ -79,6 +79,7 @@ namespace Germanenko.Source
 
                 Debug.Log($"updated: ID - {taskID}, Priority {taskSiblingIndex}");
             }
+            Debug.Log("=========================================");
 
             Toolbox.Get<ListOfTasks>().ReloadList();
         }
