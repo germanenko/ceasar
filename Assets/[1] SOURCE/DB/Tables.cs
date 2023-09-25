@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using SimpleSQL;
 using System;
 using Germanenko.Framework;
-
-
+using System.Threading.Tasks;
 
 namespace Germanenko.Source
 {
@@ -16,10 +15,10 @@ namespace Germanenko.Source
 
 		public void Init()
 		{
-			Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
+			//Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
 			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
-			Debug.Log("end init");
+		    //Debug.Log("end init");
 			//CreateTableText();
 		}
 
@@ -69,9 +68,26 @@ namespace Germanenko.Source
 
 
 
+        public void UpdatePriority()
+        {
+            for (int i = 0; i < Toolbox.Get<ListOfTasks>().Tasks.Count; i++)
+            {
+                int taskID = Toolbox.Get<ListOfTasks>().Tasks[i].ID;
+                int taskSiblingIndex = Toolbox.Get<ListOfTasks>().Tasks[i].transform.GetSiblingIndex() + 1;
+
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE Priority SET TaskID = ? WHERE PriorityValue = ?", taskID, taskSiblingIndex);
+
+                Debug.Log($"updated: ID - {taskID}, Priority {taskSiblingIndex}");
+            }
+
+            Toolbox.Get<ListOfTasks>().ReloadList();
+        }
+
+
+
         public void EditTask(string name, string color, int id)
 		{
-            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id); ;
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id); 
         }
 
 

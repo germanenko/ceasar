@@ -474,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _priority: 0
-  ID: {fileID: 4647382915654071263}
+  IDText: {fileID: 4647382915654071263}
   Title: {fileID: 4647382917082150323}
   Times: {fileID: 4647382915907067976}
   Priority: {fileID: 4452822620044851221}
@@ -528,16 +528,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.FloatSubtract
-        - HutongGames.PlayMaker.Actions.DebugFloat
         - HutongGames.PlayMaker.Actions.FloatCompare
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000400000007000000
-        actionHashCodes: 2a6e8a00ec7e3f031bcdca04
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 2a6e8a001bcdca04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -571,12 +569,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0.3
-        - useVariable: 1
-          name: WaitForSecondClick
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0.3
         - useVariable: 0
           name: 
           tooltip: 
@@ -600,20 +592,17 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - 
-        byteData: 0101000000000101
+        byteData: 010101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f0000000100000001000000070000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 0f0000000f00000001000000010000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
         - floatVariable
         - subtract
         - everyFrame
         - perSecond
-        - logLevel
-        - floatVariable
-        - sendToUnityLog
         - float1
         - float2
         - tolerance
@@ -621,8 +610,8 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 0000000001000000000000000100000002000000020000000600000003000000040000000500000000000000010000000200000007000000
-        paramByteDataSize: 0000000000000000010000000100000004000000000000000100000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 0000000001000000000000000100000002000000030000000400000000000000010000000200000002000000
+        paramByteDataSize: 0000000000000000010000000100000000000000000000000000000000000000000000000000000001000000
     - name: Idle
       description: 
       colorIndex: 0

@@ -15,10 +15,11 @@ namespace Germanenko.Source
 	{
 
 		private List<ItemOfList> _tasks = new List<ItemOfList>();
+        public List<ItemOfList> Tasks => _tasks;
 
 
 
-		public ListOfTasks()
+        public ListOfTasks()
 		{
 			Signals.Add(this);
 		}
@@ -44,7 +45,7 @@ namespace Germanenko.Source
 
             string sqlPriority = $"SELECT * FROM Priority";
 
-            List<Priority> taskPriority = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
+            List<Priority> taskPriorities = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
 
             GameObject prefab;
 			//foreach (Tasks task in taskList)
@@ -106,14 +107,22 @@ namespace Germanenko.Source
                 }
 
                 var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-                Debug.Log("добавлен таск");
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
                 if (taskList[i].Draft == true)
                     itemMan.SetDraft(true);
 
-                int priority = taskPriority[i].PriorityValue;
+                int priority = 0;
+                foreach (var taskPriority in taskPriorities)
+                {
+                    if(taskPriority.TaskID == taskList[i].ID)
+                    {
+                        priority = taskPriority.PriorityValue;
+                    }
+                }
+
+                itemMan.transform.SetSiblingIndex(priority-1);
 
                 itemMan.Init(taskList[i], priority);
 

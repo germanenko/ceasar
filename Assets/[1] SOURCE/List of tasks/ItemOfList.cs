@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Doozy.Runtime.UIManager.Components;
 using UnityEngine.EventSystems;
 using HutongGames.PlayMaker;
+using Germanenko.Framework;
 
 namespace Germanenko.Source
 {
@@ -13,9 +14,10 @@ namespace Germanenko.Source
     public class ItemOfList : MonoBehaviour
     {
         [SerializeField] private int _id;
+        public int ID => _id;
         [SerializeField] private int _priority;
 
-        [SerializeField] private TextMeshProUGUI ID;
+        [SerializeField] private TextMeshProUGUI IDText;
         [SerializeField] private TextMeshProUGUI Title;
         [SerializeField] private TextMeshProUGUI Times;
         [SerializeField] private TextMeshProUGUI Priority;
@@ -41,7 +43,7 @@ namespace Germanenko.Source
             //TaskColor.color =  currentColor;
 
             _id = _data.ID;
-            ID.text = _data.ID.ToString();
+            IDText.text = _data.ID.ToString();
             Title.text = _data.Name;
             _priority = priority;
             Priority.text = _priority.ToString();
@@ -73,7 +75,6 @@ namespace Germanenko.Source
 
         private void OnDisable()
         {
-            print("отключен");
             SetDraft(false);
         }
 
@@ -81,7 +82,6 @@ namespace Germanenko.Source
 
         public void OnTriggerEnter2D(Collider2D col)
         {
-            print("enter");
             if(TryGetComponent(out ItemOfList iol))
             {
                 if (!col.GetComponent<ItemOfList>().isDragging)
@@ -95,7 +95,6 @@ namespace Germanenko.Source
 
         public void OnTriggerExit2D(Collider2D col)
         {
-            print("exit");
             _taskToReplace = null;
         }
 
@@ -104,7 +103,10 @@ namespace Germanenko.Source
         public void ReplaceTask()
         {
             if (_taskToReplace)
+            {
                 transform.SetSiblingIndex(_taskToReplace.GetSiblingIndex());
+                Toolbox.Get<Tables>().UpdatePriority();
+            }
         }
 
     }
