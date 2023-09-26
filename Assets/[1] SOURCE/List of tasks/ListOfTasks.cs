@@ -129,6 +129,8 @@ namespace Germanenko.Source
 
                 var priority = taskPriorities[i].PriorityValue;
 
+                Debug.Log(t.ID);
+
                 itemMan.Init(t, priority);
 
                 _tasks.Add(itemMan);

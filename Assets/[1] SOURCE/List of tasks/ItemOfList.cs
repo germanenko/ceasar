@@ -7,6 +7,7 @@ using Doozy.Runtime.UIManager.Components;
 using UnityEngine.EventSystems;
 using HutongGames.PlayMaker;
 using Germanenko.Framework;
+using System.Linq;
 
 namespace Germanenko.Source
 {
@@ -38,7 +39,6 @@ namespace Germanenko.Source
         [SerializeField] private Vector3 _replaceScale;
 
         [SerializeField] private GameObject _taskEmpty;
-        [SerializeField] private GameObject _spawnedBaseTaskEmpty;
         [SerializeField] private GameObject _spawnedReplaceTaskEmpty;
 
         public void Init(Tasks _data, int priority)
@@ -96,10 +96,11 @@ namespace Germanenko.Source
             {
                 if (!col.GetComponent<ItemOfList>().isDragging && isDragging == true)
                 {
-                    if(!_spawnedReplaceTaskEmpty)
+                    if(_spawnedReplaceTaskEmpty)
                     {
-                        _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
                         _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
+                        if(!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
+                            _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
                     }
                     //_spawnedTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
                     //_spawnedTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
@@ -114,12 +115,6 @@ namespace Germanenko.Source
         public void OnTriggerExit2D(Collider2D col)
         {
             //Destroy(_spawnedTaskEmpty);
-            if(col.gameObject == _spawnedReplaceTaskEmpty)
-            {
-                print("delete");
-                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
-                _spawnedReplaceTaskEmpty = null;
-            }
 
             //_tasksToReplace.Remove(col.transform);
             //col.transform.localScale = _defaultScale;
@@ -129,15 +124,8 @@ namespace Germanenko.Source
 
         public void OnBeginDrag()
         {
-            _spawnedBaseTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-            _spawnedBaseTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
-        }
-
-
-
-        public void OnEndDrag()
-        {
-            Pooler.Instance.Despawn(PoolType.Entities, _spawnedBaseTaskEmpty);
+            _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
         }
 
 
@@ -148,6 +136,8 @@ namespace Germanenko.Source
             {
                 print("replace");
                 transform.SetSiblingIndex(_tasksToReplace[0].GetSiblingIndex());
+                
+                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
                 Toolbox.Get<Tables>().UpdatePriority();
             }
         }
