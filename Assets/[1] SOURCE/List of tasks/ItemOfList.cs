@@ -35,18 +35,15 @@ namespace Germanenko.Source
 
         [SerializeField] private LayoutElement _layoutElement;
 
-        [SerializeField] private Vector3 _defaultScale;
-        [SerializeField] private Vector3 _replaceScale;
-
         [SerializeField] private GameObject _taskEmpty;
         [SerializeField] private GameObject _spawnedReplaceTaskEmpty;
+
+        [SerializeField] private LerpToPlaceholder _lerpToPlaceholder;
+        [SerializeField] private ElementsContainer _parent;
 
         public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
-
-            _defaultScale = transform.localScale;
-            _replaceScale = _defaultScale * 1.1f;
 
             Color currentColor;
             ColorUtility.TryParseHtmlString("#" + _data.Color, out currentColor);
@@ -58,10 +55,20 @@ namespace Germanenko.Source
             _priority = priority;
             Priority.text = _priority.ToString();
 
-
-
             if (IsDraft)
                 _icon.gameObject.SetActive(true);
+
+            _lerpToPlaceholder = GetComponent<LerpToPlaceholder>();
+            _layoutElement = GetComponent<LayoutElement>();
+            _parent = transform.GetComponentInParent<ElementsContainer>();
+        }
+
+
+
+        public void SetPriority(int priority)
+        {
+            _priority = priority;
+            Priority.text = _priority.ToString();
         }
 
 
@@ -83,6 +90,7 @@ namespace Germanenko.Source
         }
 
 
+
         private void OnDisable()
         {
             SetDraft(false);
@@ -90,9 +98,9 @@ namespace Germanenko.Source
 
 
 
-        public void OnTriggerStay2D(Collider2D col)
-        {
-            if(col.TryGetComponent(out ItemOfList iol))
+        public void OnTriggerEnter2D(Collider2D col)
+        {    
+            if (col.TryGetComponent(out ItemOfList iol))
             {
                 if (!col.GetComponent<ItemOfList>().isDragging && isDragging == true)
                 {
@@ -102,22 +110,16 @@ namespace Germanenko.Source
                         if(!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
                             _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
                     }
-                    //_spawnedTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-                    //_spawnedTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
-                    //_tasksToReplace.Add(col.transform);
-                    //col.transform.localScale = _replaceScale;
                 }
             }
-        }   
+        }
 
 
 
-        public void OnTriggerExit2D(Collider2D col)
+        private void Update()
         {
-            //Destroy(_spawnedTaskEmpty);
-
-            //_tasksToReplace.Remove(col.transform);
-            //col.transform.localScale = _defaultScale;
+            if (isDragging)
+                _lerpToPlaceholder.placeholderTransform.GetComponent<LayoutElement>().ignoreLayout = _layoutElement.ignoreLayout;
         }
 
 
@@ -136,9 +138,13 @@ namespace Germanenko.Source
             {
                 print("replace");
                 transform.SetSiblingIndex(_tasksToReplace[0].GetSiblingIndex());
-                
+
                 Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
                 Toolbox.Get<Tables>().UpdatePriority();
+            }
+            else
+            {
+                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
             }
         }
 

@@ -487,10 +487,10 @@ MonoBehaviour:
   _taskForm: {fileID: 0}
   _tasksToReplace: []
   _layoutElement: {fileID: 4163757017099438646}
-  _defaultScale: {x: 0, y: 0, z: 0}
-  _replaceScale: {x: 0, y: 0, z: 0}
   _taskEmpty: {fileID: 4647382915475560605, guid: 0e13b93ce5ee7f44fa1884e61cbe1136, type: 3}
   _spawnedReplaceTaskEmpty: {fileID: 0}
+  _lerpToPlaceholder: {fileID: 0}
+  _parent: {fileID: 0}
 --- !u!114 &2198998019816252562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,7 +3022,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 270, y: 270}
+  m_Size: {x: 140, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &4439520887018238965
 Rigidbody2D:

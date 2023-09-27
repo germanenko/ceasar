@@ -75,13 +75,15 @@ namespace Germanenko.Source
                 int taskID = Toolbox.Get<ListOfTasks>().Tasks[i].ID;
                 int taskSiblingIndex = Toolbox.Get<ListOfTasks>().Tasks[i].transform.GetSiblingIndex() + 1;
 
+                Toolbox.Get<ListOfTasks>().Tasks[i].SetPriority(taskSiblingIndex);
+
                 ConstantSingleton.Instance.DbManager.Execute("UPDATE Priority SET TaskID = ? WHERE PriorityValue = ?", taskID, taskSiblingIndex);
 
                 Debug.Log($"updated: ID - {taskID}, Priority {taskSiblingIndex}");
             }
             Debug.Log("=========================================");
 
-            Toolbox.Get<ListOfTasks>().ReloadList();
+            //Toolbox.Get<ListOfTasks>().ReloadList();
         }
 
 
