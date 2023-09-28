@@ -22,7 +22,7 @@ public class LerpToPlaceholder : MonoBehaviour
     private void Update()
     {
         if (_rectTransform == null || placeholderTransform == null || smoothGridLayout == null) return;
-        if (placeholderTransform.transform.position.sqrMagnitude < 1) { print("stop"); return; }
+        if (placeholderTransform.transform.position.sqrMagnitude < 1) return; 
         if(Item && Item.isDragging) return;
         transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
     }

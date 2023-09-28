@@ -514,8 +514,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1095.6875
-        y: 278.96094
+        x: 951.6875
+        y: 294.96094
         width: 103
         height: 32
       isBreakpoint: 0
@@ -623,8 +623,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1272.3125
-        y: 295.21094
+        x: 1128.3125
+        y: 311.21094
         width: 100
         height: 16
       isBreakpoint: 0
@@ -709,8 +709,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1097.5859
-        y: 338.53906
+        x: 953.58594
+        y: 354.53906
         width: 100
         height: 16
       isBreakpoint: 0
@@ -887,8 +887,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1095.6875
-        y: 203.16406
+        x: 951.6875
+        y: 219.16406
         width: 103
         height: 48
       isBreakpoint: 0
@@ -980,8 +980,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 405.39062
-        y: 185.50781
+        x: 261.39062
+        y: 201.50781
         width: 100
         height: 16
       isBreakpoint: 0
@@ -1247,8 +1247,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 621.47656
-        y: 181.9375
+        x: 477.47656
+        y: 197.9375
         width: 100
         height: 16
       isBreakpoint: 0
@@ -1994,8 +1994,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1076.9375
-        y: 131.46094
+        x: 932.9375
+        y: 147.46094
         width: 136
         height: 32
       isBreakpoint: 0
@@ -2072,8 +2072,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 52
-        y: 99
+        x: 64
+        y: 108
         width: 139
         height: 32
       isBreakpoint: 0
@@ -2181,8 +2181,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 71.3125
-        y: 161.57812
+        x: 79.30469
+        y: 174.55469
         width: 100
         height: 16
       isBreakpoint: 0
@@ -2191,6 +2191,7 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
@@ -2206,10 +2207,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 0000000006000000080000000a0000000c0000000e00000016000000
-        actionHashCodes: ca51e9005ac852045ac852045ac852045ac85204c9f5790427fbe103
+        - 
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 00000000070000000d0000000f0000001100000013000000150000001d000000
+        actionHashCodes: ca51e900ca51e9005ac852045ac852045ac852045ac85204c9f5790427fbe103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -2761,6 +2763,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: EnableHorizontalSwipe
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: OnBeginDrag
         fsmObjectParams:
         - useVariable: 0
@@ -2770,7 +2778,62 @@ MonoBehaviour:
           networkSync: 0
           typeName: Germanenko.Source.ItemOfList
           value: {fileID: 6246794538568945623}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: Germanenko.Source.ItemOfList
+          value: {fileID: 6246794538568945623}
         fsmVarParams:
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         - variableName: 
           objectType: 
           useVariable: 0
@@ -2854,14 +2917,22 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000000000000000
-        arrayParamSizes: 00000000
+        byteData: 00000000000000000000
+        arrayParamSizes: 0100000000000000
         arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c000000270000000100000001000000240000000100000024000000010000002400000001000000240000000100000014000000190000000f0000000f0000000f0000000f0000001100000001000000110000001100000001000000
+        paramDataType: 18000000120000000c0000002700000027000000010000000100000018000000120000000c000000270000000100000001000000240000000100000024000000010000002400000001000000240000000100000014000000190000000f0000000f0000000f0000000f0000001100000001000000110000001100000001000000
         paramName:
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
         - behaviour
         - methodName
         - parameters
@@ -2887,15 +2958,15 @@ MonoBehaviour:
         - boolVariable
         - boolValue
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000020000000100000003000000020000000400000003000000050000000000000000000000000000000100000002000000030000000000000006000000010000000200000007000000
-        paramByteDataSize: 00000000000000000000000000000000010000000100000000000000010000000000000001000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000001000000000000000100000001000000010000000100000002000000020000000300000000000000040000000100000005000000020000000600000003000000070000000000000000000000000000000100000002000000030000000000000008000000010000000200000009000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000010000000000000001000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     - name: CheckDragging
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 397
-        y: 104
+        x: 253
+        y: 120
         width: 122
         height: 32
       isBreakpoint: 0
@@ -2969,8 +3040,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 599.3125
-        y: 98.11719
+        x: 455.3125
+        y: 114.11719
         width: 132
         height: 32
       isBreakpoint: 0
@@ -2988,15 +3059,17 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.SetFloatValue
         - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 9845b305a4c8bf00
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000070000000a000000
+        actionHashCodes: ca51e9009845b305a4c8bf00
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -3006,9 +3079,70 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: EnableHorizontalSwipe
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: Germanenko.Source.ItemOfList
+          value: {fileID: 6246794538568945623}
+        fsmVarParams:
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 1
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
@@ -3040,13 +3174,21 @@ MonoBehaviour:
         stringParams:
         - Drop
         - 
-        byteData: 0000
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 00000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f0000000100000011000000170000001700000001000000
+        paramDataType: 18000000120000000c000000270000002700000001000000010000000f0000000f0000000100000011000000170000001700000001000000
         paramName:
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
         - floatVariable
         - floatValue
         - everyFrame
@@ -3054,8 +3196,8 @@ MonoBehaviour:
         - isTrue
         - isFalse
         - everyFrame
-        paramDataPos: 00000000010000000000000000000000000000000100000001000000
-        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000001000000000000000100000000000000010000000200000000000000000000000100000003000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000100000000000000000000000100000000000000000000000000000001000000
     events:
     - name: UI CLICK
       isSystemEvent: 1
@@ -3116,15 +3258,6 @@ MonoBehaviour:
       linkTarget: 0
       colorIndex: 0
     - fsmEvent:
-        name: UI POINTER DOWN
-        isSystemEvent: 1
-        isGlobal: 0
-      toState: WaitToDrag
-      linkStyle: 0
-      linkConstraint: 0
-      linkTarget: 0
-      colorIndex: 0
-    - fsmEvent:
         name: UI DRAG
         isSystemEvent: 1
         isGlobal: 0
@@ -3138,6 +3271,15 @@ MonoBehaviour:
         isSystemEvent: 1
         isGlobal: 0
       toState: CheckDragging 2
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: UI POINTER DOWN
+        isSystemEvent: 1
+        isGlobal: 0
+      toState: WaitToDrag
       linkStyle: 0
       linkConstraint: 0
       linkTarget: 0
