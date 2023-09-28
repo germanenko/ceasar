@@ -33,7 +33,7 @@ namespace Germanenko.Source
         //private RotateGestureRecognizer rotateGesture;
         private LongPressGestureRecognizer longPressGesture;
 
-
+        public static TouchInArea HorizontalTouch;
 
         #region TAPS
 
@@ -298,8 +298,9 @@ namespace Germanenko.Source
 
         private void Awake()
         {
+            HorizontalTouch = this;
 
-            if(isTripleTapGesture) CreateTripleTapGesture();
+            if (isTripleTapGesture) CreateTripleTapGesture();
             if(isDoubleTapGesture) CreateDoubleTapGesture();
             if(isTapGesture) CreateTapGesture();
 

@@ -148,6 +148,13 @@ namespace Germanenko.Source
             }
         }
 
+
+
+        public void EnableHorizontalSwipe(bool enable)
+        {
+            TouchInArea.HorizontalTouch.gameObject.SetActive(enable);
+        }
+
     }
 
 }

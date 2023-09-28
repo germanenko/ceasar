@@ -1611,7 +1611,7 @@ MonoBehaviour:
   FolderDinamicElements: {fileID: 122475910}
   FolderListOfItems: {fileID: 274953897}
   TaskFormManager: {fileID: 96059313}
-  ItemClicker: {fileID: 4647382915475560605, guid: 46b9aed8890f32b40bc11a317eee21dc, type: 3}
+  ItemClicker: {fileID: 4647382915475560605, guid: 441a04031ab32144ca549a764521d3a4, type: 3}
   ItemTask: {fileID: 1103697882037732315, guid: fbec249d84dd16548bd742e8ab715300, type: 3}
   ItemTimer: {fileID: 3628322601356473540, guid: 6003c7f855d080d4dac02cefa7064a16, type: 3}
   MainCamera: {fileID: 963194228}
@@ -3366,7 +3366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   databaseFile: {fileID: 4900000, guid: 14937ae129e9f0f4ca5845f1decb447a, type: 3}
-  overrideBasePath: 
+  overrideBasePath: D:\ceasar\Assets\[9] TASKS
   overridePathMode: 0
   changeWorkingName: 1
   workingName: Tasks.sqlite
@@ -15418,7 +15418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1657956512
 Transform:
   m_ObjectHideFlags: 0
