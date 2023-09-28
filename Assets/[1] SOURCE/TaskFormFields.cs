@@ -12,13 +12,13 @@ namespace Germanenko.Source
     {
 
         [SerializeField] private Dropdown _dropDown;
-        [SerializeField] private InputFieldWithHits _inputField;
+        [SerializeField] private GameObject _inputField;
 
         [SerializeField] private List<Dropdown> _listOfDropdown = new();
-        [SerializeField] private List<InputFieldWithHits> _listOfInputFields = new();
+        [SerializeField] private List<GameObject> _listOfInputFields = new();
 
         public List<Dropdown> ListOfDropdown => _listOfDropdown;
-        public List<InputFieldWithHits> ListOfInputFields => _listOfInputFields;
+        public List<GameObject> ListOfInputFields => _listOfInputFields;
 
         [SerializeField] private List<GameObject> _listOfObjects = new();
 
@@ -27,7 +27,7 @@ namespace Germanenko.Source
         public async void CreateFields(Transform parentTransform)
         {
 
-            InputFieldWithHits newInputField;
+            GameObject newInputField;
             Dropdown newDropdown;
 
             ClearFields();
