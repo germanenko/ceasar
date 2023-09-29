@@ -1,93 +1,108 @@
-using System.Collections;
+using Germanenko.Framework;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using SimpleSQL;
-using System;
-using Germanenko.Framework;
 
 
 
 namespace Germanenko.Source
 {
 
-	public class ListOfTasks : IReceive<SignalReloadList>
-	{
+    public class ListOfTasks : IReceive<SignalReloadList>
+    {
 
-		private List<ItemOfList> _tasks = new List<ItemOfList>();
-
-
-
-		public ListOfTasks()
-		{
-			Signals.Add(this);
-		}
+        private List<ItemOfList> _tasks = new List<ItemOfList>();
+        public List<ItemOfList> Tasks => _tasks;
 
 
 
-		public void HandleSignal(SignalReloadList arg)
+        public ListOfTasks()
         {
-			ReloadList();
+            Signals.Add(this);
+        }
+
+
+
+        public void HandleSignal(SignalReloadList arg)
+        {
+            ReloadList();
         }
 
 
 
         public void ReloadList()
-		{
+        {
 
-			ClearList();
+            ClearList();
 
 
-			string sql = "SELECT * FROM Tasks Tsk";
+            string sql = "SELECT * FROM Tasks Tsk";
 
-			List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
             string sqlPriority = $"SELECT * FROM Priority";
 
-            List<Priority> taskPriority = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
+            List<Priority> taskPriorities = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
 
-            GameObject prefab;
-			//foreach (Tasks task in taskList)
-			//{
+            GameObject prefab = ConstantSingleton.Instance.ItemClicker;
+            //foreach (Tasks task in taskList)
+            //{
 
-			//	switch (task.Type)
-   //             {
-			//		case (int) TypeOfTasks.Clicker:
-			//			prefab = ConstantSingleton.Instance.ItemClicker;
-			//			break;
+            //  switch (task.Type)
+            //             {
+            //    case (int) TypeOfTasks.Clicker:
+            //      prefab = ConstantSingleton.Instance.ItemClicker;
+            //      break;
 
-			//		case (int) TypeOfTasks.Task:
-			//			prefab = ConstantSingleton.Instance.ItemTask;
-			//			break;
+            //    case (int) TypeOfTasks.Task:
+            //      prefab = ConstantSingleton.Instance.ItemTask;
+            //      break;
 
-			//		case (int) TypeOfTasks.Timer:
-			//			prefab = ConstantSingleton.Instance.ItemTimer;
-			//			break;
+            //    case (int) TypeOfTasks.Timer:
+            //      prefab = ConstantSingleton.Instance.ItemTimer;
+            //      break;
 
-   //                 default:
-			//			continue;
-   //             }
+            //                 default:
+            //      continue;
+            //             }
 
-			//	var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-   //             Debug.Log("добавлен таск");
+            //  var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            //             Debug.Log("добавлен таск");
 
-   //             var itemMan = newItem.GetComponent<ItemOfList>();
+            //             var itemMan = newItem.GetComponent<ItemOfList>();
 
-			//	if(task.Draft == true)
-			//		itemMan.SetDraft(true);
+            //  if(task.Draft == true)
+            //    itemMan.SetDraft(true);
 
-			//	int priority = taskPriority[taskList]
+            //  int priority = taskPriority[taskList]
 
-			//	itemMan.Init(task);
+            //  itemMan.Init(task);
 
-			//	_tasks.Add(itemMan);
-			//}
+            //  _tasks.Add(itemMan);
+            //}
 
 
+            for (int i = 0; i < taskPriorities.Count; i++)
+            {
+                string sqlP = $"SELECT * FROM Tasks WHERE ID = {taskPriorities[i].TaskID}";
 
-			for (int i = 0; i < taskList.Count; i++)
-			{
-                switch (taskList[i].Type)
+                Tasks t;
+                try
+                {
+                    t = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlP)[0];
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("ƒл€ продолжени€ требуетс€ сбросить базу данных");
+                    break;
+                    throw;
+                }
+
+
+                switch (t.Type)
                 {
                     case (int)TypeOfTasks.Clicker:
                         prefab = ConstantSingleton.Instance.ItemClicker;
@@ -106,16 +121,15 @@ namespace Germanenko.Source
                 }
 
                 var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-                Debug.Log("добавлен таск");
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
                 if (taskList[i].Draft == true)
                     itemMan.SetDraft(true);
 
-                int priority = taskPriority[i].PriorityValue;
+                var priority = taskPriorities[i].PriorityValue;
 
-                itemMan.Init(taskList[i], priority);
+                itemMan.Init(t, priority);
 
                 _tasks.Add(itemMan);
             }
@@ -125,17 +139,15 @@ namespace Germanenko.Source
 
         private void ClearList()
         {
-            
-			foreach (ItemOfList task in _tasks)
+
+            foreach (ItemOfList task in _tasks)
             {
-				Pooler.Instance.Despawn(PoolType.Entities, task.gameObject);
+                Pooler.Instance.Despawn(PoolType.Entities, task.gameObject);
             }
 
-			_tasks.Clear();
+            _tasks.Clear();
 
         }
-
-
 
         public int CountOfDrafts()
         {
@@ -143,7 +155,7 @@ namespace Germanenko.Source
 
             foreach (var task in _tasks)
             {
-                if(task.IsDraft)
+                if (task.IsDraft)
                     draftCount++;
             }
 
@@ -153,10 +165,10 @@ namespace Germanenko.Source
 
 
         ~ListOfTasks()
-		{
-			Signals.Remove(this);
-		}
+        {
+            Signals.Remove(this);
+        }
 
-	}
+    }
 
 }

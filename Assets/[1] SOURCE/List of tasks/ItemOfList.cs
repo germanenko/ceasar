@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using Doozy.Runtime.UIManager.Components;
 using UnityEngine.EventSystems;
 using HutongGames.PlayMaker;
+using Germanenko.Framework;
+using System.Linq;
 
 namespace Germanenko.Source
 {
@@ -13,9 +15,10 @@ namespace Germanenko.Source
     public class ItemOfList : MonoBehaviour
     {
         [SerializeField] private int _id;
+        public int ID => _id;
         [SerializeField] private int _priority;
 
-        [SerializeField] private TextMeshProUGUI ID;
+        [SerializeField] private TextMeshProUGUI IDText;
         [SerializeField] private TextMeshProUGUI Title;
         [SerializeField] private TextMeshProUGUI Times;
         [SerializeField] private TextMeshProUGUI Priority;
@@ -28,9 +31,15 @@ namespace Germanenko.Source
 
         [SerializeField] private TaskForm _taskForm;
 
-        [SerializeField] private Transform _taskToReplace;
+        [SerializeField] private List<Transform> _tasksToReplace;
 
         [SerializeField] private LayoutElement _layoutElement;
+
+        [SerializeField] private GameObject _taskEmpty;
+        [SerializeField] private GameObject _spawnedReplaceTaskEmpty;
+
+        [SerializeField] private LerpToPlaceholder _lerpToPlaceholder;
+        [SerializeField] private ElementsContainer _parent;
 
         public void Init(Tasks _data, int priority)
         {
@@ -41,15 +50,25 @@ namespace Germanenko.Source
             //TaskColor.color =  currentColor;
 
             _id = _data.ID;
-            ID.text = _data.ID.ToString();
+            IDText.text = _data.ID.ToString();
             Title.text = _data.Name;
             _priority = priority;
             Priority.text = _priority.ToString();
 
-
-
             if (IsDraft)
                 _icon.gameObject.SetActive(true);
+
+            _lerpToPlaceholder = GetComponent<LerpToPlaceholder>();
+            _layoutElement = GetComponent<LayoutElement>();
+            _parent = transform.GetComponentInParent<ElementsContainer>();
+        }
+
+
+
+        public void SetPriority(int priority)
+        {
+            _priority = priority;
+            Priority.text = _priority.ToString();
         }
 
 
@@ -71,40 +90,70 @@ namespace Germanenko.Source
         }
 
 
+
         private void OnDisable()
         {
-            print("отключен");
             SetDraft(false);
         }
 
 
 
         public void OnTriggerEnter2D(Collider2D col)
-        {
-            print("enter");
-            if(TryGetComponent(out ItemOfList iol))
+        {    
+            if (col.TryGetComponent(out ItemOfList iol))
             {
-                if (!col.GetComponent<ItemOfList>().isDragging)
+                if (!col.GetComponent<ItemOfList>().isDragging && isDragging == true)
                 {
-                    _taskToReplace = col.transform;
+                    if(_spawnedReplaceTaskEmpty)
+                    {
+                        _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
+                        if(!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
+                            _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
+                    }
                 }
             }
         }
 
 
 
-        public void OnTriggerExit2D(Collider2D col)
+        private void Update()
         {
-            print("exit");
-            _taskToReplace = null;
+            if (isDragging)
+                _lerpToPlaceholder.placeholderTransform.GetComponent<LayoutElement>().ignoreLayout = _layoutElement.ignoreLayout;
+        }
+
+
+
+        public void OnBeginDrag()
+        {
+            _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
+            print("выав");
         }
 
 
 
         public void ReplaceTask()
         {
-            if (_taskToReplace)
-                transform.SetSiblingIndex(_taskToReplace.GetSiblingIndex());
+            if (_tasksToReplace.Count > 0)
+            {
+                print("replace");
+                transform.SetSiblingIndex(_tasksToReplace[0].GetSiblingIndex());
+
+                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
+                Toolbox.Get<Tables>().UpdatePriority();
+            }
+            else
+            {
+                Pooler.Instance.Despawn(PoolType.Entities, _spawnedReplaceTaskEmpty);
+            }
+        }
+
+
+
+        public void EnableHorizontalSwipe(bool enable)
+        {
+            TouchInArea.HorizontalTouch.gameObject.SetActive(enable);
         }
 
     }

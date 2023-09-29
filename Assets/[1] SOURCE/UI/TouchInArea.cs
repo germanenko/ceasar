@@ -33,7 +33,7 @@ namespace Germanenko.Source
         //private RotateGestureRecognizer rotateGesture;
         private LongPressGestureRecognizer longPressGesture;
 
-
+        public static TouchInArea HorizontalTouch;
 
         #region TAPS
 
@@ -274,6 +274,17 @@ namespace Germanenko.Source
 
         }
 
+        private void OnEnable()
+        {
+            swipeGesture.StateUpdated += SwipeGestureCallback;
+            FingersScript.Instance.AddGesture(swipeGesture);
+        }
+        private void OnDisable()
+        {
+            swipeGesture.StateUpdated -= SwipeGestureCallback;
+            FingersScript.Instance.RemoveGesture(swipeGesture);
+        }
+
         #endregion
 
 
@@ -285,10 +296,11 @@ namespace Germanenko.Source
 
 
 
-        private void Start()
+        private void Awake()
         {
+            HorizontalTouch = this;
 
-            if(isTripleTapGesture) CreateTripleTapGesture();
+            if (isTripleTapGesture) CreateTripleTapGesture();
             if(isDoubleTapGesture) CreateDoubleTapGesture();
             if(isTapGesture) CreateTapGesture();
 
