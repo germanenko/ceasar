@@ -126,9 +126,9 @@ namespace Germanenko.Source
 
         public void OnBeginDrag()
         {
+            _layoutElement.ignoreLayout = true;
             _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
             _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
-            print("גûאג");
         }
 
 

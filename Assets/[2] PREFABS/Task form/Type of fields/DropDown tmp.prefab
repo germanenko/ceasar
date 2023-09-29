@@ -8872,8 +8872,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 164.2857, y: 164.2857}
-  m_Spacing: {x: 20.535713, y: 20.535713}
+  m_CellSize: {x: 164.33885, y: 164.33885}
+  m_Spacing: {x: 20.542356, y: 20.542356}
   m_Constraint: 1
   m_ConstraintCount: 4
   paddingSizerFallback:
