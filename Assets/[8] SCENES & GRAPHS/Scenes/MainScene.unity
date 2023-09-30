@@ -4381,6 +4381,7 @@ GameObject:
   - component: {fileID: 403533332}
   - component: {fileID: 403533331}
   - component: {fileID: 403533336}
+  - component: {fileID: 403533337}
   m_Layer: 5
   m_Name: LIST OF TASKS
   m_TagString: Untagged
@@ -5101,6 +5102,46 @@ MonoBehaviour:
   m_HorizontalScrollbarSpacing: 0
   m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &403533337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403533329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a77c45e5354bf40bbd63bd817dee47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingScreen: 0
+  PageStep: 1
+  Pagination: {fileID: 0}
+  PrevButton: {fileID: 0}
+  NextButton: {fileID: 0}
+  transitionSpeed: 7.5
+  UseHardSwipe: 0
+  UseFastSwipe: 0
+  UseSwipeDeltaThreshold: 0
+  FastSwipeThreshold: 100
+  SwipeVelocityThreshold: 100
+  SwipeDeltaThreshold: 5
+  UseTimeScale: 1
+  MaskArea: {fileID: 0}
+  MaskBuffer: 1
+  JumpOnEnable: 0
+  RestartOnEnable: 0
+  UseParentTransform: 1
+  ChildObjects: []
+  m_OnSelectionChangeStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectionPageChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectionChangeEndEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &423666906
@@ -6115,8 +6156,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6286,8 +6327,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Clear tasks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6752,8 +6793,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CHAT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17072,8 +17113,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17245,8 +17286,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1cc1209984622d54dbacefbdc98c5ecf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

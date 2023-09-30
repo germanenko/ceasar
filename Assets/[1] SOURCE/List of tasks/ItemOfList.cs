@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using HutongGames.PlayMaker;
 using Germanenko.Framework;
 using System.Linq;
+using UnityEngine.UI.Extensions;
 
 namespace Germanenko.Source
 {
@@ -39,7 +40,9 @@ namespace Germanenko.Source
         [SerializeField] private GameObject _spawnedReplaceTaskEmpty;
 
         [SerializeField] private LerpToPlaceholder _lerpToPlaceholder;
-        [SerializeField] private ElementsContainer _parent;
+
+        [SerializeField] private ScrollRect _scroll;
+        [SerializeField] private ScrollConflictManager _conflictManager;
 
         public void Init(Tasks _data, int priority)
         {
@@ -60,7 +63,10 @@ namespace Germanenko.Source
 
             _lerpToPlaceholder = GetComponent<LerpToPlaceholder>();
             _layoutElement = GetComponent<LayoutElement>();
-            _parent = transform.GetComponentInParent<ElementsContainer>();
+
+            _scroll = transform.parent.parent.parent.GetComponent<ScrollRect>();
+            _conflictManager = GetComponent<ScrollConflictManager>();
+            _conflictManager.ParentScrollRect = _scroll;
         }
 
 
@@ -155,7 +161,6 @@ namespace Germanenko.Source
         {
             TouchInArea.HorizontalTouch.gameObject.SetActive(enable);
         }
-
     }
 
 }
