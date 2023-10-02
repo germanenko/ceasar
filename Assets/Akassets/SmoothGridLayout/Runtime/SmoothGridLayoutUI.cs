@@ -1,3 +1,4 @@
+using Germanenko.Source;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -47,6 +48,8 @@ public class SmoothGridLayoutUI : MonoBehaviour
 
         foreach (Transform element in elementsTransform)
         {
+            if (element.gameObject.activeSelf && element.TryGetComponent(out LerpToPlaceholder lerpToPlaceholder)) 
+                lerpToPlaceholder.DelayMove();
             if (element.TryGetComponent(out RectTransform rectTransform))
             {
                 AddElement(rectTransform);
