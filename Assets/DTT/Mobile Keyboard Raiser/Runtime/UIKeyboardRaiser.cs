@@ -65,6 +65,8 @@ namespace DTT.KeyboardRaiser
         private Canvas _myCanvas;
         private LayoutElement _myLayoutElement;
 
+        [SerializeField] private bool _isHints;
+
         private void Start()
         {
             _originalPosition = transform.position;
@@ -81,7 +83,6 @@ namespace DTT.KeyboardRaiser
             _myLayoutElement = gameObject.AddComponent<LayoutElement>();
             
             gameObject.AddComponent<GraphicRaycaster>();
-
         }
 
 
@@ -175,7 +176,7 @@ namespace DTT.KeyboardRaiser
             if (Time.time - _timeOfLastLowering > TIMEOUT_DURATION && !_keyboardState.IsRaised)
                 return;
 
-            if (!KeyboardStateManager.openingField.Contains(this))  return;      
+            if (!KeyboardStateManager.openingField.Contains(this) && !_isHints) return;      
                 
 
 

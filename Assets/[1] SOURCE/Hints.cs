@@ -46,23 +46,23 @@ namespace Germanenko.Source
             //}
         }
 
-        //private void OnEnable()
-        //{
-        //    KeyboardStateManager.Current.Raised += OnRaised;
-        //    KeyboardStateManager.Current.Lowered += OnLowered;
-        //}
+        private void OnEnable()
+        {
+            KeyboardStateManager.Current.Raised += OnRaised;
+            KeyboardStateManager.Current.Lowered += OnLowered;
+        }
 
-        //public void OnRaised()
-        //{
-        //    SetActiveHints(true);
-        //    _taskName = KeyboardStateManager.openingField[1].GetComponent<InputFieldWithHits>().InputField;
+        public void OnRaised()
+        {
+            //SetActiveHints(true);
+            _taskName = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField;
 
-        //}
-        //public void OnLowered()
-        //{
-        //    SetActiveHints(false);
-        //    _taskName = null;
-        //}
+        }
+        public void OnLowered()
+        {
+            //SetActiveHints(false);
+            _taskName = null;
+        }
 
         //private void SetActiveHints(bool active)
         //{

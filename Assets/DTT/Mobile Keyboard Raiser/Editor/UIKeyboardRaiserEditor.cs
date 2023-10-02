@@ -73,6 +73,8 @@ namespace DTT.KeyboardRaiser.Editor
         /// </summary>
         public SerializedProperty PaddingProperty => base["_padding"];
 
+        public SerializedProperty HintsProperty => base["_isHints"];
+
         /// <summary>
         /// Creates on object that contains all the serialized properties from <see cref="UIKeyboardRaiser"/>.
         /// </summary>
@@ -155,6 +157,7 @@ namespace DTT.KeyboardRaiser.Editor
 
             EditorGUILayout.PropertyField(_propertyCache.PaddingProperty, _contentCache.PaddingContent);
             EditorGUILayout.PropertyField(_propertyCache.IsSmoothProperty, _contentCache.IsSmoothContent);
+            EditorGUILayout.PropertyField(_propertyCache.HintsProperty);
 
             // Doesn't draw the debug section if the config is missing.
             if (KeyboardRaiserAssetDatabase.Config == null)
