@@ -60,7 +60,6 @@ namespace Germanenko.Source
 
         public void AddHints()
         {
-            print("op");
             KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.ActivateInputField();
             parentScript.AddHints(this);
         }
