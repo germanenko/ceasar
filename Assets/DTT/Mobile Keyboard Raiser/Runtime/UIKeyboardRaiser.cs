@@ -153,10 +153,16 @@ namespace DTT.KeyboardRaiser
 
         public void SendKeyboardTask(bool open)
         {
-            if(open)
+            if (open)
+            {
                 Signal.Send("BG", "KeyboardTask", true);
+            }
             else
+            {
+
                 Signal.Send("BG", "KeyboardTask", false);
+            }
+                
         }
 
 

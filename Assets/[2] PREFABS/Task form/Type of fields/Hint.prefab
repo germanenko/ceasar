@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -3244870330729293046}
   - component: {fileID: 1965500010}
   - component: {fileID: 1965500011}
-  - component: {fileID: 5947568918289891455}
   - component: {fileID: 8070902460994535802}
   - component: {fileID: 6844373876786391903}
+  - component: {fileID: 2207369650831608784}
   m_Layer: 5
   m_Name: Hint
   m_TagString: Untagged
@@ -267,14 +267,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CallMethod
-        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.DebugLog
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
         actionStartIndex: 0000000007000000
-        actionHashCodes: ca51e900ca51e900
+        actionHashCodes: ca51e9009c59e501
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -296,15 +296,8 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: AddHints
+          value: gfdfg
         fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: Germanenko.Source.HintItem
-          value: {fileID: -3244870330729293046}
         - useVariable: 0
           name: 
           tooltip: 
@@ -361,30 +354,6 @@ MonoBehaviour:
             stringValues: []
             vector4Values: []
             objectReferences: []
-        - variableName: 
-          objectType: 
-          useVariable: 0
-          type: -1
-          floatValue: 0
-          intValue: 0
-          boolValue: 0
-          stringValue: 
-          vector4Value: {x: 0, y: 0, z: 0, w: 0}
-          objectReference: {fileID: 0}
-          arrayValue:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: 
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
@@ -396,14 +365,13 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00000000
-        arrayParamSizes: 0100000000000000
+        byteData: 00000000000001
+        arrayParamSizes: 01000000
         arrayParamTypes:
-        - HutongGames.PlayMaker.FsmVar
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c0000002700000027000000010000000100000018000000120000000c000000270000000100000001000000
+        paramDataType: 18000000120000000c00000027000000270000000100000001000000070000001200000001000000
         paramName:
         - behaviour
         - methodName
@@ -412,14 +380,11 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        - behaviour
-        - methodName
-        - parameters
-        - storeResult
-        - everyFrame
-        - manualUI
-        paramDataPos: 00000000000000000000000000000000010000000000000001000000010000000100000001000000020000000200000003000000
-        paramByteDataSize: 00000000000000000000000000000000000000000100000001000000000000000000000000000000000000000100000001000000
+        - logLevel
+        - text
+        - sendToUnityLog
+        paramDataPos: 00000000000000000000000000000000010000000000000001000000020000000100000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000001000000040000000000000001000000
     - name: State 2
       description: 
       colorIndex: 0
@@ -698,6 +663,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: 
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -705,7 +676,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -747,7 +718,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 929
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -783,20 +754,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5947568918289891455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4569389378891303840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1775717093, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetFSMs:
-  - {fileID: 1965500010}
 --- !u!114 &8070902460994535802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,6 +782,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFsms:
+  - {fileID: 1965500010}
+--- !u!114 &2207369650831608784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569389378891303840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1775717093, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
   - {fileID: 1965500010}
 --- !u!1 &4569389379649845736
 GameObject:
