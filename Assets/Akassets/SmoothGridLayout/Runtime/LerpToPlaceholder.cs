@@ -2,6 +2,7 @@ using UnityEngine;
 using Germanenko.Source;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using System.Collections;
 
 [RequireComponent(typeof(RectTransform))]
 public class LerpToPlaceholder : MonoBehaviour
@@ -13,6 +14,8 @@ public class LerpToPlaceholder : MonoBehaviour
 
     public ItemOfList Item;
 
+    public bool BlockMoving;
+
     private void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -22,8 +25,27 @@ public class LerpToPlaceholder : MonoBehaviour
     private void Update()
     {
         if (_rectTransform == null || placeholderTransform == null || smoothGridLayout == null) return;
-        if (placeholderTransform.transform.position.sqrMagnitude < 1) return; 
+        if (placeholderTransform.transform.position.sqrMagnitude < 1) return;
+        if (gameObject.activeSelf && BlockMoving) return;
         if(Item && Item.isDragging) return;
         transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
+    }
+
+
+
+    public void DelayMove()
+    {
+        StartCoroutine(DelayMoveCoroutine());
+    }
+
+
+
+    IEnumerator DelayMoveCoroutine()
+    {
+        BlockMoving = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        BlockMoving = false;
     }
 }

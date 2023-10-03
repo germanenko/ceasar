@@ -4,7 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
-
+using DTT.KeyboardRaiser;
+using UnityEngine.EventSystems;
 
 namespace Germanenko.Source
 {
@@ -59,6 +60,7 @@ namespace Germanenko.Source
 
         public void AddHints()
         {
+            KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.ActivateInputField();
             parentScript.AddHints(this);
         }
 

@@ -2955,7 +2955,7 @@ MonoBehaviour:
     StreamId:
       Category: TaskControl
       Name: OpenTask
-      Custom: 0
+      Custom: 1
     SignalValueType: 2
     IntegerValue: 0
     BooleanValue: 1

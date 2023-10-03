@@ -2309,6 +2309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _padding: 20
   _isSmooth: 1
+  _isHints: 0
 --- !u!114 &-2510848741046415774
 MonoBehaviour:
   m_ObjectHideFlags: 0
