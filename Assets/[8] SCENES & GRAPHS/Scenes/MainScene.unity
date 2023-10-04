@@ -18223,6 +18223,10 @@ PrefabInstance:
       propertyPath: m_ChildAlignment
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 441042198232982831, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+      propertyPath: _horizontalLayoutGroup
+      value: 
+      objectReference: {fileID: 1967521957}
     - target: {fileID: 4321495614633134596, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
       propertyPath: _isHints
       value: 1
@@ -18238,6 +18242,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 441042198232982828, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
   m_PrefabInstance: {fileID: 1967521953}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1967521957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 441042198232982830, guid: 3bcf9bd2c35d50b46bbffa9c9980c267, type: 3}
+  m_PrefabInstance: {fileID: 1967521953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968387405
 GameObject:
   m_ObjectHideFlags: 0

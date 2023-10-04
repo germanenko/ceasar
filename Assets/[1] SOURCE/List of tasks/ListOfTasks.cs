@@ -120,7 +120,7 @@ namespace Germanenko.Source
                         continue;
                 }
 
-                var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, new Vector3(Screen.width/2, -Screen.height/2, 0), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 

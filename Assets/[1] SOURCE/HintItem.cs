@@ -81,7 +81,6 @@ namespace Germanenko.Source
                 item.Key.color = item.Value;
 
         }
-
     }
 
 }
