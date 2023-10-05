@@ -17,8 +17,6 @@ public class LerpToPlaceholder : MonoBehaviour
     public bool BlockMoving;
     public bool InstantlyMove;
 
-
-
     private void Start()
     {   
         _rectTransform = GetComponent<RectTransform>();

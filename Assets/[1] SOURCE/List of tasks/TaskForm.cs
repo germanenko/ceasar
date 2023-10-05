@@ -114,8 +114,8 @@ namespace Germanenko.Source
 
 		public void ReplaceDraftNewTask()
 		{
-            Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
-			Toolbox.Get<Tables>().DropDraft();
+            //Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
+			Toolbox.Get<Tables>().DraftToTask(_id);
 
             Toolbox.Get<ListOfTasks>().ReloadList();
         }

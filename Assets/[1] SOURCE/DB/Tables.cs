@@ -6,6 +6,7 @@ using SimpleSQL;
 using System;
 using Germanenko.Framework;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Germanenko.Source
 {
@@ -135,14 +136,30 @@ namespace Germanenko.Source
 
 		}
 
+        public void DraftToTask(int id)
+        {
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Draft = 0 WHERE ID = ?", id);
+        }
+
+
+
         public void DropDraft()
         {
             string dropDraft;
+            string dropPriorityDraft;
+            string draft;
+
+            draft = $"SELECT * FROM Tasks WHERE Draft = 1";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(draft);
+
             dropDraft = "DELETE FROM Tasks WHERE Draft = 1";
+            dropPriorityDraft = $"DELETE FROM Priority WHERE TaskID = {taskList[0].ID}";
 
             try
             {
                 ConstantSingleton.Instance.DbManager.Execute(dropDraft);
+                ConstantSingleton.Instance.DbManager.Execute(dropPriorityDraft);
             }
             catch (Exception)
             {
