@@ -4,6 +4,7 @@ using UnityEngine;
 using Germanenko.Framework;
 using TMPro;
 using DTT.KeyboardRaiser;
+using UnityEngine.UI;
 
 namespace Germanenko.Source
 {
@@ -35,7 +36,6 @@ namespace Germanenko.Source
                 hintItem.SetText(item, this);
 
                 listOfHints.Add(hintItem);
-
             }
 
             //KeyboardStateManager.openingField.Add(GetComponent<UIKeyboardRaiser>());

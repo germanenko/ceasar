@@ -16,11 +16,22 @@ public class LerpToPlaceholder : MonoBehaviour
 
     public bool BlockMoving;
 
+
+
     private void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
         Item = GetComponent<ItemOfList>();
     }
+
+
+
+    private void OnDisable()
+    {
+        BlockMoving = false;
+    }
+
+
 
     private void Update()
     {
