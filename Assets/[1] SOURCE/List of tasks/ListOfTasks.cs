@@ -131,6 +131,9 @@ namespace Germanenko.Source
 
                 itemMan.Init(t, priority);
 
+                if(i < taskPriorities.Count - 1)
+                    newItem.GetComponent<LerpToPlaceholder>().InstantlyMove = true;
+
                 _tasks.Add(itemMan);
             }
         }

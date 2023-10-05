@@ -15,11 +15,12 @@ public class LerpToPlaceholder : MonoBehaviour
     public ItemOfList Item;
 
     public bool BlockMoving;
+    public bool InstantlyMove;
 
 
 
     private void Start()
-    {
+    {   
         _rectTransform = GetComponent<RectTransform>();
         Item = GetComponent<ItemOfList>();
     }
@@ -39,7 +40,16 @@ public class LerpToPlaceholder : MonoBehaviour
         if (placeholderTransform.transform.position.sqrMagnitude < 1) return;
         if (gameObject.activeSelf && BlockMoving) return;
         if(Item && Item.isDragging) return;
-        transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
+        if (InstantlyMove)
+        {
+            transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * 300);
+            InstantlyMove = false;
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);      
+        }
+            
     }
 
 
