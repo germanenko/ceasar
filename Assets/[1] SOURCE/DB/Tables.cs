@@ -18,6 +18,7 @@ namespace Germanenko.Source
 		{
 			//Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
+			ConstantSingleton.Instance.DbManager.CreateTable<TaskSave>();
 			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
 		    //Debug.Log("end init");
 			//CreateTableText();
@@ -38,6 +39,8 @@ namespace Germanenko.Source
                 color == null ? "ffffffff" : color);
 
             SetPriority();
+
+            AddSaveTask(name, color, false);
         }
 
 
@@ -91,7 +94,47 @@ namespace Germanenko.Source
 
         public void EditTask(string name, string color, int id)
 		{
-            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id); 
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+
+            AddSaveTask(name, color, true, id);
+        }
+
+
+
+        public void AddSaveTask(string name, string color, bool update, int id = 0)
+        {
+            string sql = $"SELECT * FROM Tasks";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            if (update)
+            {
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE TaskSave SET Name = ?, Color = ? WHERE TaskID = ?", name, color, id);
+            }
+            else
+            {
+                Tasks lastTask = taskList[taskList.Count - 1];
+
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color) VALUES (?, ?, ?, ?)",
+                    lastTask.ID,
+                    name == null ? "" : name,
+                    "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
+                    color == null ? "ffffffff" : color);
+            }
+        }
+
+
+
+        public Tasks GetSaveTask(int id)
+        {
+            string sql = $"SELECT * FROM TaskSave WHERE TaskID = {id}";
+
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            if (task.Count > 0)
+                return task[0];
+            else
+                return null;
         }
 
 
@@ -125,16 +168,22 @@ namespace Germanenko.Source
             string sqlPriority;
             sqlPriority = "DROP TABLE \"Priority\"";
 
+            string sqlSaves;
+            sqlSaves = "DROP TABLE \"TaskSave\"";
+
             try
             {
 				ConstantSingleton.Instance.DbManager.Execute(sql);
 				ConstantSingleton.Instance.DbManager.Execute(sqlPriority);
+				ConstantSingleton.Instance.DbManager.Execute(sqlSaves);
 			}
 			catch (Exception)
             {
             }
 
 		}
+
+
 
         public void DraftToTask(int id)
         {

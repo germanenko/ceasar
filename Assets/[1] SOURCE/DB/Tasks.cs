@@ -33,12 +33,14 @@ namespace Germanenko.Source
         [MaxLength(9), Default(0), NotNull]
         public bool Draft { get; set; }
     }
-    public class TaskBase
+    public class TaskSave
     {
 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
+        [Default(0), NotNull]
+        public int TaskID { get; set; }
 
         [MaxLength(60), Default("'---'"), NotNull]
         public string Name { get; set; }
