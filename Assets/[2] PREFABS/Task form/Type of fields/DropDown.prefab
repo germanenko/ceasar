@@ -2487,15 +2487,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 45
-    m_Right: 45
-    m_Top: 45
-    m_Bottom: 45
+    m_Left: 21
+    m_Right: 21
+    m_Top: 21
+    m_Bottom: 21
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 300}
-  m_Spacing: {x: 45.051193, y: 45.051193}
+  m_CellSize: {x: 164.33885, y: 164.33885}
+  m_Spacing: {x: 20.542356, y: 20.542356}
   m_Constraint: 1
   m_ConstraintCount: 4
   paddingSizerFallback:
