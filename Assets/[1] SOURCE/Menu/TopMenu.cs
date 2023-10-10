@@ -14,7 +14,6 @@ namespace Germanenko.Source
         public void ClearTasks()
         {
             Toolbox.Get<Tables>().DropTable();
-            Toolbox.Get<Tables>().DropDraft();
             //ConstantSingleton.Instance.NotificationManager.InitWindow(iconMenuSystem, "All OK", "Task list is empty");***
             Toolbox.Get<Tables>().Init();
             Toolbox.Get<ListOfTasks>().ReloadList();

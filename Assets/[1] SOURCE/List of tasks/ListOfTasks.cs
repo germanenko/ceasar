@@ -5,8 +5,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using SimpleSQL;
-
-
+using System.Threading.Tasks;
 
 namespace Germanenko.Source
 {
@@ -130,6 +129,9 @@ namespace Germanenko.Source
                 var priority = taskPriorities[i].PriorityValue;
 
                 itemMan.Init(t, priority);
+
+                if (i < taskPriorities.Count - 1)
+                    newItem.GetComponent<LerpToPlaceholder>().InstantlyMove = true;
 
                 _tasks.Add(itemMan);
             }

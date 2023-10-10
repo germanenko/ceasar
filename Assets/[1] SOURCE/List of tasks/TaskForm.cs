@@ -8,7 +8,6 @@ using System;
 using Doozy.Runtime.Signals;
 using DG.Tweening;
 using UnityEngine.Events;
-using Doozy.Runtime.UIManager.Containers;
 
 namespace Germanenko.Source
 {
@@ -37,6 +36,8 @@ namespace Germanenko.Source
 
         public UnityEvent OnShowTask;
 
+		[SerializeField] private GameObject _returnTaskButton;
+
         public void Start()
         {
             itemPosition = Screen.height / 3;
@@ -63,6 +64,11 @@ namespace Germanenko.Source
 		{
 			_id = id;
 			isDraft = draft;
+
+            if (Toolbox.Get<Tables>().GetSaveTask(_id) != null)
+				_returnTaskButton.SetActive(true);
+			else
+                _returnTaskButton.SetActive(false);
         }
 
 
@@ -114,8 +120,8 @@ namespace Germanenko.Source
 
 		public void ReplaceDraftNewTask()
 		{
-            Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
-			Toolbox.Get<Tables>().DropDraft();
+            //Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
+			Toolbox.Get<Tables>().DraftToTask(_id);
 
             Toolbox.Get<ListOfTasks>().ReloadList();
         }
@@ -244,6 +250,20 @@ namespace Germanenko.Source
         public void SetDraftTask(bool draft)
         {
             isDraft = draft;
+        }
+
+
+
+		public void ReturnTask()
+		{
+            string sql = $"SELECT * FROM TaskSave WHERE TaskID = {_id}";
+
+            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            SetTaskID(taskList[0].ID, true);
+            _idField.text = taskList[0].ID.ToString();
+            _nameField.text = taskList[0].Name;
+            _colorField.SelectDDItem(taskList[0].Color);
         }
 
 
