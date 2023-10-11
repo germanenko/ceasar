@@ -24395,8 +24395,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 100
+        x: 62.28125
+        y: 106.71094
         width: 105
         height: 112
       isBreakpoint: 0
@@ -24443,7 +24443,7 @@ MonoBehaviour:
           name: TwoTouches
           isSystemEvent: 0
           isGlobal: 0
-        toState: CheckMoving
+        toState: SetScaleText
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -24467,6 +24467,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.GetScreenWidth
         - HutongGames.PlayMaker.Actions.GetProperty
+        - HutongGames.PlayMaker.Actions.SetStringValue
         customNames:
         - 
         - 
@@ -24476,10 +24477,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101010001
-        actionIsOpen: 0101010101010101
-        actionStartIndex: 0000000005000000070000000d0000000e000000100000001200000014000000
-        actionHashCodes: ff8d7d01bae0270009faa102886116045ac852045ac8520444e7c2045ac85204
+        - 
+        actionEnabled: 010101010101000101
+        actionIsOpen: 010101010101010101
+        actionStartIndex: 0000000005000000070000000d0000000e00000010000000120000001400000016000000
+        actionHashCodes: ff8d7d01bae0270009faa102886116045ac852045ac8520444e7c2045ac85204c030f103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -24867,7 +24869,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: 
+            enumName: HutongGames.PlayMaker.None
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -24876,7 +24878,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: 
+            objectTypeName: UnityEngine.Object
             floatValues: []
             intValues: 
             boolValues: 
@@ -24885,7 +24887,19 @@ MonoBehaviour:
             objectReferences: []
           setProperty: 0
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: ScaleText
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -24937,12 +24951,12 @@ MonoBehaviour:
         - 
         - 
         - FINISHED
-        byteData: 010100000000
+        byteData: 01010000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f00000017000000170000001700000017000000100000000100000010000000100000001700000017000000170000000100000017000000240000000100000024000000010000000f000000010000002400000001000000
+        paramDataType: 0f00000017000000170000001700000017000000100000000100000010000000100000001700000017000000170000000100000017000000240000000100000024000000010000000f000000010000002400000001000000120000001200000001000000
         paramName:
         - minSwipeDistance
         - swipeLeftEvent
@@ -24966,15 +24980,18 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 00000000000000000100000002000000030000000000000000000000010000000200000004000000050000000600000001000000070000000000000002000000010000000300000001000000040000000200000005000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000001000000000000000100000000000000010000000000000001000000
+        - stringVariable
+        - stringValue
+        - everyFrame
+        paramDataPos: 00000000000000000100000002000000030000000000000000000000010000000200000004000000050000000600000001000000070000000000000002000000010000000300000001000000040000000200000005000000000000000100000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000001000000000000000100000000000000010000000000000001000000000000000000000001000000
     - name: State 2
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 217.04688
-        y: 93.17969
+        x: 218.82031
+        y: 74.88281
         width: 100
         height: 32
       isBreakpoint: 0
@@ -25034,8 +25051,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 440.32812
-        y: 323.1328
+        x: 678.89844
+        y: 187.01562
         width: 105
         height: 80
       isBreakpoint: 0
@@ -25235,7 +25252,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0.4
+          value: 0.3
         - useVariable: 0
           name: 
           tooltip: 
@@ -25456,8 +25473,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 279.42188
-        y: 315.59375
+        x: 466.59375
+        y: 256.8047
         width: 110
         height: 48
       isBreakpoint: 0
@@ -25485,7 +25502,6 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.GetTouchCount
         - HutongGames.PlayMaker.Actions.IntCompare
         - HutongGames.PlayMaker.Actions.GetTouchInfo
@@ -25502,11 +25518,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 010101010101010101
-        actionIsOpen: 010101010101010101
-        actionStartIndex: 000000000200000004000000060000000c0000001700000022000000280000002e000000
-        actionHashCodes: 5ac852045ac85204bae0270009faa102ae785701ae7857011e7988041e7988041bcdca04
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 0000000002000000040000000a0000001500000020000000260000002c000000
+        actionHashCodes: 5ac85204bae0270009faa102ae785701ae7857011e7988041e7988041bcdca04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -25560,138 +25575,6 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          EnumParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            enumName: 
-            intValue: 0
-          ArrayParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: 
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 1823300069}
-          TargetTypeName: TMPro.TextMeshProUGUI
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 1
           FloatParameter:
             useVariable: 0
             name: 
@@ -26020,15 +25903,13 @@ MonoBehaviour:
         - 
         - Scale
         - Scale
-        byteData: 000001010101010001
+        byteData: 0001010101010001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 24000000010000002400000001000000100000000100000010000000100000001700000017000000170000000100000010000000110000001c0000000f0000000f0000001c0000000f0000000f0000000f000000100000000100000010000000110000001c0000000f0000000f0000001c0000000f0000000f0000000f0000001000000001000000140000001c000000130000001c0000000f00000001000000140000001c000000130000001c0000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 2400000001000000100000000100000010000000100000001700000017000000170000000100000010000000110000001c0000000f0000000f0000001c0000000f0000000f0000000f000000100000000100000010000000110000001c0000000f0000000f0000001c0000000f0000000f0000000f0000001000000001000000140000001c000000130000001c0000000f00000001000000140000001c000000130000001c0000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
-        - targetProperty
-        - everyFrame
         - targetProperty
         - everyFrame
         - storeCount
@@ -26080,15 +25961,15 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 00000000000000000100000001000000000000000200000001000000020000000000000001000000020000000300000003000000000000000000000000000000010000000100000002000000030000000400000004000000040000000500000001000000020000000500000006000000030000000700000008000000090000000600000005000000000000000400000000000000050000000a00000006000000010000000600000001000000070000000b000000070000000c0000000d0000000e00000003000000040000000500000008000000
-        paramByteDataSize: 0000000001000000000000000100000000000000010000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000100000001000000020000000000000001000000020000000200000003000000000000000000000000000000010000000100000002000000030000000400000004000000030000000500000001000000020000000500000006000000030000000700000008000000090000000600000004000000000000000400000000000000050000000a00000005000000010000000600000001000000070000000b000000060000000c0000000d0000000e00000003000000040000000500000007000000
+        paramByteDataSize: 000000000100000000000000010000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
     - name: UpScale
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 597.5078
-        y: 351.90625
+        x: 842.77344
+        y: 188.46875
         width: 121
         height: 80
       isBreakpoint: 0
@@ -26126,7 +26007,7 @@ MonoBehaviour:
           name: BlockScaling
           isSystemEvent: 0
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -26161,13 +26042,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
@@ -26186,6 +26061,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -26225,8 +26106,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 794.91406
-        y: 338.90625
+        x: 1034.9141
+        y: 354.90625
         width: 109
         height: 48
       isBreakpoint: 0
@@ -26237,7 +26118,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -26429,13 +26310,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 2
         - useVariable: 1
           name: ChildCountOfTaskList
           tooltip: 
@@ -26504,8 +26385,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1158.8438
-        y: 360.125
+        x: 1398.8438
+        y: 376.125
         width: 100
         height: 32
       isBreakpoint: 0
@@ -26624,8 +26505,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 794.4844
-        y: 498.45312
+        x: 1034.4844
+        y: 514.4531
         width: 109
         height: 48
       isBreakpoint: 0
@@ -26636,7 +26517,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -26840,13 +26721,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 3
+          value: 4
         - useVariable: 1
           name: ChildCountOfTaskList
           tooltip: 
@@ -26917,14 +26798,23 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 969.0156
-        y: 367.92188
+        x: 1243.2656
+        y: 226.51562
         width: 116
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
+      - fsmEvent:
+          name: FirstState
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: FirstState
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       - fsmEvent:
           name: SecondState
           isSystemEvent: 0
@@ -26982,7 +26872,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
@@ -27001,6 +26891,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -27008,20 +26904,22 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - FirstState
         - SecondState
         - ThirdState
         - FourState
         byteData: 00
-        arrayParamSizes: 0300000003000000
+        arrayParamSizes: 0400000004000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmEvent
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 100000000c0000001000000010000000100000000c00000017000000170000001700000001000000
+        paramDataType: 100000000c000000100000001000000010000000100000000c0000001700000017000000170000001700000001000000
         paramName:
         - intVariable
         - compareTo
+        - 
         - 
         - 
         - 
@@ -27029,16 +26927,17 @@ MonoBehaviour:
         - 
         - 
         - 
+        - 
         - everyFrame
-        paramDataPos: 00000000000000000100000002000000030000000100000000000000010000000200000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000001000000020000000300000004000000010000000000000001000000020000000300000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: DownScale
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 594.3047
-        y: 691.5078
+        x: 841.5781
+        y: 520.1953
         width: 121
         height: 80
       isBreakpoint: 0
@@ -27058,7 +26957,7 @@ MonoBehaviour:
           name: ToSecondState
           isSystemEvent: 0
           isGlobal: 0
-        toState: SecondState 2
+        toState: SecondState
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -27067,7 +26966,7 @@ MonoBehaviour:
           name: BlockScaling
           isSystemEvent: 0
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -27076,7 +26975,7 @@ MonoBehaviour:
           name: ToThirdState
           isSystemEvent: 0
           isGlobal: 0
-        toState: ThirdState 2
+        toState: ThirdState
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -27111,13 +27010,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
@@ -27136,6 +27029,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -27170,292 +27069,13 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000000000001000000020000000300000004000000010000000000000001000000020000000300000000000000
         paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
-    - name: SecondState 2
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 788.0469
-        y: 761.8047
-        width: 116
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: State 1
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: ElementScale
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: LoopState 2
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SetIntValue
-        - HutongGames.PlayMaker.Actions.GetChildCount
-        - HutongGames.PlayMaker.Actions.SetVector2Value
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.Loop
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 000000000300000006000000090000000b000000
-        actionHashCodes: 603dd90576b3ca05029777025ac8520465c84b02
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 463436178}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 463436180}
-          TargetTypeName: UnityEngine.UI.GridLayoutGroup
-          PropertyName: cellSize
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 1
-            name: CellSize
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Vector2
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          EnumParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            enumName: HutongGames.PlayMaker.None
-            intValue: 0
-          ArrayParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: UnityEngine.Object
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
-          setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: CurrentState
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        - useVariable: 1
-          name: ChildCountOfTaskList
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: ChildCountOfTaskList
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: CurrentChild
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmBoolParams: []
-        fsmVector2Params:
-        - useVariable: 1
-          name: CellSize
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0}
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 315, y: 400}
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - ElementScale
-        - FINISHED
-        byteData: 00000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 100000001000000001000000140000001000000001000000250000002500000001000000240000000100000010000000100000001700000017000000
-        paramName:
-        - intVariable
-        - intValue
-        - everyFrame
-        - gameObject
-        - storeResult
-        - everyFrame
-        - vector2Variable
-        - vector2Value
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - loops
-        - storeCurrentLoop
-        - loopEvent
-        - finishEvent
-        paramDataPos: 000000000100000000000000000000000200000001000000000000000100000002000000000000000300000003000000040000000000000001000000
-        paramByteDataSize: 000000000000000001000000000000000000000001000000000000000000000001000000000000000100000000000000000000000000000000000000
     - name: FirstState
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 790.8281
-        y: 684.2422
+        x: 1034.7422
+        y: 285.64844
         width: 109
         height: 48
       isBreakpoint: 0
@@ -27466,7 +27086,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -27475,7 +27095,7 @@ MonoBehaviour:
           name: ElementScale
           isSystemEvent: 0
           isGlobal: 0
-        toState: LoopState 2
+        toState: LoopState
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -27670,13 +27290,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 1
           name: ChildCountOfTaskList
           tooltip: 
@@ -27742,253 +27362,13 @@ MonoBehaviour:
         - finishEvent
         paramDataPos: 0000000001000000000000000000000002000000010000000000000001000000000000000100000002000000000000000300000003000000040000000000000001000000
         paramByteDataSize: 0000000000000000010000000000000000000000010000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000
-    - name: CompareState 2
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 962.8125
-        y: 705.52344
-        width: 126
-        height: 64
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FirstState
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: FirstState
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: SecondState
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: SecondState 2
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: ThirdState
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: ThirdState 2
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.IntSwitch
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 092dca00
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams:
-        - useVariable: 1
-          name: CurrentState
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 2
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FirstState
-        - SecondState
-        - ThirdState
-        byteData: 00
-        arrayParamSizes: 0300000003000000
-        arrayParamTypes:
-        - HutongGames.PlayMaker.FsmInt
-        - HutongGames.PlayMaker.FsmEvent
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 100000000c0000001000000010000000100000000c00000017000000170000001700000001000000
-        paramName:
-        - intVariable
-        - compareTo
-        - 
-        - 
-        - 
-        - sendEvent
-        - 
-        - 
-        - 
-        - everyFrame
-        paramDataPos: 00000000000000000100000002000000030000000100000000000000010000000200000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
-    - name: LoopState 2
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 1163.8203
-        y: 702.39844
-        width: 101
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: CompareState 2
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.GetChildNum
-        - HutongGames.PlayMaker.Actions.RectTransformSetSizeDelta
-        customNames:
-        - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 280cdd05c7fcac02
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: ChildGO
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 274953896}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: ChildGO
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams:
-        - useVariable: 1
-          name: CurrentChild
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmBoolParams: []
-        fsmVector2Params:
-        - useVariable: 1
-          name: CellSize
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0}
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 0000000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 14000000100000001300000014000000250000000f0000000f0000000100000007000000
-        paramName:
-        - gameObject
-        - childIndex
-        - store
-        - gameObject
-        - sizeDelta
-        - x
-        - y
-        - everyFrame
-        - updateType
-        paramDataPos: 000000000000000000000000010000000000000000000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000004000000
     - name: ThirdState
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 796.8828
-        y: 420.60938
+        x: 1036.8828
+        y: 436.60938
         width: 109
         height: 48
       isBreakpoint: 0
@@ -27999,7 +27379,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: State 1
+        toState: ToStart
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -28203,13 +27583,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 2
+          value: 3
         - useVariable: 1
           name: ChildCountOfTaskList
           tooltip: 
@@ -28275,15 +27655,15 @@ MonoBehaviour:
         - finishEvent
         paramDataPos: 0000000001000000000000000000000002000000010000000000000001000000000000000100000002000000000000000300000003000000040000000000000001000000
         paramByteDataSize: 0000000000000000010000000000000000000000010000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000
-    - name: ThirdState 2
+    - name: ToStart
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 788.58594
-        y: 839.3672
-        width: 109
-        height: 48
+        x: 677.72656
+        y: 292.78906
+        width: 100
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -28297,43 +27677,89 @@ MonoBehaviour:
         linkConstraint: 0
         linkTarget: 0
         colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: SetScaleText
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 241.88281
+        y: 226.10156
+        width: 109
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
       - fsmEvent:
-          name: ElementScale
-          isSystemEvent: 0
+          name: FINISHED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: LoopState 2
+        toState: CheckMoving
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.SetIntValue
-        - HutongGames.PlayMaker.Actions.GetChildCount
-        - HutongGames.PlayMaker.Actions.SetVector2XY
         - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.Loop
+        - HutongGames.PlayMaker.Actions.SetStringValue
+        - HutongGames.PlayMaker.Actions.IntOperator
+        - HutongGames.PlayMaker.Actions.StringAppend
+        - HutongGames.PlayMaker.Actions.StringAppend
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000003000000060000000b0000000d000000
-        actionHashCodes: 603dd90576b3ca05f9bc25035ac8520465c84b02
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000002000000050000000a0000000c0000000e000000
+        actionHashCodes: 5ac85204c030f10314180903a4b08a01a4b08a015ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 463436178}
+        fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -28346,16 +27772,16 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             typeName: UnityEngine.Object
-            value: {fileID: 463436180}
-          TargetTypeName: UnityEngine.UI.GridLayoutGroup
-          PropertyName: cellSize
+            value: {fileID: 1823300069}
+          TargetTypeName: TMPro.TextMeshProUGUI
+          PropertyName: enabled
           BoolParameter:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 0
+            value: 1
           FloatParameter:
             useVariable: 0
             name: 
@@ -28385,8 +27811,8 @@ MonoBehaviour:
             networkSync: 0
             value: 
           Vector2Parameter:
-            useVariable: 1
-            name: CellSize
+            useVariable: 0
+            name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
@@ -28423,7 +27849,139 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: UnityEngine.Vector2
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 1823300069}
+          TargetTypeName: TMPro.TextMeshProUGUI
+          PropertyName: text
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 1
+            name: ScaleText
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.String
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -28472,102 +28030,99 @@ MonoBehaviour:
             objectReferences: []
           setProperty: 1
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: ScaleText
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+        - useVariable: 1
+          name: ScaleText
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+        - useVariable: 1
+          name: ScaleValue
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: ScaleText
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: '%'
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 480
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 540
+        fsmFloatParams: []
         fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 25
         - useVariable: 1
           name: CurrentState
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 2
+          value: 1
         - useVariable: 1
-          name: ChildCountOfTaskList
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: ChildCountOfTaskList
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: CurrentChild
+          name: ScaleValue
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
         fsmBoolParams: []
-        fsmVector2Params:
-        - useVariable: 1
-          name: CellSize
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0}
+        fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams:
-        - ElementScale
-        - FINISHED
-        byteData: 00000000
+        stringParams: []
+        byteData: 0000020000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 10000000100000000100000014000000100000000100000025000000250000000f0000000f00000001000000240000000100000010000000100000001700000017000000
+        paramDataType: 24000000010000001200000012000000010000001000000010000000070000001000000001000000120000001200000012000000120000002400000001000000
         paramName:
-        - intVariable
-        - intValue
-        - everyFrame
-        - gameObject
-        - storeResult
-        - everyFrame
-        - vector2Variable
-        - vector2Value
-        - x
-        - y
-        - everyFrame
         - targetProperty
         - everyFrame
-        - loops
-        - storeCurrentLoop
-        - loopEvent
-        - finishEvent
-        paramDataPos: 0000000001000000000000000000000002000000010000000000000001000000000000000100000002000000000000000300000003000000040000000000000001000000
-        paramByteDataSize: 0000000000000000010000000000000000000000010000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000
+        - stringVariable
+        - stringValue
+        - everyFrame
+        - integer1
+        - integer2
+        - operation
+        - storeResult
+        - everyFrame
+        - stringVariable
+        - appendString
+        - stringVariable
+        - appendString
+        - targetProperty
+        - everyFrame
+        paramDataPos: 00000000000000000000000001000000010000000000000001000000020000000200000006000000020000000300000004000000050000000100000007000000
+        paramByteDataSize: 00000000010000000000000000000000010000000000000000000000040000000000000001000000000000000000000000000000000000000000000001000000
     events:
     - name: Swipe Left
       isSystemEvent: 0
@@ -28635,6 +28190,18 @@ MonoBehaviour:
     - name: FourState
       isSystemEvent: 0
       isGlobal: 0
+    - name: 25
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: 50
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: 75
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: 100
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables:
@@ -28680,15 +28247,27 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 0
+        value: 1
       - useVariable: 1
         name: Touches
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: 0
+      - useVariable: 1
+        name: ScaleValue
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: ScaleText
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: "\u041C\u0430\u0441\u0448\u0442\u0430\u0431 - "
       vector2Variables:
       - useVariable: 1
         name: CellSize
@@ -28740,7 +28319,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
