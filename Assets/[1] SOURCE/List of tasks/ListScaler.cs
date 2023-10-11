@@ -2,37 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Doozy.Runtime.Colors.Models.HSL;
 
 public class ListScaler : MonoBehaviour
 {
-    public float OldDistance;
-    public float NewDistance;
+    public bool Scaling;
 
-    public GridLayoutGroup GridLayout;
+    public SmoothGridLayoutUI LayoutUI;
 
-    void Update()
+    public GridLayoutGroup Group;
+
+    public Rect Rect;
+
+    private void Start()
     {
-        if(Input.touches.Length == 2)
+        LayoutUI = transform.parent.parent.GetComponent<SmoothGridLayoutUI>();
+        Group = LayoutUI.gridLayoutGroup;
+    }
+
+    private void FixedUpdate()
+    {
+        if (Scaling)
         {
-            NewDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
-
-            if (Mathf.Abs(NewDistance - OldDistance) >= 2) 
-            {
-                print("da");
-                
-                if (NewDistance < OldDistance)
-                {
-                    GridLayout.cellSize = new Vector2(GridLayout.cellSize.x + Mathf.Abs(NewDistance - OldDistance) / 50, GridLayout.cellSize.y + Mathf.Abs(NewDistance - OldDistance) / 50);
-                    print(GridLayout.cellSize.x);
-                }
-                else if(NewDistance > OldDistance)
-                {
-                    GridLayout.cellSize = new Vector2(GridLayout.cellSize.x - Mathf.Abs(NewDistance - OldDistance) / 50, GridLayout.cellSize.y - Mathf.Abs(NewDistance - OldDistance) / 50);
-                    print(GridLayout.cellSize.x);
-                }
-                OldDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
-
-            }
+            GetComponent<RectTransform>().sizeDelta = new Vector2(Group.cellSize.x, Group.cellSize.y);
         }
     }
 }
