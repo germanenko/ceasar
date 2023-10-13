@@ -257,12 +257,12 @@ namespace Germanenko.Source
 
 		public void ReturnTask()
 		{
-            string sql = $"SELECT * FROM TaskSave WHERE TaskID = {_id}";
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {_id}";
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
-            SetTaskID(taskList[0].ID, true);
-            _idField.text = taskList[0].ID.ToString();
+            SetTaskID(taskList[0].Reference, true);
+            _idField.text = taskList[0].Reference.ToString();
             _nameField.text = taskList[0].Name;
             _colorField.SelectDDItem(taskList[0].Color);
         }

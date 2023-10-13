@@ -19,13 +19,12 @@ namespace Germanenko.Source
 		{
 			//Debug.Log("init "  + ConstantSingleton.Instance.DbManager);
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
-			ConstantSingleton.Instance.DbManager.CreateTable<TaskSave>();
 			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
             //Debug.Log("end init");
             //CreateTableText();
 
             string sqlDrafts = $"SELECT * FROM Tasks WHERE Draft = 1";
-            string sqlArchive = $"SELECT * FROM TaskSave";
+            string sqlArchive = $"SELECT * FROM Tasks WHERE Reference != 0";
 
             List<Tasks> draftDate = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlDrafts);
             List<Tasks> archiveDate = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlArchive);
@@ -40,7 +39,7 @@ namespace Germanenko.Source
             {
                 if(DateTime.Today.Day - archiveDate[i].Date.Day > 7)
                 {
-                    string dropSave = $"DELETE FROM TaskSave WHERE ID = {archiveDate[i].ID}";
+                    string dropSave = $"DELETE FROM Tasks WHERE ID = {archiveDate[i].ID}";
                     ConstantSingleton.Instance.DbManager.Execute(dropSave);
                 }
             }
@@ -133,15 +132,15 @@ namespace Germanenko.Source
 
             if (update)
             {
-                string checkSave = $"SELECT * FROM TaskSave WHERE TaskID = {id}";
+                string checkSave = $"SELECT * FROM Tasks WHERE Reference != 0";
 
-                List<TaskSave> saves = ConstantSingleton.Instance.DbManager.Query<TaskSave>(checkSave);
+                List<Tasks> saves = ConstantSingleton.Instance.DbManager.Query<Tasks>(checkSave);
 
 
 
                 if (saves.IsNullOrEmpty())
                 {
-                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
+                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Reference, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
                     id,
                     name == null ? "" : name,
                     "",
@@ -149,18 +148,19 @@ namespace Germanenko.Source
                 }
                 else
                 {
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE TaskSave SET Name = ?, Color = ?, Date = ? WHERE TaskID = ?", name, color, id, DateTime.Today);
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, Date = ? WHERE Reference = ?", name, color, DateTime.Today, id);
                 }
             }
             else
             {
                 Tasks lastTask = taskList[taskList.Count - 1];
 
-                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
-                    lastTask.ID,
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Date, Reference) VALUES (?, ?, ?, ?, ?)",
                     name == null ? "" : name,
                     "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-                    color == null ? "ffffffff" : color, DateTime.Today);
+                    color == null ? "ffffffff" : color,
+                    DateTime.Today,
+                    lastTask.ID);
             }
         }
 
@@ -168,7 +168,7 @@ namespace Germanenko.Source
 
         public Tasks GetSaveTask(int id)
         {
-            string sql = $"SELECT * FROM TaskSave WHERE TaskID = {id}";
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {id}";
 
             List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
