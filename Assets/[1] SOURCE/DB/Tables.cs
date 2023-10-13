@@ -7,6 +7,7 @@ using System;
 using Germanenko.Framework;
 using System.Threading.Tasks;
 using System.Drawing;
+using DTT.Utils.Extensions;
 
 namespace Germanenko.Source
 {
@@ -20,9 +21,30 @@ namespace Germanenko.Source
 			ConstantSingleton.Instance.DbManager.CreateTable<Tasks>();
 			ConstantSingleton.Instance.DbManager.CreateTable<TaskSave>();
 			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
-		    //Debug.Log("end init");
-			//CreateTableText();
-		}
+            //Debug.Log("end init");
+            //CreateTableText();
+
+            string sqlDrafts = $"SELECT * FROM Tasks WHERE Draft = 1";
+            string sqlArchive = $"SELECT * FROM TaskSave";
+
+            List<Tasks> draftDate = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlDrafts);
+            List<Tasks> archiveDate = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlArchive);
+
+            if (!draftDate.IsNullOrEmpty() && DateTime.Today.Day - draftDate[0].Date.Day > 7)
+            {
+                Debug.Log("delete draft");
+                DropDraft();
+            }
+
+            for (int i = 0; i < archiveDate.Count; i++)
+            {
+                if(DateTime.Today.Day - archiveDate[i].Date.Day > 7)
+                {
+                    string dropSave = $"DELETE FROM TaskSave WHERE ID = {archiveDate[i].ID}";
+                    ConstantSingleton.Instance.DbManager.Execute(dropSave);
+                }
+            }
+        }
 
 
 
@@ -33,10 +55,10 @@ namespace Germanenko.Source
 			var taskType = ((TypeOfTasks)ConstantSingleton.Instance.TaskFormManager.Task.Type).ToString();
 			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
 
-			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
+			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Date) VALUES (?, ?, ?, ?)",
                 name == null ? "" : name,
 				"", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-                color == null ? "ffffffff" : color);
+                color == null ? "ffffffff" : color, DateTime.Today);
 
             SetPriority();
 
@@ -47,10 +69,10 @@ namespace Germanenko.Source
 
         public void AddDraft(string name, string color)
         {
-            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Draft) VALUES (?, ?, ?, ?)",
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Draft, Date) VALUES (?, ?, ?, ?, ?)",
                 name == null ? "" : name,
                 "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-                color == null ? "ffffffff" : color, true);
+                color == null ? "ffffffff" : color, true, DateTime.Today);
 
             SetPriority();
 
@@ -107,19 +129,38 @@ namespace Germanenko.Source
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
+
+
             if (update)
             {
-                ConstantSingleton.Instance.DbManager.Execute("UPDATE TaskSave SET Name = ?, Color = ? WHERE TaskID = ?", name, color, id);
+                string checkSave = $"SELECT * FROM TaskSave WHERE TaskID = {id}";
+
+                List<TaskSave> saves = ConstantSingleton.Instance.DbManager.Query<TaskSave>(checkSave);
+
+
+
+                if (saves.IsNullOrEmpty())
+                {
+                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
+                    id,
+                    name == null ? "" : name,
+                    "",
+                    color == null ? "ffffffff" : color, DateTime.Today);
+                }
+                else
+                {
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE TaskSave SET Name = ?, Color = ?, Date = ? WHERE TaskID = ?", name, color, id, DateTime.Today);
+                }
             }
             else
             {
                 Tasks lastTask = taskList[taskList.Count - 1];
 
-                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color) VALUES (?, ?, ?, ?)",
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO TaskSave (TaskID, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
                     lastTask.ID,
                     name == null ? "" : name,
                     "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-                    color == null ? "ffffffff" : color);
+                    color == null ? "ffffffff" : color, DateTime.Today);
             }
         }
 

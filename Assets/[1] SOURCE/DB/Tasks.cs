@@ -1,6 +1,8 @@
 using UnityEngine;
 using SimpleSQL;
 using System.Collections.Generic;
+using System;
+using System.Data.SqlTypes;
 
 namespace Germanenko.Source
 {
@@ -32,6 +34,9 @@ namespace Germanenko.Source
 
         [MaxLength(9), Default(0), NotNull]
         public bool Draft { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime Date { get; set; }
     }
     public class TaskSave
     {
@@ -50,6 +55,9 @@ namespace Germanenko.Source
 
         [MaxLength(9), Default("'ffffffff'"), NotNull]
         public string Color { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime Date { get; set; }
 
     }
     public class Priority

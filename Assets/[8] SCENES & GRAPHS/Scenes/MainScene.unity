@@ -1573,7 +1573,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _returnTaskButton: {fileID: 0}
+  _previousVersionButton: {fileID: 1811151136}
+  _archiveVersionButton: {fileID: 1357436308}
 --- !u!114 &96059314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3906,7 +3907,7 @@ MonoBehaviour:
   m_Script: {fileID: 1705125264, guid: 8382d7f8352b70544aa11f6729f875f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  databaseFile: {fileID: 4900000, guid: 14937ae129e9f0f4ca5845f1decb447a, type: 3}
+  databaseFile: {fileID: 4900000, guid: 04aab397f70a4404c9b9d9727400cfb6, type: 3}
   overrideBasePath: D:\ceasar\Assets\[9] TASKS
   overridePathMode: 0
   changeWorkingName: 1
@@ -7509,10 +7510,10 @@ RectTransform:
   m_Father: {fileID: 1811151137}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 176.305, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 176.305, y: -29.14}
+  m_SizeDelta: {x: 328.61, y: 50.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828390514
 MonoBehaviour:
@@ -12018,7 +12019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1357436309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12039,7 +12040,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 99.2, y: 249}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 115.05, y: 58.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357436310
 MonoBehaviour:
@@ -19075,7 +19076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1811151137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19096,7 +19097,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 209.99997, y: 133.9508}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 352.61, y: 58.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811151138
 MonoBehaviour:
@@ -25274,10 +25275,10 @@ RectTransform:
   m_Father: {fileID: 1357436309}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 57.525, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 57.525, y: -29.14}
+  m_SizeDelta: {x: 91.05, y: 50.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014273389
 MonoBehaviour:

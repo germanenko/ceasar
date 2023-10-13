@@ -36,7 +36,8 @@ namespace Germanenko.Source
 
         public UnityEvent OnShowTask;
 
-		[SerializeField] private GameObject _returnTaskButton;
+		[SerializeField] private GameObject _previousVersionButton;
+		[SerializeField] private GameObject _archiveVersionButton;
 
         public void Start()
         {
@@ -66,9 +67,9 @@ namespace Germanenko.Source
 			isDraft = draft;
 
             if (Toolbox.Get<Tables>().GetSaveTask(_id) != null)
-				_returnTaskButton.SetActive(true);
+				_previousVersionButton.SetActive(true);
 			else
-                _returnTaskButton.SetActive(false);
+                _previousVersionButton.SetActive(false);
         }
 
 
