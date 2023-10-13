@@ -197,6 +197,9 @@ namespace Germanenko.Source
             string dropDraft;
             string dropPriorityDraft;
             string draft;
+            string updateAI;
+
+            updateAI = $"UPDATE sqlite_sequence SET seq = seq - 1 WHERE name IN ('Tasks', 'Priority')";
 
             draft = $"SELECT * FROM Tasks WHERE Draft = 1";
 
@@ -209,6 +212,8 @@ namespace Germanenko.Source
             {
                 ConstantSingleton.Instance.DbManager.Execute(dropDraft);
                 ConstantSingleton.Instance.DbManager.Execute(dropPriorityDraft);
+                ConstantSingleton.Instance.DbManager.Execute(updateAI);
+
             }
             catch (Exception)
             {
