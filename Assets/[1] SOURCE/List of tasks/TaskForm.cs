@@ -271,12 +271,26 @@ namespace Germanenko.Source
 		{
             string sql = $"SELECT * FROM Tasks WHERE Reference = {_id}";
 
-            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            List<Tasks> save = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
-            SetTaskID(taskList[0].Reference, true);
-            _idField.text = taskList[0].Reference.ToString();
-            _nameField.text = taskList[0].Name;
-            _colorField.SelectDDItem(taskList[0].Color);
+            SetTaskID(save[0].Reference, true);
+            _idField.text = save[0].Reference.ToString();
+            _nameField.text = save[0].Name;
+            _colorField.SelectDDItem(save[0].Color);
+        }
+
+
+
+        public void ReturnArchive()
+        {
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {_id} AND Draft = 1";
+
+            List<Tasks> archive = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            SetTaskID(archive[0].Reference, true);
+            _idField.text = archive[0].Reference.ToString();
+            _nameField.text = archive[0].Name;
+            _colorField.SelectDDItem(archive[0].Color);
         }
 
 
