@@ -70,6 +70,11 @@ namespace Germanenko.Source
 				_previousVersionButton.SetActive(true);
 			else
                 _previousVersionButton.SetActive(false);
+
+            if (Toolbox.Get<Tables>().GetArchiveTask(_id) != null)
+                _archiveVersionButton.SetActive(true);
+            else
+                _archiveVersionButton.SetActive(false);
         }
 
 
@@ -142,6 +147,13 @@ namespace Germanenko.Source
             }
 
             Toolbox.Get<ListOfTasks>().ReloadList();
+        }
+
+
+
+		public void SaveArchive()
+		{
+            Toolbox.Get<Tables>().AddArchiveTask(_nameField.text, _colorField._selectedItem.name, _id);
         }
 
 
