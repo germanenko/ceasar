@@ -21,7 +21,11 @@ public class AllTaskList : MonoBehaviour
         foreach (var task in taskList) 
         {
             var t = Instantiate(TaskView, transform);
-            t.TaskText.text = $"{task.ID} - Name: {task.Name} - Color: {task.Color} - Draft: {task.Draft} - Type: {task.Type}";
+            t.N1.text = task.ID.ToString();
+            t.N2.text = task.ID.ToString();
+            t.Name.text = task.Name.ToString();
+            t.Draft.text = task.Draft.ToString();
+            t.Reference.text = task.Reference.ToString();
         }
     }
 }
