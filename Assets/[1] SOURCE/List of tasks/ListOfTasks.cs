@@ -139,6 +139,31 @@ namespace Germanenko.Source
 
 
 
+        public void SetMultiChoice(bool multiChoice)
+        {
+            ConstantSingleton.Instance.MultiChoiceScreen.SetActive(multiChoice);
+            foreach (var task in _tasks)
+            {
+                task.SetCanSelect(multiChoice);
+                task.CheckBox.OnToggleOnCallback.Event.AddListener(CountSelectedTasks);
+                task.CheckBox.OnToggleOffCallback.Event.AddListener(CountSelectedTasks);
+            }
+        }
+
+
+
+        private void CountSelectedTasks()
+        {
+            int count = 0;
+            foreach (var task in _tasks)
+            {
+                if(task.Selected) count++;
+            }
+            Debug.Log(count);
+        }
+
+
+
         private void ClearList()
         {
 

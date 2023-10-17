@@ -271,6 +271,9 @@ MonoBehaviour:
   _lerpToPlaceholder: {fileID: 0}
   _scroll: {fileID: 0}
   _conflictManager: {fileID: 0}
+  _canSelect: 0
+  _selected: 0
+  _checkBox: {fileID: 0}
 --- !u!114 &2198998019816252562
 MonoBehaviour:
   m_ObjectHideFlags: 0

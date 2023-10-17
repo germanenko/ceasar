@@ -27,6 +27,7 @@ namespace Germanenko.Source
         [Header("Others")]
         [SerializeField] private Transform MainCamera;
         [SerializeField] private SimpleSQL.SimpleSQLManager DbManager;
+        [SerializeField] private GameObject MultiChoiceScreen;
 
 
         [Header("Canvas")]
@@ -73,7 +74,8 @@ namespace Germanenko.Source
         private void InitOthers()
         {
             ConstantSingleton.Instance.MainCamera = MainCamera;
-            ConstantSingleton.Instance.DbManager = DbManager; 
+            ConstantSingleton.Instance.DbManager = DbManager;
+            ConstantSingleton.Instance.MultiChoiceScreen = MultiChoiceScreen;
         }
 
     }
