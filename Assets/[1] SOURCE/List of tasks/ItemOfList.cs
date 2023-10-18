@@ -191,7 +191,7 @@ namespace Germanenko.Source
 
         public void SetMultiChoice(bool multiChoice)
         {
-            Toolbox.Get<ListOfTasks>().SetMultiChoice(multiChoice);
+            MultiChoice.Instance.SetMultiChoice(multiChoice);
         }
     }
 
