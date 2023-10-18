@@ -38,7 +38,7 @@ namespace Germanenko.Source
             ClearList();
 
 
-            string sql = "SELECT * FROM Tasks Tsk";
+            string sql = "SELECT * FROM Tasks WHERE Reference = 0";
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
