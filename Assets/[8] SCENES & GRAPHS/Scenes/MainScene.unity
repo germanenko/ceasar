@@ -6433,7 +6433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   databaseFile: {fileID: 4900000, guid: 04aab397f70a4404c9b9d9727400cfb6, type: 3}
-  overrideBasePath: D:\ceasar\Assets\[9] TASKS
+  overrideBasePath: 
   overridePathMode: 0
   changeWorkingName: 1
   workingName: Tasks.sqlite

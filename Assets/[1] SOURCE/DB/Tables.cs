@@ -276,11 +276,13 @@ namespace Germanenko.Source
         public void DeleteTask(int id)
         {
             string deleteSql = $"DELETE FROM Tasks WHERE ID = {id}";
+            string deletePriority = $"DELETE FROM Priority WHERE TaskID = {id}";
             string updateAI = $"UPDATE sqlite_sequence SET seq = seq - 1 WHERE name IN ('Tasks', 'Priority')";
 
             try
             {
                 ConstantSingleton.Instance.DbManager.Execute(deleteSql);
+                ConstantSingleton.Instance.DbManager.Execute(deletePriority);
                 ConstantSingleton.Instance.DbManager.Execute(updateAI);
             }
             catch (Exception)
