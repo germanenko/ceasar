@@ -26,24 +26,29 @@ public class MultiChoice : MonoBehaviour
 
     public void SetMultiChoice(bool multiChoice)
     {
-        //ConstantSingleton.Instance.MultiChoiceScreen.SetActive(multiChoice);
-
         if (multiChoice)
         {
             Signal.Send("Controls", "MultiChoiceActivate");
+
+            foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
+            {
+                task.SetCanSelect(multiChoice);
+                task.CheckBox.OnToggleOnCallback.Event.AddListener(CountSelectedTasks);
+                task.CheckBox.OnToggleOffCallback.Event.AddListener(CountSelectedTasks);
+            }
         }
         else
         {
             DeselectAllTasks();
             Signal.Send("Controls", "MainControlsActivate");
-        }
 
-        foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
-        {
-            task.SetCanSelect(multiChoice);
-            task.CheckBox.OnToggleOnCallback.Event.AddListener(CountSelectedTasks);
-            task.CheckBox.OnToggleOffCallback.Event.AddListener(CountSelectedTasks);
-        }
+            foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
+            {
+                task.SetCanSelect(multiChoice);
+                task.CheckBox.OnToggleOnCallback.Event.RemoveListener(CountSelectedTasks);
+                task.CheckBox.OnToggleOffCallback.Event.RemoveListener(CountSelectedTasks);
+            }
+        }  
     }
 
 
@@ -98,5 +103,7 @@ public class MultiChoice : MonoBehaviour
         }
 
         Toolbox.Get<ListOfTasks>().ReloadList();
+
+        SetMultiChoice(false);
     }
 }

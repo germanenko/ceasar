@@ -37,10 +37,10 @@ RectTransform:
   m_Father: {fileID: 1226919240101301895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 83.865, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 83.865, y: -39}
+  m_SizeDelta: {x: 0, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1226919238697511323
 CanvasRenderer:
@@ -1605,13 +1605,13 @@ MonoBehaviour:
   listOfItems:
   - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
     color: {r: 1, g: 0, b: 0, a: 1}
-    name: Red
+    name: FF0000
   - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
     color: {r: 0.23358655, g: 1, b: 0, a: 1}
-    name: Green
+    name: 3CFF00
   - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
     color: {r: 0, g: 0.011921883, b: 1, a: 1}
-    name: Blue
+    name: 0003FF
   - sprite: {fileID: 21300000, guid: 75b7fd397d96d2b46be55ed328cb553c, type: 3}
     color: {r: 0.4433962, g: 0.26143643, b: 0.26143643, a: 1}
     name: Name
@@ -1637,9 +1637,9 @@ MonoBehaviour:
   itemPrefab: {fileID: 1226919239940472233}
   itemPosition: 0
   _selectedItem:
-    sprite: {fileID: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    name: 
+    sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
+    color: {r: 1, g: 0, b: 0, a: 1}
+    name: FF0000
   _selectedItemView: {fileID: 1226919240128507385}
   _fsm: {fileID: 1226919240101301900}
   _button: {fileID: 1226919240101301894}

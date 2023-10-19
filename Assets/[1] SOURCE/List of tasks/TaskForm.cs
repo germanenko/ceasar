@@ -228,6 +228,8 @@ namespace Germanenko.Source
 
 		private void SetFields()
 		{
+			print("setfields");
+
 			string sql = $"SELECT * FROM Tasks WHERE ID = {_id}";
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
@@ -301,7 +303,7 @@ namespace Germanenko.Source
 
             _idField.text = "";
             _nameField.text = "";
-            _colorField.SelectDDItem("");
+            _colorField.SelectDDItem("FF0000");
 
             if (_editTask)
 				_editTask = false;

@@ -59,7 +59,7 @@ namespace Germanenko.Source
 
             Color currentColor;
             ColorUtility.TryParseHtmlString("#" + _data.Color, out currentColor);
-            //TaskColor.color =  currentColor;
+            TaskColor.color =  currentColor;
 
             _id = _data.ID;
             IDText.text = _data.ID.ToString();
