@@ -28,10 +28,15 @@ public class MultiChoice : MonoBehaviour
     {
         //ConstantSingleton.Instance.MultiChoiceScreen.SetActive(multiChoice);
 
-        if(multiChoice)
+        if (multiChoice)
+        {
             Signal.Send("Controls", "MultiChoiceActivate");
+        }
         else
+        {
+            DeselectAllTasks();
             Signal.Send("Controls", "MainControlsActivate");
+        }
 
         foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
         {
