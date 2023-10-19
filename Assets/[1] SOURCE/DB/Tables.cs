@@ -60,8 +60,6 @@ namespace Germanenko.Source
                 color == null ? "ffffffff" : color, DateTime.Today);
 
             SetPriority();
-
-            AddSaveTask(name, color, false);
         }
 
 
@@ -115,52 +113,106 @@ namespace Germanenko.Source
 
         public void EditTask(string name, string color, int id)
 		{
-            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 0";
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
-            AddSaveTask(name, color, true, id);
-        }
+            string sqlArchive = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 1";
+            List<Tasks> archive = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlArchive);
 
-
-
-        public void AddSaveTask(string name, string color, bool update, int id = 0)
-        {
-            string sql = $"SELECT * FROM Tasks";
-
-            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
-
-
-
-            if (update)
+            if (task.Count > 0)
             {
-                string checkSave = $"SELECT * FROM Tasks WHERE Reference != 0";
-
-                List<Tasks> saves = ConstantSingleton.Instance.DbManager.Query<Tasks>(checkSave);
-
-
-
-                if (saves.IsNullOrEmpty())
+                Debug.Log("прошлых версий > 0");
+                if (task[0].Name != name || task[0].Color != color)
                 {
-                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Reference, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
-                    id,
-                    name == null ? "" : name,
-                    "",
-                    color == null ? "ffffffff" : color, DateTime.Today);
+                    Debug.Log("прошла€ верси€ отличаетс€");
+
+                    AddSaveTask(task[0].Name, task[0].Color, id);
+
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
                 }
                 else
                 {
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, Date = ? WHERE Reference = ?", name, color, DateTime.Today, id);
+                    Debug.Log("прошла€ не верси€ отличаетс€");
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                    DeleteTask(task[0].ID);
                 }
             }
             else
             {
-                Tasks lastTask = taskList[taskList.Count - 1];
+                Debug.Log("прошлых версий нет");
+                string mainSql = $"SELECT * FROM Tasks WHERE ID = {id}";
+                List<Tasks> mainTask = ConstantSingleton.Instance.DbManager.Query<Tasks>(mainSql);
 
-                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Date, Reference) VALUES (?, ?, ?, ?, ?)",
-                    name == null ? "" : name,
-                    "", //ConstantSingleton.Instance.TaskFormManager.Task.Type.ToString(),
-                    color == null ? "ffffffff" : color,
-                    DateTime.Today,
-                    lastTask.ID);
+                if (mainTask[0].Name != name || mainTask[0].Color != color)
+                {
+                    Debug.Log("введенные данные отличаютс€ от сохраненных в Ѕƒ");
+
+                    AddSaveTask(mainTask[0].Name, mainTask[0].Color, id);
+
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                }
+            }
+
+            if (archive.Count > 0)
+            {
+                Debug.Log("архивных > 0");
+                if (archive[0].Name == name && archive[0].Color == color)
+                {
+                    Debug.Log("архивна€ отличаетс€ от новой");
+                    DeleteTask(archive[0].ID);
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                }
+            }
+        }
+
+
+
+        public void AddSaveTask(string name, string color, int id = 0)
+        {
+            string checkSave = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 0";
+
+            List<Tasks> saves = ConstantSingleton.Instance.DbManager.Query<Tasks>(checkSave);
+
+            if (saves.IsNullOrEmpty())
+            {
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Reference, Name, Type, Color, Date) VALUES (?, ?, ?, ?, ?)",
+                id,
+                name == null ? "" : name,
+                "",
+                color == null ? "ffffffff" : color, DateTime.Today);
+            }
+            else
+            {
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, Date = ? WHERE Reference = ?", name, color, DateTime.Today, id);
+            }
+        }
+
+
+
+        public void AddArchiveTask(string name, string color, int id = 0)
+        {
+            string checkSave = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 1";
+            List<Tasks> saves = ConstantSingleton.Instance.DbManager.Query<Tasks>(checkSave);
+
+            string sql = $"SELECT * FROM Tasks WHERE ID = {id}";
+            List<Tasks> tasks = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            if (saves.IsNullOrEmpty())
+            {
+                if (tasks[0].Name != name || tasks[0].Color != color)
+                {
+                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Reference, Name, Type, Color, Date, Draft) VALUES (?, ?, ?, ?, ?, ?)",
+                        id,
+                        name == null ? "" : name,
+                        "",
+                        color == null ? "ffffffff" : color,
+                        DateTime.Today,
+                        1);
+                }  
+            }
+            else
+            {
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, Date = ? WHERE Reference = ? AND Draft = 1", name, color, DateTime.Today, id);
             }
         }
 
@@ -168,7 +220,21 @@ namespace Germanenko.Source
 
         public Tasks GetSaveTask(int id)
         {
-            string sql = $"SELECT * FROM Tasks WHERE Reference = {id}";
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 0";
+
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            if (task.Count > 0)
+                return task[0];
+            else
+                return null;
+        }
+
+
+
+        public Tasks GetArchiveTask(int id)
+        {
+            string sql = $"SELECT * FROM Tasks WHERE Reference = {id} AND Draft = 1";
 
             List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
@@ -200,7 +266,34 @@ namespace Germanenko.Source
 
 
 
-		public void DropTable()
+        public void DraftToTask(int id)
+        {
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Draft = 0 WHERE ID = ?", id);
+        }
+
+
+
+        public void DeleteTask(int id)
+        {
+            string deleteSql = $"DELETE FROM Tasks WHERE ID = {id}";
+            string deletePriority = $"DELETE FROM Priority WHERE TaskID = {id}";
+            string updateAI = $"UPDATE sqlite_sequence SET seq = seq - 1 WHERE name IN ('Tasks', 'Priority')";
+
+            try
+            {
+                ConstantSingleton.Instance.DbManager.Execute(deleteSql);
+                ConstantSingleton.Instance.DbManager.Execute(deletePriority);
+                ConstantSingleton.Instance.DbManager.Execute(updateAI);
+            }
+            catch (Exception)
+            {
+                Debug.LogError("ќшибка удалени€ задачи");
+            }
+        }
+
+
+
+        public void DropTable()
 		{
 
 			string sql;
@@ -223,13 +316,6 @@ namespace Germanenko.Source
             }
 
 		}
-
-
-
-        public void DraftToTask(int id)
-        {
-            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Draft = 0 WHERE ID = ?", id);
-        }
 
 
 

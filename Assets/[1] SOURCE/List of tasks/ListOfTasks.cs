@@ -135,7 +135,7 @@ namespace Germanenko.Source
 
                 _tasks.Add(itemMan);
             }
-        }
+        } 
 
 
 

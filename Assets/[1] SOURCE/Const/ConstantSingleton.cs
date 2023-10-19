@@ -71,6 +71,8 @@ namespace Germanenko.Source
         public Transform MainCamera { get => mainCamera; set => mainCamera = value; }
         public SimpleSQL.SimpleSQLManager DbManager { get => dbManager; set => dbManager = value; }
 
+        public GameObject MultiChoiceScreen;
+
         #endregion
 
 

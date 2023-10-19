@@ -41,8 +41,17 @@ namespace Germanenko.Source
 
         [SerializeField] private LerpToPlaceholder _lerpToPlaceholder;
 
-        [SerializeField] private ScrollRect _scroll;
-        [SerializeField] private ScrollConflictManager _conflictManager;
+        [SerializeField, HideInInspector] private ScrollRect _scroll;
+        [SerializeField, HideInInspector] private ScrollConflictManager _conflictManager;
+
+        [SerializeField] private bool _canSelect;
+        public bool CanSelect => _canSelect;
+
+        [SerializeField] private bool _selected;
+        public bool Selected => _selected;
+
+        [SerializeField] private UIToggle _checkBox;
+        public UIToggle CheckBox => _checkBox;
 
         public void Init(Tasks _data, int priority)
         {
@@ -160,6 +169,29 @@ namespace Germanenko.Source
         public void EnableHorizontalSwipe(bool enable)
         {
             TouchInArea.HorizontalTouch.gameObject.SetActive(enable);
+        }
+
+
+
+        public void SetCanSelect(bool canSelect)
+        {
+            _canSelect = canSelect;
+            _checkBox.gameObject.SetActive(canSelect);
+        }
+
+
+
+        public void SetSelected()
+        {
+            _selected = !_selected;
+            _checkBox.SetIsOn(_selected);
+        }
+
+
+
+        public void SetMultiChoice(bool multiChoice)
+        {
+            MultiChoice.Instance.SetMultiChoice(multiChoice);
         }
     }
 
