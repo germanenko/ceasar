@@ -2334,7 +2334,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.25
+        Duration: 0.1
         Loops: 0
         LoopDelay: 0
         UseRandomStartDelay: 0
@@ -2360,7 +2360,7 @@ MonoBehaviour:
       FromValue: {x: 0, y: 0, z: -45}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
-      Enabled: 1
+      Enabled: 0
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
@@ -2372,7 +2372,7 @@ MonoBehaviour:
       Settings:
         PlayMode: 0
         EaseMode: 0
-        Ease: 27
+        Ease: 1
         Curve:
           serializedVersion: 2
           m_Curve:
@@ -2398,7 +2398,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.2
+        Duration: 0.1
         Loops: 0
         LoopDelay: 0
         UseRandomStartDelay: 0
@@ -2604,7 +2604,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.25
+        Duration: 0.1
         Loops: 0
         LoopDelay: 0
         UseRandomStartDelay: 0
@@ -2630,19 +2630,19 @@ MonoBehaviour:
       FromValue: {x: 0, y: 0, z: -45}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
-      Enabled: 1
+      Enabled: 0
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
       ToCustomValue: {x: 0, y: 0, z: 0}
-      FromOffset: {x: 0, y: 0, z: -45}
+      FromOffset: {x: 0, y: 0, z: -25}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
       Settings:
         PlayMode: 0
         EaseMode: 0
-        Ease: 26
+        Ease: 1
         Curve:
           serializedVersion: 2
           m_Curve:
@@ -2668,7 +2668,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.2
+        Duration: 0.1
         Loops: 0
         LoopDelay: 0
         UseRandomStartDelay: 0
