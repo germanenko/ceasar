@@ -1,3 +1,4 @@
+using Doozy.Runtime.Reactor.Animators;
 using Doozy.Runtime.Signals;
 using Germanenko.Framework;
 using Germanenko.Source;
@@ -17,6 +18,10 @@ public class MultiChoice : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _countSelectedTasksText;
 
+    [SerializeField] private UIAnimator _listOfTasks;
+
+    [SerializeField] private bool _multiChoiceEnabled;
+
     private void Awake()
     {
         Instance = this;  
@@ -26,9 +31,11 @@ public class MultiChoice : MonoBehaviour
 
     public void SetMultiChoice(bool multiChoice)
     {
-        if (multiChoice)
+        if (multiChoice && !_multiChoiceEnabled)
         {
             Signal.Send("Controls", "MultiChoiceActivate");
+
+            _listOfTasks.Play();
 
             foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
             {
@@ -36,11 +43,15 @@ public class MultiChoice : MonoBehaviour
                 task.CheckBox.OnToggleOnCallback.Event.AddListener(CountSelectedTasks);
                 task.CheckBox.OnToggleOffCallback.Event.AddListener(CountSelectedTasks);
             }
+
+            _multiChoiceEnabled = true;
         }
-        else
+        else if(!multiChoice && _multiChoiceEnabled)
         {
             DeselectAllTasks();
             Signal.Send("Controls", "MainControlsActivate");
+
+            _listOfTasks.Reverse();
 
             foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
             {
@@ -48,6 +59,7 @@ public class MultiChoice : MonoBehaviour
                 task.CheckBox.OnToggleOnCallback.Event.RemoveListener(CountSelectedTasks);
                 task.CheckBox.OnToggleOffCallback.Event.RemoveListener(CountSelectedTasks);
             }
+            _multiChoiceEnabled = false;
         }  
     }
 
@@ -102,7 +114,10 @@ public class MultiChoice : MonoBehaviour
             Toolbox.Get<Tables>().DeleteTask(id);
         }
 
-        Toolbox.Get<ListOfTasks>().ReloadList();
+        foreach (var task in _selectedTasks)
+        {
+            Pooler.Instance.Despawn(PoolType.Entities, task.gameObject);
+        }
 
         SetMultiChoice(false);
     }
