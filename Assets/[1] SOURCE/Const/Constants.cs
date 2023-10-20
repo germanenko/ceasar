@@ -33,8 +33,6 @@ namespace Germanenko.Source
         [Header("Canvas")]
         [SerializeField] private Canvas CanvasTaskForm;
 
-
-
         public void Init()
         {
 
@@ -42,7 +40,6 @@ namespace Germanenko.Source
             InitFormManager();
             InitItems();
             InitOthers();
-        
         }
 
 
@@ -77,7 +74,6 @@ namespace Germanenko.Source
             ConstantSingleton.Instance.DbManager = DbManager;
             ConstantSingleton.Instance.MultiChoiceScreen = MultiChoiceScreen;
         }
-
     }
 
 }
