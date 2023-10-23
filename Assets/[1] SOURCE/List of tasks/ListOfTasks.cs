@@ -6,6 +6,7 @@ using System.Collections;
 using UnityEngine.UI;
 using SimpleSQL;
 using System.Threading.Tasks;
+using DTT.Utils.Extensions;
 
 namespace Germanenko.Source
 {
@@ -38,7 +39,7 @@ namespace Germanenko.Source
             ClearList();
 
 
-            string sql = "SELECT * FROM Tasks WHERE Reference = 0";
+            string sql = "SELECT * FROM Tasks WHERE Load = 1";
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
@@ -123,8 +124,12 @@ namespace Germanenko.Source
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
-                if (taskList[i].Draft == true)
-                    itemMan.SetDraft(true);
+                string draftSql = $"SELECT * FROM SavesAndDrafts WHERE TaskID = {taskList[i].ID} AND Draft = 1 AND Reference = 0";
+
+                var draft = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(draftSql);
+
+                if (!draft.IsNullOrEmpty())
+                    itemMan.SetDraft(true);                    
 
                 var priority = taskPriorities[i].PriorityValue;
 

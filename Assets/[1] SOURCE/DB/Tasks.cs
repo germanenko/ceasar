@@ -33,36 +33,31 @@ namespace Germanenko.Source
         public string Color { get; set; }
 
         [MaxLength(9), Default(0), NotNull]
+        public bool Load { get; set; }
+    }
+
+
+
+    public class SavesAndDrafts
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+
+        [Default(0), NotNull]
+        public int TaskID { get; set; }
+
+        [MaxLength(9), Default(0), NotNull]
         public bool Draft { get; set; }
 
         [Default(0), NotNull]
-        public DateTime Date { get; set; }
+        public int Reference { get; set; }
 
         [Default(0), NotNull]
-        public int Reference { get; set; }
+        public DateTime Date { get; set; }
     }
-    //public class TaskSave
-    //{
 
-    //    [PrimaryKey, AutoIncrement]
-    //    public int ID { get; set; }
 
-    //    [Default(0), NotNull]
-    //    public int TaskID { get; set; }
 
-    //    [MaxLength(60), Default("'---'"), NotNull]
-    //    public string Name { get; set; }
-
-    //    [Default(0), NotNull]
-    //    public int Type { get; set; }
-
-    //    [MaxLength(9), Default("'ffffffff'"), NotNull]
-    //    public string Color { get; set; }
-
-    //    [Default(0), NotNull]
-    //    public DateTime Date { get; set; }
-
-    //}
     public class Priority
     {
 

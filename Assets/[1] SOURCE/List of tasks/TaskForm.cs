@@ -271,28 +271,32 @@ namespace Germanenko.Source
 
 		public void ReturnTask()
 		{
-            string sql = $"SELECT * FROM Tasks WHERE Reference = {_id}";
+            string returnSql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {_id} AND Draft = 0";
+            List<SavesAndDrafts> save = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(returnSql);
 
-            List<Tasks> save = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            string taskSql = $"SELECT * FROM Tasks WHERE ID = {save[0].TaskID}";
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(taskSql);
 
             SetTaskID(save[0].Reference, true);
             _idField.text = save[0].Reference.ToString();
-            _nameField.text = save[0].Name;
-            _colorField.SelectDDItem(save[0].Color);
+            _nameField.text = task[0].Name;
+            _colorField.SelectDDItem(task[0].Color);
         }
 
 
 
         public void ReturnArchive()
         {
-            string sql = $"SELECT * FROM Tasks WHERE Reference = {_id} AND Draft = 1";
+            string archiveSql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {_id} AND Draft = 1";
+            List<SavesAndDrafts> archive = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(archiveSql);
 
-            List<Tasks> archive = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            string taskSql = $"SELECT * FROM Tasks WHERE ID = {archive[0].TaskID}";
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(taskSql);
 
             SetTaskID(archive[0].Reference, true);
             _idField.text = archive[0].Reference.ToString();
-            _nameField.text = archive[0].Name;
-            _colorField.SelectDDItem(archive[0].Color);
+            _nameField.text = task[0].Name;
+            _colorField.SelectDDItem(task[0].Color);
         }
 
 

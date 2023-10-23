@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class TaskView : MonoBehaviour
 {
-    public TextMeshProUGUI N1;
-    public TextMeshProUGUI N2;
+    public TextMeshProUGUI ID;
     public TextMeshProUGUI Name;
-    public TextMeshProUGUI Draft;
-    public TextMeshProUGUI Reference;
+    public TextMeshProUGUI Color;
+    public TextMeshProUGUI Load;
 }
