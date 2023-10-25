@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7071664766633040961}
   - component: {fileID: 4224570640717214279}
   - component: {fileID: 2617952067201379078}
+  - component: {fileID: 5009380919558253997}
   m_Layer: 0
   m_Name: TaskEmpty
   m_TagString: Untagged
@@ -369,8 +370,8 @@ MonoBehaviour:
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 2
       ToReferenceValue: 2
-      FromCustomValue: {x: 2, y: 2, z: 2}
-      ToCustomValue: {x: 1, y: 1, z: 1}
+      FromCustomValue: {x: 2.5, y: 2.5, z: 2.5}
+      ToCustomValue: {x: 1.05, y: 1.05, z: 1.05}
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Fade:
@@ -454,3 +455,24 @@ MonoBehaviour:
   Item: {fileID: 0}
   BlockMoving: 0
   InstantlyMove: 0
+--- !u!223 &5009380919558253997
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0

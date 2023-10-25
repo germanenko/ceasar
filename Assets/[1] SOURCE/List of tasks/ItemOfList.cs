@@ -143,6 +143,7 @@ namespace Germanenko.Source
         {
             _layoutElement.ignoreLayout = true;
             _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, transform.localPosition, default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            _spawnedReplaceTaskEmpty.transform.localPosition = transform.localPosition;
             _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
         }
 
