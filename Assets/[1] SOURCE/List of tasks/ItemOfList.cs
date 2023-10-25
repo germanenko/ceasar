@@ -142,7 +142,7 @@ namespace Germanenko.Source
         public void OnBeginDrag()
         {
             _layoutElement.ignoreLayout = true;
-            _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+            _spawnedReplaceTaskEmpty = Pooler.Instance.Spawn(PoolType.Entities, _taskEmpty, transform.localPosition, default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
             _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(transform.GetSiblingIndex());
         }
 
@@ -181,6 +181,15 @@ namespace Germanenko.Source
 
 
 
+        public void SetPreviewCheckBox(bool previewCheckBox)
+        {
+            _checkBox.gameObject.SetActive(previewCheckBox);
+
+            _checkBox.GetComponent<CanvasGroup>().alpha = previewCheckBox ? .5f : 1f;
+        }
+
+
+
         public void SetSelected()
         {
             _selected = !_selected;
@@ -192,6 +201,13 @@ namespace Germanenko.Source
         public void SetMultiChoice(bool multiChoice)
         {
             MultiChoice.Instance.SetMultiChoice(multiChoice);
+        }
+
+
+
+        public void SetPreviewMultiChoice(bool previewMultiChoice)
+        {
+            MultiChoice.Instance.SetPreviewMultiChoice(previewMultiChoice);
         }
     }
 

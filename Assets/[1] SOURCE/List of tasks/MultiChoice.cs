@@ -21,6 +21,7 @@ public class MultiChoice : MonoBehaviour
     [SerializeField] private UIAnimator _listOfTasks;
 
     [SerializeField] private bool _multiChoiceEnabled;
+    public bool MultiChoiceEnabled => _multiChoiceEnabled;
 
     private void Awake()
     {
@@ -61,6 +62,19 @@ public class MultiChoice : MonoBehaviour
             }
             _multiChoiceEnabled = false;
         }  
+    }
+
+
+
+    public void SetPreviewMultiChoice(bool previewMultiChoice)
+    {
+        if (!_multiChoiceEnabled)
+        {
+            foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
+            {
+                task.SetPreviewCheckBox(previewMultiChoice);
+            }
+        }        
     }
 
 

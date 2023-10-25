@@ -52,6 +52,13 @@ public class LerpToPlaceholder : MonoBehaviour
 
 
 
+    public void SetInstantlyMove(bool instantly)
+    {
+        InstantlyMove = instantly;
+    }
+
+
+
     public void DelayMove()
     {
         StartCoroutine(DelayMoveCoroutine());
