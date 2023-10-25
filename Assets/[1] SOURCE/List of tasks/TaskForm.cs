@@ -212,8 +212,9 @@ namespace Germanenko.Source
 
 		public void OnShow()
 		{
+            _colorField.SelectDDItem("FF0000");
 
-			_fields.CreateFields(itemParent);
+            _fields.CreateFields(itemParent);
 
 			if (_editTask)
 				SetFields();

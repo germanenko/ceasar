@@ -77780,6 +77780,10 @@ PrefabInstance:
       propertyPath: m_Padding.m_Bottom
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 1226919240128507391, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
 --- !u!224 &2051719346 stripped
