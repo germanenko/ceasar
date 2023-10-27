@@ -17,7 +17,7 @@ namespace Germanenko.Source
         private List<ItemOfList> _tasks = new List<ItemOfList>();
         public List<ItemOfList> Tasks => _tasks;
 
-
+        public Pool Pool = Pooler.Instance.AddPool(PoolType.Entities); 
 
         public ListOfTasks()
         {
@@ -29,6 +29,13 @@ namespace Germanenko.Source
         public void HandleSignal(SignalReloadList arg)
         {
             ReloadList();
+        }
+
+
+
+        public void CreatePoolTasks()
+        {           
+            Pool.PopulateWith(ConstantSingleton.Instance.ItemClicker, 50, 25);
         }
 
 
@@ -121,6 +128,7 @@ namespace Germanenko.Source
                 }
 
                 var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, new Vector3(Screen.width/2, -Screen.height/2, 0), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                newItem.transform.localScale = Vector3.one;
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 

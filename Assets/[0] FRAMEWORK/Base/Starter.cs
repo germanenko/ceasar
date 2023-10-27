@@ -44,6 +44,9 @@ public class Starter : MonoBehaviour
 
 
         Toolbox.Get<Tables>().Init();
+
+        Toolbox.Get<ListOfTasks>().CreatePoolTasks();
+
         Toolbox.Get<ListOfTasks>().ReloadList();
 
     }
