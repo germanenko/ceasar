@@ -24766,7 +24766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &542931651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88674,8 +88674,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 861.7344
-        y: 720.53125
+        x: 874.5781
+        y: 696.2031
         width: 100
         height: 48
       isBreakpoint: 0

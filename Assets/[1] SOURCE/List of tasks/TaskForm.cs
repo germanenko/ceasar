@@ -143,7 +143,7 @@ namespace Germanenko.Source
 
             if (isDraft)
             {
-                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
+                Toolbox.Get<Tables>().EditDraft(_nameField.text, _colorField._selectedItem.name);
             }
 
             Toolbox.Get<ListOfTasks>().ReloadList();
@@ -244,14 +244,18 @@ namespace Germanenko.Source
 
         private void SetDraftFields()
         {
-            string sql = $"SELECT * FROM Tasks WHERE Draft = 1";
+            string sql = $"SELECT * FROM SavesAndDrafts WHERE Draft = 1 AND Reference = 0";
 
-            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            List<SavesAndDrafts> draft = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(sql);
 
-			SetTaskID(taskList[0].ID, true);
-            _idField.text = taskList[0].ID.ToString();
-            _nameField.text = taskList[0].Name;
-            _colorField.SelectDDItem(taskList[0].Color);
+			string sqlTask = $"SELECT * FROM Tasks WHERE ID = {draft[0].TaskID}";
+
+            List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlTask);
+
+            SetTaskID(task[0].ID, true);
+            _idField.text = task[0].ID.ToString();
+            _nameField.text = task[0].Name;
+            _colorField.SelectDDItem(task[0].Color);
         }
 
 

@@ -173,6 +173,16 @@ namespace Germanenko.Source
 
 
 
+        public void EditDraft(string name, string color)
+        {
+            string sql = $"SELECT * FROM SavesAndDrafts WHERE Reference = 0 AND Draft = 1";
+            List<SavesAndDrafts> draft = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(sql);
+
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, draft[0].TaskID);
+        }
+
+
+
         public void AddSaveTask(string name, string color, int id = 0)
         {
             string checkSave = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
