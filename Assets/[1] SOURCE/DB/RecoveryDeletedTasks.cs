@@ -11,6 +11,8 @@ public class RecoveryDeletedTasks : MonoBehaviour
 
     public void LoadDeletedTasks()
     {
+        print("loadDeleted");
+
         string deletedTasksSql = $"SELECT * FROM DeletedTasks";
 
         var deletedTasks = ConstantSingleton.Instance.DbManager.Query<DeletedTasks>(deletedTasksSql);
