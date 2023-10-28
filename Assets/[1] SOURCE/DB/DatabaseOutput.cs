@@ -75,7 +75,7 @@ public class DatabaseOutput : MonoBehaviour
             var t = Instantiate(_deletedTaskView, _deletedTasks);
             t.ID.text = deletedTasks[i].ID.ToString();
             t.TaskID.text = deletedTasks[i].TaskID.ToString();
-            t.Date.text = deletedTasks[i].Date.ToString();
+            t.Date.text = deletedTasks[i].Date.ToShortDateString();
         }
     }
 }
