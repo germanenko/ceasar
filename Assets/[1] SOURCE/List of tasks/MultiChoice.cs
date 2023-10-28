@@ -125,7 +125,7 @@ public class MultiChoice : MonoBehaviour
 
         foreach (var id in _selectedTasksId)
         {
-            Toolbox.Get<Tables>().DeleteTask(id);
+            Toolbox.Get<Tables>().SetTaskDeleted(id);
         }
 
         foreach (var task in _selectedTasks)

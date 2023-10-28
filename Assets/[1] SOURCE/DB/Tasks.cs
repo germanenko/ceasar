@@ -58,6 +58,20 @@ namespace Germanenko.Source
 
 
 
+    public class DeletedTasks
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+
+        [Default(0), NotNull]
+        public int TaskID { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime Date { get; set; }
+    }
+
+
+
     public class Priority
     {
 

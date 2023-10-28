@@ -8,9 +8,11 @@ public class DatabaseOutput : MonoBehaviour
 {
     [SerializeField] private Transform _taskList;
     [SerializeField] private Transform _savesAndDraftsList;
+    [SerializeField] private Transform _deletedTasks;
 
     [SerializeField] private TaskView _taskView;
     [SerializeField] private SavesAndDraftsView _savesAndDraftsView;
+    [SerializeField] private DeletedTaskView _deletedTaskView;
 
     public void LoadTasks()
     {
@@ -43,8 +45,8 @@ public class DatabaseOutput : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        string tasksSql = $"SELECT * FROM SavesAndDrafts";
-        var saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(tasksSql);
+        string savesSql = $"SELECT * FROM SavesAndDrafts";
+        var saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(savesSql);
 
         for (int i = 0; i < saves.Count; i++)
         {
@@ -53,6 +55,27 @@ public class DatabaseOutput : MonoBehaviour
             t.TaskID.text = saves[i].TaskID.ToString();
             t.Draft.text = saves[i].Draft.ToString();
             t.Reference.text = saves[i].Reference.ToString();
+        }
+    }
+
+    public void LoadDeletedTasks()
+    {
+        var children = _deletedTasks.GetChildren();
+
+        foreach (var child in children)
+        {
+            Destroy(child.gameObject);
+        }
+
+        string deletedTasksSql = $"SELECT * FROM DeletedTasks";
+        var deletedTasks = ConstantSingleton.Instance.DbManager.Query<DeletedTasks>(deletedTasksSql);
+
+        for (int i = 0; i < deletedTasks.Count; i++)
+        {
+            var t = Instantiate(_deletedTaskView, _deletedTasks);
+            t.ID.text = deletedTasks[i].ID.ToString();
+            t.TaskID.text = deletedTasks[i].TaskID.ToString();
+            t.Date.text = deletedTasks[i].Date.ToString();
         }
     }
 }

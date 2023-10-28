@@ -314,6 +314,9 @@ namespace Germanenko.Source
             _nameField.text = "";
             _colorField.SelectDDItem("FF0000");
 
+			_archiveVersionButton.SetActive(false);
+			_previousVersionButton.SetActive(false);
+
             if (_editTask)
 				_editTask = false;
 
