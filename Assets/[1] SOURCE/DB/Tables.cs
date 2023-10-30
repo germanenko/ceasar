@@ -151,7 +151,7 @@ namespace Germanenko.Source
                     if(savedTask[0].Name == name && savedTask[0].Color == color)
                     {
                         ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
-                        DeleteTask(saves[0].TaskID);
+                        DeleteSave(saves[0].TaskID);
                     }
                     else
                     {
@@ -179,9 +179,12 @@ namespace Germanenko.Source
 
                 if (task[0].Name == name && task[0].Color == color)
                 {
-                    SetTaskDeleted(archive[0].TaskID);
+                    DeleteArchive(archive[0].TaskID);
                     ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
                 }
+
+                if (archive.Count > 0)
+                    DeleteArchive(archive[0].TaskID);
             }
         }
 
@@ -333,9 +336,20 @@ namespace Germanenko.Source
 
 
 
-        public void DeleteTask(int id)
+        public void DeleteSave(int id)
         {
-            string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id}";
+            string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id} AND Draft = 0";
+            ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
+
+            string deleteTask = $"DELETE FROM Tasks WHERE ID = {id}";
+            ConstantSingleton.Instance.DbManager.Execute(deleteTask);
+        }
+
+
+
+        public void DeleteArchive(int id)
+        {
+            string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id} AND Draft = 1";
             ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
 
             string deleteTask = $"DELETE FROM Tasks WHERE ID = {id}";
