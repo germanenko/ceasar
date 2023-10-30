@@ -122,7 +122,9 @@ namespace Germanenko.Source
                     if(_spawnedReplaceTaskEmpty)
                     {
                         _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
-                        if(!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
+                        SetPreviewMultiChoice(false);
+
+                        if (!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
                             _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
                     }
                 }
