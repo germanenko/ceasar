@@ -1,3 +1,4 @@
+using Doozy.Runtime.Common.Extensions;
 using Germanenko.Framework;
 using Germanenko.Source;
 using System.Collections;
@@ -11,7 +12,12 @@ public class RecoveryDeletedTasks : MonoBehaviour
 
     public void LoadDeletedTasks()
     {
-        print("loadDeleted");
+        var children = _deletedTasksList.GetChildren();
+
+        foreach (var child in children)
+        {
+            Destroy(child.gameObject);
+        }
 
         string deletedTasksSql = $"SELECT * FROM DeletedTasks";
 
@@ -23,7 +29,7 @@ public class RecoveryDeletedTasks : MonoBehaviour
 
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {deletedTask.TaskID}");
 
-            item.GetComponent<RecoveryTaskItem>().SetInfo(task[0].Name, deletedTask.Date);
+            item.GetComponent<RecoveryTaskItem>().SetInfo(task[0].ID, task[0].Name, deletedTask.Date);
         }
     }
 }

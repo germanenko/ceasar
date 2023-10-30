@@ -308,6 +308,16 @@ namespace Germanenko.Source
 
 
 
+        public void RecoveryTask(int id)
+        {
+            Debug.Log("recovery");
+            ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Load = 1 WHERE ID = {id}");
+            ConstantSingleton.Instance.DbManager.Execute($"DELETE FROM DeletedTasks WHERE TaskID = {id}");
+            Toolbox.Get<ListOfTasks>().ReloadList();
+        }
+
+
+
         public void CreateTableText()
 		{
 			string sql;
@@ -362,7 +372,7 @@ namespace Germanenko.Source
         {
             string deleteSql = $"UPDATE Tasks SET Load = 0 WHERE ID = {id}";
 
-            string deletePriority = $"DELETE FROM Priority WHERE TaskID = {id}";
+            //string deletePriority = $"DELETE FROM Priority WHERE TaskID = {id}";
 
             string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE Reference = {id}";
             string selectSaves = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id}";
@@ -377,7 +387,9 @@ namespace Germanenko.Source
             }
 
             ConstantSingleton.Instance.DbManager.Execute(deleteSql);
-            ConstantSingleton.Instance.DbManager.Execute(deletePriority);
+
+            //ConstantSingleton.Instance.DbManager.Execute(deletePriority);
+
             ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
 
             //ConstantSingleton.Instance.DbManager.Execute(updateAI);

@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 8257871082172455129}
   - component: {fileID: 7759905836136733367}
   m_Layer: 5
-  m_Name: Simple Button
+  m_Name: RecoveryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1159,38 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   Behaviours:
-    Behaviours: []
+    Behaviours:
+    - EventName: PointerClick
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: -2264501354159397684}
+            m_TargetAssemblyTypeName: RecoveryTaskItem, Assembly-CSharp
+            m_MethodName: Recovery
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      BehaviourName: 4
+      Receiver:
+        ConnectionMode: 1
+        SignalProviderId:
+          Type: 0
+          Category: Pointer
+          Name: Click
+        ProviderReference: {fileID: 0}
+        StreamId:
+          Category: None
+          Name: None
+          Custom: 0
+      Cooldown: 0
+      Selectable: {fileID: 8257871082172455129}
     SignalSource: {fileID: 8980049628474518614}
     Selectable: {fileID: 8257871082172455129}
   Id:

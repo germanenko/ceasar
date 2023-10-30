@@ -50,13 +50,6 @@ public class Starter : MonoBehaviour
         Toolbox.Get<ListOfTasks>().ReloadList();
 
     }
-
-
-
-    public void OnDestroy()
-    {
-    }
-
 }
 
 
