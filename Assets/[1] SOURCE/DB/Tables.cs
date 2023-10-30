@@ -143,17 +143,21 @@ namespace Germanenko.Source
 
             if (saves.Count > 0)
             {
-                List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {saves[0].TaskID}");
+                List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {id}");
+                List<Tasks> savedTask = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {saves[0].TaskID}");
 
                 if (task[0].Name != name || task[0].Color != color)
                 {
-                    AddSaveTask(task[0].Name, task[0].Color, id);
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
-                }
-                else
-                {
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
-                    SetTaskDeleted(saves[0].TaskID);
+                    if(savedTask[0].Name == name && savedTask[0].Color == color)
+                    {
+                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                        DeleteTask(saves[0].TaskID);
+                    }
+                    else
+                    {
+                        AddSaveTask(task[0].Name, task[0].Color, id);
+                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                    }
                 }
             }
             else
@@ -216,7 +220,7 @@ namespace Germanenko.Source
             }
             else
             {
-                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, saves[0].TaskID);
                 ConstantSingleton.Instance.DbManager.Execute("UPDATE SavesAndDrafts SET Date = ? WHERE TaskID = ?", DateTime.Today, saves[0].TaskID);
             }
         }
@@ -325,6 +329,17 @@ namespace Germanenko.Source
         {
             ConstantSingleton.Instance.DbManager.Execute("DELETE FROM SavesAndDrafts WHERE TaskID = ?", id);
             ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Load = 1 WHERE ID = ?", id);
+        }
+
+
+
+        public void DeleteTask(int id)
+        {
+            string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id}";
+            ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
+
+            string deleteTask = $"DELETE FROM Tasks WHERE ID = {id}";
+            ConstantSingleton.Instance.DbManager.Execute(deleteTask);
         }
 
 
