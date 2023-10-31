@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using SimpleSQL;
 using System.Threading.Tasks;
 using DTT.Utils.Extensions;
+using System.Linq;
 
 namespace Germanenko.Source
 {
@@ -46,9 +47,13 @@ namespace Germanenko.Source
             ClearList();
 
 
-            string sql = "SELECT * FROM Tasks WHERE Load = 1";
+            string sql = "SELECT * FROM Tasks";
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+
+            string deletedSql = "SELECT * FROM DeletedTasks";
+
+            List<DeletedTasks> deletedList = ConstantSingleton.Instance.DbManager.Query<DeletedTasks>(deletedSql);
 
             string sqlPriority = $"SELECT * FROM Priority";
 
@@ -108,6 +113,7 @@ namespace Germanenko.Source
                     throw;
                 }
 
+                if (ConstantSingleton.Instance.DbManager.Query<DeletedTasks>($"SELECT * FROM DeletedTasks WHERE TaskID = {t.ID}").Count > 0) continue;
 
                 switch (t.Type)
                 {

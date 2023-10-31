@@ -67,11 +67,10 @@ namespace Germanenko.Source
 			var taskType = ((TypeOfTasks)ConstantSingleton.Instance.TaskFormManager.Task.Type).ToString();
 			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
 
-			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Load) VALUES (?, ?, ?, ?)",
+			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
                 name == null ? "" : name,
 				"",
-                color == null ? "ffffffff" : color, 
-                true);
+                color == null ? "ffffffff" : color);
 
             SetPriority();
         }
@@ -80,11 +79,10 @@ namespace Germanenko.Source
 
         public void AddDraft(string name, string color)
         {
-            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Load) VALUES (?, ?, ?, ?)",
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
                 name == null ? "" : name,
                 "",
-                color == null ? "ffffffff" : color,
-                true);
+                color == null ? "ffffffff" : color);
 
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
@@ -207,11 +205,10 @@ namespace Germanenko.Source
 
             if (saves.IsNullOrEmpty())
             {
-                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Load) VALUES (?, ?, ?, ?)",
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
                 name == null ? "" : name,
                 "",
-                color == null ? "ffffffff" : color,
-                false);
+                color == null ? "ffffffff" : color);
 
                 var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
@@ -242,11 +239,10 @@ namespace Germanenko.Source
             {
                 if (tasks[0].Name != name || tasks[0].Color != color)
                 {
-                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, Load) VALUES (?, ?, ?, ?)",
+                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
                         name == null ? "" : name,
                         "",
-                        color == null ? "ffffffff" : color,
-                        false);
+                        color == null ? "ffffffff" : color);
 
                     var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
@@ -311,7 +307,7 @@ namespace Germanenko.Source
         public void RecoveryTask(int id)
         {
             Debug.Log("recovery");
-            ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Load = 1 WHERE ID = {id}");
+            //ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Load = 1 WHERE ID = {id}");
             ConstantSingleton.Instance.DbManager.Execute($"DELETE FROM DeletedTasks WHERE TaskID = {id}");
             Toolbox.Get<ListOfTasks>().ReloadList();
         }
@@ -341,7 +337,7 @@ namespace Germanenko.Source
         public void DraftToTask(int id)
         {
             ConstantSingleton.Instance.DbManager.Execute("DELETE FROM SavesAndDrafts WHERE TaskID = ?", id);
-            ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Load = 1 WHERE ID = ?", id);
+            //ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Load = 1 WHERE ID = ?", id);
         }
 
 
@@ -370,30 +366,6 @@ namespace Germanenko.Source
 
         public void SetTaskDeleted(int id)
         {
-            string deleteSql = $"UPDATE Tasks SET Load = 0 WHERE ID = {id}";
-
-            //string deletePriority = $"DELETE FROM Priority WHERE TaskID = {id}";
-
-            string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE Reference = {id}";
-            string selectSaves = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id}";
-            var saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(selectSaves);
-
-            //string updateAI = $"UPDATE sqlite_sequence SET seq = seq - 1 WHERE name IN ('Tasks', 'Priority')";
-
-            foreach (var save in saves)
-            {
-                Debug.Log(save.TaskID);
-                ConstantSingleton.Instance.DbManager.Execute($"DELETE FROM Tasks WHERE ID = {save.TaskID}");
-            }
-
-            ConstantSingleton.Instance.DbManager.Execute(deleteSql);
-
-            //ConstantSingleton.Instance.DbManager.Execute(deletePriority);
-
-            ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
-
-            //ConstantSingleton.Instance.DbManager.Execute(updateAI);
-
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO DeletedTasks (TaskID, Date) VALUES (?, ?)",
                 id,
                 DateTime.Today);

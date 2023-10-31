@@ -32,7 +32,6 @@ public class DatabaseOutput : MonoBehaviour
             t.ID.text = tasks[i].ID.ToString();
             t.Name.text = tasks[i].Name;
             t.Color.text = tasks[i].Color.ToString();
-            t.Load.text = tasks[i].Load.ToString();
         }
     }
 
