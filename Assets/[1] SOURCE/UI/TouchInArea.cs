@@ -281,8 +281,11 @@ namespace Germanenko.Source
         }
         private void OnDisable()
         {
-            swipeGesture.StateUpdated -= SwipeGestureCallback;
-            FingersScript.Instance.RemoveGesture(swipeGesture);
+            if(FingersScript.HasInstance)
+            {
+                swipeGesture.StateUpdated -= SwipeGestureCallback;
+                FingersScript.Instance.RemoveGesture(swipeGesture);
+            }  
         }
 
         #endregion
