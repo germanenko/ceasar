@@ -212,6 +212,11 @@ namespace Germanenko.Source
         {
             MultiChoice.Instance.SetPreviewMultiChoice(previewMultiChoice);
         }
+
+        public bool GetPreviewMultiChoiceEnabled()
+        {
+            return MultiChoice.Instance.PreviewMultiChoiceEnabled;
+        }
     }
 
 }

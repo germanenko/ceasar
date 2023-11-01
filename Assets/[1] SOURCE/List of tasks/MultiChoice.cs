@@ -23,6 +23,9 @@ public class MultiChoice : MonoBehaviour
     [SerializeField] private bool _multiChoiceEnabled;
     public bool MultiChoiceEnabled => _multiChoiceEnabled;
 
+    [SerializeField] private bool _previewMultiChoiceEnabled;
+    public bool PreviewMultiChoiceEnabled => _previewMultiChoiceEnabled;
+
     private void Awake()
     {
         Instance = this;  
@@ -32,6 +35,15 @@ public class MultiChoice : MonoBehaviour
 
     public void SetMultiChoice(bool multiChoice)
     {
+        if (!_previewMultiChoiceEnabled) 
+        {
+            foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
+            {
+                task.CheckBox.isOn = false;
+            }
+            return;
+        } 
+
         if (multiChoice && !_multiChoiceEnabled)
         {
             Signal.Send("Controls", "MultiChoiceActivate");
@@ -40,6 +52,7 @@ public class MultiChoice : MonoBehaviour
 
             foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
             {
+                task.SetPreviewCheckBox(false);
                 task.SetCanSelect(multiChoice);
                 task.CheckBox.OnToggleOnCallback.Event.AddListener(CountSelectedTasks);
                 task.CheckBox.OnToggleOffCallback.Event.AddListener(CountSelectedTasks);
@@ -61,7 +74,7 @@ public class MultiChoice : MonoBehaviour
                 task.CheckBox.OnToggleOffCallback.Event.RemoveListener(CountSelectedTasks);
             }
             _multiChoiceEnabled = false;
-        }  
+        }
     }
 
 
@@ -70,6 +83,8 @@ public class MultiChoice : MonoBehaviour
     {
         if (!_multiChoiceEnabled)
         {
+            _previewMultiChoiceEnabled = previewMultiChoice;
+
             foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
             {
                 task.SetPreviewCheckBox(previewMultiChoice);
@@ -134,5 +149,10 @@ public class MultiChoice : MonoBehaviour
         }
 
         SetMultiChoice(false);
+    }
+
+    private void Update()
+    {
+        print(_previewMultiChoiceEnabled);
     }
 }

@@ -16,6 +16,7 @@ public class LerpToPlaceholder : MonoBehaviour
 
     public bool BlockMoving;
     public bool InstantlyMove;
+    public bool PositionReached;
 
     private void Start()
     {   
@@ -45,9 +46,17 @@ public class LerpToPlaceholder : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);      
-        }
-            
+            transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
+
+            if (Vector3.Distance(transform.position, placeholderTransform.position) > 0.1f)
+            {
+                PositionReached = false;
+            }
+            else
+            {
+                PositionReached = true;
+            }
+        }           
     }
 
 
