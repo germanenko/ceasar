@@ -150,9 +150,4 @@ public class MultiChoice : MonoBehaviour
 
         SetMultiChoice(false);
     }
-
-    private void Update()
-    {
-        print(_previewMultiChoiceEnabled);
-    }
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9070018925123901754}
   - component: {fileID: 4647382915475560607}
   - component: {fileID: 4163757017099438646}
-  - component: {fileID: 3659866463426070652}
   - component: {fileID: 7071664766633040961}
   - component: {fileID: 4224570640717214279}
   - component: {fileID: 2617952067201379078}
@@ -115,32 +114,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!61 &3659866463426070652
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647382915475560605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 200, y: 200}
-  m_EdgeRadius: 0
 --- !u!225 &7071664766633040961
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -455,6 +428,7 @@ MonoBehaviour:
   Item: {fileID: 0}
   BlockMoving: 0
   InstantlyMove: 0
+  PositionReached: 0
 --- !u!223 &5009380919558253997
 Canvas:
   m_ObjectHideFlags: 0

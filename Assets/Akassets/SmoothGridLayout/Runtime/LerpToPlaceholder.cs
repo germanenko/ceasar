@@ -12,16 +12,19 @@ public class LerpToPlaceholder : MonoBehaviour
     public SmoothGridLayoutUI smoothGridLayout;
     public Transform placeholderTransform;
 
+    public Collider2D Collider;
+
     public ItemOfList Item;
 
     public bool BlockMoving;
     public bool InstantlyMove;
-    public bool PositionReached;
 
     private void Start()
     {   
         _rectTransform = GetComponent<RectTransform>();
         Item = GetComponent<ItemOfList>();
+
+        Collider = GetComponent<Collider2D>();
     }
 
 
@@ -48,13 +51,15 @@ public class LerpToPlaceholder : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
 
-            if (Vector3.Distance(transform.position, placeholderTransform.position) > 0.1f)
+            if (Vector3.Distance(transform.position, placeholderTransform.position) > 5f)
             {
-                PositionReached = false;
+                if(Collider)
+                    Collider.enabled = false;
             }
             else
             {
-                PositionReached = true;
+                if (Collider)
+                    Collider.enabled = true;
             }
         }           
     }
