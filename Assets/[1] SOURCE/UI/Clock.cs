@@ -14,8 +14,8 @@ public class Clock : MonoBehaviour
 
     void Start()
     {
-        DrawHour(12, 100);
-        DrawMinute(60, 185);
+        //DrawHour(12, 100);
+        //DrawMinute(60, 185);
     }
 
 
