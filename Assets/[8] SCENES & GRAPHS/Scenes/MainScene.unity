@@ -6937,6 +6937,7 @@ MonoBehaviour:
   _countSelectedTasksText: {fileID: 1106339000}
   _listOfTasks: {fileID: 1820684374}
   _multiChoiceEnabled: 0
+  _previewMultiChoiceEnabled: 0
 --- !u!1 &160003938
 GameObject:
   m_ObjectHideFlags: 0
@@ -16641,7 +16642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   databaseFile: {fileID: 4900000, guid: c8c189f30d5f7ad4cbf5b2ad7f61c579, type: 3}
-  overrideBasePath: D:\ceasar\Assets\[9] TASKS
+  overrideBasePath: 
   overridePathMode: 0
   changeWorkingName: 1
   workingName: Tasks.sqlite
