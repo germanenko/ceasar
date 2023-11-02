@@ -1,4 +1,6 @@
+using Doozy.Runtime.Reactor.Animators;
 using FlyingWormConsole3.LiteNetLib.Utils;
+using HutongGames.PlayMaker.Ecosystem.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +10,10 @@ public class Clock : MonoBehaviour
 {
     [SerializeField] private TimeLabel _timeLabel;
 
-    [SerializeField] private TextMeshProUGUI _timeText;
+    [SerializeField] private bool _startTime;
+
+    [SerializeField] private TextMeshProUGUI _startTimeText;
+    [SerializeField] private TextMeshProUGUI _endTimeText;
 
     [SerializeField] private float _hours;
     [SerializeField] private float _minutes;
@@ -16,10 +21,17 @@ public class Clock : MonoBehaviour
     [SerializeField] List<TimeLabel> _hourList;
     [SerializeField] List<TimeLabel> _minuteList;
 
+
+
+    [SerializeField] private Color _startTimeColor;
+    [SerializeField] private Color _endTimeColor;
+
+
+
     void Start()
     {
-        DrawHour(12, 120);
-        DrawMinute(60, 230);
+        //DrawHour(12, 120);
+        //DrawMinute(60, 230);
     }
 
 
@@ -31,8 +43,9 @@ public class Clock : MonoBehaviour
             case TimeLabelType.Hour:
                 foreach(TimeLabel label in _hourList)
                 {
+                    print(label);
                     if(label.TimeValue == time)
-                        label.SelectTime(true);
+                        label.SelectTime(true, _startTime ? _startTimeColor : _endTimeColor);
                     else
                         label.SelectTime(false);
                 }
@@ -43,7 +56,7 @@ public class Clock : MonoBehaviour
                 foreach (TimeLabel label in _minuteList)
                 {
                     if (label.TimeValue == time)
-                        label.SelectTime(true);
+                        label.SelectTime(true, _startTime ? _startTimeColor : _endTimeColor);
                     else
                         label.SelectTime(false);
                 }
@@ -52,12 +65,33 @@ public class Clock : MonoBehaviour
         }
 
 
-
-        _timeText.text = string.Format("{0:00}:{1:00}", _hours, _minutes);
+        if( _startTime )
+            _startTimeText.text = string.Format("{0:00}:{1:00}", _hours, _minutes);
+        else
+            _endTimeText.text = string.Format("{0:00}:{1:00}", _hours, _minutes);
     }
 
 
 
+    public void SelectTime(bool startTime)
+    {
+        _startTime = startTime;
+
+        if (_startTime)
+        {
+            _startTimeText.GetComponent<UIAnimator>().Play();
+            _endTimeText.GetComponent<UIAnimator>().Reverse();
+        }
+        else
+        {
+            _startTimeText.GetComponent<UIAnimator>().Reverse();
+            _endTimeText.GetComponent<UIAnimator>().Play();
+        }
+    }
+
+
+
+    #region ClockGenerator
     private void DrawHour(int steps, int radius)
     {
         for (int i = 0; i < steps; i++)
@@ -141,4 +175,5 @@ public class Clock : MonoBehaviour
             _minuteList.Add(s);
         }
     }
+    #endregion
 }

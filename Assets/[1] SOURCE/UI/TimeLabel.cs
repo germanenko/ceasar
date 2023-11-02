@@ -1,8 +1,11 @@
+using HutongGames.PlayMaker.Ecosystem.Utils;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public enum TimeLabelType
 {
@@ -20,7 +23,9 @@ public class TimeLabel : MonoBehaviour
 
     public Clock Clock;
 
-    public GameObject SelectIndicator;
+    public Image SelectIndicator;
+
+
 
     public void SetTime()
     {
@@ -29,16 +34,17 @@ public class TimeLabel : MonoBehaviour
 
 
 
-    public void SelectTime(bool select)
+    public void SelectTime(bool select, Color indicatorColor = new Color())
     {
         if (select)
         {
-            SelectIndicator.SetActive(true);
+            SelectIndicator.gameObject.SetActive(true);
+            SelectIndicator.color = indicatorColor;
             LabelText.color = Color.white;
         }
         else
         {
-            SelectIndicator.SetActive(false);
+            SelectIndicator.gameObject.SetActive(false);
             LabelText.color = Color.black;
         }
     }
