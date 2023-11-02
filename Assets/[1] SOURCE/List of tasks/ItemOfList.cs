@@ -133,23 +133,23 @@ namespace Germanenko.Source
 
 
 
-        public void OnTriggerStay2D(Collider2D col)
-        {
-            if (col.TryGetComponent(out ItemOfList iol))
-            {
-                if (isDragging == true && !col.GetComponent<ItemOfList>().isDragging)
-                {
-                    if (_spawnedReplaceTaskEmpty)
-                    {
-                        _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
-                        SetPreviewMultiChoice(false);
+        //public void OnTriggerStay2D(Collider2D col)
+        //{
+        //    if (col.TryGetComponent(out ItemOfList iol))
+        //    {
+        //        if (isDragging == true && !col.GetComponent<ItemOfList>().isDragging)
+        //        {
+        //            if (_spawnedReplaceTaskEmpty)
+        //            {
+        //                _spawnedReplaceTaskEmpty.transform.SetSiblingIndex(col.transform.GetSiblingIndex());
+        //                SetPreviewMultiChoice(false);
 
-                        if (!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
-                            _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
-                    }
-                }
-            }
-        }
+        //                if (!_tasksToReplace.Contains(_spawnedReplaceTaskEmpty.transform))
+        //                    _tasksToReplace.Add(_spawnedReplaceTaskEmpty.transform);
+        //            }
+        //        }
+        //    }
+        //}
 
 
 
