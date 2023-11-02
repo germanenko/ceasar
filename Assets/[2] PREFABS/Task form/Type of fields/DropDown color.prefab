@@ -1627,6 +1627,13 @@ MonoBehaviour:
   listFolder: {fileID: 1226919239498224904}
   itemPrefab: {fileID: 1226919239940472233}
   itemPosition: 0
+  _selectedItem:
+    sprite: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    name: 
+  _selectedItemView: {fileID: 0}
+  _fsm: {fileID: 0}
+  _button: {fileID: 0}
 --- !u!1 &1226919239076534382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,15 +2478,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
-    m_Top: 25
-    m_Bottom: 25
+    m_Left: 21
+    m_Right: 21
+    m_Top: 21
+    m_Bottom: 21
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 25, y: 25}
+  m_CellSize: {x: 164.33885, y: 164.33885}
+  m_Spacing: {x: 20.542356, y: 20.542356}
   m_Constraint: 1
   m_ConstraintCount: 4
   paddingSizerFallback:
