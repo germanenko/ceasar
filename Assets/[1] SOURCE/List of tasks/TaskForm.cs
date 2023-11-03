@@ -19,9 +19,13 @@ namespace Germanenko.Source
 		[SerializeField] private Transform itemParent;
 
 		[SerializeField] private int _id;
+
 		[SerializeField] private TMP_InputField _idField;
 		[SerializeField] private TMP_InputField _nameField;
+
 		[SerializeField] private Dropdown _colorField;
+
+		[SerializeField] private Clock _clocks;
 
 		private int itemPosition;
 
@@ -101,7 +105,7 @@ namespace Germanenko.Source
                 Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
             }
 			else
-				Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name);
+				Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
 
 
             Toolbox.Get<ListOfTasks>().ReloadList();
@@ -238,6 +242,7 @@ namespace Germanenko.Source
 			_idField.text = taskList[0].ID.ToString();
 			_nameField.text = taskList[0].Name;
 			_colorField.SelectDDItem(taskList[0].Color);
+			_clocks.SetPeriod(taskList[0].StartTime, taskList[0].EndTime);
         }
 
 
@@ -316,6 +321,8 @@ namespace Germanenko.Source
 
 			_archiveVersionButton.SetActive(false);
 			_previousVersionButton.SetActive(false);
+
+			_clocks.ClearTime();
 
             if (_editTask)
 				_editTask = false;

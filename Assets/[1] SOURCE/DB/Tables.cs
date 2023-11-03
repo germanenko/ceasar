@@ -60,17 +60,19 @@ namespace Germanenko.Source
 
 
 
-		public void AddTask(string name, string color)
+		public void AddTask(string name, string color, DateTime startPeriod, DateTime endPeriod)
 		{
 
 			var taskName = ConstantSingleton.Instance.TaskFormManager.Task.Name;
 			var taskType = ((TypeOfTasks)ConstantSingleton.Instance.TaskFormManager.Task.Type).ToString();
 			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
 
-			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
+			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)",
                 name == null ? "" : name,
 				"",
-                color == null ? "ffffffff" : color);
+                color == null ? "ffffffff" : color,
+                startPeriod,
+                endPeriod);
 
             SetPriority();
         }

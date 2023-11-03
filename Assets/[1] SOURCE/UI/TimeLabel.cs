@@ -19,7 +19,7 @@ public class TimeLabel : MonoBehaviour
 
     public TextMeshProUGUI LabelText;
 
-    public float TimeValue;
+    public int TimeValue;
 
     public Clock Clock;
 

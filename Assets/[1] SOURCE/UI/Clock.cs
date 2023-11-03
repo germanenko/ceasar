@@ -1,9 +1,12 @@
 using Doozy.Runtime.Reactor.Animators;
 using FlyingWormConsole3.LiteNetLib.Utils;
+using Germanenko.Framework;
 using HutongGames.PlayMaker.Ecosystem.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
@@ -15,11 +18,11 @@ public class Clock : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
 
-    [SerializeField] private float _startHours;
-    [SerializeField] private float _startMinutes;
+    [SerializeField] private int _startHours;
+    [SerializeField] private int _startMinutes;
 
-    [SerializeField] private float _endHours;
-    [SerializeField] private float _endMinutes;
+    [SerializeField] private int _endHours;
+    [SerializeField] private int _endMinutes;
 
     [SerializeField] List<TimeLabel> _hourList;
     [SerializeField] List<TimeLabel> _minuteList;
@@ -37,7 +40,7 @@ public class Clock : MonoBehaviour
 
 
 
-    public void SetTime(float time, TimeLabelType type)
+    public void SetTime(int time, TimeLabelType type)
     {
         switch(type)
         {
@@ -80,6 +83,57 @@ public class Clock : MonoBehaviour
     }
 
 
+
+    public DateTime GetStartPeriod()
+    {
+        return new DateTime(1, 1, 1, _startHours, _startMinutes, 0);
+    }
+
+
+
+    public DateTime GetEndPeriod()
+    {
+        return new DateTime(1, 1, 1, _endHours, _endMinutes, 0);
+    }
+
+
+
+    public void SetPeriod(DateTime start, DateTime end)
+    {
+        _startHours = start.Hour;
+        _startMinutes = start.Minute;
+        _endHours = end.Hour;
+        _endMinutes = end.Minute;
+
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+
+        foreach (TimeLabel label in _hourList)
+        {
+            if (label.TimeValue == _startHours)
+                label.SelectTime(true, true,  _startTimeColor);
+            if (label.TimeValue == _endHours)
+                label.SelectTime(true, false, _endTimeColor);
+        }
+    }
+
+
+
+    public void ClearTime()
+    {
+        _startHours = 0;
+        _startMinutes = 0;
+        _endHours = 0;
+        _endMinutes = 0;
+
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+
+        foreach (TimeLabel label in _hourList)
+        {
+            label.SelectTime(false);
+        }
+    }
 
     #region ClockGenerator
     private void DrawHour(int steps, int radius)
