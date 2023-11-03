@@ -15,8 +15,11 @@ public class Clock : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
 
-    [SerializeField] private float _hours;
-    [SerializeField] private float _minutes;
+    [SerializeField] private float _startHours;
+    [SerializeField] private float _startMinutes;
+
+    [SerializeField] private float _endHours;
+    [SerializeField] private float _endMinutes;
 
     [SerializeField] List<TimeLabel> _hourList;
     [SerializeField] List<TimeLabel> _minuteList;
@@ -47,19 +50,26 @@ public class Clock : MonoBehaviour
                     else
                         label.SelectTime(false);
                 }
-                _hours = time; 
+                
+                if(_startTime)
+                    _startHours = time;
+                else
+                    _endHours = time;
                 break;
 
             case TimeLabelType.Minute:
-                _minutes = time;
+                if (_startTime)
+                    _startMinutes = time;
+                else
+                    _endMinutes = time;
                 break;
         }
 
 
-        if( _startTime )
-            _startTimeText.text = string.Format("{0:00}:{1:00}", _hours, _minutes);
+        if(_startTime)
+            _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
         else
-            _endTimeText.text = string.Format("{0:00}:{1:00}", _hours, _minutes);
+            _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
     }
 
 
