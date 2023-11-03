@@ -31,6 +31,12 @@ namespace Germanenko.Source
 
         [MaxLength(9), Default("'ffffffff'"), NotNull]
         public string Color { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime StartTime { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime EndTime { get; set; }
     }
 
 

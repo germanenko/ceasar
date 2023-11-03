@@ -102,6 +102,7 @@ namespace Germanenko.Source
                 string sqlP = $"SELECT * FROM Tasks WHERE ID = {taskPriorities[i].TaskID}";
 
                 Tasks t;
+
                 try
                 {
                     t = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlP)[0];
