@@ -21,8 +21,6 @@ public class Clock : MonoBehaviour
     [SerializeField] List<TimeLabel> _hourList;
     [SerializeField] List<TimeLabel> _minuteList;
 
-
-
     [SerializeField] private Color _startTimeColor;
     [SerializeField] private Color _endTimeColor;
 
@@ -53,13 +51,6 @@ public class Clock : MonoBehaviour
                 break;
 
             case TimeLabelType.Minute:
-                foreach (TimeLabel label in _minuteList)
-                {
-                    if (label.TimeValue == time)
-                        label.SelectTime(true, _startTime ? _startTimeColor : _endTimeColor);
-                    else
-                        label.SelectTime(false);
-                }
                 _minutes = time;
                 break;
         }
@@ -76,17 +67,6 @@ public class Clock : MonoBehaviour
     public void SelectTime(bool startTime)
     {
         _startTime = startTime;
-
-        if (_startTime)
-        {
-            _startTimeText.GetComponent<UIAnimator>().Play();
-            _endTimeText.GetComponent<UIAnimator>().Reverse();
-        }
-        else
-        {
-            _startTimeText.GetComponent<UIAnimator>().Reverse();
-            _endTimeText.GetComponent<UIAnimator>().Play();
-        }
     }
 
 
