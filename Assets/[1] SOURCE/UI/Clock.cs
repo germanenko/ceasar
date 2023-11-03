@@ -44,11 +44,11 @@ public class Clock : MonoBehaviour
             case TimeLabelType.Hour:
                 foreach(TimeLabel label in _hourList)
                 {
-                    print(label);
                     if(label.TimeValue == time)
-                        label.SelectTime(true, _startTime ? _startTimeColor : _endTimeColor);
+                        label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
                     else
-                        label.SelectTime(false);
+                        if(!label.Selected || (label.Selected && label.IsStartTime == _startTime))
+                            label.SelectTime(false);
                 }
                 
                 if(_startTime)

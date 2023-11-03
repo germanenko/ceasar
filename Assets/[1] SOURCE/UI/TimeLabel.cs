@@ -25,7 +25,9 @@ public class TimeLabel : MonoBehaviour
 
     public Image SelectIndicator;
 
+    public bool Selected;
 
+    public bool IsStartTime;
 
     public void SetTime()
     {
@@ -34,8 +36,11 @@ public class TimeLabel : MonoBehaviour
 
 
 
-    public void SelectTime(bool select, Color indicatorColor = new Color())
+    public void SelectTime(bool select, bool isStartTime = false, Color indicatorColor = new Color())
     {
+        Selected = select;
+        IsStartTime = isStartTime;
+
         if (select)
         {
             SelectIndicator.gameObject.SetActive(true);

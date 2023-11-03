@@ -56,6 +56,8 @@ MonoBehaviour:
   TimeValue: 23
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1576006356998933575}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &53010582369372729
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +114,8 @@ MonoBehaviour:
   TimeValue: 18
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1795061318572092462}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &155929196086898117
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +614,8 @@ MonoBehaviour:
   TimeValue: 1
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7327097168586128091}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &380504142094361696
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +672,8 @@ MonoBehaviour:
   TimeValue: 42
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7126124371276825541}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &414883010942760591
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +730,8 @@ MonoBehaviour:
   TimeValue: 10
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4690264439367494143}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &484731279487306157
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +788,8 @@ MonoBehaviour:
   TimeValue: 25
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 8538067531384431482}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &537940932138350209
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +846,8 @@ MonoBehaviour:
   TimeValue: 27
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3462805154582136562}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &555527404586438296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1346,8 @@ MonoBehaviour:
   TimeValue: 34
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 158945462153314098}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &679614213599140548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1404,8 @@ MonoBehaviour:
   TimeValue: 4
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5627491453527196933}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &682814601052738107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2788,8 @@ MonoBehaviour:
   TimeValue: 12
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7537436703465280987}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &808909237216059862
 GameObject:
   m_ObjectHideFlags: 0
@@ -4822,6 +4842,8 @@ MonoBehaviour:
   TimeValue: 44
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5349790846338351679}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1136100630754627779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,6 +4900,8 @@ MonoBehaviour:
   TimeValue: 39
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2110535293357369336}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1149584784932576822
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,6 +5034,8 @@ MonoBehaviour:
   TimeValue: 48
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6123181293961470456}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1286455074167561485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5610,8 @@ MonoBehaviour:
   TimeValue: 11
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3011836545173416943}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1530444584814994317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,6 +6262,8 @@ MonoBehaviour:
   TimeValue: 45
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4226622675399641811}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1666127099050353489
 GameObject:
   m_ObjectHideFlags: 0
@@ -6732,6 +6762,8 @@ MonoBehaviour:
   TimeValue: 59
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6796563418003503610}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1756638215533572907
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,6 +6972,8 @@ MonoBehaviour:
   TimeValue: 46
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5042399467533117491}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &1871326290112648634
 GameObject:
   m_ObjectHideFlags: 0
@@ -8550,6 +8584,8 @@ MonoBehaviour:
   TimeValue: 51
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5012015720816872599}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2198087658421764863
 GameObject:
   m_ObjectHideFlags: 0
@@ -8606,6 +8642,8 @@ MonoBehaviour:
   TimeValue: 3
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2455953096745337495}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2248288580052458246
 GameObject:
   m_ObjectHideFlags: 0
@@ -8814,6 +8852,8 @@ MonoBehaviour:
   TimeValue: 32
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 8878643411343955464}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2423313965907129910
 GameObject:
   m_ObjectHideFlags: 0
@@ -8946,6 +8986,8 @@ MonoBehaviour:
   TimeValue: 9
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 8219305917502509724}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2481435221834997361
 GameObject:
   m_ObjectHideFlags: 0
@@ -9002,6 +9044,8 @@ MonoBehaviour:
   TimeValue: 5
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6393190119400452638}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2486860271443273199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10322,6 +10366,8 @@ MonoBehaviour:
   TimeValue: 53
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3461457444760247841}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2858720749170651121
 GameObject:
   m_ObjectHideFlags: 0
@@ -10454,6 +10500,8 @@ MonoBehaviour:
   TimeValue: 56
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2650980709215065790}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2902734270922115442
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,6 +11000,8 @@ MonoBehaviour:
   TimeValue: 16
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5196480987642454530}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &2971222458234029628
 GameObject:
   m_ObjectHideFlags: 0
@@ -11968,6 +12018,8 @@ MonoBehaviour:
   TimeValue: 6
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7779189729986944523}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3132267887622654768
 GameObject:
   m_ObjectHideFlags: 0
@@ -12024,6 +12076,8 @@ MonoBehaviour:
   TimeValue: 57
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3843658015416414166}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3263726789173493369
 GameObject:
   m_ObjectHideFlags: 0
@@ -13482,6 +13536,8 @@ MonoBehaviour:
   TimeValue: 2
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1625593472993790829}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3436119508758746310
 GameObject:
   m_ObjectHideFlags: 0
@@ -13538,6 +13594,8 @@ MonoBehaviour:
   TimeValue: 49
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5513597946819648363}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3491609573027278538
 GameObject:
   m_ObjectHideFlags: 0
@@ -13594,6 +13652,8 @@ MonoBehaviour:
   TimeValue: 7
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 315546003535495384}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3524679701099551137
 GameObject:
   m_ObjectHideFlags: 0
@@ -14838,6 +14898,8 @@ MonoBehaviour:
   TimeValue: 28
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3210970326965940314}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3803232497802083830
 GameObject:
   m_ObjectHideFlags: 0
@@ -14970,6 +15032,8 @@ MonoBehaviour:
   TimeValue: 37
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5783194795298203577}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3868424582748311018
 GameObject:
   m_ObjectHideFlags: 0
@@ -15468,6 +15532,8 @@ MonoBehaviour:
   TimeValue: 35
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5922031704761589355}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &3967625012578654308
 GameObject:
   m_ObjectHideFlags: 0
@@ -16408,6 +16474,8 @@ MonoBehaviour:
   TimeValue: 10
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2327774024377216211}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4100187493392269883
 GameObject:
   m_ObjectHideFlags: 0
@@ -17424,6 +17492,8 @@ MonoBehaviour:
   TimeValue: 6
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1497073867142451707}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4323468016429623025
 GameObject:
   m_ObjectHideFlags: 0
@@ -17922,6 +17992,8 @@ MonoBehaviour:
   TimeValue: 19
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3826018423183672217}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4350373054385410823
 GameObject:
   m_ObjectHideFlags: 0
@@ -18054,6 +18126,8 @@ MonoBehaviour:
   TimeValue: 54
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5840645755993017527}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4382592295735130331
 GameObject:
   m_ObjectHideFlags: 0
@@ -18780,6 +18854,8 @@ MonoBehaviour:
   TimeValue: 7
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5391216151507953755}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4694584346617941927
 GameObject:
   m_ObjectHideFlags: 0
@@ -19796,6 +19872,8 @@ MonoBehaviour:
   TimeValue: 0
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7415052883761526708}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &4873476494113903353
 GameObject:
   m_ObjectHideFlags: 0
@@ -21330,6 +21408,8 @@ MonoBehaviour:
   TimeValue: 1
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6325268186668000988}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5115860824931551453
 GameObject:
   m_ObjectHideFlags: 0
@@ -22864,6 +22944,8 @@ MonoBehaviour:
   TimeValue: 12
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3762766083554839375}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5320920731409105434
 GameObject:
   m_ObjectHideFlags: 0
@@ -24322,6 +24404,8 @@ MonoBehaviour:
   TimeValue: 30
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 8882609273918116819}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5419628912956849495
 GameObject:
   m_ObjectHideFlags: 0
@@ -24378,6 +24462,8 @@ MonoBehaviour:
   TimeValue: 50
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 9005498079721522246}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5492713928657523522
 GameObject:
   m_ObjectHideFlags: 0
@@ -24434,6 +24520,8 @@ MonoBehaviour:
   TimeValue: 13
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6217283664925687528}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5495654785569176699
 GameObject:
   m_ObjectHideFlags: 0
@@ -24642,6 +24730,8 @@ MonoBehaviour:
   TimeValue: 29
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3470031093372649911}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &5620882422873113280
 GameObject:
   m_ObjectHideFlags: 0
@@ -27364,6 +27454,8 @@ MonoBehaviour:
   TimeValue: 40
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4520120412335501407}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6231685573033600027
 GameObject:
   m_ObjectHideFlags: 0
@@ -27938,6 +28030,8 @@ MonoBehaviour:
   TimeValue: 43
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 6946927746357696857}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6340611604504048763
 GameObject:
   m_ObjectHideFlags: 0
@@ -30508,6 +30602,8 @@ MonoBehaviour:
   TimeValue: 4
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4965855095376761765}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6730048935092452193
 GameObject:
   m_ObjectHideFlags: 0
@@ -30564,6 +30660,8 @@ MonoBehaviour:
   TimeValue: 17
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5218148110861698119}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6798112626839648347
 GameObject:
   m_ObjectHideFlags: 0
@@ -30620,6 +30718,8 @@ MonoBehaviour:
   TimeValue: 24
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5297658901024825662}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6813033856567679107
 GameObject:
   m_ObjectHideFlags: 0
@@ -31194,6 +31294,8 @@ MonoBehaviour:
   TimeValue: 31
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 812901801026903544}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6877840606152431799
 GameObject:
   m_ObjectHideFlags: 0
@@ -31250,6 +31352,8 @@ MonoBehaviour:
   TimeValue: 20
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1362894213424256650}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &6896665339531056235
 GameObject:
   m_ObjectHideFlags: 0
@@ -32596,6 +32700,8 @@ MonoBehaviour:
   TimeValue: 47
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2498342533964535527}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7157868781357361000
 GameObject:
   m_ObjectHideFlags: 0
@@ -32728,6 +32834,8 @@ MonoBehaviour:
   TimeValue: 2
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4240433940538764889}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7357245124616398385
 GameObject:
   m_ObjectHideFlags: 0
@@ -32860,6 +32968,8 @@ MonoBehaviour:
   TimeValue: 36
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 779678813201523427}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7414896242649651634
 GameObject:
   m_ObjectHideFlags: 0
@@ -34836,6 +34946,8 @@ MonoBehaviour:
   TimeValue: 5
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3067962059390671231}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7673331395605928163
 GameObject:
   m_ObjectHideFlags: 0
@@ -34892,6 +35004,8 @@ MonoBehaviour:
   TimeValue: 21
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 7133851345262475367}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7734064669434379831
 GameObject:
   m_ObjectHideFlags: 0
@@ -35601,6 +35715,8 @@ MonoBehaviour:
   TimeValue: 15
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5918942620374211948}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7816928215350726139
 GameObject:
   m_ObjectHideFlags: 0
@@ -35657,6 +35773,8 @@ MonoBehaviour:
   TimeValue: 52
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1216678464704810648}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &7864840077104335793
 GameObject:
   m_ObjectHideFlags: 0
@@ -35713,6 +35831,8 @@ MonoBehaviour:
   TimeValue: 41
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3505894336788775523}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8132133592258464724
 GameObject:
   m_ObjectHideFlags: 0
@@ -37323,6 +37443,8 @@ MonoBehaviour:
   TimeValue: 22
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4186900246865575493}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8412019458159656351
 GameObject:
   m_ObjectHideFlags: 0
@@ -38491,6 +38613,8 @@ MonoBehaviour:
   TimeValue: 38
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3809537267826820131}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8565365144116053032
 GameObject:
   m_ObjectHideFlags: 0
@@ -38547,6 +38671,8 @@ MonoBehaviour:
   TimeValue: 8
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 2315933768917365982}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8576871070971078673
 GameObject:
   m_ObjectHideFlags: 0
@@ -40999,6 +41125,8 @@ MonoBehaviour:
   TimeValue: 3
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5550355420126315998}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8915773576705051810
 GameObject:
   m_ObjectHideFlags: 0
@@ -41166,8 +41294,10 @@ MonoBehaviour:
   _startTime: 1
   _startTimeText: {fileID: 8915773577159522561}
   _endTimeText: {fileID: 5917363467500238527}
-  _hours: 0
-  _minutes: 0
+  _startHours: 0
+  _startMinutes: 0
+  _endHours: 0
+  _endMinutes: 0
   _hourList:
   - {fileID: 4235000997699584702}
   - {fileID: 1767940242029700522}
@@ -42179,6 +42309,8 @@ MonoBehaviour:
   TimeValue: 58
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 4709927388719913788}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &8956711509020995588
 GameObject:
   m_ObjectHideFlags: 0
@@ -42753,6 +42885,8 @@ MonoBehaviour:
   TimeValue: 55
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1370175323582540923}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9017968235831765179
 GameObject:
   m_ObjectHideFlags: 0
@@ -42809,6 +42943,8 @@ MonoBehaviour:
   TimeValue: 26
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 8970619149319008180}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9079031886672623420
 GameObject:
   m_ObjectHideFlags: 0
@@ -42865,6 +43001,8 @@ MonoBehaviour:
   TimeValue: 9
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 537287308511191536}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9079079223933262334
 GameObject:
   m_ObjectHideFlags: 0
@@ -42921,6 +43059,8 @@ MonoBehaviour:
   TimeValue: 33
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 3829717795984679152}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9089850009129151410
 GameObject:
   m_ObjectHideFlags: 0
@@ -42977,6 +43117,8 @@ MonoBehaviour:
   TimeValue: 8
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 1831648478845452481}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9090004361824481185
 GameObject:
   m_ObjectHideFlags: 0
@@ -43475,6 +43617,8 @@ MonoBehaviour:
   TimeValue: 11
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 441404136495835642}
+  Selected: 0
+  IsStartTime: 0
 --- !u!1 &9168858182514297068
 GameObject:
   m_ObjectHideFlags: 0
@@ -43607,3 +43751,5 @@ MonoBehaviour:
   TimeValue: 14
   Clock: {fileID: 8915773576705051838}
   SelectIndicator: {fileID: 5781007013956323056}
+  Selected: 0
+  IsStartTime: 0
