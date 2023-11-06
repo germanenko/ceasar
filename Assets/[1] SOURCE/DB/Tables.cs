@@ -79,12 +79,9 @@ namespace Germanenko.Source
 
 
 
-        public void AddDraft(string name, string color)
+        public void AddDraft(string name, string color, DateTime startPeriod, DateTime endPeriod)
         {
-            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
-                name == null ? "" : name,
-                "",
-                color == null ? "ffffffff" : color);
+            AddTask(name, color, startPeriod, endPeriod);
 
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
@@ -93,8 +90,6 @@ namespace Germanenko.Source
                 0,
                 true,
                 DateTime.Today);
-
-            SetPriority();
         }
 
 
@@ -133,8 +128,8 @@ namespace Germanenko.Source
 
 
 
-        public void EditTask(string name, string color, int id)
-		{
+        public void EditTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id)
+        {
             string sql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
             List<SavesAndDrafts> saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(sql);
 
@@ -146,17 +141,17 @@ namespace Germanenko.Source
                 List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {id}");
                 List<Tasks> savedTask = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {saves[0].TaskID}");
 
-                if (task[0].Name != name || task[0].Color != color)
+                if (task[0].Name != name || task[0].Color != color || task[0].StartTime != startPeriod || task[0].EndTime != endPeriod)
                 {
-                    if(savedTask[0].Name == name && savedTask[0].Color == color)
+                    if(savedTask[0].Name == name && savedTask[0].Color == color && savedTask[0].StartTime == startPeriod && savedTask[0].EndTime == endPeriod)
                     {
-                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
                         DeleteSave(saves[0].TaskID);
                     }
                     else
                     {
-                        AddSaveTask(task[0].Name, task[0].Color, id);
-                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                        AddSaveTask(task[0].Name, task[0].Color, task[0].StartTime, task[0].EndTime, id);
+                        ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
                     }
                 }
             }
@@ -165,11 +160,12 @@ namespace Germanenko.Source
                 string mainSql = $"SELECT * FROM Tasks WHERE ID = {id}";
                 List<Tasks> mainTask = ConstantSingleton.Instance.DbManager.Query<Tasks>(mainSql);
 
-                if (mainTask[0].Name != name || mainTask[0].Color != color)
+                if (mainTask[0].Name != name || mainTask[0].Color != color || mainTask[0].StartTime != startPeriod || mainTask[0].EndTime != endPeriod)
                 {
-                    AddSaveTask(mainTask[0].Name, mainTask[0].Color, id);
+                    AddSaveTask(mainTask[0].Name, mainTask[0].Color, mainTask[0].StartTime, mainTask[0].EndTime, id);
 
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
+
                 }
             }
 
@@ -177,10 +173,10 @@ namespace Germanenko.Source
             {
                 List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {archive[0].TaskID}");
 
-                if (task[0].Name == name && task[0].Color == color)
+                if (task[0].Name == name && task[0].Color == color && task[0].StartTime == startPeriod && task[0].EndTime == endPeriod)
                 {
                     DeleteArchive(archive[0].TaskID);
-                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, id);
+                    ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
                 }
 
                 if (archive.Count > 0)
@@ -200,17 +196,19 @@ namespace Germanenko.Source
 
 
 
-        public void AddSaveTask(string name, string color, int id = 0)
+        public void AddSaveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id = 0)
         {
             string checkSave = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
             List<SavesAndDrafts> saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(checkSave);
 
             if (saves.IsNullOrEmpty())
             {
-                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
+                ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)",
                 name == null ? "" : name,
                 "",
-                color == null ? "ffffffff" : color);
+                color == null ? "ffffffff" : color,
+                startPeriod,
+                endPeriod);
 
                 var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
@@ -222,7 +220,7 @@ namespace Germanenko.Source
             }
             else
             {
-                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ? WHERE ID = ?", name, color, saves[0].TaskID);
+                ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, saves[0].TaskID);
                 ConstantSingleton.Instance.DbManager.Execute("UPDATE SavesAndDrafts SET Date = ? WHERE TaskID = ?", DateTime.Today, saves[0].TaskID);
             }
         }

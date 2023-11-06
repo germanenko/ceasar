@@ -4603,7 +4603,7 @@ MonoBehaviour:
   _idField: {fileID: 97175809}
   _nameField: {fileID: 1082760509}
   _colorField: {fileID: 2051719347}
-  _clocks: {fileID: 0}
+  _clocks: {fileID: 309994863}
   _editTask: 0
   isDraft: 0
   _draftPopup: {fileID: 1953013794}
@@ -16456,6 +16456,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300790700}
   m_CullTransparentMesh: 1
+--- !u!114 &309994863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6194579413912107762, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
+  m_PrefabInstance: {fileID: 558819166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c55e3faf01910d4391642cffa91ccb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312369961
 GameObject:
   m_ObjectHideFlags: 0

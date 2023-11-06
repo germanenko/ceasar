@@ -100,6 +100,11 @@ public class Clock : MonoBehaviour
 
     public void SetPeriod(DateTime start, DateTime end)
     {
+        foreach (TimeLabel label in _hourList)
+        {
+            label.SelectTime(false);
+        }
+
         _startHours = start.Hour;
         _startMinutes = start.Minute;
         _endHours = end.Hour;

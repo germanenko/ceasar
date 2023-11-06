@@ -135,11 +135,12 @@ namespace Germanenko.Source
                 }
 
                 var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, new Vector3(Screen.width/2, -Screen.height/2, 0), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
+                Debug.Log(taskPriorities.Count);
                 newItem.transform.localScale = Vector3.one;
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
-                string draftSql = $"SELECT * FROM SavesAndDrafts WHERE TaskID = {taskList[i].ID} AND Draft = 1 AND Reference = 0";
+                string draftSql = $"SELECT * FROM SavesAndDrafts WHERE TaskID = {t.ID} AND Draft = 1 AND Reference = 0";
 
                 var draft = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(draftSql);
 

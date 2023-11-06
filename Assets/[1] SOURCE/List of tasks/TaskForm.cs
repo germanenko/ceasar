@@ -102,7 +102,7 @@ namespace Germanenko.Source
         {
 			if (_editTask)
 			{
-                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _id);
+                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
             }
 			else
 				Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
@@ -142,7 +142,7 @@ namespace Germanenko.Source
 		{
             if (Toolbox.Get<ListOfTasks>().CountOfDrafts() == 0)
             {
-                Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField._selectedItem.name);
+                Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
             }
 
             if (isDraft)
@@ -261,6 +261,7 @@ namespace Germanenko.Source
             _idField.text = task[0].ID.ToString();
             _nameField.text = task[0].Name;
             _colorField.SelectDDItem(task[0].Color);
+            _clocks.SetPeriod(task[0].StartTime, task[0].EndTime);
         }
 
 
@@ -287,10 +288,14 @@ namespace Germanenko.Source
             string taskSql = $"SELECT * FROM Tasks WHERE ID = {save[0].TaskID}";
             List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(taskSql);
 
-            SetTaskID(save[0].Reference, true);
-            _idField.text = save[0].Reference.ToString();
-            _nameField.text = task[0].Name;
-            _colorField.SelectDDItem(task[0].Color);
+            //SetTaskID(save[0].Reference, true);
+            //_idField.text = save[0].Reference.ToString();
+
+            SetValuesFromTask(task[0]);
+
+            //_nameField.text = task[0].Name;
+            //_colorField.SelectDDItem(task[0].Color);
+            //_clocks.SetPeriod(task[0].StartTime, task[0].EndTime);
         }
 
 
@@ -303,10 +308,23 @@ namespace Germanenko.Source
             string taskSql = $"SELECT * FROM Tasks WHERE ID = {archive[0].TaskID}";
             List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(taskSql);
 
-            SetTaskID(archive[0].Reference, true);
-            _idField.text = archive[0].Reference.ToString();
-            _nameField.text = task[0].Name;
-            _colorField.SelectDDItem(task[0].Color);
+			//SetTaskID(archive[0].Reference, true);
+			//_idField.text = archive[0].Reference.ToString();
+
+			SetValuesFromTask(task[0]);
+
+            //_nameField.text = task[0].Name;
+            //_colorField.SelectDDItem(task[0].Color);
+            //_clocks.SetPeriod(task[0].StartTime, task[0].EndTime);
+        }
+
+
+
+		private void SetValuesFromTask(Tasks task)
+		{
+            _nameField.text = task.Name;
+            _colorField.SelectDDItem(task.Color);
+            _clocks.SetPeriod(task.StartTime, task.EndTime);
         }
 
 
