@@ -32,6 +32,8 @@ public class DatabaseOutput : MonoBehaviour
             t.ID.text = tasks[i].ID.ToString();
             t.Name.text = tasks[i].Name;
             t.Color.text = tasks[i].Color.ToString();
+            t.StartPeriod.text = tasks[i].StartTime.TimeOfDay.ToString();
+            t.EndPeriod.text = tasks[i].EndTime.TimeOfDay.ToString();
         }
     }
 
