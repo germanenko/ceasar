@@ -1,4 +1,5 @@
 using Doozy.Runtime.Reactor.Animators;
+using Doozy.Runtime.UIManager.Components;
 using FlyingWormConsole3.LiteNetLib.Utils;
 using Germanenko.Framework;
 using HutongGames.PlayMaker.Ecosystem.Utils;
@@ -9,12 +10,14 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class Clock : MonoBehaviour
 {
     [SerializeField] private TimeLabel _timeLabel;
 
     [SerializeField] private bool _startTime;
+    [SerializeField] private bool _timeSelectorActivated;
 
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
@@ -48,6 +51,14 @@ public class Clock : MonoBehaviour
         _clock.gameObject.SetActive(activate);
         _timeTypeSelector.SetActive(activate);
         _timeButtonText.gameObject.SetActive(!activate);
+
+        _startTimeText.GetComponent<UIToggle>().isOn = true;
+
+        SetPreviewPeriodText(_startHours == _endHours && _startMinutes == _endMinutes ?
+            string.Format("{0:00}:{1:00}", _startHours, _startMinutes) :
+                $"{string.Format("{0:00}:{1:00}", _startHours, _startMinutes)} - {string.Format("{0:00}:{1:00}", _endHours, _endMinutes)}");
+
+        _timeSelectorActivated = activate;
     }
 
 
@@ -87,6 +98,25 @@ public class Clock : MonoBehaviour
                     _startMinutes = time;
                 else
                     _endMinutes = time;
+
+
+
+                if (_startTime)
+                    _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
+                else
+                    _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+
+
+
+                if (_startTime)
+                {
+                    _endTimeText.GetComponent<UIToggle>().isOn = true;
+                }
+                else
+                {
+                    SetActiveTimeSelector(false);
+                }
+
                 break;
         }
 
@@ -127,6 +157,11 @@ public class Clock : MonoBehaviour
             label.SelectTime(false);
         }
 
+        foreach (TimeLabel label in _minuteList)
+        {
+            label.SelectTime(false);
+        }
+
         _startHours = start.Hour;
         _startMinutes = start.Minute;
         _endHours = end.Hour;
@@ -147,9 +182,9 @@ public class Clock : MonoBehaviour
 
         foreach (TimeLabel label in _minuteList)
         {
-            if (label.TimeValue == _startHours)
+            if (label.TimeValue == _startMinutes)
                 label.SelectTime(true, true, _startTimeColor);
-            if (label.TimeValue == _endHours)
+            if (label.TimeValue == _endMinutes)
                 label.SelectTime(true, false, _endTimeColor);
         }
     }
@@ -175,6 +210,11 @@ public class Clock : MonoBehaviour
         _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
         foreach (TimeLabel label in _hourList)
+        {
+            label.SelectTime(false);
+        }
+
+        foreach (TimeLabel label in _minuteList)
         {
             label.SelectTime(false);
         }
