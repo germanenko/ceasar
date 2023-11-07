@@ -240,9 +240,7 @@ namespace Germanenko.Source
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
 			_idField.text = taskList[0].ID.ToString();
-			_nameField.text = taskList[0].Name;
-			_colorField.SelectDDItem(taskList[0].Color);
-			_clocks.SetPeriod(taskList[0].StartTime, taskList[0].EndTime);
+			SetValuesFromTask(taskList[0]);
         }
 
 
@@ -259,9 +257,8 @@ namespace Germanenko.Source
 
             SetTaskID(task[0].ID, true);
             _idField.text = task[0].ID.ToString();
-            _nameField.text = task[0].Name;
-            _colorField.SelectDDItem(task[0].Color);
-            _clocks.SetPeriod(task[0].StartTime, task[0].EndTime);
+
+			SetValuesFromTask(task[0]);
         }
 
 
@@ -325,6 +322,9 @@ namespace Germanenko.Source
             _nameField.text = task.Name;
             _colorField.SelectDDItem(task.Color);
             _clocks.SetPeriod(task.StartTime, task.EndTime);
+			_clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
+                string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) : 
+				$"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
         }
 
 
@@ -341,6 +341,7 @@ namespace Germanenko.Source
 			_previousVersionButton.SetActive(false);
 
 			_clocks.ClearTime();
+			_clocks.SetActiveTimeSelector(false);
 
             if (_editTask)
 				_editTask = false;

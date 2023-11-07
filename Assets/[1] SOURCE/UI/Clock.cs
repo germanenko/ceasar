@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Clock : MonoBehaviour
 {
@@ -30,12 +31,23 @@ public class Clock : MonoBehaviour
     [SerializeField] private Color _startTimeColor;
     [SerializeField] private Color _endTimeColor;
 
-
+    [SerializeField] private Transform _clock;
+    [SerializeField] private GameObject _timeTypeSelector;
+    [SerializeField] private TextMeshProUGUI _timeButtonText;
 
     void Start()
     {
         //DrawHour(12, 120);
         //DrawMinute(60, 230);
+    }
+
+
+
+    public void SetActiveTimeSelector(bool activate)
+    {
+        _clock.gameObject.SetActive(activate);
+        _timeTypeSelector.SetActive(activate);
+        _timeButtonText.gameObject.SetActive(!activate);
     }
 
 
@@ -61,6 +73,16 @@ public class Clock : MonoBehaviour
                 break;
 
             case TimeLabelType.Minute:
+
+                foreach (TimeLabel label in _minuteList)
+                {
+                    if (label.TimeValue == time)
+                        label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
+                    else
+                        if (!label.Selected || (label.Selected && label.IsStartTime == _startTime))
+                        label.SelectTime(false);
+                }
+
                 if (_startTime)
                     _startMinutes = time;
                 else
@@ -77,7 +99,7 @@ public class Clock : MonoBehaviour
 
 
 
-    public void SelectTime(bool startTime)
+    public void SelectTimeType(bool startTime)
     {
         _startTime = startTime;
     }
@@ -113,6 +135,8 @@ public class Clock : MonoBehaviour
         _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
         _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
+
+
         foreach (TimeLabel label in _hourList)
         {
             if (label.TimeValue == _startHours)
@@ -120,6 +144,22 @@ public class Clock : MonoBehaviour
             if (label.TimeValue == _endHours)
                 label.SelectTime(true, false, _endTimeColor);
         }
+
+        foreach (TimeLabel label in _minuteList)
+        {
+            if (label.TimeValue == _startHours)
+                label.SelectTime(true, true, _startTimeColor);
+            if (label.TimeValue == _endHours)
+                label.SelectTime(true, false, _endTimeColor);
+        }
+    }
+
+
+
+    public void SetPreviewPeriodText(string text)
+    {
+        _timeButtonText.text = text;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_timeButtonText.rectTransform);
     }
 
 
@@ -157,7 +197,7 @@ public class Clock : MonoBehaviour
 
 
 
-            var s = Instantiate(_timeLabel, transform);
+            var s = Instantiate(_timeLabel, _clock);
 
             s.transform.localPosition = new Vector3(x, y, 0);
 
@@ -201,7 +241,7 @@ public class Clock : MonoBehaviour
 
 
 
-            var s = Instantiate(_timeLabel, transform);
+            var s = Instantiate(_timeLabel, _clock);
 
             s.LabelType = TimeLabelType.Minute;
 
