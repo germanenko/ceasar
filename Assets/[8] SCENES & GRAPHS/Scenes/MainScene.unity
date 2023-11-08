@@ -27178,27 +27178,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 127.850006
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778020982313896873, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6194579414978204325, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
@@ -96495,6 +96479,7 @@ GameObject:
   - component: {fileID: 5304770042241526899}
   - component: {fileID: 5304770042241526902}
   - component: {fileID: 5304770042241526903}
+  - component: {fileID: 5304770042241526904}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -101020,6 +101005,35 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5304770042241526904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304770042241526897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1696443149}
+          m_TargetAssemblyTypeName: Clock, Assembly-CSharp
+          m_MethodName: SetActiveTimeSelector
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &5304770042275832262
 RectTransform:
   m_ObjectHideFlags: 0

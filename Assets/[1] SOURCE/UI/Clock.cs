@@ -17,7 +17,6 @@ public class Clock : MonoBehaviour
     [SerializeField] private TimeLabel _timeLabel;
 
     [SerializeField] private bool _startTime;
-    [SerializeField] private bool _timeSelectorActivated;
 
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
@@ -57,8 +56,6 @@ public class Clock : MonoBehaviour
         SetPreviewPeriodText(_startHours == _endHours && _startMinutes == _endMinutes ?
             string.Format("{0:00}:{1:00}", _startHours, _startMinutes) :
                 $"{string.Format("{0:00}:{1:00}", _startHours, _startMinutes)} - {string.Format("{0:00}:{1:00}", _endHours, _endMinutes)}");
-
-        _timeSelectorActivated = activate;
     }
 
 
@@ -132,6 +129,23 @@ public class Clock : MonoBehaviour
     public void SelectTimeType(bool startTime)
     {
         _startTime = startTime;
+
+        ClearClockMarks();
+        EnableMarks();
+
+        if (_startTime)
+        {
+            _startTimeText.fontStyle = FontStyles.Bold;
+            _endTimeText.fontStyle = FontStyles.Normal;
+        }
+        else
+        {
+            _startTimeText.fontStyle = FontStyles.Normal;
+            _endTimeText.fontStyle = FontStyles.Bold;
+        }
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_startTimeText.rectTransform);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_endTimeText.rectTransform);
     }
 
 
@@ -152,15 +166,7 @@ public class Clock : MonoBehaviour
 
     public void SetPeriod(DateTime start, DateTime end)
     {
-        foreach (TimeLabel label in _hourList)
-        {
-            label.SelectTime(false);
-        }
-
-        foreach (TimeLabel label in _minuteList)
-        {
-            label.SelectTime(false);
-        }
+        ClearClockMarks();
 
         _startHours = start.Hour;
         _startMinutes = start.Minute;
@@ -170,23 +176,7 @@ public class Clock : MonoBehaviour
         _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
         _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
-
-
-        foreach (TimeLabel label in _hourList)
-        {
-            if (label.TimeValue == _startHours)
-                label.SelectTime(true, true,  _startTimeColor);
-            if (label.TimeValue == _endHours)
-                label.SelectTime(true, false, _endTimeColor);
-        }
-
-        foreach (TimeLabel label in _minuteList)
-        {
-            if (label.TimeValue == _startMinutes)
-                label.SelectTime(true, true, _startTimeColor);
-            if (label.TimeValue == _endMinutes)
-                label.SelectTime(true, false, _endTimeColor);
-        }
+        EnableMarks();
     }
 
 
@@ -195,6 +185,58 @@ public class Clock : MonoBehaviour
     {
         _timeButtonText.text = text;
         LayoutRebuilder.ForceRebuildLayoutImmediate(_timeButtonText.rectTransform);
+    }
+
+
+
+    public void EnableMarks()
+    {
+        if (_startTime)
+        {
+            foreach (TimeLabel label in _hourList)
+            {
+                if (label.TimeValue == _startHours)
+                    label.SelectTime(true, true, _startTimeColor);
+
+            }
+
+            foreach (TimeLabel label in _minuteList)
+            {
+                if (label.TimeValue == _startMinutes)
+                    label.SelectTime(true, true, _startTimeColor);
+
+            }
+        }
+        else
+        {
+            foreach (TimeLabel label in _hourList)
+            {
+
+                if (label.TimeValue == _endHours)
+                    label.SelectTime(true, false, _endTimeColor);
+            }
+
+            foreach (TimeLabel label in _minuteList)
+            {
+
+                if (label.TimeValue == _endMinutes)
+                    label.SelectTime(true, false, _endTimeColor);
+            }
+        }
+    }
+
+
+
+    public void ClearClockMarks()
+    {
+        foreach (TimeLabel label in _hourList)
+        {
+            label.SelectTime(false);
+        }
+        foreach (TimeLabel label in _minuteList)
+        {
+            label.SelectTime(false);
+        }
     }
 
 
@@ -209,15 +251,7 @@ public class Clock : MonoBehaviour
         _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
         _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
-        foreach (TimeLabel label in _hourList)
-        {
-            label.SelectTime(false);
-        }
-
-        foreach (TimeLabel label in _minuteList)
-        {
-            label.SelectTime(false);
-        }
+        ClearClockMarks();
     }
 
     #region ClockGenerator
