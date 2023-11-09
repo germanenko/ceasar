@@ -1,22 +1,16 @@
-using Doozy.Runtime.Reactor.Animators;
 using Doozy.Runtime.UIManager.Components;
-using FlyingWormConsole3.LiteNetLib.Utils;
-using Germanenko.Framework;
-using HutongGames.PlayMaker.Ecosystem.Utils;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 public class Clock : MonoBehaviour
 {
     [SerializeField] private TimeLabel _timeLabel;
 
     [SerializeField] private bool _startTime;
+    [SerializeField] private bool _correctPeriod;
 
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
@@ -32,22 +26,41 @@ public class Clock : MonoBehaviour
 
     [SerializeField] private Color _startTimeColor;
     [SerializeField] private Color _endTimeColor;
+    [SerializeField] private Color _incorrectPeriodColor;
 
     [SerializeField] private Transform _clock;
     [SerializeField] private GameObject _timeTypeSelector;
     [SerializeField] private TextMeshProUGUI _timeButtonText;
 
+    [SerializeField] private UISelectable _clockSelectable;
+
     void Start()
     {
-        //DrawHour(12, 120);
-        //DrawMinute(60, 230);
+        DrawHour(12, 120);
+        DrawMinute(60, 230);
     }
 
 
 
     public void SetActiveTimeSelector(bool activate)
     {
+        if (!_correctPeriod) return;
+
         _clock.gameObject.SetActive(activate);
+
+        if (activate)
+        {
+            _clockSelectable.Select();
+        }
+        else
+        {
+            if (_startTime)
+            {
+                _endHours = _startHours;
+                _endMinutes = _startMinutes;
+            }
+        }
+
         _timeTypeSelector.SetActive(activate);
         _timeButtonText.gameObject.SetActive(!activate);
 
@@ -56,13 +69,18 @@ public class Clock : MonoBehaviour
         SetPreviewPeriodText(_startHours == _endHours && _startMinutes == _endMinutes ?
             string.Format("{0:00}:{1:00}", _startHours, _startMinutes) :
                 $"{string.Format("{0:00}:{1:00}", _startHours, _startMinutes)} - {string.Format("{0:00}:{1:00}", _endHours, _endMinutes)}");
+
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
     }
 
 
 
     public void SetTime(int time, TimeLabelType type)
     {
-        switch(type)
+        _clockSelectable.Select();
+
+        switch (type)
         {
             case TimeLabelType.Hour:
                 foreach(TimeLabel label in _hourList)
@@ -73,11 +91,15 @@ public class Clock : MonoBehaviour
                         if(!label.Selected || (label.Selected && label.IsStartTime == _startTime))
                             label.SelectTime(false);
                 }
-                
-                if(_startTime)
+
+                if (_startTime)
+                {
                     _startHours = time;
+                }
                 else
+                {
                     _endHours = time;
+                }  
                 break;
 
             case TimeLabelType.Minute:
@@ -111,12 +133,33 @@ public class Clock : MonoBehaviour
                 }
                 else
                 {
-                    SetActiveTimeSelector(false);
+                    if (_endHours == _startHours && _endMinutes < _startMinutes)
+                    {
+                        _correctPeriod = false;
+                    }
+                    SetActiveTimeSelector(false);      
                 }
-
                 break;
         }
 
+        if(_endHours < _startHours)
+        {
+            _correctPeriod = false;
+            _endTimeText.color = _incorrectPeriodColor;
+        }
+        else
+        {
+            if(_endHours == _startHours && _endMinutes < _startMinutes)
+            {
+                _correctPeriod = false;
+                _endTimeText.color = _incorrectPeriodColor;
+            }
+            else
+            {
+                _correctPeriod = true;
+                _endTimeText.color = _endTimeColor;
+            }
+        }
 
         if(_startTime)
             _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);

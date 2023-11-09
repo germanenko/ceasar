@@ -215,7 +215,7 @@ MonoBehaviour:
         serializedVersion: 2
         x: 216
         y: 98
-        width: 136
+        width: 142
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
       isGlobal: 0
     globalTransitions:
     - fsmEvent:
-        name: UI POINTER CLICK
+        name: UI POINTER ENTER
         isSystemEvent: 1
         isGlobal: 0
       toState: Select
