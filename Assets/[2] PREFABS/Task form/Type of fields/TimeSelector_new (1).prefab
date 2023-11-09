@@ -3266,7 +3266,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925131692896753936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -3278,7 +3278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.92305, y: 59.999996}
+  m_AnchoredPosition: {x: 103.923035, y: 60.000034}
   m_SizeDelta: {x: 30, y: 50.401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7212015448607028335
@@ -20196,6 +20196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeLabel: {fileID: 553886937842710223, guid: 5e526a84e53cca74aa7fb216a22e726a, type: 3}
   _startTime: 1
+  _correctPeriod: 1
   _startTimeText: {fileID: 3958788765068778773}
   _endTimeText: {fileID: 2257977987673281195}
   _startHours: 1
@@ -20278,9 +20279,11 @@ MonoBehaviour:
   - {fileID: 473873144067925847}
   _startTimeColor: {r: 0.53333336, g: 1, b: 0.33333334, a: 1}
   _endTimeColor: {r: 1, g: 0.35686275, b: 0.35686275, a: 1}
+  _incorrectPeriodColor: {r: 0, g: 0, b: 0, a: 0}
   _clock: {fileID: 3958788765820053685}
   _timeTypeSelector: {fileID: 3248674149467481599}
   _timeButtonText: {fileID: 1479912362445601653}
+  _clockSelectable: {fileID: 4660560305701101929}
 --- !u!114 &1566220958884520742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21178,6 +21181,7 @@ GameObject:
   - component: {fileID: 7622768392593676320}
   - component: {fileID: 8277581664688746050}
   - component: {fileID: 5114078648732452232}
+  - component: {fileID: 4660560305701101929}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -21910,6 +21914,130 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFsms:
   - {fileID: 3958788765820053682}
+--- !u!114 &4660560305701101929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958788765820053686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3c628f58bb49eeab889721a73bb4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  MultiplayerInfo: {fileID: 0}
+  IsOn: 0
+  CurrentUISelectionState: 0
+  DeselectAfterPress: 0
+  OnSelectionStateChangedCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentStateName: 
+  NormalState:
+    StateType: 0
+    StateEvent:
+      EventName: Normal
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls: []
+  HighlightedState:
+    StateType: 1
+    StateEvent:
+      EventName: Highlighted
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls: []
+  PressedState:
+    StateType: 2
+    StateEvent:
+      EventName: Pressed
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls: []
+  SelectedState:
+    StateType: 3
+    StateEvent:
+      EventName: Selected
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls: []
+  DisabledState:
+    StateType: 4
+    StateEvent:
+      EventName: Disabled
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls: []
+  Behaviours:
+    Behaviours:
+    - EventName: Deselected
+      Runners: []
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5274755009267339285}
+            m_TargetAssemblyTypeName: Clock, Assembly-CSharp
+            m_MethodName: SetActiveTimeSelector
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      BehaviourName: 11
+      Receiver:
+        ConnectionMode: 1
+        SignalProviderId:
+          Type: 0
+          Category: UI
+          Name: Deselected
+        ProviderReference: {fileID: 0}
+        StreamId:
+          Category: None
+          Name: None
+          Custom: 0
+      Cooldown: 0
+      Selectable: {fileID: 4660560305701101929}
+    SignalSource: {fileID: 0}
+    Selectable: {fileID: 4660560305701101929}
 --- !u!1 &3981374659967013870
 GameObject:
   m_ObjectHideFlags: 0
@@ -35067,8 +35195,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 645.875
-        y: 132.15625
+        x: 615.875
+        y: 131.15625
         width: 100
         height: 16
       isBreakpoint: 0
@@ -35324,7 +35452,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -35355,7 +35483,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 224
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -37592,7 +37720,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -37623,7 +37751,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 160
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
