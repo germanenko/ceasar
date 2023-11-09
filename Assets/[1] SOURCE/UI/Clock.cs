@@ -149,20 +149,7 @@ public class Clock : MonoBehaviour
 
 
 
-            if (_startTime)
-            {
-                foreach (TimeLabel label in _hourList)
-                {
-                    if (label.TimeValue == _startHours)
-                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                }
-                foreach (TimeLabel label in _minuteList)
-                {
-                    if (label.TimeValue == _startMinutes)
-                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                }
-            }
-            else
+            if (!_startTime)
             {
                 foreach (TimeLabel label in _hourList)
                 {
@@ -177,8 +164,6 @@ public class Clock : MonoBehaviour
             }
         }
 
-
-
         else
         {
             if(_endHours == _startHours && _endMinutes < _startMinutes)
@@ -188,20 +173,7 @@ public class Clock : MonoBehaviour
 
 
 
-                if (_startTime)
-                {
-                    foreach (TimeLabel label in _hourList)
-                    {
-                        if (label.TimeValue == _startHours)
-                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                    }
-                    foreach (TimeLabel label in _minuteList)
-                    {
-                        if (label.TimeValue == _startMinutes)
-                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                    }
-                }
-                else
+                if (!_startTime)
                 {
                     foreach (TimeLabel label in _hourList)
                     {
@@ -220,20 +192,7 @@ public class Clock : MonoBehaviour
                 _correctPeriod = true;
                 _endTimeText.color = _endTimeColor;
 
-                if (_startTime)
-                {
-                    foreach (TimeLabel label in _hourList)
-                    {
-                        if (label.TimeValue == _startHours)
-                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
-                    }
-                    foreach (TimeLabel label in _minuteList)
-                    {
-                        if (label.TimeValue == _startMinutes)
-                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
-                    }
-                }
-                else
+                if (!_startTime)
                 {
                     foreach (TimeLabel label in _hourList)
                     {
