@@ -53,4 +53,17 @@ public class TimeLabel : MonoBehaviour
             LabelText.color = Color.black;
         }
     }
+
+
+    public GameObject GetClockGameObject()
+    {
+        return Clock.GetClockGameObject();
+    }
+
+
+
+    public bool GetStartTime()
+    {
+        return Clock.GetStartTime();
+    }
 }

@@ -36,8 +36,8 @@ public class Clock : MonoBehaviour
 
     void Start()
     {
-        //DrawHour(12, 120);
-        //DrawMinute(60, 230);
+        DrawHour(12, 120);
+        DrawMinute(60, 230);
     }
 
 
@@ -342,6 +342,20 @@ public class Clock : MonoBehaviour
         _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
         ClearClockMarks();
+    }
+
+
+
+    public GameObject GetClockGameObject()
+    {
+        return _clock.gameObject;
+    }
+
+
+
+    public bool GetStartTime()
+    {
+        return _startTime;
     }
 
     #region ClockGenerator
