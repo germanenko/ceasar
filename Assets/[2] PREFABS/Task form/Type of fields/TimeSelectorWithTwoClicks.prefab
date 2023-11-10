@@ -4332,6 +4332,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 1
+      - useVariable: 1
+        name: HourSelected
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -4346,7 +4352,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -5426,7 +5432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c55e3faf01910d4391642cffa91ccb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeLabel: {fileID: 553886937842710223, guid: 5e526a84e53cca74aa7fb216a22e726a, type: 3}
+  _timeLabel: {fileID: 553886937842710223, guid: ec79baf1982da7d4ba06ddee5fdb85cd, type: 3}
   _startTime: 1
   _correctPeriod: 1
   _startTimeText: {fileID: 6194579414363410253}

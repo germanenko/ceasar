@@ -27331,7 +27331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6194579414978204326, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
       propertyPath: m_Name
-      value: TimeSelectorTwoClicks
+      value: TimeSelectorWIthSequence
       objectReference: {fileID: 0}
     - target: {fileID: 8782109022582413455, guid: 7cc971e59609d7e4599ffe3054a5c882, type: 3}
       propertyPath: m_AnchorMax.y
@@ -32192,7 +32192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6194579414978204326, guid: 5aeceef106b161d4589b5c6551f1641a, type: 3}
       propertyPath: m_Name
-      value: TimeSelectorWithSequence
+      value: TimeSelectorWithTwoClicks
       objectReference: {fileID: 0}
     - target: {fileID: 8782109022582413455, guid: 5aeceef106b161d4589b5c6551f1641a, type: 3}
       propertyPath: m_AnchorMax.y

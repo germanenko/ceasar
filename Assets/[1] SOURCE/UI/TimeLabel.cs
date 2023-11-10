@@ -29,9 +29,9 @@ public class TimeLabel : MonoBehaviour
 
     public bool IsStartTime;
 
-    public void SetTime()
+    public void SetTime(bool changePeriod)
     {
-        Clock.SetTime(TimeValue, LabelType);
+        Clock.SetTime(TimeValue, LabelType, changePeriod);
     }
 
 

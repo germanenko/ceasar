@@ -76,7 +76,7 @@ public class Clock : MonoBehaviour
 
 
 
-    public void SetTime(int time, TimeLabelType type)
+    public void SetTime(int time, TimeLabelType type, bool changePeriod)
     {
         _clockSelectable.Select();
 
@@ -129,7 +129,8 @@ public class Clock : MonoBehaviour
 
                 if (_startTime)
                 {
-                    _endTimeText.GetComponent<UIToggle>().isOn = true;
+                    if(changePeriod)
+                        _endTimeText.GetComponent<UIToggle>().isOn = true;
                 }
                 else
                 {
@@ -137,7 +138,9 @@ public class Clock : MonoBehaviour
                     {
                         _correctPeriod = false;
                     }
-                    SetActiveTimeSelector(false);      
+
+                    if (changePeriod)
+                        SetActiveTimeSelector(false);      
                 }
                 break;
         }
