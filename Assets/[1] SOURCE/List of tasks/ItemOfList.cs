@@ -240,16 +240,11 @@ namespace Germanenko.Source
             MultiChoice.Instance.SetPreviewMultiChoice(previewMultiChoice);
         }
 
+
+
         public bool GetPreviewMultiChoiceEnabled()
         {
             return MultiChoice.Instance.PreviewMultiChoiceEnabled;
-        }
-
-        public Vector2 ScreenToWorld(Vector2 mousePos)
-        {
-            Vector2 dragPos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(ParentCanvas.transform as RectTransform, mousePos, ParentCanvas.worldCamera, out dragPos);
-            return ParentCanvas.transform.TransformPoint(dragPos);
         }
     }
 
