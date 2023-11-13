@@ -135,7 +135,6 @@ namespace Germanenko.Source
                 }
 
                 var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, new Vector3(Screen.width/2, -Screen.height/2, 0), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-                Debug.Log(taskPriorities.Count);
                 newItem.transform.localScale = Vector3.one;
 
                 var itemMan = newItem.GetComponent<ItemOfList>();

@@ -21,11 +21,16 @@ public class Starter : MonoBehaviour
     [SerializeField] private List<ScriptableObject> Controllers = new List<ScriptableObject>();
     [SerializeField] private Constants constManager;
 
-
+    public Canvas[] Canvases;
 
     public void Start()
     {
         Application.targetFrameRate = 60;
+
+        foreach (var canvas in Canvases)
+        {
+            canvas.renderMode = RenderMode.WorldSpace;
+        }
 
         if (Updater.Default == null) Updater.Create();
 

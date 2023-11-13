@@ -2927,6 +2927,7 @@ GameObject:
   - component: {fileID: 4638233525245579428}
   - component: {fileID: 6350628345807612629}
   - component: {fileID: 1736744825475710338}
+  - component: {fileID: 5582620237247812200}
   m_Layer: 0
   m_Name: Item Clicker
   m_TagString: Untagged
@@ -3052,6 +3053,7 @@ MonoBehaviour:
   _canSelect: 0
   _selected: 0
   _checkBox: {fileID: 4474018061439082529}
+  ParentCanvas: {fileID: 0}
 --- !u!114 &2198998019816252562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,15 +3070,67 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: SecondClick
+    startState: State 1
     states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 52
+        y: 116
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     - name: SecondClick
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1127.6875
-        y: 294.96094
+        x: 1335.6797
+        y: 297.6953
         width: 103
         height: 32
       isBreakpoint: 0
@@ -3184,8 +3238,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1304.3125
-        y: 311.21094
+        x: 1512.3047
+        y: 313.9453
         width: 100
         height: 16
       isBreakpoint: 0
@@ -3270,8 +3324,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1129.5859
-        y: 354.53906
+        x: 1337.5781
+        y: 357.27344
         width: 100
         height: 16
       isBreakpoint: 0
@@ -3448,8 +3502,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1127.6875
-        y: 219.16406
+        x: 1335.6797
+        y: 221.89844
         width: 103
         height: 48
       isBreakpoint: 0
@@ -3541,8 +3595,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 272.3125
-        y: 168.35938
+        x: 480.3047
+        y: 171.09375
         width: 100
         height: 16
       isBreakpoint: 0
@@ -3553,15 +3607,19 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.UiGetLastPointerDataInfo
+        - HutongGames.PlayMaker.Actions.GetVector2XY
+        - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.TranslateAdvanced
         customNames:
         - 
         - 
         - 
-        actionEnabled: 000101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000019000000
-        actionHashCodes: 5ac852044e5b9d040259ed00
+        - 
+        - 
+        actionEnabled: 0001010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000002000000190000001d00000024000000
+        actionHashCodes: 5ac852044e5b9d048ed11d05ca51e9000259ed00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3753,9 +3811,70 @@ MonoBehaviour:
             objectReferences: []
           setProperty: 1
         layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ScreenToWorld
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: Germanenko.Source.ItemOfList
+          value: {fileID: 6246794538568945623}
+        fsmVarParams:
+        - variableName: MousePosition
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 5
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: MousePosition
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 5
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams:
         - useVariable: 1
@@ -3768,6 +3887,18 @@ MonoBehaviour:
         fsmFloatParams:
         - useVariable: 1
           name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: MouseX
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: MouseY
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -3871,6 +4002,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0}
+        - useVariable: 1
+          name: MousePosition
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0}
         fsmVector3Params:
         - useVariable: 1
           name: 
@@ -3894,12 +4031,13 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 000000000000000000000000
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 000000000000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000100000000f00000025000000110000002a000000110000001300000013000000110000001100000013000000130000001300000010000000130000002500000025000000130000002500000011000000110000001c0000001c000000140000001c000000250000000f0000000f0000000f0000000700000001000000010000000100000007000000
+        paramDataType: 2400000001000000100000000f00000025000000110000002a000000110000001300000013000000110000001100000013000000130000001300000010000000130000002500000025000000130000002500000011000000110000001c0000001c000000250000000f0000000f0000000100000018000000120000000c00000027000000270000000100000001000000140000001c000000250000000f0000000f0000000f0000000700000001000000010000000100000007000000
         paramName:
         - targetProperty
         - everyFrame
@@ -3926,6 +4064,17 @@ MonoBehaviour:
         - useDragThreshold
         - worldNormal
         - worldPosition
+        - vector2Variable
+        - storeX
+        - storeY
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
         - gameObject
         - vector
         - vector2
@@ -3937,15 +4086,15 @@ MonoBehaviour:
         - realtime
         - everyFrame
         - updateType
-        paramDataPos: 000000000000000000000000000000000000000000000000000000000100000000000000010000000200000003000000020000000300000004000000010000000500000001000000020000000600000003000000040000000500000000000000010000000000000002000000040000000100000002000000030000000100000005000000060000000700000008000000
-        paramByteDataSize: 000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000001000000010000000100000004000000
+        paramDataPos: 0000000000000000000000000000000000000000000000000000000001000000000000000100000002000000030000000200000003000000040000000100000005000000010000000200000006000000030000000400000005000000000000000100000004000000010000000200000001000000000000000000000000000000000000000100000002000000030000000000000002000000050000000300000004000000050000000400000008000000090000000a0000000b000000
+        paramByteDataSize: 0000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000010000000000000000000000000000000000000000000000000000000400000001000000010000000100000004000000
     - name: EndDrag
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 470.67188
-        y: 164.03906
+        x: 678.66406
+        y: 166.77344
         width: 100
         height: 32
       isBreakpoint: 0
@@ -4728,7 +4877,7 @@ MonoBehaviour:
             vector4Values: []
             objectReferences: []
         - variableName: 
-          objectType: UnityEngine.Object
+          objectType: 
           useVariable: 0
           type: 2
           floatValue: 0
@@ -4913,8 +5062,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1108.9375
-        y: 147.46094
+        x: 1316.9297
+        y: 150.19531
         width: 136
         height: 48
       isBreakpoint: 0
@@ -5075,7 +5224,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: 
+            enumName: HutongGames.PlayMaker.None
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -5084,7 +5233,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: 
+            objectTypeName: UnityEngine.Object
             floatValues: []
             intValues: 
             boolValues: 
@@ -5150,8 +5299,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 58.273438
-        y: 120.16406
+        x: 266.26562
+        y: 122.89844
         width: 139
         height: 32
       isBreakpoint: 0
@@ -5169,13 +5318,15 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 48c01101
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 5ac8520448c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -5183,7 +5334,139 @@ MonoBehaviour:
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
-        fsmPropertyParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 6246794538568945623}
+          TargetTypeName: Germanenko.Source.ItemOfList
+          PropertyName: ParentCanvas.scaleFactor
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 1
+            name: ScaleFactor
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 0
         layoutOptionParams: []
         fsmStringParams: []
         fsmObjectParams: []
@@ -5206,25 +5489,27 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 01
+        byteData: 0001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000001700000001000000
+        paramDataType: 24000000010000000f0000001700000001000000
         paramName:
+        - targetProperty
+        - everyFrame
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000001000000
+        paramByteDataSize: 0000000001000000000000000000000001000000
     - name: SetDrag
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 76.0625
-        y: 177.74219
+        x: 284.0547
+        y: 180.47656
         width: 100
         height: 16
       isBreakpoint: 0
@@ -5970,7 +6255,7 @@ MonoBehaviour:
           value: {fileID: 6246794538568945623}
         fsmVarParams:
         - variableName: 
-          objectType: UnityEngine.Object
+          objectType: 
           useVariable: 0
           type: 2
           floatValue: 0
@@ -6042,7 +6327,7 @@ MonoBehaviour:
             vector4Values: []
             objectReferences: []
         - variableName: 
-          objectType: UnityEngine.Object
+          objectType: 
           useVariable: 0
           type: 2
           floatValue: 0
@@ -6191,8 +6476,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 264.92188
-        y: 105.60156
+        x: 472.91406
+        y: 108.33594
         width: 122
         height: 32
       isBreakpoint: 0
@@ -6266,8 +6551,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 455.4375
-        y: 98.265625
+        x: 663.4297
+        y: 101
         width: 132
         height: 32
       isBreakpoint: 0
@@ -6320,7 +6605,7 @@ MonoBehaviour:
           value: {fileID: 6246794538568945623}
         fsmVarParams:
         - variableName: 
-          objectType: UnityEngine.Object
+          objectType: 
           useVariable: 0
           type: 2
           floatValue: 0
@@ -6412,8 +6697,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 908
-        y: 157
+        x: 1115.9922
+        y: 159.73438
         width: 100
         height: 16
       isBreakpoint: 0
@@ -6510,8 +6795,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 466.14844
-        y: 225.27344
+        x: 674.1406
+        y: 228.00781
         width: 100
         height: 16
       isBreakpoint: 0
@@ -6763,6 +7048,12 @@ MonoBehaviour:
     - name: IsDragging
       isSystemEvent: 0
       isGlobal: 0
+    - name: TRIGGER STAY
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: LEVEL LOADED
+      isSystemEvent: 1
+      isGlobal: 0
     globalTransitions:
     - fsmEvent:
         name: UI POINTER CLICK
@@ -6810,6 +7101,24 @@ MonoBehaviour:
         value: 0.3
       - useVariable: 1
         name: 
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: ScaleFactor
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: MouseX
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: MouseY
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -6873,6 +7182,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {x: 0, y: 0, z: 0}
+      - useVariable: 1
+        name: 
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
       colorVariables:
       - useVariable: 1
         name: StartColor
@@ -6882,6 +7197,12 @@ MonoBehaviour:
         value: {r: 0, g: 0, b: 0, a: 1}
       - useVariable: 1
         name: NewColor
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {r: 0, g: 0, b: 0, a: 1}
+      - useVariable: 1
+        name: MyColor
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -6900,14 +7221,21 @@ MonoBehaviour:
           height: 0
       quaternionVariables: []
       gameObjectVariables: []
-      objectVariables: []
+      objectVariables:
+      - useVariable: 1
+        name: 
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: 
+        value: {fileID: 0}
       materialVariables: []
       textureVariables: []
       arrayVariables: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -6928,7 +7256,7 @@ MonoBehaviour:
     editorFlags: 225
     activeStateName: 
     mouseEvents: 1
-    handleLevelLoaded: 0
+    handleLevelLoaded: 1
     handleTriggerEnter2D: 0
     handleTriggerExit2D: 0
     handleTriggerStay2D: 0
@@ -7165,6 +7493,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1775717093, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 2198998019816252562}
+--- !u!114 &5582620237247812200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647382915475560605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -104615663, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TargetFSMs:

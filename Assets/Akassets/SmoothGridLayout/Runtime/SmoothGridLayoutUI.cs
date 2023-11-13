@@ -72,6 +72,7 @@ public class SmoothGridLayoutUI : MonoBehaviour
         element.sizeDelta = gridLayoutGroup.cellSize;
         placeholderRect.sizeDelta = gridLayoutGroup.cellSize;
         placeholder.transform.SetParent(placeholdersTransform);
+        placeholder.transform.localPosition = new Vector3(placeholder.transform.localPosition.x, placeholder.transform.localPosition.y, 0);
 
         if (element.gameObject.TryGetComponent(out LerpToPlaceholder lerpToPlaceholder))
         {

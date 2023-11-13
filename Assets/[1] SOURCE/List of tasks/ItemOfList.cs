@@ -53,6 +53,8 @@ namespace Germanenko.Source
         [SerializeField] private UIToggle _checkBox;
         public UIToggle CheckBox => _checkBox;
 
+        public Canvas ParentCanvas;
+
         public void Init(Tasks _data, int priority)
         {
             _taskForm = FindObjectOfType<TaskForm>();
@@ -76,6 +78,8 @@ namespace Germanenko.Source
             _scroll = transform.parent.parent.parent.GetComponent<ScrollRect>();
             _conflictManager = GetComponent<ScrollConflictManager>();
             _conflictManager.ParentScrollRect = _scroll;
+
+            ParentCanvas = transform.parent.parent.parent.parent.GetComponent<Canvas>();
         }
 
 
@@ -200,6 +204,9 @@ namespace Germanenko.Source
         {
             _canSelect = canSelect;
             _checkBox.gameObject.SetActive(canSelect);
+
+            if(!canSelect)
+                _checkBox.isOn = false;
         }
 
 
@@ -236,6 +243,13 @@ namespace Germanenko.Source
         public bool GetPreviewMultiChoiceEnabled()
         {
             return MultiChoice.Instance.PreviewMultiChoiceEnabled;
+        }
+
+        public Vector2 ScreenToWorld(Vector2 mousePos)
+        {
+            Vector2 dragPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(ParentCanvas.transform as RectTransform, mousePos, ParentCanvas.worldCamera, out dragPos);
+            return ParentCanvas.transform.TransformPoint(dragPos);
         }
     }
 
