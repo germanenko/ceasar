@@ -53,7 +53,7 @@ public class LerpToPlaceholder : MonoBehaviour
 
             print(Vector3.Distance(transform.position, placeholderTransform.position));
 
-            if (Vector3.Distance(transform.position, placeholderTransform.position) > .1f)
+            if (Vector3.Distance(transform.position, placeholderTransform.position) > .2f)
             {
                 if(Collider)
                     Collider.enabled = false;
