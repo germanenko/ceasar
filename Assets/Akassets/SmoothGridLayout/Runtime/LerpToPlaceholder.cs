@@ -51,7 +51,9 @@ public class LerpToPlaceholder : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, placeholderTransform.position, Time.deltaTime * smoothGridLayout.lerpSpeed);
 
-            if (Vector3.Distance(transform.position, placeholderTransform.position) > 35f)
+            print(Vector3.Distance(transform.position, placeholderTransform.position));
+
+            if (Vector3.Distance(transform.position, placeholderTransform.position) > .1f)
             {
                 if(Collider)
                     Collider.enabled = false;
