@@ -29,7 +29,7 @@ public class Starter : MonoBehaviour
 
         foreach (var canvas in Canvases)
         {
-            canvas.renderMode = RenderMode.WorldSpace;
+            //canvas.renderMode = RenderMode.WorldSpace;
         }
 
         if (Updater.Default == null) Updater.Create();

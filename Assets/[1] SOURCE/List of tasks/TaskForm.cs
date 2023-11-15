@@ -43,6 +43,8 @@ namespace Germanenko.Source
 		[SerializeField] private GameObject _previousVersionButton;
 		[SerializeField] private GameObject _archiveVersionButton;
 
+		[SerializeField] private Image _blur;
+
         public void Start()
         {
             itemPosition = Screen.height / 3;
@@ -116,7 +118,8 @@ namespace Germanenko.Source
 
 		public void CloseTask()
 		{
-			Signal.Send("TaskControl", "CloseTask");
+            _blur.material.SetFloat("_Steps", 0f);
+            Signal.Send("TaskControl", "CloseTask");
         }
 
 
@@ -225,6 +228,8 @@ namespace Germanenko.Source
 
 			if (isDraft)
 				SetDraftFields();
+
+            _blur.material.SetFloat("_Steps", 4f);
 
             OnShowTask?.Invoke();
         }
