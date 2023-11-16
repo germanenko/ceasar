@@ -3760,6 +3760,7 @@ GameObject:
   - component: {fileID: 6780493916192175463}
   - component: {fileID: 2311605911106205826}
   - component: {fileID: 4982932567633566337}
+  - component: {fileID: 5835598641993451877}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -4602,6 +4603,23 @@ MonoBehaviour:
       Selectable: {fileID: 4982932567633566337}
     SignalSource: {fileID: 6194579413912107758}
     Selectable: {fileID: 4982932567633566337}
+--- !u!114 &5835598641993451877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194579413912107758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473b7afc212db6246bdbe5737c7b50b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.5254902}
+  _shadowDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
+  _iterations: 15
+  _shadowSpread: {x: 7, y: 7}
 --- !u!1 &6194579414363410255
 GameObject:
   m_ObjectHideFlags: 0
