@@ -132,7 +132,7 @@ namespace DTT.KeyboardRaiser
                 _originalPosition = transform.position;
                 _originalRect = _rectTransform.GetWorldRect();
 
-                Signal.Send("BG", "KeyboardTask", true);
+                //Signal.Send("BG", "KeyboardTask", true);
             }
         }
         
@@ -143,7 +143,7 @@ namespace DTT.KeyboardRaiser
             
             _timeOfLastLowering = Time.time;
 
-            Signal.Send("BG", "KeyboardTask", false);
+            //Signal.Send("BG", "KeyboardTask", false);
 
             SendKeyboardSignal(false);
             SetOpeningField(false);

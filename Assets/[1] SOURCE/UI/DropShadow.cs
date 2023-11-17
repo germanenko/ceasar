@@ -148,9 +148,6 @@ namespace UnityEngine.UI
 
             while (reachedTime < duration)
             {
-                print("change");
-
-                //_shadowColor.a = alpha * (reachedTime / duration);
                 _shadowColor.a = Mathf.Lerp(_shadowColor.a, alpha, reachedTime / duration);
                 reachedTime += Time.deltaTime;
                 if (graphic != null)

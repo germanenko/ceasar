@@ -4615,7 +4615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b7afc212db6246bdbe5737c7b50b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shadowColor: {r: 0, g: 0, b: 0, a: 0.5}
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.7176471}
   _shadowDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 1
   _iterations: 15
@@ -7850,7 +7850,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1

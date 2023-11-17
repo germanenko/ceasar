@@ -34,11 +34,11 @@ public class InputFieldWithHits : MonoBehaviour
 
     public void Selected(string s)
     {
-        _dropShadow.Fade(.5f, .2f);
+        _dropShadow.Fade(.7f, .2f);
 
-//#if UNITY_EDITOR
-//        EditorKeyboard.Open();
-//#endif
+#if UNITY_EDITOR
+        EditorKeyboard.Open();
+#endif
     }
 
 
@@ -48,8 +48,9 @@ public class InputFieldWithHits : MonoBehaviour
         if (!EventSystem.current.alreadySelecting) EventSystem.current.SetSelectedGameObject(null);
         
         _dropShadow.Fade(0f, .2f);
-        //#if UNITY_EDITOR
-        //        EditorKeyboard.Close();
-        //#endif
+
+#if UNITY_EDITOR
+        EditorKeyboard.Close();
+#endif
     }
 }
