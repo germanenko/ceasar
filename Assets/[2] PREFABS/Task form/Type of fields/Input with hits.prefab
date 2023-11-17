@@ -1624,3 +1624,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputField: {fileID: 4661629566194235292}
   _dropShadow: {fileID: 0}
+  _rectTransform: {fileID: 0}

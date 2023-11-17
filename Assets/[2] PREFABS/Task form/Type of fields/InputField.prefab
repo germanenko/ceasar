@@ -760,7 +760,7 @@ MonoBehaviour:
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_OnFocusSelectAll: 0
-  m_ResetOnDeActivation: 1
+  m_ResetOnDeActivation: 0
   m_RestoreOriginalTextOnEscape: 1
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
@@ -1104,6 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputField: {fileID: 8386966860246669048}
   _dropShadow: {fileID: 8144888679765100625}
+  _rectTransform: {fileID: 0}
 --- !u!114 &2966658005681698290
 MonoBehaviour:
   m_ObjectHideFlags: 0
