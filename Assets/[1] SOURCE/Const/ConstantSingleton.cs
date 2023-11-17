@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Germanenko.Framework;
 using System;
+using UnityEngine.UI;
 
 namespace Germanenko.Source
 {
@@ -71,6 +72,8 @@ namespace Germanenko.Source
         public SimpleSQL.SimpleSQLManager DbManager { get => dbManager; set => dbManager = value; }
 
         public GameObject MultiChoiceScreen;
+
+        public ScrollRect TaskFormScroll;
 
         #endregion
 

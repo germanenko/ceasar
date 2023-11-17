@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Germanenko.Source
 {
@@ -28,10 +28,7 @@ namespace Germanenko.Source
         [SerializeField] private Transform MainCamera;
         [SerializeField] private SimpleSQL.SimpleSQLManager DbManager;
         [SerializeField] private GameObject MultiChoiceScreen;
-
-
-        [Header("Canvas")]
-        [SerializeField] private Canvas CanvasTaskForm;
+        [SerializeField] private ScrollRect TaskFormScroll;
 
         public void Init()
         {
@@ -73,6 +70,7 @@ namespace Germanenko.Source
             ConstantSingleton.Instance.MainCamera = MainCamera;
             ConstantSingleton.Instance.DbManager = DbManager;
             ConstantSingleton.Instance.MultiChoiceScreen = MultiChoiceScreen;
+            ConstantSingleton.Instance.TaskFormScroll = TaskFormScroll;
         }
     }
 

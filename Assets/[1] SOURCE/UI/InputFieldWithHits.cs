@@ -1,4 +1,5 @@
 using DTT.KeyboardRaiser;
+using Germanenko.Source;
 using HutongGames.PlayMaker.Actions;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,13 @@ public class InputFieldWithHits : MonoBehaviour
 
     [SerializeField] private DropShadow _dropShadow;
 
+    [SerializeField] private RectTransform _rectTransform;
+
+    private void Start()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+    }
+
     private void OnEnable()
     {
         _inputField.onDeselect.AddListener(Deselected);
@@ -24,6 +32,11 @@ public class InputFieldWithHits : MonoBehaviour
     }
 
 
+
+    public void FocusOnInputField()
+    {
+        StartCoroutine(ConstantSingleton.Instance.TaskFormScroll.FocusOnItemCoroutine(_rectTransform, 2f, new Vector2(0, -500)));
+    }
 
     //private void OnDisable()
     //{
@@ -35,6 +48,7 @@ public class InputFieldWithHits : MonoBehaviour
     public void Selected(string s)
     {
         _dropShadow.Fade(.7f, .2f);
+        FocusOnInputField();
 
 #if UNITY_EDITOR
         EditorKeyboard.Open();

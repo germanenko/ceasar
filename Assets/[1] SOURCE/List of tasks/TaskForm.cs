@@ -45,15 +45,15 @@ namespace Germanenko.Source
 
 		[SerializeField] private Image _blur;
 
+		public ScrollRect ScrollRect;
+
         public void Start()
         {
             itemPosition = Screen.height / 3;
 			Framework.Signals.Add(this);
-		}
+        }
 
-
-
-		public void CreateTask()
+        public void CreateTask()
 		{
 			if(Toolbox.Get<ListOfTasks>().CountOfDrafts() > 0)
 			{
@@ -232,6 +232,8 @@ namespace Germanenko.Source
             _blur.material.SetFloat("_Steps", 4f);
 
             OnShowTask?.Invoke();
+
+            
         }
 
 
@@ -360,7 +362,6 @@ namespace Germanenko.Source
         {
 			 Framework.Signals.Remove(this);
 		}
-
 	}
 
 }
