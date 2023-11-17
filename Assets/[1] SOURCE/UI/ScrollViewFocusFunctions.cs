@@ -49,6 +49,16 @@ public static class ScrollViewFocusFunctions
         Vector2 initialNormalizedPos = scrollView.normalizedPosition;
 
         float t = 0f;
+
+        Debug.Log(Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y));
+        yield return null;
+
+        if (Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y) < .1f)
+        {
+            yield break;
+        }
+
+
         while (t < 1f)
         {
             scrollView.normalizedPosition = Vector2.LerpUnclamped(initialNormalizedPos, targetNormalizedPos, 1f - (1f - t) * (1f - t));
