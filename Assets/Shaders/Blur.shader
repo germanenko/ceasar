@@ -5,9 +5,10 @@ Shader "Custom/Blur"
     Properties{
         _Size("Blur", Range(0, 30)) = 1
         _Steps("Steps", Range(0, 30)) = 1
-        [HideInInspector] _MainTex("Masking Texture", 2D) = "white" {}
+        _Alpha("Alpha", Range(0, 1)) = 1
         _AdditiveColor("Additive Tint color", Color) = (0, 0, 0, 0)
         _MultiplyColor("Multiply Tint color", Color) = (1, 1, 1, 1)
+        [HideInInspector] _MainTex("Masking Texture", 2D) = "white" {}
     }
 
         Category{
@@ -78,8 +79,9 @@ Shader "Custom/Blur"
                 float4 _HBlur_TexelSize;
                 float _Size;
                 int _Steps;
-                float4 _AdditiveColor;
+                float _Alpha;
                 float4 _MultiplyColor;
+                float4 _AdditiveColor;
 
                 half4 frag(v2f i) : COLOR
                 {
@@ -111,10 +113,16 @@ Shader "Custom/Blur"
                     }
 
 
+                    /*half4 result = half4(sum.r * _MultiplyColor.r,
+                                        sum.g * _MultiplyColor.g,
+                                        sum.b * _MultiplyColor.b,
+                                        _Alpha);*/
+
                     half4 result = half4(sum.r * _MultiplyColor.r + _AdditiveColor.r,
-                                        sum.g * _MultiplyColor.g + _AdditiveColor.g,
-                                        sum.b * _MultiplyColor.b + _AdditiveColor.b,
-                                        tex2D(_MainTex, i.uvmain).a);
+                        sum.g * _MultiplyColor.g + _AdditiveColor.g,
+                        sum.b * _MultiplyColor.b + _AdditiveColor.b,
+                        _Alpha);
+
                     return result;
                 }
                 ENDCG
@@ -170,8 +178,9 @@ Shader "Custom/Blur"
                 float4 _VBlur_TexelSize;
                 float _Size;
                 int _Steps;
-                float4 _AdditiveColor;
+                float _Alpha;
                 float4 _MultiplyColor;
+                float4 _AdditiveColor;
 
                 half4 frag(v2f i) : COLOR
                 {
@@ -203,10 +212,16 @@ Shader "Custom/Blur"
                     }
 
 
+                    /*half4 result = half4(sum.r * _MultiplyColor.r,
+                        sum.g * _MultiplyColor.g,
+                        sum.b * _MultiplyColor.b,
+                        _Alpha);*/
+
                     half4 result = half4(sum.r * _MultiplyColor.r + _AdditiveColor.r,
-                                        sum.g * _MultiplyColor.g + _AdditiveColor.g,
-                                        sum.b * _MultiplyColor.b + _AdditiveColor.b,
-                                        tex2D(_MainTex, i.uvmain).a);
+                        sum.g * _MultiplyColor.g + _AdditiveColor.g,
+                        sum.b * _MultiplyColor.b + _AdditiveColor.b,
+                        _Alpha);
+
                     return result;
                 }
                 ENDCG

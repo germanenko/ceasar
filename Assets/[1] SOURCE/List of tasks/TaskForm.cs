@@ -118,7 +118,7 @@ namespace Germanenko.Source
 
 		public void CloseTask()
 		{
-            _blur.material.SetFloat("_Steps", 0f);
+            _blur.material.SetFloat("_Alpha", 0f);
             Signal.Send("TaskControl", "CloseTask");
         }
 
@@ -229,7 +229,7 @@ namespace Germanenko.Source
 			if (isDraft)
 				SetDraftFields();
 
-            _blur.material.SetFloat("_Steps", 4f);
+            _blur.material.SetFloat("_Alpha", 4f);
 
             OnShowTask?.Invoke();
 
