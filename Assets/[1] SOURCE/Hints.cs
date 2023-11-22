@@ -5,6 +5,7 @@ using Germanenko.Framework;
 using TMPro;
 using DTT.KeyboardRaiser;
 using UnityEngine.UI;
+using AdvancedInputFieldPlugin;
 
 namespace Germanenko.Source
 {
@@ -14,6 +15,7 @@ namespace Germanenko.Source
 
         [SerializeField] private GameObject _hint;
         [SerializeField] private TMP_InputField _taskName;
+        [SerializeField] private AdvancedInputField _inputField;
         [SerializeField] private string _hintTitle;
 
         private List<HintItem> listOfHints = new();
@@ -85,9 +87,9 @@ namespace Germanenko.Source
                 if (item == selectedItem) break;
 
             }
-                
 
-            _taskName.text += str;
+
+            _inputField.Text += str;
 
             MoveToEndOfLine();
 
@@ -100,8 +102,10 @@ namespace Germanenko.Source
 
             //var inputField = transform.parent.GetComponentInChildren<TMP_InputField>();
 
-            _taskName.Select();
-            _taskName.MoveToEndOfLine(false, false);
+            //_taskName.Select();
+            //_taskName.MoveToEndOfLine(false, false);
+
+            _inputField.SetCaretToTextEnd();
 
             //inputField?.MoveToEndOfLine(false, false);
             //inputField?.ActivateInputField();
@@ -116,7 +120,7 @@ namespace Germanenko.Source
 
         public void AddHints()
         {
-            _taskName.text += _hintTitle;
+            _inputField.Text += _hintTitle;
         }
 
 
@@ -129,7 +133,7 @@ namespace Germanenko.Source
 
             for (i = str.Length - 1; (str[i] != ' ' || str[i - 1] == ' ') && i > 0; i--) ;
 
-            _taskName.text = str.Substring(0, i);
+            _inputField.Text = str.Substring(0, i);
 
             MoveToEndOfLine();
 

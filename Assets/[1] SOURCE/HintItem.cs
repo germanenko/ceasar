@@ -58,7 +58,7 @@ namespace Germanenko.Source
 
         public void AddHints()
         {
-            KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.ActivateInputField();
+            //KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.ActivateInputField();
             print("added");
             parentScript.AddHints(this);
         }
@@ -67,7 +67,7 @@ namespace Germanenko.Source
 
         public void SelectHints(Color newColor)
         {
-            KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.enabled = false;
+            //KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.enabled = false;
             foreach (var item in _OldColors)
                 item.Key.color = newColor;
 
@@ -77,7 +77,7 @@ namespace Germanenko.Source
 
         public void UnselectHints()
         {
-            KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.enabled = true;
+            //KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.enabled = true;
             foreach (var item in _OldColors)
                 item.Key.color = item.Value;
 
