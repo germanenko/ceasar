@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class Clock : MonoBehaviour
 {
-    [SerializeField] private TimeLabel _timeLabel;
+    [SerializeField] private TimeLabel _timeLabelHours;
+    [SerializeField] private TimeLabel _timeLabelMinutes;
 
     [SerializeField] private bool _startTime;
     [SerializeField] private bool _correctPeriod;
@@ -34,9 +35,11 @@ public class Clock : MonoBehaviour
 
     [SerializeField] private UISelectable _clockSelectable;
 
+
+
     void Start()
     {
-        DrawHour(12, 120);
+        DrawHour(12, 140);
         DrawMinute(60, 230);
     }
 
@@ -44,9 +47,11 @@ public class Clock : MonoBehaviour
 
     public void SetActiveTimeSelector(bool activate)
     {
+
         if (!_correctPeriod) return;
 
         _clock.gameObject.SetActive(activate);
+
 
         if (activate)
         {
@@ -54,7 +59,7 @@ public class Clock : MonoBehaviour
         }
         else
         {
-            if (_startTime)
+            if (_endHours == 0 && _endMinutes == 0)
             {
                 _endHours = _startHours;
                 _endMinutes = _startMinutes;
@@ -76,7 +81,109 @@ public class Clock : MonoBehaviour
 
 
 
-    public void SetTime(int time, TimeLabelType type, bool changePeriod)
+    public void ChangePeriod()
+    {
+
+        if (_startTime)
+        {
+            _endTimeText.GetComponent<UIToggle>().isOn = true;
+        }
+        else
+        {
+            SetActiveTimeSelector(false);
+        }
+
+    }
+
+
+
+    private void CheckCorrectPeriod()
+    {
+
+        if (_endHours == 0 && _endMinutes == 0)
+        {
+            _correctPeriod = true;
+            return;
+        }
+
+
+        if (_endHours < _startHours)
+        {
+
+            _correctPeriod = false;
+            _endTimeText.color = _incorrectPeriodColor;
+
+
+
+            if (!_startTime)
+            {
+                foreach (TimeLabel label in _hourList)
+                {
+                    if (label.TimeValue == _endHours)
+                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
+                }
+                foreach (TimeLabel label in _minuteList)
+                {
+                    if (label.TimeValue == _endMinutes)
+                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
+                }
+            }
+
+        }
+
+        else
+        {
+            if (_endHours == _startHours && _endMinutes < _startMinutes)
+            {
+
+                _correctPeriod = false;
+                _endTimeText.color = _incorrectPeriodColor;
+
+
+                if (!_startTime)
+                {
+                    foreach (TimeLabel label in _hourList)
+                    {
+                        if (label.TimeValue == _endHours)
+                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
+                    }
+                    foreach (TimeLabel label in _minuteList)
+                    {
+                        if (label.TimeValue == _endMinutes)
+                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
+                    }
+                }
+
+            }
+            else
+            {
+
+                _correctPeriod = true;
+                _endTimeText.color = _endTimeColor;
+
+
+                if (!_startTime)
+                {
+                    foreach (TimeLabel label in _hourList)
+                    {
+                        if (label.TimeValue == _endHours)
+                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
+                    }
+                    foreach (TimeLabel label in _minuteList)
+                    {
+                        if (label.TimeValue == _endMinutes)
+                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
+
+    public void SetTime(int time, TimeLabelType type)
     {
         _clockSelectable.Select();
 
@@ -126,95 +233,18 @@ public class Clock : MonoBehaviour
                     _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
 
 
-
-                if (_startTime)
-                {
-                    if(changePeriod)
-                        _endTimeText.GetComponent<UIToggle>().isOn = true;
-                }
-                else
-                {
-                    if (_endHours == _startHours && _endMinutes < _startMinutes)
-                    {
-                        _correctPeriod = false;
-                    }
-
-                    if (changePeriod)
-                        SetActiveTimeSelector(false);      
-                }
                 break;
         }
 
-        if(_endHours < _startHours)
-        {
-            _correctPeriod = false;
-            _endTimeText.color = _incorrectPeriodColor;
 
+        CheckCorrectPeriod();
 
-
-            if (!_startTime)
-            {
-                foreach (TimeLabel label in _hourList)
-                {
-                    if (label.TimeValue == _endHours)
-                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                }
-                foreach (TimeLabel label in _minuteList)
-                {
-                    if (label.TimeValue == _endMinutes)
-                        label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                }
-            }
-        }
-
-        else
-        {
-            if(_endHours == _startHours && _endMinutes < _startMinutes)
-            {
-                _correctPeriod = false;
-                _endTimeText.color = _incorrectPeriodColor;
-
-
-
-                if (!_startTime)
-                {
-                    foreach (TimeLabel label in _hourList)
-                    {
-                        if (label.TimeValue == _endHours)
-                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                    }
-                    foreach (TimeLabel label in _minuteList)
-                    {
-                        if (label.TimeValue == _endMinutes)
-                            label.SelectTime(true, _startTime, _incorrectPeriodColor);
-                    }
-                }
-            }
-            else
-            {
-                _correctPeriod = true;
-                _endTimeText.color = _endTimeColor;
-
-                if (!_startTime)
-                {
-                    foreach (TimeLabel label in _hourList)
-                    {
-                        if (label.TimeValue == _endHours)
-                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
-                    }
-                    foreach (TimeLabel label in _minuteList)
-                    {
-                        if (label.TimeValue == _endMinutes)
-                            label.SelectTime(true, _startTime, _startTime ? _startTimeColor : _endTimeColor);
-                    }
-                }
-            }
-        }
 
         if(_startTime)
             _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
         else
             _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+    
     }
 
 
@@ -361,7 +391,10 @@ public class Clock : MonoBehaviour
         return _startTime;
     }
 
+
+
     #region ClockGenerator
+
     private void DrawHour(int steps, int radius)
     {
         for (int i = 0; i < steps; i++)
@@ -378,11 +411,11 @@ public class Clock : MonoBehaviour
 
 
 
-            var s = Instantiate(_timeLabel, _clock);
+            var s = Instantiate(_timeLabelHours, _clock);
 
             s.transform.localPosition = new Vector3(x, y, 0);
 
-            s.transform.localScale = s.transform.localScale * 1.5f;
+            //s.transform.localScale = s.transform.localScale * 1.5f;
 
             s.LabelType = TimeLabelType.Hour;
             s.Clock = this;
@@ -422,7 +455,7 @@ public class Clock : MonoBehaviour
 
 
 
-            var s = Instantiate(_timeLabel, _clock);
+            var s = Instantiate(_timeLabelMinutes, _clock);
 
             s.LabelType = TimeLabelType.Minute;
 
@@ -445,5 +478,7 @@ public class Clock : MonoBehaviour
             _minuteList.Add(s);
         }
     }
+
     #endregion
+
 }
