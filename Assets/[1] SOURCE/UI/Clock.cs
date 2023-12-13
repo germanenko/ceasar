@@ -1,7 +1,9 @@
 using Doozy.Runtime.UIManager.Components;
+using Germanenko.Framework;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +37,7 @@ public class Clock : MonoBehaviour
 
     [SerializeField] private UISelectable _clockSelectable;
 
-
+    [SerializeField] private bool _isDay;
 
     void Start()
     {
@@ -395,6 +397,20 @@ public class Clock : MonoBehaviour
 
     #region ClockGenerator
 
+    public void RegenerateHours(bool isDay)
+    {
+        _isDay = isDay;
+
+        foreach (var item in _hourList)
+        {
+            Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
+        }
+
+        _hourList.Clear();
+
+        DrawHour(12, 140);
+    }
+
     private void DrawHour(int steps, int radius)
     {
         for (int i = 0; i < steps; i++)
@@ -411,9 +427,11 @@ public class Clock : MonoBehaviour
 
 
 
-            var s = Instantiate(_timeLabelHours, _clock);
+            var h = Pooler.Instance.Spawn(PoolType.Entities, _timeLabelHours.gameObject, default, default, _clock);
 
-            s.transform.localPosition = new Vector3(x, y, 0);
+            h.transform.localPosition = new Vector3(x, y, 0);
+
+            var s = h.GetComponent<TimeLabel>();
 
             //s.transform.localScale = s.transform.localScale * 1.5f;
 
@@ -421,17 +439,49 @@ public class Clock : MonoBehaviour
             s.Clock = this;
 
 
+            if(Localization.Instance.Language == LocalizationLanguage.USA)
+            {
+                if (i == 0)
+                {
+                    s.LabelText.text = "12";
+                    s.TimeValue = 12;
+                }
+                else
+                {
+                    s.LabelText.text = i.ToString();
+                    s.TimeValue = i;
+                }
+            }
+            else if (Localization.Instance.Language == LocalizationLanguage.Russia)
+            {
+                if (i == 0)
+                {
+                    if (_isDay)
+                    {
+                        s.LabelText.text = "12";
+                        s.TimeValue = 12;
+                    }
+                    else
+                    {
+                        s.LabelText.text = i.ToString();
+                        s.TimeValue = i;
+                    }
+                }
+                else
+                {
+                    if (_isDay)
+                    {
+                        s.LabelText.text = (i + 12).ToString();
+                        s.TimeValue = i + 12;
+                    }
+                    else
+                    {
+                        s.LabelText.text = i.ToString();
+                        s.TimeValue = i;
+                    }
+                }
+            }
 
-            if (i == 0)
-            {
-                s.LabelText.text = "12";
-                s.TimeValue = 12;
-            }
-            else
-            {
-                s.LabelText.text = i.ToString();
-                s.TimeValue = i;
-            }
 
             _hourList.Add(s);
         }
