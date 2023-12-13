@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 public class DayButton : MonoBehaviour
 {
+    [SerializeField] private Calendar _calendar;
+
     [SerializeField] private int _day;
 
     [SerializeField] private TextMeshProUGUI _dayText;
     public TextMeshProUGUI DayText => _dayText;
 
-    [SerializeField] private bool _interactable;
-
     [SerializeField] private Image _image;
+
+    private void Start()
+    {
+        print(_day);
+    }
 
     public void SetDay(int day)
     {
@@ -21,10 +26,25 @@ public class DayButton : MonoBehaviour
         _dayText.text = day.ToString();
     }
 
+
+
+    public void SetCalendar(Calendar calendar)
+    {
+        _calendar = calendar;
+    }
+
+
+
+    public void SelectDay()
+    {
+        print(_day);
+        _calendar.SetDay(_day);
+    }
+
+
+
     public void SetInteractable(bool interactable)
     {
-        _interactable = interactable;
-
         if(interactable)
             _image.color = Color.white;
         else

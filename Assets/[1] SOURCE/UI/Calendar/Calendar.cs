@@ -1,14 +1,15 @@
+using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Calendar : MonoBehaviour
 {
-    [SerializeField] private int _day;
-    [SerializeField] private Dictionary<int, string> _month = new Dictionary<int, string> { 
+    [SerializeField] private Dictionary<int, string> _months = new Dictionary<int, string> { 
     { 1, "January" },
     { 2, "February" },
     { 3, "March" },
@@ -24,15 +25,78 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private int _year;
 
+    [SerializeField] private int _month;
+
+    [SerializeField] private int _day;
+
     [SerializeField] private DayButton _dayButtonPrefab;
 
     [SerializeField] private Transform _dayButtonsParent;
 
     [SerializeField] private List<DayButton> _dayButtons;
+    [SerializeField] private List<UIToggle> _monthToggles;
+
+    [SerializeField] private TextMeshProUGUI _dateText;
+    [SerializeField] private TextMeshProUGUI _dateTextInButton;
+
+    [SerializeField] private DateTime _date;
+
+    [SerializeField] private UIStepper _yearStepper;
+
+    [SerializeField] private GameObject _calendarWindow;
 
     private void Start()
     {
-        GenerateCalendar(2023, 12);
+        _day = DateTime.Now.Day;
+        _month = DateTime.Now.Month;
+        _year = DateTime.Now.Year;
+
+        _yearStepper.SetValue(_year);
+
+        _monthToggles[_month - 1].isOn = true;
+
+        _date = DateTime.Now;
+
+        _dateTextInButton.text = _date.Date.ToShortDateString();
+
+        _yearStepper.OnValueChanged.AddListener(SetYear);
+    }
+
+    public void OpenCalendarWindow()
+    {
+        _calendarWindow.SetActive(true);
+
+        GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
+    }
+
+    public void SetYear(float year)
+    {
+        _year = (int)year;
+        UpdateDate();
+    }
+
+
+
+    public void SetMonth(int month)
+    {
+        _month = month;
+        UpdateDate();
+    }
+
+
+
+    public void SetDay(int day)
+    {
+        _day = day;
+        UpdateDate();
+    }
+
+
+
+    private void UpdateDate()
+    {
+        _date = new DateTime(_year, _month, _day);
+        _dateText.text = _date.Date.ToShortDateString();
     }
 
 
@@ -54,6 +118,7 @@ public class Calendar : MonoBehaviour
 
             dayButton.SetDay(DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1);
             dayButton.SetInteractable(false);
+            dayButton.SetCalendar(this);
             _dayButtons.Add(dayButton);
         }
 
@@ -65,6 +130,7 @@ public class Calendar : MonoBehaviour
 
             dayButton.SetDay(i + 1);
             dayButton.SetInteractable(true);
+            dayButton.SetCalendar(this);
             _dayButtons.Add(dayButton);
         }
 
@@ -76,6 +142,7 @@ public class Calendar : MonoBehaviour
 
             dayButton.SetDay(i + 1);
             dayButton.SetInteractable(false);
+            dayButton.SetCalendar(this);
             _dayButtons.Add(dayButton);
         }
     }
