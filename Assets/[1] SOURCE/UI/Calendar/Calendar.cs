@@ -69,6 +69,11 @@ public class Calendar : MonoBehaviour
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
 
+    public void CloseCalendarWindow()
+    {
+        _calendarWindow.SetActive(false);
+    }
+
     public void SetYear(float year)
     {
         _year = (int)year;
@@ -103,6 +108,8 @@ public class Calendar : MonoBehaviour
 
     private void GenerateCalendar(int year, int month)
     {
+        if (_dayButtons.Count > 0) return;
+
         foreach (var item in _dayButtons)
         {
             Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
@@ -145,6 +152,14 @@ public class Calendar : MonoBehaviour
             dayButton.SetCalendar(this);
             _dayButtons.Add(dayButton);
         }
+    }
+
+
+
+    public void ConfirmDate()
+    {
+        _dateTextInButton.text = _date.ToShortDateString();
+        CloseCalendarWindow();
     }
 
 
