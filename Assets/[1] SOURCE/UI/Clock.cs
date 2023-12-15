@@ -19,12 +19,6 @@ public class Clock : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _startTimeText;
     [SerializeField] private TextMeshProUGUI _endTimeText;
 
-    [SerializeField] private int _startHours;
-    [SerializeField] private int _startMinutes;
-
-    [SerializeField] private int _endHours;
-    [SerializeField] private int _endMinutes;
-
     [SerializeField] List<TimeLabel> _hourList;
     [SerializeField] List<TimeLabel> _minuteList;
 
@@ -65,11 +59,11 @@ public class Clock : MonoBehaviour
         }
         else
         {
-            if (_endHours == 0 && _endMinutes == 0)
-            {
-                _endHours = _startHours;
-                _endMinutes = _startMinutes;
-            }
+            //if (_endHours == 0 && _endMinutes == 0)
+            //{
+            //    _endHours = _startHours;
+            //    _endMinutes = _startMinutes;
+            //}
         }
 
         _timeTypeSelector.SetActive(activate);
@@ -79,9 +73,9 @@ public class Clock : MonoBehaviour
 
         if(Localization.Instance.Language == LocalizationLanguage.Russia)
         {
-            SetPreviewPeriodText(_startHours == _endHours && _startMinutes == _endMinutes ?
-            string.Format("{0:00}:{1:00}", _startHours, _startMinutes) :
-                $"{string.Format("{0:00}:{1:00}", _startHours, _startMinutes)} - {string.Format("{0:00}:{1:00}", _endHours, _endMinutes)}");
+            SetPreviewPeriodText(_startTime == _endTime ?
+            string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute) :
+                $"{string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute)} - {string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute)}");
         }
         else if (Localization.Instance.Language == LocalizationLanguage.USA)
         {
@@ -91,18 +85,18 @@ public class Clock : MonoBehaviour
         }
         
 
-        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
-        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
 
         if (Localization.Instance.Language == LocalizationLanguage.Russia)
         {
-            _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
-            _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+            _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
+            _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
         }
         else if (Localization.Instance.Language == LocalizationLanguage.USA)
         {
-            _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
-            _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+            _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
+            _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
         }
     }
 
@@ -137,12 +131,12 @@ public class Clock : MonoBehaviour
                 {
                     foreach (TimeLabel label in _hourList)
                     {
-                        if (label.TimeValue == _endHours)
+                        if (label.TimeValue == _endTime.Hour)
                             label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                     }
                     foreach (TimeLabel label in _minuteList)
                     {
-                        if (label.TimeValue == _endMinutes)
+                        if (label.TimeValue == _endTime.Minute)
                             label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                     }
                 }
@@ -158,12 +152,12 @@ public class Clock : MonoBehaviour
                 {
                     foreach (TimeLabel label in _hourList)
                     {
-                        if (label.TimeValue == _endHours)
+                        if (label.TimeValue == _endTime.Hour)
                             label.SelectTime(true, _isStartTime, _isStartTime ? _startTimeColor : _endTimeColor);
                     }
                     foreach (TimeLabel label in _minuteList)
                     {
-                        if (label.TimeValue == _endMinutes)
+                        if (label.TimeValue == _endTime.Minute)
                             label.SelectTime(true, _isStartTime, _isStartTime ? _startTimeColor : _endTimeColor);
                     }
                 }
@@ -171,14 +165,14 @@ public class Clock : MonoBehaviour
             return;
         }
 
-        if (_endHours == 0 && _endMinutes == 0)
+        if (_endTime.Hour == 0 && _endTime.Minute == 0)
         {
             _correctPeriod = true;
             return;
         }
 
 
-        if (_endHours < _startHours)
+        if (_endTime.Hour < _startTime.Hour)
         {
 
             _correctPeriod = false;
@@ -190,12 +184,12 @@ public class Clock : MonoBehaviour
             {
                 foreach (TimeLabel label in _hourList)
                 {
-                    if (label.TimeValue == _endHours)
+                    if (label.TimeValue == _endTime.Hour)
                         label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                 }
                 foreach (TimeLabel label in _minuteList)
                 {
-                    if (label.TimeValue == _endMinutes)
+                    if (label.TimeValue == _endTime.Minute)
                         label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                 }
             }
@@ -204,7 +198,7 @@ public class Clock : MonoBehaviour
 
         else
         {
-            if (_endHours == _startHours && _endMinutes < _startMinutes)
+            if (_endTime.Hour == _startTime.Hour && _endTime.Minute < _startTime.Minute)
             {
 
                 _correctPeriod = false;
@@ -215,12 +209,12 @@ public class Clock : MonoBehaviour
                 {
                     foreach (TimeLabel label in _hourList)
                     {
-                        if (label.TimeValue == _endHours)
+                        if (label.TimeValue == _endTime.Hour)
                             label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                     }
                     foreach (TimeLabel label in _minuteList)
                     {
-                        if (label.TimeValue == _endMinutes)
+                        if (label.TimeValue == _endTime.Minute)
                             label.SelectTime(true, _isStartTime, _incorrectPeriodColor);
                     }
                 }
@@ -237,12 +231,12 @@ public class Clock : MonoBehaviour
                 {
                     foreach (TimeLabel label in _hourList)
                     {
-                        if (label.TimeValue == _endHours)
+                        if (label.TimeValue == _endTime.Hour)
                             label.SelectTime(true, _isStartTime, _isStartTime ? _startTimeColor : _endTimeColor);
                     }
                     foreach (TimeLabel label in _minuteList)
                     {
-                        if (label.TimeValue == _endMinutes)
+                        if (label.TimeValue == _endTime.Minute)
                             label.SelectTime(true, _isStartTime, _isStartTime ? _startTimeColor : _endTimeColor);
                     }
                 }
@@ -272,11 +266,11 @@ public class Clock : MonoBehaviour
 
                 if (_isStartTime)
                 {
-                    _startHours = time;
+                    _startTime = _startTime.Date + new TimeSpan(time, _startTime.Minute, 0);
                 }
                 else
                 {
-                    _endHours = time;
+                    _endTime = _endTime.Date + new TimeSpan(time, _endTime.Minute, 0);
                 }
                 break;
 
@@ -292,9 +286,9 @@ public class Clock : MonoBehaviour
                 }
 
                 if (_isStartTime)
-                    _startMinutes = time;
+                    _startTime = _startTime.Date + new TimeSpan(_startTime.Hour, time, 0);
                 else
-                    _endMinutes = time;
+                    _endTime = _endTime.Date + new TimeSpan(_endTime.Hour, time, 0);
 
 
 
@@ -323,9 +317,9 @@ public class Clock : MonoBehaviour
         if (Localization.Instance.Language == LocalizationLanguage.Russia)
         {
             if (_isStartTime)
-                _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
+                _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
             else
-                _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+                _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
         }
         else if(Localization.Instance.Language == LocalizationLanguage.USA)
         {
@@ -364,14 +358,14 @@ public class Clock : MonoBehaviour
 
     public DateTime GetStartPeriod()
     {
-        return new DateTime(1, 1, 1, _startHours, _startMinutes, 0);
+        return new DateTime(1, 1, 1, _startTime.Hour, _startTime.Minute, 0);
     }
 
 
 
     public DateTime GetEndPeriod()
     {
-        return new DateTime(1, 1, 1, _endHours, _endMinutes, 0);
+        return new DateTime(1, 1, 1, _endTime.Hour, _endTime.Minute, 0);
     }
 
 
@@ -380,13 +374,11 @@ public class Clock : MonoBehaviour
     {
         ClearClockMarks();
 
-        _startHours = start.Hour;
-        _startMinutes = start.Minute;
-        _endHours = end.Hour;
-        _endMinutes = end.Minute;
+        _startTime = start;
+        _endTime = end;
 
-        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
-        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
 
         EnableMarks();
     }
@@ -407,14 +399,14 @@ public class Clock : MonoBehaviour
         {
             foreach (TimeLabel label in _hourList)
             {
-                if (label.TimeValue == _startHours)
+                if (label.TimeValue == _startTime.Hour)
                     label.SelectTime(true, true, _startTimeColor);
 
             }
 
             foreach (TimeLabel label in _minuteList)
             {
-                if (label.TimeValue == _startMinutes)
+                if (label.TimeValue == _startTime.Minute)
                     label.SelectTime(true, true, _startTimeColor);
 
             }
@@ -424,14 +416,14 @@ public class Clock : MonoBehaviour
             foreach (TimeLabel label in _hourList)
             {
 
-                if (label.TimeValue == _endHours)
+                if (label.TimeValue == _endTime.Hour)
                     label.SelectTime(true, false, _endTimeColor);
             }
 
             foreach (TimeLabel label in _minuteList)
             {
 
-                if (label.TimeValue == _endMinutes)
+                if (label.TimeValue == _endTime.Minute)
                     label.SelectTime(true, false, _endTimeColor);
             }
         }
@@ -455,13 +447,11 @@ public class Clock : MonoBehaviour
 
     public void ClearTime()
     {
-        _startHours = 0;
-        _startMinutes = 0;
-        _endHours = 0;
-        _endMinutes = 0;
+        _startTime = DateTime.Now;
+        _endTime = DateTime.Now;
 
-        _startTimeText.text = string.Format("{0:00}:{1:00}", _startHours, _startMinutes);
-        _endTimeText.text = string.Format("{0:00}:{1:00}", _endHours, _endMinutes);
+        _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
+        _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
 
         ClearClockMarks();
     }
@@ -488,11 +478,11 @@ public class Clock : MonoBehaviour
         {
             if (_isStartTime)
             {
-                _startTime = DateTime.ParseExact(string.Format("{0:00}:{1:00}", _startHours, _startMinutes) + " " + (_isDay ? "AM" : "PM"), "hh:mm tt", CultureInfo.InvariantCulture);
+                _startTime = DateTime.ParseExact(string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute) + " " + (_isDay ? "AM" : "PM"), "hh:mm tt", CultureInfo.InvariantCulture);
             }
             else
             {
-                _endTime = DateTime.ParseExact(string.Format("{0:00}:{1:00}", _endHours, _endMinutes) + " " + (_isDay ? "AM" : "PM"), "hh:mm tt", CultureInfo.InvariantCulture);
+                _endTime = DateTime.ParseExact(string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute) + " " + (_isDay ? "AM" : "PM"), "hh:mm tt", CultureInfo.InvariantCulture);
             }
         }
     }
@@ -507,14 +497,44 @@ public class Clock : MonoBehaviour
 
         if (Localization.Instance.Language == LocalizationLanguage.USA) return;
 
-        foreach (var item in _hourList)
+        //foreach (var item in _hourList)
+        //{
+        //    Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
+        //}
+
+        for (int i = 0; i < _hourList.Count; i++)
         {
-            Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
+            if (i == 0)
+            {
+                if (_isDay)
+                {
+                    _hourList[i].LabelText.text = "12";
+                    _hourList[i].TimeValue = 12;
+                }
+                else
+                {
+                    _hourList[i].LabelText.text = i.ToString();
+                    _hourList[i].TimeValue = i;
+                }
+            }
+            else
+            {
+                if (_isDay)
+                {
+                    _hourList[i].LabelText.text = (i + 12).ToString();
+                    _hourList[i].TimeValue = i + 12;
+                }
+                else
+                {
+                    _hourList[i].LabelText.text = i.ToString();
+                    _hourList[i].TimeValue = i;
+                }
+            }
         }
 
-        _hourList.Clear();
+        //_hourList.Clear();
 
-        DrawHour(12, 140);
+        //DrawHour(12, 140);
     }
 
     private void DrawHour(int steps, int radius)
