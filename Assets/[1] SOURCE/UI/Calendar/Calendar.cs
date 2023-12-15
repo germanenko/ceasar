@@ -45,6 +45,11 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private GameObject _calendarWindow;
 
+    [SerializeField] private Color _defaultColor;
+    [SerializeField] private Color _weekendColor;
+    [SerializeField] private Color _otherMonthColor;
+
+
     private void Start()
     {
         _day = DateTime.Now.Day;
@@ -126,6 +131,13 @@ public class Calendar : MonoBehaviour
             dayButton.SetDay(DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1);
             dayButton.SetInteractable(false);
             dayButton.SetCalendar(this);
+            dayButton.SetColor(_otherMonthColor);
+
+            if (new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            {
+                dayButton.SetColor(_weekendColor);
+            }
+
             _dayButtons.Add(dayButton);
         }
 
@@ -138,6 +150,13 @@ public class Calendar : MonoBehaviour
             dayButton.SetDay(i + 1);
             dayButton.SetInteractable(true);
             dayButton.SetCalendar(this);
+            dayButton.SetColor(_defaultColor);
+
+            if(new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            {
+                dayButton.SetColor(_weekendColor);
+            }
+
             _dayButtons.Add(dayButton);
         }
 
@@ -150,6 +169,13 @@ public class Calendar : MonoBehaviour
             dayButton.SetDay(i + 1);
             dayButton.SetInteractable(false);
             dayButton.SetCalendar(this);
+            dayButton.SetColor(_otherMonthColor);
+
+            if (new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            {
+                dayButton.SetColor(_weekendColor);
+            }
+
             _dayButtons.Add(dayButton);
         }
     }

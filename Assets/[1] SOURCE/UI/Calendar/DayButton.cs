@@ -43,6 +43,13 @@ public class DayButton : MonoBehaviour
 
 
 
+    public void SetColor(Color color)
+    {
+        _image.color = color;
+    }
+
+
+
     public void SetInteractable(bool interactable)
     {
         if(interactable)

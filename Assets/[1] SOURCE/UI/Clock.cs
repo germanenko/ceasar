@@ -495,7 +495,18 @@ public class Clock : MonoBehaviour
     {
         _isDay = isDay;
 
-        if (Localization.Instance.Language == LocalizationLanguage.USA) return;
+        if (Localization.Instance.Language == LocalizationLanguage.USA)
+        {
+            foreach (var hour in _hourList)
+            {
+                if (hour.Selected)
+                {
+                    hour.SetTime();
+                }
+            }
+            return;
+        }
+            
 
         //foreach (var item in _hourList)
         //{
@@ -531,6 +542,15 @@ public class Clock : MonoBehaviour
                 }
             }
         }
+
+        foreach (var hour in _hourList)
+        {
+            if (hour.Selected)
+            {
+                hour.SetTime();
+            }
+        }
+
 
         //_hourList.Clear();
 
