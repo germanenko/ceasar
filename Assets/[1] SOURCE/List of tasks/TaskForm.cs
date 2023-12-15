@@ -8,6 +8,7 @@ using System;
 using Doozy.Runtime.Signals;
 using DG.Tweening;
 using UnityEngine.Events;
+using System.Globalization;
 
 namespace Germanenko.Source
 {
@@ -329,9 +330,19 @@ namespace Germanenko.Source
             _nameField.text = task.Name;
             _colorField.SelectDDItem(task.Color);
             _clocks.SetPeriod(task.StartTime, task.EndTime);
-			_clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
-                string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) : 
-				$"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
+
+			if(Localization.Instance.Language == LocalizationLanguage.Russia)
+			{
+                _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
+					string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) :
+					$"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
+            }
+			else if(Localization.Instance.Language == LocalizationLanguage.USA)
+			{
+                _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
+					task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
+					 $"{task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {task.EndTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
+            }
         }
 
 
