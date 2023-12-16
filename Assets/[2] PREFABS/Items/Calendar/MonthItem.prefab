@@ -565,7 +565,7 @@ MonoBehaviour:
   _monthNameText: {fileID: 1378399813710611913}
   _month: 0
   _calendar: {fileID: 0}
-  _uiToggle: {fileID: 1378399812515294850}
+  UIToggle: {fileID: 1378399812515294850}
 --- !u!1 &1378399813710611915
 GameObject:
   m_ObjectHideFlags: 0

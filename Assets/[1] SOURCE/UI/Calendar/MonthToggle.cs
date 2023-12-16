@@ -12,7 +12,7 @@ public class MonthToggle : MonoBehaviour
 
     [SerializeField] private Calendar _calendar;
 
-    public UIToggle _uiToggle;
+    public UIToggle UIToggle;
 
     public void Init(int month, string monthName, Calendar calendar)
     {
@@ -26,6 +26,6 @@ public class MonthToggle : MonoBehaviour
     public void SelectMonth()
     {
         _calendar.SetMonth(_month);
-        _uiToggle.isOn = true;
+        UIToggle.isOn = true;
     }
 }

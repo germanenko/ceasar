@@ -52,6 +52,7 @@ public class Calendar : MonoBehaviour
     [SerializeField] private Color _otherMonthColor;
 
     [SerializeField] private UIToggleGroup _daysToggleGroup;
+    [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
     private void Start()
     {
@@ -214,6 +215,8 @@ public class Calendar : MonoBehaviour
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
                 m.Init(date.Month, GetShortMonthName(date.Month), this);
                 _monthToggles.Add(m);
+
+                m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
             }
             else
             {
@@ -224,6 +227,8 @@ public class Calendar : MonoBehaviour
                     m.SelectMonth();
                 }
                 _monthToggles.Add(m);
+
+                m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
             }
         }
     }

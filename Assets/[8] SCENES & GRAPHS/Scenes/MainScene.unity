@@ -62197,6 +62197,7 @@ MonoBehaviour:
   _weekendColor: {r: 0.98823535, g: 0.8196079, b: 0.7490196, a: 1}
   _otherMonthColor: {r: 0.9490197, g: 0.9333334, b: 0.89019614, a: 1}
   _daysToggleGroup: {fileID: 2133039724}
+  _monthsToggleGroup: {fileID: 1485075134}
 --- !u!1 &991578324
 GameObject:
   m_ObjectHideFlags: 0
@@ -86598,7 +86599,7 @@ MonoBehaviour:
   ToggleGroup: {fileID: 1485075134}
   OverrideInteractabilityForToggles: 0
   ToggleGroupValue: 0
-  Mode: 2
+  Mode: 1
   HasMixedValues: 0
   AutoSort: 1
   OnToggleGroupMixedValuesCallback:
@@ -130622,7 +130623,7 @@ MonoBehaviour:
   ToggleGroup: {fileID: 2133039724}
   OverrideInteractabilityForToggles: 0
   ToggleGroupValue: 0
-  Mode: 2
+  Mode: 1
   HasMixedValues: 0
   AutoSort: 1
   OnToggleGroupMixedValuesCallback:
