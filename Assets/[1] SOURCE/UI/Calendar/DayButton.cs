@@ -1,3 +1,4 @@
+using Doozy.Runtime.UIManager.Components;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,10 +16,7 @@ public class DayButton : MonoBehaviour
 
     [SerializeField] private Image _image;
 
-    private void Start()
-    {
-        print(_day);
-    }
+    public UIToggle UIToggle;
 
     public void SetDay(int day)
     {

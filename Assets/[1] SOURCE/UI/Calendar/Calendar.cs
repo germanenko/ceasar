@@ -9,19 +9,19 @@ using UnityEngine.Events;
 
 public class Calendar : MonoBehaviour
 {
-    [SerializeField] private Dictionary<int, string> _months = new Dictionary<int, string> { 
-    { 1, "January" },
-    { 2, "February" },
-    { 3, "March" },
-    { 4, "April" },
-    { 5, "May" },
-    { 6, "June" },
-    { 7, "Jule" },
-    { 8, "August" },
-    { 9, "September" },
-    { 10, "October" },
-    { 11, "November" },
-    { 12, "December" }};
+    [SerializeField] private Dictionary<int, List<string>> _months = new Dictionary<int, List<string>> { 
+    { 1, new List<string>{"January", "jan" } },
+    { 2, new List<string>{"February", "feb" } },
+    { 3, new List<string>{"March", "mar" } },
+    { 4, new List<string>{"April", "apr" } },
+    { 5, new List<string>{"May", "may" } },
+    { 6, new List<string>{"June", "jun" } },
+    { 7, new List<string>{"Jule", "jul" } },
+    { 8, new List<string>{"August", "aug" } },
+    { 9, new List<string>{"September", "sep" } },
+    { 10, new List<string>{"October", "oct" } },
+    { 11, new List<string>{"November", "nov" } },
+    { 12, new List<string>{"December", "dec" } } };
 
     [SerializeField] private int _year;
 
@@ -30,11 +30,13 @@ public class Calendar : MonoBehaviour
     [SerializeField] private int _day;
 
     [SerializeField] private DayButton _dayButtonPrefab;
+    [SerializeField] private MonthToggle _monthTogglePrefab;
 
     [SerializeField] private Transform _dayButtonsParent;
+    [SerializeField] private Transform _monthTogglesParent;
 
     [SerializeField] private List<DayButton> _dayButtons;
-    [SerializeField] private List<UIToggle> _monthToggles;
+    [SerializeField] private List<MonthToggle> _monthToggles;
 
     [SerializeField] private TextMeshProUGUI _dateText;
     [SerializeField] private TextMeshProUGUI _dateTextInButton;
@@ -49,6 +51,7 @@ public class Calendar : MonoBehaviour
     [SerializeField] private Color _weekendColor;
     [SerializeField] private Color _otherMonthColor;
 
+    [SerializeField] private UIToggleGroup _daysToggleGroup;
 
     private void Start()
     {
@@ -58,14 +61,16 @@ public class Calendar : MonoBehaviour
 
         _yearStepper.SetValue(_year);
 
-        _monthToggles[_month - 1].isOn = true;
-
         _date = DateTime.Now;
 
         _dateTextInButton.text = _date.Date.ToShortDateString();
 
         _yearStepper.OnValueChanged.AddListener(SetYear);
+
+        GenerateMonthList();
     }
+
+
 
     public void OpenCalendarWindow()
     {
@@ -74,10 +79,14 @@ public class Calendar : MonoBehaviour
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
 
+
+
     public void CloseCalendarWindow()
     {
         _calendarWindow.SetActive(false);
     }
+
+
 
     public void SetYear(float year)
     {
@@ -122,7 +131,8 @@ public class Calendar : MonoBehaviour
 
         _dayButtons.Clear();
 
-
+        DateTime previousDate = _date;
+        previousDate = previousDate.AddMonths(-1);
 
         for (int i = 0; i < GetMonthStartDay(year, month); i++)
         {
@@ -132,8 +142,9 @@ public class Calendar : MonoBehaviour
             dayButton.SetInteractable(false);
             dayButton.SetCalendar(this);
             dayButton.SetColor(_otherMonthColor);
+            dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
 
-            if (new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            if (new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
                 dayButton.SetColor(_weekendColor);
             }
@@ -151,16 +162,25 @@ public class Calendar : MonoBehaviour
             dayButton.SetInteractable(true);
             dayButton.SetCalendar(this);
             dayButton.SetColor(_defaultColor);
+            dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
 
-            if(new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            if (new DateTime(year, month, i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
                 dayButton.SetColor(_weekendColor);
+            }
+
+            if(i+1 == _day)
+            {
+                dayButton.UIToggle.isOn = true;
             }
 
             _dayButtons.Add(dayButton);
         }
 
         int lastDays = 42 - _dayButtons.Count;
+
+        DateTime nextDate = _date;
+        nextDate = nextDate.AddMonths(1);
 
         for (int i = 0; i < lastDays; i++)
         {
@@ -170,14 +190,57 @@ public class Calendar : MonoBehaviour
             dayButton.SetInteractable(false);
             dayButton.SetCalendar(this);
             dayButton.SetColor(_otherMonthColor);
+            dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
 
-            if (new DateTime(year, month, i).DayOfWeek == DayOfWeek.Sunday)
+            if (new DateTime(nextDate.Year, nextDate.Month, i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
                 dayButton.SetColor(_weekendColor);
             }
 
             _dayButtons.Add(dayButton);
         }
+    }
+
+
+
+    private void GenerateMonthList()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            DateTime date = _date.AddMonths(-1);
+
+            if (i == 0)
+            {
+                var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
+                m.Init(date.Month, GetShortMonthName(date.Month), this);
+                _monthToggles.Add(m);
+            }
+            else
+            {
+                var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
+                m.Init(date.AddMonths(i).Month, GetShortMonthName(date.AddMonths(i).Month), this);
+                if(date.AddMonths(i).Month == _month)
+                {
+                    m.SelectMonth();
+                }
+                _monthToggles.Add(m);
+            }
+        }
+    }
+
+
+
+    public string GetShortMonthName(int month)
+    {
+        print(month);
+        return _months.ContainsKey(month) ? _months[month][1] : "none";
+    }
+
+
+
+    public string GetFullMonthName(int month)
+    {
+        return _months.ContainsKey(month) ? _months[month][0] : "none";
     }
 
 
