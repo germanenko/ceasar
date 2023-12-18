@@ -1,4 +1,5 @@
 using Doozy.Runtime.UIManager.Components;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,13 +9,13 @@ public class MonthToggle : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _monthNameText;
 
-    [SerializeField] private int _month;
+    [SerializeField] private DateTime _month;
 
     [SerializeField] private Calendar _calendar;
 
     public UIToggle UIToggle;
 
-    public void Init(int month, string monthName, Calendar calendar)
+    public void Init(DateTime month, string monthName, Calendar calendar)
     {
         _month = month;
         _calendar = calendar;
@@ -26,6 +27,5 @@ public class MonthToggle : MonoBehaviour
     public void SelectMonth()
     {
         _calendar.SetMonth(_month);
-        UIToggle.isOn = true;
     }
 }

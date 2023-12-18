@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
 using System;
@@ -519,26 +520,31 @@ public class Clock : MonoBehaviour
             {
                 if (_isDay)
                 {
-                    _hourList[i].LabelText.text = "12";
-                    _hourList[i].TimeValue = 12;
+                    //_hourList[i].LabelText.text = "12";
+                    //_hourList[i].TimeValue = 12;
+
+                    _hourList[i].LerpValue(_hourList[i].TimeValue, 12, .5f);
                 }
                 else
                 {
-                    _hourList[i].LabelText.text = i.ToString();
-                    _hourList[i].TimeValue = i;
+                    //_hourList[i].LabelText.text = i.ToString();
+                    //_hourList[i].TimeValue = i;
+                    _hourList[i].LerpValue(_hourList[i].TimeValue, i, .5f);
                 }
             }
             else
             {
                 if (_isDay)
                 {
-                    _hourList[i].LabelText.text = (i + 12).ToString();
-                    _hourList[i].TimeValue = i + 12;
+                    //_hourList[i].LabelText.text = (i + 12).ToString();
+                    //_hourList[i].TimeValue = i + 12;
+                    _hourList[i].LerpValue(_hourList[i].TimeValue, i + 12, .5f);
                 }
                 else
                 {
-                    _hourList[i].LabelText.text = i.ToString();
-                    _hourList[i].TimeValue = i;
+                    //_hourList[i].LabelText.text = i.ToString();
+                    //_hourList[i].TimeValue = i;
+                    _hourList[i].LerpValue(_hourList[i].TimeValue, i, .5f);
                 }
             }
         }

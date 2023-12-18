@@ -25,8 +25,6 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private int _year;
 
-    [SerializeField] private int _month;
-
     [SerializeField] private int _day;
 
     [SerializeField] private DayButton _dayButtonPrefab;
@@ -38,12 +36,11 @@ public class Calendar : MonoBehaviour
     [SerializeField] private List<DayButton> _dayButtons;
     [SerializeField] private List<MonthToggle> _monthToggles;
 
-    [SerializeField] private TextMeshProUGUI _dateText;
+    [SerializeField] private TMP_InputField _dateText;
     [SerializeField] private TextMeshProUGUI _dateTextInButton;
 
+    [SerializeField] private DateTime _startDate;
     [SerializeField] private DateTime _date;
-
-    [SerializeField] private UIStepper _yearStepper;
 
     [SerializeField] private GameObject _calendarWindow;
 
@@ -54,19 +51,17 @@ public class Calendar : MonoBehaviour
     [SerializeField] private UIToggleGroup _daysToggleGroup;
     [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
+    [SerializeField] private UISelectable _calendarSelectable;
+
     private void Start()
     {
         _day = DateTime.Now.Day;
-        _month = DateTime.Now.Month;
         _year = DateTime.Now.Year;
 
-        _yearStepper.SetValue(_year);
-
         _date = DateTime.Now;
+        _startDate = _date;
 
         _dateTextInButton.text = _date.Date.ToShortDateString();
-
-        _yearStepper.OnValueChanged.AddListener(SetYear);
 
         GenerateMonthList();
     }
@@ -76,6 +71,8 @@ public class Calendar : MonoBehaviour
     public void OpenCalendarWindow()
     {
         _calendarWindow.SetActive(true);
+
+        _calendarSelectable.Select();
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
@@ -92,30 +89,38 @@ public class Calendar : MonoBehaviour
     public void SetYear(float year)
     {
         _year = (int)year;
-        UpdateDate();
+        UpdateDateText();
     }
 
 
 
-    public void SetMonth(int month)
+    public void SetMonth(DateTime month)
     {
-        _month = month;
-        UpdateDate();
+        _date = new DateTime(month.Year, month.Month, _date.Day);
+        print(_date.ToShortDateString());
+        UpdateDateText();
+        GenerateCalendar(_date.Year, _date.Month);
     }
 
 
 
     public void SetDay(int day)
     {
-        _day = day;
-        UpdateDate();
+        _date = new DateTime(_date.Year, _date.Month, day);
+        UpdateDateText();
+    }
+
+
+
+    private void UpdateDateText()
+    {
+        _dateText.text = _date.Date.ToShortDateString();
     }
 
 
 
     private void UpdateDate()
     {
-        _date = new DateTime(_year, _month, _day);
         _dateText.text = _date.Date.ToShortDateString();
     }
 
@@ -123,10 +128,13 @@ public class Calendar : MonoBehaviour
 
     private void GenerateCalendar(int year, int month)
     {
-        if (_dayButtons.Count > 0) return;
+        //if (_dayButtons.Count > 0) return;
 
         foreach (var item in _dayButtons)
         {
+            if(item.UIToggle.isOn) 
+                item.UIToggle.isOn = false;
+
             Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
         }
 
@@ -213,7 +221,7 @@ public class Calendar : MonoBehaviour
             if (i == 0)
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
-                m.Init(date.Month, GetShortMonthName(date.Month), this);
+                m.Init(date, GetShortMonthName(date.Month), this);
                 _monthToggles.Add(m);
 
                 m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
@@ -221,8 +229,8 @@ public class Calendar : MonoBehaviour
             else
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
-                m.Init(date.AddMonths(i).Month, GetShortMonthName(date.AddMonths(i).Month), this);
-                if(date.AddMonths(i).Month == _month)
+                m.Init(date.AddMonths(i), GetShortMonthName(date.AddMonths(i).Month) + (date.AddMonths(i).Year != _date.Year ? $" {date.AddMonths(i).ToString("yy")}" : ""), this);
+                if(date.AddMonths(i).Month == _date.Month)
                 {
                     m.SelectMonth();
                 }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using HutongGames.PlayMaker.Ecosystem.Utils;
 using System.Collections;
 using System.Collections.Generic;
@@ -62,6 +63,14 @@ public class TimeLabel : MonoBehaviour
             LabelText.color = Color.black;
         }
     }
+
+
+
+    public void LerpValue(int start, int end, float duration)
+    {
+        DOTween.To(() => start, x => { TimeValue = x; LabelText.text = TimeValue.ToString(); }, end, duration);
+    }
+
 
 
     public GameObject GetClockGameObject()
