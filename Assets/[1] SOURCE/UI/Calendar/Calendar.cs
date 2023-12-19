@@ -27,6 +27,8 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private int _day;
 
+    [SerializeField] private int _previousCharCount;
+
     [SerializeField] private DayButton _dayButtonPrefab;
     [SerializeField] private MonthToggle _monthTogglePrefab;
 
@@ -51,8 +53,6 @@ public class Calendar : MonoBehaviour
     [SerializeField] private UIToggleGroup _daysToggleGroup;
     [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
-    [SerializeField] private UISelectable _calendarSelectable;
-
     private void Start()
     {
         _day = DateTime.Now.Day;
@@ -68,11 +68,19 @@ public class Calendar : MonoBehaviour
 
 
 
+    private void Update()
+    {
+        if(Input.touchCount > 0)
+        {
+            CheckIfOutside();
+        }
+    }
+
+
+
     public void OpenCalendarWindow()
     {
         _calendarWindow.SetActive(true);
-
-        _calendarSelectable.Select();
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
@@ -113,13 +121,6 @@ public class Calendar : MonoBehaviour
 
 
     private void UpdateDateText()
-    {
-        _dateText.text = _date.Date.ToShortDateString();
-    }
-
-
-
-    private void UpdateDate()
     {
         _dateText.text = _date.Date.ToShortDateString();
     }
@@ -258,10 +259,55 @@ public class Calendar : MonoBehaviour
 
 
 
+    public void GetDateFromInputField()
+    {
+        string[] values = _dateText.text.Split('.');
+
+        try
+        {
+            DateTime d = new DateTime(int.Parse(values[2]), int.Parse(values[1]), int.Parse(values[0]));
+            _date = d;
+            _dateText.text = _date.ToShortDateString();
+        }
+        catch (Exception e)
+        {
+            _dateText.text = _date.ToShortDateString();
+        }
+    }
+
+
+
     public void ConfirmDate()
     {
         _dateTextInButton.text = _date.ToShortDateString();
         CloseCalendarWindow();
+    }
+
+
+
+    public void DateCorrect()
+    {
+        int currentCharCount = _dateText.text.Length;
+
+        if (currentCharCount < _previousCharCount)
+        {
+            _previousCharCount = _dateText.text.Length; 
+            return;
+        }
+
+        switch (_dateText.text.Length)
+        {
+            case 2:
+                _dateText.text += ".";
+                _dateText.MoveTextEnd(false);
+                break;
+            case 5:
+                _dateText.text += ".";
+                _dateText.MoveTextEnd(false);
+                break;
+        }
+
+        _previousCharCount = _dateText.text.Length;
     }
 
 
@@ -273,7 +319,12 @@ public class Calendar : MonoBehaviour
         return dayButton;
     }
 
-
+    private void CheckIfOutside()
+    {
+        Camera camera = null;
+        if (!RectTransformUtility.RectangleContainsScreenPoint(_calendarWindow.GetComponent<RectTransform>(), Input.mousePosition, camera))
+            CloseCalendarWindow();
+    }
 
     private int GetMonthStartDay(int year, int month)
     {
