@@ -30,11 +30,18 @@ public class TimeLabel : MonoBehaviour
 
     public bool IsStartTime;
 
-
+    public UnityEvent OnEndIncrement;
 
     public void SetTime()
     {
         Clock.SetTime(TimeValue, LabelType);
+    }
+
+
+
+    public void UpdateTime()
+    {
+        Clock.SetTime(TimeValue, LabelType, true);
     }
 
 
@@ -68,7 +75,9 @@ public class TimeLabel : MonoBehaviour
 
     public void LerpValue(int start, int end, float duration)
     {
-        DOTween.To(() => start, x => { TimeValue = x; LabelText.text = TimeValue.ToString(); }, end, duration);
+        DOTween.To(() => start, x => { TimeValue = x; LabelText.text = TimeValue.ToString(); }, end, duration).OnUpdate(() => { if (Selected) {
+                UpdateTime();
+            } }).OnComplete(() => { OnEndIncrement?.Invoke(); });
     }
 
 

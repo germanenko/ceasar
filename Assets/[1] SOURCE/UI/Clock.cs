@@ -245,7 +245,7 @@ public class Clock : MonoBehaviour
 
 
 
-    public void SetTime(int time, TimeLabelType type)
+    public void SetTime(int time, TimeLabelType type, bool update = false)
     {
         _clockSelectable.Select();
 
@@ -255,7 +255,10 @@ public class Clock : MonoBehaviour
                 foreach(TimeLabel label in _hourList)
                 {
                     if(label.TimeValue == time)
+                    {
+                        if (update) break;
                         label.SelectTime(true, _isStartTime, _isStartTime ? _startTimeColor : _endTimeColor);
+                    }
                     else
                         if(!label.Selected || (label.Selected && label.IsStartTime == _isStartTime))
                             label.SelectTime(false);
@@ -593,6 +596,7 @@ public class Clock : MonoBehaviour
                 {
                     s.LabelText.text = "12";
                     s.TimeValue = 12;
+                    s.OnEndIncrement.AddListener(EnableMarks);
                 }
                 else
                 {
@@ -614,6 +618,7 @@ public class Clock : MonoBehaviour
                         s.LabelText.text = i.ToString();
                         s.TimeValue = i;
                     }
+                    s.OnEndIncrement.AddListener(EnableMarks);
                 }
                 else
                 {
@@ -629,7 +634,6 @@ public class Clock : MonoBehaviour
                     }
                 }
             }
-
 
             _hourList.Add(s);
         }
