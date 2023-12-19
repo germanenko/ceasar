@@ -85,10 +85,6 @@ public class Clock : MonoBehaviour
                 $"{_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {_endTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
         }
         
-
-        _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
-        _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
-
         if (Localization.Instance.Language == LocalizationLanguage.Russia)
         {
             _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
@@ -96,8 +92,8 @@ public class Clock : MonoBehaviour
         }
         else if (Localization.Instance.Language == LocalizationLanguage.USA)
         {
-            _startTimeText.text = string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute);
-            _endTimeText.text = string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute);
+            _startTimeText.text = $"{_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}";
+            _endTimeText.text = $"{_endTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}";
         }
     }
 

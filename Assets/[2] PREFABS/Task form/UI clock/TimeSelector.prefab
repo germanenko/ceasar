@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 160.35, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5254666756105785073
@@ -2442,7 +2442,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 580
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -3594,14 +3594,14 @@ MonoBehaviour:
         Elasticity: 1
         FadeOutShake: 0
       FromValue: {r: 1, g: 1, b: 1, a: 1}
-      ToValue: {r: 1, g: 1, b: 0, a: 0.6}
+      ToValue: {r: 0.9725491, g: 1, b: 0.83921576, a: 1}
       CurrentValue: {r: 1, g: 1, b: 1, a: 1}
       Enabled: 1
       StartColor: {r: 1, g: 1, b: 1, a: 1}
       FromReferenceValue: 1
       ToReferenceValue: 2
       FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 0, a: 0.6}
+      ToCustomValue: {r: 0.9725491, g: 1, b: 0.83921576, a: 1}
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -3692,14 +3692,14 @@ MonoBehaviour:
         Elasticity: 1
         FadeOutShake: 0
       FromValue: {r: 1, g: 1, b: 1, a: 1}
-      ToValue: {r: 0, g: 0, b: 1, a: 0.4}
+      ToValue: {r: 0.740566, g: 0.740566, b: 1, a: 1}
       CurrentValue: {r: 1, g: 1, b: 1, a: 1}
       Enabled: 1
       StartColor: {r: 1, g: 1, b: 1, a: 1}
       FromReferenceValue: 1
       ToReferenceValue: 2
       FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 0, g: 0, b: 1, a: 0.4}
+      ToCustomValue: {r: 0.740566, g: 0.740566, b: 1, a: 1}
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0

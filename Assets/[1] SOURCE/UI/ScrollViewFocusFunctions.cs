@@ -53,7 +53,7 @@ public static class ScrollViewFocusFunctions
         Debug.Log(Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y));
         yield return null;
 
-        if (Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y) < .1f)
+        if (Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y) < .05f)
         {
             yield break;
         }

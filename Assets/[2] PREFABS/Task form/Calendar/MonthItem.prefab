@@ -713,7 +713,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -749,7 +749,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &1166617928846116329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monthNameText: {fileID: 1378399813710611913}
-  _month: 0
   _calendar: {fileID: 0}
   UIToggle: {fileID: 1378399812515294850}
 --- !u!1 &1378399813710611915

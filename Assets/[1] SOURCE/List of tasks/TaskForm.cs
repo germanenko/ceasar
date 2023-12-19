@@ -224,7 +224,9 @@ namespace Germanenko.Source
 
             _fields.CreateFields(itemParent);
 
-			if (_editTask)
+            SetTimeButtonText(false);
+
+            if (_editTask)
 				SetFields();
 
 			if (isDraft)
@@ -331,18 +333,7 @@ namespace Germanenko.Source
             _colorField.SelectDDItem(task.Color);
             _clocks.SetPeriod(task.StartTime, task.EndTime);
 
-			if(Localization.Instance.Language == LocalizationLanguage.Russia)
-			{
-                _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
-					string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) :
-					$"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
-            }
-			else if(Localization.Instance.Language == LocalizationLanguage.USA)
-			{
-                _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
-					task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
-					 $"{task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {task.EndTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
-            }
+            SetTimeButtonText(true);
         }
 
 
@@ -365,6 +356,38 @@ namespace Germanenko.Source
 				_editTask = false;
 
             isDraft = false;
+        }
+
+
+
+        private void SetTimeButtonText(bool fromTask)
+        {
+            if (fromTask)
+            {
+                if (Localization.Instance.Language == LocalizationLanguage.Russia)
+                {
+                    _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
+                        string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) :
+                        $"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
+                }
+                else if (Localization.Instance.Language == LocalizationLanguage.USA)
+                {
+                    _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
+                        task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
+                         $"{task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {task.EndTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
+                }
+            }
+            else
+            {
+                if (Localization.Instance.Language == LocalizationLanguage.Russia)
+                {
+                    _clocks.SetPreviewPeriodText(string.Format("{0:00}:{1:00}", DateTime.Now.Hour, DateTime.Now.Minute));
+                }
+                else if (Localization.Instance.Language == LocalizationLanguage.USA)
+                {
+                    _clocks.SetPreviewPeriodText(DateTime.Now.ToString("hh:mm tt", CultureInfo.InvariantCulture));
+                }
+            }
         }
 
 
