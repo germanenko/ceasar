@@ -36,7 +36,10 @@ public class Clock : MonoBehaviour
     [SerializeField] private bool _isDay;
 
     [SerializeField] private DateTime _startTime;
+    public DateTime StartTime => _startTime;
+
     [SerializeField] private DateTime _endTime;
+    public DateTime EndTime => _endTime;
 
     void Start()
     {

@@ -224,7 +224,7 @@ namespace Germanenko.Source
 
             _fields.CreateFields(itemParent);
 
-            SetTimeButtonText(false);
+            SetTimeButtonText();
 
             if (_editTask)
 				SetFields();
@@ -333,7 +333,7 @@ namespace Germanenko.Source
             _colorField.SelectDDItem(task.Color);
             _clocks.SetPeriod(task.StartTime, task.EndTime);
 
-            SetTimeButtonText(true);
+            SetTimeButtonText(task);
         }
 
 
@@ -360,9 +360,9 @@ namespace Germanenko.Source
 
 
 
-        private void SetTimeButtonText(bool fromTask)
+        private void SetTimeButtonText(Tasks task = null)
         {
-            if (fromTask)
+            if (task != null)
             {
                 if (Localization.Instance.Language == LocalizationLanguage.Russia)
                 {
