@@ -299,11 +299,11 @@ public class Calendar : MonoBehaviour
         {
             case 2:
                 _dateText.text += ".";
-                _dateText.MoveTextEnd(false);
+                _dateText.MoveToEndOfLine(false, false);
                 break;
             case 5:
                 _dateText.text += ".";
-                _dateText.MoveTextEnd(false);
+                _dateText.MoveToEndOfLine(false, false);
                 break;
         }
 
