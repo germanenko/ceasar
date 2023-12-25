@@ -1,0 +1,572 @@
+-target:library
+-out:"Library/Bee/artifacts/1300b0aP.dag/UniRx.dll"
+-refout:"Library/Bee/artifacts/1300b0aP.dag/UniRx.ref.dll"
+-define:UNITY_2021_3_9
+-define:UNITY_2021_3
+-define:UNITY_2021
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:USE_SEARCH_ENGINE_API
+-define:USE_SEARCH_TABLE
+-define:USE_SEARCH_MODULE
+-define:USE_PROPERTY_DATABASE
+-define:USE_SEARCH_EXTENSION_API
+-define:SCENE_TEMPLATE_MODULE
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_RUNTIME_PERMISSIONS
+-define:ENABLE_ENGINE_CODE_STRIPPING
+-define:ENABLE_ONSCREEN_KEYBOARD
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:ENABLE_VIDEO
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:PLATFORM_ANDROID
+-define:TEXTCORE_1_0_OR_NEWER
+-define:UNITY_ANDROID
+-define:UNITY_ANDROID_API
+-define:ENABLE_EGL
+-define:ENABLE_NETWORK
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:UNITY_CAN_SHOW_SPLASH_SCREEN
+-define:UNITY_HAS_GOOGLEVR
+-define:UNITY_HAS_TANGO
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_ETC_COMPRESSION
+-define:PLATFORM_EXTENDS_VULKAN_DEVICE
+-define:PLATFORM_HAS_MULTIPLE_SWAPCHAINS
+-define:UNITY_ANDROID_SUPPORTS_SHADOWFILES
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:ENABLE_UNITYADS_RUNTIME
+-define:UNITY_UNITYADS_API
+-define:ENABLE_MONO
+-define:NET_STANDARD_2_0
+-define:NET_STANDARD
+-define:NET_STANDARD_2_1
+-define:NETSTANDARD
+-define:NETSTANDARD2_1
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
+-define:ENABLE_LEGACY_INPUT_MANAGER
+-define:PLAYMAKER
+-define:PLAYMAKER_1_9
+-define:PLAYMAKER_1_9_1
+-define:PLAYMAKER_1_8_OR_NEWER
+-define:PLAYMAKER_1_8_5_OR_NEWER
+-define:PLAYMAKER_1_9_OR_NEWER
+-define:PLAYMAKER_TMPRO
+-define:ECOSYSTEM
+-define:ECOSYSTEM_0_6
+-define:ECOSYSTEM_0_6_OR_NEWER
+-define:INPUT_SYSTEM_PACKAGE
+-define:PUBLISHING_TOOLS_ASSET_STORE_RELEASE
+-define:MOBILE_KEYBOARD_RAISER_ASSET_STORE_RELEASE
+-define:COLOR_ASSET_STORE_RELEASE
+-define:COROUTINE_MANAGEMENT_ASSET_STORE_RELEASE
+-define:SERIALIZABLE_TYPES_ASSET_STORE_RELEASE
+-define:PLAYMAKER_UTILS
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"Assets/AdvancedInputField/AIFLogger.dll"
+-r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll"
+-r:"Assets/Plugins/PlayMaker/PlayMaker.dll"
+-r:"Assets/_99 THIRD PARTY/PlayMaker/ConditionalExpression.dll"
+-r:"Assets/_99 THIRD PARTY/SimpleSQL/Plugins/SimpleSQL_Runtime.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.ext.nunit@2.0.3/net40/unity-custom/nunit.framework.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/AOT/Newtonsoft.Json.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Data.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Drawing.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.IO.Compression.FileSystem.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Net.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Numerics.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Runtime.Serialization.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ServiceModel.Web.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Transactions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Web.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Windows.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Linq.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Serialization.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.AppContext.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Buffers.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Concurrent.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.NonGeneric.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Specialized.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.TypeConverter.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Console.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Data.Common.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Contracts.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Debug.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Process.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.StackTrace.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tools.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TraceSource.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tracing.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Drawing.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Dynamic.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Calendars.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.ZipFile.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Watcher.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.IsolatedStorage.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.MemoryMappedFiles.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Pipes.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Expressions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Parallel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Queryable.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Memory.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Http.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NameResolution.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NetworkInformation.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Ping.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Requests.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Security.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Sockets.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebHeaderCollection.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.Client.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Numerics.Vectors.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ObjectModel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.DispatchProxy.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.ILGeneration.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.Lightweight.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Reader.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.ResourceManager.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Writer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Handles.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Numerics.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Json.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Xml.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Claims.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Csp.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Encoding.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Principal.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.SecureString.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.RegularExpressions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Overlapped.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Parallel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Thread.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.ThreadPool.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Timer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ValueTuple.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.ReaderWriter.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlSerializer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AccessibilityModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AndroidJNIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AnimationModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ARModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AssetBundleModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AudioModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ClothModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.CoreModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.CrashReportingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.DirectorModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.DSPGraphModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.GameCenterModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.GIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.GridModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.HotReloadModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ImageConversionModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.IMGUIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.InputLegacyModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.InputModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.JSONSerializeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.LocalizationModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ParticleSystemModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.PerformanceReportingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.Physics2DModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.PhysicsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ProfilerModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ScreenCaptureModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.SharedInternalsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.SpriteMaskModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.SpriteShapeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.StreamingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.SubstanceModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.SubsystemsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TerrainModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TerrainPhysicsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TextRenderingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TilemapModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.TLSModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UIElementsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UIElementsNativeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UmbraModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UNETModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityAnalyticsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityConnectModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityCurlModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityTestProtocolModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityWebRequestModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.VehiclesModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.VFXModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.VideoModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.VRModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.WindModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.XRModule.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Asynchronous/WebRequestExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/BooleanDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/CancellationDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/CompositeDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/DictionaryDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/Disposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/DisposableExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/ICancelable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/MultipleAssignmentDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/RefCountDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/ScheduledDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/SerialDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/SingleAssignmentDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Disposables/StableCompositeDisposable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/EventPattern.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/AscynLock.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/CancellableTaskCompletionSource.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/ExceptionExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/ImmutableList.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/ListObserver.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/MicroCoroutine.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/PriorityQueue.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/PromiseHelper.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/ScheduledItem.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/ThreadSafeQueueWorker.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/InternalUtil/UnityEqualityComparer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Notification.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Notifiers/BooleanNotifier.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Notifiers/CountNotifier.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Notifiers/MessageBroker.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Notifiers/ScheduledNotifier.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Aggregate.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Awaiter.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Binding.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Blocking.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Concatenate.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Concurrency.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Conversions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Creation.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.ErrorHandling.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Events.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.FromAsync.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Joins.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Paging.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observable.Time.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Observer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Aggregate.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Amb.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/AsObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/AsSingleUnitObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/AsUnitObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Buffer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Cast.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Catch.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/CombineLatest.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Concat.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ContinueWith.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Create.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/DefaultIfEmpty.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Defer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Delay.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/DelaySubscription.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Dematerialize.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Distinct.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/DistinctUntilChanged.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Do.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Empty.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Finally.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/First.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ForEachAsync.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/FromEvent.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/GroupBy.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/IgnoreElements.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Last.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Materialize.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Merge.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Never.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ObserveOn.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/OfType.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/OperatorObservableBase.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/OperatorObserverBase.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/PairWise.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Range.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/RefCount.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Repeat.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/RepeatSafe.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Return.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Sample.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Scan.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Select.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SelectMany.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SelectWhere.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Single.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Skip.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SkipUntil.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SkipWhile.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Start.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/StartWith.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SubscribeOn.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Switch.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Synchronize.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/SynchronizedObserver.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Take.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/TakeLast.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/TakeUntil.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/TakeWhile.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Throttle.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ThrottleFirst.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Throw.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/TimeInterval.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Timeout.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Timer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Timestamp.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ToArray.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ToList.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ToObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Wait.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/WhenAll.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Where.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/WhereSelect.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/WithLatestFrom.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/Zip.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Operators/ZipLatest.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Pair.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Schedulers/CurrentThreadScheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Schedulers/ImmediateScheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Schedulers/IScheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Schedulers/Scheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Schedulers/ThreadPoolScheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/AsyncSubject.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/BehaviorSubject.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/ConnectableObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/ISubject.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/ReplaySubject.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/Subject.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Subjects/SubjectExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/IObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/IObserver.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/IOptimizedObservable.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/IProgress.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/Tuple.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/System/Unit.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Tasks/TaskObservableExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/TimeInterval.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/Timestamped.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/AsyncOperationExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/CancellationToken.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/CoroutineAsyncBridge.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/LogEntry.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/LogEntryExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/Logger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/ObservableDebugExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/ObservableLogger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Diagnostics/UnityDebugSink.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/FrameInterval.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/InspectableReactiveProperty.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/InspectorDisplayDrawer.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/LifetimeDisposableExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/MainThreadDispatcher.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/MainThreadScheduler.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Observable.Unity.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ObservableWWW.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ObserveExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/BatchFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/DelayFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/DelayFrameSubscription.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/FrameInterval.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/FrameTimeInterval.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/FromCoroutine.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/RepeatUntil.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/SampleFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/SubscribeOnMainThread.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/ThrottleFirstFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/ThrottleFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Operators/TimeoutFrame.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ReactiveCollection.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ReactiveCommand.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ReactiveDictionary.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ReactiveProperty.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/ScenePlaybackDetector.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Toolkit/ObjectPool.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableAnimatorTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableBeginDragTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCancelTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCanvasGroupChangedTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCollision2DTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCollisionTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDeselectTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDestroyTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDragTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDropTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableEnableTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableEndDragTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableEventTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableFixedUpdateTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableInitializePotentialDragTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableJointTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableLateUpdateTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableMouseTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableMoveTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableParticleTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservablePointerClickTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservablePointerDownTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservablePointerEnterTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservablePointerExitTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservablePointerUpTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableRectTransformTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableScrollTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableSelectTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableStateMachineTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableSubmitTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTransformChangedTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTrigger2DTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerBase.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerExtensions.Component.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableUpdateSelectedTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableUpdateTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableVisibleTrigger.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/UnityEventExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/UnityGraphicExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/UnityUIComponentExtensions.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityEngineBridge/YieldInstructionCache.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityWinRTBridge/Thread.cs"
+"Assets/_99 THIRD PARTY/UniRx/Scripts/UnityWinRTBridge/ThreadPoolScheduler_UnityWinRT.cs"
+-langversion:9.0
+
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+
+/nowarn:0169
+/nowarn:0649
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+
+
+/additionalfile:"Library/Bee/artifacts/1300b0aP.dag/UniRx.AdditionalFile.txt"

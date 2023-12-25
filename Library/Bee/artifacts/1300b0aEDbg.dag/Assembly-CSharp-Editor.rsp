@@ -1,0 +1,761 @@
+-target:library
+-out:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-Editor.dll"
+-refout:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-Editor.ref.dll"
+-define:UNITY_2021_3_9
+-define:UNITY_2021_3
+-define:UNITY_2021
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:UNITY_INCLUDE_TESTS
+-define:USE_SEARCH_ENGINE_API
+-define:USE_SEARCH_TABLE
+-define:USE_SEARCH_MODULE
+-define:USE_PROPERTY_DATABASE
+-define:USE_SEARCH_EXTENSION_API
+-define:SCENE_TEMPLATE_MODULE
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_RUNTIME_PERMISSIONS
+-define:ENABLE_ENGINE_CODE_STRIPPING
+-define:ENABLE_ONSCREEN_KEYBOARD
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:ENABLE_VIDEO
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:PLATFORM_ANDROID
+-define:TEXTCORE_1_0_OR_NEWER
+-define:UNITY_ANDROID
+-define:UNITY_ANDROID_API
+-define:ENABLE_EGL
+-define:ENABLE_NETWORK
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:UNITY_CAN_SHOW_SPLASH_SCREEN
+-define:UNITY_HAS_GOOGLEVR
+-define:UNITY_HAS_TANGO
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_ETC_COMPRESSION
+-define:PLATFORM_EXTENDS_VULKAN_DEVICE
+-define:PLATFORM_HAS_MULTIPLE_SWAPCHAINS
+-define:UNITY_ANDROID_SUPPORTS_SHADOWFILES
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:ENABLE_UNITYADS_RUNTIME
+-define:UNITY_UNITYADS_API
+-define:ENABLE_MONO
+-define:NET_4_6
+-define:NET_UNITY_4_8
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
+-define:ENABLE_LEGACY_INPUT_MANAGER
+-define:PLAYMAKER
+-define:PLAYMAKER_1_9
+-define:PLAYMAKER_1_9_1
+-define:PLAYMAKER_1_8_OR_NEWER
+-define:PLAYMAKER_1_8_5_OR_NEWER
+-define:PLAYMAKER_1_9_OR_NEWER
+-define:PLAYMAKER_TMPRO
+-define:ECOSYSTEM
+-define:ECOSYSTEM_0_6
+-define:ECOSYSTEM_0_6_OR_NEWER
+-define:INPUT_SYSTEM_PACKAGE
+-define:PUBLISHING_TOOLS_ASSET_STORE_RELEASE
+-define:MOBILE_KEYBOARD_RAISER_ASSET_STORE_RELEASE
+-define:COLOR_ASSET_STORE_RELEASE
+-define:COROUTINE_MANAGEMENT_ASSET_STORE_RELEASE
+-define:SERIALIZABLE_TYPES_ASSET_STORE_RELEASE
+-define:PLAYMAKER_UTILS
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"Assets/AdvancedInputField/AIFLogger.dll"
+-r:"Assets/Plugins/Borodar/RainbowFolders/Editor/Assemblies/RainbowFolders.dll"
+-r:"Assets/Plugins/Borodar/RainbowHierarchy/Assemblies/RainbowHierarchy.dll"
+-r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
+-r:"Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll"
+-r:"Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll"
+-r:"Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll"
+-r:"Assets/Plugins/PlayMaker/PlayMaker.dll"
+-r:"Assets/_99 THIRD PARTY/ConsolePro/Editor/ConsolePro.Editor.dll"
+-r:"Assets/_99 THIRD PARTY/PlayMaker/ConditionalExpression.dll"
+-r:"Assets/_99 THIRD PARTY/PlayMaker/Editor/ConditionalExpressionEditor.dll"
+-r:"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerEditor.dll"
+-r:"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerEditorResources.dll"
+-r:"Assets/_99 THIRD PARTY/SimpleSQL/Editor/SimpleSQL_Editor.dll"
+-r:"Assets/_99 THIRD PARTY/SimpleSQL/Plugins/SimpleSQL_Runtime.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/log4netPlastic.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/unityplastic.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.ext.nunit@2.0.3/net40/unity-custom/nunit.framework.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.ext.nunit@2.0.3/net40/unity-custom/nunit.framework.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll"
+-r:"D:/ceasar/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickSearchModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreFontEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreTextEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIBuilderModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.NVIDIAModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/Microsoft.Win32.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.AppContext.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Buffers.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.Concurrent.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.NonGeneric.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.Specialized.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.Annotations.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.EventBasedAsync.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.TypeConverter.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Console.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Data.Common.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Contracts.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Debug.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.FileVersionInfo.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Process.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.StackTrace.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Tools.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.TraceSource.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Drawing.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Dynamic.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.Calendars.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.Compression.ZipFile.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.DriveInfo.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.Watcher.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.IsolatedStorage.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.MemoryMappedFiles.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.Pipes.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.UnmanagedMemoryStream.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Expressions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Parallel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Queryable.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Memory.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Http.Rtc.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.NameResolution.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.NetworkInformation.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Ping.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Requests.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Security.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Sockets.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebHeaderCollection.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebSockets.Client.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebSockets.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ObjectModel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.DispatchProxy.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.ILGeneration.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.Lightweight.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.Reader.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.ResourceManager.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.Writer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.CompilerServices.VisualC.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Handles.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Numerics.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Formatters.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Json.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Xml.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Claims.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Algorithms.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Csp.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Encoding.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.X509Certificates.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Principal.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.SecureString.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Duplex.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Http.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.NetTcp.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Primitives.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Security.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.Encoding.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.Encoding.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.RegularExpressions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Overlapped.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.Extensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.Parallel.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Thread.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.ThreadPool.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Timer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ValueTuple.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.ReaderWriter.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XmlDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XmlSerializer.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XPath.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XPath.XDocument.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Microsoft.CSharp.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/mscorlib.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Core.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.DataSetExtensions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Drawing.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.IO.Compression.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.IO.Compression.FileSystem.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Net.Http.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Numerics.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Numerics.Vectors.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Runtime.Serialization.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Transactions.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
+-r:"D:/unity/2021.3.9f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/AdvancedInputField.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/AdvancedInputFieldEditor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-Editor-firstpass.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/CW.Common.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DoozyEditor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DoozyRuntime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.CodeGeneration.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.COLOR.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.COLOR.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.COLOR.Tests.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.COLOR.Tests.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.CoroutineManagement.Demo.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.CoroutineManagement.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.CoroutineManagement.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.CoroutineManagement.Tests.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.EditorUtilities.Demo.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.EditorUtilities.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.KeyboardRaiser.Demo.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.KeyboardRaiser.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.KeyboardRaiser.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.KeyboardRaiser.Tests.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.PublishingTools.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.PublishingTools.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.RuntimeUtilities.Demo.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.RuntimeUtilities.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.SerializableTypes.Demo.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.SerializableTypes.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.SerializableTypes.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/DTT.SerializableTypes.Tests.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Heureka.Upgrade.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/HeurekaGames.AssetHunterPRO.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/HeurekaGames.Utils.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/LeanCommon.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/LeanTouch.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/LunarConsole.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/LunarConsoleEditor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/QHierarchyEditor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/QHierarchyNullable.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/QHierarchyRuntime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UniRx.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.2D.Tilemap.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.EditorCoroutines.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Recorder.Base.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Recorder.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Recorder.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Services.Core.Analytics.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Services.Core.Environments.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Services.Core.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.SettingsProvider.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Shared.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualStudio.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.SpatialTracking.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.TestRunner.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.XR.LegacyInputHelpers.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.SpatialTracking.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.TestRunner.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityUIExtensions.editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityUIExtensions.ref.dll"
+"Assets/Akassets/SmoothGridLayout/Editor/SmoothLayoutEditor.cs"
+"Assets/Akassets/SmoothGridLayout/Editor/SmoothLayoutEditorCreateMenu.cs"
+"Assets/net.fabrejean/Editor/Common/Utils.cs"
+"Assets/net.fabrejean/Editor/Common/VersionInfo.cs"
+"Assets/net.fabrejean/Editor/Common/WWW.cs"
+"Assets/net.fabrejean/Editor/MarkDownSharp/Escapes.cs"
+"Assets/net.fabrejean/Editor/MarkDownSharp/MarkDownFileInspector.cs"
+"Assets/net.fabrejean/Editor/MarkDownSharp/MarkdownGUI.cs"
+"Assets/net.fabrejean/Editor/MarkDownSharp/MarkdownParser.cs"
+"Assets/net.fabrejean/Editor/MarkDownSharp/ObjectInspector.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Classes/EcosystemEditorDefinesUtils.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Classes/EcosystemUtils.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Classes/Item.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Classes/ItemDocumentation.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Classes/WebImageManager.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/EcosystemBrowser.cs"
+"Assets/net.fabrejean/Editor/PlayMaker/Ecosystem/Tools/ProjectScanner/ProjectScanner.cs"
+"Assets/net.fabrejean/Editor/Plugins/EditorCoroutine.cs"
+"Assets/net.fabrejean/Editor/Plugins/HttpWrapper.cs"
+"Assets/net.fabrejean/Editor/Plugins/JSON.cs"
+"Assets/PlayMaker uGui/Editor/PlayMakerUGuiCanvasRaycastFilterEventsProxyInspector.cs"
+"Assets/PlayMaker uGui/Editor/PlayMakerUGuiComponentProxyInspector.cs"
+"Assets/PlayMaker uGui/Editor/PlayMakerUGuiDragEventsProxyInspector.cs"
+"Assets/PlayMaker uGui/Editor/PlayMakerUGuiDropEventsProxyInspector.cs"
+"Assets/PlayMaker uGui/Editor/PlayMakerUGuiPointerEventsProxyInspector.cs"
+"Assets/PlayMaker Utils/Components/Editor/CommentInspector.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerCurrentEventDataEditor.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerEditorUtils.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerInspectorUtils.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerInspectorUtils_Events.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerInspectorUtils_Reflection.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerInspectorUtils_Variables.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerStats.cs"
+"Assets/PlayMaker Utils/Editor/PlayMakerUtilsDefine.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/ElementAdderMenuBuilder.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/ElementAdderMenuCommandAttribute.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/ElementAdderMeta.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/GenericElementAdderMenu.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/GenericElementAdderMenuBuilder.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/IElementAdder.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/IElementAdderMenu.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/IElementAdderMenuBuilder.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Element Adder Menu/IElementAdderMenuCommand.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/GenericListAdaptor.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Internal/GUIHelper.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Internal/ReorderableListResources.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/Internal/SerializedPropertyUtility.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/IReorderableListAdaptor.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/IReorderableListDropTarget.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/ReorderableListControl.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/ReorderableListEvents.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/ReorderableListFlags.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/ReorderableListGUI.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/ReorderableListStyles.cs"
+"Assets/PlayMaker Utils/External Libraries/Rotorz/Reorderable List Field/Editor/SerializedPropertyAdaptor.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/ButtonAttribute/Editor/ButtonDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/Editor/PlayMakerPropertyDrawerBaseClass.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/MainCameraTarget/Editor/MainCameraTargetPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/Owner/Editor/OwnerPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerEvent/Editor/PlayMakerEventPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerEventTarget/Editor/PlayMakerEventTargetPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerFsmTarget/Editor/PlayMakerFsmTargetPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerFsmVariable/Editor/PlayMakerFsmVariablePropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerFsmVariableTarget/Editor/PlayMakerFsmVariableTargetPropertyDrawer.cs"
+"Assets/PlayMaker Utils/PropertyDrawers/PlayMakerTimelineEventTarget/Editor/PlayMakerTimelineEventTargetPropertyDrawer.cs"
+"Assets/PlayMaker Utils/Wizards/EnumCreator/Editor/EnumCreator.cs"
+"Assets/PlayMaker Utils/Wizards/EnumCreator/Editor/EnumCreatorWizard.cs"
+"Assets/PlayMaker Utils/Wizards/EnumCreator/Editor/EnumFileFinder.cs"
+"Assets/PlayMaker Utils/Wizards/LinkerWizard/Editor/LinkerDataCustomInspector.cs"
+"Assets/PlayMaker Utils/Wizards/LinkerWizard/Editor/LinkerEditorChecks.cs"
+"Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/Editor/EventProxyFileFinder.cs"
+"Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/Editor/PlayMakerEventProxyCreator.cs"
+"Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/Editor/PlayMakerEventProxyCreatorWizard.cs"
+"Assets/[0] FRAMEWORK/Scene/Editor/SceneGenerator.cs"
+"Assets/_99 THIRD PARTY/Fingers/Prefab/Editor/MinMaxSlider.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/BaseClasses/OnAnimatorUpdateActionEditorBase.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorAnimatorRootActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorBodyActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorBoneGameObjectActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorBoolActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentStateInfoActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentStateInfoIsNameActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentStateInfoIsTagActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentTransitionInfoActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentTransitionInfoIsNameActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorCurrentTransitionInfoIsUserNameActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorDeltaActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorFloatActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorGravityWeightActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorIKGoalActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorIntActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorIsLayerInTransitionActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorIsMatchingTargetActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorLayerWeightActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorNextStateInfoActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorPivotActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorSpeedActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorTargetActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/SetAnimatorBoolActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/SetAnimatorFloatActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/SetAnimatorIntActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Debug/Editor/CommentEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/CallMethodEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/GetDistanceEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/LookAtActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/MoveTowardsActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/PlayMakerEventProxyEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/RunFsmEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/SetCameraFOVActionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Editor/SetPropertyEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Math/Editor/Vector2RandomValueEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Physics/Editor/FindOverlapsEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Physics/Editor/RaycastAllEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Physics2D/Editor/SetVelocity2dEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Physics2D/Editor/SmoothLookAt2dEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/GetQuaternionEulerAnglesCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/GetQuaternionFromRotationCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/GetQuaternionMultipliedByQuaternionCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/GetQuaternionMultipliedByVectorCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionAngleAxisCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionCustomEditorBase.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionEulerCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionInverseCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionLerpCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionLookRotationCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionLowPassFilterCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionRotateTowardsCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Quaternion/Editor/QuaternionSlerpCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneBuildIndexCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneIsDirtyCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneIsLoadedCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneIsValidCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneNameCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetScenePathCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneRootCountCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/GetSceneRootGameObjectsCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/Internal/GetSceneActionBaseCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/LoadSceneAsynchCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/LoadSceneCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/MergeScenesCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/MoveGameObjectToSceneCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/SetActiveSceneCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/UnLoadSceneAsynchCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/SceneManager/Editor/UnLoadSceneCustomEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/StateMachine/Editor/BlockEventsEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenCameraEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenColorEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenEditorBase.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenFadeEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenPositionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenPropertyEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenPunchEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenQuaternionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenRotationEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenScaleEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenUiPositionEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenUiSizeEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/Tween/Editor/TweenVariableEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Actions/UI/Editor/UiIcons.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/AboutWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/AssetGUIDs.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/BaseGuidedTourWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/ContextToolWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/DefinesHelper.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/EditorStartupPrefs.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmActionWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmComponentInspector.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmEditorWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmErrorWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmEventsWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmGlobalsWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmLogWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmSelectorWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmStateWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmTemplate.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmTemplateEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmTemplateWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/FsmTimelineWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerAddonManager.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerAutoUpdater.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerBugReportWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerBuildCallbacks.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerControlsEditor.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerCustomActionWizard.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerDefines.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerEditorStartup.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerGlobalsInspector.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerGuidedTour.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerGUIInspector.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerMainMenu.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerProjectTools.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerUpdater.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerUpgradeGuide.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerUpgradeTools.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PlayMakerWelcomeWindow.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/PreUpdateChecker.cs"
+"Assets/_99 THIRD PARTY/PlayMaker/Editor/ReportWindow.cs"
+"Assets/_99 THIRD PARTY/ProceduralUIImage/Editor/FreeModifierEditor.cs"
+"Assets/_99 THIRD PARTY/ProceduralUIImage/Editor/ModifierUtility.cs"
+"Assets/_99 THIRD PARTY/ProceduralUIImage/Editor/ProceduralImageEditor.cs"
+"Assets/_99 THIRD PARTY/ProceduralUIImage/Editor/ProceduralImageEditorUtility.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/BetterElementHelper.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/Betterizer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/EditorGuiUtils.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/ScreenConfigConnectionHelper.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/SerializedPropertyExtensions.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/SerializedPropertyUtil.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/StoredEditorValue.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Helpers/TransitionsDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionMonitorEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/MarginDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/SizeModifierDrawer/FloatSizeModifierDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/SizeModifierDrawer/MarginSizeModifierDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/SizeModifierDrawer/ScreenDependentSizeModifierDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/SizeModifierDrawer/Vector2SizeModifierDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/ResolutionSizer/SizeModifierDrawer/Vector3SizeModifierDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterButtonEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterDropdownEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterImageEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterInputFieldEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterRawImageEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterScrollbarEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterScrollRectEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterSelectableEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterSliderEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterTextEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/BetterToggleEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/ImageAppearanceProviderEditorHelper.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiElements/InteractionAreaEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/AnchorOverrideEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterAspectRatioFitterEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterAxisAlignedLayoutGroupEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterContentSizeFitterEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterGridLayoutGroupEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterHorizontalLayoutGroupEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterHorizontalOrVerticalLayoutGroupEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterLayoutElementEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterLocatorEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/BetterVerticalLayoutGroupEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/GameObjectActivatorEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/LocationAnimationsEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/OverrideScreenPropertiesEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/RectTransformDataDrawer.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/SizeDeltaSizerEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/UiLayout/TransformScalerEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Utils/ScriptableObjectInstantiator.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/AlignDistribute/Align.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/AlignDistribute/AlignDistributeEnums.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/AlignDistribute/AlignDistributeWindow.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/AlignDistribute/Distribute.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/AlignDistribute/Utility.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/PointSelectorPopupWindow.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/ResolutionPicker.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/SetNameOrDeleteOptimizedScreen.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/SmartParentWindow.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Windows/SnapAnchorsWindow.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/AssemblyDefinitionsPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/ExampleScenesPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/FinalPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/RefreshingPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/ResolutionMonitorPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/ThirdPartySupportPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/ToolsPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/Pages/WelcomePage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/SetupWizard.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/IWizard.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/IWizardDataElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/CustomWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/InfoWithButtonWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/InfoWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/InstallPackageSelectionWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/SeparatorWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/UnserializedButtonPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PageElements/ValueWizardPageElement.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/ParseHelper.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/PersistentWizardData.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/WizardPage.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI/Editor/Scripts/Wizard/WizardFramework/WizardPageElementBase.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI_TextMeshPro/Editor/Scripts/BetterTextMeshProDropdownEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI_TextMeshPro/Editor/Scripts/BetterTextMeshProInputFieldEditor.cs"
+"Assets/_99 THIRD PARTY/TheraBytes/BetterUI_TextMeshPro/Editor/Scripts/BetterTextMeshProUGUIEditor.cs"
+-langversion:9.0
+
+/deterministic
+/optimize-
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+
+/nowarn:0169
+/nowarn:0649
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+
+
+/additionalfile:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-Editor.AdditionalFile.txt"

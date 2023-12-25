@@ -1,0 +1,36 @@
+# List of SDK dependencies of this app, this information is also included in an encrypted form in the APK.
+# For more information visit: https://d.android.com/r/tools/dependency-metadata
+
+library {
+  maven_library {
+    artifactId: "lunar-console"
+  }
+  digests {
+    sha256: "y~9\276\aa=\361\rQ\256\024\312v\312\220\016\331&P\236\204\215$\023\217\271\221\215xt\023"
+  }
+}
+library {
+  maven_library {
+    artifactId: "sqlite-android-3280000"
+  }
+  digests {
+    sha256: "\030\346\322\370%\276\233\022\345\273#\242Q\276\260{\275\3748\3051\335\035?\377\320aO\241\217\263K"
+  }
+}
+library {
+  digests {
+    sha256: "\024\353\272\356\341\314\001\331{(5\177J\350\327Y\'\006\304n\364\366\205p\023\325=\177\240\365\034I"
+  }
+}
+library_dependencies {
+}
+library_dependencies {
+  library_index: 1
+}
+library_dependencies {
+  library_index: 2
+}
+module_dependencies {
+  module_name: "base"
+  dependency_index: 2
+}
