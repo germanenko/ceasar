@@ -16,8 +16,8 @@ using UnityEngine.SceneManagement;
 
 public class Authentication : MonoBehaviour
 {
-    private string _regURI = "https://6311-92-62-150-155.ngrok-free.app/api/Account/signup";
-    private string _authURI = "https://6311-92-62-150-155.ngrok-free.app/api/Account/signin";
+    private string _regURI = "https://aa31-92-62-150-144.ngrok-free.app/api/Auth/register";
+    private string _authURI = "https://aa31-92-62-150-144.ngrok-free.app/api/Auth/login";
 
     [SerializeField] private TMP_InputField _loginAuth;
     [SerializeField] private TMP_InputField _passAuth;
@@ -78,62 +78,29 @@ public class Authentication : MonoBehaviour
 
     public async Task AuthAsync()
     {
-        AuthModel student = new AuthModel(_loginAuth.text, _passAuth.text);
+        AuthModel user = new AuthModel(_loginAuth.text, _passAuth.text);
 
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://6311-92-62-150-155.ngrok-free.app/api/Account/"),
+            BaseAddress = new Uri("https://aa31-92-62-150-144.ngrok-free.app/api/Auth/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
-        var s = JsonUtility.ToJson(student);
+        var s = JsonUtility.ToJson(user);
+        print(s);
         var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
-        var response = await client.PostAsync("signin", content);
+        var response = await client.PostAsync("login", content);
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var tokenBodyString = await response.Content.ReadAsStringAsync();
-            var t = JsonUtility.FromJson<Token>(tokenBodyString);
-            var user = GetUserInfo(t.access_token);
+            //var t = JsonUtility.FromJson<Token>(tokenBodyString);
 
-            print(user);
+            print(tokenBodyString);
         }
         else
         {
             print(response.Content);
-            print(response.StatusCode);
-        }
-    }
-
-
-
-    public HttpClient CreateClient(string accessToken = "")
-    {
-        var client = new HttpClient();
-        if (accessToken != "")
-        {
-            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
-            client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
-        }
-        return client;
-    }
-
-
-
-    public Dictionary<string, string> GetUserInfo(string token)
-    {
-        print(CreateClient(token).BaseAddress);
-
-        using (var client = CreateClient(token))
-        {
-            var response = client.GetAsync("https://6311-92-62-150-155.ngrok-free.app/api/Account/getProfileData").Result;
-
-            print(response);
-
-            var result = response.Content.ReadAsStringAsync().Result;
-
-            Dictionary<string, string> userDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-
-            return userDictionary;
+            print(response.RequestMessage);
         }
     }
 }
@@ -141,12 +108,12 @@ public class Authentication : MonoBehaviour
 [Serializable]
 class AuthModel
 {
-    public string login;
+    public string userName;
     public string password;
 
     public AuthModel(string login, string password)
     {
-        this.login = login;
+        this.userName = login;
         this.password = password;
     }
 }
@@ -154,13 +121,6 @@ class AuthModel
 [Serializable]
 class Token
 {
-    public string access_token;
-    public string username;
-
-    public Token(string access, string username)
-    {
-        this.access_token = access;
-        this.username = username;
-    }
+    public string token;
 }
 
