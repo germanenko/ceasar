@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
@@ -16,8 +17,8 @@ using UnityEngine.SceneManagement;
 
 public class Authentication : MonoBehaviour
 {
-    private string _regURI = "https://aa31-92-62-150-144.ngrok-free.app/api/Auth/register";
-    private string _authURI = "https://aa31-92-62-150-144.ngrok-free.app/api/Auth/login";
+    private string _regURI = "https://localhost:7031/api/Auth/register";
+    private string _authURI = "https://localhost:7031/api/Auth/login";
 
     [SerializeField] private TMP_InputField _loginAuth;
     [SerializeField] private TMP_InputField _passAuth;
@@ -29,6 +30,11 @@ public class Authentication : MonoBehaviour
     [SerializeField] private TMP_InputField _confirmReg;
     [SerializeField] private TMP_InputField _firstNameReg;
     [SerializeField] private TMP_InputField _lastNameReg;
+
+    [SerializeField] private TextMeshProUGUI _firstNameText;
+    [SerializeField] private TextMeshProUGUI _lastNameText;
+
+    public string Token;
 
     public async void Authorization()
     {
@@ -44,33 +50,6 @@ public class Authentication : MonoBehaviour
 
     }
 
-    IEnumerator AuthorizationCoroutine(AuthModel authModel)
-    {
-        using (UnityWebRequest wr = UnityWebRequest.Post(_authURI, JsonUtility.ToJson(authModel)))
-        {
-            wr.SetRequestHeader("Content-Type", "application/json");
-
-            yield return wr.SendWebRequest();
-
-            switch (wr.result)
-            {
-                case UnityWebRequest.Result.ConnectionError:
-                case UnityWebRequest.Result.DataProcessingError:
-                    print(wr.error + "   " + wr.result);
-                    break;
-                case UnityWebRequest.Result.ProtocolError:
-                    print(wr.error + "   " + wr.result);
-                    break;
-                case UnityWebRequest.Result.Success:
-                    print(wr.downloadHandler.text);
-                    break;
-            }
-
-        }
-
-        yield return null;
-    }
-
     IEnumerator RegistrationCoroutine()
     {
         yield return null;
@@ -82,7 +61,7 @@ public class Authentication : MonoBehaviour
 
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://aa31-92-62-150-144.ngrok-free.app/api/Auth/"),
+            BaseAddress = new Uri("https://localhost:7031/api/Auth/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
@@ -93,15 +72,49 @@ public class Authentication : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var tokenBodyString = await response.Content.ReadAsStringAsync();
-            //var t = JsonUtility.FromJson<Token>(tokenBodyString);
+            var t = JsonUtility.FromJson<Token>(tokenBodyString);
 
-            print(tokenBodyString);
+            print(t.message);
+            Token = t.message;
+
+            GetUserInfo(Token);
         }
         else
         {
             print(response.Content);
             print(response.RequestMessage);
         }
+    }
+
+    public Dictionary<string, string> GetUserInfo(string token)
+    {
+        using (var client = CreateClient(token))
+        {
+            var response = client.GetAsync("https://localhost:7031/api/Auth/getUserInfo?token=" + Token).Result;
+
+            var result = response.Content.ReadAsStringAsync().Result;
+
+            Dictionary<string, string> userDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+
+            var u = JsonConvert.DeserializeObject<UserDataModel>(userDictionary.Values.ElementAt(1));
+
+            print(u.FirstName + " " + u.LastName);
+
+            _firstNameText.text = u.FirstName;
+            _lastNameText.text = u.LastName;
+
+            return userDictionary;
+        }
+    }
+
+    public HttpClient CreateClient(string accessToken = "")
+    {
+        var client = new HttpClient();
+        if (!string.IsNullOrWhiteSpace(accessToken))
+        {
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+        }
+        return client;
     }
 }
 
@@ -121,6 +134,14 @@ class AuthModel
 [Serializable]
 class Token
 {
-    public string token;
+    public bool isSucceed;
+    public string message;
+}
+
+[Serializable]
+class UserDataModel
+{
+    public string FirstName;
+    public string LastName;
 }
 
