@@ -492,6 +492,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetRandomMaterial.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\AnimateVariables\EaseRect.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Layout\UiLayoutElementSetValues.cs" />
+    <Compile Include="Assets\[1] SOURCE\Chat\ChatManager.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\GetKeyDown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\RectTransformData.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\UiInputFieldSetSelectionColor.cs" />
@@ -1447,6 +1448,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetFsmBool.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Audio\PlayRandomSound.cs" />
+    <Compile Include="Assets\[1] SOURCE\Chat\MessageItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoAsteroidScript.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Canvas\UiCanvasGroupSetAlpha.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\AllowSceneActivation.cs" />

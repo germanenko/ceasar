@@ -12,6 +12,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
@@ -25,34 +26,30 @@ public class Authentication : MonoBehaviour
 
     [Space]
 
-    [SerializeField] private TMP_InputField _loginReg;
-    [SerializeField] private TMP_InputField _passReg;
-    [SerializeField] private TMP_InputField _confirmReg;
-    [SerializeField] private TMP_InputField _firstNameReg;
-    [SerializeField] private TMP_InputField _lastNameReg;
+    [SerializeField] private TMP_InputField _firstName;
+    [SerializeField] private TMP_InputField _lastName;
+    [SerializeField] private TMP_InputField _userName;
+    [SerializeField] private TMP_InputField _email;
+    [SerializeField] private TMP_InputField _password;
 
     [SerializeField] private TextMeshProUGUI _firstNameText;
     [SerializeField] private TextMeshProUGUI _lastNameText;
 
+    [SerializeField] private TextMeshProUGUI _resultRegText;
+    [SerializeField] private TextMeshProUGUI _resultLoginText;
+
     public string Token;
+
+    public UnityEvent OnAuth;
 
     public async void Authorization()
     {
-        //var a = new AuthModel(_loginAuth.text, _passAuth.text);
-        //print(JsonUtility.ToJson(a));
-        //StartCoroutine(AuthorizationCoroutine(a));
-
         await AuthAsync();
     }
 
-    public void Registration()
+    public async void Registration()
     {
-
-    }
-
-    IEnumerator RegistrationCoroutine()
-    {
-        yield return null;
+        await RegisterAsync();
     }
 
     public async Task AuthAsync()
@@ -75,9 +72,50 @@ public class Authentication : MonoBehaviour
             var t = JsonUtility.FromJson<Token>(tokenBodyString);
 
             print(t.message);
+
+            if (t.isSucceed)
+            {
+                _resultLoginText.text = "Authorized";
+                OnAuth?.Invoke();
+            }
+            else
+            {
+                _resultLoginText.text = "Invalid username or password";
+            }
+
             Token = t.message;
 
             GetUserInfo(Token);
+        }
+        else
+        {
+            print(response.Content);
+            print(response.RequestMessage);
+        }
+    }
+
+    public async Task RegisterAsync()
+    {
+        RegisterModel user = new RegisterModel(_firstName.text, _lastName.text, _userName.text, _email.text, _password.text);
+
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri("https://localhost:7031/api/Auth/"),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+
+        var s = JsonUtility.ToJson(user);
+        print(s);
+        var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
+        var response = await client.PostAsync("register", content);
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var tokenBodyString = await response.Content.ReadAsStringAsync();
+            var t = JsonUtility.FromJson<Token>(tokenBodyString);
+
+            print(t.message);
+
+            _resultRegText.text = t.message;
         }
         else
         {
@@ -128,6 +166,25 @@ class AuthModel
     {
         this.userName = login;
         this.password = password;
+    }
+}
+
+[Serializable]
+class RegisterModel
+{
+    public string FirstName;
+    public string LastName;
+    public string UserName;
+    public string Email;
+    public string Password;
+
+    public RegisterModel(string firstName, string lastName, string userName, string email, string password)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        UserName = userName;
+        Email = email;
+        Password = password;
     }
 }
 

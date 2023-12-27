@@ -774,6 +774,8 @@
 "Assets/[0] FRAMEWORK/Time/Time.cs"
 "Assets/[0] FRAMEWORK/Update/Updater.cs"
 "Assets/[1] SOURCE/Account/Authentication.cs"
+"Assets/[1] SOURCE/Chat/ChatManager.cs"
+"Assets/[1] SOURCE/Chat/MessageItem.cs"
 "Assets/[1] SOURCE/Const/Constants.cs"
 "Assets/[1] SOURCE/Const/ConstantSingleton.cs"
 "Assets/[1] SOURCE/DB/DatabaseActions.cs"
