@@ -141,6 +141,8 @@ public class Authentication : MonoBehaviour
             _firstNameText.text = u.FirstName;
             _lastNameText.text = u.LastName;
 
+            Account.Instance.SetUserData(u.FirstName, u.LastName);
+
             return userDictionary;
         }
     }

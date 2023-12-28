@@ -35,16 +35,15 @@ public class ChatManager : MonoBehaviour
     {
         _messageBodies.Clear();
 
+        int messageCount = _messageParent.childCount;
 
-        for (int i = 0; i < _messageParent.childCount; i++)
+        for (int i = 0; i < messageCount; i++)
         {
-            Pooler.Instance.Despawn(PoolType.Entities, _messageParent.GetChild(i).gameObject);
+            print("del " + i);
+            Pooler.Instance.Despawn(PoolType.Entities, _messageParent.GetChild(0).gameObject);
         }
 
-
         _messageBodies = LoadMessagesAsync();
-
-
 
         foreach (var item in _messageBodies)
         {
@@ -58,7 +57,7 @@ public class ChatManager : MonoBehaviour
 
     public async void SendMessage()
     {
-        if (_messageInput.text != "") return;
+        if (_messageInput.text == "") return;
 
         await SendMessageAsync();
     }
@@ -73,7 +72,7 @@ public class ChatManager : MonoBehaviour
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
-        MessageBody m = new MessageBody() { Sender = "sender", Message = _messageInput.text };
+        MessageBody m = new MessageBody() { Sender = Account.Instance.FirstName, Message = _messageInput.text };
 
         string s = JsonUtility.ToJson(m);
 
@@ -112,7 +111,7 @@ public class ChatManager : MonoBehaviour
 
         print(userDictionary.Values.ElementAt(1));
 
-        var mgs = JsonUtility.FromJson<List<MessageBody>>(userDictionary.Values.ElementAt(1));
+        var mgs = JsonConvert.DeserializeObject<List<MessageBody>>(userDictionary.Values.ElementAt(1));
 
         return mgs;
     }
@@ -130,8 +129,13 @@ public class ChatManager : MonoBehaviour
     }
 }
 
+public class Response
+{
+    public bool IsSucceed;
+    public string Message;
+}
 
-
+[Serializable]
 public class MessageBody
 {
     public string Sender;

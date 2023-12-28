@@ -1750,6 +1750,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\Account.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />

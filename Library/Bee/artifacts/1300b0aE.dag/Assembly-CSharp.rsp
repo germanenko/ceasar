@@ -773,6 +773,7 @@
 "Assets/[0] FRAMEWORK/Singleton/Singleton.cs"
 "Assets/[0] FRAMEWORK/Time/Time.cs"
 "Assets/[0] FRAMEWORK/Update/Updater.cs"
+"Assets/[1] SOURCE/Account/Account.cs"
 "Assets/[1] SOURCE/Account/Authentication.cs"
 "Assets/[1] SOURCE/Chat/ChatManager.cs"
 "Assets/[1] SOURCE/Chat/MessageItem.cs"
