@@ -9,17 +9,13 @@ using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 
 public class Authentication : MonoBehaviour
 {
-    private string _regURI = "https://localhost:7031/api/Auth/register";
-    private string _authURI = "https://localhost:7031/api/Auth/login";
+    private string _regURI = "https://2262-79-126-114-167.ngrok-free.app/api/Auth/register";
+    private string _authURI = "https://2262-79-126-114-167.ngrok-free.app/api/Auth/login";
 
     [SerializeField] private TMP_InputField _loginAuth;
     [SerializeField] private TMP_InputField _passAuth;
@@ -44,6 +40,7 @@ public class Authentication : MonoBehaviour
 
     public async void Authorization()
     {
+        _resultLoginText.text = "Authorizing...";
         await AuthAsync();
     }
 
@@ -58,7 +55,7 @@ public class Authentication : MonoBehaviour
 
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://localhost:7031/api/Auth/"),
+            BaseAddress = new Uri("https://2262-79-126-114-167.ngrok-free.app/api/Auth/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
@@ -100,7 +97,7 @@ public class Authentication : MonoBehaviour
 
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://localhost:7031/api/Auth/"),
+            BaseAddress = new Uri("https://2262-79-126-114-167.ngrok-free.app/api/Auth/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
@@ -128,7 +125,7 @@ public class Authentication : MonoBehaviour
     {
         using (var client = CreateClient(token))
         {
-            var response = client.GetAsync("https://localhost:7031/api/Auth/getUserInfo?token=" + Token).Result;
+            var response = client.GetAsync("https://2262-79-126-114-167.ngrok-free.app/api/Auth/getUserInfo?token=" + Token).Result;
 
             var result = response.Content.ReadAsStringAsync().Result;
 

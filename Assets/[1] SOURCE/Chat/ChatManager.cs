@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using Microsoft.AspNetCore.SignalR.Client;
+using PimDeWitte.UnityMainThreadDispatcher;
 
 public class ChatManager : MonoBehaviour
 {
@@ -24,12 +26,69 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private Dictionary<string, string> _messages;
 
+    private HubConnection _hubConnection;
+
     private void Start()
     {
-        LoadMessages();
+        Application.targetFrameRate = 60;
+
+        //LoadMessages();
+
+        _hubConnection = new HubConnectionBuilder()
+        .WithUrl("https://2262-79-126-114-167.ngrok-free.app/chat-hub")
+        .Build();
+
+        _hubConnection.On<string, string>("Receive", (user, message) =>
+        {
+            try
+            {
+                print($"{user}: {message}");
+                UnityMainThreadDispatcher.Instance().Enqueue(() => { AddMessage(user, message); });
+            }
+            catch (Exception ex)
+            {
+                print(ex.Message);
+            }
+        });
+
+        ConnectToChat();
     }
 
+    private async void ConnectToChat()
+    {
+        try
+        {
+            // подключемся к хабу
+            await _hubConnection.StartAsync();
+            await _hubConnection.InvokeAsync("Send", "Чат", $"{_hubConnection.ConnectionId} вошли в чат");
+            //AddMessage("Чат", $"{_hubConnection.ConnectionId} вошли в чат");
+        }
+        catch (Exception ex)
+        {
+            print(ex.Message);
+        }
+    }
 
+    public async void Send()
+    {
+        try
+        {
+            await _hubConnection.InvokeAsync("Send", Account.Instance.FirstName, _messageInput.text);
+        }
+        catch (Exception ex)
+        {
+            print(ex.Message);
+        }
+    }
+
+    private void AddMessage(string user, string message)
+    {
+        //var m = Pooler.Instance.Spawn(PoolType.Entities, _messageItem, default, default, _messageParent);
+        //var m = Instantiate(_messageItem, _messageParent);
+        //m.GetComponent<MessageItem>().Init(user, message);
+        var m = Instantiate(_messageItem, _messageParent);
+        m.GetComponent<MessageItem>().Init(user, message);
+    }
 
     public void LoadMessages()
     {
@@ -68,7 +127,7 @@ public class ChatManager : MonoBehaviour
     {
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://localhost:7031/api/Chat/"),
+            BaseAddress = new Uri("https://2262-79-126-114-167.ngrok-free.app/api/Chat/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
@@ -97,11 +156,11 @@ public class ChatManager : MonoBehaviour
     {
         using var client = new HttpClient()
         {
-            BaseAddress = new Uri("https://localhost:7031/api/Auth/"),
+            BaseAddress = new Uri("https://2262-79-126-114-167.ngrok-free.app/api/Auth/"),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
-        var response = client.GetAsync("https://localhost:7031/api/Chat/get-messages").Result;
+        var response = client.GetAsync("https://2262-79-126-114-167.ngrok-free.app/api/Chat/get-messages").Result;
 
         var result = response.Content.ReadAsStringAsync().Result;
 

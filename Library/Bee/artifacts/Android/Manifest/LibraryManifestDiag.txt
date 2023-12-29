@@ -10,6 +10,7 @@ android.permission.INTERNET was added because:
 		Unity.Services.Core.Telemetry-FeaturesChecked.txt
 	System.Net.Sockets was present in:
 		Assembly-CSharp-FeaturesChecked.txt
+		Microsoft.AspNetCore.Connections.Abstractions-FeaturesChecked.txt
 	UnityEngine.Network was present in:
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
