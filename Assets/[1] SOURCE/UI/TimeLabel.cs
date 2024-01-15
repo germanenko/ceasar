@@ -75,9 +75,20 @@ public class TimeLabel : MonoBehaviour
 
     public void LerpValue(int start, int end, float duration)
     {
-        DOTween.To(() => start, x => { TimeValue = x; LabelText.text = TimeValue.ToString(); }, end, duration).OnUpdate(() => { if (Selected) {
+        DOTween.To(() => start, x => { TimeValue = x; LabelText.text = TimeValue.ToString(); }, end, duration).OnUpdate(() => 
+        { 
+            if (Selected) 
+            {
                 UpdateTime();
-            } }).OnComplete(() => { OnEndIncrement?.Invoke(); });
+            } 
+        }).OnComplete(() => { OnEndIncrement?.Invoke(); });
+    }
+
+
+
+    public void LerpValueAmerican(bool up, float duration)
+    {
+        StartCoroutine(CalculateTimeAmerican(up, duration));
     }
 
 
@@ -92,5 +103,43 @@ public class TimeLabel : MonoBehaviour
     public bool GetStartTime()
     {
         return Clock.GetStartTime();
+    }
+
+
+
+    private IEnumerator CalculateTimeAmerican(bool up, float duration)
+    {
+        if (up)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                TimeValue++;
+                if(TimeValue == 13)
+                {
+                    TimeValue = 1;
+                }
+                LabelText.text = TimeValue.ToString();
+                UpdateTime();
+                yield return new WaitForSeconds(duration / 12);
+            }
+            OnEndIncrement?.Invoke();
+            yield return null;
+        }
+        else
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                TimeValue--;
+                if (TimeValue == 0)
+                {
+                    TimeValue = 12;
+                }
+                LabelText.text = TimeValue.ToString();
+                UpdateTime();
+                yield return new WaitForSeconds(duration / 12);
+            }
+            OnEndIncrement?.Invoke();
+            yield return null;
+        }
     }
 }

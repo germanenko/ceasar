@@ -47,8 +47,6 @@ public class Clock : MonoBehaviour
         DrawMinute(60, 230);
     }
 
-
-
     public void SetActiveTimeSelector(bool activate)
     {
 
@@ -61,31 +59,39 @@ public class Clock : MonoBehaviour
         {
             _clockSelectable.Select();
         }
-        else
-        {
-            //if (_endHours == 0 && _endMinutes == 0)
-            //{
-            //    _endHours = _startHours;
-            //    _endMinutes = _startMinutes;
-            //}
-        }
 
         _timeTypeSelector.SetActive(activate);
         _timeButtonText.gameObject.SetActive(!activate);
 
         _startTimeText.GetComponent<UIToggle>().isOn = true;
 
-        if(Localization.Instance.Language == LocalizationLanguage.Russia)
+        if (_hourList.Count > 0)
         {
-            SetPreviewPeriodText(_startTime == _endTime ?
-            string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute) :
-                $"{string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute)} - {string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute)}");
+            RegenerateHours();
+        }
+
+        if (Localization.Instance.Language == LocalizationLanguage.Russia)
+        {
+            if(_startTime.Hour == _endTime.Hour && _startTime.Minute == _endTime.Minute)    
+            {
+                SetPreviewPeriodText(string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute));
+            }
+            else
+            {
+                SetPreviewPeriodText($"{string.Format("{0:00}:{1:00}", _startTime.Hour, _startTime.Minute)} - {string.Format("{0:00}:{1:00}", _endTime.Hour, _endTime.Minute)}");
+            }
+            
         }
         else if (Localization.Instance.Language == LocalizationLanguage.USA)
         {
-            SetPreviewPeriodText(_startTime == _endTime ?
-            _startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
-                $"{_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {_endTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
+            if (_startTime.Hour == _endTime.Hour && _startTime.Minute == _endTime.Minute)
+            {
+                SetPreviewPeriodText(_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture));
+            }
+            else
+            {
+                SetPreviewPeriodText($"{_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {_endTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
+            }
         }
         
         if (Localization.Instance.Language == LocalizationLanguage.Russia)
@@ -494,12 +500,29 @@ public class Clock : MonoBehaviour
 
     #region ClockGenerator
 
-    public void RegenerateHours(bool isDay)
+    public void ChangeDayTimeHours(bool isDay)
     {
         _isDay = isDay;
 
         if (Localization.Instance.Language == LocalizationLanguage.USA)
         {
+            for (int i = 0; i < _hourList.Count; i++)
+            {
+                if (_isDay)
+                {
+                    //_hourList[i].LabelText.text = "12";
+                    //_hourList[i].TimeValue = 12;
+
+                    _hourList[i].LerpValueAmerican(true, .5f);
+                }
+                else
+                {
+                    //_hourList[i].LabelText.text = i.ToString();
+                    //_hourList[i].TimeValue = i;
+                    _hourList[i].LerpValueAmerican(false, .5f);
+                }
+            }
+
             foreach (var hour in _hourList)
             {
                 if (hour.Selected)
@@ -507,14 +530,9 @@ public class Clock : MonoBehaviour
                     hour.SetTime();
                 }
             }
+            
             return;
         }
-            
-
-        //foreach (var item in _hourList)
-        //{
-        //    Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
-        //}
 
         for (int i = 0; i < _hourList.Count; i++)
         {
@@ -565,6 +583,72 @@ public class Clock : MonoBehaviour
         //DrawHour(12, 140);
     }
 
+
+
+    public void RegenerateHours()
+    {
+        if (Localization.Instance.Language == LocalizationLanguage.USA)
+        {
+            for (int i = 0; i < _hourList.Count; i++)
+            {
+                if(i == 0)
+                {
+                    _hourList[i].TimeValue = 12;
+                }
+                else
+                {
+                    _hourList[i].TimeValue = i;                   
+                }
+                _hourList[i].LabelText.text = _hourList[i].TimeValue.ToString();
+            }
+            return;
+        }
+        else if(Localization.Instance.Language == LocalizationLanguage.Russia)
+        {
+            for (int i = 0; i < _hourList.Count; i++)
+            {
+                if (i == 0)
+                {
+                    if (_isDay)
+                    {
+                        _hourList[i].LabelText.text = "12";
+                        _hourList[i].TimeValue = 12;
+                    }
+                    else
+                    {
+                        _hourList[i].LabelText.text = i.ToString();
+                        _hourList[i].TimeValue = i;
+                    }
+                    _hourList[i].OnEndIncrement.AddListener(EnableMarks);
+                }
+                else
+                {
+                    if (_isDay)
+                    {
+                        _hourList[i].LabelText.text = (i + 12).ToString();
+                        _hourList[i].TimeValue = i + 12;
+                    }
+                    else
+                    {
+                        _hourList[i].LabelText.text = i.ToString();
+                        _hourList[i].TimeValue = i;
+                    }
+                }
+            }
+            
+        }
+
+        foreach (var hour in _hourList)
+        {
+            if (hour.Selected)
+            {
+                hour.SetTime();
+            }
+        }
+    }
+
+
+
     private void DrawHour(int steps, int radius)
     {
         for (int i = 0; i < steps; i++)
@@ -597,8 +681,8 @@ public class Clock : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    s.LabelText.text = "12";
                     s.TimeValue = 12;
+                    s.LabelText.text = "12";
                     s.OnEndIncrement.AddListener(EnableMarks);
                 }
                 else
