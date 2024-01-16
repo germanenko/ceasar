@@ -49,7 +49,7 @@ namespace Germanenko.Source
 
             string sql = "SELECT * FROM Tasks";
 
-            List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
+            //List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
             string deletedSql = "SELECT * FROM DeletedTasks";
 

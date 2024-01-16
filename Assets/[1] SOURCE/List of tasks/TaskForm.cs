@@ -161,7 +161,7 @@ namespace Germanenko.Source
 
 		public void SaveArchive()
 		{
-            Toolbox.Get<Tables>().AddArchiveTask(_nameField.text, _colorField._selectedItem.name, _id);
+            Toolbox.Get<Tables>().AddArchiveTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
         }
 
 

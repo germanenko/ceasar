@@ -81,6 +81,8 @@ namespace Germanenko.Source
 
         public void AddDraft(string name, string color, DateTime startPeriod, DateTime endPeriod)
         {
+            Debug.Log(startPeriod.ToString());
+
             AddTask(name, color, startPeriod, endPeriod);
 
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
@@ -227,7 +229,7 @@ namespace Germanenko.Source
 
 
 
-        public void AddArchiveTask(string name, string color, int id = 0)
+        public void AddArchiveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id = 0)
         {
             string checkArchive = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 1";
             List<SavesAndDrafts> archives = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(checkArchive);
@@ -239,10 +241,12 @@ namespace Germanenko.Source
             {
                 if (tasks[0].Name != name || tasks[0].Color != color)
                 {
-                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color) VALUES (?, ?, ?)",
+                    ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)",
                         name == null ? "" : name,
                         "",
-                        color == null ? "ffffffff" : color);
+                        color == null ? "ffffffff" : color,
+                        startPeriod,
+                        endPeriod);
 
                     var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
