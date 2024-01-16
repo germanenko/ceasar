@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Calendar : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class Calendar : MonoBehaviour
     [SerializeField] private UIToggleGroup _daysToggleGroup;
     [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
+    [SerializeField] private GridLayoutGroup _daysGrid;
+
     private void Start()
     {
         _day = DateTime.Now.Day;
@@ -64,6 +67,7 @@ public class Calendar : MonoBehaviour
         _dateTextInButton.text = _date.Date.ToShortDateString();
 
         GenerateMonthList();
+
     }
 
 
@@ -81,6 +85,10 @@ public class Calendar : MonoBehaviour
     public void OpenCalendarWindow()
     {
         _calendarWindow.SetActive(true);
+
+        print($"{_daysGrid.GetComponent<RectTransform>().rect.width}x{_daysGrid.GetComponent<RectTransform>().rect.height}");
+
+        _daysGrid.cellSize = new Vector2(_daysGrid.GetComponent<RectTransform>().rect.width / 7, _daysGrid.GetComponent<RectTransform>().rect.height / 6 - 3);
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
