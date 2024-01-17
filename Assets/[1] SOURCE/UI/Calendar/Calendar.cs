@@ -148,11 +148,103 @@ public class Calendar : MonoBehaviour
         {
             item.Drop();
 
-            Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
+            //Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
         }
 
-        _dayButtons.Clear();
+        //_dayButtons.Clear();
 
+        if(_dayButtons.Count > 0)
+        {
+            DateTime prevDate = _date;
+            prevDate = prevDate.AddMonths(-1);
+
+            for (int i = 0; i < (Localization.Instance.Language == LocalizationLanguage.Russia ? GetMonthStartDay(year, month) : GetMonthStartDay(year, month) + 1); i++) // числа прошлого мес€ца
+            {
+                DayButton dayButton = SpawnDayButton();
+
+                DateTime dt;
+
+                if (Localization.Instance.Language == LocalizationLanguage.Russia)
+                    dt = new DateTime(prevDate.Year, prevDate.Month, DateTime.DaysInMonth(prevDate.Year, prevDate.Month) - GetMonthStartDay(year, month) + i + 1);
+                else
+                    dt = new DateTime(prevDate.Year, prevDate.Month, DateTime.DaysInMonth(prevDate.Year, prevDate.Month) - GetMonthStartDay(year, month) + i);
+
+                dayButton.SetDay(dt); //DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1
+                dayButton.SetCalendar(this);
+                dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+                dayButton.SetNextAndPreviousMonth(false, true);
+
+                if (Localization.Instance.Language == LocalizationLanguage.Russia)
+                {
+                    if (new DateTime(prevDate.Year, prevDate.Month, DateTime.DaysInMonth(prevDate.Year, prevDate.Month) - GetMonthStartDay(year, month) + i + 1).DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        dayButton.SetWeekend(true);
+                    }
+                }
+                else
+                {
+                    if (new DateTime(prevDate.Year, prevDate.Month, DateTime.DaysInMonth(prevDate.Year, prevDate.Month) - GetMonthStartDay(year, month) + i).DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        dayButton.SetWeekend(true);
+                    }
+                }
+
+                _dayButtons.Add(dayButton);
+            }
+
+
+
+            for (int i = 0; i < DateTime.DaysInMonth(year, month); i++) // числа текущего мес€ца
+            {
+                DayButton dayButton = SpawnDayButton();
+
+                DateTime dt = new DateTime(year, month, i + 1);
+
+                dayButton.SetDay(dt);
+                dayButton.SetCalendar(this);
+                dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+                dayButton.SetNextAndPreviousMonth(false, false);
+
+                if (new DateTime(year, month, i + 1).DayOfWeek == DayOfWeek.Sunday)
+                {
+                    dayButton.SetWeekend(true);
+                }
+
+                if (i + 1 == _day && _date.Month == DateTime.Now.Month)
+                {
+                    dayButton.UIToggle.isOn = true;
+                    dayButton.DayText.fontStyle = FontStyles.Bold;
+                }
+
+                _dayButtons.Add(dayButton);
+            }
+
+            int lDays = 42 - _dayButtons.Count;
+
+            DateTime nDate = _date;
+            nDate = nDate.AddMonths(1);
+
+            for (int i = 0; i < lDays; i++) // числа следующего мес€ца
+            {
+                DayButton dayButton = SpawnDayButton();
+
+                DateTime dt = new DateTime(nDate.Year, nDate.Month, i + 1);
+
+                dayButton.SetDay(dt);
+                dayButton.SetCalendar(this);
+                dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+                dayButton.SetNextAndPreviousMonth(true, false);
+
+                if (new DateTime(nDate.Year, nDate.Month, i + 1).DayOfWeek == DayOfWeek.Sunday)
+                {
+                    dayButton.SetWeekend(true);
+                }
+
+                _dayButtons.Add(dayButton);
+            }
+        }
+
+        #region GenerateButtons
         DateTime previousDate = _date;
         previousDate = previousDate.AddMonths(-1);
 
@@ -240,6 +332,7 @@ public class Calendar : MonoBehaviour
 
             _dayButtons.Add(dayButton);
         }
+        #endregion
     }
 
 
