@@ -238,7 +238,11 @@ MonoBehaviour:
   _defaultColor: {r: 1, g: 1, b: 0.9882353, a: 1}
   _weekendColor: {r: 0.9882353, g: 0.81960785, b: 0.7490196, a: 1}
   _otherMonthColor: {r: 0.9490196, g: 0.93333334, b: 0.8901961, a: 1}
+  _currentColor: {r: 0, g: 0, b: 0, a: 0}
   _animator: {fileID: 3989101325075650210}
+  _nextMonth: 0
+  _previousMonth: 0
+  _isWeekend: 0
 --- !u!114 &6058112068237699085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,19 +371,7 @@ MonoBehaviour:
     Runners: []
     Event:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6100715885518733936}
-          m_TargetAssemblyTypeName: DayButton, Assembly-CSharp
-          m_MethodName: DeselectDay
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   OnInstantToggleOffCallback:
     EventName: OnInstantToggleOffCallback
     Runners: []

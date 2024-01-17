@@ -208,7 +208,7 @@ public class Calendar : MonoBehaviour
                 dayButton.SetWeekend(true);
             }
 
-            if(i+1 == _day)
+            if(i+1 == _day && _date.Month == DateTime.Now.Month)
             {
                 dayButton.UIToggle.isOn = true;
                 dayButton.DayText.fontStyle = FontStyles.Bold;
