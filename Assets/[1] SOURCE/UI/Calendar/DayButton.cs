@@ -74,7 +74,6 @@ public class DayButton : MonoBehaviour
     public void SelectDay()
     {
         _calendar.SetDay(_dayInDateTime);
-        print(_dayInDateTime.ToString());
     }
 
 
@@ -106,7 +105,10 @@ public class DayButton : MonoBehaviour
         SetNextAndPreviousMonth(false, false);
         SetWeekend(false);
         DayText.fontStyle = FontStyles.Normal;
-        //UIToggle.isOn = false;
+
+        if(UIToggle.isOn)
+            UIToggle.isOn = false;
+
         SetColor(_defaultColor);
     }
 }

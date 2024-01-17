@@ -86,8 +86,6 @@ public class Calendar : MonoBehaviour
     {
         _calendarWindow.SetActive(true);
 
-        print($"{_daysGrid.GetComponent<RectTransform>().rect.width}x{_daysGrid.GetComponent<RectTransform>().rect.height}");
-
         _daysGrid.cellSize = new Vector2(_daysGrid.GetComponent<RectTransform>().rect.width / 7, _daysGrid.GetComponent<RectTransform>().rect.height / 6 - 3);
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
@@ -113,7 +111,6 @@ public class Calendar : MonoBehaviour
     public void SetMonth(DateTime month)
     {
         _date = new DateTime(month.Year, month.Month, _date.Day);
-        print(_date.ToShortDateString());
         UpdateDateText();
         GenerateCalendar(_date.Year, _date.Month);
     }
@@ -131,7 +128,14 @@ public class Calendar : MonoBehaviour
 
     private void UpdateDateText()
     {
-        _dateText.text = _date.Date.ToShortDateString();
+        if(Localization.Instance.Language == LocalizationLanguage.Russia)
+        {
+            _dateText.text = _date.ToString("dd.MM.yy");
+        }
+        else if(Localization.Instance.Language == LocalizationLanguage.USA)
+        {
+            _dateText.text = _date.ToString("MM.dd.yy");
+        }
     }
 
 
@@ -152,21 +156,36 @@ public class Calendar : MonoBehaviour
         DateTime previousDate = _date;
         previousDate = previousDate.AddMonths(-1);
 
-        for (int i = 0; i < GetMonthStartDay(year, month); i++) // числа прошлого мес€ца
+        for (int i = 0; i < (Localization.Instance.Language == LocalizationLanguage.Russia ? GetMonthStartDay(year, month) : GetMonthStartDay(year, month) + 1); i++) // числа прошлого мес€ца
         {
             DayButton dayButton = SpawnDayButton();
 
-            DateTime dt = new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1);
+            DateTime dt;
+
+            if(Localization.Instance.Language == LocalizationLanguage.Russia)
+                dt = new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(previousDate.Year, previousDate.Month) - GetMonthStartDay(year, month) + i + 1);
+            else
+                dt = new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(previousDate.Year, previousDate.Month) - GetMonthStartDay(year, month) + i);
 
             dayButton.SetDay(dt); //DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1
             dayButton.SetCalendar(this);
             dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
             dayButton.SetNextAndPreviousMonth(false, true);
 
-            if (new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1).DayOfWeek == DayOfWeek.Sunday)
+            if (Localization.Instance.Language == LocalizationLanguage.Russia)
             {
-                dayButton.SetWeekend(true);
+                if (new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(previousDate.Year, previousDate.Month) - GetMonthStartDay(year, month) + i + 1).DayOfWeek == DayOfWeek.Sunday)
+                {
+                    dayButton.SetWeekend(true);
+                }
             }
+            else
+            {
+                if (new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(previousDate.Year, previousDate.Month) - GetMonthStartDay(year, month) + i).DayOfWeek == DayOfWeek.Sunday)
+                {
+                    dayButton.SetWeekend(true);
+                }
+            }    
 
             _dayButtons.Add(dayButton);
         }
@@ -258,7 +277,6 @@ public class Calendar : MonoBehaviour
 
     public string GetShortMonthName(int month)
     {
-        print(month);
         return _months.ContainsKey(month) ? _months[month][1] : "none";
     }
 
@@ -331,12 +349,16 @@ public class Calendar : MonoBehaviour
         return dayButton;
     }
 
+
+
     private void CheckIfOutside()
     {
         Camera camera = null;
         if (!RectTransformUtility.RectangleContainsScreenPoint(_calendarWindow.GetComponent<RectTransform>(), Input.mousePosition, camera))
             CloseCalendarWindow();
     }
+
+
 
     private int GetMonthStartDay(int year, int month)
     {
