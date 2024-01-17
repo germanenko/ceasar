@@ -91,7 +91,8 @@ ScriptsOnlyBuild:
     - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
-    - Doozy.Editor.UIManager.ScriptableObjects.UIToggleIdDatabase
+    - Doozy.Editor.Signals.ScriptableObjects.StreamIdDatabase
+    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -183,6 +184,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -457,6 +459,12 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: OnShow
@@ -1094,6 +1102,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14088}
     - Class: 114
       Script: {instanceID: 14126}
+    - Class: 114
+      Script: {instanceID: 14222}
     - Class: 114
       Script: {instanceID: 14330}
     - Class: 114

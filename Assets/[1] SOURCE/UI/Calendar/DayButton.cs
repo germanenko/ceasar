@@ -102,12 +102,11 @@ public class DayButton : MonoBehaviour
 
     public void Drop()
     {
+        if (UIToggle.isOn)
+            UIToggle.isOn = false;
         SetNextAndPreviousMonth(false, false);
         SetWeekend(false);
         DayText.fontStyle = FontStyles.Normal;
         SetColor(_defaultColor);
-
-        if (UIToggle.isOn)
-            UIToggle.isOn = false;
     }
 }

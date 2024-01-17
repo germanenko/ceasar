@@ -158,10 +158,12 @@ public class Calendar : MonoBehaviour
             DateTime prevDate = _date;
             prevDate = prevDate.AddMonths(-1);
 
+            int j = 0;
+
             for (int i = 0; i < (Localization.Instance.Language == LocalizationLanguage.Russia ? GetMonthStartDay(year, month) : GetMonthStartDay(year, month) + 1); i++) // числа прошлого мес€ца
             {
-                DayButton dayButton = SpawnDayButton();
-
+                DayButton dayButton = _dayButtons[j];
+                j++;
                 DateTime dt;
 
                 if (Localization.Instance.Language == LocalizationLanguage.Russia)
@@ -188,16 +190,14 @@ public class Calendar : MonoBehaviour
                         dayButton.SetWeekend(true);
                     }
                 }
-
-                _dayButtons.Add(dayButton);
             }
 
 
 
             for (int i = 0; i < DateTime.DaysInMonth(year, month); i++) // числа текущего мес€ца
             {
-                DayButton dayButton = SpawnDayButton();
-
+                DayButton dayButton = _dayButtons[j];
+                j++;
                 DateTime dt = new DateTime(year, month, i + 1);
 
                 dayButton.SetDay(dt);
@@ -215,19 +215,17 @@ public class Calendar : MonoBehaviour
                     dayButton.UIToggle.isOn = true;
                     dayButton.DayText.fontStyle = FontStyles.Bold;
                 }
-
-                _dayButtons.Add(dayButton);
             }
 
-            int lDays = 42 - _dayButtons.Count;
+            int lDays = 42 - j;
 
             DateTime nDate = _date;
             nDate = nDate.AddMonths(1);
 
             for (int i = 0; i < lDays; i++) // числа следующего мес€ца
             {
-                DayButton dayButton = SpawnDayButton();
-
+                DayButton dayButton = _dayButtons[j];
+                j++;
                 DateTime dt = new DateTime(nDate.Year, nDate.Month, i + 1);
 
                 dayButton.SetDay(dt);
@@ -239,9 +237,8 @@ public class Calendar : MonoBehaviour
                 {
                     dayButton.SetWeekend(true);
                 }
-
-                _dayButtons.Add(dayButton);
             }
+            return;
         }
 
         #region GenerateButtons
