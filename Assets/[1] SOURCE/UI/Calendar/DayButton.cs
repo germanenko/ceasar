@@ -1,5 +1,6 @@
 using Doozy.Runtime.UIManager.Animators;
 using Doozy.Runtime.UIManager.Components;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,6 +12,7 @@ public class DayButton : MonoBehaviour
     [SerializeField] private Calendar _calendar;
 
     [SerializeField] private int _day;
+    [SerializeField] private DateTime _dayInDateTime;
 
     [SerializeField] private TextMeshProUGUI _dayText;
     public TextMeshProUGUI DayText => _dayText;
@@ -20,13 +22,44 @@ public class DayButton : MonoBehaviour
     public UIToggle UIToggle;
 
     [SerializeField] private Color _defaultColor;
+    [SerializeField] private Color _weekendColor;
+    [SerializeField] private Color _otherMonthColor;
+    [SerializeField] private Color _currentColor;
 
     [SerializeField] private UIToggleColorAnimator _animator;
 
-    public void SetDay(int day)
+    [SerializeField] private bool _nextMonth;
+    [SerializeField] private bool _previousMonth;
+    [SerializeField] private bool _isWeekend;
+
+    public void SetDay(DateTime date)
     {
-        _day = day;
-        _dayText.text = day.ToString();
+        _day = date.Day;
+        _dayText.text = _day.ToString();
+        _dayInDateTime = date;
+    }
+
+    
+
+    public void SetNextAndPreviousMonth(bool next, bool previous)
+    {
+        _nextMonth = next;
+        _previousMonth = previous;
+
+        if(next || previous)
+        {
+            SetColor(_otherMonthColor);
+        }
+    }
+
+
+
+    public void SetWeekend(bool weekend)
+    {
+        _isWeekend = weekend;
+        
+        if(weekend)
+            SetColor(_weekendColor);
     }
 
 
@@ -40,7 +73,8 @@ public class DayButton : MonoBehaviour
 
     public void SelectDay()
     {
-        _calendar.SetDay(_day);
+        _calendar.SetDay(_dayInDateTime);
+        print(_dayInDateTime.ToString());
     }
 
 
@@ -48,23 +82,31 @@ public class DayButton : MonoBehaviour
     public void SetColor(Color color)
     {
         _image.color = color;
-        _defaultColor = color;
+        _currentColor = color;
     }
 
 
 
     public void SetStartColor()
     {
-        _animator.SetStartColorForOff(_defaultColor);
+        _animator.SetStartColorForOff(_currentColor);
     }
 
 
 
-    public void SetInteractable(bool interactable)
+    public void DeselectDay()
     {
-        if(interactable)
-            _image.color = Color.white;
-        else
-            _image.color = Color.gray;
+        SetColor(_currentColor);
+    }
+
+
+
+    public void Drop()
+    {
+        SetNextAndPreviousMonth(false, false);
+        SetWeekend(false);
+        DayText.fontStyle = FontStyles.Normal;
+        //UIToggle.isOn = false;
+        SetColor(_defaultColor);
     }
 }

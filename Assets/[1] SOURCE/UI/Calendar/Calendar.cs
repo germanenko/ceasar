@@ -120,9 +120,10 @@ public class Calendar : MonoBehaviour
 
 
 
-    public void SetDay(int day)
+    public void SetDay(DateTime date)
     {
-        _date = new DateTime(_date.Year, _date.Month, day);
+        //_date = new DateTime(_date.Year, _date.Month, day);
+        _date = date;
         UpdateDateText();
     }
 
@@ -141,8 +142,7 @@ public class Calendar : MonoBehaviour
 
         foreach (var item in _dayButtons)
         {
-            if(item.UIToggle.isOn) 
-                item.UIToggle.isOn = false;
+            item.Drop();
 
             Pooler.Instance.Despawn(PoolType.Entities, item.gameObject);
         }
@@ -152,19 +152,20 @@ public class Calendar : MonoBehaviour
         DateTime previousDate = _date;
         previousDate = previousDate.AddMonths(-1);
 
-        for (int i = 0; i < GetMonthStartDay(year, month); i++)
+        for (int i = 0; i < GetMonthStartDay(year, month); i++) // числа прошлого мес€ца
         {
             DayButton dayButton = SpawnDayButton();
 
-            dayButton.SetDay(DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1);
-            dayButton.SetInteractable(false);
+            DateTime dt = new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1);
+
+            dayButton.SetDay(dt); //DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1
             dayButton.SetCalendar(this);
-            dayButton.SetColor(_otherMonthColor);
             dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+            dayButton.SetNextAndPreviousMonth(false, true);
 
             if (new DateTime(previousDate.Year, previousDate.Month, DateTime.DaysInMonth(year, month - 1) - GetMonthStartDay(year, month) + i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
-                dayButton.SetColor(_weekendColor);
+                dayButton.SetWeekend(true);
             }
 
             _dayButtons.Add(dayButton);
@@ -172,24 +173,26 @@ public class Calendar : MonoBehaviour
 
 
 
-        for (int i = 0; i < DateTime.DaysInMonth(year, month); i++)
+        for (int i = 0; i < DateTime.DaysInMonth(year, month); i++) // числа текущего мес€ца
         {
             DayButton dayButton = SpawnDayButton();
 
-            dayButton.SetDay(i + 1);
-            dayButton.SetInteractable(true);
+            DateTime dt = new DateTime(year, month, i+1);
+
+            dayButton.SetDay(dt);
             dayButton.SetCalendar(this);
-            dayButton.SetColor(_defaultColor);
             dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+            dayButton.SetNextAndPreviousMonth(false, false);
 
             if (new DateTime(year, month, i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
-                dayButton.SetColor(_weekendColor);
+                dayButton.SetWeekend(true);
             }
 
             if(i+1 == _day)
             {
                 dayButton.UIToggle.isOn = true;
+                dayButton.DayText.fontStyle = FontStyles.Bold;
             }
 
             _dayButtons.Add(dayButton);
@@ -200,19 +203,20 @@ public class Calendar : MonoBehaviour
         DateTime nextDate = _date;
         nextDate = nextDate.AddMonths(1);
 
-        for (int i = 0; i < lastDays; i++)
+        for (int i = 0; i < lastDays; i++) // числа следующего мес€ца
         {
             DayButton dayButton = SpawnDayButton();
 
-            dayButton.SetDay(i + 1);
-            dayButton.SetInteractable(false);
+            DateTime dt = new DateTime(nextDate.Year, nextDate.Month, i + 1);
+
+            dayButton.SetDay(dt);
             dayButton.SetCalendar(this);
-            dayButton.SetColor(_otherMonthColor);
             dayButton.UIToggle.AddToToggleGroup(_daysToggleGroup);
+            dayButton.SetNextAndPreviousMonth(true, false);
 
             if (new DateTime(nextDate.Year, nextDate.Month, i + 1).DayOfWeek == DayOfWeek.Sunday)
             {
-                dayButton.SetColor(_weekendColor);
+                dayButton.SetWeekend(true);
             }
 
             _dayButtons.Add(dayButton);
@@ -230,7 +234,7 @@ public class Calendar : MonoBehaviour
             if (i == 0)
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
-                m.Init(date, GetShortMonthName(date.Month), this);
+                m.Init(date, GetShortMonthName(date.Month) + (date.Year != _date.Year ? $" {date.ToString("yy")}" : ""), this);
                 _monthToggles.Add(m);
 
                 m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
