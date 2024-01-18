@@ -81,7 +81,7 @@ namespace Germanenko.Source
 
         public void AddDraft(string name, string color, DateTime startPeriod, DateTime endPeriod)
         {
-            Debug.Log(startPeriod.ToString());
+            if (name == "") return;
 
             AddTask(name, color, startPeriod, endPeriod);
 

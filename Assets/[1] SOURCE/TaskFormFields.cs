@@ -33,23 +33,23 @@ namespace Germanenko.Source
             ClearFields();
 
 
-            for (int i = 0; i < 10; i++)
-            {
+            //for (int i = 0; i < 5; i++)
+            //{
 
-                newInputField = Instantiate(_inputField, parentTransform);
-                _listOfInputFields.Add(newInputField);
-                _listOfObjects.Add(newInputField.gameObject);
-            }
+            //    newInputField = Instantiate(_inputField, parentTransform);
+            //    _listOfInputFields.Add(newInputField);
+            //    _listOfObjects.Add(newInputField.gameObject);
+            //}
 
 
 
-            for (int i = 0; i < 10; i++)
-            {
+            //for (int i = 0; i < 3; i++)
+            //{
 
-                newDropdown = Instantiate(_dropDown, parentTransform);
-                _listOfDropdown.Add(newDropdown);
-                _listOfObjects.Add(newDropdown.gameObject);
-            }
+            //    newDropdown = Instantiate(_dropDown, parentTransform);
+            //    _listOfDropdown.Add(newDropdown);
+            //    _listOfObjects.Add(newDropdown.gameObject);
+            //}
 
 
 
