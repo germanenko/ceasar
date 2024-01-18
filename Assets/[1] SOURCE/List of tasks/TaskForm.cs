@@ -17,7 +17,7 @@ namespace Germanenko.Source
 	{
 
 		[SerializeField] private TaskFormFields _fields;
-		[SerializeField] private Transform itemParent;
+		[SerializeField] private Transform _itemParent;
 
 		[SerializeField] private int _id;
 
@@ -95,7 +95,7 @@ namespace Germanenko.Source
 
 			if (newY < 0) return;
 
-			(itemParent.transform as RectTransform).DOAnchorPosY(newY, 0.3f);
+			(_itemParent.transform as RectTransform).DOAnchorPosY(newY, 0.3f);
 
 		}
 
@@ -222,7 +222,7 @@ namespace Germanenko.Source
 		{
             _colorField.SelectDDItem("FF0000");
 
-            _fields.CreateFields(itemParent);
+            _fields.CreateFields(_itemParent);
 
             SetTimeButtonText();
 
@@ -390,6 +390,19 @@ namespace Germanenko.Source
             }
         }
 
+
+
+        public void AddInputField()
+        {
+            Pooler.Instance.Spawn(PoolType.Entities, _fields.InputField, default, default, _itemParent);
+        }
+
+
+
+        public void AddDropDown()
+        {
+            Pooler.Instance.Spawn(PoolType.Entities, _fields.Dropdown.gameObject, default, default, _itemParent);
+        }
 
 
         private void OnDestroy()

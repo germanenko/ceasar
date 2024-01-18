@@ -12,7 +12,9 @@ namespace Germanenko.Source
     {
 
         [SerializeField] private Dropdown _dropDown;
+        public Dropdown Dropdown => _dropDown;
         [SerializeField] private GameObject _inputField;
+        public GameObject InputField => _inputField;
 
         [SerializeField] private List<Dropdown> _listOfDropdown = new();
         [SerializeField] private List<GameObject> _listOfInputFields = new();

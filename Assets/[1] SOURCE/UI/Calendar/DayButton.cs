@@ -93,13 +93,6 @@ public class DayButton : MonoBehaviour
 
 
 
-    public void SetStartColor()
-    {
-        _animator.SetStartColorForOff(_currentColor);
-    }
-
-
-
     public void DeselectDay()
     {
         SetColor(_currentColor);
