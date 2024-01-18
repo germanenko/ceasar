@@ -79,21 +79,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
-    - Doozy.Editor.Signals.ScriptableObjects.StreamIdDatabase
-    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -117,6 +103,7 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Animators.UIToggleVector2Animator
     - Doozy.Runtime.UIManager.Components.UIButton
     - Doozy.Runtime.UIManager.Components.UISelectable
+    - Doozy.Runtime.UIManager.Components.UISlider
     - Doozy.Runtime.UIManager.Components.UIStepper
     - Doozy.Runtime.UIManager.Components.UITab
     - Doozy.Runtime.UIManager.Components.UITag
@@ -185,7 +172,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -427,6 +413,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.SignalSender
     methodName: SendSignalEndInput
+  - assembly: Assembly-CSharp
+    fullTypeName: InputFieldWithHits
+    methodName: OpenNextInputField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -439,9 +428,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: DayButton
     methodName: SelectDay
-  - assembly: Assembly-CSharp
-    fullTypeName: DayButton
-    methodName: SetStartColor
   - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
@@ -730,6 +716,9 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
     methodName: ShowTooltip
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: AddDropDown
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -782,8 +771,14 @@ ScriptsOnlyBuild:
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
   - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: AddInputField
+  - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.SignalSender
     methodName: SendSignalEndInput
+  - assembly: Assembly-CSharp
+    fullTypeName: InputFieldWithHits
+    methodName: OpenNextInputField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -1103,8 +1098,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14088}
     - Class: 114
       Script: {instanceID: 14126}
-    - Class: 114
-      Script: {instanceID: 14222}
     - Class: 114
       Script: {instanceID: 14330}
     - Class: 114
@@ -3320,7 +3313,7 @@ ScriptsOnlyBuild:
     className: PointerMiddleClickTrigger
   - hash:
       serializedVersion: 2
-      Hash: 2373e9adc2f0ae29e997645f8846b217
+      Hash: 794e9b67a37c7fbbcefa86b0dc0aab75
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: TaskForm

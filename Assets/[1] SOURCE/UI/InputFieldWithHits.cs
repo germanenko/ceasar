@@ -38,6 +38,21 @@ public class InputFieldWithHits : MonoBehaviour
         StartCoroutine(ConstantSingleton.Instance.TaskFormScroll.FocusOnItemCoroutine(_rectTransform, 2f, new Vector2(0, -500)));
     }
 
+
+
+    public void OpenNextInputField()
+    {
+        var nextInputField = transform.parent.GetChild(transform.GetSiblingIndex() + 1);
+
+        if (nextInputField.TryGetComponent(out InputFieldWithHits inputFieldWithHits))
+        {
+            inputFieldWithHits.FocusOnInputField();
+            inputFieldWithHits.InputField.ActivateInputField();
+        }
+    }
+
+
+
     //private void OnDisable()
     //{
     //    _inputField.onDeselect.RemoveListener(Deselected);
