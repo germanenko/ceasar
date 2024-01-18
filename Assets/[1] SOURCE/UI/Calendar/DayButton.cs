@@ -41,6 +41,13 @@ public class DayButton : MonoBehaviour
 
     
 
+    public void SelectDateFinally()
+    {
+        _calendar.CloseCalendarWindow(true);
+    }
+
+
+
     public void SetNextAndPreviousMonth(bool next, bool previous)
     {
         _nextMonth = next;

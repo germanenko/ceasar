@@ -93,8 +93,18 @@ public class Calendar : MonoBehaviour
 
 
 
-    public void CloseCalendarWindow()
+    public void CloseCalendarWindow(bool saveDate)
     {
+        if(saveDate)
+        {
+            ConfirmDate();
+        }
+
+        foreach (var item in _dayButtons)
+        {
+            item.Drop();
+        }
+
         _calendarWindow.SetActive(false);
     }
 
@@ -400,7 +410,6 @@ public class Calendar : MonoBehaviour
     public void ConfirmDate()
     {
         _dateTextInButton.text = _date.ToShortDateString();
-        CloseCalendarWindow();
     }
 
 
@@ -445,7 +454,7 @@ public class Calendar : MonoBehaviour
     {
         Camera camera = null;
         if (!RectTransformUtility.RectangleContainsScreenPoint(_calendarWindow.GetComponent<RectTransform>(), Input.mousePosition, camera))
-            CloseCalendarWindow();
+            CloseCalendarWindow(false);
     }
 
 

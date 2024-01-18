@@ -20,6 +20,7 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.UnityTextRenderer
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
+    - HutongGames.PlayMakerEditor.FsmEditorWindow
     Assembly-CSharp.dll:
     - Calendar
     - Clock
@@ -82,6 +83,7 @@ ScriptsOnlyBuild:
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
     - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
@@ -91,8 +93,7 @@ ScriptsOnlyBuild:
     - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
-    - Doozy.Editor.Signals.ScriptableObjects.StreamIdDatabase
-    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
+    - Doozy.Editor.UIManager.ScriptableObjects.UIToggleIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -184,7 +185,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1081,6 +1081,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13274}
     - Class: 114
+      Script: {instanceID: 13282}
+    - Class: 114
       Script: {instanceID: 13440}
     - Class: 114
       Script: {instanceID: 13456}
@@ -1102,8 +1104,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14088}
     - Class: 114
       Script: {instanceID: 14126}
-    - Class: 114
-      Script: {instanceID: 14222}
     - Class: 114
       Script: {instanceID: 14330}
     - Class: 114
