@@ -24,6 +24,13 @@ public class MonthToggle : MonoBehaviour
 
 
 
+    public void SetBoldOnMonthName()
+    {
+        _monthNameText.fontStyle = FontStyles.Bold;
+    }
+
+
+
     public void SelectMonth()
     {
         _calendar.SetMonth(_month);

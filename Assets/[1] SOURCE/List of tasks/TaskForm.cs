@@ -9,6 +9,7 @@ using Doozy.Runtime.Signals;
 using DG.Tweening;
 using UnityEngine.Events;
 using System.Globalization;
+using Doozy.Runtime.UIManager.Animators;
 
 namespace Germanenko.Source
 {
@@ -47,6 +48,9 @@ namespace Germanenko.Source
 		[SerializeField] private Image _blur;
 
 		public ScrollRect ScrollRect;
+
+        [SerializeField] private UIContainerUIAnimator _taskFormAnimator;
+        [SerializeField] private Vector3 _closePosition;
 
         public void Start()
         {
@@ -120,12 +124,40 @@ namespace Germanenko.Source
 		public void CloseTask()
 		{
             _blur.material.SetFloat("_Alpha", 0f);
+            SetCloseToLastTask();
             Signal.Send("TaskControl", "CloseTask");
         }
 
 
 
-		public int DraftCount()
+        public void DissolveTaskForm()
+        {
+            _taskFormAnimator.hideAnimation.Move.toCustomValue = new Vector3(0,0,0);
+            _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.7f, .7f, 1);
+        }
+
+
+
+        public void SetCloseToLastTask()
+        {
+            var itemsGrid = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().placeholdersTransform;
+            StartCoroutine(CoWaitForPosition(itemsGrid));
+        }
+
+
+
+        IEnumerator CoWaitForPosition(RectTransform rt)
+        {
+            yield return new WaitForSeconds(.2f);
+            // Find position of objects in grid
+            _closePosition = rt.GetChild(rt.childCount - 1).transform.position;
+
+            _taskFormAnimator.hideAnimation.Move.toCustomValue = _closePosition;
+        }
+
+
+
+        public int DraftCount()
 		{
 			return Toolbox.Get<ListOfTasks>().CountOfDrafts();
         }

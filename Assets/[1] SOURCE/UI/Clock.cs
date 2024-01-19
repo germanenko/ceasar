@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Doozy.Runtime.Reactor.Animators;
 using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
 using System;
@@ -31,8 +32,6 @@ public class Clock : MonoBehaviour
     [SerializeField] private GameObject _timeTypeSelector;
     [SerializeField] private TextMeshProUGUI _timeButtonText;
 
-    [SerializeField] private UISelectable _clockSelectable;
-
     [SerializeField] private bool _isDay;
 
     [SerializeField] private DateTime _startTime;
@@ -41,11 +40,35 @@ public class Clock : MonoBehaviour
     [SerializeField] private DateTime _endTime;
     public DateTime EndTime => _endTime;
 
+    [SerializeField] private UIToggle _dayToggle;
+    [SerializeField] private UIToggle _nightToggle;
+
     void Start()
     {
         DrawHour(12, 140);
         DrawMinute(60, 230);
     }
+
+
+
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            CheckIfOutside();
+        }
+    }
+
+
+
+    private void CheckIfOutside()
+    {
+        Camera camera = null;
+        if (!RectTransformUtility.RectangleContainsScreenPoint(_clock.GetComponent<RectTransform>(), Input.mousePosition, camera))
+            SetActiveTimeSelector(false);
+    }
+
+
 
     public void SetActiveTimeSelector(bool activate)
     {
@@ -53,12 +76,6 @@ public class Clock : MonoBehaviour
         if (!_correctPeriod) return;
 
         _clock.gameObject.SetActive(activate);
-
-
-        if (activate)
-        {
-            _clockSelectable.Select();
-        }
 
         _timeTypeSelector.SetActive(activate);
         _timeButtonText.gameObject.SetActive(!activate);
@@ -69,6 +86,23 @@ public class Clock : MonoBehaviour
         {
             RegenerateHours();
         }
+
+        if (activate)
+        {
+            if (_startTime.Hour <= 12)
+            {
+                _dayToggle.isOn = false;
+                _nightToggle.isOn = true;
+                print("isNight");
+            }
+            else
+            {
+                _nightToggle.isOn = false;
+                _dayToggle.isOn = true;
+                print("isDay");
+            }
+        }
+        
 
         if (Localization.Instance.Language == LocalizationLanguage.Russia)
         {
@@ -104,6 +138,7 @@ public class Clock : MonoBehaviour
             _startTimeText.text = $"{_startTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}";
             _endTimeText.text = $"{_endTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}";
         }
+
     }
 
 
@@ -256,8 +291,6 @@ public class Clock : MonoBehaviour
 
     public void SetTime(int time, TimeLabelType type, bool update = false)
     {
-        _clockSelectable.Select();
-
         switch (type)
         {
             case TimeLabelType.Hour:

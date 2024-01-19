@@ -1,3 +1,4 @@
+using Doozy.Runtime.UIManager.Animators;
 using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
 using System;
@@ -35,6 +36,7 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private Transform _dayButtonsParent;
     [SerializeField] private Transform _monthTogglesParent;
+    [SerializeField] private Transform _calendarButton;
 
     [SerializeField] private List<DayButton> _dayButtons;
     [SerializeField] private List<MonthToggle> _monthToggles;
@@ -55,6 +57,8 @@ public class Calendar : MonoBehaviour
     [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
     [SerializeField] private GridLayoutGroup _daysGrid;
+
+    [SerializeField] private Transform _currentMonthToggle;
 
     private void Start()
     {
@@ -86,9 +90,15 @@ public class Calendar : MonoBehaviour
     {
         _calendarWindow.SetActive(true);
 
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_monthTogglesParent.GetComponent<RectTransform>());
+
+        float distanceBtwnTouchAndCurrentMonth = _calendarButton.position.y - _currentMonthToggle.position.y;
+        _calendarWindow.transform.position = new Vector3(_calendarWindow.transform.position.x, _calendarWindow.transform.position.y - -distanceBtwnTouchAndCurrentMonth, 0);
+
         _daysGrid.cellSize = new Vector2(_daysGrid.GetComponent<RectTransform>().rect.width / 7, _daysGrid.GetComponent<RectTransform>().rect.height / 6 - 3);
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
+
     }
 
 
@@ -362,15 +372,20 @@ public class Calendar : MonoBehaviour
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
                 m.Init(date.AddMonths(i), GetShortMonthName(date.AddMonths(i).Month) + (date.AddMonths(i).Year != _date.Year ? $" {date.AddMonths(i).ToString("yy")}" : ""), this);
+
                 if(date.AddMonths(i).Month == _date.Month)
                 {
-                    m.SelectMonth();
+                    m.UIToggle.isOn = true;
+                    m.SetBoldOnMonthName();
+
+                    _currentMonthToggle = m.transform;
                 }
                 _monthToggles.Add(m);
 
                 m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
             }
         }
+
     }
 
 
