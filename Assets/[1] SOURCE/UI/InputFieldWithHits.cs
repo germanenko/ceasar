@@ -48,6 +48,7 @@ public class InputFieldWithHits : MonoBehaviour
         {
             inputFieldWithHits.FocusOnInputField();
             inputFieldWithHits.InputField.ActivateInputField();
+            inputFieldWithHits.InputField.caretPosition = inputFieldWithHits.InputField.text.Length;
         }
     }
 

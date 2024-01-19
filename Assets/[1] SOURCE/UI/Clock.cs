@@ -91,13 +91,11 @@ public class Clock : MonoBehaviour
         {
             if (_startTime.Hour <= 12)
             {
-                _dayToggle.isOn = false;
                 _nightToggle.isOn = true;
                 print("isNight");
             }
             else
             {
-                _nightToggle.isOn = false;
                 _dayToggle.isOn = true;
                 print("isDay");
             }
