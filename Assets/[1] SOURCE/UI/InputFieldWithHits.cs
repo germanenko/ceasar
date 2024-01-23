@@ -40,8 +40,10 @@ public class InputFieldWithHits : MonoBehaviour
 
 
 
-    public void OpenNextInputField()
+    public void OpenNextInputField(string empty)
     {
+        _inputField.onEndEdit.RemoveListener(OpenNextInputField);
+
         var nextInputField = transform.parent.GetChild(transform.GetSiblingIndex() + 1);
 
         if (nextInputField.TryGetComponent(out InputFieldWithHits inputFieldWithHits))
@@ -66,6 +68,8 @@ public class InputFieldWithHits : MonoBehaviour
         _dropShadow.Fade(.7f, .2f);
         FocusOnInputField();
 
+        _inputField.onEndEdit.AddListener(OpenNextInputField);
+
 #if UNITY_EDITOR
         EditorKeyboard.Open();
 #endif
@@ -78,6 +82,8 @@ public class InputFieldWithHits : MonoBehaviour
         if (!EventSystem.current.alreadySelecting) EventSystem.current.SetSelectedGameObject(null);
         
         _dropShadow.Fade(0f, .2f);
+
+        _inputField.onEndEdit.RemoveListener(OpenNextInputField);
 
 #if UNITY_EDITOR
         EditorKeyboard.Close();
