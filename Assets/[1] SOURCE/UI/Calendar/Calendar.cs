@@ -410,13 +410,21 @@ public class Calendar : MonoBehaviour
 
         try
         {
-            DateTime d = new DateTime(int.Parse(values[2]), int.Parse(values[1]), int.Parse(values[0]));
+            int year;
+            if (values[2].Length < 4)
+                year = 2000 + int.Parse(values[2]);
+            else
+                year = int.Parse(values[2]);
+
+            DateTime d = new DateTime(year, int.Parse(values[1]), int.Parse(values[0]));
             _date = d;
-            _dateText.text = _date.ToShortDateString();
+            print($"{_date.Day}.{_date.Month}.{_date.Year}");
+            UpdateDateText();
         }
         catch (Exception e)
         {
-            _dateText.text = _date.ToShortDateString();
+            print(e.Message);
+            UpdateDateText();
         }
     }
 
