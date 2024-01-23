@@ -40,8 +40,10 @@ public class Clock : MonoBehaviour
     [SerializeField] private DateTime _endTime;
     public DateTime EndTime => _endTime;
 
-    [SerializeField] private UIToggle _dayToggle;
-    [SerializeField] private UIToggle _nightToggle;
+    [SerializeField] private PlayMakerFSM _dayToggle;
+    [SerializeField] private PlayMakerFSM _nightToggle;
+
+
 
     void Start()
     {
@@ -91,12 +93,12 @@ public class Clock : MonoBehaviour
         {
             if (_startTime.Hour <= 12)
             {
-                _nightToggle.isOn = true;
+                _nightToggle.SendEvent("SetIsOn");
                 print("isNight");
             }
             else
             {
-                _dayToggle.isOn = true;
+                _dayToggle.SendEvent("SetIsOn");
                 print("isDay");
             }
         }

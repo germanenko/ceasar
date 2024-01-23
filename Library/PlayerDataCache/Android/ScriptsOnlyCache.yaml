@@ -79,7 +79,19 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -102,8 +114,6 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Animators.UIToggleUIAnimator
     - Doozy.Runtime.UIManager.Animators.UIToggleVector2Animator
     - Doozy.Runtime.UIManager.Components.UIButton
-    - Doozy.Runtime.UIManager.Components.UISelectable
-    - Doozy.Runtime.UIManager.Components.UISlider
     - Doozy.Runtime.UIManager.Components.UIStepper
     - Doozy.Runtime.UIManager.Components.UITab
     - Doozy.Runtime.UIManager.Components.UITag
@@ -408,14 +418,8 @@ ScriptsOnlyBuild:
     fullTypeName: Clock
     methodName: SelectTimeType
   - assembly: Assembly-CSharp
-    fullTypeName: Clock
-    methodName: SetActiveTimeSelector
-  - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.SignalSender
     methodName: SendSignalEndInput
-  - assembly: Assembly-CSharp
-    fullTypeName: InputFieldWithHits
-    methodName: OpenNextInputField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -449,6 +453,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: Play
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -542,6 +549,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: DatabaseOutput
     methodName: LoadSavesAndDrafts
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Localization
     methodName: SetLocalizationLanguage
@@ -556,6 +566,9 @@ ScriptsOnlyBuild:
     methodName: Play
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
     methodName: Play
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
@@ -776,9 +789,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.SignalSender
     methodName: SendSignalEndInput
-  - assembly: Assembly-CSharp
-    fullTypeName: InputFieldWithHits
-    methodName: OpenNextInputField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -1056,8 +1066,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12006}
     - Class: 114
       Script: {instanceID: 12032}
-    - Class: 114
-      Script: {instanceID: 12386}
     - Class: 114
       Script: {instanceID: 12434}
     - Class: 114
@@ -2761,7 +2769,7 @@ ScriptsOnlyBuild:
     className: DatabaseOutput
   - hash:
       serializedVersion: 2
-      Hash: c1e6c6add07fb2d7fa727d1948b1f8f4
+      Hash: 5ed32cd29cc6fc03bc1f963fab8c9dee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Clock
@@ -3313,7 +3321,7 @@ ScriptsOnlyBuild:
     className: PointerMiddleClickTrigger
   - hash:
       serializedVersion: 2
-      Hash: 794e9b67a37c7fbbcefa86b0dc0aab75
+      Hash: 78b3173611584b1a27c2e6e750b74349
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: TaskForm
@@ -5851,7 +5859,7 @@ ScriptsOnlyBuild:
     className: TextPic
   - hash:
       serializedVersion: 2
-      Hash: 335c8c23a66c54e1c2d677cddf4749ff
+      Hash: d3bed147a681bbb16f59715166acaebf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Calendar
