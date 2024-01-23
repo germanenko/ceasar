@@ -35647,7 +35647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &598077363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38675,7 +38675,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.4
+        Duration: 0.3
         Loops: 0
         LoopDelay: 0
         UseRandomStartDelay: 0
