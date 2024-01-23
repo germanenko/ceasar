@@ -230,9 +230,13 @@ public class Calendar : MonoBehaviour
                     dayButton.SetWeekend(true);
                 }
 
-                if (i + 1 == _day && _date.Month == DateTime.Now.Month)
+                if (i + 1 == _date.Day)
                 {
                     dayButton.UIToggle.isOn = true;
+                }
+
+                if (i + 1 == _date.Day && _date.Month == DateTime.Now.Month)
+                {
                     dayButton.DayText.fontStyle = FontStyles.Bold;
                 }
             }
@@ -356,6 +360,13 @@ public class Calendar : MonoBehaviour
 
     private void GenerateMonthList()
     {
+        foreach (var monthToggle in _monthToggles)
+        {
+            Destroy(monthToggle.gameObject);
+        }
+
+        _monthToggles.Clear();
+
         for (int i = 0; i < 5; i++)
         {
             DateTime date = _date.AddMonths(-1);
@@ -363,7 +374,7 @@ public class Calendar : MonoBehaviour
             if (i == 0)
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
-                m.Init(date, GetShortMonthName(date.Month) + (date.Year != _date.Year ? $" {date.ToString("yy")}" : ""), this);
+                m.Init(date, GetShortMonthName(date.Month) + (date.Year != DateTime.Now.Year ? $" {date.ToString("yy")}" : ""), this);
                 _monthToggles.Add(m);
 
                 m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
@@ -371,15 +382,20 @@ public class Calendar : MonoBehaviour
             else
             {
                 var m = Pooler.Instance.Spawn(PoolType.Entities, _monthTogglePrefab.gameObject, default, default, _monthTogglesParent).GetComponent<MonthToggle>();
-                m.Init(date.AddMonths(i), GetShortMonthName(date.AddMonths(i).Month) + (date.AddMonths(i).Year != _date.Year ? $" {date.AddMonths(i).ToString("yy")}" : ""), this);
+                m.Init(date.AddMonths(i), GetShortMonthName(date.AddMonths(i).Month) + (date.AddMonths(i).Year != DateTime.Now.Year ? $" {date.AddMonths(i).ToString("yy")}" : ""), this);
 
                 if(date.AddMonths(i).Month == _date.Month)
                 {
                     m.UIToggle.isOn = true;
-                    m.SetBoldOnMonthName();
 
                     _currentMonthToggle = m.transform;
                 }
+
+                if(date.AddMonths(i).Month == DateTime.Now.Month)
+                {
+                    m.SetBoldOnMonthName();
+                }
+
                 _monthToggles.Add(m);
 
                 m.UIToggle.AddToToggleGroup(_monthsToggleGroup);
@@ -420,6 +436,10 @@ public class Calendar : MonoBehaviour
             _date = d;
             print($"{_date.Day}.{_date.Month}.{_date.Year}");
             UpdateDateText();
+
+            GenerateMonthList();
+            GenerateCalendar(_date.Year, _date.Month);
+
         }
         catch (Exception e)
         {
