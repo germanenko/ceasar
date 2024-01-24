@@ -428,7 +428,16 @@ public class Calendar : MonoBehaviour
         {
             int year;
             if (values[2].Length < 4)
-                year = 2000 + int.Parse(values[2]);
+            {
+                if (int.Parse(values[2]) > 30 && int.Parse(values[2]) < 100)
+                {
+                    year = 1900 + int.Parse(values[2]);
+                }
+                else
+                {
+                    year = 2000 + int.Parse(values[2]);
+                }
+            }
             else
                 year = int.Parse(values[2]);
 
