@@ -575,6 +575,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector3\Vector3Normalize.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\__internal\FsmStateActionAdvanced.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\RectTransform\RectTransformSetAnchorMax.cs" />
+    <Compile Include="Assets\[1] SOURCE\Server\ServerConstants.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Camera\GetMainCamera.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenControlMethodsCompleteAll.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\SequencedChannel.cs" />
@@ -1071,7 +1072,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorCurrentStateInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetEventVector3Data.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\Explosion.cs" />
-    <Compile Include="Assets\[1] SOURCE\Account\Account.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\AccountManager.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UnityObject\SetProperty.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\BetterContentSizeFitter.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnInitializePotentialDragEvent.cs" />
@@ -1752,6 +1753,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\ProfileView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />

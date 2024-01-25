@@ -73,7 +73,7 @@ public class ChatManager : MonoBehaviour
     {
         try
         {
-            await _hubConnection.InvokeAsync("Send", Account.Instance.FirstName, _messageInput.text);
+            //await _hubConnection.InvokeAsync("Send", AccountManager.Instance.FirstName, _messageInput.text);
         }
         catch (Exception ex)
         {
@@ -131,23 +131,23 @@ public class ChatManager : MonoBehaviour
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
-        MessageBody m = new MessageBody() { Sender = Account.Instance.FirstName, Message = _messageInput.text };
+        //MessageBody m = new MessageBody() { Sender = AccountManager.Instance.FirstName, Message = _messageInput.text };
 
-        string s = JsonUtility.ToJson(m);
+       //string s = JsonUtility.ToJson(m);
 
-        var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
+        //var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
 
-        var response = client.PostAsync("send-message", content).Result;
+        //var response = client.PostAsync("send-message", content).Result;
 
-        if (response.StatusCode == HttpStatusCode.OK)
-        {
-            LoadMessages();
-        }
-        else
-        {
-            print(response.Content);
-            print(response.RequestMessage);
-        }
+        //if (response.StatusCode == HttpStatusCode.OK)
+        //{
+        //    LoadMessages();
+        //}
+        //else
+        //{
+        //    print(response.Content);
+        //    print(response.RequestMessage);
+        //}
     }
 
 
