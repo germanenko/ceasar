@@ -8650,6 +8650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1e23ee6c2d9b24693f90ff03b45cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProfileData:
+    email: 
+    role: 0
+    urlIcon: 
   TokenResponse:
     accessToken: 
     refreshToken: 

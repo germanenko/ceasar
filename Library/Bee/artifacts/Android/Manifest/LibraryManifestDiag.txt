@@ -4,6 +4,7 @@ android.hardware.vulkan.version was added because:
 	One of the graphics devices was Vulkan
 android.permission.INTERNET was added because:
 	UnityEngine.Networking was present in:
+		NativeGallery.Runtime-FeaturesChecked.txt
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
@@ -12,6 +13,7 @@ android.permission.INTERNET was added because:
 		Assembly-CSharp-FeaturesChecked.txt
 		Microsoft.AspNetCore.Connections.Abstractions-FeaturesChecked.txt
 	UnityEngine.Network was present in:
+		NativeGallery.Runtime-FeaturesChecked.txt
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
@@ -20,6 +22,7 @@ android.permission.INTERNET was added because:
 		LunarConsole-FeaturesChecked.txt
 		UniRx-FeaturesChecked.txt
 	UnityEngine.Networking.UnityWebRequest was present in:
+		NativeGallery.Runtime-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
 		Unity.Services.Core.Telemetry-FeaturesChecked.txt

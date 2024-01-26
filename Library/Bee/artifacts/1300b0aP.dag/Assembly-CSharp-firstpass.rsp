@@ -364,6 +364,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/LeanCommon.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/LeanTouch.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/LunarConsole.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/NativeGallery.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/QHierarchyNullable.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/QHierarchyRuntime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UniRx.ref.dll"

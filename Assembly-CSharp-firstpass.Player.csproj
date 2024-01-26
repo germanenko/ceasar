@@ -825,6 +825,10 @@
       <Project>{B3C83BBD-3967-B81C-FB24-35F69F1B6C20}</Project>
       <Name>LunarConsole.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="NativeGallery.Runtime.Player.csproj">
+      <Project>{45F989E4-E839-CDDE-48B2-0AB5F1A6D69A}</Project>
+      <Name>NativeGallery.Runtime.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanCommon.Player.csproj">
       <Project>{E13488F6-BB4E-12E6-BE8D-F4D6C803DA8C}</Project>
       <Name>LeanCommon.Player</Name>

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class DropDownItem : MonoBehaviour
 
     [SerializeField] private Image _image;
 
+    [SerializeField] private TextMeshProUGUI _nameText;
+
     public void Init(string name, Color color, Sprite sprite)
     {
         _name = name;
@@ -21,5 +24,8 @@ public class DropDownItem : MonoBehaviour
 
         _image.sprite = _sprite;
         _image.color = _color;
+
+        if(_nameText != null)
+            _nameText.text = _name;
     }
 }

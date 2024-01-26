@@ -9,9 +9,10 @@ namespace Germanenko.Source
 
     public enum TypeOfTasks
     {
-        Clicker = 0,
-        Timer = 1,
-        Task = 2
+        Meeting = 0,
+        Task = 1,
+        Reminder = 2,
+        Information = 3
     }
 
 

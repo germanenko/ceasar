@@ -438,6 +438,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/LeanTouch.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/LunarConsole.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/LunarConsoleEditor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/NativeGallery.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/NativeGallery.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyEditor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyNullable.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyRuntime.ref.dll"

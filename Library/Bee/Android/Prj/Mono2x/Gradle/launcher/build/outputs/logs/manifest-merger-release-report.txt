@@ -5,6 +5,7 @@ INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-81:12
+MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:2:1-7:12
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:2:1-19:12
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:2:1-11:12
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:2:1-15:12
@@ -45,10 +46,14 @@ application
 ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:3-83
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-79:19
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-79:19
+MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:6:2-61
+MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:6:2-61
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:11:5-17:19
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:11:5-17:19
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:9:5-13:19
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:9:5-13:19
+	android:requestLegacyExternalStorage
+		ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:6:15-58
 	android:extractNativeLibs
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:18-50
 	android:supportsRtl
@@ -65,6 +70,8 @@ INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:8:5-10:41
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:8:5-10:41
+MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:3:2-43
+MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:3:2-43
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:7:5-9:41
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:7:5-9:41
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:7:5-9:41
@@ -80,6 +87,7 @@ INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\
 	android:minSdkVersion
 		INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
+		MERGED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 uses-feature#0x00030000
 ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:12:5-54
@@ -211,6 +219,18 @@ ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unity
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:13-47
 	android:name
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:77:13-40
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:4:2-98
+	tools:node
+		ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:4:75-95
+	android:name
+		ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:4:19-74
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:5:2-99
+	tools:node
+		ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:5:76-96
+	android:name
+		ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:5:19-75
 activity#spacemadness.com.lunarconsole.settings.PluginSettingsActivity
 ADDED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:12:9-16:58
 	android:label

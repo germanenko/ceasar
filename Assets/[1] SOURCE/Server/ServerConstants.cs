@@ -127,6 +127,34 @@ public class ServerConstants : MonoBehaviour
         }
     }
 
+
+
+    public async Task<Sprite> GetAvatarAsync()
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var response = await client.GetAsync(AccountManager.Instance.ProfileData.urlIcon);
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var avatarBodyString = await response.Content.ReadAsStringAsync();
+            byte[] bytes = Encoding.ASCII.GetBytes(avatarBodyString);
+            Texture2D texture = null;
+            texture.LoadRawTextureData(bytes);
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+
+            return sprite;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 }
 
 public class ResponseBody

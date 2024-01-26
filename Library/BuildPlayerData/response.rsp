@@ -19,6 +19,7 @@
 -a="D:\ceasar\Library\PlayerScriptAssemblies\Unity.Services.Core.Environments.Internal.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\LunarConsole.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\Unity.Services.Core.Threading.dll"
+-a="D:\ceasar\Library\PlayerScriptAssemblies\NativeGallery.Runtime.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\LeanCommon.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\DTT.KeyboardRaiser.Runtime.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\DTT.RuntimeUtilities.Demo.dll"

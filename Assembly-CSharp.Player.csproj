@@ -1719,11 +1719,12 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Trigonometry\GetTan.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenControlMethodsFlipById.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Math\FloatDeltaAngle.cs" />
-    <Compile Include="Assets\PlayMaker Utils\Actions\MonoBehaviour\TransformEventsBridge.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetTextureValue.cs" />
+    <Compile Include="Assets\PlayMaker Utils\Actions\MonoBehaviour\TransformEventsBridge.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutIntField.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Lights\SetLightSpotAngle.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSendFrameReadyEvents.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\ProfileView.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenAnimateVector2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Lights\SetLightType.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenMaterialFade.cs" />
@@ -1753,7 +1754,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\[1] SOURCE\Account\ProfileView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
@@ -2551,6 +2551,10 @@
     <ProjectReference Include="LunarConsole.Player.csproj">
       <Project>{B3C83BBD-3967-B81C-FB24-35F69F1B6C20}</Project>
       <Name>LunarConsole.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeGallery.Runtime.Player.csproj">
+      <Project>{45F989E4-E839-CDDE-48B2-0AB5F1A6D69A}</Project>
+      <Name>NativeGallery.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommon.Player.csproj">
       <Project>{E13488F6-BB4E-12E6-BE8D-F4D6C803DA8C}</Project>

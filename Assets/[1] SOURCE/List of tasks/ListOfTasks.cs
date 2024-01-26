@@ -118,7 +118,7 @@ namespace Germanenko.Source
 
                 switch (t.Type)
                 {
-                    case (int)TypeOfTasks.Clicker:
+                    case (int)TypeOfTasks.Meeting:
                         prefab = ConstantSingleton.Instance.ItemClicker;
                         break;
 
@@ -126,7 +126,11 @@ namespace Germanenko.Source
                         prefab = ConstantSingleton.Instance.ItemTask;
                         break;
 
-                    case (int)TypeOfTasks.Timer:
+                    case (int)TypeOfTasks.Reminder:
+                        prefab = ConstantSingleton.Instance.ItemTimer;
+                        break;
+
+                    case (int)TypeOfTasks.Information:
                         prefab = ConstantSingleton.Instance.ItemTimer;
                         break;
 

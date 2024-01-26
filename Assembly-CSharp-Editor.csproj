@@ -1296,6 +1296,10 @@
       <Project>{67753362-043A-0907-32F2-05D94054C725}</Project>
       <Name>DTT.KeyboardRaiser.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="NativeGallery.Runtime.csproj">
+      <Project>{C9E850B2-C504-F67D-DE82-13EF70FE04DA}</Project>
+      <Name>NativeGallery.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{D734FE9C-0745-5101-A8F8-18693B85768F}</Project>
       <Name>LeanCommon</Name>
@@ -1419,6 +1423,10 @@
     <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
       <Project>{504981E6-5579-2173-ABEC-C58E2FCA2A96}</Project>
       <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeGallery.Editor.csproj">
+      <Project>{49C94030-6A5A-9CEE-211D-813177396114}</Project>
+      <Name>NativeGallery.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="QHierarchyEditor.csproj">
       <Project>{EC7011B7-34FF-EFA3-1D14-1B8CD854D8C1}</Project>
