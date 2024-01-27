@@ -20,7 +20,7 @@ public class Authentication : MonoBehaviour
 
         if (tokenIsValid.Success)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1);
         }
     }
 
@@ -30,7 +30,7 @@ public class Authentication : MonoBehaviour
         if (request.Success)
         {
             print(request.Message);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1);
         }
         else
         {
@@ -44,7 +44,7 @@ public class Authentication : MonoBehaviour
         if (request.Success)
         {
             print(request.Message);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1);
         }
         else
         {
