@@ -39,6 +39,7 @@ public class DropdownItemEditor : Editor
         EditorGUILayout.PropertyField(dropdownItemType);
 
         EditorGUILayout.PropertyField(image);
+       
 
         //ѕроверка выбранного пункта в выпадающем меню, 
         if (subject.DropdownItemType == DropdownItemType.Task)

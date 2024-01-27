@@ -27,6 +27,8 @@ public class DropDownItem : MonoBehaviour
 
     public TypeOfTasks TaskType;
 
+    [SerializeField] private TaskTypeDropdown _taskTypeDropDown;
+
     public void Init(string name, Color color, Sprite sprite)
     {
         _name = name;
@@ -45,6 +47,7 @@ public class DropDownItem : MonoBehaviour
         _name = name;
         _color = color;
         _sprite = sprite;
+        TaskType = taskType;
 
         _image.sprite = _sprite;
         _image.color = _color;

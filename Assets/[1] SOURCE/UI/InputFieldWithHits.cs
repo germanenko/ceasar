@@ -28,7 +28,7 @@ public class InputFieldWithHits : MonoBehaviour
         _inputField.onDeselect.AddListener(Deselected);
         _inputField.onSelect.AddListener(Selected);
 
-        _inputField.text = transform.GetSiblingIndex().ToString();
+        //_inputField.text = transform.GetSiblingIndex().ToString();
     }
 
 

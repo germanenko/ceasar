@@ -413,6 +413,11 @@ namespace Germanenko.Source
 				_editTask = false;
 
             isDraft = false;
+
+            _meetingForm.SetActive(false);
+            _taskForm.SetActive(false);
+            _reminderForm.SetActive(false);
+            _informationForm.SetActive(false);
         }
 
 

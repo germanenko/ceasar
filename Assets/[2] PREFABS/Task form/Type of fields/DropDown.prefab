@@ -3587,7 +3587,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          typeName: Germanenko.Source.Dropdown
+          typeName: ColorDropdown
           value: {fileID: 1226919238944006844}
         fsmVarParams:
         - variableName: 
@@ -4083,6 +4083,7 @@ MonoBehaviour:
   _nameText: {fileID: 0}
   DropdownItemType: 0
   TaskType: 0
+  _taskTypeDropDown: {fileID: 0}
 --- !u!114 &1226919239940472244
 MonoBehaviour:
   m_ObjectHideFlags: 0

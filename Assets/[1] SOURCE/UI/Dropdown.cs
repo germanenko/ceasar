@@ -75,7 +75,7 @@ namespace Germanenko.Source
 
 
 
-        public abstract void SelectDDItem(T item);
+        public abstract void SelectDDItem(string name);
             
     }
 }

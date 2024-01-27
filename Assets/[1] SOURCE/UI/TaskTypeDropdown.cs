@@ -8,9 +8,18 @@ public class TaskTypeDropdown : Dropdown<TaskTypeDDItem>
 {
     [SerializeField] private TaskForm _taskForm;
 
-    public override void SelectDDItem(TaskTypeDDItem item)
+    public override void SelectDDItem(string name)
     {
-        _selectedItem = item;
+        _selectedItem.name = name;
+        foreach (var item in listOfItems)
+        {
+            if (item.name == name)
+            {
+                _selectedItem.color = item.color;
+                _selectedItem.sprite = item.sprite;
+                _selectedItem.TaskType = item.TaskType;
+            }
+        }
         _taskForm.CreateTask(_selectedItem.TaskType);
     }
 

@@ -6,14 +6,7 @@ using UnityEngine;
 
 public class ColorDropdown : Dropdown<BaseDDItem>
 {
-    public override void SelectDDItem(BaseDDItem item)
-    {
-        _selectedItem = item;
-        _selectedItemView.color = item.color;
-        _selectedItemView.sprite = item.sprite;
-    }
-
-    public void SelectDDItem(string name)
+    public override void SelectDDItem(string name)
     {
         _selectedItem.name = name;
         foreach (var item in listOfItems)

@@ -444,6 +444,7 @@
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenOutlineFade.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\PlayerInput\PlayerInputGetFloat.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenScrollRectHorizontalNormalizedPos.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\TaskTypeDropdown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DrawDebugLine.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetVideoClip.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\FindGameObject.cs" />
@@ -1469,6 +1470,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetFrameRate.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\SetFsmVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiBoolValueChangedEvent.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\ColorDropdown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\ObjectCompare.cs" />
     <Compile Include="Assets\[1] SOURCE\Menu\TopMenu.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetTimeSource.cs" />
@@ -1754,8 +1756,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\ColorDropdown.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\TaskTypeDropdown.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
