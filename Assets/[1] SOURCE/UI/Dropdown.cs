@@ -12,20 +12,20 @@ namespace Germanenko.Source
 {
 
 
-    public class Dropdown : MonoBehaviour
+    public abstract class Dropdown<T> : MonoBehaviour
     {
-        [SerializeField] private List<DDItem> listOfItems = new List<DDItem>();
+        [SerializeField] protected List<T> listOfItems = new List<T>();
         protected List<GameObject> currentListOsItems = new List<GameObject>();
 
-        [SerializeField] private RectTransform listFolder;
-        [SerializeField] private GameObject itemPrefab;
-        [SerializeField] private int itemPosition;
+        [SerializeField] protected RectTransform listFolder;
+        [SerializeField] protected GameObject itemPrefab;
+        [SerializeField] protected int itemPosition;
 
-        [SerializeField] public DDItem _selectedItem;
-        [SerializeField] private Image _selectedItemView;
+        [SerializeField] public T _selectedItem;
+        [SerializeField] protected Image _selectedItemView;
 
-        [SerializeField] private PlayMakerFSM _fsm;
-        [SerializeField] private UIButton _button;
+        [SerializeField] protected PlayMakerFSM _fsm;
+        [SerializeField] protected UIButton _button;
 
         void Start()
         {
@@ -57,13 +57,7 @@ namespace Germanenko.Source
 
 
 
-        private void AddItemToList(DDItem item)
-        {
-
-            var newDDItem = Pooler.Instance.Spawn(PoolType.Entities, itemPrefab, default, default, listFolder);
-
-            newDDItem.GetComponent<DropDownItem>().Init(item.name, item.color, item.sprite);
-        }
+        protected abstract void AddItemToList(T item);
 
 
 
@@ -81,40 +75,15 @@ namespace Germanenko.Source
 
 
 
-        public void SelectDDItem(string name)
-        {
-            _selectedItem.name = name;
-            foreach (var item in listOfItems)
-            {
-                if(item.name == name)
-                {
-                    _selectedItem.color = item.color;
-                    _selectedItem.sprite = item.sprite;
-
-                    _selectedItemView.color = item.color;
-                    _selectedItemView.sprite = item.sprite;
-                }    
-            }
-        }
-
-
-
-        public void SelectTaskType(TypeOfTasks taskType)
-        {
-
-        }
+        public abstract void SelectDDItem(T item);
+            
     }
+}
 
-
-
-    [System.Serializable]
-    public class DDItem
-    {
-        public Sprite sprite;
-        public Color color;
-        public string name;
-
-    }
-
-
+[System.Serializable]
+public class BaseDDItem
+{
+    public Sprite sprite;
+    public Color color;
+    public string name;
 }

@@ -8530,6 +8530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50e3fa7dcab3aa4c9c38aec8e519bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _taskType: 0
+  _meetingForm: {fileID: 0}
+  _taskForm: {fileID: 0}
+  _reminderForm: {fileID: 0}
+  _informationForm: {fileID: 0}
   _fields: {fileID: 11400000, guid: d179445e79282c941b4bc736710c5413, type: 2}
   _itemParent: {fileID: 708438100}
   _id: 0
@@ -8666,6 +8671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IDField
       objectReference: {fileID: 0}
+    - target: {fileID: 4661629566350027496, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8684,7 +8693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8692,11 +8701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 868.99146
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8732,11 +8741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 434.49573
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -33.5
       objectReference: {fileID: 0}
     - target: {fileID: 4661629566350027499, guid: 5bb439a245484b34b96a9f574f4c2d57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18329,7 +18338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 209.675, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281284293
@@ -28291,7 +28300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &401844273
@@ -38941,7 +38950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &611537007
@@ -40362,7 +40371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 79.119995, y: 0}
   m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656318956
@@ -40533,7 +40542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 90.28, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664910363
@@ -41694,7 +41703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 173.23001, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683569962
@@ -48964,7 +48973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 320.07, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785320260
@@ -56206,7 +56215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 90.28, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898279580
@@ -56446,7 +56455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484406640198692655, guid: 8125184bafd06e649aa239748378d34d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 160.35
       objectReference: {fileID: 0}
     - target: {fileID: 484406640198692655, guid: 8125184bafd06e649aa239748378d34d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -63984,7 +63993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 218.7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085336658
@@ -64998,7 +65007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 26.515, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106338998
@@ -65229,7 +65238,7 @@ RectTransform:
   m_Children:
   - {fileID: 46110276}
   m_Father: {fileID: 1898763559}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -68916,7 +68925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 489.49573, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235666379
@@ -70824,7 +70833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 235.495, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280401368
@@ -78990,7 +78999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 154.445, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434246552
@@ -81122,7 +81131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 56.745, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486394515
@@ -81645,7 +81654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 267.16498, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533050410
@@ -105671,7 +105680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1870018427
@@ -105920,7 +105929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 267.56, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887397585
@@ -106089,6 +106098,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7713524126828646025}
   - {fileID: 1126588032}
   m_Father: {fileID: 1958783156}
   m_RootOrder: 2
@@ -107573,7 +107583,6 @@ RectTransform:
   - {fileID: 1374665997}
   - {fileID: 158190225}
   - {fileID: 1898763559}
-  - {fileID: 7713524126828646025}
   m_Father: {fileID: 139988979}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108013,7 +108022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1960047023
@@ -110974,7 +110983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 84.865, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973787962
@@ -116949,7 +116958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.935, y: 0}
   m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023603732
@@ -118868,7 +118877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1226919238697511327, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 83.865
       objectReference: {fileID: 0}
     - target: {fileID: 1226919238697511327, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -118880,7 +118889,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1226919238944006844, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
       propertyPath: _selectedItem.name
-      value: 3CFF00
+      value: 62FF00
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226919238944006844, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
+      propertyPath: _selectedItem.sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 81c7f37720ab72644b5acc145e501eda, type: 3}
+    - target: {fileID: 1226919238944006844, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
+      propertyPath: _selectedItem.color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1226919238944006844, guid: 10f43fa31e6785f409327cc33838c358, type: 3}
       propertyPath: _selectedItem.color.g
@@ -119066,7 +119083,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e7ed52718a26d43bb3ca168c546b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 418c9a4205ba5a84fb763f94efe3c85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2056547091
@@ -137129,9 +137146,6 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.UiGraphicSetColor
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.CallMethod
-        - HutongGames.PlayMaker.Actions.GetProperty
-        - HutongGames.PlayMaker.Actions.GetProperty
-        - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.CallMethod
         customNames:
         - 
@@ -137142,13 +137156,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        - 
-        - 
-        actionEnabled: 0101010101010101010101
-        actionIsOpen: 0001010101010101010101
-        actionStartIndex: 000000000d0000000f00000012000000150000001d00000023000000290000002b0000002d0000002f000000
-        actionHashCodes: f8464304fc838600c4b05004be71c903c9f57904ca51e900ca51e9005ac852045ac852045ac85204ca51e900
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0001010101010101
+        actionStartIndex: 000000000d0000000f00000012000000150000001d0000002300000029000000
+        actionHashCodes: f8464304fc838600c4b05004be71c903c9f57904ca51e900ca51e900ca51e900
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -137202,403 +137213,7 @@ MonoBehaviour:
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 1824873744315856019}
-          TargetTypeName: DropDownItem
-          PropertyName: _name
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 1
-            name: Name
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.String
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          EnumParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            enumName: HutongGames.PlayMaker.None
-            intValue: 0
-          ArrayParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: UnityEngine.Object
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
-          setProperty: 0
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 1824873744315856019}
-          TargetTypeName: DropDownItem
-          PropertyName: _sprite
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 1
-            name: Sprite
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Sprite
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          EnumParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            enumName: 
-            intValue: 0
-          ArrayParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: 
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
-          setProperty: 0
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 1824873744315856019}
-          TargetTypeName: DropDownItem
-          PropertyName: _color
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Color
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 1
-            name: Color
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          EnumParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            enumName: 
-            intValue: 0
-          ArrayParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            type: -1
-            objectTypeName: 
-            floatValues: []
-            intValues: 
-            boolValues: 
-            stringValues: []
-            vector4Values: []
-            objectReferences: []
-          setProperty: 0
+        fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
         - useVariable: 0
@@ -137654,7 +137269,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           typeName: Germanenko.Source.Dropdown
-          value: {fileID: 7713524126828646024}
+          value: {fileID: 0}
         fsmVarParams:
         - variableName: 
           objectType: 
@@ -137843,7 +137458,7 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 00000000000000000000000000000000000000000000000000000000
+        byteData: 00000000000000000000000000000000000000000000000000
         arrayParamSizes: 000000000000000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
@@ -137851,7 +137466,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0700000025000000140000000f0000002a000000160000000f000000110000000700000017000000020000000100000007000000140000001800000014000000180000001100000014000000190000000100000014000000190000000f0000000f0000000f0000000f000000110000000100000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000010000000100000024000000010000002400000001000000240000000100000018000000120000000c00000027000000270000000100000001000000
+        paramDataType: 0700000025000000140000000f0000002a000000160000000f000000110000000700000017000000020000000100000007000000140000001800000014000000180000001100000014000000190000000100000014000000190000000f0000000f0000000f0000000f000000110000000100000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000270000000100000001000000
         paramName:
         - tweenDirection
         - targetSize
@@ -137894,12 +137509,6 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
         - behaviour
         - methodName
         - parameters
@@ -137907,8 +137516,8 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d0000000100000000000000020000000100000001000000030000000000000011000000040000000100000002000000030000000400000005000000020000001200000002000000000000000000000000000000130000001400000003000000010000000100000001000000150000001600000000000000170000000100000018000000020000001900000004000000020000000200000002000000030000001a0000001b000000
-        paramByteDataSize: 040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000010000000000000001000000000000000100000000000000000000000000000000000000000000000100000001000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d0000000100000000000000020000000100000001000000030000000000000011000000040000000100000002000000030000000400000005000000020000001200000002000000000000000000000000000000130000001400000003000000010000000100000001000000150000001600000004000000020000000200000002000000030000001700000018000000
+        paramByteDataSize: 040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000100000001000000
     - name: State 2
       description: 
       colorIndex: 0
@@ -143150,7 +142759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7713524126828646025}
-  - component: {fileID: 7713524126828646024}
+  - component: {fileID: 7713524126828646026}
   m_Layer: 5
   m_Name: DropDown - NewTask
   m_TagString: Untagged
@@ -143158,7 +142767,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7713524126828646024
+--- !u!224 &7713524126828646025
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713524126828646022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7713524126476657331}
+  - {fileID: 7713524127505626205}
+  - {fileID: 7713524126621431757}
+  m_Father: {fileID: 1898763559}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -208, y: 207}
+  m_SizeDelta: {x: 0, y: 80}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &7713524126828646026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143167,55 +142799,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 7713524126828646022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e7ed52718a26d43bb3ca168c546b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a388af8b27bd0641ba1b1570d102af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   listOfItems:
   - sprite: {fileID: 21300000, guid: deb2bd3b7265b48448eb2fb3c98666d2, type: 3}
-    color: {r: 1, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     name: Meeting
+    TaskType: 0
   - sprite: {fileID: 21300000, guid: 56002a1c494cb3e489f723ea649aa025, type: 3}
-    color: {r: 0.23358655, g: 1, b: 0, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     name: Task
+    TaskType: 1
   - sprite: {fileID: 21300000, guid: 41f5dcab0d383d44598b7c2caa84b427, type: 3}
-    color: {r: 0, g: 0.011921883, b: 1, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     name: Reminder
+    TaskType: 2
   - sprite: {fileID: 21300000, guid: 76c42359fa62b8d48baf3c73b1825651, type: 3}
-    color: {r: 0.4433962, g: 0.26143643, b: 0.26143643, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}
     name: Information
+    TaskType: 3
   listFolder: {fileID: 7713524127352305980}
   itemPrefab: {fileID: 7713524125853094301}
   itemPosition: 0
   _selectedItem:
-    sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
-    color: {r: 1, g: 0, b: 0, a: 1}
-    name: FF0000
+    sprite: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    name: 
+    TaskType: 0
   _selectedItemView: {fileID: 7713524126470422989}
   _fsm: {fileID: 7713524126476657336}
   _button: {fileID: 7713524126476657330}
---- !u!224 &7713524126828646025
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713524126828646022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7713524126476657331}
-  - {fileID: 7713524127505626205}
-  - {fileID: 7713524126621431757}
-  m_Father: {fileID: 1958783156}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780, y: 477}
-  m_SizeDelta: {x: 0, y: 80}
-  m_Pivot: {x: 0.5, y: 1}
+  _taskForm: {fileID: 0}
 --- !u!114 &7713524127352305953
 MonoBehaviour:
   m_ObjectHideFlags: 0

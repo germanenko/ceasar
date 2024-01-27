@@ -16,6 +16,13 @@ namespace Germanenko.Source
 
 	public class TaskForm : MonoBehaviour, IReceive<SignalNewTaskData>, IReceive<SignalEndInput>
 	{
+        [SerializeField] private TypeOfTasks _taskType;
+
+        [Header("Forms")]
+        [SerializeField] private GameObject _meetingForm;
+        [SerializeField] private GameObject _taskForm;
+        [SerializeField] private GameObject _reminderForm;
+        [SerializeField] private GameObject _informationForm;
 
 		[SerializeField] private TaskFormFields _fields;
 		[SerializeField] private Transform _itemParent;
@@ -25,7 +32,7 @@ namespace Germanenko.Source
 		[SerializeField] private TMP_InputField _idField;
 		[SerializeField] private TMP_InputField _nameField;
 
-		[SerializeField] private Dropdown _colorField;
+		[SerializeField] private ColorDropdown _colorField;
 
 		[SerializeField] private Clock _clocks;
 
@@ -58,7 +65,7 @@ namespace Germanenko.Source
 			Framework.Signals.Add(this);
         }
 
-        public void CreateTask()
+        public void CreateTask(TypeOfTasks taskType)
 		{
 			if(Toolbox.Get<ListOfTasks>().CountOfDrafts() > 0)
 			{
@@ -66,6 +73,24 @@ namespace Germanenko.Source
             }
 			else
 			{
+                _taskType = taskType;
+
+                switch (_taskType)
+                {
+                    case TypeOfTasks.Meeting:
+                        _meetingForm.SetActive(true);
+                        break;
+                    case TypeOfTasks.Task:
+                        _taskForm.SetActive(true);
+                        break;
+                    case TypeOfTasks.Reminder:
+                        _reminderForm.SetActive(true);
+                        break;
+                    case TypeOfTasks.Information:
+                        _informationForm.SetActive(true);
+                        break;
+                }
+
                 Signal.Send("TaskControl", "OpenTask");
             }
 		}

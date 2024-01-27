@@ -11,15 +11,15 @@ namespace Germanenko.Source
     public class TaskFormFields : ScriptableObject
     {
 
-        [SerializeField] private Dropdown _dropDown;
-        public Dropdown Dropdown => _dropDown;
+        [SerializeField] private Dropdown<BaseDDItem> _dropDown;
+        public Dropdown<BaseDDItem> Dropdown => _dropDown;
         [SerializeField] private GameObject _inputField;
         public GameObject InputField => _inputField;
 
-        [SerializeField] private List<Dropdown> _listOfDropdown = new();
+        [SerializeField] private List<Dropdown<BaseDDItem>> _listOfDropdown = new();
         [SerializeField] private List<GameObject> _listOfInputFields = new();
 
-        public List<Dropdown> ListOfDropdown => _listOfDropdown;
+        public List<Dropdown<BaseDDItem>> ListOfDropdown => _listOfDropdown;
         public List<GameObject> ListOfInputFields => _listOfInputFields;
 
         [SerializeField] private List<GameObject> _listOfObjects = new();
@@ -30,7 +30,7 @@ namespace Germanenko.Source
         {
 
             GameObject newInputField;
-            Dropdown newDropdown;
+            Dropdown<BaseDDItem> newDropdown;
 
             ClearFields();
 

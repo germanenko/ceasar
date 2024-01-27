@@ -196,6 +196,7 @@
     <Compile Include="Assets\PlayMaker Utils\Wizards\LinkerWizard\Editor\LinkerDataCustomInspector.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Editor\Scripts\Windows\AlignDistribute\AlignDistributeWindow.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Editor\PlayMakerProjectTools.cs" />
+    <Compile Include="Assets\[1] SOURCE\Editor\DropdownItemEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\Editor\GetAnimatorCurrentTransitionInfoIsNameActionEditor.cs" />
     <Compile Include="Assets\PlayMaker uGui\Editor\PlayMakerUGuiDragEventsProxyInspector.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Editor\Scripts\ResolutionMonitorEditor.cs" />
@@ -337,7 +338,6 @@
     <Compile Include="Assets\PlayMaker Utils\PropertyDrawers\PlayMakerTimelineEventTarget\Editor\PlayMakerTimelineEventTargetPropertyDrawer.cs" />
     <Compile Include="Assets\PlayMaker Utils\External Libraries\Rotorz\Reorderable List Field\Editor\Element Adder Menu\GenericElementAdderMenuBuilder.cs" />
     <Compile Include="Assets\PlayMaker Utils\PropertyDrawers\PlayMakerFsmTarget\Editor\PlayMakerFsmTargetPropertyDrawer.cs" />
-    <Compile Include="Assets\[1] SOURCE\Editor\DropdownItemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Editor\Install\Resources\CheckActions.txt" />

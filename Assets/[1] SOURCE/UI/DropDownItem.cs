@@ -39,4 +39,17 @@ public class DropDownItem : MonoBehaviour
         if (_nameText != null)
             _nameText.text = _name;
     }
+
+    public void Init(string name, Color color, Sprite sprite, TypeOfTasks taskType)
+    {
+        _name = name;
+        _color = color;
+        _sprite = sprite;
+
+        _image.sprite = _sprite;
+        _image.color = _color;
+
+        if (_nameText != null)
+            _nameText.text = _name;
+    }
 }

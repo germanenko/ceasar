@@ -1599,47 +1599,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226919238944006834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e7ed52718a26d43bb3ca168c546b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 418c9a4205ba5a84fb763f94efe3c85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   listOfItems:
-  - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
+  - sprite: {fileID: 21300000, guid: 81c7f37720ab72644b5acc145e501eda, type: 3}
     color: {r: 1, g: 0, b: 0, a: 1}
     name: FF0000
-  - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
-    color: {r: 0.23358655, g: 1, b: 0, a: 1}
-    name: 3CFF00
-  - sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
-    color: {r: 0, g: 0.011921883, b: 1, a: 1}
-    name: 0003FF
-  - sprite: {fileID: 21300000, guid: 75b7fd397d96d2b46be55ed328cb553c, type: 3}
-    color: {r: 0.4433962, g: 0.26143643, b: 0.26143643, a: 1}
-    name: Name
-  - sprite: {fileID: 21300000, guid: ad5c6e376f3f6814eacf8936d17ec863, type: 3}
-    color: {r: 0.042052336, g: 0.3301887, b: 0.042052336, a: 1}
-    name: nan
-  - sprite: {fileID: 21300000, guid: 5a65add135902214499357f5495868e1, type: 3}
-    color: {r: 0.33333334, g: 0, b: 0, a: 1}
-    name: nhg
-  - sprite: {fileID: 21300000, guid: e1c16dca918b7e1409ca935ced895af1, type: 3}
-    color: {r: 0, g: 0, b: 0.31764707, a: 1}
-    name: g
-  - sprite: {fileID: 21300000, guid: 61517a68634fab44f9800b953b5ad67c, type: 3}
-    color: {r: 0.29868555, g: 0.11894804, b: 0.31132078, a: 1}
-    name: 
-  - sprite: {fileID: 21300000, guid: a881bce04d2414a42b6686a0db23877a, type: 3}
-    color: {r: 0.4339623, g: 0.25009692, b: 0.14533643, a: 1}
-    name: 
-  - sprite: {fileID: 21300000, guid: a4774407d43551940bb07cb6c3ca6d1c, type: 3}
-    color: {r: 0, g: 0, b: 0, a: 1}
-    name: 
+  - sprite: {fileID: 21300000, guid: 81c7f37720ab72644b5acc145e501eda, type: 3}
+    color: {r: 0.38614988, g: 1, b: 0, a: 1}
+    name: 62FF00
+  - sprite: {fileID: 21300000, guid: 90e03d75951de3546a5b4b1c031d5bf3, type: 3}
+    color: {r: 0, g: 0.19210386, b: 1, a: 1}
+    name: 0031FF
   listFolder: {fileID: 1226919239498224904}
   itemPrefab: {fileID: 1226919239940472233}
   itemPosition: 0
   _selectedItem:
-    sprite: {fileID: 21300000, guid: b8447aacd97ed68498588619e6db968d, type: 3}
-    color: {r: 1, g: 0, b: 0, a: 1}
-    name: FF0000
+    sprite: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    name: 
   _selectedItemView: {fileID: 1226919240128507385}
   _fsm: {fileID: 1226919240101301900}
   _button: {fileID: 1226919240101301894}
@@ -4102,6 +4081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 1226919239940472235}
   _nameText: {fileID: 0}
+  DropdownItemType: 0
+  TaskType: 0
 --- !u!114 &1226919239940472244
 MonoBehaviour:
   m_ObjectHideFlags: 0
