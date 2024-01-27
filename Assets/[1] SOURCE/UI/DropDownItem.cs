@@ -1,8 +1,15 @@
+using Germanenko.Source;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum DropdownItemType
+{
+    Color,
+    Task
+}
 
 public class DropDownItem : MonoBehaviour
 {
@@ -16,6 +23,10 @@ public class DropDownItem : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _nameText;
 
+    public DropdownItemType DropdownItemType;
+
+    public TypeOfTasks TaskType;
+
     public void Init(string name, Color color, Sprite sprite)
     {
         _name = name;
@@ -25,7 +36,7 @@ public class DropDownItem : MonoBehaviour
         _image.sprite = _sprite;
         _image.color = _color;
 
-        if(_nameText != null)
+        if (_nameText != null)
             _nameText.text = _name;
     }
 }

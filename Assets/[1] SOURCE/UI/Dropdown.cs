@@ -14,7 +14,6 @@ namespace Germanenko.Source
 
     public class Dropdown : MonoBehaviour
     {
-
         [SerializeField] private List<DDItem> listOfItems = new List<DDItem>();
         protected List<GameObject> currentListOsItems = new List<GameObject>();
 
@@ -96,6 +95,13 @@ namespace Germanenko.Source
                     _selectedItemView.sprite = item.sprite;
                 }    
             }
+        }
+
+
+
+        public void SelectTaskType(TypeOfTasks taskType)
+        {
+
         }
     }
 

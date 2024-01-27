@@ -558,6 +558,7 @@
 "Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/Editor/PlayMakerEventProxyCreator.cs"
 "Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/Editor/PlayMakerEventProxyCreatorWizard.cs"
 "Assets/[0] FRAMEWORK/Scene/Editor/SceneGenerator.cs"
+"Assets/[1] SOURCE/Editor/DropdownItemEditor.cs"
 "Assets/_99 THIRD PARTY/Fingers/Prefab/Editor/MinMaxSlider.cs"
 "Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/BaseClasses/OnAnimatorUpdateActionEditorBase.cs"
 "Assets/_99 THIRD PARTY/PlayMaker/Actions/Animator/Editor/GetAnimatorAnimatorRootActionEditor.cs"

@@ -337,6 +337,7 @@
     <Compile Include="Assets\PlayMaker Utils\PropertyDrawers\PlayMakerTimelineEventTarget\Editor\PlayMakerTimelineEventTargetPropertyDrawer.cs" />
     <Compile Include="Assets\PlayMaker Utils\External Libraries\Rotorz\Reorderable List Field\Editor\Element Adder Menu\GenericElementAdderMenuBuilder.cs" />
     <Compile Include="Assets\PlayMaker Utils\PropertyDrawers\PlayMakerFsmTarget\Editor\PlayMakerFsmTargetPropertyDrawer.cs" />
+    <Compile Include="Assets\[1] SOURCE\Editor\DropdownItemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Editor\Install\Resources\CheckActions.txt" />
