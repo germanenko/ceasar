@@ -19,8 +19,10 @@ public class AccountManager : MonoBehaviour
     public void SetToken(TokenResponse tokenResponse)
     {
         TokenResponse = tokenResponse;
-        TokenResponse.accessToken = tokenResponse.accessToken;
-        
+
+        PlayerPrefs.SetString("AccessToken", tokenResponse.accessToken);
+        PlayerPrefs.SetString("RefreshToken", tokenResponse.refreshToken);
+
         SetProfileData();
     }
 

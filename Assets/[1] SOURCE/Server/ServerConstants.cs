@@ -7,6 +7,7 @@ using System.Net.Mime;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -124,6 +125,32 @@ public class ServerConstants : MonoBehaviour
         else
         {
             return null;
+        }
+    }
+
+
+
+    public async Task<ResponseBody> CheckTokenIsValid()
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", PlayerPrefs.GetString("AccessToken"));
+
+        var response = await client.GetAsync(GetProfile);
+        ProfileData? profileBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            ResponseBody responseBody = new ResponseBody(true, "Токен валиден");
+            AccountManager.Instance.SetToken(new TokenResponse(PlayerPrefs.GetString("AccessToken"), PlayerPrefs.GetString("RefreshToken")));
+            return responseBody;
+        }
+        else
+        {
+            ResponseBody responseBody = new ResponseBody(false, "Токен истек");
+            return responseBody;
         }
     }
 

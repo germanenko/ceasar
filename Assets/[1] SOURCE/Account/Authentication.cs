@@ -14,6 +14,16 @@ public class Authentication : MonoBehaviour
     [SerializeField] private TMP_InputField _signUpFullnameField;
     [SerializeField] private TMP_InputField _signUpPasswordField;
 
+    private async void Start()
+    {
+        var tokenIsValid = await ServerConstants.Instance.CheckTokenIsValid();
+
+        if (tokenIsValid.Success)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
     public async void AuthAsync()
     {
         ResponseBody request = await ServerConstants.Instance.AuthAsync(_signInEmailField.text, _signInPasswordField.text);
