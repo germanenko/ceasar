@@ -19,14 +19,6 @@ namespace Germanenko.Source
         {
             Signals.Send(new SignalEndInput { sender = transform.parent.parent.parent });
         }
-
-
-
-        public void SendSignalEndInput()
-        {
-            Signals.Send(new SignalEndInput { sender = transform });
-        }
-
     }
 
 }

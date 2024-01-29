@@ -14,7 +14,7 @@ public class Authentication : MonoBehaviour
     [SerializeField] private TMP_InputField _signUpFullnameField;
     [SerializeField] private TMP_InputField _signUpPasswordField;
 
-    private async void Start()
+    private async void Awake()
     {
         var tokenIsValid = await ServerConstants.Instance.CheckTokenIsValid();
 

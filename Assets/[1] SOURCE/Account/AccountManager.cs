@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AccountManager : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class AccountManager : MonoBehaviour
         PlayerPrefs.SetString("RefreshToken", tokenResponse.refreshToken);
 
         SetProfileData();
+    }
+
+    public void Deauth()
+    {
+        PlayerPrefs.SetString("AccessToken", "");
+        PlayerPrefs.SetString("RefreshToken", "");
+
+        SceneManager.LoadScene(0);
     }
 
     public async void SetProfileData()

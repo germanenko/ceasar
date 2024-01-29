@@ -15,6 +15,8 @@ public class ProfileView : MonoBehaviour
         LoadInfo();
     }
 
+
+
     public void PickImage()
     {
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
@@ -59,9 +61,18 @@ public class ProfileView : MonoBehaviour
         Debug.Log("Permission result: " + permission);
     }
 
+
+
     public void LoadInfo()
     {
         _emailText.text = AccountManager.Instance.ProfileData.email;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
+    }
+
+
+
+    public void Deauth()
+    {
+        AccountManager.Instance.Deauth();
     }
 }
