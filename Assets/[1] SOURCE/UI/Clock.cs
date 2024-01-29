@@ -2,15 +2,16 @@ using DG.Tweening;
 using Doozy.Runtime.Reactor.Animators;
 using Doozy.Runtime.UIManager.Components;
 using Germanenko.Framework;
+using Germanenko.Source;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Clock : MonoBehaviour
+public class Clock : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TimeLabel _timeLabelHours;
     [SerializeField] private TimeLabel _timeLabelMinutes;
@@ -84,6 +85,8 @@ public class Clock : MonoBehaviour
 
         _startTimeText.GetComponent<UIToggle>().isOn = true;
 
+        transform.parent.parent.GetComponent<ScrollRect>().vertical = !activate;
+
         if (_hourList.Count > 0)
         {
             RegenerateHours();
@@ -91,6 +94,7 @@ public class Clock : MonoBehaviour
 
         if (activate)
         {
+
             if (_startTime.Hour <= 12)
             {
                 _nightToggle.SendEvent("SetIsOn");
@@ -799,6 +803,11 @@ public class Clock : MonoBehaviour
 
             _minuteList.Add(s);
         }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        print("pointerDown");
     }
 
     #endregion
