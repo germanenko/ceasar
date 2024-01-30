@@ -56,6 +56,9 @@ public class Calendar : MonoBehaviour
     [SerializeField] private Color _weekendColor;
     [SerializeField] private Color _otherMonthColor;
 
+    [SerializeField] private Color _endDateColor;
+    [SerializeField] private Color _incorrectPeriodColor;
+
     [SerializeField] private UIToggleGroup _daysToggleGroup;
     [SerializeField] private UIToggleGroup _monthsToggleGroup;
 
@@ -65,6 +68,7 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private bool _isStartDate = true;
     [SerializeField] private bool _calendarIsOpened;
+    [SerializeField] private bool _correctPeriod = true;
 
     private void Start()
     {
@@ -113,12 +117,12 @@ public class Calendar : MonoBehaviour
 
     public void CloseCalendarWindow(bool saveDate)
     {
-        print("close");
-
         if(saveDate)
         {
             ConfirmDate();
         }
+
+        if (!_correctPeriod) return;
 
         if (_isStartDate)
         { 
@@ -134,13 +138,6 @@ public class Calendar : MonoBehaviour
         _calendarWindow.SetActive(false);
         _calendarIsOpened = false;
         _startDateText.GetComponent<UIToggle>().isOn = true;
-    }
-
-
-
-    public void SetIsStartDate(bool isStart)
-    {
-        _isStartDate = isStart;
     }
 
 
@@ -205,9 +202,11 @@ public class Calendar : MonoBehaviour
         //_date = new DateTime(_date.Year, _date.Month, day);
         _date = date;
         UpdateDateText();
+        CheckCorrectPeriod();
 
         if (_isStartDate)
         {
+            _startDate = date;
             if (Localization.Instance.Language == LocalizationLanguage.Russia)
             {
                 _startDateText.text = _date.ToString("dd.MM.yy");
@@ -219,6 +218,7 @@ public class Calendar : MonoBehaviour
         }
         else
         {
+            _endDate = date;
             if (Localization.Instance.Language == LocalizationLanguage.Russia)
             {
                 _endDateText.text = _date.ToString("dd.MM.yy");
@@ -227,6 +227,24 @@ public class Calendar : MonoBehaviour
             {
                 _endDateText.text = _date.ToString("MM.dd.yy");
             }
+        }
+    }
+
+
+
+    public void CheckCorrectPeriod()
+    {
+        if(_startDate.Date > _date.Date)
+        {
+            print("incorrect");
+            _endDateText.color = _incorrectPeriodColor;
+            _correctPeriod = false;
+        }
+        else
+        {
+            print("correct");
+            _endDateText.color = _endDateColor;
+            _correctPeriod = true;
         }
     }
 
@@ -510,6 +528,13 @@ public class Calendar : MonoBehaviour
             }
         }
 
+    }
+
+
+
+    public void SetIsStartDate(bool isStart)
+    {
+        _isStartDate = isStart;
     }
 
 

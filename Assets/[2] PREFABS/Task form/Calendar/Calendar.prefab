@@ -11284,11 +11284,15 @@ MonoBehaviour:
   _defaultColor: {r: 1, g: 1, b: 0.98823535, a: 1}
   _weekendColor: {r: 0.98823535, g: 0.8196079, b: 0.7490196, a: 1}
   _otherMonthColor: {r: 0.9490197, g: 0.9333334, b: 0.89019614, a: 1}
+  _endDateColor: {r: 0.60784316, g: 0, b: 0.7490196, a: 1}
+  _incorrectPeriodColor: {r: 1, g: 0, b: 0, a: 1}
   _daysToggleGroup: {fileID: 3045846318941036833}
   _monthsToggleGroup: {fileID: 3045846317710025447}
   _daysGrid: {fileID: 3045846318941036834}
   _currentMonthToggle: {fileID: 0}
   _isStartDate: 1
+  _calendarIsOpened: 0
+  _correctPeriod: 1
 --- !u!1 &3045846318823195418
 GameObject:
   m_ObjectHideFlags: 0
