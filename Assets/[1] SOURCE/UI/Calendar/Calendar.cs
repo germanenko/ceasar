@@ -43,8 +43,11 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private TMP_InputField _dateText;
     [SerializeField] private TextMeshProUGUI _dateTextInButton;
+    [SerializeField] private TextMeshProUGUI _startDateText;
+    [SerializeField] private TextMeshProUGUI _endDateText;
 
     [SerializeField] private DateTime _startDate;
+    [SerializeField] private DateTime _endDate;
     [SerializeField] private DateTime _date;
 
     [SerializeField] private GameObject _calendarWindow;
@@ -60,6 +63,9 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private Transform _currentMonthToggle;
 
+    [SerializeField] private bool _isStartDate = true;
+    [SerializeField] private bool _calendarIsOpened;
+
     private void Start()
     {
         _day = DateTime.Now.Day;
@@ -67,8 +73,9 @@ public class Calendar : MonoBehaviour
 
         _date = DateTime.Now;
         _startDate = _date;
+        _endDate = _date;
 
-        _dateTextInButton.text = _date.Date.ToShortDateString();
+        UpdateDateText();
 
         GenerateMonthList();
 
@@ -78,7 +85,7 @@ public class Calendar : MonoBehaviour
 
     private void Update()
     {
-        if(Input.touchCount > 0)
+        if(Input.touchCount > 0 && _calendarIsOpened)
         {
             CheckIfOutside();
         }
@@ -99,15 +106,24 @@ public class Calendar : MonoBehaviour
 
         GenerateCalendar(DateTime.Now.Year, DateTime.Now.Month);
 
+        _calendarIsOpened = true;
     }
 
 
 
     public void CloseCalendarWindow(bool saveDate)
     {
+        print("close");
+
         if(saveDate)
         {
             ConfirmDate();
+        }
+
+        if (_isStartDate)
+        { 
+            ChangePeriod();
+            return;
         }
 
         foreach (var item in _dayButtons)
@@ -116,6 +132,53 @@ public class Calendar : MonoBehaviour
         }
 
         _calendarWindow.SetActive(false);
+        _calendarIsOpened = false;
+        _startDateText.GetComponent<UIToggle>().isOn = true;
+    }
+
+
+
+    public void SetIsStartDate(bool isStart)
+    {
+        _isStartDate = isStart;
+    }
+
+
+
+    public void ChangePeriod()
+    {
+        print("changePeriod");
+
+        if (_isStartDate)
+        {
+            _endDateText.GetComponent<UIToggle>().isOn = true;
+        }
+        else
+        {
+            CloseCalendarWindow(false);
+        }
+
+    }
+
+
+
+    public void SelectTimeType(bool startTime)
+    {
+        _isStartDate = startTime;
+
+        if (_isStartDate)
+        {
+            _startDateText.fontStyle = FontStyles.Bold;
+            _endDateText.fontStyle = FontStyles.Normal;
+        }
+        else
+        {
+            _startDateText.fontStyle = FontStyles.Normal;
+            _endDateText.fontStyle = FontStyles.Bold;
+        }
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_startDateText.rectTransform);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_endDateText.rectTransform);
     }
 
 
@@ -142,6 +205,29 @@ public class Calendar : MonoBehaviour
         //_date = new DateTime(_date.Year, _date.Month, day);
         _date = date;
         UpdateDateText();
+
+        if (_isStartDate)
+        {
+            if (Localization.Instance.Language == LocalizationLanguage.Russia)
+            {
+                _startDateText.text = _date.ToString("dd.MM.yy");
+            }
+            else if (Localization.Instance.Language == LocalizationLanguage.USA)
+            {
+                _startDateText.text = _date.ToString("MM.dd.yy");
+            }
+        }
+        else
+        {
+            if (Localization.Instance.Language == LocalizationLanguage.Russia)
+            {
+                _endDateText.text = _date.ToString("dd.MM.yy");
+            }
+            else if (Localization.Instance.Language == LocalizationLanguage.USA)
+            {
+                _endDateText.text = _date.ToString("MM.dd.yy");
+            }
+        }
     }
 
 
@@ -151,10 +237,32 @@ public class Calendar : MonoBehaviour
         if(Localization.Instance.Language == LocalizationLanguage.Russia)
         {
             _dateText.text = _date.ToString("dd.MM.yy");
+            _startDateText.text = _startDate.ToString("dd.MM.yy");
+            _endDateText.text = _endDate.ToString("dd.MM.yy");
+
+            if (_startDate.Day == _endDate.Day && _startDate.Month == _endDate.Month)
+            {
+                _dateTextInButton.text = _date.ToString("dd.MM.yy");
+            }
+            else
+            {
+                _dateTextInButton.text = $"{_startDate.ToString("dd.MM.yy")} - {_endDate.ToString("dd.MM.yy")}";
+            }
         }
         else if(Localization.Instance.Language == LocalizationLanguage.USA)
         {
             _dateText.text = _date.ToString("MM.dd.yy");
+            _startDateText.text = _startDate.ToString("MM.dd.yy");
+            _endDateText.text = _endDate.ToString("MM.dd.yy");
+
+            if(_startDate.Day == _endDate.Day && _startDate.Month == _endDate.Month)
+            {
+                _dateTextInButton.text = _date.ToString("MM.dd.yy");
+            }
+            else
+            {
+                _dateTextInButton.text = $"{_startDate.ToString("MM.dd.yy")} - {_endDate.ToString("MM.dd.yy")}";
+            }
         }
     }
 
@@ -461,7 +569,17 @@ public class Calendar : MonoBehaviour
 
     public void ConfirmDate()
     {
-        _dateTextInButton.text = _date.ToShortDateString();
+        if (_isStartDate)
+        {
+            _startDate = _date;
+            _endDate = _date;
+        }
+        else
+        {
+            _endDate = _date;
+        }
+
+        UpdateDateText();
     }
 
 

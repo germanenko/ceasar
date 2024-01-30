@@ -85,7 +85,7 @@ public class Clock : MonoBehaviour, IPointerDownHandler
 
         _startTimeText.GetComponent<UIToggle>().isOn = true;
 
-        transform.parent.parent.GetComponent<ScrollRect>().vertical = !activate;
+        //transform.parent.parent.GetComponent<ScrollRect>().vertical = !activate;
 
         if (_hourList.Count > 0)
         {
