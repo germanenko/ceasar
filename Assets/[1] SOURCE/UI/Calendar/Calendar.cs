@@ -208,7 +208,6 @@ public class Calendar : MonoBehaviour
         //_date = new DateTime(_date.Year, _date.Month, day);
         _date = date;
         UpdateDateText();
-        CheckCorrectPeriod();
 
         if (_isStartDate)
         {
@@ -234,13 +233,15 @@ public class Calendar : MonoBehaviour
                 _endDateText.text = _date.ToString("MM.dd.yy");
             }
         }
+
+        CheckCorrectPeriod(); 
     }
 
 
 
     public void CheckCorrectPeriod()
     {
-        if(_startDate.Date > _date.Date)
+        if(_startDate.Date > _endDate.Date)
         {
             print("incorrect");
             _endDateText.color = _incorrectPeriodColor;
