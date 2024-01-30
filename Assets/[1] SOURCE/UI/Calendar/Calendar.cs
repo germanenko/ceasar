@@ -70,6 +70,8 @@ public class Calendar : MonoBehaviour
     [SerializeField] private bool _calendarIsOpened;
     [SerializeField] private bool _correctPeriod = true;
 
+    public UnityEvent<bool> OnDateSelected; // событие при выборе даты, возвращающее, период это или конкретный день
+
     private void Start()
     {
         _day = DateTime.Now.Day;
@@ -138,6 +140,10 @@ public class Calendar : MonoBehaviour
         _calendarWindow.SetActive(false);
         _calendarIsOpened = false;
         _startDateText.GetComponent<UIToggle>().isOn = true;
+
+        print($"{_startDate.Date.ToShortDateString()}  {_endDate.Date.ToShortDateString()}");
+
+        OnDateSelected?.Invoke(_startDate.Date != _endDate.Date);
     }
 
 

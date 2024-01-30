@@ -29,8 +29,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7285677283896450272}
   - {fileID: 7345894601843941567}
+  - {fileID: 7285677283896450272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_AnchorMax.x
@@ -126,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 870
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_SizeDelta.y
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -179,6 +179,34 @@ PrefabInstance:
     - target: {fileID: 3045846318787352411, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7914034896548760720}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckDateIsPeriod
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DateTimeItem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045846318787352412, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
+      propertyPath: OnDateSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3045846318823195419, guid: 77318b3bd977abe4983fed10edd6e986, type: 3}
       propertyPath: m_AnchorMax.y
@@ -263,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075736228668908805, guid: 8125184bafd06e649aa239748378d34d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3075736228668908805, guid: 8125184bafd06e649aa239748378d34d, type: 3}
       propertyPath: m_AnchorMax.x
