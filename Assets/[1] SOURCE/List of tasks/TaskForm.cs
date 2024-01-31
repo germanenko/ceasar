@@ -10,6 +10,7 @@ using DG.Tweening;
 using UnityEngine.Events;
 using System.Globalization;
 using Doozy.Runtime.UIManager.Animators;
+using Doozy.Runtime.Reactor.Animators;
 
 namespace Germanenko.Source
 {
@@ -53,10 +54,12 @@ namespace Germanenko.Source
 		[SerializeField] private GameObject _archiveVersionButton;
 
 		[SerializeField] private Image _blur;
+        [SerializeField] private Image _openAnimator;
 
-		public ScrollRect ScrollRect;
+        public ScrollRect ScrollRect;
 
         [SerializeField] private UIContainerUIAnimator _taskFormAnimator;
+
         [SerializeField] private Vector3 _closePosition;
 
         public void Start()
@@ -94,6 +97,15 @@ namespace Germanenko.Source
                 Signal.Send("TaskControl", "OpenTask");
             }
 		}
+
+
+
+        public void SetOpenPositionAndColor(Vector3 openPosition, Color color)
+        {
+            _taskFormAnimator.showAnimation.Move.fromCustomValue = openPosition;
+
+            _openAnimator.color = color;
+        }
 
 
 
@@ -136,8 +148,11 @@ namespace Germanenko.Source
 			{
                 Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
             }
-			else
-				Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
+            else
+            {
+                Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
+                SetCloseToLastTask();
+            }
 
 
             Toolbox.Get<ListOfTasks>().ReloadList();
@@ -149,7 +164,7 @@ namespace Germanenko.Source
 		public void CloseTask()
 		{
             _blur.material.SetFloat("_Alpha", 0f);
-            SetCloseToLastTask();
+
             Signal.Send("TaskControl", "CloseTask");
         }
 
@@ -166,18 +181,12 @@ namespace Germanenko.Source
         public void SetCloseToLastTask()
         {
             var itemsGrid = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().placeholdersTransform;
-            StartCoroutine(CoWaitForPosition(itemsGrid));
-        }
+            if (itemsGrid.childCount == 0) return;
 
-
-
-        IEnumerator CoWaitForPosition(RectTransform rt)
-        {
-            yield return new WaitForSeconds(.2f);
-            // Find position of objects in grid
-            _closePosition = rt.GetChild(rt.childCount - 1).transform.position;
-
-            _taskFormAnimator.hideAnimation.Move.toCustomValue = _closePosition;
+            
+            var lastItem = itemsGrid.GetChild(itemsGrid.childCount - 1);
+            _taskFormAnimator.hideAnimation.Move.toCustomValue = new Vector3(lastItem.position.x, lastItem.position.y, lastItem.position.z);
+            _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
         }
 
 

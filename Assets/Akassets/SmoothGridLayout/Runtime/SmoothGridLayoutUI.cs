@@ -67,8 +67,8 @@ public class SmoothGridLayoutUI : MonoBehaviour
         var placeholder = new GameObject($"{element.name} placeholder");
         var placeholderRect = placeholder.AddComponent<RectTransform>();
         placeholder.AddComponent<LayoutElement>();
-        element.anchorMax = new Vector2(0.5f, 0.5f);
-        element.anchorMin = new Vector2(0.5f, 0.5f);
+        //element.anchorMax = new Vector2(0.5f, 0.5f);
+        //element.anchorMin = new Vector2(0.5f, 0.5f);
         element.sizeDelta = gridLayoutGroup.cellSize;
         placeholderRect.sizeDelta = gridLayoutGroup.cellSize;
         placeholder.transform.SetParent(placeholdersTransform);

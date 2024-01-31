@@ -3,10 +3,13 @@ using Germanenko.Source;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskTypeDropdown : Dropdown<TaskTypeDDItem>
 {
     [SerializeField] private TaskForm _taskForm;
+
+    [SerializeField] private Image _buttonImage;
 
     public override void SelectDDItem(string name)
     {
@@ -20,6 +23,11 @@ public class TaskTypeDropdown : Dropdown<TaskTypeDDItem>
                 _selectedItem.TaskType = item.TaskType;
             }
         }
+
+        print($"LP = {transform.localPosition}...");
+
+        _taskForm.SetOpenPositionAndColor(transform.localPosition, _buttonImage.color);
+
         _taskForm.CreateTask(_selectedItem.TaskType);
     }
 

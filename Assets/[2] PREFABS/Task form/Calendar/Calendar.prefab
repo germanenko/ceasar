@@ -735,10 +735,10 @@ RectTransform:
   m_Father: {fileID: 3045846318187305987}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 218.7, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 218.7, y: -37.52}
+  m_SizeDelta: {x: 0, y: 67.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3045846317497075647
 CanvasRenderer:
@@ -11293,6 +11293,9 @@ MonoBehaviour:
   _isStartDate: 1
   _calendarIsOpened: 0
   _correctPeriod: 1
+  OnDateSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3045846318823195418
 GameObject:
   m_ObjectHideFlags: 0

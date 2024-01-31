@@ -94,6 +94,8 @@ namespace Germanenko.Source
 
         public void SendID()
         {
+            _taskForm.SetOpenPositionAndColor(transform.localPosition, TaskColor.color);
+
             _taskForm.SetTaskID(_id, IsDraft);
             
             if(!IsDraft)
