@@ -18,7 +18,10 @@ namespace Germanenko.Source
         private List<ItemOfList> _tasks = new List<ItemOfList>();
         public List<ItemOfList> Tasks => _tasks;
 
-        public Pool Pool = Pooler.Instance.AddPool(PoolType.Entities); 
+        public Pool Pool = Pooler.Instance.AddPool(PoolType.Entities);
+
+        public delegate void SampleEventHandler(object sender);
+        public event SampleEventHandler SampleEvent;
 
         public ListOfTasks()
         {

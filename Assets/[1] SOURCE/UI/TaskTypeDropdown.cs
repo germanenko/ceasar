@@ -24,8 +24,6 @@ public class TaskTypeDropdown : Dropdown<TaskTypeDDItem>
             }
         }
 
-        print($"LP = {transform.localPosition}...");
-
         _taskForm.SetOpenPositionAndColor(transform.localPosition, _buttonImage.color);
 
         _taskForm.CreateTask(_selectedItem.TaskType);

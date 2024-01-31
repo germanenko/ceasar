@@ -61,6 +61,7 @@ namespace Germanenko.Source
         [SerializeField] private UIContainerUIAnimator _taskFormAnimator;
 
         [SerializeField] private Vector3 _closePosition;
+        [SerializeField] private Vector3 _openedTaskPosition;
 
         public void Start()
         {
@@ -105,6 +106,8 @@ namespace Germanenko.Source
             _taskFormAnimator.showAnimation.Move.fromCustomValue = openPosition;
 
             _openAnimator.color = color;
+
+            _openedTaskPosition = openPosition;
         }
 
 
@@ -165,6 +168,11 @@ namespace Germanenko.Source
 		{
             _blur.material.SetFloat("_Alpha", 0f);
 
+            if (_editTask)
+            {
+                SetCloseToOpenedTask();
+            }
+
             Signal.Send("TaskControl", "CloseTask");
         }
 
@@ -180,12 +188,21 @@ namespace Germanenko.Source
 
         public void SetCloseToLastTask()
         {
-            var itemsGrid = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().placeholdersTransform;
+            var itemsGrid = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().elementsTransform;
             if (itemsGrid.childCount == 0) return;
 
-            
             var lastItem = itemsGrid.GetChild(itemsGrid.childCount - 1);
-            _taskFormAnimator.hideAnimation.Move.toCustomValue = new Vector3(lastItem.position.x, lastItem.position.y, lastItem.position.z);
+
+            print(lastItem.localPosition);
+            _taskFormAnimator.hideAnimation.Move.toCustomValue = lastItem.localPosition;
+            _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
+        }
+
+
+
+        public void SetCloseToOpenedTask()
+        {
+            _taskFormAnimator.hideAnimation.Move.toCustomValue = _openedTaskPosition;
             _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
         }
 
@@ -342,6 +359,7 @@ namespace Germanenko.Source
         public void SetEditTask(bool edit)
 		{
 			_editTask = edit;
+
 		}
 
 
