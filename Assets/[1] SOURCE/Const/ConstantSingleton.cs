@@ -75,6 +75,8 @@ namespace Germanenko.Source
 
         public ScrollRect TaskFormScroll;
 
+        public SmoothGridLayoutUI TaskGridLayout;
+
         #endregion
 
 

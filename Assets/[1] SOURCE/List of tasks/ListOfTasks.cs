@@ -20,8 +20,8 @@ namespace Germanenko.Source
 
         public Pool Pool = Pooler.Instance.AddPool(PoolType.Entities);
 
-        public delegate void SampleEventHandler(object sender);
-        public event SampleEventHandler SampleEvent;
+        public delegate void SampleEventHandler();
+        public event SampleEventHandler OnListReloaded;
 
         public ListOfTasks()
         {
@@ -161,6 +161,9 @@ namespace Germanenko.Source
                     newItem.GetComponent<LerpToPlaceholder>().InstantlyMove = true;
 
                 _tasks.Add(itemMan);
+
+                if(i == taskPriorities.Count - 1)
+                    OnListReloaded?.Invoke();
             }
         } 
 

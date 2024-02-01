@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using System.Globalization;
 using Doozy.Runtime.UIManager.Animators;
 using Doozy.Runtime.Reactor.Animators;
+using DTT.Utils.Extensions;
 
 namespace Germanenko.Source
 {
@@ -71,7 +72,9 @@ namespace Germanenko.Source
 
         public void CreateTask(TypeOfTasks taskType)
 		{
-			if(Toolbox.Get<ListOfTasks>().CountOfDrafts() > 0)
+            Toolbox.Get<ListOfTasks>().OnListReloaded += SetCloseToLastTask;
+
+            if (Toolbox.Get<ListOfTasks>().CountOfDrafts() > 0)
 			{
 				_draftPopup.Show();
             }
@@ -154,7 +157,7 @@ namespace Germanenko.Source
             else
             {
                 Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
-                SetCloseToLastTask();
+                //SetCloseToLastTask();
             }
 
 
@@ -173,6 +176,8 @@ namespace Germanenko.Source
                 SetCloseToOpenedTask();
             }
 
+            Toolbox.Get<ListOfTasks>().OnListReloaded -= SetCloseToLastTask;
+
             Signal.Send("TaskControl", "CloseTask");
         }
 
@@ -188,12 +193,14 @@ namespace Germanenko.Source
 
         public void SetCloseToLastTask()
         {
-            var itemsGrid = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().elementsTransform;
-            if (itemsGrid.childCount == 0) return;
+            var placeholders = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().placeholdersTransform;
+            var items = ConstantSingleton.Instance.FolderListOfItems.parent.GetComponent<SmoothGridLayoutUI>().elementsTransform;
+            if (placeholders.childCount == 0) return;
+            
+            LayoutRebuilder.ForceRebuildLayoutImmediate(placeholders);
+            
 
-            var lastItem = itemsGrid.GetChild(itemsGrid.childCount - 1);
-
-            print(lastItem.localPosition);
+            var lastItem = placeholders.GetChild(items.childCount - 1);
             _taskFormAnimator.hideAnimation.Move.toCustomValue = lastItem.localPosition;
             _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
         }
@@ -227,6 +234,11 @@ namespace Germanenko.Source
 
 		public void SaveDraft()
 		{
+            if (_nameField.text == "") 
+            {
+                DissolveTaskForm();
+            }
+
             if (Toolbox.Get<ListOfTasks>().CountOfDrafts() == 0)
             {
                 Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());

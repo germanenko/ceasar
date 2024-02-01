@@ -29,6 +29,7 @@ namespace Germanenko.Source
         [SerializeField] private SimpleSQL.SimpleSQLManager DbManager;
         [SerializeField] private GameObject MultiChoiceScreen;
         [SerializeField] private ScrollRect TaskFormScroll;
+        [SerializeField] private SmoothGridLayoutUI TaskGridLayout;
 
         public void Init()
         {
@@ -71,6 +72,7 @@ namespace Germanenko.Source
             ConstantSingleton.Instance.DbManager = DbManager;
             ConstantSingleton.Instance.MultiChoiceScreen = MultiChoiceScreen;
             ConstantSingleton.Instance.TaskFormScroll = TaskFormScroll;
+            ConstantSingleton.Instance.TaskGridLayout = TaskGridLayout;
         }
     }
 

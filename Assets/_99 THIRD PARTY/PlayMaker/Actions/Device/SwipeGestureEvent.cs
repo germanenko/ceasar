@@ -165,7 +165,7 @@ namespace HutongGames.PlayMaker.Actions
 				
 				angle = (360 + angle - 45) % 360;
 
-				Debug.Log (angle);
+				//Debug.Log (angle);
 				
 				if (angle < 90)
 				{

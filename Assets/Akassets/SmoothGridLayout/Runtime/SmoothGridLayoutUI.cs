@@ -1,4 +1,6 @@
+using Germanenko.Framework;
 using Germanenko.Source;
+using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +16,8 @@ public class SmoothGridLayoutUI : MonoBehaviour
     public RectTransform elementsTransform;
     public ElementsContainer elementsContainer;
     public GridLayoutGroup gridLayoutGroup;
+
+    public UnityEvent OnRebuilded;
 
     private void Awake()
     {
@@ -45,6 +49,11 @@ public class SmoothGridLayoutUI : MonoBehaviour
         foreach (var child in childTransforms)
             Destroy(child.gameObject);
 
+        //for (int i = 0; i < placeholdersTransform.childCount; i++) 
+        //{
+        //    placeholdersTransform.GetChild(i).gameObject.SetActive(false);
+        //}
+
 
         foreach (Transform element in elementsTransform)
         {
@@ -60,10 +69,38 @@ public class SmoothGridLayoutUI : MonoBehaviour
                 AddElement(rect);
             }
         }
+
+        OnRebuilded?.Invoke();
     }
 
     private void AddElement(RectTransform element)
     {
+        //try
+        //{
+        //    if (placeholdersTransform.GetChild(element.GetSiblingIndex()))
+        //    {
+        //        var p = placeholdersTransform.GetChild(element.GetSiblingIndex());
+        //        p.gameObject.SetActive(true);
+
+        //        if (element.gameObject.TryGetComponent(out LerpToPlaceholder lerpToPlaceholderr))
+        //        {
+        //            lerpToPlaceholderr.placeholderTransform = p.GetComponent<RectTransform>();
+        //            lerpToPlaceholderr.smoothGridLayout = this;
+        //            return;
+        //        }
+
+        //        lerpToPlaceholderr = element.gameObject.AddComponent<LerpToPlaceholder>();
+        //        lerpToPlaceholderr.placeholderTransform = p.GetComponent<RectTransform>();
+        //        lerpToPlaceholderr.smoothGridLayout = this;
+
+        //        return;
+        //    }
+        //}
+        //catch(Exception ex)
+        //{
+            
+        //}
+
         var placeholder = new GameObject($"{element.name} placeholder");
         var placeholderRect = placeholder.AddComponent<RectTransform>();
         placeholder.AddComponent<LayoutElement>();
@@ -72,6 +109,7 @@ public class SmoothGridLayoutUI : MonoBehaviour
         element.sizeDelta = gridLayoutGroup.cellSize;
         placeholderRect.sizeDelta = gridLayoutGroup.cellSize;
         placeholder.transform.SetParent(placeholdersTransform);
+        print(placeholder.transform.GetSiblingIndex());
         placeholder.transform.localPosition = new Vector3(placeholder.transform.localPosition.x, placeholder.transform.localPosition.y, 0);
 
         if (element.gameObject.TryGetComponent(out LerpToPlaceholder lerpToPlaceholder))
