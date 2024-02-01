@@ -8,13 +8,13 @@ public class ColorDropdown : Dropdown<BaseDDItem>
 {
     public override void SelectDDItem(string name)
     {
-        _selectedItem.name = name;
+        SelectedItem.name = name;
         foreach (var item in listOfItems)
         {
             if (item.name == name)
             {
-                _selectedItem.color = item.color;
-                _selectedItem.sprite = item.sprite;
+                SelectedItem.color = item.color;
+                SelectedItem.sprite = item.sprite;
 
                 _selectedItemView.color = item.color;
                 _selectedItemView.sprite = item.sprite;

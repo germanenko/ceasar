@@ -152,11 +152,11 @@ namespace Germanenko.Source
         {
 			if (_editTask)
 			{
-                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
+                Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField.SelectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
             }
             else
             {
-                Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
+                Toolbox.Get<Tables>().AddTask(_nameField.text, _colorField.SelectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
                 //SetCloseToLastTask();
             }
 
@@ -201,6 +201,7 @@ namespace Germanenko.Source
             
 
             var lastItem = placeholders.GetChild(items.childCount - 1);
+            _openAnimator.color = _colorField.SelectedItem.color;
             _taskFormAnimator.hideAnimation.Move.toCustomValue = lastItem.localPosition;
             _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
         }
@@ -209,6 +210,7 @@ namespace Germanenko.Source
 
         public void SetCloseToOpenedTask()
         {
+            _openAnimator.color = _colorField.SelectedItem.color;
             _taskFormAnimator.hideAnimation.Move.toCustomValue = _openedTaskPosition;
             _taskFormAnimator.hideAnimation.Scale.toCustomValue = new Vector3(.1f, .04f, 1);
         }
@@ -241,12 +243,12 @@ namespace Germanenko.Source
 
             if (Toolbox.Get<ListOfTasks>().CountOfDrafts() == 0)
             {
-                Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
+                Toolbox.Get<Tables>().AddDraft(_nameField.text, _colorField.SelectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod());
             }
 
             if (isDraft)
             {
-                Toolbox.Get<Tables>().EditDraft(_nameField.text, _colorField._selectedItem.name);
+                Toolbox.Get<Tables>().EditDraft(_nameField.text, _colorField.SelectedItem.name);
             }
 
             Toolbox.Get<ListOfTasks>().ReloadList();
@@ -256,7 +258,7 @@ namespace Germanenko.Source
 
 		public void SaveArchive()
 		{
-            Toolbox.Get<Tables>().AddArchiveTask(_nameField.text, _colorField._selectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
+            Toolbox.Get<Tables>().AddArchiveTask(_nameField.text, _colorField.SelectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
         }
 
 

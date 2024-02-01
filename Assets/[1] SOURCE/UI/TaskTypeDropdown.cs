@@ -13,20 +13,20 @@ public class TaskTypeDropdown : Dropdown<TaskTypeDDItem>
 
     public override void SelectDDItem(string name)
     {
-        _selectedItem.name = name;
+        SelectedItem.name = name;
         foreach (var item in listOfItems)
         {
             if (item.name == name)
             {
-                _selectedItem.color = item.color;
-                _selectedItem.sprite = item.sprite;
-                _selectedItem.TaskType = item.TaskType;
+                SelectedItem.color = item.color;
+                SelectedItem.sprite = item.sprite;
+                SelectedItem.TaskType = item.TaskType;
             }
         }
 
         _taskForm.SetOpenPositionAndColor(transform.localPosition, _buttonImage.color);
 
-        _taskForm.CreateTask(_selectedItem.TaskType);
+        _taskForm.CreateTask(SelectedItem.TaskType);
     }
 
     protected override void AddItemToList(TaskTypeDDItem item)

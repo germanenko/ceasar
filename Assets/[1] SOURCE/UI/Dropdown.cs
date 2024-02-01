@@ -21,7 +21,7 @@ namespace Germanenko.Source
         [SerializeField] protected GameObject itemPrefab;
         [SerializeField] protected int itemPosition;
 
-        [SerializeField] public T _selectedItem;
+        [SerializeField] public T SelectedItem;
         [SerializeField] protected Image _selectedItemView;
 
         [SerializeField] protected PlayMakerFSM _fsm;
