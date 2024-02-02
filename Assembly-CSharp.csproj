@@ -562,7 +562,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\RenderSettings\SetFogDensity.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\DeviceInfo.cs" />
     <Compile Include="Assets\[1] SOURCE\DB\DatabaseOutput.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\Clock.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\Clock\Clock.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Trigonometry\GetAtan2FromVector2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\Comment.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenControlMethodsKillById.cs" />
@@ -1029,7 +1029,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Movie\StopMovieTexture.cs" />
     <Compile Include="Assets\PlayMaker Utils\Wizards\LinkerWizard\LinkerData.cs" />
     <Compile Include="Assets\PlayMaker Utils\PropertyDrawers\GenericAttributes\ExpectComponentAttribute.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\DropDownItem.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\Dropdown\DropDownItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Time\PerSecond.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\AnimatorPlay.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Math\FloatDivide.cs" />
@@ -1144,7 +1144,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Web\WWWObject.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetSkipOnDrop.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenCameraShakeRotation.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\Dropdown.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\Dropdown\Dropdown.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformLocalMoveX.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SpriteRenderer\GetSpriteOrderInLayer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\GetVelocity2d.cs" />
@@ -1471,7 +1471,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetFrameRate.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\SetFsmVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiBoolValueChangedEvent.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\ColorDropdown.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\Dropdown\ColorDropdown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\ObjectCompare.cs" />
     <Compile Include="Assets\[1] SOURCE\Menu\TopMenu.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetTimeSource.cs" />

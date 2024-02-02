@@ -88261,8 +88261,8 @@ MonoBehaviour:
   AutoSelectAfterShow: 0
   AutoSelectTarget: {fileID: 0}
   Id:
-    Category: MainMenu
-    Name: Chat
+    Category: None
+    Name: None
     Custom: 0
 --- !u!114 &1726527246
 MonoBehaviour:
@@ -138617,7 +138617,7 @@ MonoBehaviour:
   listFolder: {fileID: 7713524127352305980}
   itemPrefab: {fileID: 7713524125853094301}
   itemPosition: 0
-  _selectedItem:
+  SelectedItem:
     sprite: {fileID: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     name: 
