@@ -735,6 +735,10 @@
       <Project>{31632725-CD8B-0246-6925-583103CA1F41}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="AdvancedInputField.Player.csproj">
+      <Project>{50DCA72C-30D9-142C-D7A0-641B8DF5DCDC}</Project>
+      <Name>AdvancedInputField.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{225BFFCE-BB40-0652-0D20-CE013A0B6026}</Project>
       <Name>UnityEngine.UI.Player</Name>

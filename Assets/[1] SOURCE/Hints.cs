@@ -58,6 +58,7 @@ namespace Germanenko.Source
         {
             //SetActiveHints(true);
             _taskName = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField;
+            _inputField = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().AdvancedInputField;
 
         }
         public void OnLowered()

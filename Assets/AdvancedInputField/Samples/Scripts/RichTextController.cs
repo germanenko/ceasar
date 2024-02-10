@@ -13,7 +13,12 @@ namespace AdvancedInputFieldSamples
 		[SerializeField]
 		private ScrollRect scrollRect;
 
-		private void OnEnable()
+        private void Awake()
+        {
+			Application.targetFrameRate = 60;
+        }
+
+        private void OnEnable()
 		{
 			scrollRect.verticalNormalizedPosition = 1;
 		}

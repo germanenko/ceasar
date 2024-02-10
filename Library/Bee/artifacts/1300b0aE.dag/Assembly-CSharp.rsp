@@ -777,6 +777,7 @@
 "Assets/PlayMaker Utils/Wizards/PlayMakerEventProxy/PlayMakerEventProxy.cs"
 "Assets/Scripts/InkleStudios/Prototype.cs"
 "Assets/Scripts/JustAPixel/uGui/RadialLayout.cs"
+"Assets/Scripts/Others/SearchableDropDown.cs"
 "Assets/Scripts/uGui/BoxCollider2dMatchRectTransform.cs"
 "Assets/Scripts/uGui/InputNavigator.cs"
 "Assets/[0] FRAMEWORK/Attributes/FoldoutGroupAttribute.cs"

@@ -56,6 +56,12 @@ namespace DTT.KeyboardRaiser
             Opened?.Invoke();
         }
 
+        public static void InvokeOpen()
+        {
+            IsActive = true;
+            Opened?.Invoke();
+        }
+
         /// <summary>
         /// Closes the keyboard.
         /// </summary>
@@ -66,6 +72,15 @@ namespace DTT.KeyboardRaiser
             
             IsActive = false;
             Destroy(_worker.gameObject);
+            Closed?.Invoke();
+        }
+
+        public static void InvokeClose()
+        {
+            if (!IsActive)
+                return;
+
+            IsActive = false;
             Closed?.Invoke();
         }
 

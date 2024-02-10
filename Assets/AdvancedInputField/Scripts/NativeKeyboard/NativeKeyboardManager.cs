@@ -114,11 +114,11 @@ namespace AdvancedInputFieldPlugin
 		private void Awake()
 		{
 #if UNITY_EDITOR
-#if(UNITY_ANDROID || UNITY_IOS)
-			if(Settings.SimulateMobileBehaviourInEditor)
+#if (UNITY_ANDROID || UNITY_IOS)
+			if (Settings.SimulateMobileBehaviourInEditor)
 			{
 				Canvas mobileKeyboardCanvas = null;
-				if(Screen.height > Screen.width)
+				if (Screen.height > Screen.width)
 				{
 					mobileKeyboardCanvas = GameObject.Instantiate(Settings.PortraitKeyboardCanvasPrefab);
 				}
@@ -134,7 +134,8 @@ namespace AdvancedInputFieldPlugin
 			{
 				keyboard = gameObject.AddComponent<StandaloneKeyboard>();
 				keyboard.Init(name);
-			}
+
+            }
 #elif UNITY_STANDALONE || UNITY_WSA || UNITY_WEBGL
 			keyboard = gameObject.AddComponent<StandaloneKeyboard>();
 			keyboard.Init(name);
@@ -151,7 +152,7 @@ namespace AdvancedInputFieldPlugin
 #else
 			Debug.LogWarning("Native Keyboard is not supported on this platform");
 #endif
-			emojiEngine = gameObject.AddComponent<EmojiEngine>();
+            emojiEngine = gameObject.AddComponent<EmojiEngine>();
 			richTextBindingEngine = gameObject.AddComponent<RichTextBindingEngine>();
 		}
 

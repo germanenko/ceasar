@@ -395,6 +395,7 @@
 -r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"D:/unity/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/AdvancedInputField.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/DoozyRuntime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/DTT.RuntimeUtilities.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.ref.dll"

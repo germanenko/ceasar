@@ -4,6 +4,8 @@ using UnityEngine;
 using Doozy.Runtime.Signals;
 using UnityEngine.UI;
 using TMPro;
+using AdvancedInputFieldPlugin;
+using UnityEngine.Rendering;
 
 namespace DTT.KeyboardRaiser
 {
@@ -133,6 +135,7 @@ namespace DTT.KeyboardRaiser
                 _originalRect = _rectTransform.GetWorldRect();
 
                 //Signal.Send("BG", "KeyboardTask", true);
+                print("raised");
             }
         }
         
@@ -147,6 +150,7 @@ namespace DTT.KeyboardRaiser
 
             SendKeyboardSignal(false);
             SetOpeningField(false);
+            print("lowered");
         }
 
 
@@ -180,10 +184,16 @@ namespace DTT.KeyboardRaiser
         private void Update()
         {
             if (Time.time - _timeOfLastLowering > TIMEOUT_DURATION && !_keyboardState.IsRaised)
+            { 
                 return;
+            }
 
-            if (!KeyboardStateManager.openingField.Contains(this) && !_isHints) return;      
-                
+            if (!KeyboardStateManager.openingField.Contains(this) && !_isHints)
+            {
+                print("second");
+                return;
+            }
+
 
 
             float delta = 0;
@@ -191,14 +201,17 @@ namespace DTT.KeyboardRaiser
             {
                 Rect canvasRect = _canvas.GetRectTransform().GetWorldRect();
 
-                delta = _keyboardState.ProportionalHeight * canvasRect.height - (_originalRect.yMin - _padding * transform.lossyScale.y);
+                //delta = _keyboardState.ProportionalHeight * canvasRect.height - (_originalRect.yMin - _padding * transform.lossyScale.y);
+                delta = NativeKeyboardManager.Keyboard.ProportionalHeight * canvasRect.height - (_originalRect.yMin - _padding * transform.lossyScale.y);
+                print("new " + NativeKeyboardManager.Keyboard.ProportionalHeight);
+                print("old " + _keyboardState.PixelHeight);
             }
 
             _targetPos = _originalPosition + Vector3.up * delta;
 
             if(delta != 0)
             {
-                if (_keyboardState.ProportionalHeight >= .3f)
+                if (NativeKeyboardManager.Keyboard.ProportionalHeight >= .2f)
                     transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
             }
             else

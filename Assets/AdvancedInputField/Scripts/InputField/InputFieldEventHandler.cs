@@ -20,7 +20,7 @@ namespace AdvancedInputFieldPlugin
 		internal void InvokeSelectionChanged(bool selected)
 		{
 			InputField.OnSelectionChanged.Invoke(selected);
-		}
+        }
 
 		internal void InvokeBeginEdit(BeginEditReason reason)
 		{

@@ -1,4 +1,6 @@
 ﻿#if UNITY_ANDROID
+using AdvancedInputFieldPlugin;
+using NUnit.Framework;
 using System;
 using UnityEngine;
 
@@ -13,6 +15,7 @@ namespace DTT.KeyboardRaiser
         /// Retrieves the height in pixels of the on-screen keyboard.
         /// Returns 0 while keyboard is rising due to a delay when necessary Android events are called.
         /// </summary>
+
         public int PixelHeight
         {
             get
@@ -35,6 +38,8 @@ namespace DTT.KeyboardRaiser
                     if(visibleHeight == Screen.height)
                         return 0;
 
+                    Debug.Log($"{IsRaised} - {Screen.height} - {visibleHeight} + ({_accountForDecor} ? {decorHeight} : 0) = {Screen.height - visibleHeight + (_accountForDecor ? decorHeight : 0)}");
+
                     return Screen.height - visibleHeight + (_accountForDecor ? decorHeight : 0);
                 }
             }
@@ -48,7 +53,8 @@ namespace DTT.KeyboardRaiser
         /// <summary>
         /// Whether the keyboard is raised or not.
         /// </summary>
-        public bool IsRaised => PixelHeight > 0;
+        public bool IsRaised => NativeKeyboardManager.Keyboard.PixelHeight > 0;
+
 
         /// <summary>
         /// Is called whenever the on-screen keyboard appears.
@@ -133,12 +139,22 @@ namespace DTT.KeyboardRaiser
         /// </summary>
         private void OnUpdate()
         {
-            if(TouchScreenKeyboard.visible && !_raised)
+            //if (TouchScreenKeyboard.visible && !_raised)
+            //{
+            //    _raised = true;
+            //    Raised?.Invoke();
+            //}
+            //else if (!TouchScreenKeyboard.visible && _raised)
+            //{
+            //    _raised = false;
+            //    Lowered?.Invoke();
+            //}
+            if (NativeKeyboardManager.Keyboard.State == KeyboardState.VISIBLE && !_raised)
             {
                 _raised = true;
                 Raised?.Invoke();
             }
-            else if(!TouchScreenKeyboard.visible && _raised)
+            else if (NativeKeyboardManager.Keyboard.State != KeyboardState.VISIBLE && _raised)
             {
                 _raised = false;
                 Lowered?.Invoke();

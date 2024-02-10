@@ -656,6 +656,7 @@ namespace AdvancedInputFieldPlugin
 				}
 				Deselect(EndEditReason.KEYBOARD_NEXT);
 				InputField.NextInputField.ManualSelect(BeginEditReason.KEYBOARD_NEXT);
+				Debug.Log("nextField");
 			}
 			else
 			{
@@ -1519,7 +1520,7 @@ namespace AdvancedInputFieldPlugin
 		/// <summary>Marks as selected</summary>
 		internal void EnableSelection()
 		{
-			AdvancedInputField lastSelectedInputField = NativeKeyboardManager.LastSelectedInputField;
+            AdvancedInputField lastSelectedInputField = NativeKeyboardManager.LastSelectedInputField;
 			if(lastSelectedInputField != null && NativeKeyboardManager.LastSelectedInputField != InputField)
 			{
 				if(lastSelectedInputField.ShouldBlockDeselect)
@@ -1546,11 +1547,13 @@ namespace AdvancedInputFieldPlugin
 				}
 				else
 				{
-					keyboardClient.ClearEventQueue();
-					LoadKeyboard();
-				}
+                    keyboardClient.ClearEventQueue();
+
+                    LoadKeyboard();
+                }
 				keyboardClient.Activate();
-			}
+            }
+
 			eventHandler?.InvokeSelectionChanged(true);
 		}
 
@@ -1607,7 +1610,7 @@ namespace AdvancedInputFieldPlugin
 			KeyboardClient.Keyboard.State = KeyboardState.PENDING_SHOW;
 #endif
 			KeyboardClient.ShowKeyboard(text, selectionStartPosition, selectionEndPosition, configuration);
-		}
+        }
 
 		public void CloseKeyboard()
 		{

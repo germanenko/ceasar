@@ -372,7 +372,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 30
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -680,19 +680,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 317495157104814198}
-        m_TargetAssemblyTypeName: Germanenko.Source.SignalSender, Assembly-CSharp
-        m_MethodName: SendSignalEndInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -714,18 +702,6 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 317495157104814198}
-        m_TargetAssemblyTypeName: Germanenko.Source.SignalSender, Assembly-CSharp
-        m_MethodName: SendSignalEndInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2966658005681698290}
         m_TargetAssemblyTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser, DTT.KeyboardRaiser.Runtime
         m_MethodName: SetOpeningField
@@ -1104,6 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputField: {fileID: 8386966860246669048}
+  _advancedInputField: {fileID: 0}
   _dropShadow: {fileID: 8144888679765100625}
   _rectTransform: {fileID: 0}
 --- !u!114 &2966658005681698290
@@ -1413,7 +1390,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

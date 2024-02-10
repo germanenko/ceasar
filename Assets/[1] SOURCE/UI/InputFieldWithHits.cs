@@ -1,3 +1,4 @@
+using AdvancedInputFieldPlugin;
 using DTT.KeyboardRaiser;
 using Germanenko.Source;
 using HutongGames.PlayMaker.Actions;
@@ -14,6 +15,9 @@ public class InputFieldWithHits : MonoBehaviour
     [SerializeField] private TMP_InputField _inputField;
     public TMP_InputField InputField => _inputField;
 
+    [SerializeField] private AdvancedInputField _advancedInputField;
+    public AdvancedInputField AdvancedInputField => _advancedInputField;
+
     [SerializeField] private DropShadow _dropShadow;
 
     [SerializeField] private RectTransform _rectTransform;
@@ -25,6 +29,12 @@ public class InputFieldWithHits : MonoBehaviour
 
     private void OnEnable()
     {
+        if(_advancedInputField != null)
+        {
+            _advancedInputField.OnSelectionChanged.AddListener(SelectChange);
+            return;
+        }
+
         _inputField.onDeselect.AddListener(Deselected);
         _inputField.onSelect.AddListener(Selected);
 
@@ -51,6 +61,32 @@ public class InputFieldWithHits : MonoBehaviour
             inputFieldWithHits.FocusOnInputField();
             inputFieldWithHits.InputField.ActivateInputField();
             inputFieldWithHits.InputField.caretPosition = inputFieldWithHits.InputField.text.Length;
+        }
+    }
+
+
+
+    public void OpenNextAdvancedInputField(string result, EndEditReason reason)
+    {
+        _advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
+
+        try
+        {
+            if (transform.parent.GetChild(transform.GetSiblingIndex() + 1) == null) return;
+        }
+        catch
+        {
+            return;
+        }
+
+        var nextInputField = transform.parent.GetChild(transform.GetSiblingIndex() + 1);
+
+        if (nextInputField.TryGetComponent(out InputFieldWithHits inputFieldWithHits))
+        {
+            print("next");
+            inputFieldWithHits.FocusOnInputField();
+            inputFieldWithHits.AdvancedInputField.GetEngine.KeyboardClient.Activate();
+            inputFieldWithHits.AdvancedInputField.SetCaretToTextEnd();
         }
     }
 
@@ -89,4 +125,34 @@ public class InputFieldWithHits : MonoBehaviour
         EditorKeyboard.Close();
 #endif
     }
+
+
+
+    public void SelectChange(bool change)
+    {
+        if(change)
+        {
+            _dropShadow.Fade(.7f, .2f);
+            FocusOnInputField();
+
+            //_advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
+
+#if UNITY_EDITOR
+            EditorKeyboard.InvokeOpen();
+#endif
+        }
+        else
+        {
+            if (!EventSystem.current.alreadySelecting) EventSystem.current.SetSelectedGameObject(null);
+
+            _dropShadow.Fade(0f, .2f);
+
+            //_advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
+
+#if UNITY_EDITOR
+            EditorKeyboard.InvokeClose();
+#endif
+        }
+    }
+
 }

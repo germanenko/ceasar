@@ -76,9 +76,13 @@ namespace AdvancedInputFieldPlugin
 		/// <summary>Indicates whether a hardware keyboard is connected</summary>
 		public bool HardwareKeyboardConnected { get; protected set; }
 
-		/// <summary>Initializes this class</summary>
-		/// <param name="gameObjectName">The name of the GameObject to use for callbacks</param>
-		internal void Init(string gameObjectName)
+        public int PixelHeight;
+
+        public float ProportionalHeight => PixelHeight / (float)Screen.height;
+
+        /// <summary>Initializes this class</summary>
+        /// <param name="gameObjectName">The name of the GameObject to use for callbacks</param>
+        internal void Init(string gameObjectName)
 		{
 			this.gameObjectName = gameObjectName;
 			nativeEventQueue = new ThreadsafeQueue<NativeKeyboardEvent>(30);
@@ -284,8 +288,11 @@ namespace AdvancedInputFieldPlugin
 
 		/// <summary>Event callback when the height of the keyboard has changed</summary>
 		public void OnKeyboardHeightChanged(int height)
-		{
-			if(onKeyboardHeightChanged != null)
+        {
+			print("newH " + height);
+			PixelHeight = height;
+
+            if (onKeyboardHeightChanged != null)
 			{
 				onKeyboardHeightChanged.Invoke(height);
 			}

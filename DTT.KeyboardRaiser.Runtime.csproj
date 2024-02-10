@@ -849,6 +849,10 @@
       <Project>{97DA4BAF-F59C-7482-70A5-972F5369FA84}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="AdvancedInputField.csproj">
+      <Project>{5F5DAEBE-EA34-69A3-450E-3AFF02E1CCCC}</Project>
+      <Name>AdvancedInputField</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{BB6CEF7D-D4B4-A06A-4C04-3E0CC2758A8D}</Project>
       <Name>UnityEditor.UI</Name>

@@ -122,9 +122,10 @@ namespace AdvancedInputFieldPlugin
 	[RequireComponent(typeof(RectTransform))]
 	public class AdvancedInputField: Selectable, IPointerClickHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IUpdateSelectedHandler
 	{
-		#region EVENT_CLASSES
-		/// <summary>Event used for selection change</summary>
-		[Serializable]
+
+        #region EVENT_CLASSES
+        /// <summary>Event used for selection change</summary>
+        [Serializable]
 		public class SelectionChangedEvent: UnityEvent<bool> { }
 
 		/// <summary>Event used for edit begin</summary>
@@ -457,8 +458,10 @@ namespace AdvancedInputFieldPlugin
 			}
 		}
 
-		/// <summary>The RectTransform of the InputField</summary>
-		public RectTransform RectTransform
+		public InputFieldEngine GetEngine => Engine;
+
+        /// <summary>The RectTransform of the InputField</summary>
+        public RectTransform RectTransform
 		{
 			get
 			{
@@ -2009,10 +2012,10 @@ namespace AdvancedInputFieldPlugin
 		{
 			if(Application.isPlaying)
 			{
-				if(!NativeKeyboardManager.InstanceValid) //Create global instance if not created yet
-				{
-					NativeKeyboardManager.CreateInstance();
-				}
+				//if(!NativeKeyboardManager.InstanceValid) //Create global instance if not created yet
+				//{
+				//	NativeKeyboardManager.CreateInstance();
+				//}
 
 				engine = new InputFieldEngine(this);
 				engine.Initialize();

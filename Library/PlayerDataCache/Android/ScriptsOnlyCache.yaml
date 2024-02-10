@@ -22,13 +22,12 @@ ScriptsOnlyBuild:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
     - HutongGames.PlayMakerEditor.FsmEditorWindow
     Assembly-CSharp.dll:
-    - AccountManager
-    - Authentication
     - Calendar
     - Clock
     - ColorDropdown
     - DatabaseActions
     - DatabaseOutput
+    - DateTimeItem
     - DayButton
     - DeletedTaskView
     - DigitalRubyShared.DemoAsteroidScript
@@ -62,7 +61,6 @@ ScriptsOnlyBuild:
     - RecoveryDeletedTasks
     - RecoveryTaskItem
     - SavesAndDraftsView
-    - ServerConstants
     - SmoothGridLayoutUI
     - Starter
     - TaskEmpty
@@ -84,7 +82,6 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -175,6 +172,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -184,7 +182,6 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.AspectRatioFitter
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -223,7 +220,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp:
     - BaseDDItem
     - DigitalRubyShared.GestureRecognizerComponentStateUpdatedEvent
-    - ProfileData
     - TaskTypeDDItem
     - TheraBytes.BetterUi.BetterContentSizeFitter/Settings
     - TheraBytes.BetterUi.BetterContentSizeFitter/SettingsConfigCollection
@@ -250,7 +246,6 @@ ScriptsOnlyBuild:
     - TheraBytes.BetterUi.Vector2SizeModifier
     - TheraBytes.BetterUi.VertexMaterialData
     - TheraBytes.BetterUi.VertexMaterialData/FloatProperty
-    - TokenResponse
     DOTween:
     - DG.Tweening.Core.DOTweenSettings/ModulesSetup
     - DG.Tweening.Core.DOTweenSettings/SafeModeOptions
@@ -365,6 +360,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.Events.UnityEvent
+    - UnityEngine.Events.UnityEvent`1[System.Boolean]
     - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
@@ -387,24 +383,42 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
   - assembly: Assembly-CSharp
-    fullTypeName: Authentication
-    methodName: RegisterAsync
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
   - assembly: Assembly-CSharp
-    fullTypeName: Authentication
-    methodName: AuthAsync
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: ChangeDayTimeHours
@@ -423,12 +437,39 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: SelectTimeType
-  - assembly: Unity.TextMeshPro
-    fullTypeName: TMPro.TMP_InputField
-    methodName: ActivateInputField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: Assembly-CSharp
+    fullTypeName: DateTimeItem
+    methodName: CheckDateIsPeriod
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -462,6 +503,36 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -536,6 +607,12 @@ ScriptsOnlyBuild:
     methodName: DateCorrect
   - assembly: Assembly-CSharp
     fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
     methodName: OpenCalendarWindow
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
@@ -569,6 +646,12 @@ ScriptsOnlyBuild:
     methodName: DateCorrect
   - assembly: Assembly-CSharp
     fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
     methodName: OpenCalendarWindow
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
@@ -585,18 +668,18 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
-  - assembly: Assembly-CSharp
-    fullTypeName: DayButton
-    methodName: SelectDay
-  - assembly: Assembly-CSharp
-    fullTypeName: MonthToggle
-    methodName: SelectMonth
   - assembly: Unity.TextMeshPro
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
   - assembly: Assembly-CSharp
     fullTypeName: RecoveryTaskItem
     methodName: Recovery
+  - assembly: Assembly-CSharp
+    fullTypeName: DayButton
+    methodName: SelectDay
+  - assembly: Assembly-CSharp
+    fullTypeName: MonthToggle
+    methodName: SelectMonth
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -613,11 +696,14 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
   - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: OnShow
@@ -675,9 +761,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: Calendar
-    methodName: OpenCalendarWindow
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -690,12 +773,9 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
-  - assembly: Assembly-CSharp
-    fullTypeName: Calendar
-    methodName: GetDateFromInputField
-  - assembly: Assembly-CSharp
-    fullTypeName: Calendar
-    methodName: DateCorrect
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: DatabaseOutput
     methodName: LoadTasks
@@ -705,12 +785,15 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: Deauth
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Localization
     methodName: SetLocalizationLanguage
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: Stop
@@ -722,9 +805,6 @@ ScriptsOnlyBuild:
     methodName: Play
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
     methodName: Play
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
@@ -768,9 +848,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: RecoveryDeletedTasks
     methodName: LoadDeletedTasks
-  - assembly: Assembly-CSharp
-    fullTypeName: Germanenko.Source.TaskForm
-    methodName: CreateTask
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
+    methodName: Show
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -783,6 +863,9 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
     methodName: Show
@@ -828,12 +911,18 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MultiChoice
     methodName: SetMultiChoice
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
     methodName: Show
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: LoadInfo
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.Question
     methodName: Show
@@ -999,23 +1088,8 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
     methodName: InstantHide
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
-    methodName: Play
   sceneClasses:
-    Assets/[8] SCENES & GRAPHS/Scenes/Login.unity:
+    Assets/[8] SCENES & GRAPHS/Scenes/MainScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -1040,13 +1114,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 2326}
@@ -1057,125 +1137,309 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2332}
     - Class: 114
+      Script: {instanceID: 2334}
+    - Class: 114
       Script: {instanceID: 2340}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2454}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2426}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 2456}
     - Class: 114
-      Script: {instanceID: 3202}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 3300}
+      Script: {instanceID: 2898}
     - Class: 114
-      Script: {instanceID: 3332}
+      Script: {instanceID: 3066}
+    - Class: 114
+      Script: {instanceID: 3072}
+    - Class: 114
+      Script: {instanceID: 3134}
+    - Class: 114
+      Script: {instanceID: 3236}
+    - Class: 114
+      Script: {instanceID: 3302}
     - Class: 114
       Script: {instanceID: 3334}
     - Class: 114
-      Script: {instanceID: 3970}
+      Script: {instanceID: 3336}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 3500}
     - Class: 114
-      Script: {instanceID: 4288}
+      Script: {instanceID: 3558}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 3972}
     - Class: 114
-      Script: {instanceID: 4752}
+      Script: {instanceID: 4002}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 4122}
     - Class: 114
-      Script: {instanceID: 5586}
+      Script: {instanceID: 4240}
     - Class: 114
-      Script: {instanceID: 5802}
+      Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 6124}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 6268}
+      Script: {instanceID: 4354}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 4472}
     - Class: 114
-      Script: {instanceID: 6758}
+      Script: {instanceID: 4656}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 4756}
     - Class: 114
-      Script: {instanceID: 7004}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 7532}
+      Script: {instanceID: 4958}
     - Class: 114
-      Script: {instanceID: 7824}
+      Script: {instanceID: 4996}
     - Class: 114
-      Script: {instanceID: 8056}
+      Script: {instanceID: 5062}
     - Class: 114
-      Script: {instanceID: 8770}
+      Script: {instanceID: 5102}
     - Class: 114
-      Script: {instanceID: 8860}
+      Script: {instanceID: 5178}
     - Class: 114
-      Script: {instanceID: 8920}
+      Script: {instanceID: 5234}
     - Class: 114
-      Script: {instanceID: 10178}
+      Script: {instanceID: 5390}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 5590}
     - Class: 114
-      Script: {instanceID: 11428}
+      Script: {instanceID: 5646}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 5806}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 5920}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 6074}
     - Class: 114
-      Script: {instanceID: 11928}
+      Script: {instanceID: 6128}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 6272}
     - Class: 114
-      Script: {instanceID: 12772}
+      Script: {instanceID: 6412}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 6632}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 6752}
     - Class: 114
-      Script: {instanceID: 13882}
+      Script: {instanceID: 6762}
     - Class: 114
-      Script: {instanceID: 14006}
+      Script: {instanceID: 6778}
     - Class: 114
-      Script: {instanceID: 14106}
+      Script: {instanceID: 7008}
     - Class: 114
-      Script: {instanceID: 14350}
+      Script: {instanceID: 7392}
     - Class: 114
-      Script: {instanceID: 14932}
+      Script: {instanceID: 7394}
     - Class: 114
-      Script: {instanceID: 15052}
+      Script: {instanceID: 7570}
     - Class: 114
-      Script: {instanceID: 15112}
+      Script: {instanceID: 7612}
     - Class: 114
-      Script: {instanceID: 15398}
+      Script: {instanceID: 7828}
     - Class: 114
-      Script: {instanceID: 15544}
+      Script: {instanceID: 7896}
     - Class: 114
-      Script: {instanceID: 16042}
+      Script: {instanceID: 8024}
     - Class: 114
-      Script: {instanceID: 16114}
+      Script: {instanceID: 8060}
     - Class: 114
-      Script: {instanceID: 16718}
+      Script: {instanceID: 8204}
     - Class: 114
-      Script: {instanceID: 16730}
+      Script: {instanceID: 8540}
     - Class: 114
-      Script: {instanceID: 17084}
+      Script: {instanceID: 8726}
     - Class: 114
-      Script: {instanceID: 17150}
+      Script: {instanceID: 8764}
     - Class: 114
-      Script: {instanceID: 17160}
+      Script: {instanceID: 8776}
     - Class: 114
-      Script: {instanceID: 17242}
+      Script: {instanceID: 8866}
     - Class: 114
-      Script: {instanceID: 17258}
+      Script: {instanceID: 8926}
     - Class: 114
-      Script: {instanceID: 17422}
+      Script: {instanceID: 9004}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 9388}
+    - Class: 114
+      Script: {instanceID: 9474}
+    - Class: 114
+      Script: {instanceID: 9536}
+    - Class: 114
+      Script: {instanceID: 9720}
+    - Class: 114
+      Script: {instanceID: 9782}
+    - Class: 114
+      Script: {instanceID: 10130}
+    - Class: 114
+      Script: {instanceID: 10184}
+    - Class: 114
+      Script: {instanceID: 10232}
+    - Class: 114
+      Script: {instanceID: 10244}
+    - Class: 114
+      Script: {instanceID: 10788}
+    - Class: 114
+      Script: {instanceID: 10840}
+    - Class: 114
+      Script: {instanceID: 10954}
+    - Class: 114
+      Script: {instanceID: 11058}
+    - Class: 114
+      Script: {instanceID: 11430}
+    - Class: 114
+      Script: {instanceID: 11434}
+    - Class: 114
+      Script: {instanceID: 11552}
+    - Class: 114
+      Script: {instanceID: 11588}
+    - Class: 114
+      Script: {instanceID: 11652}
+    - Class: 114
+      Script: {instanceID: 11924}
+    - Class: 114
+      Script: {instanceID: 11934}
+    - Class: 114
+      Script: {instanceID: 12030}
+    - Class: 114
+      Script: {instanceID: 12056}
+    - Class: 114
+      Script: {instanceID: 12458}
+    - Class: 114
+      Script: {instanceID: 12590}
+    - Class: 114
+      Script: {instanceID: 12778}
+    - Class: 114
+      Script: {instanceID: 12840}
+    - Class: 114
+      Script: {instanceID: 12868}
+    - Class: 114
+      Script: {instanceID: 12946}
+    - Class: 114
+      Script: {instanceID: 13250}
+    - Class: 114
+      Script: {instanceID: 13298}
+    - Class: 114
+      Script: {instanceID: 13464}
+    - Class: 114
+      Script: {instanceID: 13480}
+    - Class: 114
+      Script: {instanceID: 13568}
+    - Class: 114
+      Script: {instanceID: 13698}
+    - Class: 114
+      Script: {instanceID: 13850}
+    - Class: 114
+      Script: {instanceID: 13886}
+    - Class: 114
+      Script: {instanceID: 14002}
+    - Class: 114
+      Script: {instanceID: 14010}
+    - Class: 114
+      Script: {instanceID: 14110}
+    - Class: 114
+      Script: {instanceID: 14148}
+    - Class: 114
+      Script: {instanceID: 14244}
+    - Class: 114
+      Script: {instanceID: 14354}
+    - Class: 114
+      Script: {instanceID: 14428}
+    - Class: 114
+      Script: {instanceID: 14482}
+    - Class: 114
+      Script: {instanceID: 14586}
+    - Class: 114
+      Script: {instanceID: 14698}
+    - Class: 114
+      Script: {instanceID: 14710}
+    - Class: 114
+      Script: {instanceID: 14716}
+    - Class: 114
+      Script: {instanceID: 14756}
+    - Class: 114
+      Script: {instanceID: 14890}
+    - Class: 114
+      Script: {instanceID: 14936}
+    - Class: 114
+      Script: {instanceID: 15056}
+    - Class: 114
+      Script: {instanceID: 15116}
+    - Class: 114
+      Script: {instanceID: 15402}
+    - Class: 114
+      Script: {instanceID: 15548}
+    - Class: 114
+      Script: {instanceID: 15620}
+    - Class: 114
+      Script: {instanceID: 15742}
+    - Class: 114
+      Script: {instanceID: 16046}
+    - Class: 114
+      Script: {instanceID: 16086}
+    - Class: 114
+      Script: {instanceID: 16118}
+    - Class: 114
+      Script: {instanceID: 16190}
+    - Class: 114
+      Script: {instanceID: 16234}
+    - Class: 114
+      Script: {instanceID: 16256}
+    - Class: 114
+      Script: {instanceID: 16282}
+    - Class: 114
+      Script: {instanceID: 16332}
+    - Class: 114
+      Script: {instanceID: 16426}
+    - Class: 114
+      Script: {instanceID: 16570}
+    - Class: 114
+      Script: {instanceID: 16602}
+    - Class: 114
+      Script: {instanceID: 16734}
+    - Class: 114
+      Script: {instanceID: 17088}
+    - Class: 114
+      Script: {instanceID: 17154}
+    - Class: 114
+      Script: {instanceID: 17164}
+    - Class: 114
+      Script: {instanceID: 17246}
+    - Class: 114
+      Script: {instanceID: 17262}
+    - Class: 114
+      Script: {instanceID: 17306}
+    - Class: 114
+      Script: {instanceID: 17426}
+    - Class: 114
+      Script: {instanceID: 17460}
+    - Class: 114
+      Script: {instanceID: 17520}
+    - Class: 114
+      Script: {instanceID: 17548}
+    - Class: 114
+      Script: {instanceID: 17684}
+    - Class: 114
+      Script: {instanceID: 18032}
+    - Class: 114
+      Script: {instanceID: 18094}
+    - Class: 114
+      Script: {instanceID: 18116}
+    - Class: 114
+      Script: {instanceID: 18190}
+    - Class: 114
+      Script: {instanceID: 18212}
+    - Class: 114
+      Script: {instanceID: 18362}
+    - Class: 114
+      Script: {instanceID: 18394}
+    - Class: 114
+      Script: {instanceID: 18814}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1187,275 +1451,6 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 225
-      Script: {instanceID: 0}
-    Assets/[8] SCENES & GRAPHS/Scenes/MainScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 2326}
-    - Class: 114
-      Script: {instanceID: 2328}
-    - Class: 114
-      Script: {instanceID: 2332}
-    - Class: 114
-      Script: {instanceID: 2334}
-    - Class: 114
-      Script: {instanceID: 2340}
-    - Class: 114
-      Script: {instanceID: 2342}
-    - Class: 114
-      Script: {instanceID: 3064}
-    - Class: 114
-      Script: {instanceID: 3070}
-    - Class: 114
-      Script: {instanceID: 3132}
-    - Class: 114
-      Script: {instanceID: 3234}
-    - Class: 114
-      Script: {instanceID: 3498}
-    - Class: 114
-      Script: {instanceID: 3556}
-    - Class: 114
-      Script: {instanceID: 4000}
-    - Class: 114
-      Script: {instanceID: 4238}
-    - Class: 114
-      Script: {instanceID: 4288}
-    - Class: 114
-      Script: {instanceID: 4320}
-    - Class: 114
-      Script: {instanceID: 4352}
-    - Class: 114
-      Script: {instanceID: 4890}
-    - Class: 114
-      Script: {instanceID: 4954}
-    - Class: 114
-      Script: {instanceID: 4992}
-    - Class: 114
-      Script: {instanceID: 5058}
-    - Class: 114
-      Script: {instanceID: 5174}
-    - Class: 114
-      Script: {instanceID: 5230}
-    - Class: 114
-      Script: {instanceID: 5386}
-    - Class: 114
-      Script: {instanceID: 5642}
-    - Class: 114
-      Script: {instanceID: 5916}
-    - Class: 114
-      Script: {instanceID: 6070}
-    - Class: 114
-      Script: {instanceID: 6408}
-    - Class: 114
-      Script: {instanceID: 6628}
-    - Class: 114
-      Script: {instanceID: 6748}
-    - Class: 114
-      Script: {instanceID: 7388}
-    - Class: 114
-      Script: {instanceID: 7390}
-    - Class: 114
-      Script: {instanceID: 7566}
-    - Class: 114
-      Script: {instanceID: 7608}
-    - Class: 114
-      Script: {instanceID: 7824}
-    - Class: 114
-      Script: {instanceID: 7892}
-    - Class: 114
-      Script: {instanceID: 8020}
-    - Class: 114
-      Script: {instanceID: 8200}
-    - Class: 114
-      Script: {instanceID: 8534}
-    - Class: 114
-      Script: {instanceID: 8720}
-    - Class: 114
-      Script: {instanceID: 8758}
-    - Class: 114
-      Script: {instanceID: 8770}
-    - Class: 114
-      Script: {instanceID: 8998}
-    - Class: 114
-      Script: {instanceID: 9382}
-    - Class: 114
-      Script: {instanceID: 9468}
-    - Class: 114
-      Script: {instanceID: 9530}
-    - Class: 114
-      Script: {instanceID: 9714}
-    - Class: 114
-      Script: {instanceID: 9776}
-    - Class: 114
-      Script: {instanceID: 10124}
-    - Class: 114
-      Script: {instanceID: 10226}
-    - Class: 114
-      Script: {instanceID: 10238}
-    - Class: 114
-      Script: {instanceID: 10782}
-    - Class: 114
-      Script: {instanceID: 10834}
-    - Class: 114
-      Script: {instanceID: 10948}
-    - Class: 114
-      Script: {instanceID: 11052}
-    - Class: 114
-      Script: {instanceID: 11424}
-    - Class: 114
-      Script: {instanceID: 11546}
-    - Class: 114
-      Script: {instanceID: 11646}
-    - Class: 114
-      Script: {instanceID: 11918}
-    - Class: 114
-      Script: {instanceID: 11928}
-    - Class: 114
-      Script: {instanceID: 12024}
-    - Class: 114
-      Script: {instanceID: 12050}
-    - Class: 114
-      Script: {instanceID: 12452}
-    - Class: 114
-      Script: {instanceID: 12584}
-    - Class: 114
-      Script: {instanceID: 12834}
-    - Class: 114
-      Script: {instanceID: 12862}
-    - Class: 114
-      Script: {instanceID: 13244}
-    - Class: 114
-      Script: {instanceID: 13292}
-    - Class: 114
-      Script: {instanceID: 13458}
-    - Class: 114
-      Script: {instanceID: 13474}
-    - Class: 114
-      Script: {instanceID: 13562}
-    - Class: 114
-      Script: {instanceID: 13692}
-    - Class: 114
-      Script: {instanceID: 13694}
-    - Class: 114
-      Script: {instanceID: 13998}
-    - Class: 114
-      Script: {instanceID: 14006}
-    - Class: 114
-      Script: {instanceID: 14144}
-    - Class: 114
-      Script: {instanceID: 14424}
-    - Class: 114
-      Script: {instanceID: 14478}
-    - Class: 114
-      Script: {instanceID: 14582}
-    - Class: 114
-      Script: {instanceID: 14694}
-    - Class: 114
-      Script: {instanceID: 14706}
-    - Class: 114
-      Script: {instanceID: 14712}
-    - Class: 114
-      Script: {instanceID: 14752}
-    - Class: 114
-      Script: {instanceID: 14886}
-    - Class: 114
-      Script: {instanceID: 15112}
-    - Class: 114
-      Script: {instanceID: 15398}
-    - Class: 114
-      Script: {instanceID: 15544}
-    - Class: 114
-      Script: {instanceID: 15616}
-    - Class: 114
-      Script: {instanceID: 15738}
-    - Class: 114
-      Script: {instanceID: 16082}
-    - Class: 114
-      Script: {instanceID: 16114}
-    - Class: 114
-      Script: {instanceID: 16186}
-    - Class: 114
-      Script: {instanceID: 16230}
-    - Class: 114
-      Script: {instanceID: 16252}
-    - Class: 114
-      Script: {instanceID: 16278}
-    - Class: 114
-      Script: {instanceID: 16328}
-    - Class: 114
-      Script: {instanceID: 16422}
-    - Class: 114
-      Script: {instanceID: 16566}
-    - Class: 114
-      Script: {instanceID: 16598}
-    - Class: 114
-      Script: {instanceID: 16730}
-    - Class: 114
-      Script: {instanceID: 17258}
-    - Class: 114
-      Script: {instanceID: 17302}
-    - Class: 114
-      Script: {instanceID: 17516}
-    - Class: 114
-      Script: {instanceID: 17544}
-    - Class: 114
-      Script: {instanceID: 17680}
-    - Class: 114
-      Script: {instanceID: 18028}
-    - Class: 114
-      Script: {instanceID: 18090}
-    - Class: 114
-      Script: {instanceID: 18112}
-    - Class: 114
-      Script: {instanceID: 18186}
-    - Class: 114
-      Script: {instanceID: 18208}
-    - Class: 114
-      Script: {instanceID: 18358}
-    - Class: 114
-      Script: {instanceID: 18390}
-    - Class: 114
-      Script: {instanceID: 18810}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -1504,6 +1499,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: aba7b2852ef61d175dd9602e7723d5e5
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Mask
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -1836,7 +1837,7 @@ ScriptsOnlyBuild:
     className: TooltipTrigger
   - hash:
       serializedVersion: 2
-      Hash: 0fa7bca948e99073b064741bc4512551
+      Hash: 38215efb9416b0c171f1275f4ac331cf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SmoothGridLayoutUI
@@ -2166,6 +2167,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDragMessageListener
   - hash:
       serializedVersion: 2
+      Hash: d7324bf6b03b0e8faa3b186ae5118d38
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DateTimeItem
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
@@ -2190,7 +2197,7 @@ ScriptsOnlyBuild:
     className: ScriptMachine
   - hash:
       serializedVersion: 2
-      Hash: 2f7fd1196e5cd8721dab55c84546711c
+      Hash: c9a3af9145af89324db5e3f61ab7794e
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: ConstantSingleton
@@ -2670,7 +2677,7 @@ ScriptsOnlyBuild:
     className: TextConsoleSimulator
   - hash:
       serializedVersion: 2
-      Hash: a71b674eb0933eb60ce3e63a29f1aca7
+      Hash: 8a21b8e530f6693572c402c6a1112aeb
     assemblyName: AdvancedInputField.dll
     namespaceName: AdvancedInputFieldPlugin
     className: SimulatorKeyboard
@@ -2742,7 +2749,7 @@ ScriptsOnlyBuild:
     className: MacroScriptableObject
   - hash:
       serializedVersion: 2
-      Hash: 9d31a4906f3d2282cc1081c82f9946d5
+      Hash: ac69923577832e2bed36a562ea911380
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TaskTypeDropdown
@@ -3258,6 +3265,12 @@ ScriptsOnlyBuild:
     className: EditorKeyboard
   - hash:
       serializedVersion: 2
+      Hash: c7311423a40ca68db03b26ff161af5e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SearchableDropDown
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
@@ -3582,7 +3595,7 @@ ScriptsOnlyBuild:
     className: PointerMiddleClickTrigger
   - hash:
       serializedVersion: 2
-      Hash: b19758e4cdb01559ed484822b725b8cc
+      Hash: d658c335461488508d481dd5eaa12b75
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: TaskForm
@@ -3678,7 +3691,7 @@ ScriptsOnlyBuild:
     className: ObservableParticleTrigger
   - hash:
       serializedVersion: 2
-      Hash: b691824cb11548aa12a494780b9a94da
+      Hash: a9fd4aef2c0aca49641c2ab1e5f792c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InputFieldWithHits
@@ -4830,7 +4843,7 @@ ScriptsOnlyBuild:
     className: InputFieldDropdown
   - hash:
       serializedVersion: 2
-      Hash: 2e95e0361b3a59ebfbe44ac958a3b504
+      Hash: dc30909190756b90112a08c1ab184ff1
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: Constants
@@ -5110,12 +5123,6 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Reactor.Targets
     className: TextMeshProColorTarget
-  - hash:
-      serializedVersion: 2
-      Hash: aba7b2852ef61d175dd9602e7723d5e5
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Mask
   - hash:
       serializedVersion: 2
       Hash: 3ba2f926df0217a97e44f2c0e68f65c2
@@ -6126,7 +6133,7 @@ ScriptsOnlyBuild:
     className: TextPic
   - hash:
       serializedVersion: 2
-      Hash: d3bed147a681bbb16f59715166acaebf
+      Hash: a1756170d0a74a5fe9394244cf7df6ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Calendar
@@ -6198,7 +6205,7 @@ ScriptsOnlyBuild:
     className: PlayMakerUiBoolValueChangedEvent
   - hash:
       serializedVersion: 2
-      Hash: a022d60ed71df0ad860e71b723b12f40
+      Hash: 93caaca1a12e1a9ec6e09dfd9e29ab09
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColorDropdown
@@ -6216,7 +6223,7 @@ ScriptsOnlyBuild:
     className: TopMenu
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 125eba6e25580356a0268e6167e42393
     assemblyName: AdvancedInputField.dll
     namespaceName: AdvancedInputFieldPlugin
     className: StandaloneKeyboard
@@ -6972,6 +6979,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 13
   scenePathNames:
-  - Assets/[8] SCENES & GRAPHS/Scenes/Login.unity
   - Assets/[8] SCENES & GRAPHS/Scenes/MainScene.unity
   playerPath: D:/builds/cesar.apk

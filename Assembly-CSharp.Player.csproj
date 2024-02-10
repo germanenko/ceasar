@@ -655,6 +655,7 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnBeginDragEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\GetLayer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\GetControllerVelocity.cs" />
+    <Compile Include="Assets\Scripts\Others\SearchableDropDown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\AddRelativeForce2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\GetSpeed2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ProceduralUIImage\Scripts\Attributes\ModifierID.cs" />
