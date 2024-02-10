@@ -85,6 +85,8 @@ public class InputFieldWithHits : MonoBehaviour
         {
             print("next");
             inputFieldWithHits.FocusOnInputField();
+            inputFieldWithHits.AdvancedInputField.Select();
+            inputFieldWithHits.AdvancedInputField.GetEngine.LoadKeyboard();
             inputFieldWithHits.AdvancedInputField.GetEngine.KeyboardClient.Activate();
             inputFieldWithHits.AdvancedInputField.SetCaretToTextEnd();
         }
@@ -135,7 +137,7 @@ public class InputFieldWithHits : MonoBehaviour
             _dropShadow.Fade(.7f, .2f);
             FocusOnInputField();
 
-            //_advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
+            _advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
 
 #if UNITY_EDITOR
             EditorKeyboard.InvokeOpen();
@@ -147,7 +149,7 @@ public class InputFieldWithHits : MonoBehaviour
 
             _dropShadow.Fade(0f, .2f);
 
-            //_advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
+            _advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
 
 #if UNITY_EDITOR
             EditorKeyboard.InvokeClose();

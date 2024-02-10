@@ -289,7 +289,6 @@ namespace AdvancedInputFieldPlugin
 		/// <summary>Event callback when the height of the keyboard has changed</summary>
 		public void OnKeyboardHeightChanged(int height)
         {
-			print("newH " + height);
 			PixelHeight = height;
 
             if (onKeyboardHeightChanged != null)

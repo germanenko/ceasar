@@ -203,8 +203,6 @@ namespace DTT.KeyboardRaiser
 
                 //delta = _keyboardState.ProportionalHeight * canvasRect.height - (_originalRect.yMin - _padding * transform.lossyScale.y);
                 delta = NativeKeyboardManager.Keyboard.ProportionalHeight * canvasRect.height - (_originalRect.yMin - _padding * transform.lossyScale.y);
-                print("new " + NativeKeyboardManager.Keyboard.ProportionalHeight);
-                print("old " + _keyboardState.PixelHeight);
             }
 
             _targetPos = _originalPosition + Vector3.up * delta;
