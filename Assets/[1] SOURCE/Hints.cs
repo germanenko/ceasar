@@ -20,6 +20,13 @@ namespace Germanenko.Source
 
         private List<HintItem> listOfHints = new();
 
+        public static Hints Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         public void Start()
         {
             var parsedHint = _hintTitle.Split(' ');
@@ -39,41 +46,37 @@ namespace Germanenko.Source
 
                 listOfHints.Add(hintItem);
             }
-
-            //KeyboardStateManager.openingField.Add(GetComponent<UIKeyboardRaiser>());
-
-            //foreach (var hint in listOfHints)
-            //{
-            //    hint.gameObject.SetActive(false);
-            //}
         }
 
         private void OnEnable()
         {
             KeyboardStateManager.Current.Raised += OnRaised;
             KeyboardStateManager.Current.Lowered += OnLowered;
+            KeyboardStateManager.Current.OnInputFieldChanged += SetField;
         }
 
         public void OnRaised()
         {
             //SetActiveHints(true);
-            _taskName = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField;
-            _inputField = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().AdvancedInputField;
+            SetField();
 
         }
         public void OnLowered()
         {
             //SetActiveHints(false);
             _taskName = null;
+            _inputField = null;
         }
 
-        //private void SetActiveHints(bool active)
-        //{
-        //    foreach (var hint in listOfHints)
-        //    {
-        //        hint.gameObject.SetActive(active);
-        //    }
-        //}
+
+
+        public void SetField()
+        {
+            _taskName = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField;
+            _inputField = KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().AdvancedInputField;
+        }
+
+
 
         public void AddHints(HintItem selectedItem)
         {
@@ -100,17 +103,7 @@ namespace Germanenko.Source
 
         public void MoveToEndOfLine()
         {
-
-            //var inputField = transform.parent.GetComponentInChildren<TMP_InputField>();
-
-            //_taskName.Select();
-            //_taskName.MoveToEndOfLine(false, false);
-
             _inputField.SetCaretToTextEnd();
-
-            //inputField?.MoveToEndOfLine(false, false);
-            //inputField?.ActivateInputField();
-
         }
 
 

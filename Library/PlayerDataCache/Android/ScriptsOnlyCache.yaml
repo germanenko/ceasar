@@ -82,6 +82,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -198,6 +199,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     - UnityEngine.UI.ToggleGroup
     - UnityEngine.UI.VerticalLayoutGroup
     UnityUIExtensions.dll:
@@ -382,6 +384,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
+    - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
@@ -675,11 +678,11 @@ ScriptsOnlyBuild:
     fullTypeName: RecoveryTaskItem
     methodName: Recovery
   - assembly: Assembly-CSharp
-    fullTypeName: DayButton
-    methodName: SelectDay
-  - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
+  - assembly: Assembly-CSharp
+    fullTypeName: DayButton
+    methodName: SelectDay
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -785,15 +788,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: Deauth
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Localization
     methodName: SetLocalizationLanguage
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: Stop
@@ -911,9 +908,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MultiChoice
     methodName: SetMultiChoice
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
     methodName: Show
@@ -1138,6 +1132,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2332}
     - Class: 114
       Script: {instanceID: 2334}
+    - Class: 114
+      Script: {instanceID: 2338}
     - Class: 114
       Script: {instanceID: 2340}
     - Class: 114

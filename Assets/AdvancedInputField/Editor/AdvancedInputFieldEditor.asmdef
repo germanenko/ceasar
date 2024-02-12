@@ -1,5 +1,6 @@
 {
     "name": "AdvancedInputFieldEditor",
+    "rootNamespace": "",
     "references": [
         "AdvancedInputField",
         "Unity.TextMeshPro",

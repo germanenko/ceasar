@@ -59,7 +59,6 @@ namespace Germanenko.Source
         public void AddHints()
         {
             //KeyboardStateManager.openingField[0].GetComponent<InputFieldWithHits>().InputField.ActivateInputField();
-            print("added");
             parentScript.AddHints(this);
         }
 

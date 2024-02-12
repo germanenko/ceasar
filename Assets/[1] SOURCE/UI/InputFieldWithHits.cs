@@ -137,7 +137,7 @@ public class InputFieldWithHits : MonoBehaviour
             _dropShadow.Fade(.7f, .2f);
             FocusOnInputField();
 
-            _advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
+            //_advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
 
 #if UNITY_EDITOR
             EditorKeyboard.InvokeOpen();
@@ -145,11 +145,9 @@ public class InputFieldWithHits : MonoBehaviour
         }
         else
         {
-            if (!EventSystem.current.alreadySelecting) EventSystem.current.SetSelectedGameObject(null);
-
             _dropShadow.Fade(0f, .2f);
 
-            _advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
+            //_advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
 
 #if UNITY_EDITOR
             EditorKeyboard.InvokeClose();

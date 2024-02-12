@@ -50,7 +50,7 @@ public static class ScrollViewFocusFunctions
 
         float t = 0f;
 
-        Debug.Log(Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y));
+        //Debug.Log(Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y));
         yield return null;
 
         if (Mathf.Abs(targetNormalizedPos.y - initialNormalizedPos.y) < .05f)

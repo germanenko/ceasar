@@ -32,5 +32,8 @@ namespace DTT.KeyboardRaiser
         /// </summary>
         event Action Lowered;
 
+
+        event Action OnInputFieldChanged;
+
     }
 }

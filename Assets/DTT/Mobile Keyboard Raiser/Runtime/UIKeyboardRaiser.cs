@@ -113,16 +113,22 @@ namespace DTT.KeyboardRaiser
 
         public void SetOpeningField(bool set)
         {
+            print(gameObject.name +  " " + set);
             if (set)
             {
                 KeyboardStateManager.openingField.Add(this);
+//#if UNITY_EDITOR
+//                EditorKeyboard.InvokeOpen();
+//#endif
             }
             else
             {
                 KeyboardStateManager.openingField.Remove(this);
                 KeyboardStateManager.openingField.RemoveAll(item => item == null);
+//#if UNITY_EDITOR
+//                EditorKeyboard.InvokeClose();
+//#endif
             }
-                
         }
 
 
@@ -133,9 +139,8 @@ namespace DTT.KeyboardRaiser
             {
                 _originalPosition = transform.position;
                 _originalRect = _rectTransform.GetWorldRect();
-
-                //Signal.Send("BG", "KeyboardTask", true);
                 print("raised");
+                //Signal.Send("BG", "KeyboardTask", true);
             }
         }
         
@@ -149,8 +154,7 @@ namespace DTT.KeyboardRaiser
             //Signal.Send("BG", "KeyboardTask", false);
 
             SendKeyboardSignal(false);
-            SetOpeningField(false);
-            print("lowered");
+            //SetOpeningField(false);
         }
 
 

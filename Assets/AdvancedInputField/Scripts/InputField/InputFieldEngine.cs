@@ -655,9 +655,9 @@ namespace AdvancedInputFieldPlugin
 					KeyboardClient.Keyboard.State = KeyboardState.HIDDEN; //Flag keyboard as inactive, so next inputfield will load it's settings
 				}
 				Deselect(EndEditReason.KEYBOARD_NEXT);
-				InputField.NextInputField.ManualSelect(BeginEditReason.KEYBOARD_NEXT);
-				Debug.Log("nextField");
-			}
+                InputField.NextInputField.ManualSelect(BeginEditReason.KEYBOARD_NEXT);
+
+            }
 			else
 			{
 				Deselect(EndEditReason.KEYBOARD_DONE);

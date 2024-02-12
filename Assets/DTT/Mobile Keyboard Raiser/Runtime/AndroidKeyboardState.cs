@@ -65,6 +65,7 @@ namespace DTT.KeyboardRaiser
         /// Is called whenever the on-screen keyboard disappears.
         /// </summary>
         public event Action Lowered;
+        public event Action OnInputFieldChanged;
 
         /// <summary>
         /// The Java Unity class type.

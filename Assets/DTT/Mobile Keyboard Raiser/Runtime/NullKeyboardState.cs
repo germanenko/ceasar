@@ -34,5 +34,6 @@ namespace DTT.KeyboardRaiser
         /// </summary>
         #pragma warning disable CS0067
         public event Action Lowered;
+        public event Action OnInputFieldChanged;
     }
 }
