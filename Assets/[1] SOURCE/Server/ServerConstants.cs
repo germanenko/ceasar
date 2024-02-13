@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -6,6 +7,7 @@ using System.Net.Http;
 using System.Net.Mime;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -28,6 +30,7 @@ public class ServerConstants : MonoBehaviour
     public string SignIn { get => "signin"; } 
     public string SignUp { get => "signup"; }
     public string GetProfile { get => "profile"; }
+    public string GetChats { get => "taskChats"; }
 
 
     private void Awake()
@@ -181,6 +184,32 @@ public class ServerConstants : MonoBehaviour
         }
     }
 
+
+
+    public async Task<TaskChatBody[]> GetChatsAsync()
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var response = await client.GetAsync(GetChats);
+        TaskChatBody[] ? chatsBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var chatsBodyString = await response.Content.ReadAsStringAsync();
+
+            chatsBody = JsonConvert.DeserializeObject<TaskChatBody[]>(chatsBodyString);
+
+            return chatsBody;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }
 
 public class ResponseBody
@@ -254,5 +283,41 @@ public class ProfileData
         this.email = email;
         this.role = role;
         this.urlIcon = urlIcon;
+    }
+}
+
+
+
+[Serializable]
+public class TaskChatBody
+{
+    public string id;
+    public string name;
+    public string imageUrl;
+    public ChatUserInfo[] participants;
+
+    public TaskChatBody(string id, string name, string imageUrl, ChatUserInfo[] participants)
+    {
+        this.id = id;
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.participants = participants;
+    }
+}
+
+
+
+[Serializable]
+public class ChatUserInfo
+{
+    public string id;
+    public string email;
+    public string imageUrl;
+
+    public ChatUserInfo(string id, string email, string imageUrl)
+    {
+        this.id = id;
+        this.email = email;
+        this.imageUrl = imageUrl;
     }
 }

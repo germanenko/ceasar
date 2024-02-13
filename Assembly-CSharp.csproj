@@ -233,6 +233,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SetAnimatorBool.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\StringChanged.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\SetGravity2d.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\ChatListManager.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\String\StringAppend.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugFsmVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\GameObjectIsVisibleToCamera.cs" />
@@ -741,6 +742,7 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\GetLastPointerEventDataInputButton.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Canvas\uGuiCanvasForceUpdateCanvases.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\UiTextGetText.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\ChatItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\SetControllerVelocity.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\SizeDeltaSizer.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformScaleZ.cs" />

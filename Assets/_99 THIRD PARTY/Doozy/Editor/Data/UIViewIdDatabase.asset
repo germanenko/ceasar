@@ -16,12 +16,16 @@ MonoBehaviour:
     Items:
     - Category: BG
       Name: KeyboardTask
+    - Category: ChatList
+      Name: ToChat
     - Category: Controls
       Name: MainControl
     - Category: Controls
       Name: MultiChoice
     - Category: MainMenu
       Name: Chat
+    - Category: MainMenu
+      Name: Chats
     - Category: MainMenu
       Name: Clickers
     - Category: MainMenu

@@ -833,6 +833,8 @@
 "Assets/[1] SOURCE/UI/Calendar/DayButton.cs"
 "Assets/[1] SOURCE/UI/Calendar/MonthToggle.cs"
 "Assets/[1] SOURCE/UI/CameraShake.cs"
+"Assets/[1] SOURCE/UI/ChatItem.cs"
+"Assets/[1] SOURCE/UI/ChatListManager.cs"
 "Assets/[1] SOURCE/UI/Clock/Clock.cs"
 "Assets/[1] SOURCE/UI/DateTimeItem.cs"
 "Assets/[1] SOURCE/UI/Dropdown/ColorDropdown.cs"

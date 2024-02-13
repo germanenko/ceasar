@@ -1021,57 +1021,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3eb416ac1e5354ea7e14dc90f78fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loginAuth: {fileID: 640860888}
-  _passAuth: {fileID: 176679271}
-  _firstName: {fileID: 2126049133}
-  _lastName: {fileID: 224163897}
-  _userName: {fileID: 1934599600}
-  _email: {fileID: 57079651}
-  _password: {fileID: 2107378286}
-  _firstNameText: {fileID: 243518927}
-  _lastNameText: {fileID: 1661031491}
-  _resultRegText: {fileID: 942374941}
-  _resultLoginText: {fileID: 1368819040}
-  Token: 
-  OnAuth:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1162340071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 803497779}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 699521522}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _signInEmailField: {fileID: 0}
+  _signInPasswordField: {fileID: 0}
+  _signUpEmailField: {fileID: 0}
+  _signUpFullnameField: {fileID: 0}
+  _signUpPasswordField: {fileID: 0}
 --- !u!114 &201947894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,6 +1388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1e23ee6c2d9b24693f90ff03b45cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProfileData:
+    email: 
+    role: 0
+    urlIcon: 
+  TokenResponse:
+    accessToken: 
+    refreshToken: 
 --- !u!1 &224163895
 GameObject:
   m_ObjectHideFlags: 0
