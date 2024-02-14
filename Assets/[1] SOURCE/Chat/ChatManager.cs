@@ -29,20 +29,51 @@ public class ChatManager : MonoBehaviour
         _chatInfo = chatInfo;
 
         _view.Show();
+
+        //Task.Run(() => ChatUpdate());
+    }
+
+    public async Task ChatUpdate()
+    {
+        if (_chatListManager.WS.State == WebSocketState.Open)
+        {
+            var receiveTask = ReceiveMessage();
+            var delayTask = Task.Delay(3000);
+            var completedTask = await Task.WhenAny(receiveTask, delayTask);
+            if (completedTask == receiveTask)
+            {
+                var receivedMessage = receiveTask.Result;
+                print($"Получено сообщение: {receivedMessage.Content} by {name}");
+            }
+            else
+                print("сбой");
+        }
     }
 
 
 
     public async void SendMessage()
     {
-        await SendMessageAsync();
+        var messageBody = new CreateMessageBody
+        {
+            Type = ChatMessageType.Text,
+            Content = _messageField.Text,
+        };
+        var str = SerializeObject(messageBody);
+        var sendTask = SendMessageAsync(str);
+        var delayTask = Task.Delay(3000);
+        var completedTask = await Task.WhenAny(sendTask, delayTask);
+        if (completedTask == sendTask)
+            print($"Сообщение отправлено");
+        else
+            print("сбой");
     }
 
 
 
-    async Task SendMessageAsync()
+    async Task SendMessageAsync(string message)
     {
-        var messageBytes = Encoding.UTF8.GetBytes(_messageField.Text);
+        var messageBytes = Encoding.UTF8.GetBytes(message);
         await _chatListManager.WS.SendAsync(new ArraySegment<byte>(messageBytes), WebSocketMessageType.Text, true, CancellationToken.None);
     }
 

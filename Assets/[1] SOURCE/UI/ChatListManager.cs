@@ -64,6 +64,7 @@ public class ChatListManager : MonoBehaviour
 
     public async void OpenChat(TaskChatBody chat)
     {
+        Headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
         Headers["chatId"] = chat.id;
 
         foreach (var header in Headers)
@@ -79,5 +80,6 @@ public class ChatListManager : MonoBehaviour
         {
             _chatManager.OpenChat(chat);
         }
+
     }
 }
