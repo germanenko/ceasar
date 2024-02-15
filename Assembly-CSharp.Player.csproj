@@ -1765,6 +1765,7 @@
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
     <None Include="Assets\_99 THIRD PARTY\Fingers\Demo\ExampleProjects\Resources\FingersExampleTransitionShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll" />
     <None Include="Assets\_99 THIRD PARTY\SimpleSQL\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Readme.txt" />
@@ -1802,6 +1803,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\_99 THIRD PARTY\LunarConsole\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
@@ -2125,6 +2127,9 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>Assets\Plugins\SignalR\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\unity\2021.3.9f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

@@ -142,6 +142,7 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/AdvancedInputField/AIFLogger.dll"
+-r:"Assets/Packages/WebSocketSharp-netstandard-customheaders.1.0.3/lib/netstandard2.0/websocket-sharp.dll"
 -r:"Assets/Plugins/Borodar/RainbowHierarchy/Assemblies/RainbowHierarchy.dll"
 -r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
 -r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
@@ -413,6 +414,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/LunarConsoleEditor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/NativeGallery.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/NativeGallery.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/NuGetForUnity.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyEditor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyNullable.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/QHierarchyRuntime.ref.dll"

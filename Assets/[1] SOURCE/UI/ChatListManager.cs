@@ -5,20 +5,22 @@ using UnityEngine;
 using System.Text.Json;
 using Doozy.Runtime.Common.Extensions;
 using Germanenko.Framework;
-using System.Net.WebSockets;
 using System.Threading;
 using Doozy.Runtime.UIManager.Containers;
+using WebSocketSharp;
+using PimDeWitte.UnityMainThreadDispatcher;
 
 public class ChatListManager : MonoBehaviour
 {
 
     public TaskChatBody[] Chats;
+    public TaskChatBody OpeningChat;
 
     [SerializeField] private Transform _chatsParent;
 
     [SerializeField] private ChatItem _chatButtonPrefab;
 
-    public ClientWebSocket WS = new ClientWebSocket();
+    public WebSocket WS = new WebSocket("ws://82.97.249.229/taskChat");
 
     [SerializeField] private ChatManager _chatManager;
 
@@ -62,24 +64,57 @@ public class ChatListManager : MonoBehaviour
 
 
 
-    public async void OpenChat(TaskChatBody chat)
+    public void OpenChat(TaskChatBody chat)
     {
         Headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
         Headers["chatId"] = chat.id;
 
-        foreach (var header in Headers)
-        {
-            WS.Options.SetRequestHeader(header.Key, header.Value);
-        }
+        OpeningChat = chat;
 
-        print(WS.Options);
+        WS.CustomHeaders = Headers;
 
-        await WS.ConnectAsync(new Uri("ws://82.97.249.229/taskChat"), CancellationToken.None);
+        WS.ConnectAsync();
 
-        if(WS.State == WebSocketState.Open)
-        {
-            _chatManager.OpenChat(chat);
-        }
 
+        WS.OnOpen += WS_OnOpen;
+        WS.OnMessage += WS_OnMessage;
+        WS.OnError += WS_OnError;
+        WS.OnClose += WS_OnClose;
+
+        //foreach (var header in Headers)
+        //{
+        //    WS.Options.SetRequestHeader(header.Key, header.Value);
+        //}
+
+        //print(WS.Options);
+
+        //await WS.ConnectAsync(new Uri("ws://82.97.249.229/taskChat"), CancellationToken.None);
+
+        //if(WS.State == WebSocketState.Open)
+        //{
+        //    _chatManager.OpenChat(chat);
+        //}
+
+    }
+
+    private void WS_OnMessage(object sender, MessageEventArgs e)
+    {
+        print(e.Data);
+    }
+
+    private void WS_OnOpen(object sender, EventArgs e)
+    {
+        print("open");
+        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat)); 
+    }
+
+    private void WS_OnClose(object sender, CloseEventArgs e)
+    {
+        print(e.Reason);
+    }
+
+    private void WS_OnError(object sender, ErrorEventArgs e)
+    {
+        print(e.Exception.ToString());
     }
 }

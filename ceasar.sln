@@ -199,6 +199,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeGallery.Editor", "Nat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTT.CoroutineManagement.Editor", "DTT.CoroutineManagement.Editor.csproj", "{B44A8E50-F816-55DF-73F8-90A626649E33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetForUnity", "NuGetForUnity.csproj", "{734E1CBE-19EE-04BF-FE6B-889641E1221C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.Player.csproj", "{225BFFCE-BB40-0652-0D20-CE013A0B6026}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{014A4EBA-5074-9D30-966A-39C3928BABF4}"
@@ -707,6 +709,10 @@ Global
 		{B44A8E50-F816-55DF-73F8-90A626649E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B44A8E50-F816-55DF-73F8-90A626649E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B44A8E50-F816-55DF-73F8-90A626649E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{734E1CBE-19EE-04BF-FE6B-889641E1221C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734E1CBE-19EE-04BF-FE6B-889641E1221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734E1CBE-19EE-04BF-FE6B-889641E1221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734E1CBE-19EE-04BF-FE6B-889641E1221C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{225BFFCE-BB40-0652-0D20-CE013A0B6026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{225BFFCE-BB40-0652-0D20-CE013A0B6026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{225BFFCE-BB40-0652-0D20-CE013A0B6026}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -638,6 +638,12 @@
     <Reference Include="RainbowFolders">
       <HintPath>Assets\Plugins\Borodar\RainbowFolders\Editor\Assemblies\RainbowFolders.dll</HintPath>
     </Reference>
+    <Reference Include="NuGetForUnity.PluginAPI">
+      <HintPath>Library\PackageCache\com.github-glitchenzo.nugetforunity@75f68222d0\Editor\PluginAPI\NuGetForUnity.PluginAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\unity\2021.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
     </Reference>

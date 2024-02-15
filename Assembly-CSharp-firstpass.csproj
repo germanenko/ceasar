@@ -448,6 +448,9 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>Assets\Plugins\SignalR\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\unity\2021.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
     </Reference>
@@ -1137,6 +1140,10 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NuGetForUnity.csproj">
+      <Project>{734E1CBE-19EE-04BF-FE6B-889641E1221C}</Project>
+      <Name>NuGetForUnity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
