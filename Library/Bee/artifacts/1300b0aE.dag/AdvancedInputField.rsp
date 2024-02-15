@@ -412,6 +412,7 @@
 "Assets/AdvancedInputField/Samples/Scripts/FormView.cs"
 "Assets/AdvancedInputField/Samples/Scripts/LoginController.cs"
 "Assets/AdvancedInputField/Samples/Scripts/LoginView.cs"
+"Assets/AdvancedInputField/Samples/Scripts/MessageItem.cs"
 "Assets/AdvancedInputField/Samples/Scripts/MessageView.cs"
 "Assets/AdvancedInputField/Samples/Scripts/ModesController.cs"
 "Assets/AdvancedInputField/Samples/Scripts/MultilineController.cs"

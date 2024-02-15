@@ -1038,10 +1038,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996436236a4b0894c84d06b75d604f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _messageInput: {fileID: 1799027379}
-  _messageItem: {fileID: 9133330922655442238, guid: 1e45d1833ff6190448cc838e1c25fa22, type: 3}
-  _messageParent: {fileID: 1931304635}
-  _messageBodies: []
+  _chatInfo:
+    id: 
+    name: 
+    imageUrl: 
+    participants: []
+  _messageField: {fileID: 0}
+  _chatListManager: {fileID: 0}
+  _view: {fileID: 0}
+  _chatView: {fileID: 0}
 --- !u!1 &202915353
 GameObject:
   m_ObjectHideFlags: 0

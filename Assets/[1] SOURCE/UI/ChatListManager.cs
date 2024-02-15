@@ -75,11 +75,7 @@ public class ChatListManager : MonoBehaviour
 
         WS.ConnectAsync();
 
-
         WS.OnOpen += WS_OnOpen;
-        WS.OnMessage += WS_OnMessage;
-        WS.OnError += WS_OnError;
-        WS.OnClose += WS_OnClose;
 
         //foreach (var header in Headers)
         //{
@@ -105,16 +101,7 @@ public class ChatListManager : MonoBehaviour
     private void WS_OnOpen(object sender, EventArgs e)
     {
         print("open");
-        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat)); 
-    }
-
-    private void WS_OnClose(object sender, CloseEventArgs e)
-    {
-        print(e.Reason);
-    }
-
-    private void WS_OnError(object sender, ErrorEventArgs e)
-    {
-        print(e.Exception.ToString());
+        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat, WS));
+        WS.OnOpen -= WS_OnOpen;
     }
 }

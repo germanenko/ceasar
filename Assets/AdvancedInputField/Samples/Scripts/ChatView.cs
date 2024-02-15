@@ -148,9 +148,9 @@ namespace AdvancedInputFieldSamples
 			return (normalizedBottomY * Canvas.pixelRect.height) / Canvas.scaleFactor;
 		}
 
-		public void AddMessageLeft(string message)
+		public void AddMessageLeft(string message, string name)
 		{
-			AddMessage(message, messageBoxLeftPrefab);
+            AddOtherMessage(message, name, messageBoxLeftPrefab);
 		}
 
 		public void AddMessageRight(string message)
@@ -158,7 +158,60 @@ namespace AdvancedInputFieldSamples
 			AddMessage(message, messageBoxRightPrefab);
 		}
 
-		private void AddMessage(string message, RectTransform prefab)
+
+        private void AddOtherMessage(string message, string name, RectTransform prefab)
+        {
+            const float RESIZE_THRESHOLD = 0.001f;
+            const int MAX_RESIZE_ATTEMPTS = 3;
+
+            float y = 0;
+            if (messageBoxes.Count > 0)
+            {
+                RectTransform lastMessageBox = messageBoxes[messageBoxes.Count - 1];
+                y = lastMessageBox.anchoredPosition.y - lastMessageBox.rect.height;
+                y -= Y_SPACING;
+            }
+
+            float maxWidth = scrollRect.content.rect.width * 0.9f;
+#if ADVANCEDINPUTFIELD_TEXTMESHPRO
+            RectTransform messageBox = CreateMessageBox(prefab);
+			messageBox.GetComponent<MessageItem>().Init(name, message);
+
+            TMPro.TextMeshProUGUI label = messageBox.GetComponent<MessageItem>().MessageText; //Using wrapper class of the plugin here, because TMPro seems to have issues calculating the preferred size
+            TMPro.TextMeshProUGUI nameLabel = messageBox.GetComponent<MessageItem>().SenderText; //Using wrapper class of the plugin here, because TMPro seems to have issues calculating the preferred size
+
+            for (int i = 0; i < MAX_RESIZE_ATTEMPTS; i++) //Loop multiple times to expand preferred height
+			{
+				label.ForceMeshUpdate();
+
+				Vector2 position = messageBox.anchoredPosition;
+				position.y = y;
+				messageBox.anchoredPosition = position;
+
+				var maxWidthLabel = label.preferredWidth > nameLabel.preferredWidth ? label : nameLabel;
+
+				Vector2 preferredLabelSize = new Vector2(maxWidthLabel.preferredWidth, label.preferredHeight + nameLabel.preferredHeight);
+				preferredLabelSize.x = Mathf.Min(maxWidth, preferredLabelSize.x);
+
+				Vector2 currentLabelSize = label.GetComponent<RectTransform>().rect.size;
+				Vector2 sizeDifference = preferredLabelSize - currentLabelSize;
+				if (Mathf.Abs(sizeDifference.x) < RESIZE_THRESHOLD && Mathf.Abs(sizeDifference.y) < RESIZE_THRESHOLD)
+				{
+					break;
+				}
+
+				Vector2 messageBoxSize = messageBox.sizeDelta;
+				messageBoxSize += sizeDifference;
+				messageBox.sizeDelta = messageBoxSize;
+			}
+
+			messageBoxes.Add(messageBox);
+            scrollRect.content.sizeDelta = new Vector2(0, Mathf.Abs(y - messageBox.rect.height));
+            scrollRect.verticalNormalizedPosition = 0;
+#endif
+        }
+
+        private void AddMessage(string message, RectTransform prefab)
 		{
 			const float RESIZE_THRESHOLD = 0.001f;
 			const int MAX_RESIZE_ATTEMPTS = 3;

@@ -1,22 +1,26 @@
 using AdvancedInputFieldPlugin;
+using AdvancedInputFieldSamples;
 using Doozy.Runtime.UIManager.Containers;
 using Germanenko.Framework;
 using Newtonsoft.Json;
+using PimDeWitte.UnityMainThreadDispatcher;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using WebSocketSharp;
 
 public class ChatManager : MonoBehaviour
 {
     [SerializeField] private TaskChatBody _chatInfo;
+
+    [SerializeField] private WebSocket WS;
 
     [SerializeField] private AdvancedInputField _messageField;
 
@@ -24,35 +28,40 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private UIView _view;
 
-    public void OpenChat(TaskChatBody chatInfo)
+    [SerializeField] private ChatView _chatView;
+
+    [SerializeField] private TextMeshProUGUI _chatNameText;
+
+    public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
     {
         _chatInfo = chatInfo;
 
+        WS = ws;
+
         _view.Show();
 
-        //Task.Run(() => ChatUpdate());
+        _chatNameText.text = _chatInfo.name;
+
+        WS.OnMessage += WS_OnMessage;
     }
 
-    //public async Task ChatUpdate()
-    //{
-    //    if (_chatListManager.WS.State == WebSocketState.Open)
-    //    {
-    //        var receiveTask = ReceiveMessage();
-    //        var delayTask = Task.Delay(3000);
-    //        var completedTask = await Task.WhenAny(receiveTask, delayTask);
-    //        if (completedTask == receiveTask)
-    //        {
-    //            var receivedMessage = receiveTask.Result;
-    //            print($"Получено сообщение: {receivedMessage.Content} by {name}");
-    //        }
-    //        else
-    //            print("сбой");
-    //    }
-    //}
+    private void WS_OnMessage(object sender, MessageEventArgs e)
+    {
+        var msg = JsonConvert.DeserializeObject<MessageBody>(e.Data);
+        string senderMail = "";
+        foreach (var p in _chatInfo.participants)
+        {
+            if(p.id == msg.SenderId.ToString())
+            {
+                senderMail = p.email;
+            }
+        }
 
+        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageLeft(msg.Content, senderMail));
+        print($"Получено сообщение от {senderMail}: {msg.Content}");
+    }
 
-
-    public async void SendMessage()
+    public void SendMessage()
     {
         var messageBody = new CreateMessageBody
         {
@@ -60,55 +69,20 @@ public class ChatManager : MonoBehaviour
             Content = _messageField.Text,
         };
         var str = SerializeObject(messageBody);
-        _chatListManager.WS.Send(str);
+        //WS.Send(str);
+        WS.SendAsync(str, (bool c) =>
+        {
+            if (c)
+            {
+                print("сообщение отправлено");
+                UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageRight(_messageField.Text));
+            }
+            else
+            {
+                print("сообщение не отправлено");
+            }
+        });
     }
-
-
-
-    //async Task SendMessageAsync(string message)
-    //{
-    //    var messageBytes = Encoding.UTF8.GetBytes(message);
-    //    await _chatListManager.WS.SendAsync(new ArraySegment<byte>(messageBytes), WebSocketMessageType.Text, true, CancellationToken.None);
-    //}
-
-
-
-    //async Task<MessageBody?> ReceiveMessage()
-    //{
-    //    var receiveBuffer = new byte[1024];
-    //    var result = await _chatListManager.WS.ReceiveAsync(new ArraySegment<byte>(receiveBuffer), CancellationToken.None);
-
-    //    if (result.MessageType == WebSocketMessageType.Text)
-    //    {
-    //        var str = Encoding.UTF8.GetString(receiveBuffer, 0, result.Count);
-    //        return JsonConvert.DeserializeObject<MessageBody>(str);
-    //    }
-
-    //    return null;
-    //}
-
-
-
-    //private async Task<MemoryStream?> ReceiveMessage(CancellationToken token)
-    //{
-    //    byte[] bytes = new byte[4096];
-    //    WebSocketReceiveResult? receiveResult = null;
-    //    MemoryStream stream = new();
-
-    //    do
-    //    {
-    //        receiveResult = await _chatListManager.WS.ReceiveAsync(bytes, token);
-    //        if (receiveResult.MessageType == WebSocketMessageType.Close && _chatListManager.WS.State != WebSocketState.Closed)
-    //        {
-    //            await _chatListManager.WS.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, token);
-    //            return null;
-    //        }
-    //        else if (receiveResult.Count > 0)
-    //            stream.Write(bytes, 0, receiveResult.Count);
-    //    } while (!receiveResult.EndOfMessage && _chatListManager.WS.State == WebSocketState.Open);
-
-    //    return stream;
-    //}
 
     private string SerializeObject<T>(T obj) => JsonConvert.SerializeObject(obj);
 }

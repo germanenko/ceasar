@@ -133,6 +133,7 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/AdvancedInputField/AIFLogger.dll"
+-r:"Assets/Packages/WebSocketSharp-netstandard-customheaders.1.0.3/lib/netstandard2.0/websocket-sharp.dll"
 -r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
 -r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll"
@@ -360,6 +361,7 @@
 "Assets/AdvancedInputField/Samples/Scripts/FormView.cs"
 "Assets/AdvancedInputField/Samples/Scripts/LoginController.cs"
 "Assets/AdvancedInputField/Samples/Scripts/LoginView.cs"
+"Assets/AdvancedInputField/Samples/Scripts/MessageItem.cs"
 "Assets/AdvancedInputField/Samples/Scripts/MessageView.cs"
 "Assets/AdvancedInputField/Samples/Scripts/ModesController.cs"
 "Assets/AdvancedInputField/Samples/Scripts/MultilineController.cs"

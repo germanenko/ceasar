@@ -21,7 +21,7 @@ namespace AdvancedInputFieldSamples
 
 		private void Start()
 		{
-			view.AddMessageLeft("Hello");
+			view.AddMessageLeft("Hello", "Sender");
 			view.UpdateChatHistorySize();
 
 			EmojiKeyboard emojiKeyboard = view.MessageInput.GetComponentInChildren<EmojiKeyboard>();
@@ -84,7 +84,7 @@ namespace AdvancedInputFieldSamples
 			yield return new WaitForSeconds(Random.Range(1, 5));
 
 			string response = chatBot.GetResponse();
-			view.AddMessageLeft(response);
+			view.AddMessageLeft(response, "Sender");
 		}
 
 		public void OnKeyboardHeightChanged(int keyboardHeight)

@@ -400,6 +400,9 @@
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.3\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
@@ -447,9 +450,6 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>Assets\Plugins\SignalR\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\Packages\WebSocketSharp-netstandard-customheaders.1.0.3\lib\netstandard2.0\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\unity\2021.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -1005,6 +1005,10 @@
       <Project>{9C007ACE-59AF-715D-A14D-CA2C2C4E96E1}</Project>
       <Name>DTT.EditorUtilities.Demo</Name>
     </ProjectReference>
+    <ProjectReference Include="NuGetForUnity.csproj">
+      <Project>{734E1CBE-19EE-04BF-FE6B-889641E1221C}</Project>
+      <Name>NuGetForUnity</Name>
+    </ProjectReference>
     <ProjectReference Include="DTT.SerializableTypes.Runtime.csproj">
       <Project>{3740F911-DBC1-39DC-89F5-A9D8BA444B21}</Project>
       <Name>DTT.SerializableTypes.Runtime</Name>
@@ -1140,10 +1144,6 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NuGetForUnity.csproj">
-      <Project>{734E1CBE-19EE-04BF-FE6B-889641E1221C}</Project>
-      <Name>NuGetForUnity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

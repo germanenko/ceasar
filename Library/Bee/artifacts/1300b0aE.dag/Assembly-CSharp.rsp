@@ -803,7 +803,6 @@
 "Assets/[1] SOURCE/Account/Authentication.cs"
 "Assets/[1] SOURCE/Account/ProfileView.cs"
 "Assets/[1] SOURCE/Chat/ChatManager.cs"
-"Assets/[1] SOURCE/Chat/MessageItem.cs"
 "Assets/[1] SOURCE/Chat/UnityMainThreadDispatcher.cs"
 "Assets/[1] SOURCE/Const/Constants.cs"
 "Assets/[1] SOURCE/Const/ConstantSingleton.cs"
