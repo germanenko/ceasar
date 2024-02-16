@@ -95,8 +95,11 @@ public class ChatManager : MonoBehaviour
             if (c)
             {
                 print("сообщение отправлено");
-                UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageRight(_messageField.Text));
-                _messageField.SetText("");
+                UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                {
+                    _chatView.AddMessageRight(_messageField.Text);
+                    _messageField.SetText("");
+                });
 
             }
             else

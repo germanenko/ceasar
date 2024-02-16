@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - MessageItem
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
+    - HutongGames.PlayMakerEditor.FsmEditorWindow
     Assembly-CSharp.dll:
     - AccountManager
     - Authentication
@@ -183,6 +184,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1573,8 +1575,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1763,6 +1763,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14104}
     - Class: 114
       Script: {instanceID: 14242}
+    - Class: 114
+      Script: {instanceID: 14338}
     - Class: 114
       Script: {instanceID: 14522}
     - Class: 114
