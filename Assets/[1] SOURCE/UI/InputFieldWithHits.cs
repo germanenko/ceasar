@@ -103,7 +103,9 @@ public class InputFieldWithHits : MonoBehaviour
 
     public void Selected(string s)
     {
-        _dropShadow.Fade(.7f, .2f);
+        if(_dropShadow)
+            _dropShadow.Fade(.7f, .2f);
+
         FocusOnInputField();
 
         _inputField.onEndEdit.AddListener(OpenNextInputField);
@@ -118,8 +120,9 @@ public class InputFieldWithHits : MonoBehaviour
     public void Deselected(string s)
     {
         if (!EventSystem.current.alreadySelecting) EventSystem.current.SetSelectedGameObject(null);
-        
-        _dropShadow.Fade(0f, .2f);
+
+        if (_dropShadow)
+            _dropShadow.Fade(0f, .2f);
 
         _inputField.onEndEdit.RemoveListener(OpenNextInputField);
 
@@ -134,7 +137,9 @@ public class InputFieldWithHits : MonoBehaviour
     {
         if(change)
         {
-            _dropShadow.Fade(.7f, .2f);
+            if (_dropShadow)
+                _dropShadow.Fade(.7f, .2f);
+
             FocusOnInputField();
 
             //_advancedInputField.OnEndEdit.AddListener(OpenNextAdvancedInputField);
@@ -145,7 +150,8 @@ public class InputFieldWithHits : MonoBehaviour
         }
         else
         {
-            _dropShadow.Fade(0f, .2f);
+            if (_dropShadow)
+                _dropShadow.Fade(0f, .2f);
 
             //_advancedInputField.OnEndEdit.RemoveListener(OpenNextAdvancedInputField);
 

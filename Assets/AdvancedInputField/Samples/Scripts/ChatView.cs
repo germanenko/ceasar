@@ -97,8 +97,8 @@ namespace AdvancedInputFieldSamples
 			float messageInputTopY = GetAbsoluteTopY(messageInputTransform);
 #if(UNITY_EDITOR || UNITY_STANDALONE || UNITY_WSA)
 			EmojiKeyboard emojiKeyboard = messageInputTransform.GetComponentInChildren<EmojiKeyboard>();
-			RectTransform emojiKeyboardTransform = emojiKeyboard.GetComponent<RectTransform>();
-			messageInputTopY = GetAbsoluteTopY(emojiKeyboardTransform);
+			//RectTransform emojiKeyboardTransform = emojiKeyboard.GetComponent<RectTransform>();
+			//messageInputTopY = GetAbsoluteTopY(emojiKeyboardTransform);
 #endif
 			float chatHistoryBottomY = GetAbsoluteBottomY(chatHistoryTransform);
 			float differenceY = chatHistoryBottomY - messageInputTopY;

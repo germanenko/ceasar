@@ -1,3 +1,4 @@
+using AdvancedInputFieldPlugin;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class Authentication : MonoBehaviour
 {
     [Header("Auth")]
-    [SerializeField] private TMP_InputField _signInEmailField;
-    [SerializeField] private TMP_InputField _signInPasswordField;
+    [SerializeField] private AdvancedInputField _signInEmailField;
+    [SerializeField] private AdvancedInputField _signInPasswordField;
 
     [Header("Register")]
-    [SerializeField] private TMP_InputField _signUpEmailField;
-    [SerializeField] private TMP_InputField _signUpFullnameField;
-    [SerializeField] private TMP_InputField _signUpPasswordField;
+    [SerializeField] private AdvancedInputField _signUpEmailField;
+    [SerializeField] private AdvancedInputField _signUpFullnameField;
+    [SerializeField] private AdvancedInputField _signUpPasswordField;
 
     private async void Awake()
     {
@@ -26,7 +27,7 @@ public class Authentication : MonoBehaviour
 
     public async void AuthAsync()
     {
-        ResponseBody request = await ServerConstants.Instance.AuthAsync(_signInEmailField.text, _signInPasswordField.text);
+        ResponseBody request = await ServerConstants.Instance.AuthAsync(_signInEmailField.Text, _signInPasswordField.Text);
         if (request.Success)
         {
             print(request.Message);
@@ -40,7 +41,7 @@ public class Authentication : MonoBehaviour
 
     public async void RegisterAsync()
     {
-        ResponseBody request = await ServerConstants.Instance.RegisterAsync(_signUpEmailField.text, _signUpFullnameField.text, _signUpPasswordField.text);
+        ResponseBody request = await ServerConstants.Instance.RegisterAsync(_signUpEmailField.Text, _signUpFullnameField.Text, _signUpPasswordField.Text);
         if (request.Success)
         {
             print(request.Message);

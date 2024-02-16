@@ -707,14 +707,14 @@ ScriptsOnlyBuild:
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
   - assembly: Assembly-CSharp
+    fullTypeName: RecoveryTaskItem
+    methodName: Recovery
+  - assembly: Assembly-CSharp
     fullTypeName: DayButton
     methodName: SelectDay
   - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
-  - assembly: Assembly-CSharp
-    fullTypeName: RecoveryTaskItem
-    methodName: Recovery
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -835,6 +835,9 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: ChatManager
+    methodName: CloseChat
   - assembly: Assembly-CSharp
     fullTypeName: DatabaseOutput
     methodName: LoadTasks
@@ -973,6 +976,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: RecoveryDeletedTasks
     methodName: LoadDeletedTasks
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: AdvancedInputField
+    fullTypeName: AdvancedInputFieldSamples.ChatView
+    methodName: RestoreOriginalMessageInputPosition
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
     methodName: Show
@@ -1426,6 +1435,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4300}
     - Class: 114
+      Script: {instanceID: 4368}
+    - Class: 114
       Script: {instanceID: 4676}
     - Class: 114
       Script: {instanceID: 4776}
@@ -1561,6 +1572,8 @@ ScriptsOnlyBuild:
     - Class: 61
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -2137,7 +2150,7 @@ ScriptsOnlyBuild:
     className: LeanSelectableByFinger
   - hash:
       serializedVersion: 2
-      Hash: e9722e6a8618b7199d031038401eb6cc
+      Hash: c38273d80b2397dadecb02d9891d2d2c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Authentication

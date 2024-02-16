@@ -43,7 +43,27 @@ public class ChatManager : MonoBehaviour
         _chatNameText.text = _chatInfo.name;
 
         WS.OnMessage += WS_OnMessage;
+
+#if (UNITY_ANDROID || UNITY_IOS)
+        if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
+        {
+            NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
+        }
+#endif
     }
+
+
+
+    public void CloseChat()
+    { 
+        print("close");
+
+        _view.Hide();
+
+        WS.Close();
+    }
+
+
 
     private void WS_OnMessage(object sender, MessageEventArgs e)
     {
@@ -76,12 +96,21 @@ public class ChatManager : MonoBehaviour
             {
                 print("сообщение отправлено");
                 UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageRight(_messageField.Text));
+                _messageField.SetText("");
+
             }
             else
             {
                 print("сообщение не отправлено");
             }
         });
+    }
+
+    public void OnKeyboardHeightChanged(int keyboardHeight)
+    {
+        Debug.Log("OnKeyboardHeightChanged: " + keyboardHeight);
+        _chatView.UpdateKeyboardHeight(keyboardHeight);
+        _chatView.UpdateChatHistorySize();
     }
 
     private string SerializeObject<T>(T obj) => JsonConvert.SerializeObject(obj);
