@@ -1,3 +1,6 @@
+using Doozy.Runtime.Signals;
+using Doozy.Runtime.UIManager.Animators;
+using Doozy.Runtime.UIManager.Containers;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +12,8 @@ public class ProfileView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _emailText;
     [SerializeField] private TextMeshProUGUI _roleText;
     [SerializeField] private Image _avatar;
+
+    [SerializeField] private UIContainerUIAnimator _profileViewAnimator;
 
     private void Start()
     {
@@ -67,6 +72,25 @@ public class ProfileView : MonoBehaviour
     {
         _emailText.text = AccountManager.Instance.ProfileData.email;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
+    }
+
+
+
+    public void SignalListen(Signal signal)
+    {
+        if(signal.stream.category == "Swipe")
+        {
+            if(signal.stream.name == "Left")
+            {
+                _profileViewAnimator.showAnimation.Move.fromDirection = Doozy.Runtime.Reactor.MoveDirection.Right;
+                _profileViewAnimator.hideAnimation.Move.toDirection = Doozy.Runtime.Reactor.MoveDirection.Left;
+            }
+            else if(signal.stream.name == "Right")
+            {
+                _profileViewAnimator.showAnimation.Move.fromDirection = Doozy.Runtime.Reactor.MoveDirection.Left;
+                _profileViewAnimator.hideAnimation.Move.toDirection = Doozy.Runtime.Reactor.MoveDirection.Right;
+            }
+        }
     }
 
 

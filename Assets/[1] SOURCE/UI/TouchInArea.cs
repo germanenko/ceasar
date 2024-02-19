@@ -19,6 +19,7 @@ namespace Germanenko.Source
         [SerializeField] private bool isSwipeVerticalGesture = false;
 
         public bool isHandle = false;
+        public bool CanSwipe = true;
 
         [SerializeField] private bool isDebugging = false;
         [SerializeField] private GameObject touchArea;
@@ -238,7 +239,7 @@ namespace Germanenko.Source
         private void SwipeGestureCallback(GestureRecognizer gesture)
         {
 
-            if (!isHandle) return;
+            if (!isHandle || !CanSwipe) return;
 
             if (gesture.State == GestureRecognizerState.Ended)
             {
@@ -256,6 +257,9 @@ namespace Germanenko.Source
                     else if (swipeGesture.EndDirection == SwipeGestureRecognizerDirection.Down) Signal.Send(streamCategory, "Down");
                 }
 
+                CanSwipe = false;
+
+                Invoke(nameof(EnableSwipe), .25f);
             }
 
         }
@@ -325,7 +329,10 @@ namespace Germanenko.Source
                Debug.Log(string.Format(text, format));
         }
 
-
+        private void EnableSwipe()
+        {
+            CanSwipe = true;
+        }
     }
 
 }
