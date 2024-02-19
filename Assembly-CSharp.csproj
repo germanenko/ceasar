@@ -1707,6 +1707,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\TransformInputToWorldSpace.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\FindClosest.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Quaternion\QuaternionLowPassFilter.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\ListOfTaskView.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Utils\NetDataWriter.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRigidbodyMove.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\GetDistance.cs" />
@@ -1759,7 +1760,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\[1] SOURCE\UI\ListOfTaskView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />

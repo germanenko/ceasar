@@ -9,6 +9,7 @@ using System.Threading;
 using Doozy.Runtime.UIManager.Containers;
 using WebSocketSharp;
 using PimDeWitte.UnityMainThreadDispatcher;
+using Newtonsoft.Json;
 
 public class ChatListManager : MonoBehaviour
 {
@@ -16,13 +17,21 @@ public class ChatListManager : MonoBehaviour
     public TaskChatBody[] Chats;
     public TaskChatBody OpeningChat;
 
+    [SerializeField] private List<ChatItem> _chatItems;
+
     [SerializeField] private Transform _chatsParent;
 
     [SerializeField] private ChatItem _chatButtonPrefab;
 
-    public WebSocket WS = new WebSocket("ws://82.97.249.229/taskChat");
+    public WebSocket WS = new WebSocket("ws://82.97.243.104/chat");
+    public WebSocket MainWS = new WebSocket("ws://82.97.243.104/main");
 
     [SerializeField] private ChatManager _chatManager;
+
+    Dictionary<string, string> MainHeaders = new Dictionary<string, string>
+    {
+        { "Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIwYWU2NDM0My1jY2MzLTQzNTQtYmU2Ni03YmUyODk3ZGI3NWEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb21tb24iLCJleHAiOjE3MDc3MTYyMTh9.6li5bUA62z2aJ3OAu8mL_CqehMPjnw4oDG5k2hzXLuA" }
+    };
 
     Dictionary<string, string> Headers = new Dictionary<string, string>
     {
@@ -35,9 +44,44 @@ public class ChatListManager : MonoBehaviour
     private void Start()
     {
         GetChats();
+
+        MainHeaders["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+
+        MainWS.CustomHeaders = MainHeaders;
+
+        MainWS.ConnectAsync();
+
+        MainWS.OnOpen += MainWS_OnOpen;
+        MainWS.OnMessage += MainWS_OnMessage;
     }
 
-    
+    private void MainWS_OnMessage(object sender, MessageEventArgs e)
+    {
+        print("Новое сообщение!");
+        try
+        {
+            var m = JsonConvert.DeserializeObject<ChatMessageInfo>(e.Data);
+
+            var chatId = m.ChatId;
+
+            foreach (var chatItem in _chatItems)
+            {
+                if (chatItem.ChatInfo.id == chatId.ToString())
+                {
+                    UnityMainThreadDispatcher.Instance().Enqueue(() => chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date));
+                }
+            }
+        }
+        catch(Exception ex)
+        {
+            print(ex);
+        }
+    }
+
+    private void MainWS_OnOpen(object sender, EventArgs e)
+    {
+        print("Подключен к главному сокету");
+    }
 
     public async void GetChats()
     {
@@ -59,6 +103,8 @@ public class ChatListManager : MonoBehaviour
             ChatItem ci = c.GetComponent<ChatItem>();
 
             ci.Init(chat, this);
+
+            _chatItems.Add(ci);
         }
     }
 

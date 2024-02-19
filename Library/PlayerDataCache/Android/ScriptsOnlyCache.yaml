@@ -95,28 +95,6 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.Editors.EditorDataColorPaletteEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataFontFamilyEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataLayoutGroupEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataSelectableColorPaletteEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataSpriteSheetGroupEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataStyleGroupEditor
-    - Doozy.Editor.EditorUI.Editors.EditorDataTextureGroupEditor
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.Textures.EditorDataTextureGroup
-    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -139,7 +117,6 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Animators.UIToggleUIAnimator
     - Doozy.Runtime.UIManager.Animators.UIToggleVector2Animator
     - Doozy.Runtime.UIManager.Components.UIButton
-    - Doozy.Runtime.UIManager.Components.UISlider
     - Doozy.Runtime.UIManager.Components.UIStepper
     - Doozy.Runtime.UIManager.Components.UITab
     - Doozy.Runtime.UIManager.Components.UITag
@@ -258,6 +235,7 @@ ScriptsOnlyBuild:
     - BaseDDItem
     - ChatUserInfo
     - DigitalRubyShared.GestureRecognizerComponentStateUpdatedEvent
+    - MessageBody
     - ProfileData
     - TaskChatBody
     - TaskTypeDDItem
@@ -845,6 +823,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -1610,8 +1591,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1877,9 +1856,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18526}
     - Class: 114
-      Script: {instanceID: 18950}
+      Script: {instanceID: 18716}
     - Class: 114
-      Script: {instanceID: 496784}
+      Script: {instanceID: 18952}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2555,7 +2534,7 @@ ScriptsOnlyBuild:
     className: MultilineController
   - hash:
       serializedVersion: 2
-      Hash: dcd8e08a62d7865e94051c07da5fba92
+      Hash: 0f91d69e7d9fa75cafaf727e292cdd78
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatListManager
@@ -3287,7 +3266,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: 0aeb58234250e6449a2e45887701409f
+      Hash: 908e4cd0a5ce41fcbf302e6f4b9e56a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -3959,7 +3938,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: 67b5cffe91dd1f5b572eb69d8a4fb609
+      Hash: a7e6c4460a207b0d817922ecf00bc3d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem
@@ -7301,6 +7280,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseUpMessageListener
   - hash:
       serializedVersion: 2
+      Hash: e46083f201eb2da2cdd9ba23153ef3d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ListOfTaskView
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -7425,12 +7410,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: e46083f201eb2da2cdd9ba23153ef3d3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ListOfTaskView
   platform: 13
   scenePathNames:
   - Assets/[8] SCENES & GRAPHS/Scenes/Login.unity

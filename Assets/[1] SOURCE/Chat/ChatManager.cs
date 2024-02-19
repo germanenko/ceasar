@@ -83,6 +83,8 @@ public class ChatManager : MonoBehaviour
 
     public void SendMessage()
     {
+        if (_messageField.Text.Length == 0) return;
+
         var messageBody = new CreateMessageBody
         {
             Type = ChatMessageType.Text,
@@ -119,33 +121,3 @@ public class ChatManager : MonoBehaviour
     private string SerializeObject<T>(T obj) => JsonConvert.SerializeObject(obj);
 }
 
-
-
-public class MessageBody
-{
-    public Guid Id { get; set; }
-    public ChatMessageType Type { get; set; }
-    public string Content { get; set; }
-    public DateTime Date { get; set; } = DateTime.UtcNow;
-    public Guid SenderId { get; set; }
-}
-
-
-
-public class CreateMessageBody
-{
-    public ChatMessageType Type { get; set; }
-
-    public string Content { get; set; }
-
-    public override string ToString()
-    {
-        return $"Content: {Content} sending";
-    }
-}
-
-public enum ChatMessageType
-{
-    Text,
-    File
-}

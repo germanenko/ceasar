@@ -25,12 +25,12 @@ public class ServerConstants : MonoBehaviour
 {
     public static ServerConstants Instance;
 
-    public string ServerAddress { get => "http://82.97.249.229/api/"; }
+    public string ServerAddress { get => "http://82.97.243.104/api/"; }
 
     public string SignIn { get => "signin"; } 
     public string SignUp { get => "signup"; }
     public string GetProfile { get => "profile"; }
-    public string GetChats { get => "taskChats"; }
+    public string GetChats { get => "chats"; }
 
 
     private void Awake()
@@ -294,6 +294,7 @@ public class TaskChatBody
     public string id;
     public string name;
     public string imageUrl;
+    public MessageBody lastMessage;
     public ChatUserInfo[] participants;
 
     public TaskChatBody(string id, string name, string imageUrl, ChatUserInfo[] participants)
@@ -320,4 +321,56 @@ public class ChatUserInfo
         this.email = email;
         this.imageUrl = imageUrl;
     }
+}
+
+
+
+[Serializable]
+public class MessageBody
+{
+    public Guid Id { get; set; }
+    public ChatMessageType Type { get; set; }
+    public string Content { get; set; }
+    public DateTime Date { get; set; } = DateTime.UtcNow;
+    public Guid SenderId { get; set; }
+}
+
+
+
+[Serializable]
+public class CreateMessageBody
+{
+    public ChatMessageType Type { get; set; }
+
+    public string Content { get; set; }
+
+    public override string ToString()
+    {
+        return $"Content: {Content} sending";
+    }
+}
+
+
+
+public class ChatMessageInfo
+{
+    public Guid ChatId;
+    public ChatType ChatType;
+    public MessageBody Message;
+}
+
+
+
+public enum ChatType
+{
+    Task,
+    Personal
+}
+
+
+
+public enum ChatMessageType
+{
+    Text,
+    File
 }

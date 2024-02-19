@@ -675,6 +675,7 @@ MonoBehaviour:
   _chatIcon: {fileID: 2109535786619401119}
   _chatName: {fileID: 2109535787793684689}
   _lastMessage: {fileID: 2109535787580141908}
+  _lastMessageDate: {fileID: 2109535786898573724}
   _chatList: {fileID: 0}
 --- !u!114 &3715370837987587500
 MonoBehaviour:
