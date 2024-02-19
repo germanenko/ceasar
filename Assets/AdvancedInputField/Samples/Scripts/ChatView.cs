@@ -80,8 +80,8 @@ namespace AdvancedInputFieldSamples
 
 		public void UpdateMessageInputPosition()
 		{
-#if(UNITY_ANDROID || UNITY_IOS)
-			if(!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
+#if (UNITY_ANDROID || UNITY_IOS)
+            if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
 			{
 				Vector2 position = messageInput.RectTransform.anchoredPosition;
 				position.y = keyboardHeight / Canvas.scaleFactor;
@@ -106,7 +106,7 @@ namespace AdvancedInputFieldSamples
 			Vector2 sizeDelta = chatHistoryTransform.sizeDelta;
 			sizeDelta.y += differenceY;
 			chatHistoryTransform.sizeDelta = sizeDelta;
-		}
+        }
 
 		public float GetAbsoluteTopY(RectTransform rectTransform)
 		{

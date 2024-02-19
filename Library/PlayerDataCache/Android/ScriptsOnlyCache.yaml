@@ -94,6 +94,20 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
+    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -184,7 +198,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1575,6 +1588,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1763,8 +1778,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14104}
     - Class: 114
       Script: {instanceID: 14242}
-    - Class: 114
-      Script: {instanceID: 14338}
     - Class: 114
       Script: {instanceID: 14522}
     - Class: 114
