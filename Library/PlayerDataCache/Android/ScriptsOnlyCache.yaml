@@ -63,6 +63,7 @@ ScriptsOnlyBuild:
     - HutongGames.PlayMaker.PlayMakerUiPointerEvents
     - InputFieldWithHits
     - LerpToPlaceholder
+    - ListOfTaskView
     - ListScaler
     - Localization
     - MonthToggle
@@ -94,6 +95,13 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.Editors.EditorDataColorPaletteEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataFontFamilyEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataLayoutGroupEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataSelectableColorPaletteEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataSpriteSheetGroupEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataStyleGroupEditor
+    - Doozy.Editor.EditorUI.Editors.EditorDataTextureGroupEditor
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
     - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
@@ -107,6 +115,7 @@ ScriptsOnlyBuild:
     - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
     - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.Textures.EditorDataTextureGroup
     - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
@@ -130,6 +139,7 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Animators.UIToggleUIAnimator
     - Doozy.Runtime.UIManager.Animators.UIToggleVector2Animator
     - Doozy.Runtime.UIManager.Components.UIButton
+    - Doozy.Runtime.UIManager.Components.UISlider
     - Doozy.Runtime.UIManager.Components.UIStepper
     - Doozy.Runtime.UIManager.Components.UITab
     - Doozy.Runtime.UIManager.Components.UITag
@@ -722,14 +732,14 @@ ScriptsOnlyBuild:
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
   - assembly: Assembly-CSharp
-    fullTypeName: RecoveryTaskItem
-    methodName: Recovery
-  - assembly: Assembly-CSharp
     fullTypeName: DayButton
     methodName: SelectDay
   - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
+  - assembly: Assembly-CSharp
+    fullTypeName: RecoveryTaskItem
+    methodName: Recovery
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -847,6 +857,12 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: ListOfTaskView
+    methodName: SignalListen
+  - assembly: Assembly-CSharp
+    fullTypeName: ListOfTaskView
+    methodName: SignalListen
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -1210,6 +1226,12 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: SignalListen
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: SignalListen
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: AddDropDown
@@ -1856,6 +1878,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 18526}
     - Class: 114
       Script: {instanceID: 18950}
+    - Class: 114
+      Script: {instanceID: 496784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -3503,7 +3527,7 @@ ScriptsOnlyBuild:
     className: ObservableRectTransformTrigger
   - hash:
       serializedVersion: 2
-      Hash: e1287e046cff91928564406b774fe828
+      Hash: 82f61ea8d311cbb3b095aa7a8b26d2e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: TouchInArea
@@ -7337,7 +7361,7 @@ ScriptsOnlyBuild:
     className: TransformEventsBridge
   - hash:
       serializedVersion: 2
-      Hash: 5580dabd087299431b8469d7d4284c5c
+      Hash: c97b05833973557b136764bfc20b940a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProfileView
@@ -7401,6 +7425,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e46083f201eb2da2cdd9ba23153ef3d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ListOfTaskView
   platform: 13
   scenePathNames:
   - Assets/[8] SCENES & GRAPHS/Scenes/Login.unity

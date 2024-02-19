@@ -2,6 +2,7 @@ using AdvancedInputFieldPlugin;
 using DTT.KeyboardRaiser;
 using Germanenko.Source;
 using HutongGames.PlayMaker.Actions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -54,7 +55,17 @@ public class InputFieldWithHits : MonoBehaviour
     {
         _inputField.onEndEdit.RemoveListener(OpenNextInputField);
 
-        var nextInputField = transform.parent.GetChild(transform.GetSiblingIndex() + 1);
+        Transform nextInputField = null;
+
+        try
+        {
+            nextInputField = transform.parent.GetChild(transform.GetSiblingIndex() + 1);
+        }
+        catch(Exception e)
+        {
+            _inputField.DeactivateInputField();
+            return;
+        }
 
         if (nextInputField.TryGetComponent(out InputFieldWithHits inputFieldWithHits))
         {
