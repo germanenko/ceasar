@@ -56,6 +56,9 @@
             <meta-data
                 android:name="unityplayer.UnityActivity"
                 android:value="true" />
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
         </activity>
 
         <meta-data
@@ -70,6 +73,9 @@
         <meta-data
             android:name="unity.allow-resizable-window"
             android:value="False" />
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
     </application>
 
 </manifest>

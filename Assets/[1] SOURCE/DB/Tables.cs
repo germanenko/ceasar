@@ -21,6 +21,7 @@ namespace Germanenko.Source
 			ConstantSingleton.Instance.DbManager.CreateTable<Priority>();
 			ConstantSingleton.Instance.DbManager.CreateTable<SavesAndDrafts>();
 			ConstantSingleton.Instance.DbManager.CreateTable<DeletedTasks>();
+			ConstantSingleton.Instance.DbManager.CreateTable<Chats>();
 
             //CreateTableText();
 
@@ -373,6 +374,39 @@ namespace Germanenko.Source
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO DeletedTasks (TaskID, Date) VALUES (?, ?)",
                 id,
                 DateTime.Today);
+        }
+
+
+
+        public bool HaveChat(string id)
+        {
+            string sql = $"SELECT * FROM Chats WHERE Id = '{id}'";
+
+            List<Chats> chats = ConstantSingleton.Instance.DbManager.Query<Chats>(sql);
+
+            return chats.Count > 0;
+        }
+
+
+
+        public List<Chats> GetAllChats()
+        {
+            string sql = $"SELECT * FROM Chats";
+
+            List<Chats> chats = ConstantSingleton.Instance.DbManager.Query<Chats>(sql);
+
+            return chats;
+        }
+
+
+
+        public void SaveChat(string id, string name, string type, string image)
+        {
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Chats (Id, Name, Type, Image) VALUES (?, ?, ?, ?)",
+                id,
+                name,
+                type,
+                image);
         }
 
 

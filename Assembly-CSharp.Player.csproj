@@ -164,6 +164,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\IsKinematic.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoScriptLine3D.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Transform\InterpolateTransform.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\ApplicationChrome.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Selectable\UiExplicitNavigationGetProperties.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Trigonometry\GetSine.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiInputFieldOnEndEditEvent.cs" />

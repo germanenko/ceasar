@@ -10,6 +10,7 @@ using Doozy.Runtime.UIManager.Containers;
 using WebSocketSharp;
 using PimDeWitte.UnityMainThreadDispatcher;
 using Newtonsoft.Json;
+using Germanenko.Source;
 
 public class ChatListManager : MonoBehaviour
 {
@@ -68,7 +69,10 @@ public class ChatListManager : MonoBehaviour
             {
                 if (chatItem.ChatInfo.id == chatId.ToString())
                 {
-                    UnityMainThreadDispatcher.Instance().Enqueue(() => chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date));
+                    UnityMainThreadDispatcher.Instance().Enqueue(() => 
+                    { 
+                        chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date); 
+                    });
                 }
             }
         }
@@ -86,6 +90,23 @@ public class ChatListManager : MonoBehaviour
     public async void GetChats()
     {
         Chats = await ServerConstants.Instance.GetChatsAsync();
+
+        try
+        {
+            if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Length)
+            {
+                foreach (var chat in Chats)
+                {
+                    if (!Toolbox.Get<Tables>().HaveChat(chat.id))
+                    {
+                        print("Полученного чата нет - добавляю");
+                        Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.imageUrl);
+                    }
+                }
+            }
+        }
+        catch (Exception ex) { print(ex); }
+        
 
         GenerateChatList();
     }

@@ -85,4 +85,44 @@ namespace Germanenko.Source
         [Default(0), NotNull]
         public int TaskID { get; set; }
     }
+
+
+
+    public class Chats
+    {
+        [PrimaryKey]
+        public string Id { get; set; }
+
+        [Default(0), NotNull]
+        public string Name { get; set; }
+
+        [Default(0), NotNull]
+        public string Type { get; set; }
+
+        [Default(0), NotNull]
+        public string Image { get; set; }
+    }
+
+
+
+    public class ChatMessages
+    {
+        [PrimaryKey, AutoIncrement]
+        public string Id { get; set; }
+
+        [Default(0), NotNull]
+        public string ChatId { get; set; }
+
+        [Default(0), NotNull]
+        public string Content { get; set; }
+
+        [Default(0), NotNull]
+        public string SenderId { get; set; }
+
+        [Default(0), NotNull]
+        public string SentAt { get; set; }
+
+        [Default(0), NotNull]
+        public string Type { get; set; }
+    }
 }

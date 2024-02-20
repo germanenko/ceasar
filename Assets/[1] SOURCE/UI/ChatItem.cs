@@ -49,16 +49,20 @@ public class ChatItem : MonoBehaviour
     public void SetInfo()
     {
         _chatName.text = _chatInfo.name;
-        _lastMessage.text = _chatInfo.lastMessage.Content;
 
-        if(_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
+        if(_chatInfo.lastMessage != null)
         {
-            _lastMessageDate.text = _chatInfo.lastMessage.Date.Date.ToString();
-        }
-        else
-        {
-            _lastMessageDate.text = _chatInfo.lastMessage.Date.ToShortTimeString();
-        }
+            _lastMessage.text = _chatInfo.lastMessage.Content;
+
+            if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
+            {
+                _lastMessageDate.text = _chatInfo.lastMessage.Date.Date.ToString();
+            }
+            else
+            {
+                _lastMessageDate.text = _chatInfo.lastMessage.Date.ToShortTimeString();
+            }
+        }   
     }
 
 

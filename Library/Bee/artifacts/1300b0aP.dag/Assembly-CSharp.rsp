@@ -757,6 +757,7 @@
 "Assets/[1] SOURCE/Signals/SignalStructs.cs"
 "Assets/[1] SOURCE/SignalSender.cs"
 "Assets/[1] SOURCE/TaskFormFields.cs"
+"Assets/[1] SOURCE/UI/ApplicationChrome.cs"
 "Assets/[1] SOURCE/UI/Calendar/Calendar.cs"
 "Assets/[1] SOURCE/UI/Calendar/DayButton.cs"
 "Assets/[1] SOURCE/UI/Calendar/MonthToggle.cs"
