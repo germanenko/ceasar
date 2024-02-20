@@ -106,7 +106,7 @@
 57        android:supportsRtl="true" >
 57-->[:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:12:9-35
 58        <activity
-58-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:42:9-62:20
+58-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:42:9-59:20
 59            android:name="com.unity3d.player.UnityPlayerActivity"
 59-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:43:13-66
 60            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -117,7 +117,7 @@
 62-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:13-44
 63            android:resizeableActivity="false"
 63-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:47:13-47
-64            android:screenOrientation="fullUser"
+64            android:screenOrientation="portrait"
 64-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:48:13-49
 65            android:theme="@style/UnityThemeSelector" >
 65-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:49:13-54
@@ -138,55 +138,43 @@
 73-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:57:17-57
 74                android:value="true" />
 74-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:58:17-37
-75            <meta-data
-75-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:59:13-61:40
-76                android:name="android.notch_support"
-76-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:60:17-53
-77                android:value="true" />
-77-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:61:17-37
-78        </activity>
-79
+75        </activity>
+76
+77        <meta-data
+77-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:61:9-63:33
+78            android:name="unity.splash-mode"
+78-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:62:13-45
+79            android:value="0" />
+79-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:63:13-30
 80        <meta-data
-80-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:64:9-66:33
-81            android:name="unity.splash-mode"
-81-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:13-45
-82            android:value="0" />
-82-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:66:13-30
+80-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:64:9-66:36
+81            android:name="unity.splash-enable"
+81-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:13-47
+82            android:value="True" />
+82-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:66:13-33
 83        <meta-data
-83-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:9-69:36
-84            android:name="unity.splash-enable"
-84-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:13-47
-85            android:value="True" />
-85-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:69:13-33
+83-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:9-69:37
+84            android:name="unity.launch-fullscreen"
+84-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:13-51
+85            android:value="False" />
+85-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:69:13-34
 86        <meta-data
-86-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:70:9-72:36
-87            android:name="unity.launch-fullscreen"
-87-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:71:13-51
-88            android:value="True" />
-88-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:72:13-33
-89        <meta-data
-89-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:73:9-75:37
-90            android:name="unity.allow-resizable-window"
-90-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:74:13-56
-91            android:value="False" />
-91-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:75:13-34
-92        <meta-data
-92-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:76:9-78:50
-93            android:name="notch.config"
-93-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:77:13-40
-94            android:value="portrait|landscape" />
-94-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:13-47
-95
-96        <activity
-96-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:12:9-16:58
-97            android:name="spacemadness.com.lunarconsole.settings.PluginSettingsActivity"
-97-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:13:13-89
-98            android:icon="@drawable/lunar_console_icon_button_settings"
-98-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:14:13-72
-99            android:label="@string/lunar_console_settings_activity_label"
-99-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:15:13-74
-100            android:theme="@style/lunar_console_theme" />
-100-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:16:13-55
-101    </application>
-102
-103</manifest>
+86-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:70:9-72:37
+87            android:name="unity.allow-resizable-window"
+87-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:71:13-56
+88            android:value="False" />
+88-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:72:13-34
+89
+90        <activity
+90-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:12:9-16:58
+91            android:name="spacemadness.com.lunarconsole.settings.PluginSettingsActivity"
+91-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:13:13-89
+92            android:icon="@drawable/lunar_console_icon_button_settings"
+92-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:14:13-72
+93            android:label="@string/lunar_console_settings_activity_label"
+93-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:15:13-74
+94            android:theme="@style/lunar_console_theme" />
+94-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:16:13-55
+95    </application>
+96
+97</manifest>

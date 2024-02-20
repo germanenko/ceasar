@@ -72,6 +72,7 @@ ScriptsOnlyBuild:
     - ProfileView
     - RecoveryDeletedTasks
     - RecoveryTaskItem
+    - SafeAreaFitter
     - SavesAndDraftsView
     - ServerConstants
     - SmoothGridLayoutUI
@@ -95,6 +96,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -730,18 +732,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.Behaviour
     methodName: set_enabled
@@ -793,18 +783,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Show
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantShow
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Hide
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantHide
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: Stop
@@ -887,59 +865,11 @@ ScriptsOnlyBuild:
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
   - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Show
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantShow
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Hide
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantHide
-  - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
     methodName: Show
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TouchInArea
     methodName: IsHandle
@@ -961,30 +891,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Localization
     methodName: SetLocalizationLanguage
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Stop
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: RecoveryDeletedTasks
     methodName: LoadDeletedTasks
@@ -1051,42 +957,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Stop
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: ReturnArchive
@@ -1099,48 +969,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: LoadInfo
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.Question
     methodName: Show
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Show
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantShow
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Hide
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantHide
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
     methodName: Show
@@ -1195,18 +1029,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
     methodName: ShowTooltip
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: SignalListen
@@ -1219,30 +1041,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Stop
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
@@ -1294,18 +1092,6 @@ ScriptsOnlyBuild:
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
     methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Stop
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: AddInputField
@@ -1315,30 +1101,6 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: SetProgressAtZero
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
-    methodName: Play
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Show
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantShow
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: Hide
-  - assembly: DoozyRuntime
-    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
-    methodName: InstantHide
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TaskForm
     methodName: SetDraftTask
@@ -1548,6 +1310,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 17552}
     - Class: 114
       Script: {instanceID: 17586}
+    - Class: 114
+      Script: {instanceID: 37324}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1859,6 +1623,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 18716}
     - Class: 114
       Script: {instanceID: 18952}
+    - Class: 114
+      Script: {instanceID: 37324}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -3938,7 +3704,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: a7e6c4460a207b0d817922ecf00bc3d0
+      Hash: 763a6c45dc2ea004ecc918bef451e7d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem
@@ -7410,6 +7176,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SafeAreaFitter
   platform: 13
   scenePathNames:
   - Assets/[8] SCENES & GRAPHS/Scenes/Login.unity

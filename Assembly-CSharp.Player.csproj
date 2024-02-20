@@ -666,6 +666,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorHumanScale.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\DestroyObject.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Transform\SetScale.cs" />
+    <Compile Include="Assets\[1] SOURCE\UI\SafeAreaFitter.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiImageGetFillAmount.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\ILayoutChildDependency.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />

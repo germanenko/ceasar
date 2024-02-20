@@ -62,7 +62,7 @@
             android:hardwareAccelerated="false"
             android:launchMode="singleTask"
             android:resizeableActivity="false"
-            android:screenOrientation="fullUser"
+            android:screenOrientation="portrait"
             android:theme="@style/UnityThemeSelector" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,9 +72,6 @@
 
             <meta-data
                 android:name="unityplayer.UnityActivity"
-                android:value="true" />
-            <meta-data
-                android:name="android.notch_support"
                 android:value="true" />
         </activity>
 
@@ -86,13 +83,10 @@
             android:value="True" />
         <meta-data
             android:name="unity.launch-fullscreen"
-            android:value="True" />
+            android:value="False" />
         <meta-data
             android:name="unity.allow-resizable-window"
             android:value="False" />
-        <meta-data
-            android:name="notch.config"
-            android:value="portrait|landscape" />
 
         <activity
             android:name="spacemadness.com.lunarconsole.settings.PluginSettingsActivity"

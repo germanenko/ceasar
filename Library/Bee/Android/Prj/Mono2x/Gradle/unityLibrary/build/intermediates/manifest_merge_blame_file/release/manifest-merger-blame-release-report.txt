@@ -12,70 +12,70 @@
 10-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
 11
 12    <uses-feature android:glEsVersion="0x00030000" />
-12-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:3-52
-12-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:17-49
+12-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:3-52
+12-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:17-49
 13    <uses-feature
-13-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:3-91
+13-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:3-91
 14        android:name="android.hardware.vulkan.version"
-14-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:17-63
+14-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:17-63
 15        android:required="false" />
-15-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:64-88
+15-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:64-88
 16
 17    <uses-permission android:name="android.permission.INTERNET" />
-17-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:3-65
-17-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:20-62
+17-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:3-65
+17-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:20-62
 18    <uses-permission android:name="android.permission.VIBRATE" />
-18-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:3-64
-18-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:20-61
+18-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:3-64
+18-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:20-61
 19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-19-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:3-77
-19-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:20-74
+19-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:3-77
+19-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:20-74
 20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-20-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:3-77
-20-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:20-74
+20-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:3-77
+20-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:20-74
 21
 22    <uses-feature
-22-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:3-89
+22-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:3-89
 23        android:name="android.hardware.location.gps"
-23-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:17-61
+23-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:17-61
 24        android:required="false" />
-24-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:62-86
+24-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:62-86
 25    <uses-feature
-25-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:3-85
+25-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:3-85
 26        android:name="android.hardware.location"
-26-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:17-57
+26-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:17-57
 27        android:required="false" />
-27-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:58-82
+27-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:58-82
 28    <uses-feature
-28-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:3-97
+28-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:3-97
 29        android:name="android.hardware.sensor.accelerometer"
-29-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:17-69
+29-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:17-69
 30        android:required="false" />
-30-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:70-94
+30-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:70-94
 31    <uses-feature
-31-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:3-88
+31-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:3-88
 32        android:name="android.hardware.touchscreen"
-32-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:17-60
+32-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:17-60
 33        android:required="false" />
-33-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:61-85
+33-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:25:61-85
 34    <uses-feature
-34-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:3-99
+34-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:3-99
 35        android:name="android.hardware.touchscreen.multitouch"
-35-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:17-71
+35-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:17-71
 36        android:required="false" />
-36-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:72-96
+36-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:72-96
 37    <uses-feature
-37-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:3-108
+37-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:3-108
 38        android:name="android.hardware.touchscreen.multitouch.distinct"
-38-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:17-80
+38-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:17-80
 39        android:required="false" />
-39-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:81-105
+39-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:81-105
 40
 41    <application android:extractNativeLibs="true" >
-41-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-17:17
+41-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-15:17
 41-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:16-48
 42        <activity
-42-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:5-11:16
+42-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:5-10:16
 43            android:name="com.unity3d.player.UnityPlayerActivity"
 43-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:15-68
 44            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -86,7 +86,7 @@
 46-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:148-179
 47            android:resizeableActivity="false"
 47-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:362-396
-48            android:screenOrientation="fullUser"
+48            android:screenOrientation="portrait"
 48-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:111-147
 49            android:theme="@style/UnityThemeSelector" >
 49-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:69-110
@@ -107,44 +107,32 @@
 57-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:18-58
 58                android:value="true" />
 58-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:59-79
-59            <meta-data
-59-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:7-78
-60                android:name="android.notch_support"
-60-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:18-54
-61                android:value="true" />
-61-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:55-75
-62        </activity>
-63
+59        </activity>
+60
+61        <meta-data
+61-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:5-69
+62            android:name="unity.splash-mode"
+62-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:16-48
+63            android:value="0" />
+63-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:49-66
 64        <meta-data
-64-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-69
-65            android:name="unity.splash-mode"
-65-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-48
-66            android:value="0" />
-66-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:49-66
+64-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-74
+65            android:name="unity.splash-enable"
+65-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-50
+66            android:value="True" />
+66-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:51-71
 67        <meta-data
-67-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-74
-68            android:name="unity.splash-enable"
-68-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-50
-69            android:value="True" />
-69-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:51-71
+67-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-79
+68            android:name="unity.launch-fullscreen"
+68-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-54
+69            android:value="False" />
+69-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:55-76
 70        <meta-data
-70-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-78
-71            android:name="unity.launch-fullscreen"
-71-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-54
-72            android:value="True" />
-72-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:55-75
-73        <meta-data
-73-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-84
-74            android:name="unity.allow-resizable-window"
-74-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:16-59
-75            android:value="False" />
-75-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:60-81
-76        <meta-data
-76-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:5-81
-77            android:name="notch.config"
-77-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:16-43
-78            android:value="portrait|landscape" />
-78-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:44-78
-79    </application>
-80
-81</manifest>
+70-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-84
+71            android:name="unity.allow-resizable-window"
+71-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-59
+72            android:value="False" />
+72-->D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:60-81
+73    </application>
+74
+75</manifest>
