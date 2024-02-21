@@ -90,16 +90,16 @@ namespace Germanenko.Source
 
     public class Chats
     {
-        [PrimaryKey]
+        [PrimaryKey, MaxLength(300)]
         public string Id { get; set; }
 
-        [Default(0), NotNull]
+        [Default("name"), MaxLength(300), NotNull]
         public string Name { get; set; }
 
-        [Default(0), NotNull]
+        [Default("Personal"), MaxLength(300), NotNull]
         public string Type { get; set; }
 
-        [Default(0), NotNull]
+        [Default("link"), MaxLength(300)]
         public string Image { get; set; }
     }
 

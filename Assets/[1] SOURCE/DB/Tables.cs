@@ -402,6 +402,7 @@ namespace Germanenko.Source
 
         public void SaveChat(string id, string name, string type, string image)
         {
+            Debug.Log($"INSERT INTO Chats (Id, Name, Type, Image) VALUES ({id}, {name}, {type}, {image})");
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Chats (Id, Name, Type, Image) VALUES (?, ?, ?, ?)",
                 id,
                 name,
