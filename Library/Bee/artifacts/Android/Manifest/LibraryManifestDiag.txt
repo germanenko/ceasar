@@ -14,6 +14,7 @@ android.permission.INTERNET was added because:
 		Microsoft.AspNetCore.Connections.Abstractions-FeaturesChecked.txt
 		websocket-sharp-FeaturesChecked.txt
 	UnityEngine.Network was present in:
+		Assembly-CSharp-FeaturesChecked.txt
 		NativeGallery.Runtime-FeaturesChecked.txt
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
@@ -32,6 +33,7 @@ android.permission.VIBRATE was added because:
 		Assembly-CSharp-FeaturesChecked.txt
 android.permission.ACCESS_NETWORK_STATE was added because:
 	UnityEngine.Application::get_internetReachability was present in:
+		Assembly-CSharp-FeaturesChecked.txt
 		Unity.Services.Core.Telemetry-FeaturesChecked.txt
 Location related settings were added because:
 	UnityEngine.Input::get_location was present in:

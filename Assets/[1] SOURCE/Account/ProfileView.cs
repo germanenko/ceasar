@@ -70,6 +70,8 @@ public class ProfileView : MonoBehaviour
 
     public void LoadInfo()
     {
+        if (AccountManager.Instance == null) return;
+
         _emailText.text = AccountManager.Instance.ProfileData.email;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
     }

@@ -22,6 +22,7 @@ namespace Germanenko.Source
 			ConstantSingleton.Instance.DbManager.CreateTable<SavesAndDrafts>();
 			ConstantSingleton.Instance.DbManager.CreateTable<DeletedTasks>();
 			ConstantSingleton.Instance.DbManager.CreateTable<Chats>();
+			ConstantSingleton.Instance.DbManager.CreateTable<ChatMessages>();
 
             //CreateTableText();
 
@@ -408,6 +409,41 @@ namespace Germanenko.Source
                 name,
                 type,
                 image);
+        }
+
+
+
+        public void SaveMessage(string id, string chatId, string content, string senderId, string sentAt, string type)
+        {
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO ChatMessages (Id, ChatId, Content, SenderId, SentAt, Type) VALUES (?, ?, ?, ?, ?, ?)",
+                id,
+                chatId,
+                content,
+                senderId,
+                sentAt,
+                type);
+        }
+
+
+
+        public List<ChatMessages> GetMessages(string chatId, int count)
+        {
+            string sql = $"SELECT * FROM ChatMessages WHERE ChatId = '{chatId}' LIMIT {count}";
+
+            List<ChatMessages> chats = ConstantSingleton.Instance.DbManager.Query<ChatMessages>(sql);
+
+            return chats;
+        }
+
+
+
+        public int GetAllMessagesCount(string chatId)
+        {
+            string sql = $"SELECT * FROM ChatMessages WHERE ChatId = '{chatId}'";
+
+            List<ChatMessages> chats = ConstantSingleton.Instance.DbManager.Query<ChatMessages>(sql);
+
+            return chats.Count;
         }
 
 

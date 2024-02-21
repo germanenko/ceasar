@@ -104,10 +104,10 @@ namespace Germanenko.Source
     }
 
 
-
+    [Serializable]
     public class ChatMessages
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public string Id { get; set; }
 
         [Default(0), NotNull]

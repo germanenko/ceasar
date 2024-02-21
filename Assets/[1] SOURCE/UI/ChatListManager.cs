@@ -15,7 +15,7 @@ using Germanenko.Source;
 public class ChatListManager : MonoBehaviour
 {
 
-    public TaskChatBody[] Chats;
+    public List<TaskChatBody> Chats;
     public TaskChatBody OpeningChat;
 
     [SerializeField] private List<ChatItem> _chatItems;
@@ -46,14 +46,8 @@ public class ChatListManager : MonoBehaviour
     {
         GetChats();
 
-        MainHeaders["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+        if (AccountManager.Instance == null) return;
 
-        MainWS.CustomHeaders = MainHeaders;
-
-        MainWS.ConnectAsync();
-
-        MainWS.OnOpen += MainWS_OnOpen;
-        MainWS.OnMessage += MainWS_OnMessage;
     }
 
     private void MainWS_OnMessage(object sender, MessageEventArgs e)
@@ -89,11 +83,36 @@ public class ChatListManager : MonoBehaviour
 
     public async void GetChats()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            print("нет интернета");
+
+            foreach (var chat in Toolbox.Get<Tables>().GetAllChats())
+            {
+                Chats.Add(new TaskChatBody(chat.Id, chat.Name, chat.Image, new ChatUserInfo[2]));
+            }
+
+            GenerateChatList();
+            return;
+        }
+
         Chats = await ServerConstants.Instance.GetChatsAsync();
+
+        foreach (var chat in Chats)
+        {
+            if (chat.lastMessage != null)
+            {
+                var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+                foreach (var m in ms)
+                {
+                    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+                }
+            }
+        }
 
         try
         {
-            if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Length)
+            if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Count)
             {
                 foreach (var chat in Chats)
                 {
@@ -101,6 +120,16 @@ public class ChatListManager : MonoBehaviour
                     {
                         print("Полученного чата нет - добавляю");
                         Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.imageUrl);
+                    }
+
+                    if(chat.lastMessage != null)
+                    {
+                        var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+
+                        foreach (var item in ms)
+                        {
+                            print(item.Content);
+                        }
                     }
                 }
             }
@@ -127,6 +156,15 @@ public class ChatListManager : MonoBehaviour
 
             _chatItems.Add(ci);
         }
+
+        MainHeaders["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+
+        MainWS.CustomHeaders = MainHeaders;
+
+        MainWS.ConnectAsync();
+
+        MainWS.OnOpen += MainWS_OnOpen;
+        MainWS.OnMessage += MainWS_OnMessage;
     }
 
 
@@ -170,5 +208,10 @@ public class ChatListManager : MonoBehaviour
         print("open");
         UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat, WS));
         WS.OnOpen -= WS_OnOpen;
+    }
+
+    private void OnApplicationQuit()
+    {
+        MainWS.Close();
     }
 }

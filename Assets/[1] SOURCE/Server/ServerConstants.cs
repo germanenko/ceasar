@@ -31,6 +31,7 @@ public class ServerConstants : MonoBehaviour
     public string SignUp { get => "signup"; }
     public string GetProfile { get => "profile"; }
     public string GetChats { get => "chats"; }
+    public string GetChatMessages { get => "chat/messages"; }
 
 
     private void Awake()
@@ -134,6 +135,12 @@ public class ServerConstants : MonoBehaviour
 
     public async Task<ResponseBody> CheckTokenIsValid()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            print("нет интернета");
+            return null;
+        }
+
         using var client = new HttpClient()
         {
             BaseAddress = new Uri(ServerAddress),
@@ -143,6 +150,7 @@ public class ServerConstants : MonoBehaviour
 
         var response = await client.GetAsync(GetProfile);
         ProfileData? profileBody = null;
+
         if (response.StatusCode == HttpStatusCode.OK)
         {
             ResponseBody responseBody = new ResponseBody(true, "Токен валиден");
@@ -186,7 +194,7 @@ public class ServerConstants : MonoBehaviour
 
 
 
-    public async Task<TaskChatBody[]> GetChatsAsync()
+    public async Task<List<TaskChatBody>> GetChatsAsync()
     {
         using var client = new HttpClient()
         {
@@ -196,17 +204,49 @@ public class ServerConstants : MonoBehaviour
         client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
 
         var response = await client.GetAsync(GetChats);
-        TaskChatBody[] ? chatsBody = null;
+        List<TaskChatBody> ? chatsBody = null;
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var chatsBodyString = await response.Content.ReadAsStringAsync();
 
-            chatsBody = JsonConvert.DeserializeObject<TaskChatBody[]>(chatsBodyString);
+            chatsBody = JsonConvert.DeserializeObject<List<TaskChatBody>>(chatsBodyString);
 
             return chatsBody;
         }
         else
         {
+            return null;
+        }
+    }
+
+
+
+    public async Task<List<MessageBody>> GetChatMessagesAsync(string chatId, int count)
+    {
+
+        DynamicDataLoadingOptions chatMessagesBody = new DynamicDataLoadingOptions(count, 0);
+
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var s = JsonUtility.ToJson(chatMessagesBody);
+        var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
+        var response = await client.PostAsync(GetChatMessages + $"?chatId={chatId}", content);
+        List<MessageBody>? messagesBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var messagesBodyString = await response.Content.ReadAsStringAsync();
+            messagesBody = JsonConvert.DeserializeObject<List<MessageBody>>(messagesBodyString);
+
+            return messagesBody;
+        }
+        else
+        {
+            print(response.RequestMessage);
             return null;
         }
     }
@@ -251,6 +291,20 @@ public class AuthBody
     {
         this.email = email;
         this.password = password;
+    }
+}
+
+
+
+public class DynamicDataLoadingOptions
+{
+    public int count;
+    public int loadPosition;
+
+    public DynamicDataLoadingOptions(int count, int loadPosition)
+    {
+        this.count = count;
+        this.loadPosition = loadPosition;
     }
 }
 

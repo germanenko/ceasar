@@ -32,15 +32,13 @@ public class ChatItem : MonoBehaviour
     {
         _lastMessage.text = lastMessage;
 
-        print(lastMessageTime.Minute);
-
         if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
         {
             _lastMessageDate.text = lastMessageTime.Date.ToShortDateString();
         }
         else
         {
-            _lastMessageDate.text = $"{lastMessageTime.Hour}:{lastMessageTime.Minute}";
+            _lastMessageDate.text = $"{lastMessageTime.ToLocalTime().Hour}:{lastMessageTime.ToLocalTime().Minute}";
         }
     }
 

@@ -23,7 +23,7 @@ public class Starter : MonoBehaviour
 
     public Canvas[] Canvases;
 
-    public void Start()
+    public void Awake()
     {
         Application.targetFrameRate = 60;
 

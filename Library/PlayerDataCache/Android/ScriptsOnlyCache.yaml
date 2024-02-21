@@ -96,7 +96,6 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -157,6 +156,8 @@ ScriptsOnlyBuild:
     - qtools.qhierarchy.pdata.QSettingsObject
     QHierarchyRuntime.dll:
     - qtools.qhierarchy.QObjectList
+    RainbowFolders.dll:
+    - Borodar.RainbowFolders.ProjectRuleset
     SimpleSQL_Runtime.dll:
     - SimpleSQL.SimpleSQLManager
     Unity.2D.Tilemap.Editor.dll:
@@ -233,7 +234,6 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.ScrollArea/ScrollRectEvent
     Assembly-CSharp:
     - BaseDDItem
-    - ChatUserInfo
     - DigitalRubyShared.GestureRecognizerComponentStateUpdatedEvent
     - MessageBody
     - ProfileData

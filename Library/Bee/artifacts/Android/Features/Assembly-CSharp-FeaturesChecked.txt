@@ -1,6 +1,8 @@
 System.Net.Sockets
+UnityEngine.Network
 UnityEngine.Input::set_multiTouchEnabled
 UnityEngine.Handheld::Vibrate
+UnityEngine.Application::get_internetReachability
 UnityEngine.Input::get_location
 UnityEngine.Input::get_acceleration
 UnityEngine.Input::get_touches

@@ -2,6 +2,7 @@ using AdvancedInputFieldPlugin;
 using AdvancedInputFieldSamples;
 using Doozy.Runtime.UIManager.Containers;
 using Germanenko.Framework;
+using Germanenko.Source;
 using Newtonsoft.Json;
 using PimDeWitte.UnityMainThreadDispatcher;
 using System;
@@ -32,6 +33,8 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _chatNameText;
 
+    [SerializeField] private List<ChatMessages> _messagesFromDB;  
+
     public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
     {
         _chatInfo = chatInfo;
@@ -41,6 +44,8 @@ public class ChatManager : MonoBehaviour
         _view.Show();
 
         _chatNameText.text = _chatInfo.name;
+
+        //_messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
 
         WS.OnMessage += WS_OnMessage;
 
