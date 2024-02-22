@@ -45,7 +45,9 @@ public class ChatManager : MonoBehaviour
 
         _chatNameText.text = _chatInfo.name;
 
-        //_messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
+        _messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
+
+        GenerateMessageList();
 
         WS.OnMessage += WS_OnMessage;
 
@@ -116,12 +118,41 @@ public class ChatManager : MonoBehaviour
         });
     }
 
+
+
     public void OnKeyboardHeightChanged(int keyboardHeight)
     {
         Debug.Log("OnKeyboardHeightChanged: " + keyboardHeight);
         _chatView.UpdateKeyboardHeight(keyboardHeight);
         _chatView.UpdateChatHistorySize();
     }
+
+
+
+    public void GenerateMessageList()
+    {
+        foreach (var m in _messagesFromDB)
+        {
+            if (m.SenderId == AccountManager.Instance.ProfileData.id)
+            {
+                _chatView.AddMessageRight(m.Content);
+            }
+            else
+            {
+                string senderMail = "";
+                foreach (var p in _chatInfo.participants)
+                {
+                    if (p.id == m.SenderId.ToString())
+                    {
+                        senderMail = p.email;
+                    }
+                }
+                _chatView.AddMessageLeft(m.Content, senderMail);
+            }
+        }
+    }
+
+
 
     private string SerializeObject<T>(T obj) => JsonConvert.SerializeObject(obj);
 }

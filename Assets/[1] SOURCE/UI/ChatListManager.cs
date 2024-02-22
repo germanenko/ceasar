@@ -100,14 +100,22 @@ public class ChatListManager : MonoBehaviour
 
         foreach (var chat in Chats)
         {
-            if (chat.lastMessage != null)
+            if (Toolbox.Get<Tables>().GetAllMessagesCount(chat.id) > 0) break;
+
+            var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+            foreach (var m in ms)
             {
-                var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-                foreach (var m in ms)
-                {
-                    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-                }
+                Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
             }
+            //if (chat.lastMessage != null)
+            //{
+            //    var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+            //    foreach (var m in ms)
+            //    {
+            //        Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+            //    }
+            //}
+            print("gen");
         }
 
         try
@@ -135,7 +143,7 @@ public class ChatListManager : MonoBehaviour
             }
         }
         catch (Exception ex) { print(ex); }
-        
+
 
         GenerateChatList();
     }
@@ -145,7 +153,6 @@ public class ChatListManager : MonoBehaviour
     public void GenerateChatList()
     {
         _chatsParent.DestroyChildren();
-
         foreach (var chat in Chats)
         {
             var c = Pooler.Instance.Spawn(PoolType.Entities, _chatButtonPrefab.gameObject, default, default, _chatsParent);
