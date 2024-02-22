@@ -100,22 +100,22 @@ public class ChatListManager : MonoBehaviour
 
         foreach (var chat in Chats)
         {
-            if (Toolbox.Get<Tables>().GetAllMessagesCount(chat.id) > 0) break;
+            //if (Toolbox.Get<Tables>().GetAllMessagesCount(chat.id) > 0) break;
 
-            var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-            foreach (var m in ms)
-            {
-                Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-            }
-            //if (chat.lastMessage != null)
+            //var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+            //foreach (var m in ms)
             //{
-            //    var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-            //    foreach (var m in ms)
-            //    {
-            //        Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-            //    }
+            //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
             //}
-            print("gen");
+            if (chat.lastMessage != null)
+            {
+                var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+                Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
+                foreach (var m in ms)
+                {
+                    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+                }
+            }
         }
 
         try

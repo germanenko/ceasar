@@ -448,6 +448,14 @@ namespace Germanenko.Source
 
 
 
+        public void ClearMessagesFromChat(string chatId)
+        {
+            string sql = $"DELETE FROM ChatMessages WHERE ChatId = '{chatId}'";
+            ConstantSingleton.Instance.DbManager.Execute(sql);
+        }
+
+
+
         public void DropTable()
 		{
 

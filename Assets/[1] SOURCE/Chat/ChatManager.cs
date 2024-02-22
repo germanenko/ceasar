@@ -131,25 +131,44 @@ public class ChatManager : MonoBehaviour
 
     public void GenerateMessageList()
     {
-        foreach (var m in _messagesFromDB)
+        for (int i = _messagesFromDB.Count - 1; i >= 0; i--)
         {
-            if (m.SenderId == AccountManager.Instance.ProfileData.id)
+            if (_messagesFromDB[i].SenderId == AccountManager.Instance.ProfileData.id)
             {
-                _chatView.AddMessageRight(m.Content);
+                _chatView.AddMessageRight(_messagesFromDB[i].Content);
             }
             else
             {
                 string senderMail = "";
                 foreach (var p in _chatInfo.participants)
                 {
-                    if (p.id == m.SenderId.ToString())
+                    if (p.id == _messagesFromDB[i].SenderId.ToString())
                     {
                         senderMail = p.email;
                     }
                 }
-                _chatView.AddMessageLeft(m.Content, senderMail);
+                _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
             }
         }
+        //foreach (var m in _messagesFromDB)
+        //{
+        //    if (m.SenderId == AccountManager.Instance.ProfileData.id)
+        //    {
+        //        _chatView.AddMessageRight(m.Content);
+        //    }
+        //    else
+        //    {
+        //        string senderMail = "";
+        //        foreach (var p in _chatInfo.participants)
+        //        {
+        //            if (p.id == m.SenderId.ToString())
+        //            {
+        //                senderMail = p.email;
+        //            }
+        //        }
+        //        _chatView.AddMessageLeft(m.Content, senderMail);
+        //    }
+        //}
     }
 
 

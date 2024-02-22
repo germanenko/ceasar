@@ -96,6 +96,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -710,14 +711,14 @@ ScriptsOnlyBuild:
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
   - assembly: Assembly-CSharp
-    fullTypeName: RecoveryTaskItem
-    methodName: Recovery
-  - assembly: Assembly-CSharp
     fullTypeName: DayButton
     methodName: SelectDay
   - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
+  - assembly: Assembly-CSharp
+    fullTypeName: RecoveryTaskItem
+    methodName: Recovery
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -3030,7 +3031,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: 908e4cd0a5ce41fcbf302e6f4b9e56a8
+      Hash: fce09ff54f68b0c7466257a13f505b6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -4806,7 +4807,7 @@ ScriptsOnlyBuild:
     className: UISelectable
   - hash:
       serializedVersion: 2
-      Hash: d4afa585ab505065d7bd8e3b8858bf02
+      Hash: 4848c4f9ea1340b7bcfbe0f3ee54cb7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AccountManager
