@@ -384,11 +384,11 @@ public class ChatUserInfo
 [Serializable]
 public class MessageBody
 {
-    public Guid Id { get; set; }
-    public ChatMessageType Type { get; set; }
-    public string Content { get; set; }
-    public DateTime Date { get; set; } = DateTime.UtcNow;
-    public Guid SenderId { get; set; }
+    public Guid Id;
+    public ChatMessageType Type;
+    public string Content;
+    public DateTime Date = DateTime.UtcNow;
+    public Guid SenderId;
 }
 
 

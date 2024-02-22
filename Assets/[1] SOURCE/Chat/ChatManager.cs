@@ -37,6 +37,13 @@ public class ChatManager : MonoBehaviour
 
     public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
     {
+
+#if (UNITY_ANDROID || UNITY_IOS)
+        if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
+        {
+            NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
+        }
+#endif
         _chatInfo = chatInfo;
 
         WS = ws;
@@ -50,13 +57,6 @@ public class ChatManager : MonoBehaviour
         GenerateMessageList();
 
         WS.OnMessage += WS_OnMessage;
-
-#if (UNITY_ANDROID || UNITY_IOS)
-        if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
-        {
-            NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
-        }
-#endif
     }
 
 

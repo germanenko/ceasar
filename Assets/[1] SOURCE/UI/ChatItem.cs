@@ -32,13 +32,29 @@ public class ChatItem : MonoBehaviour
     {
         _lastMessage.text = lastMessage;
 
-        if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
+        if(_chatInfo.lastMessage != null)
         {
-            _lastMessageDate.text = lastMessageTime.Date.ToShortDateString();
+            if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
+            {
+                _lastMessageDate.text = lastMessageTime.Date.ToShortDateString();
+            }
+            else
+            {
+                _lastMessageDate.text = $"{lastMessageTime.ToLocalTime().Hour}:{lastMessageTime.ToLocalTime().Minute}";
+            }
         }
         else
         {
-            _lastMessageDate.text = $"{lastMessageTime.ToLocalTime().Hour}:{lastMessageTime.ToLocalTime().Minute}";
+            _chatInfo.lastMessage = new MessageBody();
+
+            if (lastMessageTime.Date != DateTime.Now.Date)
+            {
+                _lastMessageDate.text = lastMessageTime.Date.ToShortDateString();
+            }
+            else
+            {
+                _lastMessageDate.text = $"{lastMessageTime.ToLocalTime().Hour}:{lastMessageTime.ToLocalTime().Minute}";
+            }
         }
     }
 
