@@ -21,8 +21,12 @@ public class ChatItem : MonoBehaviour
 
     [SerializeField] private ChatListManager _chatList;
 
+    [SerializeField] private Color _defaultLastMessageColor;
+
     public void Init(TaskChatBody chat, ChatListManager chatList)
     {
+        _defaultLastMessageColor = _lastMessage.color;
+
         _chatInfo = chat;
         _chatList = chatList;
 
@@ -95,6 +99,7 @@ public class ChatItem : MonoBehaviour
     public void SetLastMessageBold(bool bold)
     {
         _lastMessage.fontStyle = bold ? FontStyles.Bold : FontStyles.Normal;
+        _lastMessage.color = bold ? Color.black : _defaultLastMessageColor;
     }
 
     

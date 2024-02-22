@@ -96,7 +96,6 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -1280,6 +1279,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14452}
     - Class: 114
+      Script: {instanceID: 14790}
+    - Class: 114
       Script: {instanceID: 15042}
     - Class: 114
       Script: {instanceID: 15162}
@@ -1346,13 +1347,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -2299,7 +2300,7 @@ ScriptsOnlyBuild:
     className: MultilineController
   - hash:
       serializedVersion: 2
-      Hash: 0f91d69e7d9fa75cafaf727e292cdd78
+      Hash: 69fa113c478c0a48c060711477f00a79
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatListManager
@@ -3031,7 +3032,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: fce09ff54f68b0c7466257a13f505b6e
+      Hash: d4a982171bb6a9fd9756030edc061e15
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -3679,7 +3680,7 @@ ScriptsOnlyBuild:
     className: UISelectableExtension
   - hash:
       serializedVersion: 2
-      Hash: df454c3c9e332470850a4afd7d553871
+      Hash: 88b52cbc821273e30ceaddedda229d7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: Hints
@@ -3709,7 +3710,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: 763a6c45dc2ea004ecc918bef451e7d0
+      Hash: 9fe35d6680e5c13dbe9d3dca865a074e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem

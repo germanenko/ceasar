@@ -22,6 +22,8 @@ namespace Germanenko.Source
 
         public static Hints Instance;
 
+        public float HintHeight;
+
         private void Awake()
         {
             Instance = this;
@@ -43,6 +45,8 @@ namespace Germanenko.Source
 
                 hintItem = newHintItem;
                 hintItem.SetText(item, this);
+
+                HintHeight = newHint.GetComponent<RectTransform>().rect.height;
 
                 listOfHints.Add(hintItem);
             }
