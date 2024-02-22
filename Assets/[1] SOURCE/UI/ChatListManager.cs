@@ -63,9 +63,17 @@ public class ChatListManager : MonoBehaviour
             {
                 if (chatItem.ChatInfo.id == chatId.ToString())
                 {
-                    UnityMainThreadDispatcher.Instance().Enqueue(() => 
+                    UnityMainThreadDispatcher.Instance().Enqueue(async () => 
                     { 
-                        chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date); 
+                        chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date);
+                        chatItem.SetLastMessageBold(true);
+
+                        var ms = await ServerConstants.Instance.GetChatMessagesAsync(chatItem.ChatInfo.id, 50);
+                        Toolbox.Get<Tables>().ClearMessagesFromChat(chatItem.ChatInfo.id);
+                        foreach (var m in ms)
+                        {
+                            Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chatItem.ChatInfo.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+                        }
                     });
                 }
             }
@@ -100,13 +108,6 @@ public class ChatListManager : MonoBehaviour
 
         foreach (var chat in Chats)
         {
-            //if (Toolbox.Get<Tables>().GetAllMessagesCount(chat.id) > 0) break;
-
-            //var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-            //foreach (var m in ms)
-            //{
-            //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-            //}
             if (chat.lastMessage != null)
             {
                 var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);

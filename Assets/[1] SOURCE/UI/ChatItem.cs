@@ -15,6 +15,9 @@ public class ChatItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _chatName;
     [SerializeField] private TextMeshProUGUI _lastMessage;
     [SerializeField] private TextMeshProUGUI _lastMessageDate;
+    [SerializeField] private TextMeshProUGUI _unreadMessagesText;
+
+    [SerializeField] private GameObject _unreadMessages;
 
     [SerializeField] private ChatListManager _chatList;
 
@@ -84,5 +87,21 @@ public class ChatItem : MonoBehaviour
     public void OpenChat()
     {
         _chatList.OpenChat(_chatInfo);
+        SetLastMessageBold(false);
+    }
+
+
+
+    public void SetLastMessageBold(bool bold)
+    {
+        _lastMessage.fontStyle = bold ? FontStyles.Bold : FontStyles.Normal;
+    }
+
+    
+
+    public void SetUnreadMessages(int count)
+    {
+        _unreadMessages.SetActive(true);
+        _unreadMessagesText.text = count.ToString();
     }
 }
