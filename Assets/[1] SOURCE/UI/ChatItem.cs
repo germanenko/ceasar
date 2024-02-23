@@ -37,13 +37,13 @@ public class ChatItem : MonoBehaviour
 
     public void UpdateLastMessage(string lastMessage, DateTime lastMessageTime)
     {
-        if (lastMessage.Length <= 21)
+        if (lastMessage.Length <= 24)
         {
             _lastMessage.text = lastMessage;
         }
         else
         {
-            _lastMessage.text = lastMessage.Substring(0, 17) + "...";
+            _lastMessage.text = lastMessage.Substring(0, 20) + "...";
         }
 
         if (_chatInfo.lastMessage != null)
@@ -80,13 +80,15 @@ public class ChatItem : MonoBehaviour
 
         if(_chatInfo.lastMessage != null)
         {
-            if(_chatInfo.lastMessage.Content.Length <= 21)
+            SetLastMessageBold(true);
+
+            if (_chatInfo.lastMessage.Content.Length <= 24)
             {
                 _lastMessage.text = _chatInfo.lastMessage.Content;
             }
             else
             {
-                _lastMessage.text = _chatInfo.lastMessage.Content.Substring(0, 17) + "...";
+                _lastMessage.text = _chatInfo.lastMessage.Content.Substring(0, 20) + "...";
             }
 
             if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
