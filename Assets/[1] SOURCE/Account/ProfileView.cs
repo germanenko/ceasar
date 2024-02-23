@@ -74,6 +74,8 @@ public class ProfileView : MonoBehaviour
 
         _emailText.text = AccountManager.Instance.ProfileData.email;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
+
+        //_avatar.sprite = await ServerConstants.Instance.GetAvatarAsync();
     }
 
 

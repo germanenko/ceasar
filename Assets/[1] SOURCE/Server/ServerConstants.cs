@@ -29,7 +29,8 @@ public class ServerConstants : MonoBehaviour
 
     public string SignIn { get => "signin"; } 
     public string SignUp { get => "signup"; }
-    public string GetProfile { get => "profile"; }
+    public string GetProfileIcon { get => "upload/profileIcon/"; }  
+    public string GetProfile { get => "profile"; }  
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
 

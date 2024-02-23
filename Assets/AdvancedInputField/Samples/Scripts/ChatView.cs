@@ -59,7 +59,23 @@ namespace AdvancedInputFieldSamples
 #endif
 		}
 
-		public void UpdateOriginalMessageInputPosition()
+        public void OnResizeVerticalSizeChanged(Vector2 size)
+        {
+            Debug.Log("OnResizeVerticalSizeChanged: " + size);
+            if (!messageInput.Selected) { return; }
+
+#if (UNITY_ANDROID || UNITY_IOS)
+            if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
+            {
+                Vector2 position = messageInput.RectTransform.anchoredPosition;
+                float currentBottomY = GetAbsoluteBottomY(messageInput.RectTransform);
+                float targetBottomY = keyboardHeight / Canvas.scaleFactor;
+                position.y += (targetBottomY - currentBottomY);
+                messageInput.RectTransform.anchoredPosition = position;
+            }
+#endif
+        }
+        public void UpdateOriginalMessageInputPosition()
 		{
 			originalMessageInputPosition = messageInput.RectTransform.anchoredPosition;
 		}

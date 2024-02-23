@@ -6,8 +6,8 @@ public class SafeAreaFitter : MonoBehaviour
 {
     private void Awake()
     {
-        ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;
-        ApplicationChrome.statusBarColor = 0x00000000;
+        //ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;
+        //ApplicationChrome.statusBarColor = 0x00000000;
         //ApplicationChrome.navigationBarState = ApplicationChrome.States.TranslucentOverContent;
 
         var rectTransform = GetComponent<RectTransform>();

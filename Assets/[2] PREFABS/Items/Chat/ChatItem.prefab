@@ -680,9 +680,10 @@ MonoBehaviour:
   _chatName: {fileID: 2109535787793684689}
   _lastMessage: {fileID: 2109535787580141908}
   _lastMessageDate: {fileID: 2109535786898573724}
-  _unreadMessagesText: {fileID: 0}
-  _unreadMessages: {fileID: 0}
+  _unreadMessagesText: {fileID: 1344442645838620389}
+  _unreadMessages: {fileID: 7224769671903270827}
   _chatList: {fileID: 0}
+  _defaultLastMessageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3715370837987587500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,7 +937,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

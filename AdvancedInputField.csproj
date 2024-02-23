@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{5F5DAEBE-EA34-69A3-450E-3AFF02E1CCCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -938,10 +937,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.Player.csproj">
-      <Project>{014A4EBA-5074-9D30-966A-39C3928BABF4}</Project>
-      <Name>Assembly-CSharp.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{97DA4BAF-F59C-7482-70A5-972F5369FA84}</Project>
       <Name>Unity.TextMeshPro</Name>

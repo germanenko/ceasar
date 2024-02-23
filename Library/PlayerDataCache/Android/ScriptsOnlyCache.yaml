@@ -710,14 +710,14 @@ ScriptsOnlyBuild:
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
   - assembly: Assembly-CSharp
+    fullTypeName: RecoveryTaskItem
+    methodName: Recovery
+  - assembly: Assembly-CSharp
     fullTypeName: DayButton
     methodName: SelectDay
   - assembly: Assembly-CSharp
     fullTypeName: MonthToggle
     methodName: SelectMonth
-  - assembly: Assembly-CSharp
-    fullTypeName: RecoveryTaskItem
-    methodName: Recovery
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -898,6 +898,9 @@ ScriptsOnlyBuild:
   - assembly: AdvancedInputField
     fullTypeName: AdvancedInputFieldSamples.ChatView
     methodName: RestoreOriginalMessageInputPosition
+  - assembly: AdvancedInputField
+    fullTypeName: AdvancedInputFieldSamples.ChatView
+    methodName: OnResizeVerticalSizeChanged
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
     methodName: Show
@@ -1354,6 +1357,8 @@ ScriptsOnlyBuild:
     - Class: 61
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -3710,7 +3715,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: 9fe35d6680e5c13dbe9d3dca865a074e
+      Hash: 41d46c57504a3c0fdbf8bd56ca5bce05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem
