@@ -8,7 +8,7 @@ namespace AdvancedInputFieldPlugin
 {
 	public class SimulatorKeyboard: NativeKeyboard
 	{
-		public const float TRANSITION_TIME = 0.5f;
+		public const float TRANSITION_TIME = 0.2f;
 		public readonly Color DEFAULT_COLOR = Color.black;
 		public readonly Color ACTIVE_COLOR = new Color(0, 0.5f, 1f);
 
@@ -90,11 +90,14 @@ namespace AdvancedInputFieldPlugin
 				{
 					currentTransitionTime = TRANSITION_TIME;
 					OnKeyboardShow();
-					int keyboardHeight = Mathf.RoundToInt(rectTransform.rect.height * canvas.scaleFactor); //Convert to screen pixels
-					OnKeyboardHeightChanged(keyboardHeight); //Fully shown
+					//int keyboardHeight = Mathf.RoundToInt(rectTransform.rect.height * canvas.scaleFactor); //Convert to screen pixels
+					//OnKeyboardHeightChanged(keyboardHeight); //Fully shown
 				}
 
-				float progress = currentTransitionTime / TRANSITION_TIME;
+                int keyboardHeight = Mathf.RoundToInt(rectTransform.rect.height * canvas.scaleFactor); //Convert to screen pixels
+                OnKeyboardHeightChanged(keyboardHeight); //Fully shown
+
+                float progress = currentTransitionTime / TRANSITION_TIME;
 				Vector2 anchoredPositon = rectTransform.anchoredPosition;
 				anchoredPositon.y = -((1 - progress) * rectTransform.rect.height);
 				rectTransform.anchoredPosition = anchoredPositon;

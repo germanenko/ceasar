@@ -97,7 +97,7 @@ public class ChatListManager : MonoBehaviour
 
             foreach (var chat in Toolbox.Get<Tables>().GetAllChats())
             {
-                Chats.Add(new TaskChatBody(chat.Id, chat.Name, chat.Image, new ChatUserInfo[2]));
+                Chats.Add(new TaskChatBody(chat.Id, chat.Name, chat.Image, 0, new ChatUserInfo[2]));
             }
 
             GenerateChatList();
@@ -121,14 +121,14 @@ public class ChatListManager : MonoBehaviour
 
         try
         {
-            if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Count)
-            {
+            //if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Count)
+            //{
                 foreach (var chat in Chats)
                 {
                     if (!Toolbox.Get<Tables>().HaveChat(chat.id))
                     {
                         print("Полученного чата нет - добавляю");
-                        Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.imageUrl);
+                        Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
                     }
 
                     if(chat.lastMessage != null)
@@ -140,8 +140,13 @@ public class ChatListManager : MonoBehaviour
                             print(item.Content);
                         }
                     }
+
+                    if(chat.countOfUnreadMessages > 0)
+                    {
+                        Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
+                    }
                 }
-            }
+            //}
         }
         catch (Exception ex) { print(ex); }
 
@@ -161,6 +166,7 @@ public class ChatListManager : MonoBehaviour
             ChatItem ci = c.GetComponent<ChatItem>();
 
             ci.Init(chat, this);
+            ci.SetUnreadMessages(Toolbox.Get<Tables>().GetUnreadMessagesCount(chat.id));
 
             _chatItems.Add(ci);
         }

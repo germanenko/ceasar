@@ -99,6 +99,9 @@ namespace Germanenko.Source
         [Default("Personal"), MaxLength(300), NotNull]
         public string Type { get; set; }
 
+        [Default("Personal"), MaxLength(300), NotNull]
+        public int UnreadMessagesCount { get; set; }
+
         [Default("link"), MaxLength(300)]
         public string Image { get; set; }
     }

@@ -31,6 +31,7 @@ public class ServerConstants : MonoBehaviour
     public string SignUp { get => "signup"; }
     public string GetProfileIcon { get => "upload/profileIcon/"; }  
     public string GetProfile { get => "profile"; }  
+
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
 
@@ -209,7 +210,7 @@ public class ServerConstants : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var chatsBodyString = await response.Content.ReadAsStringAsync();
-
+            print(chatsBodyString);
             chatsBody = JsonConvert.DeserializeObject<List<TaskChatBody>>(chatsBodyString);
 
             return chatsBody;
@@ -351,14 +352,16 @@ public class TaskChatBody
     public string id;
     public string name;
     public string imageUrl;
+    public int countOfUnreadMessages;
     public MessageBody lastMessage;
     public ChatUserInfo[] participants;
 
-    public TaskChatBody(string id, string name, string imageUrl, ChatUserInfo[] participants)
+    public TaskChatBody(string id, string name, string imageUrl, int countOfUnreadMessages, ChatUserInfo[] participants)
     {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
+        this.countOfUnreadMessages = countOfUnreadMessages;
         this.participants = participants;
     }
 }

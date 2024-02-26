@@ -122,7 +122,7 @@ public class ChatItem : MonoBehaviour
 
     public void SetUnreadMessages(int count)
     {
-        _unreadMessages.SetActive(true);
+        _unreadMessages.SetActive(count > 0);
         _unreadMessagesText.text = count.ToString();
     }
 }

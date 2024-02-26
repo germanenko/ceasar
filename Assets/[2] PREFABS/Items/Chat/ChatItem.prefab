@@ -672,6 +672,7 @@ MonoBehaviour:
     id: 
     name: 
     imageUrl: 
+    countOfUnreadMessages: 0
     lastMessage:
       Type: 0
       Content: 

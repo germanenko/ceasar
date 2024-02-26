@@ -41,7 +41,7 @@ public class ChatManager : MonoBehaviour
 #if (UNITY_ANDROID || UNITY_IOS)
         if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
         {
-            NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
+            //NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
         }
 #endif
         _chatInfo = chatInfo;

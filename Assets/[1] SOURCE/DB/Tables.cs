@@ -401,13 +401,13 @@ namespace Germanenko.Source
 
 
 
-        public void SaveChat(string id, string name, string type, string image)
+        public void SaveChat(string id, string name, string type, int unreadedMessagesCount, string image)
         {
-            Debug.Log($"INSERT INTO Chats (Id, Name, Type, Image) VALUES ({id}, {name}, {type}, {image})");
-            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Chats (Id, Name, Type, Image) VALUES (?, ?, ?, ?)",
+            ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Chats (Id, Name, Type, UnreadMessagesCount, Image) VALUES (?, ?, ?, ?, ?)",
                 id,
                 name,
                 type,
+                unreadedMessagesCount,
                 image);
         }
 
@@ -435,6 +435,21 @@ namespace Germanenko.Source
             return chats;
         }
 
+
+        public int GetUnreadMessagesCount(string chatId)
+        {
+            string sql = $"SELECT * FROM Chats WHERE Id = '{chatId}'";
+
+            List<Chats> chats = ConstantSingleton.Instance.DbManager.Query<Chats>(sql);
+
+            return chats[0].UnreadMessagesCount;
+        }
+
+
+        public void UpdateUnreadMessagesCount(string chatId, int unreadMessagesCount)
+        {
+            ConstantSingleton.Instance.DbManager.Execute("UPDATE Chats SET UnreadMessagesCount = ? WHERE Id = ?", GetUnreadMessagesCount(chatId) + unreadMessagesCount, chatId);
+        }
 
 
         public int GetAllMessagesCount(string chatId)
@@ -471,12 +486,20 @@ namespace Germanenko.Source
             string sqlDeleted;
             sqlDeleted = "DROP TABLE \"DeletedTasks\"";
 
+            string sqlChats;
+            sqlChats = "DROP TABLE \"Chats\"";
+
+            string sqlMessages;
+            sqlMessages = "DROP TABLE \"ChatMessages\"";
+
             try
             {
 				ConstantSingleton.Instance.DbManager.Execute(sql);
 				ConstantSingleton.Instance.DbManager.Execute(sqlPriority);
 				ConstantSingleton.Instance.DbManager.Execute(sqlSaves);
 				ConstantSingleton.Instance.DbManager.Execute(sqlDeleted);
+				ConstantSingleton.Instance.DbManager.Execute(sqlChats);
+				ConstantSingleton.Instance.DbManager.Execute(sqlMessages);
 			}
 			catch (Exception)
             {

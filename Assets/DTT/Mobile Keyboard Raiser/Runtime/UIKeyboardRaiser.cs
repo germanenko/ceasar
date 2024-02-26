@@ -214,11 +214,11 @@ namespace DTT.KeyboardRaiser
             if(delta != 0)
             {
                 if (NativeKeyboardManager.Keyboard.ProportionalHeight >= .2f)
-                    transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
+                    transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 25 : 1);
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 10 : 1);
+                transform.position = Vector3.Lerp(transform.position, _targetPos, _isSmooth ? Time.deltaTime * 25: 1);
             }  
         }
 

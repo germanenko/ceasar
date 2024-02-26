@@ -90,7 +90,7 @@ namespace AdvancedInputFieldSamples
 			this.keyboardHeight = keyboardHeight;
 			if(messageInput.Selected)
 			{
-				UpdateMessageInputPosition();
+				//UpdateMessageInputPosition();
 			}
 		}
 

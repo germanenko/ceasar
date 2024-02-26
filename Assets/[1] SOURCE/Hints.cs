@@ -12,7 +12,6 @@ namespace Germanenko.Source
 
     public class Hints : MonoBehaviour
     {
-
         [SerializeField] private GameObject _hint;
         [SerializeField] private TMP_InputField _taskName;
         [SerializeField] private AdvancedInputField _inputField;
@@ -50,6 +49,7 @@ namespace Germanenko.Source
 
                 listOfHints.Add(hintItem);
             }
+            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         }
 
         private void OnEnable()
