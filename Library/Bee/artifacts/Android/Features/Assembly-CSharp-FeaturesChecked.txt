@@ -1,5 +1,7 @@
+UnityEngine.Networking
 System.Net.Sockets
 UnityEngine.Network
+UnityEngine.Networking.UnityWebRequest
 UnityEngine.Input::set_multiTouchEnabled
 UnityEngine.Handheld::Vibrate
 UnityEngine.Application::get_internetReachability

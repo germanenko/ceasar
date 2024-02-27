@@ -168,30 +168,51 @@ public class ServerConstants : MonoBehaviour
 
 
 
-    public async Task<Sprite> GetAvatarAsync()
+    public async Task<Texture2D> GetAvatarAsync()
     {
-        using var client = new HttpClient()
-        {
-            BaseAddress = new Uri(ServerAddress),
-        };
-        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
-        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+        Texture2D s = null;
 
-        var response = await client.GetAsync(AccountManager.Instance.ProfileData.urlIcon);
-        if (response.StatusCode == HttpStatusCode.OK)
+        StartCoroutine(DownloadTexture((tex) =>
         {
-            var avatarBodyString = await response.Content.ReadAsStringAsync();
-            byte[] bytes = Encoding.ASCII.GetBytes(avatarBodyString);
-            Texture2D texture = null;
-            texture.LoadRawTextureData(bytes);
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+            s = tex;
+        }));
 
-            return sprite;
-        }
+        return s;
+
+        //using var client = new HttpClient()
+        //{
+        //    BaseAddress = new Uri(ServerAddress),
+        //};
+        //client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        //client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        //var response = await client.GetAsync(AccountManager.Instance.ProfileData.urlIcon);
+        //if (response.StatusCode == HttpStatusCode.OK)
+        //{
+        //    var avatarBodyString = await response.Content.ReadAsStringAsync();
+        //    print(avatarBodyString);
+        //    byte[] bytes = Encoding.Default.GetBytes(avatarBodyString);
+        //    Texture2D texture = null;
+        //    print(bytes.Length);
+        //    texture.LoadRawTextureData(bytes);
+        //    Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+
+        //    return sprite;
+        //}
+        //else
+        //{
+        //    return null;
+        //}
+    }
+
+    public IEnumerator DownloadTexture(Action<Texture2D> response)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(AccountManager.Instance.ProfileData.urlIcon);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
         else
-        {
-            return null;
-        }
+            response(((DownloadHandlerTexture)request.downloadHandler).texture);
     }
 
 

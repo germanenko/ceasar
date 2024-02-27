@@ -11,7 +11,7 @@ public class ProfileView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _emailText;
     [SerializeField] private TextMeshProUGUI _roleText;
-    [SerializeField] private Image _avatar;
+    [SerializeField] private RawImage _avatar;
 
     [SerializeField] private UIContainerUIAnimator _profileViewAnimator;
 
@@ -31,8 +31,13 @@ public class ProfileView : MonoBehaviour
             {
                 // Create Texture from selected image
                 Texture2D texture = NativeGallery.LoadImageAtPath(path);
-                var bytes = texture.EncodeToPNG();
-                Sprite s = Sprite.Create(texture, new Rect(0,0, texture.width, texture.height), Vector2.zero);
+                texture.Reinitialize(texture.width, texture.height);
+
+                print(texture.width);
+                print(texture.height);
+                Texture2D t = new Texture2D(texture.width, texture.height);
+                t.SetPixels(texture.GetPixels());
+                t.Apply();
                 if (texture == null)
                 {
                     Debug.Log("Couldn't load texture from " + path);
@@ -40,7 +45,7 @@ public class ProfileView : MonoBehaviour
                 }
                 else
                 {
-                    _avatar.sprite = s;
+                    _avatar.texture = t;
                 }
 
                 // Assign texture to a temporary quad and destroy it after 5 seconds
@@ -75,7 +80,11 @@ public class ProfileView : MonoBehaviour
         _emailText.text = AccountManager.Instance.ProfileData.email;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
 
-        //_avatar.sprite = await ServerConstants.Instance.GetAvatarAsync();
+        //_avatar.texture = await ServerConstants.Instance.GetAvatarAsync();
+        ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadTexture((tex) =>
+        {
+            _avatar.texture = tex;
+        }));
     }
 
 
