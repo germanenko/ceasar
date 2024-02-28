@@ -11,9 +11,7 @@ using UnityEngine;
 
 using Germanenko.Framework;
 using Germanenko.Source;
-
-
-
+using UnityEngine.SceneManagement;
 
 public class Starter : MonoBehaviour
 {
@@ -26,6 +24,11 @@ public class Starter : MonoBehaviour
     public void Awake()
     {
         Application.targetFrameRate = 60;
+
+        if(AccountManager.Instance == null)
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
 
         foreach (var canvas in Canvases)
         {

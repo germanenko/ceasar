@@ -93,7 +93,7 @@ public class ChatItem : MonoBehaviour
 
             if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
             {
-                _lastMessageDate.text = _chatInfo.lastMessage.Date.Date.ToString();
+                _lastMessageDate.text = _chatInfo.lastMessage.Date.ToShortDateString();
             }
             else
             {

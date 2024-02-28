@@ -24,14 +24,14 @@ public class ProfileView : MonoBehaviour
 
     public void PickImage()
     {
-        NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
+        NativeGallery.Permission permission = NativeGallery.GetImageFromGallery(async (path) =>
         {
             Debug.Log("Image path: " + path);
             if (path != null)
             {
                 // Create Texture from selected image
-                Texture2D texture = NativeGallery.LoadImageAtPath(path);
-
+                Texture2D texture = NativeGallery.LoadImageAtPath(path, markTextureNonReadable: false);
+                byte[] bytes = NativeGallery.LoadImageBytesAtPath(path, markTextureNonReadable: false);
                 if (texture == null)
                 {
                     Debug.Log("Couldn't load texture from " + path);
@@ -40,6 +40,7 @@ public class ProfileView : MonoBehaviour
                 else
                 {
                     _avatar.texture = texture;
+                    await ServerConstants.Instance.UploadUserIconAsync(bytes);
                 }
 
                 // Assign texture to a temporary quad and destroy it after 5 seconds

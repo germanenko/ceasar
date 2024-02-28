@@ -66,6 +66,7 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private Transform _currentMonthToggle;
 
+    [SerializeField] private bool _enablePeriode = true;
     [SerializeField] private bool _isStartDate = true;
     [SerializeField] private bool _calendarIsOpened;
     [SerializeField] private bool _correctPeriod = true;

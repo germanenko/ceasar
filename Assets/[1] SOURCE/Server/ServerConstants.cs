@@ -31,6 +31,7 @@ public class ServerConstants : MonoBehaviour
     public string SignUp { get => "signup"; }
     public string GetProfileIcon { get => "upload/profileIcon/"; }  
     public string GetProfile { get => "profile"; }  
+    public string UploadUserIcon { get => "upload/profileIcon"; }  
 
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
@@ -148,7 +149,8 @@ public class ServerConstants : MonoBehaviour
             BaseAddress = new Uri(ServerAddress),
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
-        client.DefaultRequestHeaders.Add("Authorization", PlayerPrefs.GetString("AccessToken"));
+        try { client.DefaultRequestHeaders.Add("Authorization", PlayerPrefs.GetString("AccessToken")); }
+        catch { print("Токен отсутствует"); }
 
         var response = await client.GetAsync(GetProfile);
         ProfileData? profileBody = null;
@@ -161,8 +163,40 @@ public class ServerConstants : MonoBehaviour
         }
         else
         {
+            print(response.StatusCode);
             ResponseBody responseBody = new ResponseBody(false, "Токен истек");
             return responseBody;
+        }
+    }
+
+
+
+    public async Task UploadUserIconAsync(byte[] bytes)
+    {
+        StartCoroutine(UploadAvatar(bytes));
+        return;
+
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var bs = new ByteArrayContent(bytes);
+        var content = new MultipartFormDataContent
+        {
+            bs
+        };
+        var response = await client.PostAsync(UploadUserIcon, content);
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            print("Аватарка загружена");
+        }
+        else
+        {
+            print(response.StatusCode);
+            print(response.RequestMessage);
         }
     }
 
@@ -178,32 +212,9 @@ public class ServerConstants : MonoBehaviour
         }));
 
         return s;
-
-        //using var client = new HttpClient()
-        //{
-        //    BaseAddress = new Uri(ServerAddress),
-        //};
-        //client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
-        //client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
-
-        //var response = await client.GetAsync(AccountManager.Instance.ProfileData.urlIcon);
-        //if (response.StatusCode == HttpStatusCode.OK)
-        //{
-        //    var avatarBodyString = await response.Content.ReadAsStringAsync();
-        //    print(avatarBodyString);
-        //    byte[] bytes = Encoding.Default.GetBytes(avatarBodyString);
-        //    Texture2D texture = null;
-        //    print(bytes.Length);
-        //    texture.LoadRawTextureData(bytes);
-        //    Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-
-        //    return sprite;
-        //}
-        //else
-        //{
-        //    return null;
-        //}
     }
+
+
 
     public IEnumerator DownloadTexture(Action<Texture2D> response)
     {
@@ -213,6 +224,31 @@ public class ServerConstants : MonoBehaviour
             Debug.Log(request.error);
         else
             response(((DownloadHandlerTexture)request.downloadHandler).texture);
+    }
+
+
+
+    public IEnumerator UploadAvatar(byte[] b)
+    {
+        WWWForm form = new WWWForm();
+        byte[] bytes = b;
+
+        form.AddBinaryData("avatar", bytes, "avatar.jpg", "image/jpg");
+
+        Dictionary<string, string> headers = new Dictionary<string, string> { { "Authorization", AccountManager.Instance.TokenResponse.accessToken } };
+        WWW w = new WWW(ServerAddress + UploadUserIcon, b, headers);
+
+        yield return w;
+
+        if(w.error != null)
+        {
+            print(w.error);
+            print(w.text);
+        }
+        else
+        {
+            print("Аватарка загружена");
+        }
     }
 
 

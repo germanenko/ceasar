@@ -22,6 +22,7 @@ android.permission.INTERNET was added because:
 		Unity.Services.Core.Networking-FeaturesChecked.txt
 		Unity.Services.Core.Telemetry-FeaturesChecked.txt
 	UnityEngine.WWW was present in:
+		Assembly-CSharp-FeaturesChecked.txt
 		LunarConsole-FeaturesChecked.txt
 		UniRx-FeaturesChecked.txt
 	UnityEngine.Networking.UnityWebRequest was present in:

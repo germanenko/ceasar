@@ -822,8 +822,33 @@ public static class NativeGallery
 		return result;
 	}
 
+    public static byte[] LoadImageBytesAtPath(string imagePath, int maxSize = -1, bool markTextureNonReadable = true)
+    {
+        if (string.IsNullOrEmpty(imagePath))
+            throw new ArgumentException("Parameter 'imagePath' is null or empty!");
+
+        if (!File.Exists(imagePath))
+            throw new FileNotFoundException("File not found at " + imagePath);
+
+        if (maxSize <= 0)
+            maxSize = SystemInfo.maxTextureSize;
+
+#if !UNITY_EDITOR && UNITY_ANDROID
+		string loadPath = AJC.CallStatic<string>( "LoadImageAtPath", Context, imagePath, TemporaryImagePath, maxSize );
+#elif !UNITY_EDITOR && UNITY_IOS
+		string loadPath = _NativeGallery_LoadImageAtPath( imagePath, TemporaryImagePath, maxSize );
+#else
+        string loadPath = imagePath;
+#endif
+
+        string extension = Path.GetExtension(imagePath).ToLowerInvariant();
+        TextureFormat format = (extension == ".jpg" || extension == ".jpeg") ? TextureFormat.RGB24 : TextureFormat.RGBA32;
+
+		return File.ReadAllBytes(loadPath);
+    }
+
 #if UNITY_2018_4_OR_NEWER && !NATIVE_GALLERY_DISABLE_ASYNC_FUNCTIONS
-	public static async Task<Texture2D> LoadImageAtPathAsync( string imagePath, int maxSize = -1, bool markTextureNonReadable = true )
+    public static async Task<Texture2D> LoadImageAtPathAsync( string imagePath, int maxSize = -1, bool markTextureNonReadable = true )
 	{
 		if( string.IsNullOrEmpty( imagePath ) )
 			throw new ArgumentException( "Parameter 'imagePath' is null or empty!" );

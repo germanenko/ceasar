@@ -1,6 +1,7 @@
 UnityEngine.Networking
 System.Net.Sockets
 UnityEngine.Network
+UnityEngine.WWW
 UnityEngine.Networking.UnityWebRequest
 UnityEngine.Input::set_multiTouchEnabled
 UnityEngine.Handheld::Vibrate
