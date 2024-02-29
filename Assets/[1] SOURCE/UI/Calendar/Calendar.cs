@@ -51,6 +51,7 @@ public class Calendar : MonoBehaviour
     [SerializeField] private DateTime _date;
 
     [SerializeField] private GameObject _calendarWindow;
+    [SerializeField] private GameObject _spacer;
 
     [SerializeField] private Color _defaultColor;
     [SerializeField] private Color _weekendColor;
@@ -83,6 +84,10 @@ public class Calendar : MonoBehaviour
         _endDate = _date;
 
         UpdateDateText();
+
+        _endDateText.gameObject.SetActive(_enablePeriode);
+        _spacer.SetActive(_enablePeriode);
+
 
         GenerateMonthList();
 
@@ -125,13 +130,17 @@ public class Calendar : MonoBehaviour
             ConfirmDate();
         }
 
-        if (!_correctPeriod) return;
+        if (_enablePeriode)
+        {
+            if (!_correctPeriod) return;
 
-        if (_isStartDate)
-        { 
-            ChangePeriod();
-            return;
+            if (_isStartDate)
+            {
+                ChangePeriod();
+                return;
+            }
         }
+        
 
         foreach (var item in _dayButtons)
         {
@@ -142,8 +151,6 @@ public class Calendar : MonoBehaviour
         _calendarIsOpened = false;
         _startDateText.GetComponent<UIToggle>().isOn = true;
 
-        print($"{_startDate.Date.ToShortDateString()}  {_endDate.Date.ToShortDateString()}");
-
         OnDateSelected?.Invoke(_startDate.Date != _endDate.Date);
     }
 
@@ -153,13 +160,20 @@ public class Calendar : MonoBehaviour
     {
         print("changePeriod");
 
-        if (_isStartDate)
+        if (_enablePeriode)
         {
-            _endDateText.GetComponent<UIToggle>().isOn = true;
+            if (_isStartDate)
+            {
+                _endDateText.GetComponent<UIToggle>().isOn = true;
+            }
+            else
+            {
+                CloseCalendarWindow(false);
+            }
         }
         else
         {
-            CloseCalendarWindow(false);
+            CloseCalendarWindow(true);
         }
 
     }
@@ -602,7 +616,7 @@ public class Calendar : MonoBehaviour
 
     public void ConfirmDate()
     {
-        if (_isStartDate)
+        if (_isStartDate || !_enablePeriode)
         {
             _startDate = _date;
             _endDate = _date;

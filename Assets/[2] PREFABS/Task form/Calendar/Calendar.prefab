@@ -735,10 +735,10 @@ RectTransform:
   m_Father: {fileID: 3045846318187305987}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 218.7, y: -37.52}
-  m_SizeDelta: {x: 0, y: 67.04}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 218.7, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3045846317497075647
 CanvasRenderer:
@@ -11281,6 +11281,7 @@ MonoBehaviour:
   _startDateText: {fileID: 451161775477155692}
   _endDateText: {fileID: 7352807396673226163}
   _calendarWindow: {fileID: 3045846317242504029}
+  _spacer: {fileID: 8409500404535548013}
   _defaultColor: {r: 1, g: 1, b: 0.98823535, a: 1}
   _weekendColor: {r: 0.98823535, g: 0.8196079, b: 0.7490196, a: 1}
   _otherMonthColor: {r: 0.9490197, g: 0.9333334, b: 0.89019614, a: 1}
@@ -11290,6 +11291,7 @@ MonoBehaviour:
   _monthsToggleGroup: {fileID: 3045846317710025447}
   _daysGrid: {fileID: 3045846318941036834}
   _currentMonthToggle: {fileID: 0}
+  _enablePeriode: 1
   _isStartDate: 1
   _calendarIsOpened: 0
   _correctPeriod: 1
