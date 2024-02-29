@@ -117,7 +117,7 @@
 62-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:13-44
 63            android:resizeableActivity="false"
 63-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:47:13-47
-64            android:screenOrientation="portrait"
+64            android:screenOrientation="fullUser"
 64-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:48:13-49
 65            android:theme="@style/UnityThemeSelector" >
 65-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:49:13-54
@@ -177,16 +177,38 @@
 94            android:value="portrait|landscape" />
 94-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:13-47
 95
-96        <activity
-96-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:12:9-16:58
-97            android:name="spacemadness.com.lunarconsole.settings.PluginSettingsActivity"
-97-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:13:13-89
-98            android:icon="@drawable/lunar_console_icon_button_settings"
-98-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:14:13-72
-99            android:label="@string/lunar_console_settings_activity_label"
-99-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:15:13-74
-100            android:theme="@style/lunar_console_theme" />
-100-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:16:13-55
-101    </application>
-102
-103</manifest>
+96        <receiver
+96-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:80:9-82:40
+97            android:name="com.unity.androidnotifications.UnityNotificationManager"
+97-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:81:13-83
+98            android:exported="false" />
+98-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:82:13-37
+99        <receiver
+99-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:83:9-90:20
+100            android:name="com.unity.androidnotifications.UnityNotificationRestartOnBootReceiver"
+100-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:84:13-97
+101            android:enabled="false"
+101-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:85:13-36
+102            android:exported="false" >
+102-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:86:13-37
+103            <intent-filter>
+103-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:87:13-89:29
+104                <action android:name="android.intent.action.BOOT_COMPLETED" />
+104-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:17-79
+104-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:25-76
+105            </intent-filter>
+106        </receiver>
+107
+108        <activity
+108-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:12:9-16:58
+109            android:name="spacemadness.com.lunarconsole.settings.PluginSettingsActivity"
+109-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:13:13-89
+110            android:icon="@drawable/lunar_console_icon_button_settings"
+110-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:14:13-72
+111            android:label="@string/lunar_console_settings_activity_label"
+111-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:15:13-74
+112            android:theme="@style/lunar_console_theme" />
+112-->[:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:16:13-55
+113    </application>
+114
+115</manifest>

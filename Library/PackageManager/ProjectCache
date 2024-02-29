@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638435807017114195
-    m_Hash: 2172276274
+      ticks: 638448229973116288
+    m_Hash: 2934435387
   m_LockFileStatus:
     m_FilePath: D:/ceasar/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638435807017174033
-    m_Hash: 3676178823
+      ticks: 638448229973186092
+    m_Hash: 155013237
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
     D:/ceasar/Packages/com.heurekagames.assethunterpro/package.json:
@@ -279,6 +279,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.6
     - 2.1.0
     - 2.2.0
+    - 2.3.1
     compatible:
     - 1.17.2
     - 1.17.6
@@ -301,6 +302,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.6
     - 2.1.0
     - 2.2.0
+    - 2.3.1
     verified: 1.17.7
   dependencies:
   - name: com.unity.services.core
@@ -497,6 +499,7 @@ m_ResolvedPackages:
     - 3.0.25
     - 3.0.26
     - 3.0.27
+    - 3.0.28
     compatible:
     - 3.0.15
     - 3.0.16
@@ -509,7 +512,8 @@ m_ResolvedPackages:
     - 3.0.25
     - 3.0.26
     - 3.0.27
-    verified: 3.0.27
+    - 3.0.28
+    verified: 3.0.28
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -804,6 +808,117 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.4.1
+    nextVersion: 
+- packageId: com.unity.mobile.notifications@2.0.2
+  testable: 0
+  isDirectDependency: 1
+  version: 2.0.2
+  source: 1
+  resolvedPath: D:\ceasar\Library\PackageCache\com.unity.mobile.notifications@2.0.2
+  assetPath: Packages/com.unity.mobile.notifications
+  name: com.unity.mobile.notifications
+  displayName: Mobile Notifications
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: 'Mobile Notifications package adds support for scheduling local repeatable
+    or one-time notifications on iOS and Android.
+
+
+    Requires iOS 10 and Android
+    5.1 or above.'
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0-preview.4
+    - 1.0.0-preview.5
+    - 1.0.0-preview.7
+    - 1.0.0-preview.8
+    - 1.0.0-preview.9
+    - 1.0.0-preview.10
+    - 1.0.0-preview.13
+    - 1.0.0-preview.17
+    - 1.0.0-preview.21
+    - 1.0.0-preview.23
+    - 1.0.2
+    - 1.0.3-preview
+    - 1.0.3-preview.3
+    - 1.0.3-preview.4
+    - 1.0.3-preview.5
+    - 1.0.3-preview.6
+    - 1.0.3
+    - 1.0.4-preview.1
+    - 1.0.4-preview.2
+    - 1.0.4-preview.3
+    - 1.0.4-preview.4
+    - 1.0.4-preview.5
+    - 1.0.4-preview.6
+    - 1.0.4-preview.9
+    - 1.1.0-preview
+    - 1.2.0-preview
+    - 1.2.1-preview
+    - 1.3.0
+    - 1.3.2
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+    - 2.1.1
+    - 2.2.0
+    - 2.2.1
+    - 2.2.2
+    - 2.3.0
+    - 2.3.1
+    - 2.3.2
+    compatible:
+    - 2.0.2
+    - 2.1.0
+    - 2.1.1
+    - 2.2.0
+    - 2.2.1
+    - 2.2.2
+    - 2.3.0
+    - 2.3.1
+    - 2.3.2
+    verified: 2.0.2
+  dependencies:
+  - name: com.unity.modules.androidjni
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.androidjni
+    version: 1.0.0
+  keywords:
+  - Android
+  - iOS
+  - Notifications
+  - Mobile
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637885214440000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.mobile.notifications.git
+    revision: 2653cecf26a3357212ae190bb3700610b905dc82
+    path: 
+  unityLifecycle:
+    version: 2.0.2
     nextVersion: 
 - packageId: com.unity.recorder@3.0.3
   testable: 0
@@ -1170,6 +1285,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1184,6 +1300,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     verified: 3.0.8
   dependencies:
   - name: com.unity.ugui

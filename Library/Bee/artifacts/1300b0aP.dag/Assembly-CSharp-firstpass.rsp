@@ -370,6 +370,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/QHierarchyRuntime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UniRx.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Notifications.Android.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Recorder.Base.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Recorder.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Services.Core.Analytics.ref.dll"

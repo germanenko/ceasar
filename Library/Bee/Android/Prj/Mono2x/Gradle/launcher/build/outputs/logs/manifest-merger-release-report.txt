@@ -4,7 +4,7 @@ ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\And
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
-MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-81:12
+MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-93:12
 MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:2:1-7:12
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:2:1-19:12
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:2:1-11:12
@@ -44,8 +44,8 @@ ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\And
 		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:135-160
 application
 ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:4:3-83
-MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-79:19
-MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-79:19
+MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-91:19
+MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:5-91:19
 MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:6:2-61
 MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:6:2-61
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:11:5-17:19
@@ -219,6 +219,26 @@ ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unity
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:13-47
 	android:name
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:77:13-40
+receiver#com.unity.androidnotifications.UnityNotificationManager
+ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:80:9-82:40
+	android:exported
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:82:13-37
+	android:name
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:81:13-83
+receiver#com.unity.androidnotifications.UnityNotificationRestartOnBootReceiver
+ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:83:9-90:20
+	android:enabled
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:85:13-36
+	android:exported
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:86:13-37
+	android:name
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:84:13-97
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:87:13-89:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:17-79
+	android:name
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:25-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:4:2-98
 	tools:node

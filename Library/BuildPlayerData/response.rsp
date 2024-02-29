@@ -47,6 +47,7 @@
 -a="D:\ceasar\Library\PlayerScriptAssemblies\DTT.CodeGeneration.Runtime.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\Unity.VisualScripting.State.dll"
 -a="D:\ceasar\Library\PlayerScriptAssemblies\Unity.Services.Core.Device.dll"
+-a="D:\ceasar\Library\PlayerScriptAssemblies\Unity.Notifications.Android.dll"
 -a="D:\ceasar\Assets\Plugins\SignalR\Microsoft.Extensions.Logging.dll"
 -a="D:\ceasar\Assets\Plugins\SignalR\Microsoft.Extensions.Options.dll"
 -a="D:\ceasar\Assets\Plugins\SignalR\Microsoft.Extensions.DependencyInjection.dll"

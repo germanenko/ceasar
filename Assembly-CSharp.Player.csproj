@@ -1762,6 +1762,28 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationChannel.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\BuyInventoryItem.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationCenterExtensions.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSNotificationsPlatform.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationsPlatform.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotificationsPlatform.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IPendingNotificationsSerializer.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NewsFeedReader.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationEventItem.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItemData.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSGameNotification.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\GameController.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\PendingNotification.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationsManager.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItem.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationConsole.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotification.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidGameNotification.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\DefaultSerializer.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\PendingNotificationItem.cs" />
+    <Compile Include="Assets\[1] SOURCE\Pushes\AndroidNotifications.cs" />
+    <Compile Include="Assets\[1] SOURCE\Pushes\PushManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
@@ -1773,6 +1795,7 @@
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Readme.txt" />
     <None Include="Assets\_99 THIRD PARTY\Fingers\Readme.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_99 THIRD PARTY\SimpleSQL\Documentation\Changelog.txt" />
@@ -1785,22 +1808,28 @@
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\_99 THIRD PARTY\SimpleSQL\Plugins\SimpleSQL_Runtime.dll" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\_99 THIRD PARTY\Doozy\_Extras\Fonts\UFL.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\Standard.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\ConditionalExpression.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\PlayMaker Utils\External Libraries\Rotorz\Reorderable List Field\README.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Akassets\SmoothGridLayout\Documentation\ReadMe.txt" />
     <None Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Other\XamarinAndroidTouchAdapter.txt" />
     <None Include="Assets\Shaders\Blur.shader" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Resources\PlayMakerAssemblies.txt" />
     <None Include="Assets\_99 THIRD PARTY\ProceduralUIImage\Resources\Shaders\ProceduralImageRuntime.shader" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\MathExpression\Mathos\MathosLicense.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -1818,30 +1847,42 @@
     <None Include="Assets\_99 THIRD PARTY\Doozy\_Extras\Fonts\Inter Font License - OFL.txt" />
     <None Include="Assets\Shaders\FrostedGlass.shader" />
     <None Include="Assets\_99 THIRD PARTY\Doozy\_Extras\disclaimer.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\Plugins\com\unity\androidnotifications\AndroidNotificationCenterExtensions.java" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\Grayscale.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\EasingFunctionLicense.txt" />
     <None Include="Assets\Doozy\_Menus\_Common\Sprites\disclaimer.txt" />
     <None Include="Assets\_99 THIRD PARTY\Doozy\readme.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\Plugins\com\unity\androidnotifications\AndroidNotificationCenterExtensionsOreo.java" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\_99 THIRD PARTY\Fingers\ChangeLog.txt" />
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\ColorOverlay.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\Readme.txt" />
     <None Include="Assets\PlayMaker Utils\External Libraries\Rotorz\Reorderable List Field\LICENSE.txt" />
+    <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Doozy\_Menus\Tab Bars 1\readme.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -2664,6 +2705,10 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
+      <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
+      <Name>Unity.Notifications.Android.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

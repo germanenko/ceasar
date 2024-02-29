@@ -1495,6 +1495,18 @@
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.csproj">
+      <Project>{466737F1-1ECB-47A8-AAD0-AB088EA7D315}</Project>
+      <Name>Unity.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.iOS.csproj">
+      <Project>{291332CE-9B9C-591A-AD9C-8F27F6C50FEB}</Project>
+      <Name>Unity.Notifications.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.Android.csproj">
+      <Project>{6F23095C-AE54-253F-77E0-0916652BEEA2}</Project>
+      <Name>Unity.Notifications.Android</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
