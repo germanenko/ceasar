@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Runtime.Serialization;
 using System.Text;
@@ -173,8 +174,8 @@ public class ServerConstants : MonoBehaviour
 
     public async Task UploadUserIconAsync(byte[] bytes)
     {
-        StartCoroutine(UploadAvatar(bytes));
-        return;
+        //StartCoroutine(UploadAvatar(bytes));
+        //return;
 
         using var client = new HttpClient()
         {
@@ -183,12 +184,18 @@ public class ServerConstants : MonoBehaviour
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
         client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
 
-        var bs = new ByteArrayContent(bytes);
-        var content = new MultipartFormDataContent
+        var formData = new MultipartFormDataContent();
+        var byteArray = new ByteArrayContent(bytes);
+        byteArray.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
         {
-            bs
+            Name = "file",
+            FileName = "file.txt"
         };
-        var response = await client.PostAsync(UploadUserIcon, content);
+        formData.Add(byteArray);
+        byteArray.Headers.Add("Content-Type", "application/octet-stream");
+        formData.Add(byteArray, "file");
+
+        var response = await client.PostAsync(UploadUserIcon, formData);
         if (response.StatusCode == HttpStatusCode.OK)
         {
             print("Аватарка загружена");
