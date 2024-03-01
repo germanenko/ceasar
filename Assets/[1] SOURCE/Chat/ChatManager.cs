@@ -33,7 +33,9 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _chatNameText;
 
-    [SerializeField] private List<ChatMessages> _messagesFromDB;  
+    [SerializeField] private List<ChatMessages> _messagesFromDB;
+
+    [SerializeField] private GameObject _proposal;
 
     public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
     {
@@ -53,6 +55,8 @@ public class ChatManager : MonoBehaviour
         _chatNameText.text = _chatInfo.name;
 
         _messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
+
+        _proposal.SetActive(_messagesFromDB.Count == 0);
 
         GenerateMessageList();
 

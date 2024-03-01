@@ -276,7 +276,8 @@ public class ServerConstants : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var profileBodyString = await response.Content.ReadAsStringAsync();
-            profileBody = JsonUtility.FromJson<List<ProfileData>>(profileBodyString);
+            print(profileBodyString);
+            profileBody = JsonConvert.DeserializeObject<List<ProfileData>>(profileBodyString);
 
             return profileBody;
         }
@@ -422,14 +423,12 @@ public class TokenResponse
 [Serializable]
 public class ProfileData
 {
-    public string id;
     public string email;
     public Role role;
     public string urlIcon;
 
-    public ProfileData(string id, string email, Role role, string urlIcon)
+    public ProfileData(string email, Role role, string urlIcon)
     {
-        this.id = id;
         this.email = email;
         this.role = role;
         this.urlIcon = urlIcon;

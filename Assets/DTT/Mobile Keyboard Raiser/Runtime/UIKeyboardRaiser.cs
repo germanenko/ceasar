@@ -67,7 +67,7 @@ namespace DTT.KeyboardRaiser
         private Canvas _myCanvas;
         private LayoutElement _myLayoutElement;
 
-        [SerializeField] private bool _isHints;
+        [SerializeField] private bool _canRise;
 
         private void Start()
         {
@@ -192,7 +192,7 @@ namespace DTT.KeyboardRaiser
                 return;
             }
 
-            if (!KeyboardStateManager.openingField.Contains(this) && !_isHints)
+            if (!KeyboardStateManager.openingField.Contains(this) && !_canRise)
             {
                 print("second");
                 return;

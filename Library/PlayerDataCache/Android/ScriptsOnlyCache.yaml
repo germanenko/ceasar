@@ -98,6 +98,20 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
+    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -4136,7 +4150,7 @@ ScriptsOnlyBuild:
     className: ScrollConflictManager
   - hash:
       serializedVersion: 2
-      Hash: 1af9bac147773cc80410d36b6e8ccb53
+      Hash: 7d454ebb474e1b91d26e7fdfb2974713
     assemblyName: DTT.KeyboardRaiser.Runtime.dll
     namespaceName: DTT.KeyboardRaiser
     className: UIKeyboardRaiser
@@ -4874,7 +4888,7 @@ ScriptsOnlyBuild:
     className: UISelectable
   - hash:
       serializedVersion: 2
-      Hash: 4848c4f9ea1340b7bcfbe0f3ee54cb7a
+      Hash: d4afa585ab505065d7bd8e3b8858bf02
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AccountManager

@@ -219,15 +219,31 @@ public class ChatListManager : MonoBehaviour
 
     public async void FindUsersByEmailPattern(string pattern)
     {
+        if(pattern == "")
+        {
+            GenerateChatList();
+            return;
+        }
+
+        _chatsParent.DestroyChildren();
+        _chatItems.Clear();
+
         List<ProfileData> users = await ServerConstants.Instance.GetUsersByEmailPatternAsync(pattern);
 
-        string us = "";
         foreach (ProfileData user in users)
         {
-            us += user.email;
-            us += ", ";
+            print(user.email);
+            var c = Pooler.Instance.Spawn(PoolType.Entities, _chatButtonPrefab.gameObject, default, default, _chatsParent);
+
+            ChatItem ci = c.GetComponent<ChatItem>();
+
+            TaskChatBody chat = new TaskChatBody("", user.email, user.urlIcon, 0, new ChatUserInfo[2]);
+
+            ci.Init(chat, this);
+            ci.SetUnreadMessages(0);
+
+            _chatItems.Add(ci);
         }
-        print(us);
     }
 
 
