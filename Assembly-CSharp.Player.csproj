@@ -236,6 +236,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\SetGravity2d.cs" />
     <Compile Include="Assets\[1] SOURCE\UI\ChatListManager.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\String\StringAppend.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationEventItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugFsmVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\GameObjectIsVisibleToCamera.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUI\GUIAction.cs" />
@@ -304,11 +305,12 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\AnimatorCrossFade.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\MouseLook2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SpriteRenderer\GetSpriteFlip.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\GetMass.cs" />
+    <Compile Include="Assets\[1] SOURCE\Pushes\PushManager.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiPointerEvents.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Audio\AudioMute.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Transform\Rotate.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Trigonometry\GetAtan2.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\GetMass.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSetString.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetFsmInt.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiSetIsInteractable.cs" />
@@ -341,6 +343,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\LateUpdateEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\Margin.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformShakeScale.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotification.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\MousePickEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\TweenScale.cs" />
@@ -403,6 +406,7 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiDropDownGetSelectedData.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\LocationAnimations.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\GetChildCount.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\BuyInventoryItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiDragEvents.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTrailRendererResize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\LookAt2d.cs" />
@@ -434,6 +438,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\SimpleSQL\Demos\Scripts\MainMenuButton.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\GetOwner.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\LoadScene.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationsManager.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTextColor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITexture.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenImageColor.cs" />
@@ -619,9 +624,9 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\GetSceneLoadedEventData.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetIsLooping.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\GetTransform.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerCrouch.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\OverrideScreenProperties.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\InteractionArea.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerCrouch.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorDelta.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\GetSceneName.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\TranslatePosition.cs" />
@@ -728,6 +733,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Components\FingersOneTouchScaleAxisComponentScript.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Interfaces\IBetterTransitionUiElement.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\TriggerEvent.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationCenterExtensions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\GetMouseButton.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Utils\ImageAppearanceProviderHelper.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\IsSleeping.cs" />
@@ -751,6 +757,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\PlayerInput\PlayerInputGetVector2AsVector3.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerLoopPointReachedEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SetAnimatorApplyRootMotion.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\PendingNotificationItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiGetSelectedGameObject.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SetAnimatorLookAt.cs" />
     <Compile Include="Assets\[0] FRAMEWORK\Pool\Pooler.cs" />
@@ -827,6 +834,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\Loop.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\RectTransform\RectTransformGetSizeDelta.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoScriptRaycast.cs" />
+    <Compile Include="Assets\[1] SOURCE\Pushes\AndroidNotifications.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\SetFsmQuaternion.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GameObject\SelectRandomGameObject.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenCanvasGroupFade.cs" />
@@ -861,8 +869,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetMaterialValue.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SpriteRenderer\GetSpriteSortingLayer.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenAnimateString.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Convert\ConvertFloatToInt.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Components\FingersZoomPanCameraComponentScript.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Convert\ConvertFloatToInt.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRigidbody2DRotate.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\BaseChannel.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\RaycastAll.cs" />
@@ -888,8 +896,10 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Device\TouchEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Effects\Blink.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Scripts\DOTweenActionsEnums.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\DefaultSerializer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Application\ApplicationQuit.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\String\GetSubstring.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationChannel.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Transform\SetRandomRotation.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Math\FloatWrap.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenCameraFarClipPlane.cs" />
@@ -973,6 +983,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\LongPressGestureRecognizer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\FsmHasVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAudioOutputMode.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSGameNotification.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\Internal\GetSceneActionBase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiOnSelectEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DrawStateLabel.cs" />
@@ -1182,6 +1193,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2LowPassFilter.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRectTransformPivotX.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerCanvasRaycastFilterProxy.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\GameController.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Utils\ScreenType\IIsActive.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\DebugVector2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\UiScrollRectSetNormalizedPosition.cs" />
@@ -1206,9 +1218,9 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiInputFieldGetPlaceHolder.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Selectable\UiTransitionGetType.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenMaterialFloatProperty.cs" />
-    <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenAnimateColor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI_TextMeshPro\Runtime\BetterTextMeshProUGUI.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Utils\ScreenType\IsCertainScreenOrientation.cs" />
+    <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenAnimateColor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\PlayMaker uGui\Proxies\PlayMakerUGuiPointerEventsProxy.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenControlMethodsRewindAll.cs" />
@@ -1410,6 +1422,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animation\SetAnimationSpeed.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\TweenInt.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\Prototype\PrototypeOnReturnToPoolEvent.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidGameNotification.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiGetBlockColor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\GetButtonDown.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Device\DeviceShakeEvent.cs" />
@@ -1420,11 +1433,13 @@
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoScriltMultiPan.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiTransitionSetType.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SceneManager\GetSceneIsValid.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NewsFeedReader.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\UiButtonArray.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSaveVariable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\SimpleSQL\Demos\Scripts\08_FullTextSearch\FullTextSearch.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\String\FormatString.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiTransitionGetType.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItem.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCurrentFrameIndex.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiTextGetText.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\ColorTransitions.cs" />
@@ -1452,6 +1467,7 @@
     <Compile Include="Assets\PlayMaker Utils\Event Properties\Actions\GetEventProperties.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\PlayerPrefs\PlayerPrefsHasKey.cs" />
     <Compile Include="Assets\[1] SOURCE\UI\TimeButtonFitter.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\PendingNotification.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenAdditionalMethodsClear.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\SendEventToFsm.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\BaseLogAction.cs" />
@@ -1482,6 +1498,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutBeginVertical.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutEndScrollView.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoScriptDPad.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItemData.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiSliderGetMinMax.cs" />
     <Compile Include="Assets\[1] SOURCE\UI\TimeLabel.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Convert\ConvertBoolToFloat.cs" />
@@ -1552,6 +1569,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Utils\NetPacketProcessor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\RectTransform\RectTransformGetLocalRotation.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2Multiply.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationConsole.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Gamepad\GamepadReadButtonValue.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Utils\INetSerializable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Math\IntClamp.cs" />
@@ -1620,6 +1638,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector3\Vector3Lerp.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenOutlineColor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Demo\Scripts\DemoScriptLine.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotificationsPlatform.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\RectTransform\RectTransformSetAnchoredPosition.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutFloatLabel.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformLocalPath.cs" />
@@ -1675,6 +1694,8 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiDropDownSetValue.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerStepForward.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\SizeChangeTracker.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSNotificationsPlatform.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationsPlatform.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Quaternion\QuaternionCompare.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformBlendableLocalRotateBy.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRectTransformSizeDelta.cs" />
@@ -1703,6 +1724,7 @@
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\EventSystemCurrentRayCastAll.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Time\GetTimeInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetEventFloatData.cs" />
+    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IPendingNotificationsSerializer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Input\AnyKey.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\LocationAnimationTransitions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SetAnimatorTrigger.cs" />
@@ -1762,28 +1784,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationChannel.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\BuyInventoryItem.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationCenterExtensions.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSNotificationsPlatform.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidNotificationsPlatform.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotificationsPlatform.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IPendingNotificationsSerializer.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NewsFeedReader.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationEventItem.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItemData.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\iOS\iOSGameNotification.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\GameController.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\PendingNotification.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\GameNotificationsManager.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\InventoryItem.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\NotificationConsole.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\IGameNotification.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\Android\AndroidGameNotification.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Scripts\DefaultSerializer.cs" />
-    <Compile Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\Demo\PendingNotificationItem.cs" />
-    <Compile Include="Assets\[1] SOURCE\Pushes\AndroidNotifications.cs" />
-    <Compile Include="Assets\[1] SOURCE\Pushes\PushManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
@@ -2618,6 +2618,10 @@
       <Project>{19E08E35-3763-C34B-6ACC-5EC38B7BFD12}</Project>
       <Name>DTT.KeyboardRaiser.Runtime.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
+      <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
+      <Name>Unity.Notifications.Android.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="DTT.RuntimeUtilities.Demo.Player.csproj">
       <Project>{3C763A36-785D-57DA-B7C5-BBAD2683FF08}</Project>
       <Name>DTT.RuntimeUtilities.Demo.Player</Name>
@@ -2705,10 +2709,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
-      <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
-      <Name>Unity.Notifications.Android.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

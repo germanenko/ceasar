@@ -840,6 +840,10 @@
       <Project>{19E08E35-3763-C34B-6ACC-5EC38B7BFD12}</Project>
       <Name>DTT.KeyboardRaiser.Runtime.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
+      <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
+      <Name>Unity.Notifications.Android.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="DTT.RuntimeUtilities.Demo.Player.csproj">
       <Project>{3C763A36-785D-57DA-B7C5-BBAD2683FF08}</Project>
       <Name>DTT.RuntimeUtilities.Demo.Player</Name>
@@ -927,10 +931,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
-      <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
-      <Name>Unity.Notifications.Android.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -884,6 +884,10 @@
       <Project>{4D2B8D73-9652-9852-80C1-3AB669614419}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.csproj">
+      <Project>{466737F1-1ECB-47A8-AAD0-AB088EA7D315}</Project>
+      <Name>Unity.Notifications</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanTouch.csproj">
       <Project>{B58D4CFC-7ABC-F885-48DD-32D343765BE9}</Project>
       <Name>LeanTouch</Name>
@@ -972,6 +976,10 @@
       <Project>{63169CAF-F8CD-9B79-6645-3226F46152C1}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.iOS.csproj">
+      <Project>{291332CE-9B9C-591A-AD9C-8F27F6C50FEB}</Project>
+      <Name>Unity.Notifications.iOS</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
       <Project>{4EA82790-986A-74A9-EA1F-8E35CEA079D9}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
@@ -1011,6 +1019,10 @@
     <ProjectReference Include="DTT.KeyboardRaiser.Runtime.csproj">
       <Project>{13C8B88E-3FBD-A8CB-7774-59B8F1AC694B}</Project>
       <Name>DTT.KeyboardRaiser.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Notifications.Android.csproj">
+      <Project>{6F23095C-AE54-253F-77E0-0916652BEEA2}</Project>
+      <Name>Unity.Notifications.Android</Name>
     </ProjectReference>
     <ProjectReference Include="DTT.RuntimeUtilities.Demo.csproj">
       <Project>{C6E23256-0FAF-20AC-B18C-4B0CD4B7FC6D}</Project>
@@ -1191,18 +1203,6 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Notifications.csproj">
-      <Project>{466737F1-1ECB-47A8-AAD0-AB088EA7D315}</Project>
-      <Name>Unity.Notifications</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Notifications.iOS.csproj">
-      <Project>{291332CE-9B9C-591A-AD9C-8F27F6C50FEB}</Project>
-      <Name>Unity.Notifications.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Notifications.Android.csproj">
-      <Project>{6F23095C-AE54-253F-77E0-0916652BEEA2}</Project>
-      <Name>Unity.Notifications.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -133,21 +133,21 @@ public class ChatManager : MonoBehaviour
     {
         for (int i = _messagesFromDB.Count - 1; i >= 0; i--)
         {
-            if (_messagesFromDB[i].SenderId == AccountManager.Instance.ProfileData.id)
+            string senderMail;
+            foreach (var p in _chatInfo.participants)
             {
-                _chatView.AddMessageRight(_messagesFromDB[i].Content);
-            }
-            else
-            {
-                string senderMail = "";
-                foreach (var p in _chatInfo.participants)
+                if (p.id == _messagesFromDB[i].SenderId.ToString())
                 {
-                    if (p.id == _messagesFromDB[i].SenderId.ToString())
+                    if(p.email == AccountManager.Instance.ProfileData.email)
+                    {
+                        _chatView.AddMessageRight(_messagesFromDB[i].Content);
+                    }
+                    else
                     {
                         senderMail = p.email;
+                        _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
                     }
                 }
-                _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
             }
         }
         //foreach (var m in _messagesFromDB)

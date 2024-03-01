@@ -30,9 +30,12 @@ public class ServerConstants : MonoBehaviour
 
     public string SignIn { get => "signin"; } 
     public string SignUp { get => "signup"; }
+
     public string GetProfileIcon { get => "upload/profileIcon/"; }  
     public string GetProfile { get => "profile"; }  
-    public string UploadUserIcon { get => "upload/profileIcon"; }  
+    public string UploadUserIcon { get => "upload/profileIcon"; }
+
+    public string GetUsersByEmailPattern { get => "users"; }
 
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
@@ -255,6 +258,31 @@ public class ServerConstants : MonoBehaviour
         else
         {
             print("Аватарка загружена");
+        }
+    }
+
+
+
+    public async Task<List<ProfileData>> GetUsersByEmailPatternAsync(string pattern)
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+
+        var response = await client.GetAsync(GetUsersByEmailPattern + $"?emailPattern={pattern}");
+        List<ProfileData>? profileBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var profileBodyString = await response.Content.ReadAsStringAsync();
+            profileBody = JsonUtility.FromJson<List<ProfileData>>(profileBodyString);
+
+            return profileBody;
+        }
+        else
+        {
+            return null;
         }
     }
 

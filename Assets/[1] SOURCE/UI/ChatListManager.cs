@@ -45,10 +45,9 @@ public class ChatListManager : MonoBehaviour
     private void Start()
     {
         GetChats();
-
-        if (AccountManager.Instance == null) return;
-
     }
+
+
 
     private void MainWS_OnMessage(object sender, MessageEventArgs e)
     {
@@ -84,10 +83,14 @@ public class ChatListManager : MonoBehaviour
         }
     }
 
+
+
     private void MainWS_OnOpen(object sender, EventArgs e)
     {
         print("Подключен к главному сокету");
     }
+
+
 
     public async void GetChats()
     {
@@ -108,15 +111,15 @@ public class ChatListManager : MonoBehaviour
 
         foreach (var chat in Chats)
         {
-            if (chat.lastMessage != null)
-            {
+            //if (chat.lastMessage != null)
+            //{
                 var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
                 Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
                 foreach (var m in ms)
                 {
                     Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
                 }
-            }
+            //}
         }
 
         try
@@ -212,10 +215,29 @@ public class ChatListManager : MonoBehaviour
 
     }
 
+
+
+    public async void FindUsersByEmailPattern(string pattern)
+    {
+        List<ProfileData> users = await ServerConstants.Instance.GetUsersByEmailPatternAsync(pattern);
+
+        string us = "";
+        foreach (ProfileData user in users)
+        {
+            us += user.email;
+            us += ", ";
+        }
+        print(us);
+    }
+
+
+
     private void WS_OnMessage(object sender, MessageEventArgs e)
     {
         print(e.Data);
     }
+
+
 
     private void WS_OnOpen(object sender, EventArgs e)
     {
@@ -223,6 +245,8 @@ public class ChatListManager : MonoBehaviour
         UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat, WS));
         WS.OnOpen -= WS_OnOpen;
     }
+
+
 
     private void OnApplicationQuit()
     {
