@@ -928,6 +928,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Color\ColorRamp.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorPlayBackSpeed.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformPunchRotation.cs" />
+    <Compile Include="Assets\[1] SOURCE\Const\StringConstants.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUI\GUITooltip.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Convert\ConvertIntToString.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\SetWheelJoint2dProperties.cs" />

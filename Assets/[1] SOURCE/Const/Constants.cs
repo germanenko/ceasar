@@ -49,7 +49,7 @@ namespace Germanenko.Source
 
 
 
-    private void InitFolders()
+        private void InitFolders()
         {
             ConstantSingleton.Instance.FolderDinamicElements = FolderDinamicElements;
             ConstantSingleton.Instance.FolderListOfItems = FolderListOfItems;

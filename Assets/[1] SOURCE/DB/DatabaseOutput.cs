@@ -29,11 +29,11 @@ public class DatabaseOutput : MonoBehaviour
         for (int i = 0; i < tasks.Count; i++)
         {
             var t = Instantiate(_taskView, _taskList);
-            t.ID.text = tasks[i].ID.ToString();
-            t.Name.text = tasks[i].Name;
-            t.Color.text = tasks[i].Color.ToString();
-            t.StartPeriod.text = tasks[i].StartTime.TimeOfDay.ToString();
-            t.EndPeriod.text = tasks[i].EndTime.TimeOfDay.ToString();
+            t.ID.text = tasks[i].Id;
+            t.Name.text = tasks[i].Title;
+            t.Color.text = tasks[i].HexColor.ToString();
+            t.StartPeriod.text = tasks[i].StartDate.TimeOfDay.ToString();
+            t.EndPeriod.text = tasks[i].EndDate.TimeOfDay.ToString();
         }
     }
 

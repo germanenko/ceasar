@@ -29,7 +29,7 @@ namespace Germanenko.Source
 		[SerializeField] private TaskFormFields _fields;
 		[SerializeField] private Transform _itemParent;
 
-		[SerializeField] private int _id;
+		[SerializeField] private string _id;
 
 		[SerializeField] private TMP_InputField _idField;
 		[SerializeField] private TMP_InputField _nameField;
@@ -115,7 +115,7 @@ namespace Germanenko.Source
 
 
 
-		public void SetTaskID(int id, bool draft)
+		public void SetTaskID(string id, bool draft)
 		{
 			_id = id;
 			isDraft = draft;
@@ -150,6 +150,10 @@ namespace Germanenko.Source
 
 		public void SaveTask()
         {
+
+
+            return;
+
 			if (_editTask)
 			{
                 Toolbox.Get<Tables>().EditTask(_nameField.text, _colorField.SelectedItem.name, _clocks.GetStartPeriod(), _clocks.GetEndPeriod(), _id);
@@ -288,7 +292,7 @@ namespace Germanenko.Source
 			
 		private void SetName(string data)
         {
-			task.Name = data;
+			task.Title = data;
         }
 
 
@@ -302,7 +306,7 @@ namespace Germanenko.Source
 
 		private void SetColor(string data)
         {
-			task.Color = data;
+			task.HexColor = data;
 
         }
 
@@ -346,7 +350,7 @@ namespace Germanenko.Source
 
             List<Tasks> taskList = ConstantSingleton.Instance.DbManager.Query<Tasks>(sql);
 
-			_idField.text = taskList[0].ID.ToString();
+			_idField.text = taskList[0].Id;
 			SetValuesFromTask(taskList[0]);
         }
 
@@ -362,8 +366,8 @@ namespace Germanenko.Source
 
             List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(sqlTask);
 
-            SetTaskID(task[0].ID, true);
-            _idField.text = task[0].ID.ToString();
+            SetTaskID(task[0].Id, true);
+            _idField.text = task[0].Id.ToString();
 
 			SetValuesFromTask(task[0]);
         }
@@ -427,9 +431,9 @@ namespace Germanenko.Source
 
 		private void SetValuesFromTask(Tasks task)
 		{
-            _nameField.text = task.Name;
-            _colorField.SelectDDItem(task.Color);
-            _clocks.SetPeriod(task.StartTime, task.EndTime);
+            _nameField.text = task.Title;
+            _colorField.SelectDDItem(task.HexColor);
+            _clocks.SetPeriod(task.StartDate, task.EndDate);
 
             SetTimeButtonText(task);
         }
@@ -469,15 +473,15 @@ namespace Germanenko.Source
             {
                 if (Localization.Instance.Language == LocalizationLanguage.Russia)
                 {
-                    _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
-                        string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute) :
-                        $"{string.Format("{0:00}:{1:00}", task.StartTime.Hour, task.StartTime.Minute)} - {string.Format("{0:00}:{1:00}", task.EndTime.Hour, task.EndTime.Minute)}");
+                    _clocks.SetPreviewPeriodText(task.StartDate == task.EndDate ?
+                        string.Format("{0:00}:{1:00}", task.StartDate.Hour, task.StartDate.Minute) :
+                        $"{string.Format("{0:00}:{1:00}", task.StartDate.Hour, task.StartDate.Minute)} - {string.Format("{0:00}:{1:00}", task.EndDate.Hour, task.EndDate.Minute)}");
                 }
                 else if (Localization.Instance.Language == LocalizationLanguage.USA)
                 {
-                    _clocks.SetPreviewPeriodText(task.StartTime == task.EndTime ?
-                        task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
-                         $"{task.StartTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {task.EndTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
+                    _clocks.SetPreviewPeriodText(task.StartDate == task.EndDate ?
+                        task.StartDate.ToString("hh:mm tt", CultureInfo.InvariantCulture) :
+                         $"{task.StartDate.ToString("hh:mm tt", CultureInfo.InvariantCulture)} - {task.EndDate.ToString("hh:mm tt", CultureInfo.InvariantCulture)}");
                 }
             }
             else

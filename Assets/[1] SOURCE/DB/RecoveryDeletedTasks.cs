@@ -29,7 +29,7 @@ public class RecoveryDeletedTasks : MonoBehaviour
 
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {deletedTask.TaskID}");
 
-            item.GetComponent<RecoveryTaskItem>().SetInfo(task[0].ID, task[0].Name, deletedTask.Date);
+            item.GetComponent<RecoveryTaskItem>().SetInfo(task[0].Id, task[0].Title, deletedTask.Date);
             item.GetComponent<RecoveryTaskItem>().OnRecovered.AddListener(LoadDeletedTasks);
         }
     }

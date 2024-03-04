@@ -15,8 +15,8 @@ namespace Germanenko.Source
 
     public class ItemOfList : MonoBehaviour
     {
-        [SerializeField] private int _id;
-        public int ID => _id;
+        [SerializeField] private string _id;
+        public string ID => _id;
         [SerializeField] private int _priority;
 
         [SerializeField] private TextMeshProUGUI IDText;
@@ -60,12 +60,12 @@ namespace Germanenko.Source
             _taskForm = FindObjectOfType<TaskForm>();
 
             Color currentColor;
-            ColorUtility.TryParseHtmlString("#" + _data.Color, out currentColor);
+            ColorUtility.TryParseHtmlString("#" + _data.HexColor, out currentColor);
             TaskColor.color =  currentColor;
 
-            _id = _data.ID;
-            IDText.text = _data.ID.ToString();
-            Title.text = _data.Name;
+            _id = _data.Id;
+            IDText.text = _data.Id;
+            Title.text = _data.Title;
             _priority = priority;
             Priority.text = _priority.ToString();
 

@@ -65,9 +65,9 @@ namespace Germanenko.Source
 		public void AddTask(string name, string color, DateTime startPeriod, DateTime endPeriod)
 		{
 
-			var taskName = ConstantSingleton.Instance.TaskFormManager.Task.Name;
+			var taskName = ConstantSingleton.Instance.TaskFormManager.Task.Title;
 			var taskType = ((TypeOfTasks)ConstantSingleton.Instance.TaskFormManager.Task.Type).ToString();
-			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.Color;
+			var taskColor = ConstantSingleton.Instance.TaskFormManager.Task.HexColor;
 
 			ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)",
                 name == null ? "" : name,
@@ -90,7 +90,7 @@ namespace Germanenko.Source
             var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO SavesAndDrafts (TaskID, Reference, Draft, Date) VALUES (?, ?, ?, ?)",
-                task[task.Count - 1].ID,
+                task[task.Count - 1].Id,
                 0,
                 true,
                 DateTime.Today);
@@ -107,7 +107,7 @@ namespace Germanenko.Source
             Tasks lastTask = taskList[taskList.Count - 1];
 
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Priority (TaskID) VALUES (?)",
-                lastTask.ID);
+                lastTask.Id);
         }
 
 
@@ -116,7 +116,7 @@ namespace Germanenko.Source
         {
             for (int i = 0; i < Toolbox.Get<ListOfTasks>().Tasks.Count; i++)
             {
-                int taskID = Toolbox.Get<ListOfTasks>().Tasks[i].ID;
+                string taskID = Toolbox.Get<ListOfTasks>().Tasks[i].ID;
                 int taskSiblingIndex = Toolbox.Get<ListOfTasks>().Tasks[i].transform.GetSiblingIndex() + 1;
 
                 Toolbox.Get<ListOfTasks>().Tasks[i].SetPriority(taskSiblingIndex);
@@ -132,7 +132,7 @@ namespace Germanenko.Source
 
 
 
-        public void EditTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id)
+        public void EditTask(string name, string color, DateTime startPeriod, DateTime endPeriod, string id)
         {
             string sql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
             List<SavesAndDrafts> saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(sql);
@@ -145,16 +145,16 @@ namespace Germanenko.Source
                 List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {id}");
                 List<Tasks> savedTask = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {saves[0].TaskID}");
 
-                if (task[0].Name != name || task[0].Color != color || task[0].StartTime != startPeriod || task[0].EndTime != endPeriod)
+                if (task[0].Title != name || task[0].HexColor != color || task[0].StartDate != startPeriod || task[0].EndDate != endPeriod)
                 {
-                    if(savedTask[0].Name == name && savedTask[0].Color == color && savedTask[0].StartTime == startPeriod && savedTask[0].EndTime == endPeriod)
+                    if(savedTask[0].Title == name && savedTask[0].HexColor == color && savedTask[0].StartDate == startPeriod && savedTask[0].EndDate == endPeriod)
                     {
                         ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
                         DeleteSave(saves[0].TaskID);
                     }
                     else
                     {
-                        AddSaveTask(task[0].Name, task[0].Color, task[0].StartTime, task[0].EndTime, id);
+                        AddSaveTask(task[0].Title, task[0].HexColor, task[0].StartDate, task[0].EndDate, id);
                         ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
                     }
                 }
@@ -164,9 +164,9 @@ namespace Germanenko.Source
                 string mainSql = $"SELECT * FROM Tasks WHERE ID = {id}";
                 List<Tasks> mainTask = ConstantSingleton.Instance.DbManager.Query<Tasks>(mainSql);
 
-                if (mainTask[0].Name != name || mainTask[0].Color != color || mainTask[0].StartTime != startPeriod || mainTask[0].EndTime != endPeriod)
+                if (mainTask[0].Title != name || mainTask[0].HexColor != color || mainTask[0].StartDate != startPeriod || mainTask[0].EndDate != endPeriod)
                 {
-                    AddSaveTask(mainTask[0].Name, mainTask[0].Color, mainTask[0].StartTime, mainTask[0].EndTime, id);
+                    AddSaveTask(mainTask[0].Title, mainTask[0].HexColor, mainTask[0].StartDate, mainTask[0].EndDate, id);
 
                     ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
 
@@ -177,7 +177,7 @@ namespace Germanenko.Source
             {
                 List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks WHERE ID = {archive[0].TaskID}");
 
-                if (task[0].Name == name && task[0].Color == color && task[0].StartTime == startPeriod && task[0].EndTime == endPeriod)
+                if (task[0].Title == name && task[0].HexColor == color && task[0].StartDate == startPeriod && task[0].EndDate == endPeriod)
                 {
                     DeleteArchive(archive[0].TaskID);
                     ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Name = ?, Color = ?, StartTime = ?, EndTime = ? WHERE ID = ?", name, color, startPeriod, endPeriod, id);
@@ -200,7 +200,7 @@ namespace Germanenko.Source
 
 
 
-        public void AddSaveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id = 0)
+        public void AddSaveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, string id = "")
         {
             string checkSave = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
             List<SavesAndDrafts> saves = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(checkSave);
@@ -217,7 +217,7 @@ namespace Germanenko.Source
                 var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
                 ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO SavesAndDrafts (TaskID, Reference, Draft, Date) VALUES (?, ?, ?, ?)",
-                task[task.Count - 1].ID,
+                task[task.Count - 1].Id,
                 id,
                 false,
                 DateTime.Today);
@@ -231,7 +231,7 @@ namespace Germanenko.Source
 
 
 
-        public void AddArchiveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, int id = 0)
+        public void AddArchiveTask(string name, string color, DateTime startPeriod, DateTime endPeriod, string id = "")
         {
             string checkArchive = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 1";
             List<SavesAndDrafts> archives = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(checkArchive);
@@ -241,7 +241,7 @@ namespace Germanenko.Source
 
             if (archives.IsNullOrEmpty())
             {
-                if (tasks[0].Name != name || tasks[0].Color != color)
+                if (tasks[0].Title != name || tasks[0].HexColor != color)
                 {
                     ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO Tasks (Name, Type, Color, StartTime, EndTime) VALUES (?, ?, ?, ?, ?)",
                         name == null ? "" : name,
@@ -253,7 +253,7 @@ namespace Germanenko.Source
                     var task = ConstantSingleton.Instance.DbManager.Query<Tasks>($"SELECT * FROM Tasks");
 
                     ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO SavesAndDrafts (TaskID, Reference, Draft, Date) VALUES (?, ?, ?, ?)",
-                        task[task.Count - 1].ID,
+                        task[task.Count - 1].Id,
                         id,
                         true,
                         DateTime.Today);
@@ -268,7 +268,7 @@ namespace Germanenko.Source
 
 
 
-        public Tasks GetSaveTask(int id)
+        public Tasks GetSaveTask(string id)
         {
             string sql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 0";
 
@@ -289,7 +289,7 @@ namespace Germanenko.Source
 
 
 
-        public Tasks GetArchiveTask(int id)
+        public Tasks GetArchiveTask(string id)
         {
             string sql = $"SELECT * FROM SavesAndDrafts WHERE Reference = {id} AND Draft = 1";
 
@@ -297,7 +297,7 @@ namespace Germanenko.Source
 
             if (archive.Count > 0)
             {
-                string taskSql = $"SELECT * FROM Tasks WHERE ID = {archive[0].TaskID}";
+                string taskSql = $"SELECT * FROM Tasks WHERE {StringConstants.TaskID} = {archive[0].TaskID}";
                 List<Tasks> task = ConstantSingleton.Instance.DbManager.Query<Tasks>(taskSql);
 
                 return task[0]; 
@@ -310,7 +310,7 @@ namespace Germanenko.Source
 
 
 
-        public void RecoveryTask(int id)
+        public void RecoveryTask(string id)
         {
             Debug.Log("recovery");
             //ConstantSingleton.Instance.DbManager.Execute($"UPDATE Tasks SET Load = 1 WHERE ID = {id}");
@@ -340,7 +340,7 @@ namespace Germanenko.Source
 
 
 
-        public void DraftToTask(int id)
+        public void DraftToTask(string id)
         {
             ConstantSingleton.Instance.DbManager.Execute("DELETE FROM SavesAndDrafts WHERE TaskID = ?", id);
             //ConstantSingleton.Instance.DbManager.Execute("UPDATE Tasks SET Load = 1 WHERE ID = ?", id);
@@ -348,7 +348,7 @@ namespace Germanenko.Source
 
 
 
-        public void DeleteSave(int id)
+        public void DeleteSave(string id)
         {
             string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id} AND Draft = 0";
             ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
@@ -359,7 +359,7 @@ namespace Germanenko.Source
 
 
 
-        public void DeleteArchive(int id)
+        public void DeleteArchive(string id)
         {
             string deleteSaves = $"DELETE FROM SavesAndDrafts WHERE TaskID = {id} AND Draft = 1";
             ConstantSingleton.Instance.DbManager.Execute(deleteSaves);
@@ -370,7 +370,7 @@ namespace Germanenko.Source
 
 
 
-        public void SetTaskDeleted(int id)
+        public void SetTaskDeleted(string id)
         {
             ConstantSingleton.Instance.DbManager.Execute($"INSERT INTO DeletedTasks (TaskID, Date) VALUES (?, ?)",
                 id,

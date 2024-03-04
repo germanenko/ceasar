@@ -14,7 +14,7 @@ public class MultiChoice : MonoBehaviour
     [SerializeField] private List<ItemOfList> _selectedTasks;
     public List<ItemOfList> SelectedTasks => _selectedTasks;
 
-    [SerializeField] private List<int> _selectedTasksId;
+    [SerializeField] private List<string> _selectedTasksId;
 
     [SerializeField] private TextMeshProUGUI _countSelectedTasksText;
 
@@ -84,7 +84,6 @@ public class MultiChoice : MonoBehaviour
         if (!_multiChoiceEnabled)
         {
             _previewMultiChoiceEnabled = previewMultiChoice;
-
             foreach (var task in Toolbox.Get<ListOfTasks>().Tasks)
             {
                 task.SetPreviewCheckBox(previewMultiChoice);

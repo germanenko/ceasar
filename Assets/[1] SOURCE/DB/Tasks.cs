@@ -16,28 +16,60 @@ namespace Germanenko.Source
     }
 
 
+    public class Boards
+    {
+        [PrimaryKey]
+        public string Id { get; set; }
+
+        [Default(0), NotNull]
+        public string Name { get; set; }
+    }
+
+
 
     public class Tasks
     {
+        [PrimaryKey]
+        public string Id { get; set; }
 
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-
-
-        [MaxLength(60), Default("'---'"), NotNull]
-        public string Name { get; set; }
+        [Default("'qwerty'"), NotNull]
+        public string BoardId { get; set; }
 
         [Default(0), NotNull]
-        public int Type { get; set; }
+        public DateTime CreatedAtDate { get; set; }
+
+        [Default("'qwerty'"), NotNull] 
+        public string CreatorId { get; set; }
+
+        [Default("'qwerty'"), NotNull]
+        public string Description { get; set; }
+
+        [Default("'qwerty'"), NotNull]
+        public string DraftOfTaskId { get; set; }
+
+        [Default(0), NotNull]
+        public DateTime EndDate { get; set; }
 
         [MaxLength(9), Default("'ffffffff'"), NotNull]
-        public string Color { get; set; }
+        public string HexColor { get; set; }
 
         [Default(0), NotNull]
-        public DateTime StartTime { get; set; }
+        public int IsDraft { get; set; }
+
+        [MaxLength(60), Default("'---'"), NotNull]
+        public int PriorityOrder { get; set; }
 
         [Default(0), NotNull]
-        public DateTime EndTime { get; set; }
+        public DateTime StartDate { get; set; }
+
+        [MaxLength(60), Default("'---'"), NotNull]
+        public string Status { get; set; }
+
+        [Default("'qwerty'"), NotNull]
+        public string Title { get; set; }
+
+        [Default("'qwerty'"), NotNull]
+        public int Type { get; set; }
     }
 
 
@@ -48,7 +80,7 @@ namespace Germanenko.Source
         public int ID { get; set; }
 
         [Default(0), NotNull]
-        public int TaskID { get; set; }
+        public string TaskID { get; set; }
 
         [MaxLength(9), Default(0), NotNull]
         public bool Draft { get; set; }

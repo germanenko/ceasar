@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 public class RecoveryTaskItem : MonoBehaviour
 {
-    private int _taskID;
+    private string _taskID;
     [SerializeField] private TextMeshProUGUI _taskName;
     [SerializeField] private TextMeshProUGUI _dateOfDeletion;
 
@@ -23,7 +23,7 @@ public class RecoveryTaskItem : MonoBehaviour
         OnRecovered?.Invoke();
     }
 
-    public void SetInfo(int taskID, string taskName, DateTime dateOfDeletion)
+    public void SetInfo(string taskID, string taskName, DateTime dateOfDeletion)
     {
         _taskID = taskID;
         _taskName.text = taskName;

@@ -63,46 +63,10 @@ namespace Germanenko.Source
             List<Priority> taskPriorities = ConstantSingleton.Instance.DbManager.Query<Priority>(sqlPriority);
 
             GameObject prefab = ConstantSingleton.Instance.ItemClicker;
-            //foreach (Tasks task in taskList)
-            //{
-
-            //  switch (task.Type)
-            //             {
-            //    case (int) TypeOfTasks.Clicker:
-            //      prefab = ConstantSingleton.Instance.ItemClicker;
-            //      break;
-
-            //    case (int) TypeOfTasks.Task:
-            //      prefab = ConstantSingleton.Instance.ItemTask;
-            //      break;
-
-            //    case (int) TypeOfTasks.Timer:
-            //      prefab = ConstantSingleton.Instance.ItemTimer;
-            //      break;
-
-            //                 default:
-            //      continue;
-            //             }
-
-            //  var newItem = Pooler.Instance.Spawn(PoolType.Entities, prefab, default(Vector3), default(Quaternion), ConstantSingleton.Instance.FolderListOfItems);
-            //             Debug.Log("добавлен таск");
-
-            //             var itemMan = newItem.GetComponent<ItemOfList>();
-
-            //  if(task.Draft == true)
-            //    itemMan.SetDraft(true);
-
-            //  int priority = taskPriority[taskList]
-
-            //  itemMan.Init(task);
-
-            //  _tasks.Add(itemMan);
-            //}
-
 
             for (int i = 0; i < taskPriorities.Count; i++)
             {
-                string sqlP = $"SELECT * FROM Tasks WHERE ID = {taskPriorities[i].TaskID}";
+                string sqlP = $"SELECT * FROM Tasks WHERE {StringConstants.TaskID} = {taskPriorities[i].TaskID}";
 
                 Tasks t;
 
@@ -117,7 +81,7 @@ namespace Germanenko.Source
                     throw;
                 }
 
-                if (ConstantSingleton.Instance.DbManager.Query<DeletedTasks>($"SELECT * FROM DeletedTasks WHERE TaskID = {t.ID}").Count > 0) continue;
+                if (ConstantSingleton.Instance.DbManager.Query<DeletedTasks>($"SELECT * FROM DeletedTasks WHERE TaskID = {t.Id}").Count > 0) continue;
 
                 switch (t.Type)
                 {
@@ -146,7 +110,7 @@ namespace Germanenko.Source
 
                 var itemMan = newItem.GetComponent<ItemOfList>();
 
-                string draftSql = $"SELECT * FROM SavesAndDrafts WHERE TaskID = {t.ID} AND Draft = 1 AND Reference = 0";
+                string draftSql = $"SELECT * FROM SavesAndDrafts WHERE TaskID = {t.Id} AND Draft = 1 AND Reference = 0";
 
                 var draft = ConstantSingleton.Instance.DbManager.Query<SavesAndDrafts>(draftSql);
 

@@ -40,6 +40,9 @@ public class ServerConstants : MonoBehaviour
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
 
+    public string CreateBoard { get => "board"; }
+    public string GetAllBoards { get => "boards"; }
+
 
     private void Awake()
     {
@@ -345,6 +348,58 @@ public class ServerConstants : MonoBehaviour
             return null;
         }
     }
+
+
+
+    public async Task CreateBoardAsync(string name)
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var s = $"{{ \"name\": \"{name}\"}}";
+        var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
+        var response = await client.PostAsync(CreateBoard, content);
+
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            print("Доска создана");
+        }
+        else
+        {
+            print($"Доска не создана - {response.Content}");
+        }
+    }
+
+
+
+    public async Task<List<BoardBody>> GetAllBoardsAsync()
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+
+        var response = await client.GetAsync(GetChats);
+        List<BoardBody>? boardsBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var boardsBodyString = await response.Content.ReadAsStringAsync();
+
+            boardsBody = JsonConvert.DeserializeObject<List<BoardBody>>(boardsBodyString);
+
+            return boardsBody;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }
 
 public class ResponseBody
@@ -508,6 +563,15 @@ public class ChatMessageInfo
     public Guid ChatId;
     public ChatType ChatType;
     public MessageBody Message;
+}
+
+
+
+[Serializable]
+public class BoardBody
+{
+    public string id;
+    public string name;
 }
 
 
