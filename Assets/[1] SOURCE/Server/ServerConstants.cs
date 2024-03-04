@@ -385,7 +385,7 @@ public class ServerConstants : MonoBehaviour
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
         client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
 
-        var response = await client.GetAsync(GetChats);
+        var response = await client.GetAsync(GetAllBoards);
         List<BoardBody>? boardsBody = null;
         if (response.StatusCode == HttpStatusCode.OK)
         {
