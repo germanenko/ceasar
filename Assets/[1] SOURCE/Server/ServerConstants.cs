@@ -26,7 +26,7 @@ public class ServerConstants : MonoBehaviour
 {
     public static ServerConstants Instance;
 
-    public string ServerAddress { get => "http://82.97.243.104/api/"; }
+    public string ServerAddress { get => "https://itsmydomain.ru/api/"; }
 
     public string SignIn { get => "signin"; } 
     public string SignUp { get => "signup"; }
@@ -52,9 +52,9 @@ public class ServerConstants : MonoBehaviour
 
 
 
-    public async Task<ResponseBody> AuthAsync(string email, string password)
+    public async Task<ResponseBody> AuthAsync(string identifier, string password, AuthenticationMethod method)
     {
-        AuthBody authBody = new AuthBody(email, password);
+        AuthBody authBody = new AuthBody(identifier, password, method);
 
         using var client = new HttpClient()
         {
@@ -77,16 +77,16 @@ public class ServerConstants : MonoBehaviour
         }
         else
         {
-            var r = Newtonsoft.Json.Linq.JObject.Parse(response.Content.ReadAsStringAsync().Result);
+            print(response.StatusCode);
             return new ResponseBody(false, response.Content.ToString());
         }
     }
 
 
 
-    public async Task<ResponseBody> RegisterAsync(string email, string fullname, string password)
+    public async Task<ResponseBody> RegisterAsync(string identifier, string nickname, string password, AuthenticationMethod method)
     {
-        RegisterBody registerBody = new RegisterBody(email, fullname, password);
+        RegisterBody registerBody = new RegisterBody(identifier, nickname, password, method);
 
         using var client = new HttpClient()
         {
@@ -109,7 +109,8 @@ public class ServerConstants : MonoBehaviour
         }
         else
         {
-            return new ResponseBody(false, response.Content.ToString());
+            var tokenBodyString = await response.Content.ReadAsStringAsync();
+            return new ResponseBody(false, tokenBodyString);
         }
     }
 
@@ -130,8 +131,6 @@ public class ServerConstants : MonoBehaviour
         {
             var profileBodyString = await response.Content.ReadAsStringAsync();
             profileBody = JsonUtility.FromJson<ProfileData>(profileBodyString);
-
-            print(profileBody.email);
 
             return profileBody;
         }
@@ -418,15 +417,17 @@ public class ResponseBody
 
 public class RegisterBody
 {
-    public string email;
-    public string fullname;
+    public string identifier;
+    public string nickname;
     public string password;
+    public AuthenticationMethod method;
 
-    public RegisterBody(string email, string fullname, string password)
+    public RegisterBody(string identifier, string nickname, string password, AuthenticationMethod method)
     {
-        this.email = email;
-        this.fullname = fullname;
+        this.identifier = identifier;
+        this.nickname = nickname;
         this.password = password;
+        this.method = method;
     }
 }
 
@@ -434,13 +435,15 @@ public class RegisterBody
 
 public class AuthBody
 {
-    public string email;
+    public string identifier;
     public string password;
+    public AuthenticationMethod method;
 
-    public AuthBody(string email, string password)
+    public AuthBody(string identifier, string password, AuthenticationMethod method)
     {
-        this.email = email;
+        this.identifier = identifier;
         this.password = password;
+        this.method = method;
     }
 }
 
@@ -478,15 +481,21 @@ public class TokenResponse
 [Serializable]
 public class ProfileData
 {
-    public string email;
+    public string identifier;
+    public string nickname;
     public Role role;
     public string urlIcon;
+    public string userTag;
+    public AuthenticationMethod identifierType;
 
-    public ProfileData(string email, Role role, string urlIcon)
+    public ProfileData(string identifier, string nickname, Role role, string urlIcon, string userTag, AuthenticationMethod identifierType)
     {
-        this.email = email;
+        this.identifier = identifier;
+        this.nickname = nickname;
         this.role = role;
         this.urlIcon = urlIcon;
+        this.userTag = userTag;
+        this.identifierType = identifierType;
     }
 }
 
@@ -518,14 +527,18 @@ public class TaskChatBody
 public class ChatUserInfo
 {
     public string id;
-    public string email;
+    public string identifier;
     public string imageUrl;
+    public string userTag;
+    public AuthenticationMethod identifierType;
 
-    public ChatUserInfo(string id, string email, string imageUrl)
+    public ChatUserInfo(string id, string identifier, string imageUrl, string userTag, AuthenticationMethod identifierType)
     {
         this.id = id;
-        this.email = email;
+        this.identifier = identifier;
         this.imageUrl = imageUrl;
+        this.userTag = userTag;
+        this.identifierType = identifierType;
     }
 }
 
@@ -574,6 +587,13 @@ public class BoardBody
     public string name;
 }
 
+
+
+public enum AuthenticationMethod
+{
+    Email,
+    Phone
+}
 
 
 public enum ChatType

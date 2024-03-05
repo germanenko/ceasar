@@ -232,12 +232,11 @@ public class ChatListManager : MonoBehaviour
 
         foreach (ProfileData user in users)
         {
-            print(user.email);
             var c = Pooler.Instance.Spawn(PoolType.Entities, _chatButtonPrefab.gameObject, default, default, _chatsParent);
 
             ChatItem ci = c.GetComponent<ChatItem>();
 
-            TaskChatBody chat = new TaskChatBody("", user.email, user.urlIcon, 0, new ChatUserInfo[2]);
+            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2]);
 
             ci.Init(chat, this);
             ci.SetUnreadMessages(0);

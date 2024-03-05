@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 public class Authentication : MonoBehaviour
 {
     [Header("Auth")]
-    [SerializeField] private AdvancedInputField _signInEmailField;
+    [SerializeField] private AdvancedInputField _signInIdentifierField;
     [SerializeField] private AdvancedInputField _signInPasswordField;
 
     [Header("Register")]
-    [SerializeField] private AdvancedInputField _signUpEmailField;
+    [SerializeField] private AdvancedInputField _signUpIdentifierField;
     [SerializeField] private AdvancedInputField _signUpFullnameField;
     [SerializeField] private AdvancedInputField _signUpPasswordField;
+
+    [SerializeField] private TextMeshProUGUI _changeMethodText;
+
+    [SerializeField] private bool _isPhoneMethod;
 
     private async void Awake()
     {
@@ -27,7 +31,11 @@ public class Authentication : MonoBehaviour
 
     public async void AuthAsync()
     {
-        ResponseBody request = await ServerConstants.Instance.AuthAsync(_signInEmailField.Text, _signInPasswordField.Text);
+        ResponseBody request = await ServerConstants.Instance.AuthAsync(
+            _signInIdentifierField.Text,
+            _signInPasswordField.Text,
+            _isPhoneMethod ? AuthenticationMethod.Phone : AuthenticationMethod.Email
+            );
         if (request.Success)
         {
             print(request.Message);
@@ -41,7 +49,13 @@ public class Authentication : MonoBehaviour
 
     public async void RegisterAsync()
     {
-        ResponseBody request = await ServerConstants.Instance.RegisterAsync(_signUpEmailField.Text, _signUpFullnameField.Text, _signUpPasswordField.Text);
+        ResponseBody request = await ServerConstants.Instance.RegisterAsync(
+            _signUpIdentifierField.Text, 
+            _signUpFullnameField.Text, 
+            _signUpPasswordField.Text, 
+            _isPhoneMethod ? AuthenticationMethod.Phone : AuthenticationMethod.Email
+            );
+
         if (request.Success)
         {
             print(request.Message);
@@ -53,5 +67,15 @@ public class Authentication : MonoBehaviour
         }
     }
 
+    
+
+    public void ChangeMethod()
+    {
+        _isPhoneMethod = !_isPhoneMethod;
+
+        _signInIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+        _signUpIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+        _changeMethodText.text = _isPhoneMethod ? "Enter with email" : "Enter with phone number";
+    }
 }
 

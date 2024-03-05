@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class ProfileView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _emailText;
+    [SerializeField] private TextMeshProUGUI _nickText;
     [SerializeField] private TextMeshProUGUI _roleText;
     [SerializeField] private RawImage _avatar;
 
@@ -72,7 +72,7 @@ public class ProfileView : MonoBehaviour
     {
         if (AccountManager.Instance == null) return;
 
-        _emailText.text = AccountManager.Instance.ProfileData.email;
+        _nickText.text = AccountManager.Instance.ProfileData.nickname;
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
 
         //_avatar.texture = await ServerConstants.Instance.GetAvatarAsync();

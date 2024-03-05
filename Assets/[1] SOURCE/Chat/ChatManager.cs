@@ -84,7 +84,7 @@ public class ChatManager : MonoBehaviour
         {
             if(p.id == msg.SenderId.ToString())
             {
-                senderMail = p.email;
+                senderMail = p.userTag;
             }
         }
 
@@ -142,13 +142,13 @@ public class ChatManager : MonoBehaviour
             {
                 if (p.id == _messagesFromDB[i].SenderId.ToString())
                 {
-                    if(p.email == AccountManager.Instance.ProfileData.email)
+                    if(p.userTag == AccountManager.Instance.ProfileData.userTag)
                     {
                         _chatView.AddMessageRight(_messagesFromDB[i].Content);
                     }
                     else
                     {
-                        senderMail = p.email;
+                        senderMail = p.userTag;
                         _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
                     }
                 }
