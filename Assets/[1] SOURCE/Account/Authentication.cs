@@ -74,7 +74,10 @@ public class Authentication : MonoBehaviour
         _isPhoneMethod = !_isPhoneMethod;
 
         _signInIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+        _signInIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
         _signUpIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+        _signUpIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
+
         _changeMethodText.text = _isPhoneMethod ? "Enter with email" : "Enter with phone number";
     }
 }
