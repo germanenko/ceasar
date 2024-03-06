@@ -35,10 +35,11 @@ public class ServerConstants : MonoBehaviour
     public string GetProfile { get => "profile"; }  
     public string UploadUserIcon { get => "upload/profileIcon"; }
 
-    public string GetUsersByEmailPattern { get => "users"; }
+    public string GetUsersByIdentifierPattern { get => "users/identifier"; }
 
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
+    public string CreatePersonalChat { get => "chat"; }
 
     public string CreateBoard { get => "board"; }
     public string GetAllBoards { get => "boards"; }
@@ -265,7 +266,7 @@ public class ServerConstants : MonoBehaviour
 
 
 
-    public async Task<List<ProfileData>> GetUsersByEmailPatternAsync(string pattern)
+    public async Task<List<ProfileData>> GetUsersByIdentifierPatternAsync(string pattern)
     {
         using var client = new HttpClient()
         {
@@ -273,7 +274,7 @@ public class ServerConstants : MonoBehaviour
         };
         client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
 
-        var response = await client.GetAsync(GetUsersByEmailPattern + $"?emailPattern={pattern}");
+        var response = await client.GetAsync(GetUsersByIdentifierPattern + $"?identifierPattern={pattern}");
         List<ProfileData>? profileBody = null;
         if (response.StatusCode == HttpStatusCode.OK)
         {
@@ -285,6 +286,8 @@ public class ServerConstants : MonoBehaviour
         }
         else
         {
+            var tokenBodyString = await response.Content.ReadAsStringAsync();
+            print(tokenBodyString);
             return null;
         }
     }
@@ -340,6 +343,35 @@ public class ServerConstants : MonoBehaviour
             messagesBody = JsonConvert.DeserializeObject<List<MessageBody>>(messagesBodyString);
 
             return messagesBody;
+        }
+        else
+        {
+            print(response.RequestMessage);
+            return null;
+        }
+    }
+
+
+
+    public async Task<string> CreatePersonalChatAsync(string identifier)
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+        client.DefaultRequestHeaders.Add("Authorization", AccountManager.Instance.TokenResponse.accessToken);
+        client.DefaultRequestHeaders.Add("identifier", identifier);
+
+        var s = $"{{ \"name\": \"{identifier}\"}}";
+        var content = new StringContent(s, Encoding.UTF8, MediaTypeNames.Application.Json);
+        var response = await client.PostAsync(CreatePersonalChat, content);
+        List<MessageBody>? messagesBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var messagesBodyString = await response.Content.ReadAsStringAsync();
+            print("Чат создан");
+            return messagesBodyString;
         }
         else
         {

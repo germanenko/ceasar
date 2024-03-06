@@ -8,6 +8,7 @@ public class Authentication : MonoBehaviour
 {
     [Header("Auth")]
     [SerializeField] private AdvancedInputField _signInIdentifierField;
+    [SerializeField] private AdvancedInputField _signInNicknameField;
     [SerializeField] private AdvancedInputField _signInPasswordField;
 
     [Header("Register")]
@@ -16,8 +17,6 @@ public class Authentication : MonoBehaviour
     [SerializeField] private AdvancedInputField _signUpPasswordField;
 
     [SerializeField] private TextMeshProUGUI _changeMethodText;
-
-    [SerializeField] private bool _isPhoneMethod;
 
     private async void Awake()
     {
@@ -34,7 +33,7 @@ public class Authentication : MonoBehaviour
         ResponseBody request = await ServerConstants.Instance.AuthAsync(
             _signInIdentifierField.Text,
             _signInPasswordField.Text,
-            _isPhoneMethod ? AuthenticationMethod.Phone : AuthenticationMethod.Email
+            GetAuthMethod()
             );
         if (request.Success)
         {
@@ -50,10 +49,10 @@ public class Authentication : MonoBehaviour
     public async void RegisterAsync()
     {
         ResponseBody request = await ServerConstants.Instance.RegisterAsync(
-            _signUpIdentifierField.Text, 
-            _signUpFullnameField.Text, 
-            _signUpPasswordField.Text, 
-            _isPhoneMethod ? AuthenticationMethod.Phone : AuthenticationMethod.Email
+            _signInIdentifierField.Text,
+            _signInNicknameField.Text,
+            _signInPasswordField.Text,
+            GetAuthMethod()
             );
 
         if (request.Success)
@@ -69,16 +68,30 @@ public class Authentication : MonoBehaviour
 
     
 
-    public void ChangeMethod()
+    private AuthenticationMethod GetAuthMethod()
     {
-        _isPhoneMethod = !_isPhoneMethod;
+        AuthenticationMethod m = AuthenticationMethod.Email;
 
-        _signInIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
-        _signInIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
-        _signUpIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
-        _signUpIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
+        if (_signInIdentifierField.Text.Contains("@"))
+            m = AuthenticationMethod.Email;
+        else
+            m = AuthenticationMethod.Phone;
 
-        _changeMethodText.text = _isPhoneMethod ? "Enter with email" : "Enter with phone number";
+        return m;
     }
+
+
+
+    //public void ChangeMethod()
+    //{
+    //    _isPhoneMethod = !_isPhoneMethod;
+
+    //    _signInIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+    //    _signInIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
+    //    _signUpIdentifierField.PlaceHolderText = _isPhoneMethod ? "Phone" : "Email";
+    //    _signUpIdentifierField.KeyboardType = _isPhoneMethod ? KeyboardType.PHONE_PAD : KeyboardType.EMAIL_ADDRESS;
+
+    //    _changeMethodText.text = _isPhoneMethod ? "Enter with email" : "Enter with phone number";
+    //}
 }
 

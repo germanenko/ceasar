@@ -39,13 +39,6 @@ public class ChatManager : MonoBehaviour
 
     public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
     {
-
-#if (UNITY_ANDROID || UNITY_IOS)
-        if (!Application.isEditor || Settings.SimulateMobileBehaviourInEditor)
-        {
-            //NativeKeyboardManager.AddKeyboardHeightChangedListener(OnKeyboardHeightChanged);
-        }
-#endif
         _chatInfo = chatInfo;
 
         WS = ws;
@@ -61,6 +54,18 @@ public class ChatManager : MonoBehaviour
         GenerateMessageList();
 
         WS.OnMessage += WS_OnMessage;
+    }
+
+
+    public void OpenChat(TaskChatBody chatInfo)
+    {
+        _chatInfo = chatInfo;
+
+        _view.Show();
+
+        _chatNameText.text = _chatInfo.name;
+
+        GenerateMessageList();
     }
 
 
@@ -92,7 +97,7 @@ public class ChatManager : MonoBehaviour
         print($"Получено сообщение от {senderMail}: {msg.Content}");
     }
 
-    public void SendMessage()
+    public async void SendMessage()
     {
         if (_messageField.Text.Length == 0) return;
 
@@ -103,23 +108,63 @@ public class ChatManager : MonoBehaviour
         };
         var str = SerializeObject(messageBody);
         //WS.Send(str);
-        WS.SendAsync(str, (bool c) =>
+        if(WS != null)
         {
-            if (c)
+            WS.SendAsync(str, (bool c) =>
             {
-                print("сообщение отправлено");
-                UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                if (c)
                 {
-                    _chatView.AddMessageRight(_messageField.Text);
-                    _messageField.SetText("");
-                });
+                    print("сообщение отправлено");
+                    UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                    {
+                        _chatView.AddMessageRight(_messageField.Text);
+                        _messageField.SetText("");
+                    });
 
-            }
-            else
+                }
+                else
+                {
+                    print("сообщение не отправлено");
+                }
+            });
+        }
+        else
+        {
+            string chatId = await ServerConstants.Instance.CreatePersonalChatAsync(_chatInfo.participants[1].identifier);
+
+            Dictionary<string, string> headers = new Dictionary<string, string>
             {
-                print("сообщение не отправлено");
-            }
-        });
+                { "Authorization", "" },
+                { "chatId", "" }
+            };
+
+            headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+            headers["chatId"] = chatId;
+
+            WS.CustomHeaders = headers;
+
+            WS.ConnectAsync();
+
+            WS.OnOpen += (object sender, EventArgs e) => {
+                WS.SendAsync(str, (bool c) =>
+                {
+                    if (c)
+                    {
+                        print("сообщение отправлено");
+                        UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                        {
+                            _chatView.AddMessageRight(_messageField.Text);
+                            _messageField.SetText("");
+                        });
+
+                    }
+                    else
+                    {
+                        print("сообщение не отправлено");
+                    }
+                });
+            };
+        }
     }
 
 

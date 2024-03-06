@@ -188,6 +188,12 @@ public class ChatListManager : MonoBehaviour
 
     public void OpenChat(TaskChatBody chat)
     {
+        if(chat.id == "")
+        {
+            _chatManager.OpenChat(chat);
+            return;
+        }
+
         Headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
         Headers["chatId"] = chat.id;
 
@@ -217,7 +223,7 @@ public class ChatListManager : MonoBehaviour
 
 
 
-    public async void FindUsersByEmailPattern(string pattern)
+    public async void FindUsersByIdentifierPattern(string pattern)
     {
         if(pattern == "")
         {
@@ -228,7 +234,7 @@ public class ChatListManager : MonoBehaviour
         _chatsParent.DestroyChildren();
         _chatItems.Clear();
 
-        List<ProfileData> users = await ServerConstants.Instance.GetUsersByEmailPatternAsync(pattern);
+        List<ProfileData> users = await ServerConstants.Instance.GetUsersByIdentifierPatternAsync(pattern);
 
         foreach (ProfileData user in users)
         {
@@ -236,7 +242,7 @@ public class ChatListManager : MonoBehaviour
 
             ChatItem ci = c.GetComponent<ChatItem>();
 
-            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2]);
+            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2] {new ChatUserInfo("", AccountManager.Instance.ProfileData.identifier, AccountManager.Instance.ProfileData.urlIcon, AccountManager.Instance.ProfileData.userTag, AccountManager.Instance.ProfileData.identifierType), new ChatUserInfo("", user.identifier, user.urlIcon, user.userTag, user.identifierType) });
 
             ci.Init(chat, this);
             ci.SetUnreadMessages(0);
