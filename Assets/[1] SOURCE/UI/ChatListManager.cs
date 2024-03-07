@@ -24,8 +24,8 @@ public class ChatListManager : MonoBehaviour
 
     [SerializeField] private ChatItem _chatButtonPrefab;
 
-    public WebSocket WS = new WebSocket("ws://82.97.243.104/chat");
-    public WebSocket MainWS = new WebSocket("ws://82.97.243.104/main");
+    public WebSocket WS = new WebSocket("ws://itsmydomain.ru/chat");
+    public WebSocket MainWS = new WebSocket("ws://itsmydomain.ru/main");
 
     [SerializeField] private ChatManager _chatManager;
 
@@ -182,46 +182,45 @@ public class ChatListManager : MonoBehaviour
 
         MainWS.OnOpen += MainWS_OnOpen;
         MainWS.OnMessage += MainWS_OnMessage;
+        MainWS.OnClose += MainWS_OnClose;
     }
 
-
+    private void MainWS_OnClose(object sender, CloseEventArgs e)
+    {
+        print($"main {e.Reason}");
+    }
 
     public void OpenChat(TaskChatBody chat)
     {
-        if(chat.id == "")
+        if (chat.id == "")
         {
             _chatManager.OpenChat(chat);
             return;
         }
-
+       
         Headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
         Headers["chatId"] = chat.id;
-
+       
         OpeningChat = chat;
-
+       
         WS.CustomHeaders = Headers;
 
+        foreach (var item in WS.CustomHeaders)
+        {
+            print(item.Value);
+        }
+
         WS.ConnectAsync();
-
+       
         WS.OnOpen += WS_OnOpen;
-
-        //foreach (var header in Headers)
-        //{
-        //    WS.Options.SetRequestHeader(header.Key, header.Value);
-        //}
-
-        //print(WS.Options);
-
-        //await WS.ConnectAsync(new Uri("ws://82.97.249.229/taskChat"), CancellationToken.None);
-
-        //if(WS.State == WebSocketState.Open)
-        //{
-        //    _chatManager.OpenChat(chat);
-        //}
-
+        WS.OnClose += WS_OnClose;
     }
 
-
+    private void WS_OnClose(object sender, CloseEventArgs e)
+    {
+        print("closed");
+        print(e.Reason);
+    }
 
     public async void FindUsersByIdentifierPattern(string pattern)
     {

@@ -1,4 +1,8 @@
 using AdvancedInputFieldPlugin;
+using Doozy.Runtime.Reactor.Animators;
+using NUnit.Framework.Internal;
+using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,6 +21,9 @@ public class Authentication : MonoBehaviour
     [SerializeField] private AdvancedInputField _signUpPasswordField;
 
     [SerializeField] private TextMeshProUGUI _changeMethodText;
+
+    [SerializeField] private TextMeshProUGUI _methodText;
+    [SerializeField] private UIAnimator _methodTextAnimator;
 
     private async void Awake()
     {
@@ -67,6 +74,26 @@ public class Authentication : MonoBehaviour
     }
 
     
+
+    public void DefineMethod(string character)
+    {
+        print(character + " is digit = " + int.TryParse(character, out int y));
+        print(character + " have letter = " + Regex.IsMatch(character, @"\p{L}"));
+        if (!Regex.IsMatch(character, @"\p{L}"))
+        {
+            print("is Phone");
+            _methodText.text = "Phone";
+            _methodTextAnimator.Play();
+        }
+        if(character.Contains('@')) 
+        {
+            print("is Email");
+            _methodText.text = "Email";
+            _methodTextAnimator.Play();
+        }
+    }
+
+
 
     private AuthenticationMethod GetAuthMethod()
     {

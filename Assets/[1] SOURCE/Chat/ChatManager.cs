@@ -21,7 +21,7 @@ public class ChatManager : MonoBehaviour
 {
     [SerializeField] private TaskChatBody _chatInfo;
 
-    [SerializeField] private WebSocket WS;
+    [SerializeField] private WebSocket WS = new WebSocket("ws://itsmydomain.ru/chat");
 
     [SerializeField] private AdvancedInputField _messageField;
 
@@ -108,7 +108,7 @@ public class ChatManager : MonoBehaviour
         };
         var str = SerializeObject(messageBody);
         //WS.Send(str);
-        if(WS != null)
+        if(WS.ReadyState == WebSocketState.Open)
         {
             WS.SendAsync(str, (bool c) =>
             {
@@ -130,22 +130,32 @@ public class ChatManager : MonoBehaviour
         }
         else
         {
-            string chatId = await ServerConstants.Instance.CreatePersonalChatAsync(_chatInfo.participants[1].identifier);
-
-            Dictionary<string, string> headers = new Dictionary<string, string>
+            try
             {
-                { "Authorization", "" },
-                { "chatId", "" }
-            };
+                string chatId = await ServerConstants.Instance.CreatePersonalChatAsync(_chatInfo.participants[1].identifier);
 
-            headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
-            headers["chatId"] = chatId;
+                chatId = chatId.Replace("\"", "");
+                print(chatId);
+                Dictionary<string, string> headers = new Dictionary<string, string>
+                {
+                    { "Authorization", "" },
+                    { "chatId", "" }
+                };
 
-            WS.CustomHeaders = headers;
+                headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+                headers["chatId"] = chatId;
 
-            WS.ConnectAsync();
+                WS.CustomHeaders = headers;
+
+                WS.ConnectAsync();
+            }
+            catch (Exception ex)
+            {
+                print(ex.ToString());
+            }
 
             WS.OnOpen += (object sender, EventArgs e) => {
+                print("соединен");
                 WS.SendAsync(str, (bool c) =>
                 {
                     if (c)

@@ -632,8 +632,9 @@ namespace AdvancedInputFieldPlugin
 
 					if(InputField.Secure && !InputField.VisiblePassword)
 					{
-						text = new string(Settings.PasswordMaskingCharacter, text.Length);
-					}
+						text = new string('●', text.Length);
+
+                    }
 				}
 				else
 				{
