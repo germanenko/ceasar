@@ -206,13 +206,13 @@ public class ChatManager : MonoBehaviour
             {
                 if (p.id == _messagesFromDB[i].SenderId.ToString())
                 {
-                    if(p.userTag == AccountManager.Instance.ProfileData.userTag)
+                    if(p.identifier == AccountManager.Instance.ProfileData.identifier)
                     {
                         _chatView.AddMessageRight(_messagesFromDB[i].Content);
                     }
                     else
                     {
-                        senderMail = p.userTag;
+                        senderMail = p.identifier;
                         _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
                     }
                 }

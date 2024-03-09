@@ -215,23 +215,21 @@ public class ServerConstants : MonoBehaviour
 
 
 
-    public async Task<Texture2D> GetAvatarAsync()
+    public IEnumerator DownloadProfileAvatarTexture(Action<Texture2D> response)
     {
-        Texture2D s = null;
-
-        StartCoroutine(DownloadTexture((tex) =>
-        {
-            s = tex;
-        }));
-
-        return s;
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(AccountManager.Instance.ProfileData.urlIcon);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+            Debug.Log(request.error);
+        else
+            response(((DownloadHandlerTexture)request.downloadHandler).texture);
     }
 
 
 
-    public IEnumerator DownloadTexture(Action<Texture2D> response)
+    public IEnumerator DownloadChatIconTexture(Action<Texture2D> response, string url)
     {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(AccountManager.Instance.ProfileData.urlIcon);
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
         yield return request.SendWebRequest();
         if (request.isNetworkError || request.isHttpError)
             Debug.Log(request.error);

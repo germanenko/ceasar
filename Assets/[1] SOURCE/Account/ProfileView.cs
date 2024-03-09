@@ -76,7 +76,7 @@ public class ProfileView : MonoBehaviour
         _roleText.text = AccountManager.Instance.ProfileData.role.ToString();
 
         //_avatar.texture = await ServerConstants.Instance.GetAvatarAsync();
-        ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadTexture((tex) =>
+        ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadProfileAvatarTexture((tex) =>
         {
             _avatar.texture = tex;
         }));

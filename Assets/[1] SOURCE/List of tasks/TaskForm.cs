@@ -12,6 +12,8 @@ using System.Globalization;
 using Doozy.Runtime.UIManager.Animators;
 using Doozy.Runtime.Reactor.Animators;
 using DTT.Utils.Extensions;
+using AdvancedInputFieldPlugin;
+using HutongGames.PlayMaker;
 
 namespace Germanenko.Source
 {

@@ -111,45 +111,34 @@ public class ChatListManager : MonoBehaviour
 
         foreach (var chat in Chats)
         {
-            //if (chat.lastMessage != null)
-            //{
-                var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-                Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
-                foreach (var m in ms)
-                {
-                    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-                }
-            //}
+            var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+            Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
+            foreach (var m in ms)
+            {
+                Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+            }
         }
 
         try
         {
-            //if (Toolbox.Get<Tables>().GetAllChats().Count < Chats.Count)
-            //{
-                foreach (var chat in Chats)
+            foreach (var chat in Chats)
+            {
+                if (!Toolbox.Get<Tables>().HaveChat(chat.id))
                 {
-                    if (!Toolbox.Get<Tables>().HaveChat(chat.id))
-                    {
-                        print("Полученного чата нет - добавляю");
-                        Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
-                    }
-
-                    if(chat.lastMessage != null)
-                    {
-                        var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-
-                        foreach (var item in ms)
-                        {
-                            print(item.Content);
-                        }
-                    }
-
-                    if(chat.countOfUnreadMessages > 0)
-                    {
-                        Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
-                    }
+                    print("Полученного чата нет - добавляю");
+                    Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
                 }
-            //}
+
+                if(chat.lastMessage != null)
+                {
+                    var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+                }
+
+                if(chat.countOfUnreadMessages > 0)
+                {
+                    Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
+                }
+            }
         }
         catch (Exception ex) { print(ex); }
 

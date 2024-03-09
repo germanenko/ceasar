@@ -7,8 +7,11 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.AdvancedInputField
     - AdvancedInputFieldPlugin.BasicTextSelectionHandler
     - AdvancedInputFieldPlugin.CanvasFrontRenderer
+    - AdvancedInputFieldPlugin.InputFieldButton
+    - AdvancedInputFieldPlugin.InputFieldRefocusable
     - AdvancedInputFieldPlugin.LocalizationData
     - AdvancedInputFieldPlugin.PointerHandler
+    - AdvancedInputFieldPlugin.RichTextData
     - AdvancedInputFieldPlugin.ScrollArea
     - AdvancedInputFieldPlugin.SettingsData
     - AdvancedInputFieldPlugin.SimulatorKeyboard
@@ -17,49 +20,120 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.TouchCursor
     - AdvancedInputFieldPlugin.TouchTextSelectionHandler
     - AdvancedInputFieldPlugin.UnityTextRenderer
+    - AdvancedInputFieldSamples.ChatView
+    - AdvancedInputFieldSamples.EmojiKeyboard
+    - MessageItem
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
     - HutongGames.PlayMakerEditor.FsmEditorWindow
     Assembly-CSharp.dll:
+    - AccountManager
+    - AndroidNotifications
+    - Authentication
+    - Calendar
+    - ChatItem
+    - ChatListManager
+    - ChatManager
+    - Clock
     - ColorDropdown
+    - DatabaseActions
+    - DatabaseOutput
+    - DateTimeItem
     - DayButton
+    - DeletedTaskView
     - DigitalRubyShared.DemoAsteroidScript
     - DigitalRubyShared.FingersExampleCoRoutineScript
     - DigitalRubyShared.FingersPanRotateScaleComponentScript
     - DigitalRubyShared.FingersScript
     - Doozy._Examples.E23___Popup___with_One_Button.ShowOneButtonPopup
     - DropDownItem
+    - ElementsContainer
+    - Germanenko.Source.Constants
+    - Germanenko.Source.HintItem
+    - Germanenko.Source.Hints
+    - Germanenko.Source.ItemOfList
+    - Germanenko.Source.Question
     - Germanenko.Source.SignalSender
+    - Germanenko.Source.TaskForm
+    - Germanenko.Source.TaskFormFields
+    - Germanenko.Source.TopMenu
+    - Germanenko.Source.TouchInArea
     - HutongGames.PlayMaker.PlayMakerUiClickEvent
     - HutongGames.PlayMaker.PlayMakerUiDragEvents
     - HutongGames.PlayMaker.PlayMakerUiDropEvent
     - HutongGames.PlayMaker.PlayMakerUiPointerEvents
+    - InputFieldWithHits
+    - LerpToPlaceholder
+    - ListOfTaskView
+    - ListScaler
+    - Localization
     - MonthToggle
+    - MultiChoice
+    - PimDeWitte.UnityMainThreadDispatcher.UnityMainThreadDispatcher
+    - ProfileView
+    - PushManager
+    - RecoveryDeletedTasks
+    - RecoveryTaskItem
+    - SafeAreaFitter
+    - SavesAndDraftsView
+    - ServerConstants
+    - SmoothGridLayoutUI
+    - Starter
+    - TaskEmpty
+    - TaskTypeDropdown
+    - TaskView
     - TheraBytes.BetterUi.BetterContentSizeFitter
     - TheraBytes.BetterUi.BetterGridLayoutGroup
     - TheraBytes.BetterUi.Materials
     - TheraBytes.BetterUi.ResolutionMonitor
     - TimeLabel
+    - UnityEngine.UI.DropShadow
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     DTT.COLOR.Runtime.dll:
     - DTT.COLOR.PaletteDatabase
     DTT.KeyboardRaiser.Editor.dll:
     - DTT.KeyboardRaiser.Editor.KeyboardRaiserConfig
+    DTT.KeyboardRaiser.Runtime.dll:
+    - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
+    - Doozy.Runtime.Nody.FlowController
+    - Doozy.Runtime.Nody.FlowGraph
+    - Doozy.Runtime.Nody.Nodes.PivotNode
+    - Doozy.Runtime.Nody.Nodes.System.StartNode
+    - Doozy.Runtime.Reactor.Animators.ColorAnimator
+    - Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    - Doozy.Runtime.Reactor.Animators.UIAnimator
+    - Doozy.Runtime.Reactor.Animators.Vector3Animator
     - Doozy.Runtime.Reactor.ScriptableObjects.ReactorSettings
     - Doozy.Runtime.Reactor.Targets.ImageColorTarget
+    - Doozy.Runtime.Reactor.Targets.ImageSpriteTarget
+    - Doozy.Runtime.Reactor.Targets.TextMeshProColorTarget
+    - Doozy.Runtime.Reactor.Ticker.RuntimeTicker
+    - Doozy.Runtime.Signals.SignalSender
     - Doozy.Runtime.UIManager.Animators.UIContainerUIAnimator
     - Doozy.Runtime.UIManager.Animators.UISelectableColorAnimator
     - Doozy.Runtime.UIManager.Animators.UISelectableUIAnimator
     - Doozy.Runtime.UIManager.Animators.UIToggleColorAnimator
+    - Doozy.Runtime.UIManager.Animators.UIToggleUIAnimator
+    - Doozy.Runtime.UIManager.Animators.UIToggleVector2Animator
     - Doozy.Runtime.UIManager.Components.UIButton
+    - Doozy.Runtime.UIManager.Components.UIStepper
+    - Doozy.Runtime.UIManager.Components.UITab
+    - Doozy.Runtime.UIManager.Components.UITag
     - Doozy.Runtime.UIManager.Components.UIToggle
+    - Doozy.Runtime.UIManager.Components.UIToggleGroup
+    - Doozy.Runtime.UIManager.Containers.UIContainer
     - Doozy.Runtime.UIManager.Containers.UIPopup
     - Doozy.Runtime.UIManager.Containers.UITooltip
+    - Doozy.Runtime.UIManager.Containers.UIView
+    - Doozy.Runtime.UIManager.Input.InputToSignal
+    - Doozy.Runtime.UIManager.Listeners.BoolSignalListener
+    - Doozy.Runtime.UIManager.Listeners.SignalListener
+    - Doozy.Runtime.UIManager.Nodes.PortalNode
+    - Doozy.Runtime.UIManager.Nodes.UINode
     - Doozy.Runtime.UIManager.ScriptableObjects.UIManagerInputSettings
     - Doozy.Runtime.UIManager.ScriptableObjects.UIPopupDatabase
     - Doozy.Runtime.UIManager.ScriptableObjects.UIPopupLink
@@ -69,14 +143,25 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Triggers.PointerDownTrigger
     - Doozy.Runtime.UIManager.Triggers.PointerEnterTrigger
     - Doozy.Runtime.UIManager.Triggers.PointerUpTrigger
+    - Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
     LunarConsole.dll:
     - LunarConsolePlugin.LunarConsole
     PlayMaker.dll:
     - PlayMakerFSM
+    - PlayMakerGUI
+    - PlayMakerGlobals
+    - PlayMakerMouseEvents
+    - PlayMakerPrefs
+    - PlayMakerTriggerEnter2D
+    - PlayMakerTriggerStay
     QHierarchyEditor.dll:
     - qtools.qhierarchy.pdata.QSettingsObject
+    QHierarchyRuntime.dll:
+    - qtools.qhierarchy.QObjectList
     RainbowFolders.dll:
     - Borodar.RainbowFolders.ProjectRuleset
+    SimpleSQL_Runtime.dll:
+    - SimpleSQL.SimpleSQLManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -88,9 +173,12 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -108,12 +196,14 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.AspectRatioFitter
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
-    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
@@ -125,9 +215,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
+    - UnityEngine.UI.ToggleGroup
     - UnityEngine.UI.VerticalLayoutGroup
-    gpm_webview.dll:
-    - SampleWebView
+    UnityUIExtensions.dll:
+    - UnityEngine.UI.Extensions.ScrollConflictManager
   serializedClasses:
     AdvancedInputField:
     - AdvancedInputFieldPlugin.AdvancedInputField/ActionBarActionEvent
@@ -144,19 +235,38 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.PlatformSettingsData
     - AdvancedInputFieldPlugin.ScrollArea/ScrollRectEvent
     Assembly-CSharp:
+    - BaseDDItem
     - DigitalRubyShared.GestureRecognizerComponentStateUpdatedEvent
+    - MessageBody
+    - ProfileData
+    - TaskChatBody
+    - TaskTypeDDItem
+    - TheraBytes.BetterUi.BetterContentSizeFitter/Settings
+    - TheraBytes.BetterUi.BetterContentSizeFitter/SettingsConfigCollection
+    - TheraBytes.BetterUi.BetterGridLayoutGroup/Settings
+    - TheraBytes.BetterUi.BetterGridLayoutGroup/SettingsConfigCollection
     - TheraBytes.BetterUi.DpiManager
+    - TheraBytes.BetterUi.FloatSizeConfigCollection
+    - TheraBytes.BetterUi.FloatSizeModifier
     - TheraBytes.BetterUi.IsCertainAspectRatio
     - TheraBytes.BetterUi.IsCertainScreenOrientation
     - TheraBytes.BetterUi.IsScreenOfCertainDeviceInfo
     - TheraBytes.BetterUi.IsScreenOfCertainSize
     - TheraBytes.BetterUi.IsScreenTagPresent
+    - TheraBytes.BetterUi.Margin
+    - TheraBytes.BetterUi.MarginSizeConfigCollection
+    - TheraBytes.BetterUi.MarginSizeModifier
     - TheraBytes.BetterUi.Materials/MaterialInfo
     - TheraBytes.BetterUi.ScreenInfo
     - TheraBytes.BetterUi.ScreenTypeConditions
+    - TheraBytes.BetterUi.SizeModifierCollection
+    - TheraBytes.BetterUi.SizeModifierCollection/SizeModifier
     - TheraBytes.BetterUi.StaticSizerMethod
+    - TheraBytes.BetterUi.Vector2SizeConfigCollection
+    - TheraBytes.BetterUi.Vector2SizeModifier
     - TheraBytes.BetterUi.VertexMaterialData
     - TheraBytes.BetterUi.VertexMaterialData/FloatProperty
+    - TokenResponse
     DOTween:
     - DG.Tweening.Core.DOTweenSettings/ModulesSetup
     - DG.Tweening.Core.DOTweenSettings/SafeModeOptions
@@ -164,30 +274,86 @@ ScriptsOnlyBuild:
     - DTT.COLOR.Palette
     - DTT.COLOR.PaletteColor
     DoozyRuntime:
+    - Doozy.Runtime.Common.Events.BoolEvent
+    - Doozy.Runtime.Common.Events.FloatEvent
     - Doozy.Runtime.Common.RandomFloat
     - Doozy.Runtime.Common.RandomInt
     - Doozy.Runtime.Mody.ModyEvent
+    - Doozy.Runtime.Nody.FlowPort
+    - Doozy.Runtime.Nody.GraphStateEvent
     - Doozy.Runtime.Reactor.Animations.ColorAnimation
+    - Doozy.Runtime.Reactor.Animations.SpriteAnimation
     - Doozy.Runtime.Reactor.Animations.UIAnimation
+    - Doozy.Runtime.Reactor.Animations.Vector2Animation
+    - Doozy.Runtime.Reactor.Animations.Vector3Animation
     - Doozy.Runtime.Reactor.ReactionSettings
     - Doozy.Runtime.Reactor.Reactions.ColorTargetReaction
+    - Doozy.Runtime.Reactor.Reactions.ReflectedVector2Reaction
+    - Doozy.Runtime.Reactor.Reactions.ReflectedVector3Reaction
+    - Doozy.Runtime.Reactor.Reactions.SpriteTargetReaction
     - Doozy.Runtime.Reactor.Reactions.UIFadeReaction
     - Doozy.Runtime.Reactor.Reactions.UIMoveReaction
     - Doozy.Runtime.Reactor.Reactions.UIRotateReaction
     - Doozy.Runtime.Reactor.Reactions.UIScaleReaction
+    - Doozy.Runtime.Reactor.Reflection.ReflectedVector2
+    - Doozy.Runtime.Reactor.Reflection.ReflectedVector3
+    - Doozy.Runtime.Signals.ProviderId
+    - Doozy.Runtime.Signals.SignalEvent
+    - Doozy.Runtime.Signals.SignalPayload
+    - Doozy.Runtime.Signals.SignalReceiver
+    - Doozy.Runtime.Signals.StreamId
+    - Doozy.Runtime.UIManager.Events.PointerEventDataEvent
     - Doozy.Runtime.UIManager.Events.UISelectionStateEvent
     - Doozy.Runtime.UIManager.Events.VisibilityStateEvent
+    - Doozy.Runtime.UIManager.UIBehaviour
     - Doozy.Runtime.UIManager.UIBehaviours
     - Doozy.Runtime.UIManager.UIButtonId
     - Doozy.Runtime.UIManager.UISelectableState
+    - Doozy.Runtime.UIManager.UIStepperId
     - Doozy.Runtime.UIManager.UITagId
+    - Doozy.Runtime.UIManager.UIToggleId
+    - Doozy.Runtime.UIManager.UIViewId
+    - Doozy.Runtime.UIManager.UIViewShowHideOption
     LunarConsole:
     - LunarConsolePlugin.ExceptionWarningSettings
     - LunarConsolePlugin.LogEntryColors
     - LunarConsolePlugin.LogOverlayColors
     - LunarConsolePlugin.LogOverlaySettings
     - LunarConsolePlugin.LunarConsoleSettings
+    PlayMaker:
+    - HutongGames.PlayMaker.ActionData
+    - HutongGames.PlayMaker.Fsm
+    - HutongGames.PlayMaker.Fsm/EditorFlags
+    - HutongGames.PlayMaker.FsmAnimationCurve
+    - HutongGames.PlayMaker.FsmArray
+    - HutongGames.PlayMaker.FsmBool
+    - HutongGames.PlayMaker.FsmColor
+    - HutongGames.PlayMaker.FsmEnum
+    - HutongGames.PlayMaker.FsmEvent
+    - HutongGames.PlayMaker.FsmFloat
+    - HutongGames.PlayMaker.FsmGameObject
+    - HutongGames.PlayMaker.FsmInt
+    - HutongGames.PlayMaker.FsmMaterial
+    - HutongGames.PlayMaker.FsmObject
+    - HutongGames.PlayMaker.FsmOwnerDefault
+    - HutongGames.PlayMaker.FsmProperty
+    - HutongGames.PlayMaker.FsmQuaternion
+    - HutongGames.PlayMaker.FsmRect
+    - HutongGames.PlayMaker.FsmState
+    - HutongGames.PlayMaker.FsmString
+    - HutongGames.PlayMaker.FsmTexture
+    - HutongGames.PlayMaker.FsmTransition
+    - HutongGames.PlayMaker.FsmVar
+    - HutongGames.PlayMaker.FsmVariables
+    - HutongGames.PlayMaker.FsmVector2
+    - HutongGames.PlayMaker.FsmVector3
+    - HutongGames.PlayMaker.UiEvents
     Unity.InputSystem:
+    - UnityEngine.InputSystem.InputAction
+    - UnityEngine.InputSystem.InputActionMap
+    - UnityEngine.InputSystem.InputBinding
+    - UnityEngine.InputSystem.InputControlScheme
+    - UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
     - UnityEngine.InputSystem.InputSettings/iOSSettings
     - UnityEngine.InputSystem.iOS.PrivacyDataUsage
     Unity.TextMeshPro:
@@ -216,6 +382,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.Events.UnityEvent
+    - UnityEngine.Events.UnityEvent`1[System.Boolean]
     - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
@@ -223,12 +390,11 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.EventSystems.EventTrigger/Entry
+    - UnityEngine.EventSystems.EventTrigger/TriggerEvent
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
-    - UnityEngine.UI.Dropdown/DropdownEvent
-    - UnityEngine.UI.Dropdown/OptionData
-    - UnityEngine.UI.Dropdown/OptionDataList
     - UnityEngine.UI.FontData
     - UnityEngine.UI.InputField/EndEditEvent
     - UnityEngine.UI.InputField/OnChangeEvent
@@ -239,9 +405,765 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Authentication
+    methodName: RegisterAsync
+  - assembly: Assembly-CSharp
+    fullTypeName: Authentication
+    methodName: DefineMethod
+  - assembly: Assembly-CSharp
+    fullTypeName: Authentication
+    methodName: AuthAsync
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Authentication
+    methodName: RegisterAsync
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtZero
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtOne
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: Assembly-CSharp
+    fullTypeName: DateTimeItem
+    methodName: CheckDateIsPeriod
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtZero
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtOne
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtZero
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtOne
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtZero
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: ChangeDayTimeHours
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.ColorAnimator
+    methodName: SetProgressAtOne
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: Assembly-CSharp
+    fullTypeName: Clock
+    methodName: SelectTimeType
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: GetDateFromInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: DateCorrect
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: SetIsStartDate
+  - assembly: Assembly-CSharp
+    fullTypeName: Calendar
+    methodName: OpenCalendarWindow
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Unity.TextMeshPro
+    fullTypeName: TMPro.TMP_InputField
+    methodName: ActivateInputField
+  - assembly: Assembly-CSharp
+    fullTypeName: RecoveryTaskItem
+    methodName: Recovery
+  - assembly: Assembly-CSharp
+    fullTypeName: DayButton
+    methodName: SelectDay
+  - assembly: Assembly-CSharp
+    fullTypeName: MonthToggle
+    methodName: SelectMonth
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: OnShow
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: OnHidden
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TouchInArea
+    methodName: IsHandle
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: SetEditTask
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Stop
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Stop
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Hide
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: ListOfTaskView
+    methodName: SignalListen
+  - assembly: Assembly-CSharp
+    fullTypeName: ListOfTaskView
+    methodName: SignalListen
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: ChatManager
+    methodName: CloseChat
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseOutput
+    methodName: LoadTasks
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseOutput
+    methodName: LoadSavesAndDrafts
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: Deauth
+  - assembly: Assembly-CSharp
+    fullTypeName: Localization
+    methodName: SetLocalizationLanguage
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Stop
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Show
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TouchInArea
+    methodName: IsHandle
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TouchInArea
+    methodName: IsHandle
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Localization
+    methodName: SetLocalizationLanguage
+  - assembly: Assembly-CSharp
+    fullTypeName: RecoveryDeletedTasks
+    methodName: LoadDeletedTasks
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: AdvancedInputField
+    fullTypeName: AdvancedInputFieldSamples.ChatView
+    methodName: RestoreOriginalMessageInputPosition
+  - assembly: AdvancedInputField
+    fullTypeName: AdvancedInputFieldSamples.ChatView
+    methodName: OnResizeVerticalSizeChanged
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantShow
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Hide
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantHide
+  - assembly: Assembly-CSharp
+    fullTypeName: MultiChoice
+    methodName: DeleteTasks
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: ReturnArchive
+  - assembly: Assembly-CSharp
+    fullTypeName: MultiChoice
+    methodName: SetMultiChoice
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: LoadInfo
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.Question
+    methodName: Show
+  - assembly: Assembly-CSharp
+    fullTypeName: ChatListManager
+    methodName: FindUsersByIdentifierPattern
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantShow
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Hide
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantHide
+  - assembly: Assembly-CSharp
+    fullTypeName: MultiChoice
+    methodName: DeselectAllTasks
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TopMenu
+    methodName: ClearTasks
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
+    methodName: ShowTooltip
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseOutput
+    methodName: LoadSavesAndDrafts
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TopMenu
+    methodName: ClearTasks
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
+    methodName: ShowTooltip
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: SignalListen
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: SignalListen
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: AddDropDown
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Stop
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: ChatManager
+    methodName: SendMessage
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantShow
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Hide
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantHide
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: ReturnTask
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: SetProgressAtZero
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
+    methodName: Play
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Reactor.Animators.UIAnimator
+    methodName: Play
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: AddInputField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
+  - assembly: Assembly-CSharp
+    fullTypeName: Germanenko.Source.TaskForm
+    methodName: SetDraftTask
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Signals.SignalSender
+    methodName: SendSignal
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
+    methodName: ShowTooltip
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.Signals.SignalSender
+    methodName: SendSignal
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseActions
+    methodName: ClearDraft
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseActions
+    methodName: ReloadTaskList
+  - assembly: Assembly-CSharp
+    fullTypeName: ProfileView
+    methodName: PickImage
+  - assembly: Assembly-CSharp
+    fullTypeName: MultiChoice
+    methodName: SelectAllTasks
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseOutput
+    methodName: LoadDeletedTasks
+  - assembly: Assembly-CSharp
+    fullTypeName: DatabaseOutput
+    methodName: LoadTasks
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
+    methodName: Hide
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Show
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantShow
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: Hide
+  - assembly: DoozyRuntime
+    fullTypeName: Doozy.Runtime.UIManager.Containers.UIContainer
+    methodName: InstantHide
   sceneClasses:
-    Assets/GPM/WebView/Sample/Sample.unity:
+    Assets/[8] SCENES & GRAPHS/Scenes/Login.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -283,10 +1205,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2592}
     - Class: 114
-      Script: {instanceID: 2596}
-    - Class: 114
-      Script: {instanceID: 2600}
-    - Class: 114
       Script: {instanceID: 2602}
     - Class: 114
       Script: {instanceID: 2604}
@@ -299,11 +1217,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3188}
     - Class: 114
+      Script: {instanceID: 3496}
+    - Class: 114
       Script: {instanceID: 3594}
     - Class: 114
       Script: {instanceID: 3626}
     - Class: 114
       Script: {instanceID: 3628}
+    - Class: 114
+      Script: {instanceID: 3852}
     - Class: 114
       Script: {instanceID: 4268}
     - Class: 114
@@ -316,6 +1238,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4966}
     - Class: 114
       Script: {instanceID: 5068}
+    - Class: 114
+      Script: {instanceID: 5200}
     - Class: 114
       Script: {instanceID: 5420}
     - Class: 114
@@ -333,9 +1257,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7350}
     - Class: 114
+      Script: {instanceID: 7884}
+    - Class: 114
       Script: {instanceID: 8178}
     - Class: 114
       Script: {instanceID: 8414}
+    - Class: 114
+      Script: {instanceID: 8768}
     - Class: 114
       Script: {instanceID: 9144}
     - Class: 114
@@ -343,7 +1271,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9298}
     - Class: 114
-      Script: {instanceID: 9592}
+      Script: {instanceID: 10336}
     - Class: 114
       Script: {instanceID: 10588}
     - Class: 114
@@ -359,11 +1287,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12382}
     - Class: 114
+      Script: {instanceID: 12886}
+    - Class: 114
       Script: {instanceID: 13238}
     - Class: 114
       Script: {instanceID: 13408}
-    - Class: 114
-      Script: {instanceID: 14172}
     - Class: 114
       Script: {instanceID: 14324}
     - Class: 114
@@ -374,6 +1302,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14586}
     - Class: 114
       Script: {instanceID: 14830}
+    - Class: 114
+      Script: {instanceID: 15170}
     - Class: 114
       Script: {instanceID: 15422}
     - Class: 114
@@ -406,8 +1336,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 17960}
     - Class: 114
       Script: {instanceID: 17994}
-    - Class: 114
-      Script: {instanceID: 41854}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -430,7 +1358,316 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 225
       Script: {instanceID: 0}
-    - Class: 850595691
+    Assets/[8] SCENES & GRAPHS/Scenes/MainScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2586}
+    - Class: 114
+      Script: {instanceID: 2588}
+    - Class: 114
+      Script: {instanceID: 2590}
+    - Class: 114
+      Script: {instanceID: 2592}
+    - Class: 114
+      Script: {instanceID: 2594}
+    - Class: 114
+      Script: {instanceID: 2596}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2602}
+    - Class: 114
+      Script: {instanceID: 2604}
+    - Class: 114
+      Script: {instanceID: 2606}
+    - Class: 114
+      Script: {instanceID: 2986}
+    - Class: 114
+      Script: {instanceID: 3356}
+    - Class: 114
+      Script: {instanceID: 3362}
+    - Class: 114
+      Script: {instanceID: 3418}
+    - Class: 114
+      Script: {instanceID: 3424}
+    - Class: 114
+      Script: {instanceID: 3528}
+    - Class: 114
+      Script: {instanceID: 3594}
+    - Class: 114
+      Script: {instanceID: 3792}
+    - Class: 114
+      Script: {instanceID: 3852}
+    - Class: 114
+      Script: {instanceID: 4298}
+    - Class: 114
+      Script: {instanceID: 4536}
+    - Class: 114
+      Script: {instanceID: 4586}
+    - Class: 114
+      Script: {instanceID: 4622}
+    - Class: 114
+      Script: {instanceID: 4632}
+    - Class: 114
+      Script: {instanceID: 4656}
+    - Class: 114
+      Script: {instanceID: 4778}
+    - Class: 114
+      Script: {instanceID: 5206}
+    - Class: 114
+      Script: {instanceID: 5272}
+    - Class: 114
+      Script: {instanceID: 5274}
+    - Class: 114
+      Script: {instanceID: 5310}
+    - Class: 114
+      Script: {instanceID: 5378}
+    - Class: 114
+      Script: {instanceID: 5420}
+    - Class: 114
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 5556}
+    - Class: 114
+      Script: {instanceID: 5712}
+    - Class: 114
+      Script: {instanceID: 5972}
+    - Class: 114
+      Script: {instanceID: 6250}
+    - Class: 114
+      Script: {instanceID: 6406}
+    - Class: 114
+      Script: {instanceID: 6752}
+    - Class: 114
+      Script: {instanceID: 6974}
+    - Class: 114
+      Script: {instanceID: 7148}
+    - Class: 114
+      Script: {instanceID: 7350}
+    - Class: 114
+      Script: {instanceID: 7738}
+    - Class: 114
+      Script: {instanceID: 7740}
+    - Class: 114
+      Script: {instanceID: 7918}
+    - Class: 114
+      Script: {instanceID: 7960}
+    - Class: 114
+      Script: {instanceID: 8178}
+    - Class: 114
+      Script: {instanceID: 8250}
+    - Class: 114
+      Script: {instanceID: 8378}
+    - Class: 114
+      Script: {instanceID: 8560}
+    - Class: 114
+      Script: {instanceID: 8768}
+    - Class: 114
+      Script: {instanceID: 8902}
+    - Class: 114
+      Script: {instanceID: 9090}
+    - Class: 114
+      Script: {instanceID: 9132}
+    - Class: 114
+      Script: {instanceID: 9144}
+    - Class: 114
+      Script: {instanceID: 9298}
+    - Class: 114
+      Script: {instanceID: 9378}
+    - Class: 114
+      Script: {instanceID: 9506}
+    - Class: 114
+      Script: {instanceID: 9770}
+    - Class: 114
+      Script: {instanceID: 9858}
+    - Class: 114
+      Script: {instanceID: 9920}
+    - Class: 114
+      Script: {instanceID: 10108}
+    - Class: 114
+      Script: {instanceID: 10170}
+    - Class: 114
+      Script: {instanceID: 10534}
+    - Class: 114
+      Script: {instanceID: 10636}
+    - Class: 114
+      Script: {instanceID: 10648}
+    - Class: 114
+      Script: {instanceID: 11214}
+    - Class: 114
+      Script: {instanceID: 11264}
+    - Class: 114
+      Script: {instanceID: 11268}
+    - Class: 114
+      Script: {instanceID: 11384}
+    - Class: 114
+      Script: {instanceID: 11488}
+    - Class: 114
+      Script: {instanceID: 11788}
+    - Class: 114
+      Script: {instanceID: 11874}
+    - Class: 114
+      Script: {instanceID: 11996}
+    - Class: 114
+      Script: {instanceID: 12032}
+    - Class: 114
+      Script: {instanceID: 12096}
+    - Class: 114
+      Script: {instanceID: 12372}
+    - Class: 114
+      Script: {instanceID: 12382}
+    - Class: 114
+      Script: {instanceID: 12478}
+    - Class: 114
+      Script: {instanceID: 12504}
+    - Class: 114
+      Script: {instanceID: 12908}
+    - Class: 114
+      Script: {instanceID: 13044}
+    - Class: 114
+      Script: {instanceID: 13300}
+    - Class: 114
+      Script: {instanceID: 13328}
+    - Class: 114
+      Script: {instanceID: 13716}
+    - Class: 114
+      Script: {instanceID: 13764}
+    - Class: 114
+      Script: {instanceID: 13934}
+    - Class: 114
+      Script: {instanceID: 13950}
+    - Class: 114
+      Script: {instanceID: 14038}
+    - Class: 114
+      Script: {instanceID: 14170}
+    - Class: 114
+      Script: {instanceID: 14172}
+    - Class: 114
+      Script: {instanceID: 14478}
+    - Class: 114
+      Script: {instanceID: 14486}
+    - Class: 114
+      Script: {instanceID: 14624}
+    - Class: 114
+      Script: {instanceID: 14904}
+    - Class: 114
+      Script: {instanceID: 14962}
+    - Class: 114
+      Script: {instanceID: 15066}
+    - Class: 114
+      Script: {instanceID: 15178}
+    - Class: 114
+      Script: {instanceID: 15190}
+    - Class: 114
+      Script: {instanceID: 15196}
+    - Class: 114
+      Script: {instanceID: 15238}
+    - Class: 114
+      Script: {instanceID: 15372}
+    - Class: 114
+      Script: {instanceID: 15604}
+    - Class: 114
+      Script: {instanceID: 15890}
+    - Class: 114
+      Script: {instanceID: 16042}
+    - Class: 114
+      Script: {instanceID: 16116}
+    - Class: 114
+      Script: {instanceID: 16242}
+    - Class: 114
+      Script: {instanceID: 16550}
+    - Class: 114
+      Script: {instanceID: 16594}
+    - Class: 114
+      Script: {instanceID: 16626}
+    - Class: 114
+      Script: {instanceID: 16698}
+    - Class: 114
+      Script: {instanceID: 16742}
+    - Class: 114
+      Script: {instanceID: 16764}
+    - Class: 114
+      Script: {instanceID: 16790}
+    - Class: 114
+      Script: {instanceID: 16844}
+    - Class: 114
+      Script: {instanceID: 16938}
+    - Class: 114
+      Script: {instanceID: 17084}
+    - Class: 114
+      Script: {instanceID: 17116}
+    - Class: 114
+      Script: {instanceID: 17252}
+    - Class: 114
+      Script: {instanceID: 17792}
+    - Class: 114
+      Script: {instanceID: 17836}
+    - Class: 114
+      Script: {instanceID: 17960}
+    - Class: 114
+      Script: {instanceID: 18054}
+    - Class: 114
+      Script: {instanceID: 18082}
+    - Class: 114
+      Script: {instanceID: 18220}
+    - Class: 114
+      Script: {instanceID: 18574}
+    - Class: 114
+      Script: {instanceID: 18636}
+    - Class: 114
+      Script: {instanceID: 18732}
+    - Class: 114
+      Script: {instanceID: 18754}
+    - Class: 114
+      Script: {instanceID: 18912}
+    - Class: 114
+      Script: {instanceID: 18944}
+    - Class: 114
+      Script: {instanceID: 19138}
+    - Class: 114
+      Script: {instanceID: 19374}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -2535,7 +3772,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: a8194add539de0b7263a2387a10dad9d
+      Hash: 76d05a49cfedbbf8d4587ea9e657da4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem
@@ -6057,5 +7294,6 @@ ScriptsOnlyBuild:
     className: SampleWebView
   platform: 13
   scenePathNames:
-  - Assets/GPM/WebView/Sample/Sample.unity
+  - Assets/[8] SCENES & GRAPHS/Scenes/Login.unity
+  - Assets/[8] SCENES & GRAPHS/Scenes/MainScene.unity
   playerPath: D:/builds/cesar.apk

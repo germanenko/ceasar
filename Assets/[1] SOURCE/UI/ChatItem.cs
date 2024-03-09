@@ -10,7 +10,7 @@ public class ChatItem : MonoBehaviour
     [SerializeField] private TaskChatBody _chatInfo;
     public TaskChatBody ChatInfo => _chatInfo;
 
-    [SerializeField] private Image _chatIcon;
+    [SerializeField] private RawImage _chatIcon;
 
     [SerializeField] private TextMeshProUGUI _chatName;
     [SerializeField] private TextMeshProUGUI _lastMessage;
@@ -99,7 +99,23 @@ public class ChatItem : MonoBehaviour
             {
                 _lastMessageDate.text = _chatInfo.lastMessage.Date.ToShortTimeString();
             }
-        }   
+        }
+
+        string imageUrl = "";
+
+        foreach (var participant in _chatInfo.participants)
+        {
+            if(participant.identifier != AccountManager.Instance.ProfileData.identifier)
+            {
+                imageUrl = participant.imageUrl;
+            }
+        }
+
+        ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadChatIconTexture((tex) =>
+        {
+            _chatIcon.texture = tex;
+        },
+        imageUrl));
     }
 
 
