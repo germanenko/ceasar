@@ -1860,7 +1860,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0100010101
+        actionEnabled: 0101010101
         actionIsOpen: 0000000101
         actionStartIndex: 0000000002000000090000002000000027000000
         actionHashCodes: 5ac85204ca51e9004e5b9d040cf26a0068fece05
@@ -2811,7 +2811,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -2842,7 +2842,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 964
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
