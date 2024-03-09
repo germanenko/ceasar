@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 
 public class Authentication : MonoBehaviour
 {
@@ -77,19 +78,29 @@ public class Authentication : MonoBehaviour
 
     public void DefineMethod(string character)
     {
-        print(character + " is digit = " + int.TryParse(character, out int y));
-        print(character + " have letter = " + Regex.IsMatch(character, @"\p{L}"));
-        if (!Regex.IsMatch(character, @"\p{L}"))
+        if(character == "")
         {
-            print("is Phone");
-            _methodText.text = "Phone";
-            _methodTextAnimator.Play();
+            _methodTextAnimator.Play(true);
+            return;
         }
-        if(character.Contains('@')) 
+
+        if (!Regex.IsMatch(character, @"[a-zA-ZР-пр-џ@.]"))
         {
-            print("is Email");
+            if (_methodText.text == "Email")
+                _methodTextAnimator.Play();
+            else
+                _methodTextAnimator.PlayToProgress(1f);
+
+            _methodText.text = "Phone";
+        }
+        else 
+        {
+            if (_methodText.text == "Phone")
+                _methodTextAnimator.Play();
+            else
+                _methodTextAnimator.PlayToProgress(1f);
+
             _methodText.text = "Email";
-            _methodTextAnimator.Play();
         }
     }
 
@@ -99,7 +110,7 @@ public class Authentication : MonoBehaviour
     {
         AuthenticationMethod m = AuthenticationMethod.Email;
 
-        if (_signInIdentifierField.Text.Contains("@"))
+        if (Regex.IsMatch(_signInIdentifierField.Text, @"[a-zA-ZР-пр-џ]"))
             m = AuthenticationMethod.Email;
         else
             m = AuthenticationMethod.Phone;
