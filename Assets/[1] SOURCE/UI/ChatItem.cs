@@ -114,6 +114,7 @@ public class ChatItem : MonoBehaviour
         ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadChatIconTexture((tex) =>
         {
             _chatIcon.texture = tex;
+            _chatIcon.color = Color.white;
         },
         imageUrl));
     }
