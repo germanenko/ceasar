@@ -34,7 +34,7 @@ ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main
 	android:launchMode
 		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:148-179
 	android:hardwareAccelerated
-		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:397-432
+		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:397-431
 	android:resizeableActivity
 		ADDED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:362-396
 	android:configChanges

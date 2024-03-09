@@ -5,8 +5,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation(name: 'NativeGallery', ext:'aar')
     implementation(name: 'lunar-console', ext:'aar')
+    implementation(name: 'GpmWebViewPlugin', ext:'aar')
+    implementation(name: 'GpmCommunicatorPlugin', ext:'aar')
     implementation(name: 'NativeKeyboard', ext:'aar')
     implementation(name: 'sqlite-android-3280000', ext:'aar')
+    implementation(name: 'gpm-webview', ext:'aar')
 
 }
 

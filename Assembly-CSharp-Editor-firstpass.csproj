@@ -1204,6 +1204,18 @@
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
     </ProjectReference>
+    <ProjectReference Include="gpm_common.csproj">
+      <Project>{96E0B870-7F73-E1C2-6533-F4B661FF2A19}</Project>
+      <Name>gpm_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_communicator.csproj">
+      <Project>{BF881396-B540-2D91-2AF0-1858D4DA9A5A}</Project>
+      <Name>gpm_communicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_webview.csproj">
+      <Project>{09BE95FA-0EE6-72BE-D35E-C156F509962B}</Project>
+      <Name>gpm_webview</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

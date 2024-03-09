@@ -1,6 +1,14 @@
 com.DefaultCompany.NewCeasar
 anim lunar_console_slide_in_top
 anim lunar_console_slide_out_top
+attr fullscreenBackgroundColor
+attr fullscreenTextColor
+color black_overlay
+color gpm_webview_navigation_bar_backgournd
+color light_blue_600
+color light_blue_900
+color light_blue_A200
+color light_blue_A400
 color lunar_console_color_action_header
 color lunar_console_color_action_text
 color lunar_console_color_base_button_highlighted
@@ -64,6 +72,9 @@ dimen lunar_console_move_resize_min_height
 dimen lunar_console_move_resize_min_width
 dimen lunar_layout_console_entry_margin
 dimen lunar_layout_console_stacktrace_margin
+drawable gpm_webview_browser_back_button
+drawable gpm_webview_browser_close_button
+drawable gpm_webview_browser_forward_button
 drawable lunar_console_actions_empty_warning
 drawable lunar_console_base_button_selector
 drawable lunar_console_icon_button_clear
@@ -90,6 +101,12 @@ drawable lunar_console_shape_switch_track
 drawable lunar_console_shape_switch_track_off
 drawable lunar_console_shape_switch_track_on
 drawable lunar_console_shape_variable_value_text
+id back_button
+id back_button_image
+id close_button
+id close_button_image
+id forward_button
+id forward_button_image
 id lunar_console_action_entry_layout
 id lunar_console_action_entry_name
 id lunar_console_action_view_list_container
@@ -154,7 +171,13 @@ id lunar_console_warning_button
 id lunar_console_warning_button_details
 id lunar_console_warning_button_dismiss
 id lunar_console_warning_text_message
+id navigation_bar
+id step_group
+id title_view
 id unitySurfaceView
+id webview
+layout fragment_web
+layout fragment_web_popup
 layout lunar_console_layout_activity_settings
 layout lunar_console_layout_console_action_entry
 layout lunar_console_layout_console_action_view
@@ -184,7 +207,15 @@ string FreeformWindowSize_maximize
 string FreeformWindowSize_phone
 string FreeformWindowSize_tablet
 string app_name
+string dummy_button
+string dummy_content
 string game_view_content_description
+string gpm_webview_browser_back_button
+string gpm_webview_browser_close_button
+string gpm_webview_browser_forward_button
+string gpm_webview_popup_back_button
+string gpm_webview_popup_browser
+string gpm_webview_popup_close_button
 string lunar_console_edit_variable_dialog_reset_to_default
 string lunar_console_edit_variable_title_default_value
 string lunar_console_header_actions
@@ -212,8 +243,15 @@ string lunar_console_variable_value_error_message_type_float
 string lunar_console_variable_value_error_message_type_integer
 string lunar_console_variable_value_error_title
 style BaseUnityTheme
+style GpmTheme
+style GpmTheme_Dialog
+style GpmTheme_Fullscreen
+style GpmTheme_Translucent
+style GpmTheme_Translucent_Fullscreen
+style ThemeOverlay_Comgpmwebview_FullscreenContainer
 style UnityThemeSelector
 style UnityThemeSelector_Translucent
+style Widget_Theme_Comgpmwebview_ButtonBar_Fullscreen
 style lunar_console_action_entry_style
 style lunar_console_action_header_style
 style lunar_console_base_button_style
@@ -244,3 +282,4 @@ style lunar_console_variable_value_edit_text_style
 style lunar_console_variable_value_style
 style lunar_console_variable_value_style_base
 style lunar_console_variable_volatile_style
+styleable FullscreenAttrs fullscreenBackgroundColor fullscreenTextColor

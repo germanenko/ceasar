@@ -7,8 +7,11 @@ INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\
 MERGED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-93:12
 MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:2:1-7:12
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:2:1-19:12
+MERGED from [:GpmWebViewPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\611ab24e7b3364f8204b22b2de0303aa\GpmWebViewPlugin\AndroidManifest.xml:2:1-12:12
+MERGED from [:GpmCommunicatorPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\f842cd149cc845a8b8bff363915b4999\GpmCommunicatorPlugin\AndroidManifest.xml:2:1-12:12
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:2:1-11:12
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:2:1-15:12
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:2:1-14:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
@@ -74,10 +77,16 @@ MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2
 MERGED from [:NativeGallery:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\841af7527d9ae3eb0d888ddb3c57391d\NativeGallery\AndroidManifest.xml:3:2-43
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:7:5-9:41
 MERGED from [:lunar-console:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\47ca0e988591329bee68a2aae7a6dfba\lunar-console\AndroidManifest.xml:7:5-9:41
+MERGED from [:GpmWebViewPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\611ab24e7b3364f8204b22b2de0303aa\GpmWebViewPlugin\AndroidManifest.xml:7:5-9:41
+MERGED from [:GpmWebViewPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\611ab24e7b3364f8204b22b2de0303aa\GpmWebViewPlugin\AndroidManifest.xml:7:5-9:41
+MERGED from [:GpmCommunicatorPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\f842cd149cc845a8b8bff363915b4999\GpmCommunicatorPlugin\AndroidManifest.xml:7:5-9:41
+MERGED from [:GpmCommunicatorPlugin:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\f842cd149cc845a8b8bff363915b4999\GpmCommunicatorPlugin\AndroidManifest.xml:7:5-9:41
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:7:5-9:41
 MERGED from [:NativeKeyboard:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\0d10b369154aae2b8a03b281f78e165c\NativeKeyboard\AndroidManifest.xml:7:5-9:41
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:7:5-44
 MERGED from [:sqlite-android-3280000:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4faa35969eff9220f4d2581aca78d92f\sqlite-android-3280000\AndroidManifest.xml:7:5-44
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:7:5-9:41
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 INJECTED from D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -101,6 +110,8 @@ ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unity
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:14:9-55
 uses-permission#android.permission.INTERNET
 ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:17:5-67
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:11:5-67
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:17:22-64
 uses-permission#android.permission.VIBRATE
@@ -109,6 +120,8 @@ ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unity
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:18:22-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:19:5-79
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:12:5-79
+MERGED from [:gpm-webview:] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\e19fc3723899931b01f54fe709e433b9\gpm-webview\AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:19:22-76
 uses-permission#android.permission.ACCESS_FINE_LOCATION
@@ -158,7 +171,7 @@ ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unity
 	android:launchMode
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:13-44
 	android:hardwareAccelerated
-		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:45:13-48
+		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:45:13-47
 	android:resizeableActivity
 		ADDED from [:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:47:13-47
 	android:configChanges

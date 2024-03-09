@@ -1799,6 +1799,7 @@
     <None Include="Assets\Samples\Mobile Notifications\2.0.2\Notification Samples\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\GPM\LICENSE.txt" />
     <None Include="Assets\_99 THIRD PARTY\SimpleSQL\Documentation\Changelog.txt" />
     <None Include="Assets\_99 THIRD PARTY\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\_99 THIRD PARTY\UniRx\ReadMe.txt" />
@@ -2710,6 +2711,18 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_common.Player.csproj">
+      <Project>{68CBFCE5-7BE1-70A0-D45B-04B8F1F029DE}</Project>
+      <Name>gpm_common.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_communicator.Player.csproj">
+      <Project>{9CCF2F7A-A609-6DAE-3364-0E07E74913A7}</Project>
+      <Name>gpm_communicator.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_webview.Player.csproj">
+      <Project>{0D5ABBE4-81F0-E17A-A539-05ACE18DFAF9}</Project>
+      <Name>gpm_webview.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

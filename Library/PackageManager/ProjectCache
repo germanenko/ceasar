@@ -5,8 +5,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638448229973116288
-    m_Hash: 2934435387
+      ticks: 638455811019136693
+    m_Hash: 3051664154
   m_LockFileStatus:
     m_FilePath: D:/ceasar/Packages/packages-lock.json
     m_PathExists: 1
@@ -1622,11 +1622,13 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.9.0
     - 1.9.1
+    - 1.9.2
     compatible:
     - 1.7.8
     - 1.8.0
     - 1.9.0
     - 1.9.1
+    - 1.9.2
     verified: 1.7.8
   dependencies:
   - name: com.unity.ugui
@@ -3948,6 +3950,7 @@ m_ResolvedPackages:
     - 1.12.0
     - 1.12.1
     - 1.12.2
+    - 1.12.4
     compatible:
     - 1.4.2
     - 1.4.3
@@ -3963,6 +3966,7 @@ m_ResolvedPackages:
     - 1.12.0
     - 1.12.1
     - 1.12.2
+    - 1.12.4
     verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest

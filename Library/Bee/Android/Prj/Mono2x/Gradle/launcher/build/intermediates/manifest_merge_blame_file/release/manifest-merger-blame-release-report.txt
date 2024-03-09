@@ -111,8 +111,8 @@
 59-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:43:13-66
 60            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
 60-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:44:13-194
-61            android:hardwareAccelerated="false"
-61-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:45:13-48
+61            android:hardwareAccelerated="true"
+61-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:45:13-47
 62            android:launchMode="singleTask"
 62-->[:unityLibrary] D:\ceasar\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:13-44
 63            android:resizeableActivity="false"
