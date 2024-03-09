@@ -21,7 +21,7 @@ public class ChatManager : MonoBehaviour
 {
     [SerializeField] private TaskChatBody _chatInfo;
 
-    [SerializeField] private WebSocket WS = new WebSocket("ws://itsmydomain.ru/chat");
+    [SerializeField] private WebSocket WS = new WebSocket("wss://itsmydomain.ru/chat");
 
     [SerializeField] private AdvancedInputField _messageField;
 
@@ -106,7 +106,14 @@ public class ChatManager : MonoBehaviour
             Type = ChatMessageType.Text,
             Content = _messageField.Text,
         };
-        var str = SerializeObject(messageBody);
+
+        var message = new SentMessage
+        {
+            MessageBody = messageBody,
+            LastMessageReadId = null
+        };
+
+        var str = SerializeObject(message);
         //WS.Send(str);
         if(WS.ReadyState == WebSocketState.Open)
         {
@@ -146,6 +153,8 @@ public class ChatManager : MonoBehaviour
                 headers["chatId"] = chatId;
 
                 WS.CustomHeaders = headers;
+
+                WS.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
 
                 WS.ConnectAsync();
             }

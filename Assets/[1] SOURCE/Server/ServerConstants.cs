@@ -308,7 +308,6 @@ public class ServerConstants : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var chatsBodyString = await response.Content.ReadAsStringAsync();
-            print(chatsBodyString);
             chatsBody = JsonConvert.DeserializeObject<List<TaskChatBody>>(chatsBodyString);
 
             return chatsBody;
@@ -600,6 +599,14 @@ public class CreateMessageBody
         return $"Content: {Content} sending";
     }
 }
+
+
+
+public class SentMessage
+{
+    public CreateMessageBody? MessageBody { get; set; }
+    public Guid? LastMessageReadId { get; set; }
+};
 
 
 

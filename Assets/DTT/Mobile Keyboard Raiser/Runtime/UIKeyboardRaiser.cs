@@ -194,7 +194,6 @@ namespace DTT.KeyboardRaiser
 
             if (!KeyboardStateManager.openingField.Contains(this) && !_canRise)
             {
-                print("second");
                 return;
             }
 

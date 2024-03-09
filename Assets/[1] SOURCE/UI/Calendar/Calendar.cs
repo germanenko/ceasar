@@ -264,7 +264,6 @@ public class Calendar : MonoBehaviour
         }
         else
         {
-            print("correct");
             _endDateText.color = _endDateColor;
             _correctPeriod = true;
         }

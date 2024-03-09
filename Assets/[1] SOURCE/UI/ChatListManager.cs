@@ -24,8 +24,8 @@ public class ChatListManager : MonoBehaviour
 
     [SerializeField] private ChatItem _chatButtonPrefab;
 
-    public WebSocket WS = new WebSocket("ws://itsmydomain.ru/chat");
-    public WebSocket MainWS = new WebSocket("ws://itsmydomain.ru/main");
+    public WebSocket WS = new WebSocket("wss://itsmydomain.ru/chat");
+    public WebSocket MainWS = new WebSocket("wss://itsmydomain.ru/main");
 
     [SerializeField] private ChatManager _chatManager;
 
@@ -176,6 +176,8 @@ public class ChatListManager : MonoBehaviour
 
         MainHeaders["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
 
+        MainWS.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+
         MainWS.CustomHeaders = MainHeaders;
 
         MainWS.ConnectAsync();
@@ -205,10 +207,7 @@ public class ChatListManager : MonoBehaviour
        
         WS.CustomHeaders = Headers;
 
-        foreach (var item in WS.CustomHeaders)
-        {
-            print(item.Value);
-        }
+        WS.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
 
         WS.ConnectAsync();
        
@@ -218,8 +217,7 @@ public class ChatListManager : MonoBehaviour
 
     private void WS_OnClose(object sender, CloseEventArgs e)
     {
-        print("closed");
-        print(e.Reason);
+        print(e.Reason + " " + e.Code);
     }
 
     public async void FindUsersByIdentifierPattern(string pattern)
