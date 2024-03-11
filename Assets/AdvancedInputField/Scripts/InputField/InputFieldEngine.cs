@@ -969,7 +969,7 @@ namespace AdvancedInputFieldPlugin
 				UpdateCaretPosition();
 				activeTextRenderer.UpdateImmediately();
 			}
-			else if(InputField.gameObject.activeInHierarchy)
+			else if(InputField && InputField.gameObject.activeInHierarchy)
 			{
 				InputField.StartCoroutine(DelayedUpdateActiveTextRenderer());
 			}

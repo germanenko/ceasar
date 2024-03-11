@@ -520,9 +520,9 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Common\Events\QuaternionEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Reactor\Animations\SpriteAnimation.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Reactor\Extensions\RectTransformExtensions.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Reactor\Reflection\ReflectedVector2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Colors\ColorEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Common\Extensions\IntExtensions.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Reactor\Reflection\ReflectedVector2.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Common\Enums\Timescale.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\Reactor\Easings\Eases\BounceEaseInOutEasing.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Runtime\UIManager\SignalData\InputSignalData.cs" />

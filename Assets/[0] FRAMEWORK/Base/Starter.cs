@@ -27,7 +27,7 @@ public class Starter : MonoBehaviour
 
         if(AccountManager.Instance == null)
         {
-            SceneManager.LoadSceneAsync(0);
+            SceneManager.LoadScene(0);
         }
 
         foreach (var canvas in Canvases)

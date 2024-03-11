@@ -828,6 +828,10 @@
       <Project>{B3C83BBD-3967-B81C-FB24-35F69F1B6C20}</Project>
       <Name>LunarConsole.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="gpm_communicator.Player.csproj">
+      <Project>{9CCF2F7A-A609-6DAE-3364-0E07E74913A7}</Project>
+      <Name>gpm_communicator.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="NativeGallery.Runtime.Player.csproj">
       <Project>{45F989E4-E839-CDDE-48B2-0AB5F1A6D69A}</Project>
       <Name>NativeGallery.Runtime.Player</Name>
@@ -843,6 +847,10 @@
     <ProjectReference Include="Unity.Notifications.Android.Player.csproj">
       <Project>{98CE57F1-B483-46C8-3AC5-41E6878C32E7}</Project>
       <Name>Unity.Notifications.Android.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_webview.Player.csproj">
+      <Project>{0D5ABBE4-81F0-E17A-A539-05ACE18DFAF9}</Project>
+      <Name>gpm_webview.Player</Name>
     </ProjectReference>
     <ProjectReference Include="DTT.RuntimeUtilities.Demo.Player.csproj">
       <Project>{3C763A36-785D-57DA-B7C5-BBAD2683FF08}</Project>
@@ -904,6 +912,10 @@
       <Project>{4CFCDD61-03E7-B466-FCA9-956ECEC2C04C}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="gpm_common.Player.csproj">
+      <Project>{68CBFCE5-7BE1-70A0-D45B-04B8F1F029DE}</Project>
+      <Name>gpm_common.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UniRx.Player.csproj">
       <Project>{67ABC4C4-8CBB-3AEE-2F6B-1760E2F40011}</Project>
       <Name>UniRx.Player</Name>
@@ -931,18 +943,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_common.Player.csproj">
-      <Project>{68CBFCE5-7BE1-70A0-D45B-04B8F1F029DE}</Project>
-      <Name>gpm_common.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_communicator.Player.csproj">
-      <Project>{9CCF2F7A-A609-6DAE-3364-0E07E74913A7}</Project>
-      <Name>gpm_communicator.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_webview.Player.csproj">
-      <Project>{0D5ABBE4-81F0-E17A-A539-05ACE18DFAF9}</Project>
-      <Name>gpm_webview.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

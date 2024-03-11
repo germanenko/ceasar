@@ -33,7 +33,11 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(renderer == null)
 				{
-					renderer = GetComponent<TextMeshProUGUI>();
+					try
+					{
+                        renderer = GetComponent<TextMeshProUGUI>();
+                    }
+					catch { }
 				}
 
 				return renderer;
@@ -79,7 +83,7 @@ namespace AdvancedInputFieldPlugin
 			}
 		}
 
-		public override bool Visible { get { return Renderer.enabled; } }
+		public override bool Visible { get { return Renderer ? Renderer.enabled : false; } }
 
 		public override bool Multiline
 		{
@@ -208,12 +212,14 @@ namespace AdvancedInputFieldPlugin
 
 		public override void Show()
 		{
-			Renderer.enabled = true;
+			if(Renderer)
+				Renderer.enabled = true;
 		}
 
 		public override void Hide()
 		{
-			Renderer.enabled = false;
+            if (Renderer)
+                Renderer.enabled = false;
 		}
 
 		public override bool UpdateImmediately()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -6,17 +7,20 @@ using Object = UnityEngine.Object;
 
 namespace Germanenko.Framework
 {
-
+    [Serializable]
     public class Pool
     {
 
-        private Transform parentPool;
+        public Transform parentPool;
         private Dictionary<int, Stack<GameObject>> cachedObjects = new Dictionary<int, Stack<GameObject>>();
         private Dictionary<int, int> CachedIds = new Dictionary<int, int>();
 
 
         public Pool PopulateWith(GameObject prefab, int amount, int amountPerTick, int tickSize = 1)
         {
+            cachedObjects.Clear();
+            CachedIds.Clear();
+
             int key = prefab.GetInstanceID();
             var stack = new Stack<GameObject>(amount);
             cachedObjects.Add(key, stack);

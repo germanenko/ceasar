@@ -537,7 +537,11 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(textContentTransform == null)
 				{
-					textContentTransform = transform.Find("TextArea/Content").GetComponent<RectTransform>();
+					try
+					{
+						textContentTransform = transform.Find("TextArea/Content").GetComponent<RectTransform>();
+					}
+					catch { }
 				}
 				return textContentTransform;
 			}
@@ -550,7 +554,11 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(textRenderer == null)
 				{
-					textRenderer = transform.Find("TextArea/Content/Text").GetComponent<TextRenderer>();
+					try
+					{
+						textRenderer = transform.Find("TextArea/Content/Text").GetComponent<TextRenderer>();
+					}
+					catch { }
 				}
 				return textRenderer;
 			}
@@ -563,7 +571,11 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(processedTextRenderer == null)
 				{
-					processedTextRenderer = transform.Find("TextArea/Content/Processed").GetComponent<TextRenderer>();
+					try
+					{
+						processedTextRenderer = transform.Find("TextArea/Content/Processed").GetComponent<TextRenderer>();
+					}
+					catch { }
 				}
 				return processedTextRenderer;
 			}
@@ -576,7 +588,11 @@ namespace AdvancedInputFieldPlugin
 			{
 				if(placeholderTextRenderer == null)
 				{
-					placeholderTextRenderer = transform.Find("TextArea/Content/Placeholder").GetComponent<TextRenderer>();
+					try
+					{
+						placeholderTextRenderer = transform.Find("TextArea/Content/Placeholder").GetComponent<TextRenderer>();
+					}
+					catch { }
 				}
 				return placeholderTextRenderer;
 			}

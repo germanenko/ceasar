@@ -14,10 +14,8 @@ namespace Germanenko.Framework
         private Dictionary<int, Pool> pools = new Dictionary<int, Pool>();
 
 
-
         public Pool AddPool(PoolType id, bool reparent = true)
         {
-
             if (pools.TryGetValue((int)id, out Pool pool) == false)
             {
 

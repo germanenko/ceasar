@@ -312,8 +312,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\ScriptableObjects\SpriteSheets\EditorSpriteSheetInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Nody\Nodes\StartNodeEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Nody\Nodes\ExitNodeView.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Automation\Generators\EditorLayoutsGenerator.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Common\Layouts\PrefabLinkDatabaseWindowLayout.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Automation\Generators\EditorLayoutsGenerator.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\UIMenu\UIPrefabType.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Listeners\IntSignalListenerEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\ScriptableObjects\Styles\EditorDataStyleDatabase.cs" />
@@ -434,8 +434,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\WindowLayouts\EditorStylesWindowLayout.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Reflection\Drawers\ReflectedVector3Drawer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Signals\Layouts\StreamsDatabaseWindowLayout.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\SceneManagement\Nodes\LoadSceneNodeEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Interfaces\IUIManagerDatabaseWindowLayout.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\SceneManagement\Nodes\LoadSceneNodeEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\ScriptableObjects\MicroAnimations\EditorMicroAnimationInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Components\UISliderEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Components\MetaReactionControls.cs" />
@@ -479,8 +479,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Nodes\PortData\GoBackInputPortDataView.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Editors\Targets\SpriteRendererSpriteTargetEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Editors\EditorDataSpriteSheetGroupEditor.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Editors\RuntimeTickerEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Triggers\PointerUpTriggerEditor.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Editors\RuntimeTickerEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Animators\UISelectableSpriteAnimatorEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Nodes\PortalNodeView.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Common\Automation\Generators\AssemblyDefinitionsGenerator.cs" />

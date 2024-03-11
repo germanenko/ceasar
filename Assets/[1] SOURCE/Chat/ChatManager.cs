@@ -47,7 +47,7 @@ public class ChatManager : MonoBehaviour
 
         _chatNameText.text = _chatInfo.name;
 
-        _messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
+        //_messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
 
         _proposal.SetActive(_messagesFromDB.Count == 0);
 

@@ -68,11 +68,11 @@ public class ChatListManager : MonoBehaviour
                         chatItem.SetLastMessageBold(true);
 
                         var ms = await ServerConstants.Instance.GetChatMessagesAsync(chatItem.ChatInfo.id, 50);
-                        Toolbox.Get<Tables>().ClearMessagesFromChat(chatItem.ChatInfo.id);
-                        foreach (var m in ms)
-                        {
-                            Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chatItem.ChatInfo.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-                        }
+                        //Toolbox.Get<Tables>().ClearMessagesFromChat(chatItem.ChatInfo.id);
+                        //foreach (var m in ms)
+                        //{
+                        //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chatItem.ChatInfo.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+                        //}
                     });
                 }
             }
@@ -94,50 +94,50 @@ public class ChatListManager : MonoBehaviour
 
     public async void GetChats()
     {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            print("нет интернета");
+        //if (Application.internetReachability == NetworkReachability.NotReachable) // вернуть при доработке БД
+        //{
+        //    print("нет интернета");
 
-            foreach (var chat in Toolbox.Get<Tables>().GetAllChats())
-            {
-                Chats.Add(new TaskChatBody(chat.Id, chat.Name, chat.Image, 0, new ChatUserInfo[2]));
-            }
+        //    foreach (var chat in Toolbox.Get<Tables>().GetAllChats())
+        //    {
+        //        Chats.Add(new TaskChatBody(chat.Id, chat.Name, chat.Image, 0, new ChatUserInfo[2]));
+        //    }
 
-            GenerateChatList();
-            return;
-        }
+        //    GenerateChatList();
+        //    return;
+        //}
 
         Chats = await ServerConstants.Instance.GetChatsAsync();
 
         foreach (var chat in Chats)
         {
             var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-            Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
-            foreach (var m in ms)
-            {
-                Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-            }
+            //Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
+            //foreach (var m in ms)
+            //{
+            //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+            //}
         }
 
         try
         {
             foreach (var chat in Chats)
             {
-                if (!Toolbox.Get<Tables>().HaveChat(chat.id))
-                {
-                    print("Полученного чата нет - добавляю");
-                    Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
-                }
+                //if (!Toolbox.Get<Tables>().HaveChat(chat.id))
+                //{
+                //    print("Полученного чата нет - добавляю");
+                //    Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
+                //}
 
                 if(chat.lastMessage != null)
                 {
                     var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
                 }
 
-                if(chat.countOfUnreadMessages > 0)
-                {
-                    Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
-                }
+                //if(chat.countOfUnreadMessages > 0)
+                //{
+                //    Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
+                //}
             }
         }
         catch (Exception ex) { print(ex); }
@@ -158,7 +158,7 @@ public class ChatListManager : MonoBehaviour
             ChatItem ci = c.GetComponent<ChatItem>();
 
             ci.Init(chat, this);
-            ci.SetUnreadMessages(Toolbox.Get<Tables>().GetUnreadMessagesCount(chat.id));
+            //ci.SetUnreadMessages(Toolbox.Get<Tables>().GetUnreadMessagesCount(chat.id));
 
             _chatItems.Add(ci);
         }

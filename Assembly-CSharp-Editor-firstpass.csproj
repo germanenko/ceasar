@@ -1008,6 +1008,10 @@
       <Project>{67753362-043A-0907-32F2-05D94054C725}</Project>
       <Name>DTT.KeyboardRaiser.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="gpm_communicator.csproj">
+      <Project>{BF881396-B540-2D91-2AF0-1858D4DA9A5A}</Project>
+      <Name>gpm_communicator</Name>
+    </ProjectReference>
     <ProjectReference Include="NativeGallery.Runtime.csproj">
       <Project>{C9E850B2-C504-F67D-DE82-13EF70FE04DA}</Project>
       <Name>NativeGallery.Runtime</Name>
@@ -1023,6 +1027,10 @@
     <ProjectReference Include="Unity.Notifications.Android.csproj">
       <Project>{6F23095C-AE54-253F-77E0-0916652BEEA2}</Project>
       <Name>Unity.Notifications.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="gpm_webview.csproj">
+      <Project>{09BE95FA-0EE6-72BE-D35E-C156F509962B}</Project>
+      <Name>gpm_webview</Name>
     </ProjectReference>
     <ProjectReference Include="DTT.RuntimeUtilities.Demo.csproj">
       <Project>{C6E23256-0FAF-20AC-B18C-4B0CD4B7FC6D}</Project>
@@ -1116,6 +1124,10 @@
       <Project>{E5E9F30E-7C70-8E51-B11D-CACFCA91D3E9}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="gpm_common.csproj">
+      <Project>{96E0B870-7F73-E1C2-6533-F4B661FF2A19}</Project>
+      <Name>gpm_common</Name>
+    </ProjectReference>
     <ProjectReference Include="UniRx.csproj">
       <Project>{E2EFD50E-13A4-455D-89F7-584E4C4078CB}</Project>
       <Name>UniRx</Name>
@@ -1203,18 +1215,6 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_common.csproj">
-      <Project>{96E0B870-7F73-E1C2-6533-F4B661FF2A19}</Project>
-      <Name>gpm_common</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_communicator.csproj">
-      <Project>{BF881396-B540-2D91-2AF0-1858D4DA9A5A}</Project>
-      <Name>gpm_communicator</Name>
-    </ProjectReference>
-    <ProjectReference Include="gpm_webview.csproj">
-      <Project>{09BE95FA-0EE6-72BE-D35E-C156F509962B}</Project>
-      <Name>gpm_webview</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
