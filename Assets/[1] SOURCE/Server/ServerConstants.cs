@@ -36,6 +36,7 @@ public class ServerConstants : MonoBehaviour
     public string UploadUserIcon { get => "upload/profileIcon"; }
 
     public string GetUsersByIdentifierPattern { get => "users/identifier"; }
+    public string GetOtherUserProfile { get => "user"; }
 
     public string GetChats { get => "chats"; }
     public string GetChatMessages { get => "chat/messages"; }
@@ -286,6 +287,31 @@ public class ServerConstants : MonoBehaviour
         {
             var tokenBodyString = await response.Content.ReadAsStringAsync();
             print(tokenBodyString);
+            return null;
+        }
+    }
+
+
+
+    public async Task<ProfileData> GetOtherUserProfileAsync(string identifier)
+    {
+        using var client = new HttpClient()
+        {
+            BaseAddress = new Uri(ServerAddress),
+        };
+        client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "69420");
+
+        var response = await client.GetAsync($"{GetOtherUserProfile}?identifier={identifier}");
+        ProfileData? profileBody = null;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var profileBodyString = await response.Content.ReadAsStringAsync();
+            profileBody = JsonUtility.FromJson<ProfileData>(profileBodyString);
+
+            return profileBody;
+        }
+        else
+        {
             return null;
         }
     }

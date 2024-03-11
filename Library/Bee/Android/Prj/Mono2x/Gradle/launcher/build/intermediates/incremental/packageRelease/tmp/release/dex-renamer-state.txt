@@ -1,4 +1,4 @@
-#Mon Mar 11 20:35:41 YEKT 2024
+#Mon Mar 11 23:46:48 YEKT 2024
 base.0=D\:\\ceasar\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -74,9 +74,16 @@ public class ChatItem : MonoBehaviour
 
 
 
-    public void SetInfo()
+    public async void SetInfo()
     {
-        _chatName.text = _chatInfo.name;
+        foreach (var chat in _chatInfo.participants) 
+        { 
+            if(AccountManager.Instance.ProfileData.identifier != chat.identifier)
+            {
+                var user = await ServerConstants.Instance.GetOtherUserProfileAsync(chat.identifier);
+                _chatName.text = user.nickname;
+            }
+        }
 
         if(_chatInfo.lastMessage != null)
         {
