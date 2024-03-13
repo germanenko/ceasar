@@ -20,15 +20,16 @@ public class ChatItem : MonoBehaviour
     [SerializeField] private GameObject _unreadMessages;
 
     [SerializeField] private ChatListManager _chatList;
+    [SerializeField] private ChatManager _chatManager;
 
     [SerializeField] private Color _defaultLastMessageColor;
 
-    public void Init(TaskChatBody chat, ChatListManager chatList)
+    public void Init(TaskChatBody chat, ChatManager chatManager)
     {
         _defaultLastMessageColor = _lastMessage.color;
 
         _chatInfo = chat;
-        _chatList = chatList;
+        _chatManager = chatManager;
 
         SetInfo();
     }
@@ -74,14 +75,14 @@ public class ChatItem : MonoBehaviour
 
 
 
-    public async void SetInfo()
+    public void SetInfo()
     {
-        foreach (var chat in _chatInfo.participants) 
+        foreach (var participant in _chatInfo.participants) 
         { 
-            if(AccountManager.Instance.ProfileData.identifier != chat.identifier)
+            if(AccountManager.Instance.ProfileData.identifier != participant.identifier)
             {
-                var user = await ServerConstants.Instance.GetOtherUserProfileAsync(chat.identifier);
-                _chatName.text = user.nickname;
+                _chatName.text = participant.nickname;
+                _chatInfo.name = participant.nickname;
             }
         }
 
@@ -130,7 +131,7 @@ public class ChatItem : MonoBehaviour
 
     public void OpenChat()
     {
-        _chatList.OpenChat(_chatInfo);
+        _chatManager.OpenChat(_chatInfo, _chatInfo.id == "");
         SetLastMessageBold(false);
     }
 

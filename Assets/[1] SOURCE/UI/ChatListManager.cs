@@ -16,7 +16,6 @@ public class ChatListManager : MonoBehaviour
 {
 
     public List<TaskChatBody> Chats;
-    public TaskChatBody OpeningChat;
 
     [SerializeField] private List<ChatItem> _chatItems;
 
@@ -24,7 +23,6 @@ public class ChatListManager : MonoBehaviour
 
     [SerializeField] private ChatItem _chatButtonPrefab;
 
-    public WebSocket WS = new WebSocket("wss://itsmydomain.ru/chat");
     public WebSocket MainWS = new WebSocket("wss://itsmydomain.ru/main");
 
     [SerializeField] private ChatManager _chatManager;
@@ -109,38 +107,38 @@ public class ChatListManager : MonoBehaviour
 
         Chats = await ServerConstants.Instance.GetChatsAsync();
 
-        foreach (var chat in Chats)
-        {
-            var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-            //Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
-            //foreach (var m in ms)
-            //{
-            //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
-            //}
-        }
+        //foreach (var chat in Chats)
+        //{
+        //    //var ms = await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+        //    //Toolbox.Get<Tables>().ClearMessagesFromChat(chat.id);
+        //    //foreach (var m in ms)
+        //    //{
+        //    //    Toolbox.Get<Tables>().SaveMessage(m.Id.ToString(), chat.id, m.Content, m.SenderId.ToString(), m.Date.ToString(), m.Type.ToString());
+        //    //}
+        //}
 
-        try
-        {
-            foreach (var chat in Chats)
-            {
-                //if (!Toolbox.Get<Tables>().HaveChat(chat.id))
-                //{
-                //    print("Полученного чата нет - добавляю");
-                //    Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
-                //}
+        //try
+        //{
+        //    foreach (var chat in Chats)
+        //    {
+        //        //if (!Toolbox.Get<Tables>().HaveChat(chat.id))
+        //        //{
+        //        //    print("Полученного чата нет - добавляю");
+        //        //    Toolbox.Get<Tables>().SaveChat(chat.id, chat.name, "Personal", chat.countOfUnreadMessages, chat.imageUrl);
+        //        //}
 
-                if(chat.lastMessage != null)
-                {
-                    var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
-                }
+        //        //if(chat.lastMessage != null)
+        //        //{
+        //        //    var ms =  await ServerConstants.Instance.GetChatMessagesAsync(chat.id, 50);
+        //        //}
 
-                //if(chat.countOfUnreadMessages > 0)
-                //{
-                //    Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
-                //}
-            }
-        }
-        catch (Exception ex) { print(ex); }
+        //        //if(chat.countOfUnreadMessages > 0)
+        //        //{
+        //        //    Toolbox.Get<Tables>().UpdateUnreadMessagesCount(chat.id, chat.countOfUnreadMessages);
+        //        //}
+        //    }
+        //}
+        //catch (Exception ex) { print(ex); }
 
 
         GenerateChatList();
@@ -157,7 +155,7 @@ public class ChatListManager : MonoBehaviour
 
             ChatItem ci = c.GetComponent<ChatItem>();
 
-            ci.Init(chat, this);
+            ci.Init(chat, _chatManager);
             //ci.SetUnreadMessages(Toolbox.Get<Tables>().GetUnreadMessagesCount(chat.id));
 
             _chatItems.Add(ci);
@@ -176,38 +174,14 @@ public class ChatListManager : MonoBehaviour
         MainWS.OnClose += MainWS_OnClose;
     }
 
+
+
     private void MainWS_OnClose(object sender, CloseEventArgs e)
     {
         print($"main {e.Reason}");
     }
 
-    public void OpenChat(TaskChatBody chat)
-    {
-        if (chat.id == "")
-        {
-            _chatManager.OpenChat(chat);
-            return;
-        }
-       
-        Headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
-        Headers["chatId"] = chat.id;
-       
-        OpeningChat = chat;
-       
-        WS.CustomHeaders = Headers;
 
-        WS.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
-
-        WS.ConnectAsync();
-       
-        WS.OnOpen += WS_OnOpen;
-        WS.OnClose += WS_OnClose;
-    }
-
-    private void WS_OnClose(object sender, CloseEventArgs e)
-    {
-        print(e.Reason + " " + e.Code);
-    }
 
     public async void FindUsersByIdentifierPattern(string pattern)
     {
@@ -228,29 +202,13 @@ public class ChatListManager : MonoBehaviour
 
             ChatItem ci = c.GetComponent<ChatItem>();
 
-            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2] {new ChatUserInfo("", AccountManager.Instance.ProfileData.identifier, AccountManager.Instance.ProfileData.urlIcon, AccountManager.Instance.ProfileData.userTag, AccountManager.Instance.ProfileData.identifierType), new ChatUserInfo("", user.identifier, user.urlIcon, user.userTag, user.identifierType) });
+            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2] {new ChatUserInfo("", AccountManager.Instance.ProfileData.nickname, AccountManager.Instance.ProfileData.identifier, AccountManager.Instance.ProfileData.urlIcon, AccountManager.Instance.ProfileData.userTag, AccountManager.Instance.ProfileData.identifierType), new ChatUserInfo("", user.nickname, user.identifier, user.urlIcon, user.userTag, user.identifierType) });
 
-            ci.Init(chat, this);
+            ci.Init(chat, _chatManager);
             ci.SetUnreadMessages(0);
 
             _chatItems.Add(ci);
         }
-    }
-
-
-
-    private void WS_OnMessage(object sender, MessageEventArgs e)
-    {
-        print(e.Data);
-    }
-
-
-
-    private void WS_OnOpen(object sender, EventArgs e)
-    {
-        print("open");
-        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatManager.OpenChat(OpeningChat, WS));
-        WS.OnOpen -= WS_OnOpen;
     }
 
 

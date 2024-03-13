@@ -332,6 +332,7 @@ public class ServerConstants : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK)
         {
             var chatsBodyString = await response.Content.ReadAsStringAsync();
+            print(chatsBodyString);
             chatsBody = JsonConvert.DeserializeObject<List<TaskChatBody>>(chatsBodyString);
 
             return chatsBody;
@@ -582,14 +583,16 @@ public class TaskChatBody
 public class ChatUserInfo
 {
     public string id;
+    public string nickname;
     public string identifier;
     public string imageUrl;
     public string userTag;
     public AuthenticationMethod identifierType;
 
-    public ChatUserInfo(string id, string identifier, string imageUrl, string userTag, AuthenticationMethod identifierType)
+    public ChatUserInfo(string id, string nickname, string identifier, string imageUrl, string userTag, AuthenticationMethod identifierType)
     {
         this.id = id;
+        this.nickname = nickname;
         this.identifier = identifier;
         this.imageUrl = imageUrl;
         this.userTag = userTag;

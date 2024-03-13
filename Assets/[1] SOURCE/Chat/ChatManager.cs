@@ -37,43 +37,62 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private GameObject _proposal;
 
-    public void OpenChat(TaskChatBody chatInfo, WebSocket ws)
+    public void OpenChat(TaskChatBody chatInfo, bool emptyChat)
     {
         _chatInfo = chatInfo;
 
-        WS = ws;
+        if(!emptyChat)
+        {
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers["Authorization"] = AccountManager.Instance.TokenResponse.accessToken;
+            headers["chatId"] = chatInfo.id;
 
-        _view.Show();
+            WS.CustomHeaders = headers;
 
-        _chatNameText.text = _chatInfo.name;
+            WS.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
 
-        //_messagesFromDB = Toolbox.Get<Tables>().GetMessages(_chatInfo.id, 30);
+            WS.ConnectAsync();
 
-        _proposal.SetActive(_messagesFromDB.Count == 0);
+            WS.OnOpen += WS_OnOpen;
+            WS.OnError += WS_OnError;
+            WS.OnMessage += WS_OnMessage;
+        }
+        else
+        {
+            _view.Show();
 
-        GenerateMessageList();
+            _chatNameText.text = _chatInfo.name;
 
-        WS.OnMessage += WS_OnMessage;
+            GenerateMessageList();
+        }
     }
 
 
-    public void OpenChat(TaskChatBody chatInfo)
+
+    private void WS_OnError(object sender, WebSocketSharp.ErrorEventArgs e)
     {
-        _chatInfo = chatInfo;
+        print(e.Message);
+        print(e.Exception);
+    }
 
-        _view.Show();
 
-        _chatNameText.text = _chatInfo.name;
 
-        GenerateMessageList();
+    private void WS_OnOpen(object sender, EventArgs e)
+    {
+        UnityMainThreadDispatcher.Instance().Enqueue(() =>
+        {
+            _view.Show();
+
+            _chatNameText.text = _chatInfo.name;
+
+            GenerateMessageList();
+        });        
     }
 
 
 
     public void CloseChat()
     { 
-        print("close");
-
         _view.Hide();
 
         WS.Close();

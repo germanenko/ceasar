@@ -98,6 +98,20 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
+    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
+    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -2346,7 +2360,7 @@ ScriptsOnlyBuild:
     className: MultilineController
   - hash:
       serializedVersion: 2
-      Hash: ecc664a87ec12952eb33c0e5792d0bf6
+      Hash: 75c4a6ae74c73a3bd6439da675936a41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatListManager
@@ -3102,7 +3116,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: d61eac1e7f0cf27cec233332fddb006d
+      Hash: b9ab197e49aa25c97b6ff2720c28eea3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -3792,7 +3806,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: 76d05a49cfedbbf8d4587ea9e657da4f
+      Hash: a6c610d5fc0cbca095b45a0eeee35575
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem
