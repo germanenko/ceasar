@@ -90,23 +90,7 @@ public class ChatItem : MonoBehaviour
         {
             SetLastMessageBold(true);
 
-            if (_chatInfo.lastMessage.Content.Length <= 24)
-            {
-                _lastMessage.text = _chatInfo.lastMessage.Content;
-            }
-            else
-            {
-                _lastMessage.text = _chatInfo.lastMessage.Content.Substring(0, 20) + "...";
-            }
-
-            if (_chatInfo.lastMessage.Date.Date != DateTime.Now.Date)
-            {
-                _lastMessageDate.text = _chatInfo.lastMessage.Date.ToString("dd.MM.yy");
-            }
-            else
-            {
-                _lastMessageDate.text = $"{_chatInfo.lastMessage.Date.ToLocalTime().Hour}:{_chatInfo.lastMessage.Date.ToLocalTime().Minute}";
-            }
+            UpdateLastMessage(_chatInfo.lastMessage.Content, _chatInfo.lastMessage.Date);
         }
 
         string imageUrl = "";

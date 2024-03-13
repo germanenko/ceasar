@@ -608,6 +608,7 @@ MonoBehaviour:
   _unreadMessagesText: {fileID: 1344442645838620389}
   _unreadMessages: {fileID: 7224769671903270827}
   _chatList: {fileID: 0}
+  _chatManager: {fileID: 0}
   _defaultLastMessageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3715370837987587500
 MonoBehaviour:

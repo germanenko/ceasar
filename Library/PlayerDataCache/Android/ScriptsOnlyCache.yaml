@@ -98,20 +98,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Colors.EditorDataSelectableColorPalette
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Fonts.EditorDataFontFamily
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Layouts.EditorDataLayoutGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetGroup
-    - Doozy.Editor.EditorUI.ScriptableObjects.SpriteSheets.EditorDataSpriteSheetTextures
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleDatabase
-    - Doozy.Editor.EditorUI.ScriptableObjects.Styles.EditorDataStyleGroup
-    - Doozy.Editor.UIManager.ScriptableObjects.UIViewIdDatabase
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -2360,7 +2347,7 @@ ScriptsOnlyBuild:
     className: MultilineController
   - hash:
       serializedVersion: 2
-      Hash: 75c4a6ae74c73a3bd6439da675936a41
+      Hash: 42b8c818b7fff1263effacfc55842dd0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatListManager
@@ -3806,7 +3793,7 @@ ScriptsOnlyBuild:
     className: CylinderText
   - hash:
       serializedVersion: 2
-      Hash: a6c610d5fc0cbca095b45a0eeee35575
+      Hash: a640e0af53526cba0938fdb3a07c6f52
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatItem

@@ -32,12 +32,6 @@ public class ChatListManager : MonoBehaviour
         { "Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIwYWU2NDM0My1jY2MzLTQzNTQtYmU2Ni03YmUyODk3ZGI3NWEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb21tb24iLCJleHAiOjE3MDc3MTYyMTh9.6li5bUA62z2aJ3OAu8mL_CqehMPjnw4oDG5k2hzXLuA" }
     };
 
-    Dictionary<string, string> Headers = new Dictionary<string, string>
-    {
-        { "Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIwYWU2NDM0My1jY2MzLTQzNTQtYmU2Ni03YmUyODk3ZGI3NWEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb21tb24iLCJleHAiOjE3MDc3MTYyMTh9.6li5bUA62z2aJ3OAu8mL_CqehMPjnw4oDG5k2hzXLuA" },
-        { "chatId", "653BCFFA-6D86-4370-BF4B-7C02FD90B54E" }
-    };
-
 
 
     private void Start()
@@ -171,14 +165,6 @@ public class ChatListManager : MonoBehaviour
 
         MainWS.OnOpen += MainWS_OnOpen;
         MainWS.OnMessage += MainWS_OnMessage;
-        MainWS.OnClose += MainWS_OnClose;
-    }
-
-
-
-    private void MainWS_OnClose(object sender, CloseEventArgs e)
-    {
-        print($"main {e.Reason}");
     }
 
 
@@ -202,7 +188,11 @@ public class ChatListManager : MonoBehaviour
 
             ChatItem ci = c.GetComponent<ChatItem>();
 
-            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, new ChatUserInfo[2] {new ChatUserInfo("", AccountManager.Instance.ProfileData.nickname, AccountManager.Instance.ProfileData.identifier, AccountManager.Instance.ProfileData.urlIcon, AccountManager.Instance.ProfileData.userTag, AccountManager.Instance.ProfileData.identifierType), new ChatUserInfo("", user.nickname, user.identifier, user.urlIcon, user.userTag, user.identifierType) });
+            TaskChatBody chat = new TaskChatBody("", user.nickname, user.urlIcon, 0, 
+                new ChatUserInfo[2] {
+                    new ChatUserInfo("", AccountManager.Instance.ProfileData.nickname, AccountManager.Instance.ProfileData.identifier, AccountManager.Instance.ProfileData.urlIcon, AccountManager.Instance.ProfileData.userTag, AccountManager.Instance.ProfileData.identifierType), 
+                    new ChatUserInfo("", user.nickname, user.identifier, user.urlIcon, user.userTag, user.identifierType) 
+                });
 
             ci.Init(chat, _chatManager);
             ci.SetUnreadMessages(0);
