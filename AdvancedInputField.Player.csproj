@@ -828,6 +828,10 @@
       <Project>{71C3BE9A-0210-BF78-3140-0A68A03FF722}</Project>
       <Name>Unity.InputSystem.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="DoozyRuntime.Player.csproj">
+      <Project>{687323DA-E5D5-82A3-E16E-AFA70F4BA760}</Project>
+      <Name>DoozyRuntime.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{225BFFCE-BB40-0652-0D20-CE013A0B6026}</Project>
       <Name>UnityEngine.UI.Player</Name>

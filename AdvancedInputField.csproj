@@ -945,6 +945,10 @@
       <Project>{E377478C-649E-855F-5194-92058BF05F98}</Project>
       <Name>Unity.InputSystem</Name>
     </ProjectReference>
+    <ProjectReference Include="DoozyRuntime.csproj">
+      <Project>{4B0B43C0-03EC-9A2A-E264-C86BDB680C0C}</Project>
+      <Name>DoozyRuntime</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{BB6CEF7D-D4B4-A06A-4C04-3E0CC2758A8D}</Project>
       <Name>UnityEditor.UI</Name>

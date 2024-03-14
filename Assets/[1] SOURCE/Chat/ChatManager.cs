@@ -54,8 +54,8 @@ public class ChatManager : MonoBehaviour
             WS.ConnectAsync();
 
             WS.OnOpen += WS_OnOpen;
-            WS.OnError += WS_OnError;
             WS.OnMessage += WS_OnMessage;
+            WS.OnClose += WS_OnClose; 
         }
         else
         {
@@ -67,15 +67,12 @@ public class ChatManager : MonoBehaviour
         }
     }
 
-
-
-    private void WS_OnError(object sender, WebSocketSharp.ErrorEventArgs e)
+    private void WS_OnClose(object sender, CloseEventArgs e)
     {
-        print(e.Message);
-        print(e.Exception);
+        WS.OnOpen -= WS_OnOpen;
+        WS.OnMessage -= WS_OnMessage;
+        WS.OnClose -= WS_OnClose;
     }
-
-
 
     private void WS_OnOpen(object sender, EventArgs e)
     {
@@ -94,6 +91,8 @@ public class ChatManager : MonoBehaviour
     public void CloseChat()
     { 
         _view.Hide();
+
+        _chatView.ClearAllMessages();
 
         WS.Close();
     }
