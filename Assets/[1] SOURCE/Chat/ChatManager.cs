@@ -15,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using WebSocketSharp;
 
 public class ChatManager : MonoBehaviour
@@ -36,6 +37,8 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private List<ChatMessages> _messagesFromDB;
 
     [SerializeField] private GameObject _proposal;
+
+    [SerializeField] private RawImage _chatIcon;
 
     public void OpenChat(TaskChatBody chatInfo, bool emptyChat)
     {
@@ -81,6 +84,13 @@ public class ChatManager : MonoBehaviour
             _view.Show();
 
             _chatNameText.text = _chatInfo.name;
+
+            ServerConstants.Instance.StartCoroutine(ServerConstants.Instance.DownloadChatIconTexture((tex) =>
+            {
+                _chatIcon.texture = tex;
+                _chatIcon.color = Color.white;
+            },
+            _chatInfo.imageUrl));
 
             GenerateMessageList();
         });        
