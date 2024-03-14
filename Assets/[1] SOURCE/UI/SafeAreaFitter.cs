@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SafeAreaFitter : MonoBehaviour
 {
+    private void Start()
+    {
+        
+    }
+
     private void Awake()
     {
         //ApplicationChrome.statusBarState = ApplicationChrome.States.VisibleOverContent;

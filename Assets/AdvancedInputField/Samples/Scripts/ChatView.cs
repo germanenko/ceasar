@@ -269,7 +269,7 @@ public class ChatView: MonoBehaviour
 		}
 
 		messageBoxes.Add(messageBox);
-		scrollRect.content.sizeDelta = new Vector2(0, Mathf.Abs(y - messageBox.rect.height));
+		//scrollRect.content.sizeDelta = new Vector2(0, Mathf.Abs(y - messageBox.rect.height));
 		scrollRect.verticalNormalizedPosition = 0;
 #endif
 	}
