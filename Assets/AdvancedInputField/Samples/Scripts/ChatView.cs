@@ -287,5 +287,10 @@ namespace AdvancedInputFieldSamples
 
 			return messageBox;
 		}
+
+		public void ClearAllMessages()
+		{
+
+		}
 	}
 }

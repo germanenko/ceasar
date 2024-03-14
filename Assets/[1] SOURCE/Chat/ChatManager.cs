@@ -136,23 +136,7 @@ public class ChatManager : MonoBehaviour
         //WS.Send(str);
         if(WS.ReadyState == WebSocketState.Open)
         {
-            WS.SendAsync(str, (bool c) =>
-            {
-                if (c)
-                {
-                    print("сообщение отправлено");
-                    UnityMainThreadDispatcher.Instance().Enqueue(() =>
-                    {
-                        _chatView.AddMessageRight(_messageField.Text);
-                        _messageField.SetText("");
-                    });
-
-                }
-                else
-                {
-                    print("сообщение не отправлено");
-                }
-            });
+            SendMessageAsync(str);
         }
         else
         {
@@ -184,25 +168,33 @@ public class ChatManager : MonoBehaviour
 
             WS.OnOpen += (object sender, EventArgs e) => {
                 print("соединен");
-                WS.SendAsync(str, (bool c) =>
-                {
-                    if (c)
-                    {
-                        print("сообщение отправлено");
-                        UnityMainThreadDispatcher.Instance().Enqueue(() =>
-                        {
-                            _chatView.AddMessageRight(_messageField.Text);
-                            _messageField.SetText("");
-                        });
-
-                    }
-                    else
-                    {
-                        print("сообщение не отправлено");
-                    }
-                });
+                SendMessageAsync(str);
             };
         }
+    }
+
+
+
+    private void SendMessageAsync(string message)
+    {
+        WS.SendAsync(message, (bool c) =>
+        {
+            if (c)
+            {
+                print("сообщение отправлено");
+                UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                {
+                    _chatView.AddMessageRight(_messageField.Text);
+                    _messageField.SetText("");
+                    _proposal.SetActive(false);
+                });
+
+            }
+            else
+            {
+                print("сообщение не отправлено");
+            }
+        });
     }
 
 
@@ -216,23 +208,30 @@ public class ChatManager : MonoBehaviour
 
 
 
-    public void GenerateMessageList()
+    public async void GenerateMessageList()
     {
-        for (int i = _messagesFromDB.Count - 1; i >= 0; i--)
+
+
+        var ms = await ServerConstants.Instance.GetChatMessagesAsync(_chatInfo.id, 30);
+
+        if (ms.Count > 0) _proposal.SetActive(false);
+        else _proposal.SetActive(true);
+
+        for (int i = ms.Count - 1; i >= 0; i--)
         {
             string senderMail;
             foreach (var p in _chatInfo.participants)
             {
-                if (p.id == _messagesFromDB[i].SenderId.ToString())
+                if (p.id == ms[i].SenderId.ToString())
                 {
                     if(p.identifier == AccountManager.Instance.ProfileData.identifier)
                     {
-                        _chatView.AddMessageRight(_messagesFromDB[i].Content);
+                        _chatView.AddMessageRight(ms[i].Content);
                     }
                     else
                     {
                         senderMail = p.identifier;
-                        _chatView.AddMessageLeft(_messagesFromDB[i].Content, senderMail);
+                        _chatView.AddMessageLeft(ms[i].Content, senderMail);
                     }
                 }
             }
