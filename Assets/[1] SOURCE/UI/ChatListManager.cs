@@ -184,6 +184,8 @@ public class ChatListManager : MonoBehaviour
 
         foreach (ProfileData user in users)
         {
+            if (user.identifier == AccountManager.Instance.ProfileData.identifier) continue;
+
             var c = Pooler.Instance.Spawn(PoolType.Entities, _chatButtonPrefab.gameObject, default, default, _chatsParent);
 
             ChatItem ci = c.GetComponent<ChatItem>();

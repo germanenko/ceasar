@@ -113,7 +113,6 @@ namespace DTT.KeyboardRaiser
 
         public void SetOpeningField(bool set)
         {
-            print(gameObject.name +  " " + set);
             if (set)
             {
                 KeyboardStateManager.openingField.Add(this);
