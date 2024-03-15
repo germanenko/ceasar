@@ -28,7 +28,21 @@ namespace Germanenko.Source
         [SerializeField] private GameObject _reminderForm;
         [SerializeField] private GameObject _informationForm;
 
-		[SerializeField] private TaskFormFields _fields;
+        [Header("MeetingFields")]
+        [SerializeField] private AdvancedInputField _topicField;
+
+        [Header("TaskFields")]
+        [SerializeField] private AdvancedInputField _toDoField;
+
+        [Header("ReminderFields")]
+        [SerializeField] private AdvancedInputField _toRemindField;
+
+        [Header("InformationFields")]
+        [SerializeField] private AdvancedInputField _informationField;
+
+        [Space]
+
+        [SerializeField] private TaskFormFields _fields;
 		[SerializeField] private Transform _itemParent;
 
 		[SerializeField] private string _id;
@@ -460,6 +474,23 @@ namespace Germanenko.Source
 				_editTask = false;
 
             isDraft = false;
+
+
+            switch (_taskType)
+            {
+                case TypeOfTasks.Meeting:
+                    _topicField.SetText("");
+                    break;
+                case TypeOfTasks.Task:
+                    _toDoField.SetText("");
+                    break;
+                case TypeOfTasks.Reminder:
+                    _toRemindField.SetText("");
+                    break;
+                case TypeOfTasks.Information:
+                    _informationField.SetText("");
+                    break;
+            }
 
             _meetingForm.SetActive(false);
             _taskForm.SetActive(false);
