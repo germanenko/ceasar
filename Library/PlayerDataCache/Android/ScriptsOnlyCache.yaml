@@ -20,9 +20,11 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.TouchCursor
     - AdvancedInputFieldPlugin.TouchTextSelectionHandler
     - AdvancedInputFieldPlugin.UnityTextRenderer
-    - AdvancedInputFieldSamples.ChatView
     - AdvancedInputFieldSamples.EmojiKeyboard
+    - ChatView
     - MessageItem
+    AdvancedInputFieldEditor.dll:
+    - AdvancedInputFieldPlugin.Editor.SettingsDataEditor
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
     - HutongGames.PlayMakerEditor.FsmEditorWindow
@@ -98,7 +100,6 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
-    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -189,6 +190,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -464,9 +466,6 @@ ScriptsOnlyBuild:
   - assembly: Unity.TextMeshPro
     fullTypeName: TMPro.TMP_InputField
     methodName: ActivateInputField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: ChangeDayTimeHours
@@ -518,9 +517,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: DateTimeItem
     methodName: CheckDateIsPeriod
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: ChangeDayTimeHours
@@ -539,18 +535,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: SelectTimeType
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: Unity.TextMeshPro
-    fullTypeName: TMPro.TMP_InputField
-    methodName: ActivateInputField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
     methodName: Play
@@ -581,9 +565,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Calendar
     methodName: OpenCalendarWindow
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -623,15 +604,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Clock
     methodName: SelectTimeType
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: Unity.TextMeshPro
-    fullTypeName: TMPro.TMP_InputField
-    methodName: ActivateInputField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
     methodName: Play
@@ -662,15 +634,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Calendar
     methodName: OpenCalendarWindow
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: Unity.TextMeshPro
-    fullTypeName: TMPro.TMP_InputField
-    methodName: ActivateInputField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.Vector3Animator
     methodName: Play
@@ -701,15 +664,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Calendar
     methodName: OpenCalendarWindow
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: DTT.KeyboardRaiser.Runtime
-    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
-    methodName: SetOpeningField
-  - assembly: Unity.TextMeshPro
-    fullTypeName: TMPro.TMP_InputField
-    methodName: ActivateInputField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -833,6 +787,9 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: Assembly-CSharp
     fullTypeName: ChatManager
     methodName: CloseChat
@@ -884,6 +841,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Germanenko.Source.TouchInArea
     methodName: IsHandle
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.Reactor.Animators.SpriteAnimator
     methodName: SetProgressAtZero
@@ -906,10 +866,10 @@ ScriptsOnlyBuild:
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
   - assembly: AdvancedInputField
-    fullTypeName: AdvancedInputFieldSamples.ChatView
+    fullTypeName: ChatView
     methodName: RestoreOriginalMessageInputPosition
   - assembly: AdvancedInputField
-    fullTypeName: AdvancedInputFieldSamples.ChatView
+    fullTypeName: ChatView
     methodName: OnResizeVerticalSizeChanged
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
@@ -983,6 +943,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: ProfileView
     methodName: LoadInfo
+  - assembly: DTT.KeyboardRaiser.Runtime
+    fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
+    methodName: SetOpeningField
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
@@ -1382,8 +1345,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1577,6 +1538,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 15242}
     - Class: 114
+      Script: {instanceID: 15346}
+    - Class: 114
       Script: {instanceID: 15540}
     - Class: 114
       Script: {instanceID: 15600}
@@ -1671,6 +1634,8 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 328
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -2551,9 +2516,9 @@ ScriptsOnlyBuild:
     className: ImageSpriteTarget
   - hash:
       serializedVersion: 2
-      Hash: 55c043fb00f72e2f09cf78431a150046
+      Hash: 34be43d34875bea85f5b192499cbf0a9
     assemblyName: AdvancedInputField.dll
-    namespaceName: AdvancedInputFieldSamples
+    namespaceName: 
     className: ChatView
   - hash:
       serializedVersion: 2
@@ -3103,7 +3068,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: b9ab197e49aa25c97b6ff2720c28eea3
+      Hash: 19bdd6555a623b918e3b75930eed66dd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -3877,7 +3842,7 @@ ScriptsOnlyBuild:
     className: PointerMiddleClickTrigger
   - hash:
       serializedVersion: 2
-      Hash: 781dd8d999cf979b7de0a71a2b529720
+      Hash: a321eede2c12b4dc8653f6d5c3c827b4
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
     className: TaskForm

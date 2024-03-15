@@ -297,7 +297,7 @@ namespace AdvancedInputFieldPlugin
 		{
 			if(InputField.Text.Length > 0)
 			{
-				TextNavigator.SelectCurrentWord();
+				//TextNavigator.SelectCurrentWord();
 				if(!Engine.HasSelection && InputField.CanUseActionBar) //Just show the ActionBar when no word was selected
 				{
 					if(TextNavigator.ActionBar == null)

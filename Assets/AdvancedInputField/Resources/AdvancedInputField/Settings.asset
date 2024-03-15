@@ -22,53 +22,39 @@ MonoBehaviour:
   platformSettings:
   - platform: 0
     actionBarAllowed: 1
-    actionBarPrefab: {fileID: 114496478825203854, guid: 85de853ffbd8e1d48b64db150dbe0afe,
-      type: 3}
-    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94,
-      type: 3}
+    actionBarPrefab: {fileID: 114496478825203854, guid: 85de853ffbd8e1d48b64db150dbe0afe, type: 3}
+    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94, type: 3}
     touchTextSelectionAllowed: 1
-    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd,
-      type: 3}
+    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd, type: 3}
     touchSelectionCursorsScale: 1
     mobileKeyboardBehaviour: 0
   - platform: 1
     actionBarAllowed: 1
-    actionBarPrefab: {fileID: 114803212473674424, guid: dfceb9d0df610e24e9a35826b3cc3a39,
-      type: 3}
-    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94,
-      type: 3}
+    actionBarPrefab: {fileID: 114803212473674424, guid: dfceb9d0df610e24e9a35826b3cc3a39, type: 3}
+    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94, type: 3}
     touchTextSelectionAllowed: 1
-    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd,
-      type: 3}
+    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd, type: 3}
     touchSelectionCursorsScale: 1
     mobileKeyboardBehaviour: 0
   - platform: 2
     actionBarAllowed: 1
-    actionBarPrefab: {fileID: 114011170906009754, guid: 513bb9748e5ac7d43902b2abc4f6eaa3,
-      type: 3}
-    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94,
-      type: 3}
+    actionBarPrefab: {fileID: 114011170906009754, guid: 513bb9748e5ac7d43902b2abc4f6eaa3, type: 3}
+    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94, type: 3}
     touchTextSelectionAllowed: 1
-    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd,
-      type: 3}
+    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd, type: 3}
     touchSelectionCursorsScale: 1
     mobileKeyboardBehaviour: 0
   - platform: 3
     actionBarAllowed: 1
-    actionBarPrefab: {fileID: 114496478825203854, guid: ace5b39c75d0dcd4fbfaf6eccad8aecb,
-      type: 3}
-    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94,
-      type: 3}
+    actionBarPrefab: {fileID: 114496478825203854, guid: ace5b39c75d0dcd4fbfaf6eccad8aecb, type: 3}
+    basicTextSelectionPrefab: {fileID: 114649229376330784, guid: 9b703310ac11ffe4d9540371c00f2a94, type: 3}
     touchTextSelectionAllowed: 1
-    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd,
-      type: 3}
+    touchTextSelectionPrefab: {fileID: 114766093189932370, guid: 408f8a9c9aa54ad45843c32292d51fcd, type: 3}
     touchSelectionCursorsScale: 1
     mobileKeyboardBehaviour: 0
   simulateMobileBehaviourInEditor: 1
-  portraitKeyboardCanvasPrefab: {fileID: 223433812243205740, guid: 6f3a16ea735a431428ab4869d2eac475,
-    type: 3}
-  landscapeKeyboardCanvasPrefab: {fileID: 223962674380260514, guid: c29a23e7b4a26ab4f9ec9a8fdef8a28e,
-    type: 3}
+  portraitKeyboardCanvasPrefab: {fileID: 223433812243205740, guid: 6f3a16ea735a431428ab4869d2eac475, type: 3}
+  landscapeKeyboardCanvasPrefab: {fileID: 223962674380260514, guid: c29a23e7b4a26ab4f9ec9a8fdef8a28e, type: 3}
   doubleTapThreshold: 0.5
-  holdThreshold: 1
+  holdThreshold: 0.5
   passwordMaskingCharacter: 42
