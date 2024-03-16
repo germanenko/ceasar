@@ -23,8 +23,6 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldSamples.EmojiKeyboard
     - ChatView
     - MessageItem
-    AdvancedInputFieldEditor.dll:
-    - AdvancedInputFieldPlugin.Editor.SettingsDataEditor
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
     - HutongGames.PlayMakerEditor.FsmEditorWindow
@@ -100,6 +98,7 @@ ScriptsOnlyBuild:
     - DTT.KeyboardRaiser.UIKeyboardRaiser
     DoozyEditor.dll:
     - Doozy.Editor.Common.ScriptableObjects.UpdateBot
+    - Doozy.Editor.EditorUI.ScriptableObjects.EditorUISettings
     DoozyRuntime.dll:
     - Doozy.Runtime.Nody.FlowController
     - Doozy.Runtime.Nody.FlowGraph
@@ -190,7 +189,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1537,8 +1535,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15098}
     - Class: 114
       Script: {instanceID: 15242}
-    - Class: 114
-      Script: {instanceID: 15346}
     - Class: 114
       Script: {instanceID: 15540}
     - Class: 114

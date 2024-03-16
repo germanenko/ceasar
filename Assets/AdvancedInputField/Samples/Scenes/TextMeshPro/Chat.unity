@@ -219,6 +219,7 @@ MonoBehaviour:
   messageInput: {fileID: 1870466445}
   messageBoxLeftPrefab: {fileID: 224474667676654800, guid: 8e4b86e4e8b3a2048a8dbd9fe3f0de11, type: 3}
   messageBoxRightPrefab: {fileID: 224405418430653646, guid: 636e54e8b87eb944cbef23041d56d940, type: 3}
+  messageBoxes: []
 --- !u!1 &201906898
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030006051, y: 0.0000002664689}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.0042662933}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &237073202
