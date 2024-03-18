@@ -61,11 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Utilities\Editor\Resources\Com.ForbiddenByte.OSA\Templates\Scripts\BasicTableAdapter.txt" />
     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
     <None Include="Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.XML" />
     <None Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Core\Editor\Resources\Com.ForbiddenByte.OSA\Templates\ScriptsChunks\HeaderComment.txt" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Core\Editor\Resources\Com.ForbiddenByte.OSA\Templates\Scripts\BasicListAdapter.txt" />
     <None Include="Assets\Plugins\Borodar\RainbowFolders\Editor\Assemblies\RainbowFolders.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Core\Editor\Resources\Com.ForbiddenByte.OSA\Templates\Scripts\BasicGridAdapter.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
   </ItemGroup>
   <ItemGroup>
@@ -1215,6 +1219,26 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.csproj">
+      <Project>{451E3908-9819-A974-48BE-E6514D25E112}</Project>
+      <Name>OSA.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Demos.csproj">
+      <Project>{5F57CFD3-8A6A-C42C-330F-CAB2F35669F5}</Project>
+      <Name>OSA.Demos</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.Editor.csproj">
+      <Project>{CBCE9C35-1A6D-DB0C-C0D8-961F7BCED5DA}</Project>
+      <Name>OSA.Utilities.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Editor.csproj">
+      <Project>{9F181B0B-DEF7-31C9-D717-8D456D9518EE}</Project>
+      <Name>OSA.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.csproj">
+      <Project>{818B201E-2CEC-84A3-1877-26821D712EEC}</Project>
+      <Name>OSA.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

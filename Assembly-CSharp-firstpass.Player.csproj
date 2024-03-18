@@ -74,9 +74,12 @@
   <ItemGroup>
     <None Include="Assets\Plugins\SignalR\Microsoft.AspNetCore.SignalR.Protocols.Json.dll" />
     <None Include="Assets\Plugins\SignalR\Microsoft.Extensions.Logging.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Utilities\ThirdParty\Packer2DBox\About.txt" />
     <None Include="Assets\Plugins\SignalR\Microsoft.Extensions.Logging.Abstractions.dll" />
     <None Include="Assets\Plugins\SignalR\System.Memory.dll" />
     <None Include="Assets\Plugins\SignalR\System.Numerics.Vectors.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Extra\PluginSupport\TMPro\TMPro instructions.txt" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Extra\PluginSupport\Playmaker\README.txt" />
     <None Include="Assets\Plugins\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\SignalR\Microsoft.Extensions.Options.dll" />
@@ -90,6 +93,7 @@
     <None Include="Assets\Plugins\SignalR\System.Threading.Tasks.Extensions.dll" />
     <None Include="Assets\Plugins\PlayMaker\PlayMaker.dll" />
     <None Include="Assets\Plugins\SignalR\Microsoft.Extensions.Primitives.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Extra\README.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\Plugins\SignalR\System.Buffers.dll" />
     <None Include="Assets\Plugins\SignalR\Microsoft.AspNetCore.SignalR.Client.Core.dll" />
@@ -105,6 +109,8 @@
     <None Include="Assets\Plugins\SignalR\System.Runtime.CompilerServices.Unsafe.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Plugins\SignalR\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Utilities\ThirdParty\Packer2DBox\Packer2DBoxLICENSE.txt" />
+    <None Include="Assets\Plugins\Com.ForbiddenByte\OSA\Docs\Manual link.txt" />
     <None Include="Assets\Plugins\Borodar\RainbowHierarchy\NOTICES.txt" />
     <None Include="Assets\Plugins\SignalR\Microsoft.AspNetCore.Http.Connections.Client.dll" />
     <None Include="Assets\Plugins\SignalR\Microsoft.AspNetCore.Http.Connections.Common.dll" />
@@ -943,6 +949,18 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.Player.csproj">
+      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
+      <Name>OSA.Utilities.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Demos.Player.csproj">
+      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
+      <Name>OSA.Demos.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Player.csproj">
+      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
+      <Name>OSA.Core.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

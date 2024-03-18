@@ -2724,6 +2724,18 @@
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.Player.csproj">
+      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
+      <Name>OSA.Utilities.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Demos.Player.csproj">
+      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
+      <Name>OSA.Demos.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Player.csproj">
+      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
+      <Name>OSA.Core.Player</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
