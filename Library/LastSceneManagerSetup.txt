@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Plugins/Com.ForbiddenByte/OSA/Demos/Scenes/chat.unity
+- path: Assets/[8] SCENES & GRAPHS/Scenes/TestOSA.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
