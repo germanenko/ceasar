@@ -23,8 +23,8 @@ namespace Com.ForbiddenByte.OSA.Demos.Chat
 			Data = new SimpleDataHelper<ChatMessageModel>(this);
 		}
 
-		/// <inheritdoc/>
-		protected override void Update()
+        /// <inheritdoc/>
+        protected override void Update()
 		{
 			base.Update();
 

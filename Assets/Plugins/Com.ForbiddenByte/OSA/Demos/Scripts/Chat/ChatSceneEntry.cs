@@ -7,7 +7,7 @@ namespace Com.ForbiddenByte.OSA.Demos.Chat
 	/// <summary>Hookup between the <see cref="Common.Drawer.DrawerCommandPanel"/> and the adapter to isolate example code from demo-ing and navigation code</summary>
 	public class ChatSceneEntry : DemoSceneEntry<ChatExample, MyParams, ChatMessageViewsHolder>
 	{
-		protected override void InitDrawer()
+        protected override void InitDrawer()
 		{
 			_Drawer.Init(_Adapters, false, false, false, false, true, false);
 			_Drawer.galleryEffectSetting.slider.value = .04f;

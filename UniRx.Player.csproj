@@ -260,8 +260,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\InternalUtil\UnityEqualityComparer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\InternalUtil\PriorityQueue.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTrigger2DTrigger.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\Observable.Time.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\Operators\ToList.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\Observable.Time.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableEnableTrigger.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\Disposables\SerialDisposable.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\UniRx\Scripts\Pair.cs" />

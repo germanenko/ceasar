@@ -774,6 +774,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="OSA.Utilities.Player.csproj">
+      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
+      <Name>OSA.Utilities.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanTouch.Player.csproj">
       <Project>{8625DB6E-940A-A6A8-4BD8-B0CF430692DB}</Project>
       <Name>LeanTouch.Player</Name>
@@ -902,6 +906,14 @@
       <Project>{85BFF6A6-C93E-013C-6634-43CA45276015}</Project>
       <Name>DTT.SerializableTypes.Demo.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Demos.Player.csproj">
+      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
+      <Name>OSA.Demos.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Player.csproj">
+      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
+      <Name>OSA.Core.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="DoozyRuntime.Player.csproj">
       <Project>{687323DA-E5D5-82A3-E16E-AFA70F4BA760}</Project>
       <Name>DoozyRuntime.Player</Name>
@@ -949,18 +961,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Utilities.Player.csproj">
-      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
-      <Name>OSA.Utilities.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Demos.Player.csproj">
-      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
-      <Name>OSA.Demos.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Core.Player.csproj">
-      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
-      <Name>OSA.Core.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

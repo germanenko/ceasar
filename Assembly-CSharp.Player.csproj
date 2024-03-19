@@ -125,8 +125,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAspectRatio.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetEventInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SpriteRenderer\GetSpriteMaskInteraction.cs" />
-    <Compile Include="Assets\[1] SOURCE\Account\Authentication.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Array\ArrayReverse.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\Authentication.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorRightFootBottomHeight.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiDropDownClearOptions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\GetSpeed.cs" />
@@ -675,8 +675,9 @@
     <Compile Include="Assets\[1] SOURCE\UI\SafeAreaFitter.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiImageGetFillAmount.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\ILayoutChildDependency.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />
+    <Compile Include="Assets\Scripts\NewOSAAdapter.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureAlpha.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutBeginArea.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\GetNextOverlapCircle2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UnityObject\GetComponent.cs" />
@@ -765,8 +766,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoClip\VideoClipGetAudioTrackCount.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SyncAnimatorBoolToState.cs" />
     <Compile Include="Assets\PlayMaker uGui\Proxies\PlayMakerUGuiDropEventsProxy.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\ScaleGestureRecognizer.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnScrollEvent.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\ScaleGestureRecognizer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\AnimateVariables\EaseFloat.cs" />
     <Compile Include="Assets\Scripts\uGui\BoxCollider2dMatchRectTransform.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector3\Vector3HighPassFilter.cs" />
@@ -1115,8 +1116,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\TweenRect.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\_Examples\E24 - Popup - with Two Buttons\ShowTwoButtonsPopup.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2PerSecond.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Layers\XorEncryptLayer.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2PerSecond.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Array\ArrayContains.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSource.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Utils\NtpPacket.cs" />
@@ -1351,8 +1352,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\AnimationTransitions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\CustomTransition.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerMove.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformLocalJump.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerMove.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\IsSleeping2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\SizeModifiers\MarginSizeModifier.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiScrollbarGetDirection.cs" />
@@ -1521,8 +1522,8 @@
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformMoveZ.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiSliderSetValue.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiExplicitNavigationSetProperties.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\BaseActions\TweenVariableBase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Audio\AudioStop.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\BaseActions\TweenVariableBase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugFloat.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnCancelEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\FloatSwitch.cs" />
@@ -1671,9 +1672,9 @@
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Utils\ScreenType\IScreenTypeCheck.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Device\StartLocationServiceUpdates.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformShakePosition.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetMaterialFloat.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\AnimatorStopPlayback.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementMinSize.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetMaterialFloat.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiClickEvent.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRectTransformAnchorMin.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Components\FingersRotateCameraComponentScript.cs" />
@@ -1785,7 +1786,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\Scripts\NewOSAAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
@@ -2549,6 +2549,10 @@
       <Project>{78CBDCDF-9F6B-E537-C122-64B87D7A483C}</Project>
       <Name>Assembly-CSharp-firstpass.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.Player.csproj">
+      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
+      <Name>OSA.Utilities.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanTouch.Player.csproj">
       <Project>{8625DB6E-940A-A6A8-4BD8-B0CF430692DB}</Project>
       <Name>LeanTouch.Player</Name>
@@ -2677,6 +2681,14 @@
       <Project>{85BFF6A6-C93E-013C-6634-43CA45276015}</Project>
       <Name>DTT.SerializableTypes.Demo.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Demos.Player.csproj">
+      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
+      <Name>OSA.Demos.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Player.csproj">
+      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
+      <Name>OSA.Core.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="DoozyRuntime.Player.csproj">
       <Project>{687323DA-E5D5-82A3-E16E-AFA70F4BA760}</Project>
       <Name>DoozyRuntime.Player</Name>
@@ -2724,18 +2736,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{96D7A732-499C-BB83-251D-67088B6559D9}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Utilities.Player.csproj">
-      <Project>{43221C21-3842-3B19-EFBE-F47A33B9D84D}</Project>
-      <Name>OSA.Utilities.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Demos.Player.csproj">
-      <Project>{7B841D76-70E7-AF20-89E7-AD2B69843F68}</Project>
-      <Name>OSA.Demos.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Core.Player.csproj">
-      <Project>{D4397A76-F8B7-18C1-0E67-742D76E858E4}</Project>
-      <Name>OSA.Core.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

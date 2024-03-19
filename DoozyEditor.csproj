@@ -116,9 +116,9 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Mody\Components\ModyActionStateIndicator.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Triggers\UISliderValueTriggerEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\ScriptableObjects\Textures\EditorTextureInfo.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Interfaces\IUIManagerSettingsWindowLayout.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Components\FluidAnimatedContainer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Triggers\PointerLongClickTriggerEditor.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Interfaces\IUIManagerSettingsWindowLayout.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Signals\ScriptableObjects\StreamIdRoamingDatabase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Animators\UIContainerUIAnimatorEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Enums\ButtonStyle.cs" />
@@ -306,8 +306,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Windows\DoozyBarWindow.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Layouts\UIRadialLayoutEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Drawers\EditorSelectableColorInfoDrawer.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Editors\Targets\Internal\ProgressTargetEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Processors\EditorUIRefresher.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Reactor\Editors\Targets\Internal\ProgressTargetEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Utils\EditorUtils.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\ScriptableObjects\SpriteSheets\EditorSpriteSheetInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Nody\Nodes\StartNodeEditor.cs" />
@@ -403,8 +403,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\ScriptableObjects\UIStepperIdDatabase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Audio\UISelectableAudioEditor.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Editors\Triggers\UISubmitTriggerEditor.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Components\FluidToggleRadio.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\Signals\Layouts\SignalsConsoleWindowLayout.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\EditorUI\Components\FluidToggleRadio.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\EditorUIManagerPath.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\Drawers\Behaviours\UIBehavioursDrawer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\Editor\UIManager\UIMenu\UIMenuCameraEditor.cs" />

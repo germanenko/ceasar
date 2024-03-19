@@ -125,8 +125,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAspectRatio.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\StateMachine\GetEventInfo.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\SpriteRenderer\GetSpriteMaskInteraction.cs" />
-    <Compile Include="Assets\[1] SOURCE\Account\Authentication.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Array\ArrayReverse.cs" />
+    <Compile Include="Assets\[1] SOURCE\Account\Authentication.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\GetAnimatorRightFootBottomHeight.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiDropDownClearOptions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics\GetSpeed.cs" />
@@ -675,8 +675,9 @@
     <Compile Include="Assets\[1] SOURCE\UI\SafeAreaFitter.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiImageGetFillAmount.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\ILayoutChildDependency.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />
+    <Compile Include="Assets\Scripts\NewOSAAdapter.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureAlpha.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUILayout\GUILayoutBeginArea.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\GetNextOverlapCircle2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UnityObject\GetComponent.cs" />
@@ -765,8 +766,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoClip\VideoClipGetAudioTrackCount.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\SyncAnimatorBoolToState.cs" />
     <Compile Include="Assets\PlayMaker uGui\Proxies\PlayMakerUGuiDropEventsProxy.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\ScaleGestureRecognizer.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnScrollEvent.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Gestures\ScaleGestureRecognizer.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\AnimateVariables\EaseFloat.cs" />
     <Compile Include="Assets\Scripts\uGui\BoxCollider2dMatchRectTransform.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector3\Vector3HighPassFilter.cs" />
@@ -1115,8 +1116,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\TweenRect.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Doozy\_Examples\E24 - Popup - with Two Buttons\ShowTwoButtonsPopup.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2PerSecond.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Layers\XorEncryptLayer.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2PerSecond.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Array\ArrayContains.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSource.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\Utils\NtpPacket.cs" />
@@ -1351,8 +1352,8 @@
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\AnimationTransitions.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiElements\Transitions\CustomTransition.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerMove.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformLocalJump.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Character\ControllerMove.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Physics2D\IsSleeping2d.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\BetterUiLayout\SizeModifiers\MarginSizeModifier.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiScrollbarGetDirection.cs" />
@@ -1521,8 +1522,8 @@
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformMoveZ.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiSliderSetValue.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\Selectable\uGuiExplicitNavigationSetProperties.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\BaseActions\TweenVariableBase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Audio\AudioStop.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Tween\BaseActions\TweenVariableBase.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugFloat.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\EventSystem\uGuiOnCancelEvent.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Logic\FloatSwitch.cs" />
@@ -1671,9 +1672,9 @@
     <Compile Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Scripts\Utils\ScreenType\IScreenTypeCheck.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Device\StartLocationServiceUpdates.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenTransformShakePosition.cs" />
-    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetMaterialFloat.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Animator\AnimatorStopPlayback.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementMinSize.cs" />
+    <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Material\SetMaterialFloat.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerUiClickEvent.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRectTransformAnchorMin.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\Fingers\Prefab\Script\Components\FingersRotateCameraComponentScript.cs" />
@@ -1785,7 +1786,6 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenLayoutElementFlexibleSize.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\Scripts\NewOSAAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_99 THIRD PARTY\TheraBytes\BetterUI\Runtime\Resources\Materials\HueSaturationBrightness.shader" />
@@ -2614,6 +2614,10 @@
       <Project>{0CC3927D-8929-1EAB-C05E-9BC0F2C9CB21}</Project>
       <Name>DTT.SerializableTypes.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.csproj">
+      <Project>{451E3908-9819-A974-48BE-E6514D25E112}</Project>
+      <Name>OSA.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{4D2B8D73-9652-9852-80C1-3AB669614419}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -2762,6 +2766,10 @@
       <Project>{6F23095C-AE54-253F-77E0-0916652BEEA2}</Project>
       <Name>Unity.Notifications.Android</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Utilities.Editor.csproj">
+      <Project>{CBCE9C35-1A6D-DB0C-C0D8-961F7BCED5DA}</Project>
+      <Name>OSA.Utilities.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="gpm_webview.csproj">
       <Project>{09BE95FA-0EE6-72BE-D35E-C156F509962B}</Project>
       <Name>gpm_webview</Name>
@@ -2830,6 +2838,14 @@
       <Project>{CE40349A-9466-2AEE-24CE-B1D0EF8AA8D0}</Project>
       <Name>DTT.SerializableTypes.Demo</Name>
     </ProjectReference>
+    <ProjectReference Include="OSA.Demos.csproj">
+      <Project>{5F57CFD3-8A6A-C42C-330F-CAB2F35669F5}</Project>
+      <Name>OSA.Demos</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.csproj">
+      <Project>{818B201E-2CEC-84A3-1877-26821D712EEC}</Project>
+      <Name>OSA.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="DoozyRuntime.csproj">
       <Project>{4B0B43C0-03EC-9A2A-E264-C86BDB680C0C}</Project>
       <Name>DoozyRuntime</Name>
@@ -2841,6 +2857,10 @@
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{B4C336B4-696B-A273-C9CD-429C47AEDE46}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="OSA.Core.Editor.csproj">
+      <Project>{9F181B0B-DEF7-31C9-D717-8D456D9518EE}</Project>
+      <Name>OSA.Core.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{255AF34E-742F-6C13-73A6-507702888D45}</Project>
@@ -2949,26 +2969,6 @@
     <ProjectReference Include="UnityUIExtensions.editor.csproj">
       <Project>{F5A0AD7C-1FF7-5951-51D9-983E0388ABD8}</Project>
       <Name>UnityUIExtensions.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Utilities.csproj">
-      <Project>{451E3908-9819-A974-48BE-E6514D25E112}</Project>
-      <Name>OSA.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Demos.csproj">
-      <Project>{5F57CFD3-8A6A-C42C-330F-CAB2F35669F5}</Project>
-      <Name>OSA.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Utilities.Editor.csproj">
-      <Project>{CBCE9C35-1A6D-DB0C-C0D8-961F7BCED5DA}</Project>
-      <Name>OSA.Utilities.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Core.Editor.csproj">
-      <Project>{9F181B0B-DEF7-31C9-D717-8D456D9518EE}</Project>
-      <Name>OSA.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.Core.csproj">
-      <Project>{818B201E-2CEC-84A3-1877-26821D712EEC}</Project>
-      <Name>OSA.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

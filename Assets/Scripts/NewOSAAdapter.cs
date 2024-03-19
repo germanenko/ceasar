@@ -35,6 +35,8 @@ using Com.ForbiddenByte.OSA.Core;
 using Com.ForbiddenByte.OSA.CustomParams;
 using Com.ForbiddenByte.OSA.DataHelpers;
 using AIFLogger;
+using TMPro;
+using static UnityEditor.Recorder.OutputPath;
 
 // You should modify the namespace to your own or - if you're sure there won't ever be conflicts - remove it altogether
 namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
@@ -92,10 +94,10 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			
 			MyListItemModel model = Data[newOrRecycled.ItemIndex];
 
-			newOrRecycled.backgroundImage.color = model.color;
-			newOrRecycled.titleText.text = model.title + " #" + newOrRecycled.ItemIndex;
-            newOrRecycled.rectTransform.rect.Set(newOrRecycled.rectTransform.rect.x, newOrRecycled.rectTransform.rect.y, model.width, newOrRecycled.rectTransform.rect.height);
-			LayoutRebuilder.ForceRebuildLayoutImmediate(newOrRecycled.rectTransform);
+			newOrRecycled.UpdateFromModel(model);
+
+			//newOrRecycled.backgroundImage.color = model.color;
+			//newOrRecycled.titleText.text = model.title + " #" + newOrRecycled.ItemIndex;
         }
 
 		// This is the best place to clear an item's views in order to prepare it from being recycled, but this is not always needed, 
@@ -103,6 +105,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		// download request, if it's still in progress when the item goes out of the viewport.
 		// <newItemIndex> will be non-negative if this item will be recycled as opposed to just being disabled
 		// *For the method's full description check the base implementation
+
 		/*
 		protected override void OnBeforeRecycleOrDisableViewsHolder(MyListItemViewsHolder inRecycleBinOrVisible, int newItemIndex)
 		{
@@ -184,14 +187,14 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 			{
 				var model = new MyListItemModel()
 				{
-					title = "Random item ",
+					title = $"Random item #{i}",
 					color = new Color(
 								UnityEngine.Random.Range(0f, 1f),
 								UnityEngine.Random.Range(0f, 1f),
 								UnityEngine.Random.Range(0f, 1f),
 								UnityEngine.Random.Range(0f, 1f)
 							),
-					width = UnityEngine.Random.Range(30, 100)
+					rightMessage = Convert.ToBoolean(UnityEngine.Random.RandomRange(0, 2))
                 };
 				newItems[i] = model;
 			}
@@ -209,10 +212,11 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 	// Class containing the data associated with an item
 	public class MyListItemModel
 	{
+		string variable = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dapibus pretium libero, vitae tempus nunc tempus nec. Vivamus bibendum et urna venenatis pellentesque. Praesent tortor augue, auctor eu tellus eu, venenatis laoreet ante. Maecenas dapibus lacinia ligula at pharetra. Donec mattis nulla sed cursus dapibus. Etiam purus ex, fringilla eu ipsum ut, facilisis tristique quam. Aenean cursus vitae magna eu sagittis. Cras rutrum metus sit amet risus tempor hendrerit. Sed eu viverra massa, venenatis commodo tortor.";
 
-		public string title;
+        public string title;
 		public Color color;
-		public float width;
+		public bool rightMessage;
 
 	}
 
@@ -222,7 +226,7 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 	public class MyListItemViewsHolder : BaseItemViewsHolder
 	{
 
-		public Text titleText;
+		public TextMeshProUGUI titleText;
 		public Image backgroundImage;
 		public RectTransform rectTransform;
 
@@ -232,25 +236,35 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		{
 			base.CollectViews();
 
-			// GetComponentAtPath is a handy extension method from frame8.Logic.Misc.Other.Extensions
-			// which infers the variable's component from its type, so you won't need to specify it yourself
+            // GetComponentAtPath is a handy extension method from frame8.Logic.Misc.Other.Extensions
+            // which infers the variable's component from its type, so you won't need to specify it yourself
 
-			root.GetComponentAtPath("TitleText", out titleText);
-			root.GetComponentAtPath("BackgroundImage", out backgroundImage);
-            rectTransform = root.GetComponent<RectTransform>();
-			Debug.Log(rectTransform.GetSiblingIndex());
-
+            root.GetComponentAtPath("BackgroundImage", out backgroundImage);
+            backgroundImage.transform.GetComponentAtPath("TitleText", out titleText);
+            rectTransform = backgroundImage.GetComponent<RectTransform>();
         }
+
+		public void UpdateFromModel(MyListItemModel item)
+		{
+            LayoutRebuilder.ForceRebuildLayoutImmediate(root);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+			Debug.Log(root.rect.width);
+            titleText.text = item.title;
+			backgroundImage.color = item.color;
+			rectTransform.pivot = item.rightMessage ? new Vector2(1f, rectTransform.pivot.y) : new Vector2(0f, rectTransform.pivot.y);
+			rectTransform.anchoredPosition = item.rightMessage ? new Vector2(root.rect.width / 2, rectTransform.pivot.y) : new Vector2(-root.rect.width / 2, rectTransform.pivot.y);
+		}
 
 		// Override this if you have children layout groups or a ContentSizeFitter on root that you'll use. 
 		// They need to be marked for rebuild when this callback is fired
+
+
 		/*
 		public override void MarkForRebuild()
 		{
 			base.MarkForRebuild();
 
-			LayoutRebuilder.MarkLayoutForRebuild(yourChildLayout1);
-			LayoutRebuilder.MarkLayoutForRebuild(yourChildLayout2);
+			LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
 			YourSizeFitterOnRoot.enabled = true;
 		}
 		*/
