@@ -123,11 +123,18 @@ public class ChatManager : MonoBehaviour
         }
 
         //UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageLeft(msg.Content, senderMail));
-        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
+        UnityMainThreadDispatcher.Instance().Enqueue(() => { 
+        _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
         {
             Message = msg,
             IsMine = mine
-        }));
+        });
+
+        _chatView.SetNormalizedPosition(0);
+        });
+
+
+        
 
         print($"Получено сообщение от {senderMail}: {msg.Content}");
     }
@@ -209,7 +216,8 @@ public class ChatManager : MonoBehaviour
                             Type = ChatMessageType.Text
                         },
                         IsMine = true
-                    }); 
+                    });
+                    _chatView.SetNormalizedPosition(0);
                     _messageField.SetText("");
                     _proposal.SetActive(false);
                 });
@@ -269,6 +277,7 @@ public class ChatManager : MonoBehaviour
                 }
             }
         }
+        _chatView.SetNormalizedPosition(0);
         //foreach (var m in _messagesFromDB)
         //{
         //    if (m.SenderId == AccountManager.Instance.ProfileData.id)

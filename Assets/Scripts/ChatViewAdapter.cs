@@ -159,7 +159,7 @@ public class ChatMessageItemModel
 // Your views holder should extend BaseItemViewsHolder for ListViews and CellViewsHolder for GridViews
 public class MyListItemViewsHolder : BaseItemViewsHolder
 {
-    public Text timeText, text;
+    public TextMeshProUGUI timeText, text;
     public Image leftIcon, rightIcon;
     public Image image;
     public Image messageContentPanelImage;
@@ -222,22 +222,24 @@ public class MyListItemViewsHolder : BaseItemViewsHolder
 
         timeText.text = model.Message.Date.ToLocalTime().ToString("HH:mm");
 
-        leftIcon.gameObject.SetActive(!model.IsMine);
-        rightIcon.gameObject.SetActive(model.IsMine);
+        //leftIcon.gameObject.SetActive(!model.IsMine);
+        //rightIcon.gameObject.SetActive(model.IsMine);
 
         if (model.IsMine)
         {
             messageContentPanelImage.rectTransform.pivot = new Vector2(1.4f, .5f);
-            messageContentPanelImage.color = new Color(.75f, 1f, 1f, colorAtInit.a);
-            _RootLayoutGroup.childAlignment = _MessageContentLayoutGroup.childAlignment = text.alignment = TextAnchor.MiddleRight;
+            messageContentPanelImage.color = colorAtInit;
+            _RootLayoutGroup.childAlignment = _MessageContentLayoutGroup.childAlignment = TextAnchor.MiddleRight;
+            //text.alignment = TextAlignmentOptions.MidlineRight;
             _RootLayoutGroup.padding.right = paddingAtIconSide;
             _RootLayoutGroup.padding.left = paddingAtOtherSide;
         }
         else
         {
             messageContentPanelImage.rectTransform.pivot = new Vector2(-.4f, .5f);
-            messageContentPanelImage.color = colorAtInit;
-            _RootLayoutGroup.childAlignment = _MessageContentLayoutGroup.childAlignment = text.alignment = TextAnchor.MiddleLeft;
+            messageContentPanelImage.color = new Color(.75f, 1f, 1f, colorAtInit.a);
+            _RootLayoutGroup.childAlignment = _MessageContentLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
+            //text.alignment = TextAlignmentOptions.MidlineLeft;
             _RootLayoutGroup.padding.right = paddingAtOtherSide;
             _RootLayoutGroup.padding.left = paddingAtIconSide;
         }
