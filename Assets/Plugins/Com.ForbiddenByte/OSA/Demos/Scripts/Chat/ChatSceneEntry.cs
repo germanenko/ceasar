@@ -24,7 +24,7 @@ namespace Com.ForbiddenByte.OSA.Demos.Chat
 		{
 			base.OnAllAdaptersInitialized();
 
-			OnItemCountChangeRequested(_Adapters[0], 3);
+			OnItemCountChangeRequested(_Adapters[0], 10);
 		}
 
 		#region events from DrawerCommandPanel

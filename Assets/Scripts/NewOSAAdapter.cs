@@ -39,7 +39,7 @@ using TMPro;
 using static UnityEditor.Recorder.OutputPath;
 
 // You should modify the namespace to your own or - if you're sure there won't ever be conflicts - remove it altogether
-namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
+namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.ListsTest
 {
 	// There are 2 important callbacks you need to implement, apart from Start(): CreateViewsHolder() and UpdateViewsHolder()
 	// See explanations below
@@ -246,14 +246,13 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 
 		public void UpdateFromModel(MyListItemModel item)
 		{
-            LayoutRebuilder.ForceRebuildLayoutImmediate(root);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
 			Debug.Log(root.rect.width);
             titleText.text = item.title;
 			backgroundImage.color = item.color;
 			rectTransform.pivot = item.rightMessage ? new Vector2(1f, rectTransform.pivot.y) : new Vector2(0f, rectTransform.pivot.y);
 			rectTransform.anchoredPosition = item.rightMessage ? new Vector2(root.rect.width / 2, rectTransform.pivot.y) : new Vector2(-root.rect.width / 2, rectTransform.pivot.y);
-		}
+            
+        }
 
 		// Override this if you have children layout groups or a ContentSizeFitter on root that you'll use. 
 		// They need to be marked for rebuild when this callback is fired
@@ -264,9 +263,9 @@ namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.Lists
 		{
 			base.MarkForRebuild();
 
+			LayoutRebuilder.MarkLayoutForRebuild(root);
 			LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
-			YourSizeFitterOnRoot.enabled = true;
-		}
+        }
 		*/
 
 		// Override this if you've also overridden MarkForRebuild() and you have enabled size fitters there (like a ContentSizeFitter)

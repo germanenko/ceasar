@@ -808,6 +808,7 @@
 "Assets/Samples/Mobile Notifications/2.0.2/Notification Samples/Scripts/iOS/iOSNotificationsPlatform.cs"
 "Assets/Samples/Mobile Notifications/2.0.2/Notification Samples/Scripts/IPendingNotificationsSerializer.cs"
 "Assets/Samples/Mobile Notifications/2.0.2/Notification Samples/Scripts/PendingNotification.cs"
+"Assets/Scripts/ChatViewAdapter.cs"
 "Assets/Scripts/InkleStudios/Prototype.cs"
 "Assets/Scripts/JustAPixel/uGui/RadialLayout.cs"
 "Assets/Scripts/NewOSAAdapter.cs"

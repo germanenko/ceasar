@@ -1192,6 +1192,7 @@
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Debug\DebugBool.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\ConsolePro\Remote\LiteNetLib\ConnectionRequest.cs" />
     <Compile Include="Assets\PlayMaker Custom Actions\uGui\uGuiRebuild.cs" />
+    <Compile Include="Assets\Scripts\ChatViewAdapter.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\Vector2\Vector2LowPassFilter.cs" />
     <Compile Include="Assets\DOTweenPlaymakerActions\Actions\DOTween\DOTweenRectTransformPivotX.cs" />
     <Compile Include="Assets\_99 THIRD PARTY\PlayMaker\Actions\UI\Components\PlayMakerCanvasRaycastFilterProxy.cs" />

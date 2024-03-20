@@ -1487,6 +1487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1241920638}
     m_Modifications:
+    - target: {fileID: 150422, guid: 9ef2faede4b04a946b28eef8a8ab244c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11450426, guid: 9ef2faede4b04a946b28eef8a8ab244c, type: 3}
       propertyPath: allowPortrait
       value: 1

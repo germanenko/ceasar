@@ -30,7 +30,7 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField] private UIView _view;
 
-    [SerializeField] private ChatView _chatView;
+    [SerializeField] private ChatViewAdapter _chatView;
 
     [SerializeField] private TextMeshProUGUI _chatNameText;
 
@@ -102,7 +102,7 @@ public class ChatManager : MonoBehaviour
     { 
         _view.Hide();
 
-        _chatView.ClearAllMessages();
+        //_chatView.ClearAllMessages();
 
         WS.Close();
     }
@@ -113,15 +113,22 @@ public class ChatManager : MonoBehaviour
     {
         var msg = JsonConvert.DeserializeObject<MessageBody>(e.Data);
         string senderMail = "";
+        bool mine = false;
         foreach (var p in _chatInfo.participants)
         {
             if(p.id == msg.SenderId.ToString())
             {
-                senderMail = p.userTag;
-            }
+                senderMail = p.nickname;
+            }            
         }
 
-        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageLeft(msg.Content, senderMail));
+        //UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.AddMessageLeft(msg.Content, senderMail));
+        UnityMainThreadDispatcher.Instance().Enqueue(() => _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
+        {
+            Message = msg,
+            IsMine = mine
+        }));
+
         print($"Получено сообщение от {senderMail}: {msg.Content}");
     }
 
@@ -189,11 +196,20 @@ public class ChatManager : MonoBehaviour
         WS.SendAsync(message, (bool c) =>
         {
             if (c)
-            {
+            { 
                 print("сообщение отправлено");
                 UnityMainThreadDispatcher.Instance().Enqueue(() =>
                 {
-                    _chatView.AddMessageRight(_messageField.Text);
+                    _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
+                    {
+                        Message = new MessageBody()
+                        {
+                            Content = _messageField.Text,
+                            Date = DateTime.Now,
+                            Type = ChatMessageType.Text
+                        },
+                        IsMine = true
+                    }); 
                     _messageField.SetText("");
                     _proposal.SetActive(false);
                 });
@@ -211,8 +227,8 @@ public class ChatManager : MonoBehaviour
     public void OnKeyboardHeightChanged(int keyboardHeight)
     {
         Debug.Log("OnKeyboardHeightChanged: " + keyboardHeight);
-        _chatView.UpdateKeyboardHeight(keyboardHeight);
-        _chatView.UpdateChatHistorySize();
+        //_chatView.UpdateKeyboardHeight(keyboardHeight);
+        //_chatView.UpdateChatHistorySize();
     }
 
 
@@ -235,12 +251,20 @@ public class ChatManager : MonoBehaviour
                 {
                     if(p.identifier == AccountManager.Instance.ProfileData.identifier)
                     {
-                        _chatView.AddMessageRight(ms[i].Content);
+                        _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel() 
+                        { 
+                            Message = ms[i],
+                            IsMine = true
+                        });
                     }
                     else
                     {
                         senderMail = p.identifier;
-                        _chatView.AddMessageLeft(ms[i].Content, senderMail);
+                        _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
+                        {
+                            Message = ms[i],
+                            IsMine = false
+                        });
                     }
                 }
             }
