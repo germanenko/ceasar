@@ -237,7 +237,7 @@ public class MyListItemViewsHolder : BaseItemViewsHolder
         else
         {
             messageContentPanelImage.rectTransform.pivot = new Vector2(-.4f, .5f);
-            messageContentPanelImage.color = new Color(.75f, 1f, 1f, colorAtInit.a);
+            messageContentPanelImage.color = new Color(0.9529412f, 0.9372549f, 0.9333333f, colorAtInit.a);
             _RootLayoutGroup.childAlignment = _MessageContentLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
             //text.alignment = TextAlignmentOptions.MidlineLeft;
             _RootLayoutGroup.padding.right = paddingAtOtherSide;
