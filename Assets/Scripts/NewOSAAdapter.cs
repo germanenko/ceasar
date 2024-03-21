@@ -36,7 +36,6 @@ using Com.ForbiddenByte.OSA.CustomParams;
 using Com.ForbiddenByte.OSA.DataHelpers;
 using AIFLogger;
 using TMPro;
-using static UnityEditor.Recorder.OutputPath;
 
 // You should modify the namespace to your own or - if you're sure there won't ever be conflicts - remove it altogether
 namespace Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.ListsTest

@@ -59,7 +59,10 @@ public class ChatListManager : MonoBehaviour
                         chatItem.UpdateLastMessage(m.Message.Content, m.Message.Date);
                         chatItem.SetLastMessageBold(true);
 
-                        var ms = await ServerConstants.Instance.GetChatMessagesAsync(chatItem.ChatInfo.id, 50);
+                        chatItem.ChatInfo.countOfUnreadMessages++;
+                        chatItem.SetUnreadMessages(chatItem.ChatInfo.countOfUnreadMessages);
+
+                        //var ms = await ServerConstants.Instance.GetChatMessagesAsync(chatItem.ChatInfo.id, 50);
                         //Toolbox.Get<Tables>().ClearMessagesFromChat(chatItem.ChatInfo.id);
                         //foreach (var m in ms)
                         //{
@@ -150,7 +153,7 @@ public class ChatListManager : MonoBehaviour
             ChatItem ci = c.GetComponent<ChatItem>();
 
             ci.Init(chat, _chatManager);
-            //ci.SetUnreadMessages(Toolbox.Get<Tables>().GetUnreadMessagesCount(chat.id));
+            ci.SetUnreadMessages(chat.countOfUnreadMessages);
 
             _chatItems.Add(ci);
         }

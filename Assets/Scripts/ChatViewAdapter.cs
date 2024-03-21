@@ -35,6 +35,7 @@ using Com.ForbiddenByte.OSA.Core;
 using Com.ForbiddenByte.OSA.CustomParams;
 using Com.ForbiddenByte.OSA.DataHelpers;
 using TMPro;
+using DTT.KeyboardRaiser;
 
 // There are 2 important callbacks you need to implement, apart from Start(): CreateViewsHolder() and UpdateViewsHolder()
 // See explanations below
@@ -72,6 +73,8 @@ public class ChatViewAdapter : OSA<BaseParamsWithPrefab, MyListItemViewsHolder>
     {
         var instance = new MyListItemViewsHolder();
         instance.Init(_Params.ItemPrefab, _Params.Content, itemIndex);
+
+        _Params.Content.GetComponent<UIKeyboardRaiser>().enabled = true;
 
         return instance;
     }

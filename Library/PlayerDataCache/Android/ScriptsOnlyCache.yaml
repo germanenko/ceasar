@@ -21,8 +21,6 @@ ScriptsOnlyBuild:
     - AdvancedInputFieldPlugin.TouchTextSelectionHandler
     - AdvancedInputFieldPlugin.UnityTextRenderer
     - AdvancedInputFieldSamples.EmojiKeyboard
-    - ChatView
-    - MessageItem
     Assembly-CSharp-Editor.dll:
     - HutongGames.PlayMakerEditor.EditorStartupPrefs
     - HutongGames.PlayMakerEditor.FsmEditorWindow
@@ -34,6 +32,7 @@ ScriptsOnlyBuild:
     - ChatItem
     - ChatListManager
     - ChatManager
+    - ChatViewAdapter
     - Clock
     - ColorDropdown
     - DatabaseActions
@@ -147,6 +146,11 @@ ScriptsOnlyBuild:
     - Doozy.Runtime.UIManager.Triggers.UITooltipTrigger
     LunarConsole.dll:
     - LunarConsolePlugin.LunarConsole
+    OSA.Core.dll:
+    - Com.ForbiddenByte.OSA.Core.Snapper8
+    OSA.Utilities.dll:
+    - Com.ForbiddenByte.OSA.CustomAdapters.DateTimePicker.DateTimePickerAdapter
+    - Com.ForbiddenByte.OSA.CustomAdapters.DateTimePicker.DateTimePickerDialog
     PlayMaker.dll:
     - PlayMakerFSM
     - PlayMakerGUI
@@ -214,6 +218,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.ToggleGroup
@@ -321,6 +326,22 @@ ScriptsOnlyBuild:
     - LunarConsolePlugin.LogOverlayColors
     - LunarConsolePlugin.LogOverlaySettings
     - LunarConsolePlugin.LunarConsoleSettings
+    OSA.Core:
+    - Com.ForbiddenByte.OSA.Core.BaseParams/Effects
+    - Com.ForbiddenByte.OSA.Core.BaseParams/NavigationParams
+    - Com.ForbiddenByte.OSA.Core.BaseParams/Optimization
+    - Com.ForbiddenByte.OSA.Core.Data.Animations.AnimationCancelling
+    - Com.ForbiddenByte.OSA.Core.Data.Animations.AnimationFunctionType
+    - Com.ForbiddenByte.OSA.Core.Data.Animations.AnimationParams
+    - Com.ForbiddenByte.OSA.Core.Data.Animations.SmoothScrollCancellingEvents
+    - Com.ForbiddenByte.OSA.Core.Data.Animations.UserAnimationsCancellingEvents
+    - Com.ForbiddenByte.OSA.Core.Data.Gallery.GalleryAnimation/Vector3Space
+    - Com.ForbiddenByte.OSA.Core.Data.Gallery.GalleryEffectParams
+    - Com.ForbiddenByte.OSA.Core.Data.Gallery.GalleryRotation
+    - Com.ForbiddenByte.OSA.Core.Data.Gallery.GalleryScale
+    - Com.ForbiddenByte.OSA.CustomParams.BaseParamsWithPrefab
+    OSA.Utilities:
+    - Com.ForbiddenByte.OSA.CustomAdapters.DateTimePicker.MyParams
     PlayMaker:
     - HutongGames.PlayMaker.ActionData
     - HutongGames.PlayMaker.Fsm
@@ -863,12 +884,6 @@ ScriptsOnlyBuild:
   - assembly: DTT.KeyboardRaiser.Runtime
     fullTypeName: DTT.KeyboardRaiser.UIKeyboardRaiser
     methodName: SetOpeningField
-  - assembly: AdvancedInputField
-    fullTypeName: ChatView
-    methodName: RestoreOriginalMessageInputPosition
-  - assembly: AdvancedInputField
-    fullTypeName: ChatView
-    methodName: OnResizeVerticalSizeChanged
   - assembly: DoozyRuntime
     fullTypeName: Doozy.Runtime.UIManager.Containers.UIView
     methodName: Show
@@ -1167,139 +1182,147 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2434}
     - Class: 114
-      Script: {instanceID: 2444}
-    - Class: 114
       Script: {instanceID: 2446}
     - Class: 114
       Script: {instanceID: 2448}
     - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2562}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2536}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3068}
     - Class: 114
-      Script: {instanceID: 3520}
+      Script: {instanceID: 3404}
     - Class: 114
-      Script: {instanceID: 3522}
+      Script: {instanceID: 3508}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 3544}
     - Class: 114
-      Script: {instanceID: 4202}
+      Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 4364}
+      Script: {instanceID: 3750}
     - Class: 114
-      Script: {instanceID: 4540}
+      Script: {instanceID: 3790}
     - Class: 114
-      Script: {instanceID: 4612}
+      Script: {instanceID: 4246}
     - Class: 114
-      Script: {instanceID: 4940}
+      Script: {instanceID: 4418}
     - Class: 114
-      Script: {instanceID: 5058}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 5200}
+      Script: {instanceID: 4674}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5008}
     - Class: 114
-      Script: {instanceID: 5978}
+      Script: {instanceID: 5132}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 5276}
     - Class: 114
-      Script: {instanceID: 6550}
+      Script: {instanceID: 5526}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6076}
     - Class: 114
-      Script: {instanceID: 7228}
+      Script: {instanceID: 6314}
     - Class: 114
-      Script: {instanceID: 7246}
+      Script: {instanceID: 6658}
     - Class: 114
-      Script: {instanceID: 7502}
+      Script: {instanceID: 6818}
     - Class: 114
-      Script: {instanceID: 8072}
+      Script: {instanceID: 7360}
     - Class: 114
-      Script: {instanceID: 8384}
+      Script: {instanceID: 7378}
     - Class: 114
-      Script: {instanceID: 8636}
+      Script: {instanceID: 7644}
     - Class: 114
-      Script: {instanceID: 9016}
+      Script: {instanceID: 8232}
     - Class: 114
-      Script: {instanceID: 9410}
+      Script: {instanceID: 8560}
     - Class: 114
-      Script: {instanceID: 9508}
+      Script: {instanceID: 8816}
     - Class: 114
-      Script: {instanceID: 9574}
+      Script: {instanceID: 9200}
     - Class: 114
-      Script: {instanceID: 10660}
+      Script: {instanceID: 9612}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 12320}
+      Script: {instanceID: 9782}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 12448}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 12844}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12854}
+      Script: {instanceID: 12592}
     - Class: 114
-      Script: {instanceID: 13384}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 13758}
+      Script: {instanceID: 13120}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 14924}
+      Script: {instanceID: 13672}
     - Class: 114
-      Script: {instanceID: 14966}
+      Script: {instanceID: 14050}
     - Class: 114
-      Script: {instanceID: 15098}
+      Script: {instanceID: 14242}
     - Class: 114
-      Script: {instanceID: 15202}
+      Script: {instanceID: 15252}
     - Class: 114
-      Script: {instanceID: 15462}
+      Script: {instanceID: 15296}
     - Class: 114
-      Script: {instanceID: 15814}
+      Script: {instanceID: 15432}
     - Class: 114
-      Script: {instanceID: 16076}
+      Script: {instanceID: 15542}
     - Class: 114
-      Script: {instanceID: 16210}
+      Script: {instanceID: 15804}
     - Class: 114
-      Script: {instanceID: 16276}
+      Script: {instanceID: 16168}
     - Class: 114
-      Script: {instanceID: 16582}
+      Script: {instanceID: 16430}
     - Class: 114
-      Script: {instanceID: 16748}
+      Script: {instanceID: 16448}
     - Class: 114
-      Script: {instanceID: 17302}
+      Script: {instanceID: 16572}
     - Class: 114
-      Script: {instanceID: 17378}
+      Script: {instanceID: 16640}
     - Class: 114
-      Script: {instanceID: 18030}
+      Script: {instanceID: 16952}
     - Class: 114
-      Script: {instanceID: 18046}
+      Script: {instanceID: 17124}
     - Class: 114
-      Script: {instanceID: 18428}
+      Script: {instanceID: 17692}
     - Class: 114
-      Script: {instanceID: 18498}
+      Script: {instanceID: 17770}
     - Class: 114
-      Script: {instanceID: 18508}
+      Script: {instanceID: 18452}
     - Class: 114
-      Script: {instanceID: 18594}
+      Script: {instanceID: 18468}
     - Class: 114
-      Script: {instanceID: 18612}
+      Script: {instanceID: 18858}
     - Class: 114
-      Script: {instanceID: 18788}
+      Script: {instanceID: 18930}
     - Class: 114
-      Script: {instanceID: 18826}
+      Script: {instanceID: 18940}
+    - Class: 114
+      Script: {instanceID: 19030}
+    - Class: 114
+      Script: {instanceID: 19048}
+    - Class: 114
+      Script: {instanceID: 19230}
+    - Class: 114
+      Script: {instanceID: 19268}
+    - Class: 114
+      Script: {instanceID: 20752}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1343,6 +1366,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1360,259 +1385,257 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2438}
     - Class: 114
+      Script: {instanceID: 2440}
+    - Class: 114
       Script: {instanceID: 2442}
-    - Class: 114
-      Script: {instanceID: 2444}
-    - Class: 114
-      Script: {instanceID: 2446}
     - Class: 114
       Script: {instanceID: 2448}
     - Class: 114
       Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 2454}
     - Class: 114
-      Script: {instanceID: 3238}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3302}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3308}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3318}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3324}
     - Class: 114
-      Script: {instanceID: 3694}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 3508}
     - Class: 114
-      Script: {instanceID: 4236}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 3790}
     - Class: 114
-      Script: {instanceID: 4540}
+      Script: {instanceID: 4280}
     - Class: 114
-      Script: {instanceID: 4576}
+      Script: {instanceID: 4550}
     - Class: 114
-      Script: {instanceID: 4586}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 4612}
+      Script: {instanceID: 4638}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4648}
     - Class: 114
-      Script: {instanceID: 5208}
+      Script: {instanceID: 4674}
+    - Class: 114
+      Script: {instanceID: 4804}
     - Class: 114
       Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 5284}
+      Script: {instanceID: 5364}
     - Class: 114
-      Script: {instanceID: 5320}
+      Script: {instanceID: 5404}
     - Class: 114
-      Script: {instanceID: 5396}
+      Script: {instanceID: 5484}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5526}
     - Class: 114
-      Script: {instanceID: 5524}
+      Script: {instanceID: 5614}
     - Class: 114
-      Script: {instanceID: 5590}
+      Script: {instanceID: 5682}
     - Class: 114
-      Script: {instanceID: 5760}
+      Script: {instanceID: 5854}
     - Class: 114
-      Script: {instanceID: 6038}
+      Script: {instanceID: 6138}
     - Class: 114
-      Script: {instanceID: 6328}
+      Script: {instanceID: 6432}
     - Class: 114
-      Script: {instanceID: 6494}
+      Script: {instanceID: 6600}
     - Class: 114
-      Script: {instanceID: 6856}
+      Script: {instanceID: 6976}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7228}
     - Class: 114
-      Script: {instanceID: 7274}
+      Script: {instanceID: 7406}
     - Class: 114
-      Script: {instanceID: 7502}
+      Script: {instanceID: 7644}
     - Class: 114
-      Script: {instanceID: 7918}
+      Script: {instanceID: 8072}
     - Class: 114
-      Script: {instanceID: 7920}
+      Script: {instanceID: 8074}
     - Class: 114
-      Script: {instanceID: 8114}
+      Script: {instanceID: 8276}
     - Class: 114
-      Script: {instanceID: 8156}
+      Script: {instanceID: 8320}
     - Class: 114
-      Script: {instanceID: 8384}
+      Script: {instanceID: 8560}
     - Class: 114
-      Script: {instanceID: 8458}
+      Script: {instanceID: 8634}
     - Class: 114
-      Script: {instanceID: 8596}
+      Script: {instanceID: 8774}
     - Class: 114
-      Script: {instanceID: 8790}
+      Script: {instanceID: 8970}
     - Class: 114
-      Script: {instanceID: 9016}
+      Script: {instanceID: 9200}
     - Class: 114
-      Script: {instanceID: 9152}
+      Script: {instanceID: 9342}
     - Class: 114
-      Script: {instanceID: 9350}
+      Script: {instanceID: 9546}
     - Class: 114
-      Script: {instanceID: 9400}
+      Script: {instanceID: 9598}
     - Class: 114
-      Script: {instanceID: 9410}
+      Script: {instanceID: 9612}
     - Class: 114
-      Script: {instanceID: 9574}
+      Script: {instanceID: 9782}
     - Class: 114
-      Script: {instanceID: 9658}
+      Script: {instanceID: 9866}
     - Class: 114
-      Script: {instanceID: 9792}
+      Script: {instanceID: 10010}
     - Class: 114
-      Script: {instanceID: 10064}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10160}
+      Script: {instanceID: 10388}
     - Class: 114
-      Script: {instanceID: 10226}
+      Script: {instanceID: 10454}
     - Class: 114
-      Script: {instanceID: 10422}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10484}
+      Script: {instanceID: 10716}
     - Class: 114
-      Script: {instanceID: 10870}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 10986}
+      Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 10998}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11596}
-    - Class: 114
-      Script: {instanceID: 11648}
-    - Class: 114
-      Script: {instanceID: 11652}
-    - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11848}
     - Class: 114
       Script: {instanceID: 11902}
     - Class: 114
-      Script: {instanceID: 12230}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 12320}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12448}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12494}
     - Class: 114
-      Script: {instanceID: 12844}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12854}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 12976}
+      Script: {instanceID: 13120}
     - Class: 114
-      Script: {instanceID: 13408}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 13550}
+      Script: {instanceID: 13226}
     - Class: 114
-      Script: {instanceID: 13830}
+      Script: {instanceID: 13252}
     - Class: 114
-      Script: {instanceID: 13858}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 14274}
+      Script: {instanceID: 13838}
     - Class: 114
-      Script: {instanceID: 14322}
+      Script: {instanceID: 14124}
     - Class: 114
-      Script: {instanceID: 14508}
+      Script: {instanceID: 14154}
     - Class: 114
-      Script: {instanceID: 14526}
+      Script: {instanceID: 14588}
     - Class: 114
-      Script: {instanceID: 14618}
+      Script: {instanceID: 14638}
     - Class: 114
-      Script: {instanceID: 14762}
+      Script: {instanceID: 14744}
     - Class: 114
-      Script: {instanceID: 14764}
+      Script: {instanceID: 14828}
+    - Class: 114
+      Script: {instanceID: 14846}
+    - Class: 114
+      Script: {instanceID: 14942}
+    - Class: 114
+      Script: {instanceID: 15088}
     - Class: 114
       Script: {instanceID: 15090}
     - Class: 114
-      Script: {instanceID: 15098}
+      Script: {instanceID: 15424}
     - Class: 114
-      Script: {instanceID: 15242}
+      Script: {instanceID: 15432}
     - Class: 114
-      Script: {instanceID: 15540}
+      Script: {instanceID: 15582}
     - Class: 114
-      Script: {instanceID: 15600}
+      Script: {instanceID: 15882}
     - Class: 114
-      Script: {instanceID: 15706}
+      Script: {instanceID: 15944}
     - Class: 114
-      Script: {instanceID: 15822}
+      Script: {instanceID: 16054}
     - Class: 114
-      Script: {instanceID: 15834}
+      Script: {instanceID: 16176}
     - Class: 114
-      Script: {instanceID: 15840}
+      Script: {instanceID: 16188}
     - Class: 114
-      Script: {instanceID: 15886}
+      Script: {instanceID: 16194}
     - Class: 114
-      Script: {instanceID: 16024}
+      Script: {instanceID: 16240}
     - Class: 114
-      Script: {instanceID: 16276}
+      Script: {instanceID: 16378}
     - Class: 114
-      Script: {instanceID: 16582}
+      Script: {instanceID: 16640}
     - Class: 114
-      Script: {instanceID: 16748}
+      Script: {instanceID: 16952}
     - Class: 114
-      Script: {instanceID: 16832}
+      Script: {instanceID: 17124}
     - Class: 114
-      Script: {instanceID: 16962}
+      Script: {instanceID: 17210}
     - Class: 114
-      Script: {instanceID: 17298}
+      Script: {instanceID: 17340}
     - Class: 114
-      Script: {instanceID: 17342}
+      Script: {instanceID: 17734}
     - Class: 114
-      Script: {instanceID: 17378}
+      Script: {instanceID: 17770}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 17850}
     - Class: 114
-      Script: {instanceID: 17502}
+      Script: {instanceID: 17924}
     - Class: 114
-      Script: {instanceID: 17526}
+      Script: {instanceID: 17954}
     - Class: 114
-      Script: {instanceID: 17554}
+      Script: {instanceID: 18018}
     - Class: 114
-      Script: {instanceID: 17616}
+      Script: {instanceID: 18120}
     - Class: 114
-      Script: {instanceID: 17718}
+      Script: {instanceID: 18280}
     - Class: 114
-      Script: {instanceID: 17872}
+      Script: {instanceID: 18316}
     - Class: 114
-      Script: {instanceID: 17906}
+      Script: {instanceID: 18468}
     - Class: 114
-      Script: {instanceID: 18046}
+      Script: {instanceID: 19048}
     - Class: 114
-      Script: {instanceID: 18612}
+      Script: {instanceID: 19098}
     - Class: 114
-      Script: {instanceID: 18660}
+      Script: {instanceID: 19230}
     - Class: 114
-      Script: {instanceID: 18788}
+      Script: {instanceID: 19334}
     - Class: 114
-      Script: {instanceID: 18888}
+      Script: {instanceID: 19362}
     - Class: 114
-      Script: {instanceID: 18916}
+      Script: {instanceID: 19508}
     - Class: 114
-      Script: {instanceID: 19062}
+      Script: {instanceID: 19890}
     - Class: 114
-      Script: {instanceID: 19426}
+      Script: {instanceID: 19958}
     - Class: 114
-      Script: {instanceID: 19492}
+      Script: {instanceID: 20066}
     - Class: 114
-      Script: {instanceID: 19594}
+      Script: {instanceID: 20090}
     - Class: 114
-      Script: {instanceID: 19618}
+      Script: {instanceID: 20264}
     - Class: 114
-      Script: {instanceID: 19784}
+      Script: {instanceID: 20300}
     - Class: 114
-      Script: {instanceID: 19818}
+      Script: {instanceID: 20506}
     - Class: 114
-      Script: {instanceID: 20022}
-    - Class: 114
-      Script: {instanceID: 20272}
+      Script: {instanceID: 20758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1630,8 +1653,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
-      Script: {instanceID: 0}
-    - Class: 328
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1666,16 +1687,28 @@ ScriptsOnlyBuild:
     className: PlayMakerFSM
   - hash:
       serializedVersion: 2
+      Hash: bcaee4c2a83047257b5f47d6ed264b75
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: bcaee4c2a83047257b5f47d6ed264b75
+      Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
-    className: Toggle
+    className: Shadow
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -1736,6 +1769,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Framework
     className: Toolbox
+  - hash:
+      serializedVersion: 2
+      Hash: a81d4c2c1cf3ad164d277d927a193679
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Input
+    className: TableViewFloatingDropdown
   - hash:
       serializedVersion: 2
       Hash: f2f28ffbe8ab99450ab5b2f0613f131b
@@ -1823,6 +1862,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Input
+    className: TableViewTextInputController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableSubmitTrigger
@@ -1868,6 +1913,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: ReorderableListElement
+  - hash:
+      serializedVersion: 2
+      Hash: 6525e31d07abdfbd134324338d4b0400
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: LongClickableItem
   - hash:
       serializedVersion: 2
       Hash: 3b1421e9052524420c129a48f8453ec2
@@ -1948,6 +1999,12 @@ ScriptsOnlyBuild:
     className: Authentication
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SelectAndDelete
+    className: SelectAndDeleteSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 5f70d033a75ce3cd388d4287ffe0a04f
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Containers
@@ -1982,6 +2039,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: SoftMaskScript
+  - hash:
+      serializedVersion: 2
+      Hash: 939a6f10555bc8b9b6fd07e8ade256b1
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: ScreenAutoRotationPanel
   - hash:
       serializedVersion: 2
       Hash: fe69a11e90d5c953759d4dd3ced816c6
@@ -2048,6 +2111,12 @@ ScriptsOnlyBuild:
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableCancelTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: bf74e51a6276312a86dd5c1b28a0269d
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.DateTimePicker
+    className: DateTimePickerAdapter
   - hash:
       serializedVersion: 2
       Hash: d4ed607c06eb38649234d2478aa24d49
@@ -2122,6 +2191,12 @@ ScriptsOnlyBuild:
     className: BlockRichTextTagsFilter
   - hash:
       serializedVersion: 2
+      Hash: fce250f291fde92c42a1e87d7b64e4fc
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.MultiplePrefabs
+    className: MultiplePrefabsExample
+  - hash:
+      serializedVersion: 2
       Hash: a01da6275fab5da6fe6268b00bb68b89
     assemblyName: Assembly-CSharp.dll
     namespaceName: TheraBytes.BetterUi
@@ -2132,6 +2207,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: CoroutineRunner
+  - hash:
+      serializedVersion: 2
+      Hash: d59d040c45bf68a300ad1e045a213023
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.AdditionalComponents
+    className: OSAPercentageContentPaddingSetter
   - hash:
       serializedVersion: 2
       Hash: e5ee43ede19111e51b78dbbe3af736a9
@@ -2182,6 +2263,24 @@ ScriptsOnlyBuild:
     className: UnityOnButtonClickMessageListener
   - hash:
       serializedVersion: 2
+      Hash: f048cb9643134085a6d999bc74769974
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.HierarchyWithStickyHeaders
+    className: HierarchyWithStickyHeadersSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.GridDifferentItemSizes
+    className: PackedGridSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: de06bd7b6aecbba5f910209bdc482353
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Hierarchy
+    className: HierarchyExample
+  - hash:
+      serializedVersion: 2
       Hash: 2100a4c956f44c2e3fab93cbeacee743
     assemblyName: Assembly-CSharp.dll
     namespaceName: TheraBytes.BetterUi
@@ -2212,6 +2311,12 @@ ScriptsOnlyBuild:
     className: BasicTextSelectionHandler
   - hash:
       serializedVersion: 2
+      Hash: 0d99ce0df880d0ea93eebdcdd2c9974d
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Table
+    className: TableViewExample
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: DTT.CoroutineManagement.Demo.dll
     namespaceName: 
@@ -2228,6 +2333,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: UIFlippable
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.PullToRefresh
+    className: PullToRefreshGizmo
+  - hash:
+      serializedVersion: 2
+      Hash: 9ea59e2f54ff8e9e9db0d1c4c9380b8a
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.AdditionalComponents
+    className: OSAProactiveNavigator
   - hash:
       serializedVersion: 2
       Hash: 5d995cff0a62a7ac59e5c43d03670396
@@ -2288,6 +2405,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Listeners
     className: Vector3SignalListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6937f0a6bad1465a307c47c51f6bfd5e
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.PageView
+    className: PageViewSceneEntry
   - hash:
       serializedVersion: 2
       Hash: b1b96c086c7e746f27d3a98d2eb3de51
@@ -2417,9 +2540,21 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleFilterable
+    className: FilterableSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Global
     className: Coroutiner
+  - hash:
+      serializedVersion: 2
+      Hash: 7b55938025080c1cd0c63acc394b46f1
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.DifferentPrefabPerOrientation
+    className: DifferentPrefabPerOrientationExample
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2500,10 +2635,22 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 2400f25a557ce468cbcf61b6561fda62
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleFilterable
+    className: FilterableToggle
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExit2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: ae94689766f364826db3ccb41ebca6df
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViews
+    className: ChildGridExample
   - hash:
       serializedVersion: 2
       Hash: 85c855549ba4a94ce0dfd41cf3b1d212
@@ -2512,9 +2659,9 @@ ScriptsOnlyBuild:
     className: ImageSpriteTarget
   - hash:
       serializedVersion: 2
-      Hash: 34be43d34875bea85f5b192499cbf0a9
+      Hash: 55c043fb00f72e2f09cf78431a150046
     assemblyName: AdvancedInputField.dll
-    namespaceName: 
+    namespaceName: AdvancedInputFieldSamples
     className: ChatView
   - hash:
       serializedVersion: 2
@@ -2650,6 +2797,12 @@ ScriptsOnlyBuild:
     className: LeanSelectableRendererColor
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: OSATitle
+  - hash:
+      serializedVersion: 2
       Hash: 6b176d531c857bc0916241652a217d87
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -2678,6 +2831,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Visual
     className: SignalToColorTarget
+  - hash:
+      serializedVersion: 2
+      Hash: 3bae31d7c23a8b67a2aea80915df5f01
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: WithInputPanel
   - hash:
       serializedVersion: 2
       Hash: 7d893ef668e1a69431036ea016f3652d
@@ -2714,6 +2873,12 @@ ScriptsOnlyBuild:
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableScrollTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 43d378a66bac07e8228904dbf639c5f1
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Simple
+    className: SimpleExample
   - hash:
       serializedVersion: 2
       Hash: 21c9303e17ff59802a817679e959d0c5
@@ -2756,6 +2921,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Reactor.Animators
     className: IntAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.ScrollViews
+    className: UnityScrollRectProxy
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2878,6 +3049,12 @@ ScriptsOnlyBuild:
     className: UINode
   - hash:
       serializedVersion: 2
+      Hash: 9a2a861876da120049e4dd2bae99cd6b
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.PullToRefresh
+    className: PullToRefreshBehaviour
+  - hash:
+      serializedVersion: 2
       Hash: 308a25eee62a28ed5215fd1e26dc086b
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Reactor.Targets.ProgressTargets
@@ -2894,6 +3071,12 @@ ScriptsOnlyBuild:
     assemblyName: AdvancedInputField.dll
     namespaceName: AdvancedInputFieldPlugin
     className: SimulatorKeyboard
+  - hash:
+      serializedVersion: 2
+      Hash: 6bd263efec93eb1ac38f458207d901d8
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: LabelWithInputPanel
   - hash:
       serializedVersion: 2
       Hash: ad7b0f51a64ac1f0b9c67148dd716b3d
@@ -2950,6 +3133,12 @@ ScriptsOnlyBuild:
     className: TMP_TextInfoDebugTool
   - hash:
       serializedVersion: 2
+      Hash: 4a3b027bfd01c911fc051ca27932e231
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Tuple.Basic
+    className: BasicTupleAdapter
+  - hash:
+      serializedVersion: 2
       Hash: 7c077c5835d511e0eb1b518246ed9179
     assemblyName: AdvancedInputField.dll
     namespaceName: 
@@ -2980,10 +3169,22 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
+      Hash: 040dd48e3a027d5424519a5fa2009df4
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.ScrollViews
+    className: NonInteractableScrollRect
+  - hash:
+      serializedVersion: 2
       Hash: e33a573272cdb6b048e6c369d8c1406b
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: UIPrimitiveBase
+  - hash:
+      serializedVersion: 2
+      Hash: 919f1dcd79f6974b04c49cc0223d284a
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleFilterable
+    className: SimpleFilterExample
   - hash:
       serializedVersion: 2
       Hash: f7f2cc2206c881ef8dd03543cb910150
@@ -3020,6 +3221,18 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Listeners
     className: FloatSignalListener
+  - hash:
+      serializedVersion: 2
+      Hash: 88f65669a03bd6b38252727135293dc1
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.IO
+    className: RemoteImageBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: cbc717acec1212b8038714d4ff29e679
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViews
+    className: NestedScrollViewsExample
   - hash:
       serializedVersion: 2
       Hash: 52bcb9c2a78bdd8d98a59e915c346e75
@@ -3064,7 +3277,7 @@ ScriptsOnlyBuild:
     className: UIPopupLink
   - hash:
       serializedVersion: 2
-      Hash: 19bdd6555a623b918e3b75930eed66dd
+      Hash: 24e6bf4b1d0b67021218bfa2665e9db5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatManager
@@ -3086,6 +3299,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: HutongGames.PlayMaker
     className: PlayMakerUiEndEditEvent
+  - hash:
+      serializedVersion: 2
+      Hash: c28d20ae2e85f6076c73a683feef7c67
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.PullToRefresh
+    className: PullToRefreshRotateGizmo
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -3122,6 +3341,12 @@ ScriptsOnlyBuild:
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableCanvasGroupChangedTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 584db063203ad7901527875177d3e380
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: SimpleFPSCounter
   - hash:
       serializedVersion: 2
       Hash: f5e43bd4a5118c0002bcbb8339a34305
@@ -3197,6 +3422,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Grid
+    className: GridSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
@@ -3238,6 +3469,12 @@ ScriptsOnlyBuild:
     className: InputBackButtonTrigger
   - hash:
       serializedVersion: 2
+      Hash: 66bca5cc6a18c5298ec75235e56a84d6
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: ShowOnlyOnPortraitOrientation
+  - hash:
+      serializedVersion: 2
       Hash: dd188869b880195403b153560eab6501
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Animators
@@ -3260,6 +3497,18 @@ ScriptsOnlyBuild:
     assemblyName: CW.Common.dll
     namespaceName: CW.Common
     className: CwLightIntensity
+  - hash:
+      serializedVersion: 2
+      Hash: 40261ba5ebc320f2e7d74bf31a885831
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleNestedScrollViews
+    className: SimpleNestedScrollViewsExample
+  - hash:
+      serializedVersion: 2
+      Hash: 7987af388608d5334119ba554a4b0b48
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Main
+    className: ObjectsVirtualParent
   - hash:
       serializedVersion: 2
       Hash: ec05e85bbd7f060b2111a51136458b58
@@ -3316,6 +3565,18 @@ ScriptsOnlyBuild:
     className: ObservableRectTransformTrigger
   - hash:
       serializedVersion: 2
+      Hash: 3f06c22f355b739f50e84b1ccc93fca2
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: OSASnapperFocusedItemInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Input
+    className: TableViewFloatingDropdownController
+  - hash:
+      serializedVersion: 2
       Hash: 82f61ea8d311cbb3b095aa7a8b26d2e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
@@ -3326,6 +3587,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: DigitalRubyShared
     className: DemoScriptMultiDrag
+  - hash:
+      serializedVersion: 2
+      Hash: a73b9e207be4a58b53c732b4e7d7a95c
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: SimpleImageColorBouncer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Simple
+    className: SimpleSceneEntry
   - hash:
       serializedVersion: 2
       Hash: 4d16cfbaa8e821a2b370e80844a0e9bc
@@ -3344,6 +3617,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Signals
     className: Signals
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ContentSizeFitter
+    className: ContentSizeFitterSceneEntry
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -3460,6 +3739,12 @@ ScriptsOnlyBuild:
     className: EmojiEngine
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Hierarchy
+    className: HierarchySceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 5936297cd167829e95fbde01e3177e9a
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Source
@@ -3544,10 +3829,22 @@ ScriptsOnlyBuild:
     className: TouchSimulation
   - hash:
       serializedVersion: 2
+      Hash: 40261ba5ebc320f2e7d74bf31a885831
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Your.Namespace.Here.UniqueStringHereToAvoidNamespaceConflicts.ListsTest
+    className: NewOSAAdapter
+  - hash:
+      serializedVersion: 2
       Hash: bc8a1530dec3cd785aef92fcaa72f178
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: HorizontalScrollSnap
+  - hash:
+      serializedVersion: 2
+      Hash: 19fedbaca16e47bc20373f1cca0d87b2
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleMultiplePrefabs
+    className: SimpleMultiplePrefabsExample
   - hash:
       serializedVersion: 2
       Hash: 633b7a21a07e2e848df526bbef0edc40
@@ -3562,10 +3859,22 @@ ScriptsOnlyBuild:
     className: DOTweenVisualManager
   - hash:
       serializedVersion: 2
+      Hash: b2a2408a11cebc02a0149ef25ffcabad
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.GridWithCategories
+    className: GridWithCategoriesExample
+  - hash:
+      serializedVersion: 2
       Hash: d1e8dcc9bbebf98ea5a85486f9548b1b
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Nody.Nodes
     className: PivotNode
+  - hash:
+      serializedVersion: 2
+      Hash: b2150dfcaa12f4b643ff62a89001e78c
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.PageView
+    className: PageViewExample
   - hash:
       serializedVersion: 2
       Hash: 7b98776281e644aae18f58f2e8a4f108
@@ -3608,6 +3917,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.MultiplePrefabs
+    className: SliderItemBehaviour
   - hash:
       serializedVersion: 2
       Hash: 76aef43e801605d1829c8805eeee135c
@@ -3736,6 +4051,12 @@ ScriptsOnlyBuild:
     className: DemoScriptDimmingView
   - hash:
       serializedVersion: 2
+      Hash: 842669aa603f431d0518599573ae79d5
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Chat
+    className: ChatExample
+  - hash:
+      serializedVersion: 2
       Hash: 694935de0360a9e152f28e5e66da287d
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -3778,6 +4099,12 @@ ScriptsOnlyBuild:
     className: InputSettings
   - hash:
       serializedVersion: 2
+      Hash: 40261ba5ebc320f2e7d74bf31a885831
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleNestedScrollViews
+    className: SimpleNestedScrollViewsExampleChildList
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -3812,6 +4139,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: ScrollSnapScrollbarHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 8040afa76fd57848a8b76c039fb1eb51
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: ScrollToPanel
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -3892,6 +4225,12 @@ ScriptsOnlyBuild:
     className: SettingsScriptableObject
   - hash:
       serializedVersion: 2
+      Hash: e2ba87013f8f9f3e17045c5bf7e775ac
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ItemDragging
+    className: ItemDraggingSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: Germanenko.Framework
@@ -3970,6 +4309,12 @@ ScriptsOnlyBuild:
     className: MultiplayerEventSystem
   - hash:
       serializedVersion: 2
+      Hash: 9bfb926773301714a00594fd3221ce0e
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: LoadSceneOnClick
+  - hash:
+      serializedVersion: 2
       Hash: 72763ba72b43403ee09a4c54b07cb346
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.XR
@@ -4042,6 +4387,12 @@ ScriptsOnlyBuild:
     className: ResultsView
   - hash:
       serializedVersion: 2
+      Hash: 040dd48e3a027d5424519a5fa2009df4
+    assemblyName: OSA.Utilities.dll
+    namespaceName: frame8.ThirdParty.UI
+    className: ScrollRectNested
+  - hash:
+      serializedVersion: 2
       Hash: 466c350e09323291951584f5074c1531
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Reactor.ScriptableObjects
@@ -4094,6 +4445,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: UIWindowBase
+  - hash:
+      serializedVersion: 2
+      Hash: 0f35d35172e2b6a3c291e321aead61ba
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ContentSizeFitter
+    className: ContentSizeFitterExample
   - hash:
       serializedVersion: 2
       Hash: 10516c54b4d4dff0a3480f8b1343b7ad
@@ -4150,10 +4507,22 @@ ScriptsOnlyBuild:
     className: PrintToConsole
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Main
+    className: MainSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 87b7d23fb37aefd4f39f2230f83190bb
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Listeners
     className: IntSignalListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.DateTimePicker
+    className: ShowDateTimePickerButton
   - hash:
       serializedVersion: 2
       Hash: 7da108d8223c1bf1dc5a12d568df68e6
@@ -4252,6 +4621,12 @@ ScriptsOnlyBuild:
     className: UpdateExample
   - hash:
       serializedVersion: 2
+      Hash: 4e5240f6e4097101945e95ce391223e8
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: LabelWithToggles
+  - hash:
+      serializedVersion: 2
       Hash: 3aff09b431c157074e7eab492f3fa35d
     assemblyName: AdvancedInputField.dll
     namespaceName: AdvancedInputFieldPlugin
@@ -4268,6 +4643,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: DigitalRubyShared
     className: FingersScrollViewComponentScript
+  - hash:
+      serializedVersion: 2
+      Hash: a55007acfc993e0e0608c34e017cbea8
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.IncrementalItemFetch
+    className: IncrementalItemFetchExample
   - hash:
       serializedVersion: 2
       Hash: c24a778d9aa393e11e54bff320ca63de
@@ -4292,6 +4673,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: ArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 1f834865e3fe23b03777bb1ffb8082aa
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.AnimatedInsertRemove
+    className: AnimatedInsertRemoveExample
   - hash:
       serializedVersion: 2
       Hash: 1b8811ee3e4e7f67d1b1c7db75b479b5
@@ -4324,6 +4711,12 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: 39383e121697739c2c977e6543324c9a
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: LabelWithToggle
+  - hash:
+      serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -4348,6 +4741,12 @@ ScriptsOnlyBuild:
     className: RuntimeTicker
   - hash:
       serializedVersion: 2
+      Hash: 201154ffcc0b6a5e91f168b829a77db0
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.HierarchyWithStickyHeaders
+    className: OSAHierarchyStickyHeader
+  - hash:
+      serializedVersion: 2
       Hash: 8a874a8207a7664bdf44e61f28717254
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -4358,12 +4757,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.UI
     className: VirtualMouseInput
-  - hash:
-      serializedVersion: 2
-      Hash: caa533b001ae39b864ba8425019e2268
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Shadow
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -4414,6 +4807,12 @@ ScriptsOnlyBuild:
     className: FingersExampleOptionsScript
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViewsSameDirection
+    className: NestedScrollViewsSameDirectionSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 7d70dc660eb000962adf5670a5a7101c
     assemblyName: LeanTouch.dll
     namespaceName: Lean.Touch
@@ -4445,6 +4844,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.DateTimePicker
+    className: DateTimePickerSimpleSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: NativeGallery.Runtime.dll
     namespaceName: NativeGalleryNamespace
     className: NGMediaReceiveCallbackiOS
@@ -4472,6 +4877,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.GridWithCategories
+    className: GridWithCategoriesSceneEntry
   - hash:
       serializedVersion: 2
       Hash: 85c855549ba4a94ce0dfd41cf3b1d212
@@ -4534,10 +4945,22 @@ ScriptsOnlyBuild:
     className: MultiTextSelectionRenderer
   - hash:
       serializedVersion: 2
+      Hash: c921aa1e0ec7ad840120f69cac965a12
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.MultiplePrefabs
+    className: MultiplePrefabsSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: NonDrawingGraphic
+  - hash:
+      serializedVersion: 2
+      Hash: b1bbbf32ad47d8fa25fc4a959b1811a4
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: AspectRatioFitterByLayoutElement
   - hash:
       serializedVersion: 2
       Hash: 9657c6ad58ed0959dc28b4c6003c04b4
@@ -4852,6 +5275,18 @@ ScriptsOnlyBuild:
     className: BetterRawImage
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.IncrementalItemFetch
+    className: IncrementalItemFetchSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.DifferentPrefabPerOrientation
+    className: DifferentPrefabPerOrientationSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: f43ef8add170f242def46d60ecc4a74b
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Components
@@ -4955,15 +5390,15 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Unity.VisualScripting.Core.dll
-    namespaceName: Unity.VisualScripting
-    className: UnityOnScrollMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableEventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.VisualScripting.Core.dll
+    namespaceName: Unity.VisualScripting
+    className: UnityOnScrollMessageListener
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -4976,6 +5411,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Signals
     className: SignalSender
+  - hash:
+      serializedVersion: 2
+      Hash: b2150dfcaa12f4b643ff62a89001e78c
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ExpandToVariableSize
+    className: ExpandItemToVariableSizeExample
   - hash:
       serializedVersion: 2
       Hash: f2090127f2e4c7d785d3cd185f9d64b9
@@ -5008,10 +5449,22 @@ ScriptsOnlyBuild:
     className: VariablesAsset
   - hash:
       serializedVersion: 2
+      Hash: 29e9ccda74d27e6961b75cfe7e4dc9e9
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimplePullToRefresh
+    className: SimplePullToRefreshExample
+  - hash:
+      serializedVersion: 2
       Hash: 2d5d3e1efc2d6c83d3c6c51d8af75709
     assemblyName: Assembly-CSharp.dll
     namespaceName: TheraBytes.BetterUi
     className: Materials
+  - hash:
+      serializedVersion: 2
+      Hash: 5155b00e8fef8b33e2b56b19dacf8ada
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleMultiplePrefabs
+    className: SimpleMultiplePrefabsSceneEntry
   - hash:
       serializedVersion: 2
       Hash: df6e8769057450dcb489d90e3e234e8d
@@ -5036,6 +5489,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: BestFitOutline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ExpandToVariableSize
+    className: ExpandItemToVariableSizeSceneEntry
   - hash:
       serializedVersion: 2
       Hash: 2c0a467ee7950c941c2dd8ef6b974a7e
@@ -5272,6 +5731,12 @@ ScriptsOnlyBuild:
     className: KeyboardClient
   - hash:
       serializedVersion: 2
+      Hash: 40261ba5ebc320f2e7d74bf31a885831
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChatViewAdapter
+  - hash:
+      serializedVersion: 2
       Hash: f8b3396d58490f4f27e501e317d1b596
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -5392,6 +5857,12 @@ ScriptsOnlyBuild:
     className: CwCameraPivot
   - hash:
       serializedVersion: 2
+      Hash: 5a47a102bc089bd9c0487d69b0137519
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Table
+    className: TableViewSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: f334201bf4b6385c654256ccb69bd6ec
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
@@ -5426,6 +5897,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.UI
     className: TrackedDeviceRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 8bc54b609cb4122d80108677afec8a08
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.LoopingSpinners
+    className: LoopingSpinnerExample
   - hash:
       serializedVersion: 2
       Hash: 5d2e21ff8f499fc082153981a251d13a
@@ -5482,6 +5959,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 40261ba5ebc320f2e7d74bf31a885831
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViewsSameDirection
+    className: NestedScrollViewsSameDirectionExample
+  - hash:
+      serializedVersion: 2
       Hash: 2802d846ea964d192455493eb4784a48
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -5492,6 +5975,12 @@ ScriptsOnlyBuild:
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Triggers
     className: PointerUpTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: bde60131bd19510439e71aac45750c52
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Input
+    className: TableViewText
   - hash:
       serializedVersion: 2
       Hash: ef5c43f921427d03730f6ea4c848f07d
@@ -5516,6 +6005,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: DigitalRubyShared
     className: DemoScript3DOrbit
+  - hash:
+      serializedVersion: 2
+      Hash: f31370cafd36978d03c00aef24517248
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.ItemDragging
+    className: ItemDraggingExample
   - hash:
       serializedVersion: 2
       Hash: 5fa05dfb529a8aec737df5a4f200bb80
@@ -5684,6 +6179,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: ObjectSpin
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.Optimization
+    className: ShadowRemover
+  - hash:
+      serializedVersion: 2
+      Hash: 0e0cefc7d22b61c101781e61e6ffd625
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Main
+    className: MainExample
   - hash:
       serializedVersion: 2
       Hash: 9cb12606a34bf589f8edd8bc0fe62fdd
@@ -5974,6 +6481,12 @@ ScriptsOnlyBuild:
     className: TMP_TextEventCheck
   - hash:
       serializedVersion: 2
+      Hash: 5513cc6d8e4569e356f661acb2d36010
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.Core
+    className: Snapper8
+  - hash:
+      serializedVersion: 2
       Hash: 2d5213f4eb1afb7456be6407aa5e3983
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -5984,6 +6497,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnEndDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 020037db7de6c7f1f4833a07463d4419
+    assemblyName: OSA.Core.dll
+    namespaceName: frame8.Logic.Misc.Visual.UI.MonoBehaviours
+    className: ScrollbarFixer8
   - hash:
       serializedVersion: 2
       Hash: fcd01fac3571a9933a793a373489bba1
@@ -6166,6 +6685,12 @@ ScriptsOnlyBuild:
     className: LoginView
   - hash:
       serializedVersion: 2
+      Hash: 8bf0312840ec2c0e586508affe9df5d0
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Basic
+    className: BasicTableViewOptionsPanel
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -6292,6 +6817,12 @@ ScriptsOnlyBuild:
     className: PortalNode
   - hash:
       serializedVersion: 2
+      Hash: 3028d6e075ed84ea542d81f92952c3a0
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.GridDifferentItemSizes
+    className: PackedGridExample
+  - hash:
+      serializedVersion: 2
       Hash: 88a886bc03d974fd5a17daa19cf4fb58
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
@@ -6314,6 +6845,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: DigitalRubyShared
     className: ImageGestureRecognizerComponentScript
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Chat
+    className: ChatSceneEntry
   - hash:
       serializedVersion: 2
       Hash: 82c30317f3fed44614d65bc8b383b9ec
@@ -6400,6 +6937,12 @@ ScriptsOnlyBuild:
     className: TextPic
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.IO
+    className: SimpleImageDownloader
+  - hash:
+      serializedVersion: 2
       Hash: a28bfa71a21901e68b229e1075175984
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -6460,10 +7003,10 @@ ScriptsOnlyBuild:
     className: UIHighlightable
   - hash:
       serializedVersion: 2
-      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: AspectRatioFitter
+      Hash: 5f20ff64c2b81ad315b3365d88250e5c
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: ScrollbarRotateOnPull
   - hash:
       serializedVersion: 2
       Hash: dcd4abd5250acc71a0a662b455a0e586
@@ -6538,16 +7081,34 @@ ScriptsOnlyBuild:
     className: ElementsContainer
   - hash:
       serializedVersion: 2
+      Hash: 032ebe3ca6b8f783440b0c6e9002a196
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common
+    className: ResizeablePanel
+  - hash:
+      serializedVersion: 2
       Hash: f2cb2f43f051ef9c1879c3845d65e4be
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Triggers
     className: UISelectedTrigger
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.LoopingSpinners
+    className: LoopingSpinnersSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: 363130441472646d5b995a5386b173bf
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions.ColorPicker
     className: ColorLabel
+  - hash:
+      serializedVersion: 2
+      Hash: bd1651714884411ab4d1b837226cb731
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: PackedGridLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 4b39ecb844941edb3ae4debc5ad94186
@@ -6586,6 +7147,18 @@ ScriptsOnlyBuild:
     className: RecoveryTaskItem
   - hash:
       serializedVersion: 2
+      Hash: 4a3b027bfd01c911fc051ca27932e231
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.TableView.Tuple.Basic
+    className: BasicHeaderTupleAdapter
+  - hash:
+      serializedVersion: 2
+      Hash: 41b3544869f3ddd45e7bea254b8d0a4a
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: ExpandCollapseOnClick
+  - hash:
+      serializedVersion: 2
       Hash: 50db332992beb231e6f95e3f62b14fae
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.Reactor.Targets
@@ -6604,6 +7177,12 @@ ScriptsOnlyBuild:
     className: StringBehaviour
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.AdditionalComponents
+    className: InputFieldInScrollRectFixer
+  - hash:
+      serializedVersion: 2
       Hash: 15b98f87b741c0b4365105c78410e96f
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.UIManager.Listeners
@@ -6614,6 +7193,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: DigitalRubyShared
     className: DemoScriptTapComponentAddByScript
+  - hash:
+      serializedVersion: 2
+      Hash: c87895ecc71022d9d9255da0831af873
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Grid
+    className: GridExample
   - hash:
       serializedVersion: 2
       Hash: e09e8bebc0fcd32bb8af1287a6b44816
@@ -6754,6 +7339,12 @@ ScriptsOnlyBuild:
     className: BetterInputField
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimplePullToRefresh
+    className: SimplePullToRefreshSceneEntry
+  - hash:
+      serializedVersion: 2
       Hash: d3baf7b56beeec7bbddf6b383b4b57aa
     assemblyName: DTT.KeyboardRaiser.Demo.dll
     namespaceName: DTT.KeyboardRaiser.Example
@@ -6764,6 +7355,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: TestCompression
+  - hash:
+      serializedVersion: 2
+      Hash: 6525e31d07abdfbd134324338d4b0400
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util.ItemDragging
+    className: DraggableItem
   - hash:
       serializedVersion: 2
       Hash: 808b61649a83d09a2923abe0bd93f15f
@@ -6796,10 +7393,22 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SimpleNestedScrollViews
+    className: SimpleNestedScrollViewsEntry
+  - hash:
+      serializedVersion: 2
       Hash: 22ada809ffb8fe1ac0da07ff2cabb517
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RecoveryDeletedTasks
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.AdditionalComponents
+    className: InputFieldInScrollRectFixerTMPro
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -6854,6 +7463,12 @@ ScriptsOnlyBuild:
     assemblyName: UniRx.dll
     namespaceName: UniRx.Triggers
     className: ObservableEnableTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: fbc7044aaf391610f160bf1cd7a9d049
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.AdditionalComponents
+    className: OSAContentDecorator
   - hash:
       serializedVersion: 2
       Hash: 3e0a3f5610abd63ca095ce9763499638
@@ -6934,6 +7549,12 @@ ScriptsOnlyBuild:
     className: ObservableLateUpdateTrigger
   - hash:
       serializedVersion: 2
+      Hash: da4e59bb5fc24e30d55c273af960caa7
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: RectTransformEdgeDragger
+  - hash:
+      serializedVersion: 2
       Hash: c7bfc74f43835fb62cf439206926e5a5
     assemblyName: DoozyRuntime.dll
     namespaceName: Doozy.Runtime.SceneManagement.ScriptableObjects
@@ -6944,6 +7565,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextSelector_B
+  - hash:
+      serializedVersion: 2
+      Hash: b42a3db42ecbe43c6b0f8962333e4d83
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: LabelWithSliderPanel
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViews
+    className: NestedScrollViewsSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: 7dda0fa73d43aca1f47b05eeca28ce39
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.Util
+    className: DiscreteScrollbar
   - hash:
       serializedVersion: 2
       Hash: fc32127aded156e08d0561aa7c41970b
@@ -7018,6 +7657,12 @@ ScriptsOnlyBuild:
     className: UIContainerFloatAnimator
   - hash:
       serializedVersion: 2
+      Hash: 7a1126bd07716dbef2a7144e0d3384bb
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.NestedScrollViewsSameDirection
+    className: ChildGridSimpleExample
+  - hash:
+      serializedVersion: 2
       Hash: cdb781e7e1a81c46b95738a69e3312e2
     assemblyName: AdvancedInputField.dll
     namespaceName: AdvancedInputFieldSamples
@@ -7058,6 +7703,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TheraBytes.BetterUi
     className: BetterButton
+  - hash:
+      serializedVersion: 2
+      Hash: 464be8b60be38f6c4f53ddc2a013dcce
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: ButtonWithInputPanel
   - hash:
       serializedVersion: 2
       Hash: 785e88b072472f5c6f9742d99bdbe1b5
@@ -7192,10 +7843,34 @@ ScriptsOnlyBuild:
     className: TransformEventsBridge
   - hash:
       serializedVersion: 2
+      Hash: 5e574f6e31ad0776f7bf7162d7c03d32
+    assemblyName: OSA.Utilities.dll
+    namespaceName: Com.ForbiddenByte.OSA.CustomAdapters.DateTimePicker
+    className: DateTimePickerDialog
+  - hash:
+      serializedVersion: 2
       Hash: fc9a639f07e0ad4e58221fd0038eeddd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProfileView
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.AnimatedInsertRemove
+    className: AnimatedInsertRemoveSceneEntry
+  - hash:
+      serializedVersion: 2
+      Hash: a04bebbf00defa072b5411a44c974248
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.SelectAndDelete
+    className: SelectAndDeleteExample
+  - hash:
+      serializedVersion: 2
+      Hash: 31863c4fe0ebdb1db60e3143dc37484d
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.Drawer
+    className: DrawerCommandPanel
   - hash:
       serializedVersion: 2
       Hash: 9ab217c95f2d30d20c15fa60346413d5
@@ -7204,10 +7879,22 @@ ScriptsOnlyBuild:
     className: FreeModifier
   - hash:
       serializedVersion: 2
+      Hash: cd15a10cce4888a4db8ab4a83d227321
+    assemblyName: OSA.Demos.dll
+    namespaceName: Com.ForbiddenByte.OSA.Demos.Common.CommandPanels
+    className: ButtonsWithOptionalInputPanel
+  - hash:
+      serializedVersion: 2
       Hash: 6f69eaad1100a4bc0cc01804cc8bd6c5
     assemblyName: UnityUIExtensions.dll
     namespaceName: UnityEngine.UI.Extensions
     className: AccordionElement
+  - hash:
+      serializedVersion: 2
+      Hash: df6ad367edd788554ecc7023297fca95
+    assemblyName: OSA.Core.dll
+    namespaceName: Com.ForbiddenByte.OSA.Core
+    className: OSADebugger
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f

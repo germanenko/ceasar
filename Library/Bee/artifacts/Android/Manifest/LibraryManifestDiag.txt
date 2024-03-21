@@ -7,6 +7,7 @@ android.permission.INTERNET was added because:
 		Assembly-CSharp-FeaturesChecked.txt
 		gpm_common-FeaturesChecked.txt
 		NativeGallery.Runtime-FeaturesChecked.txt
+		OSA.Utilities-FeaturesChecked.txt
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
@@ -19,6 +20,7 @@ android.permission.INTERNET was added because:
 		Assembly-CSharp-FeaturesChecked.txt
 		gpm_common-FeaturesChecked.txt
 		NativeGallery.Runtime-FeaturesChecked.txt
+		OSA.Utilities-FeaturesChecked.txt
 		Unity.InputSystem-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
@@ -31,6 +33,7 @@ android.permission.INTERNET was added because:
 		Assembly-CSharp-FeaturesChecked.txt
 		gpm_common-FeaturesChecked.txt
 		NativeGallery.Runtime-FeaturesChecked.txt
+		OSA.Utilities-FeaturesChecked.txt
 		Unity.Services.Core.Internal-FeaturesChecked.txt
 		Unity.Services.Core.Networking-FeaturesChecked.txt
 		Unity.Services.Core.Telemetry-FeaturesChecked.txt

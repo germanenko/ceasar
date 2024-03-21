@@ -155,11 +155,11 @@ public class ChatManager : MonoBehaviour
             LastMessageReadId = null
         };
 
-        var str = SerializeObject(message);
+        //var str = SerializeObject(message);
         //WS.Send(str);
         if(WS.ReadyState == WebSocketState.Open)
         {
-            SendMessageAsync(str);
+            SendMessageAsync(message);
         }
         else
         {
@@ -191,22 +191,26 @@ public class ChatManager : MonoBehaviour
 
             WS.OnOpen += (object sender, EventArgs e) => {
                 print("соединен");
-                SendMessageAsync(str);
+                SendMessageAsync(message);
             };
         }
     }
 
 
 
-    private void SendMessageAsync(string message)
+    private void SendMessageAsync(SentMessage message)
     {
-        WS.SendAsync(message, (bool c) =>
+        var str = SerializeObject(message);
+
+        WS.SendAsync(str, (bool c) =>
         {
             if (c)
             { 
                 print("сообщение отправлено");
                 UnityMainThreadDispatcher.Instance().Enqueue(() =>
                 {
+                    if (message.MessageBody == null) return;
+
                     _chatView.Data.InsertOneAtEnd(new ChatMessageItemModel()
                     {
                         Message = new MessageBody()
@@ -278,6 +282,15 @@ public class ChatManager : MonoBehaviour
             }
         }
         _chatView.SetNormalizedPosition(0);
+
+        var message = new SentMessage
+        {
+            MessageBody = null,
+            LastMessageReadId = ms[0].Id
+        };
+
+        SendMessageAsync(message);
+
         //foreach (var m in _messagesFromDB)
         //{
         //    if (m.SenderId == AccountManager.Instance.ProfileData.id)
