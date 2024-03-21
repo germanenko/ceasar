@@ -119,6 +119,8 @@ public class ChatItem : MonoBehaviour
     {
         _chatManager.OpenChat(_chatInfo, _chatInfo.id == "");
         SetLastMessageBold(false);
+
+        SetUnreadMessages(0);
     }
 
 
