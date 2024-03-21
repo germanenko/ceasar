@@ -14,7 +14,7 @@ public class PushManager : MonoBehaviour
             _androidNotifications.RequestAuthorization();
             _androidNotifications.RegisterNotificationChannel();
 
-            _androidNotifications.SendNotification("Тест", "Первое уведомление");
+            //_androidNotifications.SendNotification("Тест", "Первое уведомление");
         }
         catch (Exception ex)
         {
